@@ -4,219 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>네이버 지도 대학 위치 시각화</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS 로드 (깔끔한 UI 디자인용) -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- 네이버 지도 API 최신 규격 로드 (주소 변환 서브모듈 geocoder 포함) -->
+    <script type="text/javascript" src="https://naver.com"></script>
     <style>
-        /* 커스텀 오버레이 스타일 */
-        .custom-overlay {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            font-size: 12px;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-        .custom-overlay::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 6px 6px 0;
-            border-style: solid;
-            border-color: white transparent transparent;
-            display: block;
-            width: 0;
-        }
+        /* 지도 내 마커 보정 및 기본 스타일 */
+        #map { min-height: 400px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- 상단 헤더 -->
-    <header class="bg-emerald-600 text-white p-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="flex flex-col h-screen">
+        <!-- 상단 헤더 -->
+        <header class="bg-indigo-600 text-white p-4 shadow-md">
             <h1 class="text-xl font-bold flex items-center gap-2">
                 🎓 주요 대학교 위치 및 정보 안내
             </h1>
-            <p class="text-sm opacity-90">Naver Maps API v3 Template</p>
-        </div>
-    </header>
+            <p class="text-xs text-indigo-200 mt-1">Naver Maps API v3 주소 자동 변환 템플릿</p>
+        </header>
 
-    <!-- 메인 콘텐츠 영역 -->
-    <main class="max-w-7xl mx-auto my-6 px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- 왼쪽: 대학교 리스트 및 상세 정보 -->
-        <div class="flex flex-col gap-4 lg:col-span-1">
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
-                <h2 class="text-lg font-semibold mb-3 text-emerald-700">📌 대학교 선택</h2>
-                <div class="flex flex-col gap-2 max-h-[300px] overflow-y-auto pr-1">
-                    <button onclick="selectUniversity(0)" class="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-emerald-50 hover:border-emerald-300 transition-all font-medium">
-                        한국예술종합대학
-                    </button>
-                    <button onclick="selectUniversity(1)" class="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-emerald-50 hover:border-emerald-300 transition-all font-medium">
-                        세종대학교
-                    </button>
-                    <button onclick="selectUniversity(2)" class="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-emerald-50 hover:border-emerald-300 transition-all font-medium">
-                        홍익대학교(세종)
-                    </button>
+        <!-- 메인 콘텐츠 영역 (좌측 리스트, 우측 지도 및 정보) -->
+        <div class="flex flex-1 flex-col md:flex-row overflow-hidden">
+            
+            <!-- 왼쪽: 대학교 선택 목록 -->
+            <aside class="w-full md:w-80 bg-white border-r border-gray-200 flex flex-col">
+                <div class="p-4 border-b border-gray-100 bg-gray-50">
+                    <h2 class="font-semibold text-gray-700 flex items-center gap-1">
+                        📌 대학교 선택
+                    </h2>
                 </div>
-            </div>
+                <!-- 대학교 리스트가 동적으로 생성되는 공간 -->
+                <div id="uni-list" class="flex-1 overflow-y-auto divide-y divide-gray-100">
+                    <!-- JavaScript가 여기에 리스트를 채웁니다 -->
+                </div>
+            </aside>
 
-            <!-- 대학교 상세 정보 카드 -->
-            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex-1">
-                <h2 class="text-lg font-semibold mb-3 text-emerald-700">ℹ️ 대학 정보</h2>
-                <div id="info-placeholder" class="text-gray-400 text-sm py-8 text-center">
-                    왼쪽 리스트나 지도의 마커를 클릭하시면 상세 정보가 표시됩니다.
-                </div>
-                <div id="info-content" class="hidden flex flex-col gap-3">
-                    <h3 id="univ-name" class="text-2xl font-bold text-gray-900"></h3>
-                    <p id="univ-address" class="text-sm text-gray-500 flex items-center gap-1"></p>
-                    <hr class="border-gray-100 my-1">
-                    <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-1 rounded">특징</span>
-                        <p id="univ-desc" class="mt-1.5 text-sm text-gray-600 leading-relaxed"></p>
-                    </div>
-                    <div class="mt-2">
-                        <a id="univ-link" href="#" target="_blank" class="inline-flex items-center justify-center w-full bg-emerald-600 text-white font-medium py-2.5 px-4 rounded-lg hover:bg-emerald-700 transition-colors shadow-sm text-sm">
-                            공식 홈페이지 방문하기
-                        </a>
+            <!-- 오른쪽: 지도 및 상세 정보창 -->
+            <main class="flex-1 flex flex-col relative">
+                <!-- 네이버 지도 영역 -->
+                <div id="map" class="w-full flex-1"></div>
+
+                <!-- 하단 상세 정보 카드 (반응형 고정 레이아웃) -->
+                <div class="bg-white p-5 border-t border-gray-200 shadow-lg max-h-64 overflow-y-auto">
+                    <div id="info-content">
+                        <h2 class="text-lg font-bold text-gray-900 mb-1">ℹ️ 대학 정보</h2>
+                        <p class="text-gray-500 text-sm">왼쪽 리스트나 지도의 마커를 클릭하시면 상세 정보가 표시됩니다.</p>
                     </div>
                 </div>
-            </div>
+            </main>
+
         </div>
-
-        <!-- 오른쪽: 네이버 지도 -->
-        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-2 min-h-[500px] flex flex-col">
-            <!-- API 가이드 알림창 
-            <div class="bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 rounded-lg text-xs mb-2 flex flex-col gap-1">
-                <span class="font-bold">⚠️ 네이버 지도 API Key 적용 필요</span>
-                <span>이 파일은 로컬 테스트용 가이드 템플릿입니다. 정상적인 지도 구동을 위해서는 아래 소스코드의 <code class="bg-amber-100 px-1 py-0.5 rounded font-mono">YOUR_CLIENT_ID</code> 부분에 실제 발급받으신 네이버 Cloud Client ID를 입력하셔야 합니다.</span>
-            </div>-->
-            <!-- 실제 지도가 그려지는 영역 -->
-            <div id="map" class="w-full flex-1 rounded-lg bg-gray-100 min-h-[450px]"></div>
-        </div>
-
-    </main>
-
-    <!-- 네이버 지도 API 로드 (YOUR_CLIENT_ID 부분을 사용자의 클라이언트 ID로 변경해야 합니다) -->
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=bduf7pv6qj"></script>
+    </div>
 
     <script>
-        // 대학교 데이터셋 (좌표 및 설명)
+        // 1. 대학교 데이터 설정 (여기에 한글 도로명 주소만 정확히 적어주시면 됩니다!)
         const universityData = [
             {
                 name: "한국예술종합학교",
-                lat: 37.459882,
-                lng: 126.951905,
-                address: "서울 서초구 서초동 1753",
-                desc: "한국예술종합학교",
-                url: "http://www.karts.ac.kr/"
+                address: "서울특별시 성북구 화랑로32길 146",
+                desc: "대한민국 유일의 국립 예술 전문 고등교육기관입니다. 음악, 연극, 영상, 무용, 미술, 전통예술 등 양질의 예술 교육을 제공합니다.",
+                url: "https://karts.ac.kr"
             },
             {
                 name: "세종대학교",
-                lat: 37.565784,
-                lng: 126.938572,
-                address: "서울특별시 서대문구 연세로 50",
-                desc: "신촌에 위치한 명문 사립대학으로, 언더우드국제대학과 세브란스 병원 등으로 유명합니다. 활기찬 신촌 대학가 문화를 주도합니다.",
-                url: "https://www.yonsei.ac.kr"
+                address: "서울특별시 광진구 능동로 209",
+                desc: "인공지능 및 컴퓨터공학 분야와 호텔관광 경영, 애니메이션 학과 등이 전통적으로 강세를 보이는 명문 사립대학입니다.",
+                url: "https://sejong.ac.kr"
             },
             {
                 name: "홍익대학교(세종)",
-                lat: 37.589385,
-                lng: 127.032247,
-                address: "서울특별시 성북구 안암로 145",
-                desc: "안암에 위치한 역사 깊은 사립 종합대학입니다. 고딕 양식의 수려한 석조 건물 캠퍼스가 특징이며, 끈끈한 교우회와 정기 고연전으로 유명합니다.",
-                url: "https://www.korea.ac.kr"
+                address: "세종특별자치시 조치원읍 세종로 2639",
+                desc: "디자인, 게임 그래픽, 광고 홍보 등 실무 중심의 융합형 인재를 양성하는 홍익대학교의 세종캠퍼스입니다.",
+                url: "https://hongik.ac.kr"
             }
         ];
 
-        let map;
-        let markers = [];
-
-        // 지도 초기화 함수
-        function initMap() {
-            // 네이버 지도 API 로드 여부 안전 확인
-            if (typeof naver === 'undefined' || !naver.maps) {
-                document.getElementById('map').innerHTML = 
-                    `<div class="flex items-center justify-center h-full text-gray-400 text-sm p-4 text-center">
-                        네이버 지도 API 라이브러리가 로드되지 않았습니다.<br>
-                        코드 내부 스크립트 태그의 'YOUR_CLIENT_ID'를 실제 Client ID로 교체해 주세요.
-                    </div>`;
-                return;
+        // 2. 지도 초기화 (기본 중심지는 서울역 근처로 임시 설정)
+        const mapOptions = {
+            center: new naver.maps.LatLng(37.5665, 126.9780),
+            zoom: 12,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: naver.maps.Position.TOP_RIGHT
             }
+        };
+        const map = new naver.maps.Map('map', mapOptions);
 
-            // 서울 중심부를 기본으로 지도 생성
-            map = new naver.maps.Map('map', {
-                center: new naver.maps.LatLng(37.541, 126.986),
-                zoom: 11,
-                zoomControl: true,
-                zoomControlOptions: {
-                    position: naver.maps.Position.TOP_RIGHT
-                }
-            });
+        // 마커와 주소 데이터를 매칭해 저장해둘 배열
+        const markers = [];
+        const infoCard = document.getElementById('info-content');
+        const listContainer = document.getElementById('uni-list');
 
-            // 데이터 기반 마커 생성 및 이벤트 바인딩
-            universityData.forEach((univ, index) => {
-                const markerPosition = new naver.maps.LatLng(univ.lat, univ.lng);
+        // 3. 주소를 좌표로 자동 변환하여 지도에 표시하는 핵심 함수
+        function initUniversityMap() {
+            universityData.forEach((uni, index) => {
                 
-                // 1. 마커 생성
-                const marker = new naver.maps.Marker({
-                    position: markerPosition,
-                    map: map,
-                    title: univ.name,
-                    animation: naver.maps.Animation.DROP
-                });
-                
-                markers.push(marker);
+                // 네이버 Geocoding API 호출
+                naver.maps.Service.geocode({ query: uni.address }, function(status, response) {
+                    if (status !== naver.maps.Service.Status.OK) {
+                        console.error('주소 변환 실패:', uni.name, uni.address);
+                        return;
+                    }
 
-                // 2. 마커 클릭 이벤트: 해당 대학 정보 표시 및 지도 이동
-                naver.maps.Event.addListener(marker, 'click', () => {
-                    selectUniversity(index);
+                    const result = response.v2.addresses[0];
+                    if (!result) return;
+
+                    // 변환된 위도(y), 경도(x) 좌표 생성
+                    const point = new naver.maps.LatLng(result.y, result.x);
+
+                    // 지도 위 마커 생성
+                    const marker = new naver.maps.Marker({
+                        position: point,
+                        map: map,
+                        title: uni.name,
+                        animation: naver.maps.Animation.DROP
+                    });
+
+                    // 생성된 마커 저장
+                    markers[index] = marker;
+
+                    // [이벤트] 마커 클릭 시 정보 업데이트 및 화면 이동
+                    naver.maps.Event.addListener(marker, 'click', function() {
+                        selectUniversity(index, point);
+                    });
+
+                    // 첫 번째 대학의 위치로 지도의 초기 중심점 맞추기
+                    if (index === 0) {
+                        map.setCenter(point);
+                    }
                 });
+
+                // 4. 좌측 사이드바에 대학교 리스트 항목 동적 생성
+                const listItem = document.createElement('button');
+                listItem.className = "w-full text-left p-4 hover:bg-indigo-50 transition-colors border-l-4 border-transparent hover:border-indigo-500 focus:outline-none flex flex-col gap-1";
+                listItem.innerHTML = `
+                    <span class="font-bold text-gray-900">${uni.name}</span>
+                    <span class="text-xs text-gray-500 truncate w-full">${uni.address}</span>
+                `;
+                
+                // [이벤트] 리스트 클릭 시 해당 마커 위치로 이동
+                listItem.addEventListener('click', () => {
+                    if (markers[index]) {
+                        const targetPos = markers[index].getPosition();
+                        selectUniversity(index, targetPos);
+                    } else {
+                        // 간혹 비동기 로딩이 덜 끝났을 경우 주소 재검색 후 이동
+                        naver.maps.Service.geocode({ query: uni.address }, function(status, response) {
+                            if (status === naver.maps.Service.Status.OK && response.v2.addresses[0]) {
+                                const res = response.v2.addresses[0];
+                                const point = new naver.maps.LatLng(res.y, res.x);
+                                selectUniversity(index, point);
+                            }
+                        });
+                    }
+                });
+
+                listContainer.appendChild(listItem);
             });
         }
 
-        // 대학교 선택 시 작동하는 함수
-        function selectUniversity(index) {
-            const univ = universityData[index];
-            if (!univ) return;
+        // 5. 대학이 선택되었을 때 화면 전환 및 하단 상세정보 업데이트 함수
+        function selectUniversity(index, position) {
+            const uni = universityData[index];
 
-            // UI 텍스트 업데이트
-            document.getElementById('info-placeholder').classList.add('hidden');
-            const contentZone = document.getElementById('info-content');
-            contentZone.classList.remove('hidden');
+            // 지도 부드럽게 이동 및 줌 레벨 확대
+            map.morph(position, 15);
 
-            document.getElementById('univ-name').innerText = univ.name;
-            document.getElementById('univ-address').innerHTML = `📍 ${univ.address}`;
-            document.getElementById('univ-desc').innerText = univ.desc;
-            document.getElementById('univ-link').href = univ.url;
-
-            // 네이버 지도가 정상 로드된 경우에만 지도 조작
-            if (map && markers[index]) {
-                const targetPos = new naver.maps.LatLng(univ.lat, univ.lng);
-                
-                // 지도 중심 이동 및 확대
-                map.morph(targetPos, 14);
-                
-                // 마커에 튕기는 애니메이션 효과 부여
-                markers.forEach(m => m.setAnimation(null)); // 기존 애니메이션 초기화
+            // 모든 마커 애니메이션 초기화 후 선택된 마커만 바운스 효과
+            markers.forEach(m => { if(m) m.setAnimation(null); });
+            if (markers[index]) {
                 markers[index].setAnimation(naver.maps.Animation.BOUNCE);
-                
-                // 1.5초 후 튕기는 효과 멈춤
-                setTimeout(() => {
-                    markers[index].setAnimation(null);
-                }, 1500);
+                // 1.5초 후 튀는 애니메이션은 멈추도록 설정 (가독성 방해 방지)
+                setTimeout(() => { markers[index].setAnimation(null); }, 1500);
             }
+
+            // 하단 정보창 UI 업데이트
+            infoCard.innerHTML = `
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <h3 class="text-xl font-bold text-indigo-700">${uni.name}</h3>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded border border-gray-200">📍 ${uni.address}</span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">${uni.desc}</p>
+                    <div class="mt-2">
+                        <a href="${uni.url}" target="_blank" class="inline-flex items-center gap-1 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-3 py-1.5 rounded shadow transition-all">
+                            🔗 공식 홈페이지 방문하기
+                        </a>
+                    </div>
+                </div>
+            `;
         }
 
-        // 페이지 로드 완료 후 지도 초기화 실행
-        window.addEventListener('DOMContentLoaded', initMap);
+        // 페이지 로드 완료 시 맵 엔진 구동
+        window.addEventListener('DOMContentLoaded', initUniversityMap);
     </script>
 </body>
 </html>
