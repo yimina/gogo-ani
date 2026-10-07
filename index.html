@@ -291,7 +291,7 @@ function loadNaver() {
     return;
   }
   const s = document.createElement("script");
-  s.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(NAVER_CLIENT_ID)}&submodules=geocoder`;
+  s.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(NAVER_CLIENT_ID)}&submodules=geocoder`;
   s.onerror = () => showMapMessage("네이버 지도 스크립트를 불러오지 못했어요. 인터넷 연결을 확인해 주세요.");
   s.onload = () => {
     // geocoder 서브모듈까지 준비되면 초기화 (중복 실행 방지)
