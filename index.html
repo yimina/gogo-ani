@@ -65,6 +65,18 @@
   .tag { display: inline-block; margin-left: 6px; font-size: 11.5px; font-weight: 500; padding: 1px 7px; border-radius: 4px; background: #e6edff; color: var(--blue); vertical-align: 2px; }
   .dept { font-size: 13.5px; margin-top: 4px; }
   .addr { font-size: 12.5px; color: var(--sub); margin-top: 2px; }
+  .detail { padding: 2px 20px 16px 24px; border-bottom: 1px solid var(--line); background: #fff6f9; border-left: 4px solid var(--pink); }
+  .detail h3 { font-size: 13.5px; margin: 6px 0 8px; }
+  .detail dl { margin: 0 0 8px; display: grid; grid-template-columns: 78px 1fr; gap: 6px 10px; font-size: 13px; }
+  .detail dt { color: var(--sub); }
+  .detail dd { margin: 0; white-space: pre-line; }
+  .detail .muted { font-size: 12.5px; color: var(--sub); margin: 0 0 8px; line-height: 1.55; }
+  .detail .small { font-size: 11.5px; margin: 8px 0 0; }
+  .detail .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .detail .links a { font-size: 12.5px; text-decoration: none; padding: 6px 11px; border-radius: 6px; background: var(--ink); color: #fff; }
+  .detail .links a.alt { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+  .detail .links a:focus-visible { outline: 3px solid rgba(47,111,237,.35); outline-offset: 2px; }
+  li.active button { background: #fff6f9; }
   .empty { padding: 30px 20px; color: var(--sub); font-size: 14px; }
   .note { padding: 10px 20px; font-size: 11.5px; color: var(--sub); border-top: 1px solid var(--line); background: #fafbfd; }
 
@@ -140,6 +152,17 @@ const SCHOOLS = [
     dept: "애니메이션 관련 학과", address: "부산광역시 사상구 주례로 47", url: "https://www.dongseo.ac.kr" }
 ];
 
+/* ★ 3. 입시 전형 정보 — 학교 id별로 직접 채워 넣으세요 (비워두면 해당 항목은 숨겨집니다)
+   admissionUrl: 입학처 주소를 넣으면 '입학처 바로가기' 버튼이 그 주소로 연결돼요. 비우면 학교 홈페이지로 연결됩니다.
+   ※ 전형은 매년 바뀌므로 입력한 내용에도 '몇 학년도 기준'인지 적어두는 걸 추천해요. */
+const ADMISSION = {
+  1: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
+  2: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
+  3: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
+  4: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
+  5: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" }
+};
+
 /* ---------- 상태 ---------- */
 let map = null, infoWindow = null, mapReady = false;
 const markers = {};              // id -> naver.maps.Marker
@@ -176,7 +199,23 @@ function filtered() {
 }
 
 /* ---------- 목록 + 마커 렌더 ---------- */
-function render() {
+function admissionHtml(s) {
+  const a = ADMISSION[s.id] || {};
+  const rows = [["모집 시기", a.schedule], ["전형 방법", a.process], ["실기·준비물", a.practical], ["참고", a.note]].filter(r => r[1]);
+  const body = rows.length
+    ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`
+    : `<p class="muted">아직 입력된 전형 정보가 없어요. 아래 버튼으로 최신 모집요강을 확인하세요.</p>`;
+  const adm = a.admissionUrl || s.url;
+  const q = encodeURIComponent(s.name + " 신입생 모집요강");
+  return `<div class="detail"><h3>입시 전형</h3>${body}
+    <div class="links">
+      <a href="${adm}" target="_blank" rel="noopener">${a.admissionUrl ? "입학처 바로가기" : "학교 홈페이지"}</a>
+      <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
+    </div>
+    <p class="muted small">전형은 매년 바뀌어요. 지원 전 반드시 공식 모집요강을 확인하세요.</p></div>`;
+}
+
+function renderList() {
   const items = filtered();
   const ul = document.getElementById("list");
   ul.innerHTML = "";
@@ -187,16 +226,21 @@ function render() {
   }
   items.forEach(s => {
     const li = document.createElement("li");
-    if (s.id === activeId) li.className = "active";
-    li.innerHTML = `<button type="button">
+    const on = s.id === activeId;
+    if (on) li.className = "active";
+    li.innerHTML = `<button type="button" aria-expanded="${on}">
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
       <div class="dept">${s.dept}</div>
-      <div class="addr">${s.address}</div></button>`;
+      <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
     li.querySelector("button").onclick = () => select(s.id, true);
     ul.appendChild(li);
   });
+}
 
+function render() {
+  renderList();
   if (mapReady) {
+    const items = filtered();
     const visible = new Set(items.map(s => s.id));
     Object.entries(markers).forEach(([id, m]) => m.setMap(visible.has(+id) ? map : null));
     fitToVisible(items);
@@ -219,8 +263,8 @@ function pinIcon(on) {
 function select(id, fromList) {
   activeId = id;
   const s = SCHOOLS.find(x => x.id === id);
-  document.querySelectorAll("#list li").forEach(li => li.classList.remove("active"));
-  render_active();
+  renderList();
+  scrollActive();
   if (!mapReady || !coords[id]) return;
 
   Object.entries(markers).forEach(([mid, m]) => m.setIcon(pinIcon(+mid === id)));
@@ -238,10 +282,7 @@ function select(id, fromList) {
     </div></div>`);
   infoWindow.open(map, markers[id]);
 }
-function render_active() {
-  const items = filtered();
-  const lis = document.querySelectorAll("#list li");
-  items.forEach((s, i) => { if (lis[i]) lis[i].classList.toggle("active", s.id === activeId); });
+function scrollActive() {
   const on = document.querySelector("#list li.active");
   if (on) on.scrollIntoView({ block: "nearest" });
 }
@@ -291,7 +332,7 @@ function loadNaver() {
     return;
   }
   const s = document.createElement("script");
-  s.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(NAVER_CLIENT_ID)}&submodules=geocoder`;
+  s.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${encodeURIComponent(NAVER_CLIENT_ID)}&submodules=geocoder`;
   s.onerror = () => showMapMessage("네이버 지도 스크립트를 불러오지 못했어요. 인터넷 연결을 확인해 주세요.");
   s.onload = () => {
     // geocoder 서브모듈까지 준비되면 초기화 (중복 실행 방지)
