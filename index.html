@@ -51,6 +51,9 @@
   }
   .chip:hover { border-color: var(--ink); color: var(--ink); }
   .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .flabel { font-size: 11.5px; color: var(--sub); margin-top: 10px; }
+  .flabel + .filters { margin-top: 4px; }
+  .fhint { font-size: 11.5px; color: var(--sub); margin-top: 8px; }
   .count { padding: 10px 20px; font-size: 12.5px; color: var(--sub); border-bottom: 1px solid var(--line); }
 
   ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
@@ -71,6 +74,7 @@
   .detail dt { color: var(--sub); }
   .detail dd { margin: 0; white-space: pre-line; }
   .detail .muted { font-size: 12.5px; color: var(--sub); margin: 0 0 8px; line-height: 1.55; }
+  .detail .srcl { color: var(--blue); }
   .detail .small { font-size: 11.5px; margin: 8px 0 0; }
   .detail .links { display: flex; gap: 8px; flex-wrap: wrap; }
   .detail .links a { font-size: 12.5px; text-decoration: none; padding: 6px 11px; border-radius: 6px; background: var(--ink); color: #fff; }
@@ -125,6 +129,11 @@
       <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
       <div class="filters" id="regionFilters" role="group" aria-label="지역 필터"></div>
       <div class="filters" id="typeFilters" role="group" aria-label="학교 유형 필터"></div>
+      <div class="flabel">전형 시기</div>
+      <div class="filters" id="seasonFilters" role="group" aria-label="전형 시기 필터"></div>
+      <div class="flabel">실기 여부</div>
+      <div class="filters" id="trackFilters" role="group" aria-label="실기 여부 필터"></div>
+      <div class="fhint">※ 전형 정보가 확인되지 않은 학교는 시기·실기 필터를 켜면 숨겨져요.</div>
     </header>
     <div class="count" id="count"></div>
     <ul id="list"></ul>
@@ -141,26 +150,64 @@
    type: "대학교" | "전문대학" | "예술대학" 등 자유롭게 */
 const SCHOOLS = [
   { id: 1, name: "한국예술종합학교 영상원", type: "예술대학", region: "서울",
-    dept: "애니메이션과", address: "서울특별시 성북구 화랑로32길 146-37", url: "https://www.karts.ac.kr" },
+    dept: "애니메이션과 (영상원)", address: "서울특별시 성북구 화랑로32길 146-37", url: "https://www.karts.ac.kr" },
   { id: 2, name: "세종대학교", type: "대학교", region: "서울",
-    dept: "만화애니메이션텍학과", address: "서울특별시 광진구 능동로 209", url: "https://www.sejong.ac.kr" },
+    dept: "창의소프트학부 만화애니메이션텍 전공", address: "서울특별시 광진구 능동로 209", url: "https://www.sejong.ac.kr" },
   { id: 3, name: "청강문화산업대학교", type: "전문대학", region: "경기",
-    dept: "애니메이션 관련 전공", address: "경기도 이천시 마장면 서이천로 389", url: "https://www.ck.ac.kr" },
+    dept: "애니메이션학과", address: "경기도 이천시 마장면 서이천로 389", url: "https://www.ck.ac.kr" },
   { id: 4, name: "서울예술대학교", type: "예술대학", region: "경기",
     dept: "애니메이션 관련 전공", address: "경기도 안산시 단원구 예술대학로 171", url: "https://www.seoularts.ac.kr" },
   { id: 5, name: "동서대학교", type: "대학교", region: "부산",
-    dept: "애니메이션 관련 학과", address: "부산광역시 사상구 주례로 47", url: "https://www.dongseo.ac.kr" }
+    dept: "영상애니메이션학과", address: "부산광역시 사상구 주례로 47", url: "https://www.dongseo.ac.kr" }
 ];
 
-/* ★ 3. 입시 전형 정보 — 학교 id별로 직접 채워 넣으세요 (비워두면 해당 항목은 숨겨집니다)
-   admissionUrl: 입학처 주소를 넣으면 '입학처 바로가기' 버튼이 그 주소로 연결돼요. 비우면 학교 홈페이지로 연결됩니다.
-   ※ 전형은 매년 바뀌므로 입력한 내용에도 '몇 학년도 기준'인지 적어두는 걸 추천해요. */
+/* ★ 3. 입시 전형 정보 — 학교 id별로 관리합니다 (비워두면 해당 항목은 숨겨집니다)
+   admissionUrl : 입학처(또는 학과 입학 안내) 주소 → '바로가기' 버튼
+   seasons      : ["수시","정시"] 중 확인된 것 (필터에 사용)
+   track        : ["실기","비실기"] 중 확인된 것 (필터에 사용)
+   sources      : [[표시이름, 주소], ...] 확인에 사용한 출처
+   ※ 전형은 매년 바뀝니다. 아래 내용은 CHECKED_AT 시점에 공개 자료로 확인한 것만 적었어요. */
+const CHECKED_AT = "2026-10-08";
 const ADMISSION = {
-  1: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
-  2: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
-  3: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
-  4: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" },
-  5: { admissionUrl: "", schedule: "", process: "", practical: "", note: "" }
+  1: { // 한국예술종합학교 영상원
+    admissionUrl: "https://www.karts.ac.kr",
+    seasons: [], track: [],
+    schedule: "", process: "", practical: "", note: "",
+    sources: [["한예종 홈페이지", "https://www.karts.ac.kr"]]
+  },
+  2: { // 세종대학교
+    admissionUrl: "https://ipsi.sejong.ac.kr",
+    seasons: ["수시"], track: [],
+    schedule: "2027학년도 수시 원서접수: 2026.9.8(화) ~ 9.11(금)",
+    process: "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
+    practical: "",
+    note: "학과가 아니라 창의소프트학부 안의 ‘만화애니메이션텍 전공’이에요. 정시 일정은 입학처 공지를 확인하세요.",
+    sources: [["세종대 입학처", "https://ipsi.sejong.ac.kr"], ["2027 수시 기사(대학저널)", "https://dhnews.co.kr/news/view/1065573352564646"]]
+  },
+  3: { // 청강문화산업대학교
+    admissionUrl: "https://ipsi.ck.ac.kr",
+    seasons: [], track: [],
+    schedule: "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
+    process: "[참고: 2026학년도 전공심화(1년 과정) 애니메이션학과] 포트폴리오 심사(모집인원의 1.5배수 선발) → 면접",
+    practical: "",
+    note: "참고 일정(2026학년도 전공심화): 원서접수 2025.12.15~12.26, 면접 2026.1.7, 합격자 발표 2026.1.16",
+    sources: [["청강대 입학처", "https://ipsi.ck.ac.kr"], ["전공심화 전형안내(PDF)", "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"]]
+  },
+  4: { // 서울예술대학교
+    admissionUrl: "https://www.seoularts.ac.kr",
+    seasons: [], track: [],
+    schedule: "", process: "", practical: "", note: "",
+    sources: [["서울예대 홈페이지", "https://www.seoularts.ac.kr"]]
+  },
+  5: { // 동서대학교
+    admissionUrl: "https://uni.dongseo.ac.kr/ani/",
+    seasons: [], track: ["실기", "비실기"],
+    schedule: "",
+    process: "실기고사로 선발하는 전형과, 학생부종합 등 실기 없이 선발하는 전형이 모두 마련돼 있어요.",
+    practical: "실기 전형 지원 시 미술 실기 능력이 평가 요소가 돼요.",
+    note: "",
+    sources: [["영상애니메이션학과 입학 FAQ", "https://uni.dongseo.ac.kr/ani/index.php?pCode=faq"]]
+  }
 };
 
 /* ---------- 상태 ---------- */
@@ -168,7 +215,7 @@ let map = null, infoWindow = null, mapReady = false;
 const markers = {};              // id -> naver.maps.Marker
 const coords = {};               // id -> naver.maps.LatLng
 let activeId = null;
-const filter = { q: "", region: "전체", type: "전체" };
+const filter = { q: "", region: "전체", type: "전체", season: "전체", track: "전체" };
 
 /* ---------- 필터 UI ---------- */
 function buildChips(containerId, values, key) {
@@ -187,6 +234,8 @@ function buildChips(containerId, values, key) {
 }
 buildChips("regionFilters", [...new Set(SCHOOLS.map(s => s.region))], "region");
 buildChips("typeFilters", [...new Set(SCHOOLS.map(s => s.type))], "type");
+buildChips("seasonFilters", ["수시", "정시"], "season");
+buildChips("trackFilters", ["실기", "비실기"], "track");
 document.getElementById("q").addEventListener("input", e => { filter.q = e.target.value.trim(); render(); });
 
 function filtered() {
@@ -194,6 +243,8 @@ function filtered() {
   return SCHOOLS.filter(s =>
     (filter.region === "전체" || s.region === filter.region) &&
     (filter.type === "전체" || s.type === filter.type) &&
+    (filter.season === "전체" || ((ADMISSION[s.id] || {}).seasons || []).includes(filter.season)) &&
+    (filter.track === "전체" || ((ADMISSION[s.id] || {}).track || []).includes(filter.track)) &&
     (!q || [s.name, s.dept, s.region, s.address].join(" ").toLowerCase().includes(q))
   );
 }
@@ -201,18 +252,23 @@ function filtered() {
 /* ---------- 목록 + 마커 렌더 ---------- */
 function admissionHtml(s) {
   const a = ADMISSION[s.id] || {};
-  const rows = [["모집 시기", a.schedule], ["전형 방법", a.process], ["실기·준비물", a.practical], ["참고", a.note]].filter(r => r[1]);
+  const rows = [
+    ["전형 시기", (a.seasons || []).join(" · ")],
+    ["실기 여부", (a.track || []).length ? (a.track.join(" · ") + " 전형" ) : ""],
+    ["일정", a.schedule], ["전형 방법", a.process], ["실기·준비물", a.practical], ["참고", a.note]
+  ].filter(r => r[1]);
   const body = rows.length
     ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`
-    : `<p class="muted">아직 입력된 전형 정보가 없어요. 아래 버튼으로 최신 모집요강을 확인하세요.</p>`;
+    : `<p class="muted">아직 확인된 전형 정보가 없어요. 아래 버튼으로 최신 모집요강을 확인하세요.</p>`;
   const adm = a.admissionUrl || s.url;
   const q = encodeURIComponent(s.name + " 신입생 모집요강");
+  const src = (a.sources || []).map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
   return `<div class="detail"><h3>입시 전형</h3>${body}
     <div class="links">
-      <a href="${adm}" target="_blank" rel="noopener">${a.admissionUrl ? "입학처 바로가기" : "학교 홈페이지"}</a>
+      <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
     </div>
-    <p class="muted small">전형은 매년 바뀌어요. 지원 전 반드시 공식 모집요강을 확인하세요.</p></div>`;
+    <p class="muted small">${src ? "출처: " + src + " · " : ""}확인일 ${CHECKED_AT}<br>전형은 매년 바뀌어요. 지원 전 반드시 공식 모집요강을 확인하세요.</p></div>`;
 }
 
 function renderList() {
