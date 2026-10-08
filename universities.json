@@ -28,19 +28,19 @@
         "note": "",
         "susi": {
           "reference": false,
-          "quota": "",
+          "quota": "15명",
           "apply": {
-            "start": "",
-            "end": "",
+            "start": "2026-09-14",
+            "end": "026-09-17",
             "note": ""
           },
-          "finalAnnounce": "",
+          "finalAnnounce": "2026-12-24",
           "note": "",
           "types": [
             {
-              "name": "",
-              "short": "",
-              "quota": "",
+              "name": "학생부종합",
+              "short": "학종",
+              "quota": "12명",
               "apply": {
                 "start": "",
                 "end": "",
@@ -49,15 +49,64 @@
               "stages": [
                 {
                   "label": "1차",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
+                  "method": "서류",
+                  "date": "2026-10-20",
+                  "endDate": "2026-10-30",
                   "announce": "",
                   "kind": "서류",
                   "ratio": {
                     "document": "",
+                    "grade": "20",
+                    "practical": "80",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "2차",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "기타",
+                  "ratio": {
+                    "document": "",
                     "grade": "",
                     "practical": "",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            },
+             {
+              "name": "면접",
+              "short": "면접",
+              "quota": "22명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "1차",
+                  "method": "서류",
+                  "date": "2026-10-20",
+                  "endDate": "2026-10-30",
+                  "announce": "",
+                  "kind": "서류",
+                  "ratio": {
+                    "document": "",
+                    "grade": "20",
+                    "practical": "80",
                     "interview": ""
                   }
                 },
