@@ -237,7 +237,7 @@ function admissionHtml(s) {
   const rows = [
     ["전형 시기", (a.seasons || []).join(" · ")],
     ["실기 여부", (a.track || []).length ? (a.track.join(" · ") + " 전형" ) : ""],
-    ["일정", a.schedule], ["모집인원", a.quota], ["전형 방법", a.process], ["실기·준비물", a.practical], ["참고", a.note]
+    ["원서 접수", a.apply], ["실기 일정", a.exam], ["기타 일정", a.schedule], ["모집인원", a.quota], ["전형 방법", a.process], ["실기·준비물", a.practical], ["참고", a.note]
   ].filter(r => r[1]);
   const body = rows.length
     ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`
