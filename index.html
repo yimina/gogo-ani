@@ -350,16 +350,18 @@ function groupRows(g, jeong) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
   const stageRows = (g.stages || []).map(st => {
-    const head = [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("\n");
+    const ann = pd(st.announce) ? "합격자 발표 " + fmtRange(st.announce) : "";
+    const head = [st.method, fmtRange(st.date, st.endDate), ann].filter(Boolean).join("\n");
     const rt = ratioOf(st.ratio, jeong);
     return [st.label || "단계", head + (head && rt ? "\n" : "") + rt];
   });
-  const hasDates = !!applyTxt || (g.stages || []).some(st => pd(st.date));
+  const hasDates = !!applyTxt || !!pd(g.finalAnnounce) || (g.stages || []).some(st => pd(st.date) || pd(st.announce));
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   return [
     jeong ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
     ...stageRows,
+    ["최종 합격자 발표", fmtRange(g.finalAnnounce)],
     ["참고 표시", g.reference && hasDates ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
     ["모집인원", g.quota], ["전형 방법", g.process],
     [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)], ["참고", g.note]
@@ -496,6 +498,12 @@ function buildEvents(schools) {
         const kind = KINDS[st.kind] ? st.kind : "기타";
         ev.push({ sid: s.id, school: shortName(s), title: gr.name + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
       });
+      (g.stages || []).forEach(st => {
+        const da = pd(st.announce);
+        if (da) ev.push({ sid: s.id, school: shortName(s), title: gr.name + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+      });
+      const fa = pd(g.finalAnnounce);
+      if (fa) ev.push({ sid: s.id, school: shortName(s), title: gr.name + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     });
   });
   ev.forEach(e => { if (e.end < e.start) e.end = e.start; });

@@ -3,9 +3,9 @@
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
-    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별(1차·2차 …) 전형 배열, process 전형 방법, ratio 단계 구분 없이 하나의 비율일 때 쓰는 공통 반영 비율 {grade 내신, practical 실기, interview 면접}, note.",
-    "stages 항목: {label: \"1차\", method: 전형 방법, date: 날짜, endDate: 기간일 때 종료일(선택), kind: 실기/면접/발표/기타, ratio: {grade 내신, practical 실기, interview 면접}} — 차수마다 반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
-    "admission.jeongsi(정시): 수시와 같은 항목 + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), 공통 ratio {suneung 수능, grade 내신, practical 실기}.",
+    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별(1차·2차 …) 전형 배열, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio 단계 구분 없이 하나의 비율일 때 쓰는 공통 반영 비율 {grade 내신, practical 실기, interview 면접}, note.",
+    "stages 항목: {label: \"1차\", method: 전형 방법, date: 전형(시험)일, endDate: 기간일 때 종료일(선택), announce: 그 차수의 합격자 발표일, kind: 실기/면접/발표/기타, ratio: {grade 내신, practical 실기, interview 면접}} — 차수마다 전형일·합격자 발표일·반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
+    "admission.jeongsi(정시): 수시와 같은 항목(finalAnnounce 포함) + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), 공통 ratio {suneung 수능, grade 내신, practical 실기}.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(색상)는 실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
@@ -39,6 +39,7 @@
               "method": "스토리 구성과 연출력 중심 평가",
               "date": "2026-11-28",
               "endDate": "2026-11-29",
+              "announce": "2026-12-10",
               "kind": "기타",
               "ratio": {
                 "grade": "20%",
@@ -51,6 +52,7 @@
               "method": "내러티브, 드로잉, 연출력 중심 평가",
               "date": "2026-12-15",
               "endDate": "2026-12-22",
+              "announce": "2026-12-24",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -59,6 +61,7 @@
               }
             }
           ],
+          "finalAnnounce": "2026-12-24",
           "process": "",
           "ratio": {
             "grade": "",
@@ -77,6 +80,7 @@
             "note": ""
           },
           "stages": [],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "suneung": "",
@@ -122,6 +126,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -134,6 +139,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -142,6 +148,7 @@
               }
             }
           ],
+          "finalAnnounce": "",
           "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
           "ratio": {
             "grade": "",
@@ -160,6 +167,7 @@
             "note": ""
           },
           "stages": [],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "suneung": "",
@@ -209,6 +217,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -221,6 +230,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -229,6 +239,7 @@
               }
             }
           ],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "grade": "",
@@ -247,6 +258,7 @@
             "note": ""
           },
           "stages": [],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "suneung": "",
@@ -271,6 +283,7 @@
                 "method": "포트폴리오 심사 (모집인원의 1.5배수 선발)",
                 "date": "",
                 "endDate": "",
+                "announce": "",
                 "kind": "기타"
               },
               {
@@ -278,16 +291,11 @@
                 "method": "면접",
                 "date": "2026-01-07",
                 "endDate": "",
+                "announce": "",
                 "kind": "면접"
-              },
-              {
-                "label": "합격자 발표",
-                "method": "",
-                "date": "2026-01-16",
-                "endDate": "",
-                "kind": "발표"
               }
             ],
+            "finalAnnounce": "2026-01-16",
             "process": "",
             "note": "2026학년도 기준 참고 자료예요."
           }
@@ -332,6 +340,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -344,6 +353,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -352,6 +362,7 @@
               }
             }
           ],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "grade": "",
@@ -370,6 +381,7 @@
             "note": ""
           },
           "stages": [],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "suneung": "",
@@ -418,6 +430,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -430,6 +443,7 @@
               "method": "",
               "date": "",
               "endDate": "",
+              "announce": "",
               "kind": "기타",
               "ratio": {
                 "grade": "",
@@ -438,6 +452,7 @@
               }
             }
           ],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "grade": "",
@@ -456,6 +471,7 @@
             "note": ""
           },
           "stages": [],
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
             "suneung": "",
