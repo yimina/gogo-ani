@@ -40,7 +40,7 @@
               "date": "2026-11-28",
               "endDate": "2026-11-29",
               "announce": "2026-12-10",
-              "kind": "기타",
+              "kind": "실기",
               "ratio": {
                 "grade": "20%",
                 "practical": "80%",
@@ -53,7 +53,7 @@
               "date": "2026-12-15",
               "endDate": "2026-12-22",
               "announce": "2026-12-24",
-              "kind": "기타",
+              "kind": "실기",
               "ratio": {
                 "grade": "",
                 "practical": "50%",
@@ -108,28 +108,28 @@
       "url": "https://www.sejong.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.sejong.ac.kr",
-        "track": [],
+        "track": ["비실기"],
         "process": "",
         "practical": "",
         "note": "학과가 아니라 창의소프트학부 안의 ‘만화애니메이션텍 전공’이에요. 정시 일정은 입학처 공지를 확인하세요.",
         "susi": {
           "reference": false,
-          "quota": "",
+          "quota": "48명",
           "apply": {
             "start": "2026-09-08",
             "end": "2026-09-11",
-            "note": "2027학년도 수시"
+            "note": "수시"
           },
           "stages": [
             {
               "label": "1차",
-              "method": "",
+              "method": "학생부종합전형",
               "date": "",
               "endDate": "",
-              "announce": "",
+              "announce": "2026-11-13",
               "kind": "기타",
               "ratio": {
-                "grade": "",
+                "grade": "100%",
                 "practical": "",
                 "interview": ""
               }
@@ -137,18 +137,18 @@
             {
               "label": "2차",
               "method": "",
-              "date": "",
+              "date": "2026-11-21",
               "endDate": "",
-              "announce": "",
+              "announce": "2026-12-18",
               "kind": "기타",
               "ratio": {
-                "grade": "",
+                "grade": "60%",
                 "practical": "",
-                "interview": ""
+                "interview": "40%"
               }
             }
           ],
-          "finalAnnounce": "",
+          "finalAnnounce": "2026-12-18",
           "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
           "ratio": {
             "grade": "",
@@ -159,18 +159,18 @@
         },
         "jeongsi": {
           "reference": false,
-          "gun": "",
-          "quota": "",
+          "gun": "다",
+          "quota": "2명",
           "apply": {
-            "start": "",
-            "end": "",
+            "start": "2027-01-04",
+            "end": "2027-01-07",
             "note": ""
           },
           "stages": [],
-          "finalAnnounce": "",
+          "finalAnnounce": "2027-02-05",
           "process": "",
           "ratio": {
-            "suneung": "",
+            "suneung": "100%",
             "grade": "",
             "practical": ""
           },
