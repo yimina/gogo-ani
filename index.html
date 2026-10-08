@@ -112,10 +112,20 @@
   }
   .pin.on { background: var(--blue); }
 
+  .ftoggle { display: none; }
   @media (max-width: 820px) {
-    .app { grid-template-columns: 1fr; grid-template-rows: 42vh 1fr; }
-    main { order: -1; }
-    aside { border-right: 0; border-top: 1px solid var(--line); }
+    html, body { height: auto; }
+    .app { display: block; height: auto; }
+    main { position: sticky; top: 0; z-index: 5; height: 38vh; min-height: 220px; border-bottom: 1px solid var(--line); }
+    aside { display: block; border-right: 0; overflow: visible; }
+    ul { overflow: visible; }
+    li { scroll-margin-top: calc(38vh + 8px); }
+    .ftoggle {
+      display: inline-block; margin-top: 10px; font: inherit; font-size: 13px; padding: 7px 12px;
+      border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer;
+    }
+    #filterBox { display: none; }
+    #filterBox.open { display: block; }
   }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -127,6 +137,8 @@
       <h1><span>애니메이션 대학 지도</span></h1>
       <p>전국 애니메이션 관련 학과 · 학교를 지도에서 찾아보세요</p>
       <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
+      <button type="button" class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filterBox">필터 열기 ▾</button>
+      <div id="filterBox">
       <div class="filters" id="regionFilters" role="group" aria-label="지역 필터"></div>
       <div class="filters" id="typeFilters" role="group" aria-label="학교 유형 필터"></div>
       <div class="flabel">전형 시기</div>
@@ -134,6 +146,7 @@
       <div class="flabel">실기 여부</div>
       <div class="filters" id="trackFilters" role="group" aria-label="실기 여부 필터"></div>
       <div class="fhint">※ 전형 정보가 확인되지 않은 학교는 시기·실기 필터를 켜면 숨겨져요.</div>
+      </div>
     </header>
     <div class="count" id="count"></div>
     <ul id="list"></ul>
@@ -397,6 +410,13 @@ function loadNaver() {
   };
   document.head.appendChild(s);
 }
+
+document.getElementById("ftoggle").onclick = function () {
+  const box = document.getElementById("filterBox");
+  const open = box.classList.toggle("open");
+  this.setAttribute("aria-expanded", open);
+  this.textContent = open ? "필터 닫기 ▴" : "필터 열기 ▾";
+};
 
 render();
 loadNaver();
