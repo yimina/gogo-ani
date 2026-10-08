@@ -1,12 +1,13 @@
 {
   "_안내": [
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
-    "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요.",
-    "short: 달력에 표시할 짧은 학교 이름 (예: 세종대).",
-    "admission.apply: 원서 접수 기간 {start, end, note}. end가 없으면 하루짜리로 봐요.",
-    "admission.stages: 1차·2차 등 단계별 전형 [{label, method, date, endDate(선택), kind}]. kind는 실기 / 면접 / 발표 / 기타 중 하나이고 달력 색상을 결정해요. 합격자 발표도 단계로 추가하면 달력에 표시돼요.",
-    "admission.reference: true 이면 이전 학년도 일정을 참고용으로 표시한 것이라는 뜻이에요 (달력에서 점선으로 표시).",
-    "admission.quota 모집인원, gradeRatio 내신 반영, practicalRatio 실기 반영, process 전형 방법 요약(단계 구분이 어려울 때), schedule 기타 일정 메모 — 모두 자유 문자열이에요."
+    "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
+    "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
+    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별 전형 [{label, method, date, endDate, kind}], process 전형 방법, ratio {grade 내신, practical 실기, interview 면접} 반영 비율, note.",
+    "admission.jeongsi(정시): 수시와 같은 항목 + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), ratio {suneung 수능, grade 내신, practical 실기}.",
+    "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
+    "stages의 kind는 실기 / 면접 / 발표 / 기타 중 하나이며 달력 색을 정해요. 비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요.",
+    "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
   ],
   "checkedAt": "2026-10-08",
   "schools": [
@@ -18,26 +19,47 @@
       "address": "서울특별시 성북구 화랑로32길 146-37",
       "url": "https://www.karts.ac.kr",
       "admission": {
-        "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-        "seasons": ["수시"],
-        "track": ["실기"],
-        "reference": false,
-        "apply": {
-          "start": "2026-09-14",
-          "end": "2026-09-17",
-          "note": "2027학년도 수시"
+        "admissionUrl": "https://www.karts.ac.kr",
+        "track": [],
+        "process": "",
+        "practical": "",
+        "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "grade": "",
+            "practical": "",
+            "interview": ""
+          },
+          "note": ""
         },
-        "stages": [
-            { "label": "1차", "method": "실기", "date": "2026-11-28", "endDate": "2026-11-29", "kind": "실기" },
-            { "label": "2차", "method": "실기", "date": "2026-12-15", "endDate": "2026-12-22", "kind": "실기" },
-            { "label": "합격자 발표", "method": "", "date": "2026-12-24", "endDate": "", "kind": "발표" }],
-        "schedule": "스케줄",
-        "quota": "15명",
-        "process": "[1차:스토리구성과 연출력 중심평가(180분)], [2차:내러티브, 드로잉, 연출력 중심평가(360분), 구슬]",
-        "gradeRatio": "[1차 : 20], [2차: x]",
-        "practicalRatio": "[1차 : 80], [2차 : 실기(50), 구슬(50)]",
-        "practical": "재료 : 자유선택, 8절 스케치북, 4절 켄트지 : 학교제공",
-        "note": "그림과 연출이라는 시각 언어로 자신만의 독창적인 이야기를 전달할 줄 아는 비전가",
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
         "sources": [
           [
             "한예종 홈페이지",
@@ -56,24 +78,46 @@
       "url": "https://www.sejong.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.sejong.ac.kr",
-        "seasons": [
-          "수시"
-        ],
         "track": [],
-        "reference": false,
-        "apply": {
-          "start": "2026-09-08",
-          "end": "2026-09-11",
-          "note": "2027학년도 수시"
-        },
-        "stages": [],
-        "schedule": "",
-        "quota": "",
-        "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
-        "gradeRatio": "",
-        "practicalRatio": "",
+        "process": "",
         "practical": "",
         "note": "학과가 아니라 창의소프트학부 안의 ‘만화애니메이션텍 전공’이에요. 정시 일정은 입학처 공지를 확인하세요.",
+        "susi": {
+          "reference": false,
+          "quota": "",
+          "apply": {
+            "start": "2026-09-08",
+            "end": "2026-09-11",
+            "note": "2027학년도 수시"
+          },
+          "stages": [],
+          "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
+          "ratio": {
+            "grade": "",
+            "practical": "",
+            "interview": ""
+          },
+          "note": ""
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
         "sources": [
           [
             "세종대 입학처",
@@ -96,44 +140,82 @@
       "url": "https://www.ck.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.ck.ac.kr",
-        "seasons": [],
         "track": [],
-        "reference": true,
-        "apply": {
-          "start": "2025-12-15",
-          "end": "2025-12-26",
-          "note": "2026학년도 전공심화(1년 과정)"
+        "process": "",
+        "practical": "",
+        "note": "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
+        "susi": {
+          "reference": false,
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "grade": "",
+            "practical": "",
+            "interview": ""
+          },
+          "note": ""
         },
-        "stages": [
-          {
-            "label": "1차",
-            "method": "포트폴리오 심사 (모집인원의 1.5배수 선발)",
-            "date": "",
-            "endDate": "",
-            "kind": "기타"
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
           },
-          {
-            "label": "2차",
-            "method": "면접",
-            "date": "2026-01-07",
-            "endDate": "",
-            "kind": "면접"
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
           },
+          "note": ""
+        },
+        "etc": [
           {
-            "label": "합격자 발표",
-            "method": "",
-            "date": "2026-01-16",
-            "endDate": "",
-            "kind": "발표"
+            "label": "전공심화(1년 과정)",
+            "reference": true,
+            "quota": "57명",
+            "apply": {
+              "start": "2025-12-15",
+              "end": "2025-12-26",
+              "note": "2026학년도 전공심화(1년 과정)"
+            },
+            "stages": [
+              {
+                "label": "1차",
+                "method": "포트폴리오 심사 (모집인원의 1.5배수 선발)",
+                "date": "",
+                "endDate": "",
+                "kind": "기타"
+              },
+              {
+                "label": "2차",
+                "method": "면접",
+                "date": "2026-01-07",
+                "endDate": "",
+                "kind": "면접"
+              },
+              {
+                "label": "합격자 발표",
+                "method": "",
+                "date": "2026-01-16",
+                "endDate": "",
+                "kind": "발표"
+              }
+            ],
+            "process": "",
+            "note": "2026학년도 기준 참고 자료예요."
           }
         ],
-        "schedule": "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
-        "quota": "[참고: 2026학년도 전공심화(1년 과정)] 57명",
-        "process": "",
-        "gradeRatio": "",
-        "practicalRatio": "",
-        "practical": "",
-        "note": "",
         "sources": [
           [
             "청강대 입학처",
@@ -156,22 +238,46 @@
       "url": "https://www.seoularts.ac.kr",
       "admission": {
         "admissionUrl": "https://www.seoularts.ac.kr",
-        "seasons": [],
         "track": [],
-        "reference": false,
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "stages": [],
-        "schedule": "",
-        "quota": "",
         "process": "",
-        "gradeRatio": "",
-        "practicalRatio": "",
         "practical": "",
         "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "grade": "",
+            "practical": "",
+            "interview": ""
+          },
+          "note": ""
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
         "sources": [
           [
             "서울예대 홈페이지",
@@ -190,25 +296,49 @@
       "url": "https://www.dongseo.ac.kr",
       "admission": {
         "admissionUrl": "https://uni.dongseo.ac.kr/ani/",
-        "seasons": [],
         "track": [
           "실기",
           "비실기"
         ],
-        "reference": false,
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "stages": [],
-        "schedule": "",
-        "quota": "",
         "process": "실기고사로 선발하는 전형과, 학생부종합 등 실기 없이 선발하는 전형이 모두 마련돼 있어요.",
-        "gradeRatio": "",
-        "practicalRatio": "",
         "practical": "실기 전형 지원 시 미술 실기 능력이 평가 요소가 돼요.",
         "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "grade": "",
+            "practical": "",
+            "interview": ""
+          },
+          "note": ""
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "process": "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
         "sources": [
           [
             "영상애니메이션학과 입학 FAQ",
