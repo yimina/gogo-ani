@@ -20,23 +20,26 @@
       "url": "https://www.karts.ac.kr",
       "admission": {
         "admissionUrl": "https://www.karts.ac.kr",
-        "track": [],
+        "track": ["실기"],
         "process": "",
         "practical": "",
         "note": "",
         "susi": {
           "reference": false,
-          "quota": "",
+          "quota": "15명",
           "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
+            "start": "2026-09-14",
+            "end": "2026-09-17",
+            "note": "2027학년도 수시"
           },
-          "stages": [],
+          "stages": [ 
+            { "label": "1차", "method": "서류 심사", "date": "2026-10-20", "endDate": "", "kind": "기타" },
+            { "label": "2차", "method": "실기고사", "date": "2026-11-07", "endDate": "", "kind": "실기" },
+            { "label": "합격자 발표", "method": "", "date": "2026-12-15", "endDate": "", "kind": "발표" }],
           "process": "",
           "ratio": {
-            "grade": "",
-            "practical": "",
+            "grade": "20%",
+            "practical": "80%",
             "interview": ""
           },
           "note": ""
