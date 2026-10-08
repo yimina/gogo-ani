@@ -78,6 +78,11 @@
   .gh { margin: 6px 0 6px; }
   .gt { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #fff; }
   .gt.s1 { background: var(--blue); } .gt.s2 { background: #1f9d6b; } .gt.s3 { background: #6b7280; }
+  .typ { margin: 8px 0 10px; padding: 8px 12px 4px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; }
+  .typ dl { margin-bottom: 6px; }
+  .th { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .th b { font-size: 13.5px; }
+  .qb { font-size: 11.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #e6edff; color: #1d4fb8; }
   .rkl { line-height: 1.7; }
   .rk { display: inline-flex; align-items: center; gap: 5px; margin-right: 12px; white-space: nowrap; }
   .rk i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
@@ -367,25 +372,41 @@ function annHtml(str, label, final, ref) {
   return `<div class="ann${final ? " final" : ""}"><i>${label}</i><b>${fd(d, true)}</b>${dd ? `<em>${dd}</em>` : ""}</div>`;
 }
 
-function groupRows(g, jeong) {
+function anyDates(o) {
+  if (!o) return false;
+  const ap = o.apply || {};
+  return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
+    (o.stages || []).some(st => pd(st.date) || pd(st.announce)) ||
+    (o.types || []).some(anyDates);
+}
+
+function groupRows(g, jeong, ref, isType) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
   const stageRows = (g.stages || []).map(st => {
     const head = [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("<br>");
-    const ann = annHtml(st.announce, "발표", false, g.reference);
+    const ann = annHtml(st.announce, "발표", false, ref);
     return [st.label || "단계", head + ann + ratioOf(st.ratio, jeong)];
   });
-  const hasDates = !!applyTxt || !!pd(g.finalAnnounce) || (g.stages || []).some(st => pd(st.date) || pd(st.announce));
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
+  const hasTypes = (g.types || []).some(groupHas);
   return [
-    jeong ? ["원서 접수 군", gunText(g)] : null,
+    jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
     ...stageRows,
-    ["최종 합격자 발표", annHtml(g.finalAnnounce, "최종", true, g.reference)],
-    ["참고 표시", g.reference && hasDates ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
-    ["모집인원", g.quota], ["전형 방법", g.process],
-    [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)], ["참고", g.note]
+    ["최종 합격자 발표", annHtml(g.finalAnnounce, "최종", true, ref)],
+    isType ? null : ["참고 표시", ref && anyDates(g) ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
+    isType ? null : [hasTypes ? "전체 모집인원" : "모집인원", g.quota],
+    ["전형 방법", g.process],
+    [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)],
+    ["참고", g.note]
   ].filter(r => r && r[1]);
+}
+
+function typeHtml(t, jeong, ref) {
+  const rows = groupRows(t, jeong, ref, true);
+  const q = t.quota ? `<span class="qb">모집 ${t.quota}</span>` : "";
+  return `<div class="typ"><div class="th"><b>${t.name || "전형"}</b>${q}</div>${rows.length ? dl(rows) : '<p class="muted">전형 세부 정보가 아직 없어요.</p>'}</div>`;
 }
 
 function dl(rows) { return `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`; }
@@ -400,9 +421,12 @@ function admissionHtml(s) {
   const sections = admGroups(a).map(gr => {
     const has = groupHas(gr.g);
     if (!has && gr.key === "etc") return "";
-    const rows = has ? groupRows(gr.g, gr.jeong) : [];
+    const ref = !!gr.g.reference;
+    const rows = has ? groupRows(gr.g, gr.jeong, ref, false) : [];
+    const types = (gr.g.types || []).filter(groupHas).map(t => typeHtml(t, gr.jeong, ref || !!t.reference)).join("");
     const cls = gr.key === "susi" ? "s1" : gr.key === "jeongsi" ? "s2" : "s3";
-    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span></div>${rows.length ? dl(rows) : '<p class="muted">아직 입력된 정보가 없어요.</p>'}</div>`;
+    const inner = (rows.length ? dl(rows) : "") + types;
+    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span></div>${inner || '<p class="muted">아직 입력된 정보가 없어요.</p>'}</div>`;
   }).join("");
 
   const adm = a.admissionUrl || s.url;
@@ -518,24 +542,28 @@ function buildEvents(schools) {
   const ev = [];
   schools.forEach(s => {
     const a = ADMISSION[s.id] || {};
+    const sn = shortName(s);
+    const push = (obj, label, ref) => {
+      const ap = obj.apply || {};
+      const as = pd(ap.start);
+      if (as) ev.push({ sid: s.id, school: sn, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+      (obj.stages || []).forEach(st => {
+        const ds = pd(st.date);
+        if (ds) {
+          const kind = KINDS[st.kind] ? st.kind : "기타";
+          ev.push({ sid: s.id, school: sn, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
+        }
+        const da = pd(st.announce);
+        if (da) ev.push({ sid: s.id, school: sn, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+      });
+      const fa = pd(obj.finalAnnounce);
+      if (fa) ev.push({ sid: s.id, school: sn, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+    };
     admGroups(a).forEach(gr => {
       const g = gr.g || {};
-      const ref = !!g.reference;
-      const ap = g.apply || {};
-      const as = pd(ap.start);
-      if (as) ev.push({ sid: s.id, school: shortName(s), title: gr.name + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
-      (g.stages || []).forEach(st => {
-        const ds = pd(st.date);
-        if (!ds) return;
-        const kind = KINDS[st.kind] ? st.kind : "기타";
-        ev.push({ sid: s.id, school: shortName(s), title: gr.name + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
-      });
-      (g.stages || []).forEach(st => {
-        const da = pd(st.announce);
-        if (da) ev.push({ sid: s.id, school: shortName(s), title: gr.name + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
-      });
-      const fa = pd(g.finalAnnounce);
-      if (fa) ev.push({ sid: s.id, school: shortName(s), title: gr.name + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+      const gref = !!g.reference;
+      push(g, gr.name, gref);
+      (g.types || []).forEach(t => push(t, gr.name + " " + (t.short || t.name || "전형"), gref || !!t.reference));
     });
   });
   ev.forEach(e => { if (e.end < e.start) e.end = e.start; });
