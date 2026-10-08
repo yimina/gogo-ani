@@ -3,10 +3,11 @@
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
-    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별 전형 [{label, method, date, endDate, kind}], process 전형 방법, ratio {grade 내신, practical 실기, interview 면접} 반영 비율, note.",
-    "admission.jeongsi(정시): 수시와 같은 항목 + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), ratio {suneung 수능, grade 내신, practical 실기}.",
+    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별(1차·2차 …) 전형 배열, process 전형 방법, ratio 단계 구분 없이 하나의 비율일 때 쓰는 공통 반영 비율 {grade 내신, practical 실기, interview 면접}, note.",
+    "stages 항목: {label: \"1차\", method: 전형 방법, date: 날짜, endDate: 기간일 때 종료일(선택), kind: 실기/면접/발표/기타, ratio: {grade 내신, practical 실기, interview 면접}} — 차수마다 반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
+    "admission.jeongsi(정시): 수시와 같은 항목 + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), 공통 ratio {suneung 수능, grade 내신, practical 실기}.",
+    "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(색상)는 실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
-    "stages의 kind는 실기 / 면접 / 발표 / 기타 중 하나이며 달력 색을 정해요. 비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
   ],
   "checkedAt": "2026-10-08",
@@ -20,26 +21,48 @@
       "url": "https://www.karts.ac.kr",
       "admission": {
         "admissionUrl": "https://www.karts.ac.kr",
-        "track": ["실기"],
+        "track": [],
         "process": "",
         "practical": "",
         "note": "",
         "susi": {
           "reference": false,
-          "quota": "15명",
+          "quota": "",
           "apply": {
-            "start": "2026-09-14",
-            "end": "2026-09-17",
-            "note": "2027학년도 수시"
+            "start": "",
+            "end": "",
+            "note": ""
           },
-          "stages": [ 
-            { "label": "1차", "method": "서류 심사", "date": "2026-10-20", "endDate": "", "kind": "기타" },
-            { "label": "2차", "method": "실기고사", "date": "2026-11-07", "endDate": "", "kind": "실기" },
-            { "label": "합격자 발표", "method": "", "date": "2026-12-15", "endDate": "", "kind": "발표" }],
+          "stages": [
+            {
+              "label": "1차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            },
+            {
+              "label": "2차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            }
+          ],
           "process": "",
           "ratio": {
-            "grade": "20%",
-            "practical": "80%",
+            "grade": "",
+            "practical": "",
             "interview": ""
           },
           "note": ""
@@ -93,7 +116,32 @@
             "end": "2026-09-11",
             "note": "2027학년도 수시"
           },
-          "stages": [],
+          "stages": [
+            {
+              "label": "1차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            },
+            {
+              "label": "2차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            }
+          ],
           "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
           "ratio": {
             "grade": "",
@@ -155,7 +203,32 @@
             "end": "",
             "note": ""
           },
-          "stages": [],
+          "stages": [
+            {
+              "label": "1차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            },
+            {
+              "label": "2차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            }
+          ],
           "process": "",
           "ratio": {
             "grade": "",
@@ -253,7 +326,32 @@
             "end": "",
             "note": ""
           },
-          "stages": [],
+          "stages": [
+            {
+              "label": "1차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            },
+            {
+              "label": "2차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            }
+          ],
           "process": "",
           "ratio": {
             "grade": "",
@@ -314,7 +412,32 @@
             "end": "",
             "note": ""
           },
-          "stages": [],
+          "stages": [
+            {
+              "label": "1차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            },
+            {
+              "label": "2차",
+              "method": "",
+              "date": "",
+              "endDate": "",
+              "kind": "기타",
+              "ratio": {
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              }
+            }
+          ],
           "process": "",
           "ratio": {
             "grade": "",

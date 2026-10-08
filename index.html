@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>애니메이션 대학 지도</title>
+<title>만화, 애니메이션 대학 정보</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
 <!-- ★ 1. 네이버 클라우드 플랫폼에서 발급한 Client ID(ncpKeyId)로 바꾸세요 -->
 <script>
-  const NAVER_CLIENT_ID = "bduf7pv6qj";
+  const NAVER_CLIENT_ID = "YOUR_NCP_CLIENT_ID";
 </script>
 
 <style>
@@ -192,12 +192,12 @@
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
-<body>
+<body class="cal-mode">
 <div class="app">
   <aside>
     <header>
-      <h1><span>애니메이션 대학 지도</span></h1>
-      <p>전국 애니메이션 관련 학과 · 학교를 지도에서 찾아보세요</p>
+      <h1><span>만화, 애니메이션 대학 정보</span></h1>
+      <p>전국 만화·애니메이션 관련 학과의 입시 일정과 위치를 한눈에 확인하세요</p>
       <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
       <button type="button" class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filterBox">필터 열기 ▾</button>
       <div id="filterBox">
@@ -216,11 +216,11 @@
   </aside>
   <main>
     <div class="viewtabs" role="group" aria-label="보기 전환">
-      <button type="button" class="vt on" id="tabMap" aria-pressed="true">지도</button>
-      <button type="button" class="vt" id="tabCal" aria-pressed="false">달력</button>
+      <button type="button" class="vt" id="tabMap" aria-pressed="false">지도</button>
+      <button type="button" class="vt on" id="tabCal" aria-pressed="true">달력</button>
     </div>
     <div id="map"></div>
-    <div id="cal" class="cal" hidden></div>
+    <div id="cal" class="cal"></div>
     <div class="map-msg" id="mapMsg"></div>
   </main>
 </div>
@@ -314,7 +314,7 @@ function hasData(o) {
   if (o == null) return false;
   if (typeof o === "string") return o.trim() !== "";
   if (Array.isArray(o)) return o.some(hasData);
-  if (typeof o === "object") return Object.entries(o).some(([k, v]) => k !== "reference" && k !== "offered" && hasData(v));
+  if (typeof o === "object") return Object.entries(o).some(([k, v]) => !["reference", "offered", "label", "kind"].includes(k) && hasData(v));
   return false;
 }
 function groupHas(g) { return !!g && (g.offered === true || hasData(g)); }
@@ -339,21 +339,30 @@ function ratioHtml(items) {
   return `${text}${bar}`;
 }
 
+function ratioOf(r, jeong) {
+  r = r || {};
+  return jeong
+    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"]])
+    : ratioHtml([["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#8a4fff"]]);
+}
+
 function groupRows(g, jeong) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
-  const stageRows = (g.stages || []).map(st => [st.label || "단계", [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("\n")]);
+  const stageRows = (g.stages || []).map(st => {
+    const head = [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("\n");
+    const rt = ratioOf(st.ratio, jeong);
+    return [st.label || "단계", head + (head && rt ? "\n" : "") + rt];
+  });
   const hasDates = !!applyTxt || (g.stages || []).some(st => pd(st.date));
-  const r = g.ratio || {};
-  const ratio = jeong
-    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"]])
-    : ratioHtml([["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#8a4fff"]]);
+  const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   return [
     jeong ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
     ...stageRows,
     ["참고 표시", g.reference && hasDates ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
-    ["모집인원", g.quota], ["전형 방법", g.process], ["반영 비율", ratio], ["참고", g.note]
+    ["모집인원", g.quota], ["전형 방법", g.process],
+    [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)], ["참고", g.note]
   ].filter(r => r && r[1]);
 }
 
@@ -465,7 +474,7 @@ function scrollActive() {
 
 /* ---------- 달력 ---------- */
 const KINDS = { "접수": "#2f6fed", "실기": "#e8336d", "면접": "#8a4fff", "발표": "#1f9d6b", "기타": "#6b7280" };
-let view = "map";
+let view = "cal";
 let calY = new Date().getFullYear(), calM = new Date().getMonth();
 
 function shortName(s) { return s.short || s.name.replace(/대학교$/, "대"); }
@@ -576,7 +585,11 @@ function setView(v) {
   document.getElementById("tabMap").setAttribute("aria-pressed", v === "map");
   document.getElementById("tabCal").setAttribute("aria-pressed", v === "cal");
   if (v === "cal") renderCal();
-  else if (mapReady) setTimeout(() => naver.maps.Event.trigger(map, "resize"), 0);
+  else if (mapReady) setTimeout(() => {
+    naver.maps.Event.trigger(map, "resize");
+    if (activeId && coords[activeId]) map.setCenter(coords[activeId]);
+    else fitToVisible(filtered());
+  }, 0);
 }
 document.getElementById("tabMap").onclick = () => setView("map");
 document.getElementById("tabCal").onclick = () => setView("cal");
