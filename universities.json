@@ -1,0 +1,134 @@
+{
+  "_안내": "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동으로 부여돼요. 필수: name, address. 나머지는 비워도 돼요(빈 항목은 화면에서 숨겨집니다). 마지막 항목 뒤에는 쉼표를 붙이지 마세요.",
+  "checkedAt": "2026-10-08",
+  "schools": [
+    {
+      "name": "한국예술종합학교 영상원",
+      "type": "예술대학",
+      "region": "서울",
+      "dept": "애니메이션과 (영상원)",
+      "address": "서울특별시 성북구 화랑로32길 146-37",
+      "url": "https://www.karts.ac.kr",
+      "admission": {
+        "admissionUrl": "https://www.karts.ac.kr",
+        "seasons": [],
+        "track": [],
+        "schedule": "",
+        "process": "",
+        "practical": "",
+        "note": "",
+        "sources": [
+          [
+            "한예종 홈페이지",
+            "https://www.karts.ac.kr"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "세종대학교",
+      "type": "대학교",
+      "region": "서울",
+      "dept": "창의소프트학부 만화애니메이션텍 전공",
+      "address": "서울특별시 광진구 능동로 209",
+      "url": "https://www.sejong.ac.kr",
+      "admission": {
+        "admissionUrl": "https://ipsi.sejong.ac.kr",
+        "seasons": [
+          "수시"
+        ],
+        "track": [],
+        "schedule": "2027학년도 수시 원서접수: 2026.9.8(화) ~ 9.11(금)",
+        "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
+        "practical": "",
+        "note": "학과가 아니라 창의소프트학부 안의 ‘만화애니메이션텍 전공’이에요. 정시 일정은 입학처 공지를 확인하세요.",
+        "sources": [
+          [
+            "세종대 입학처",
+            "https://ipsi.sejong.ac.kr"
+          ],
+          [
+            "2027 수시 기사(대학저널)",
+            "https://dhnews.co.kr/news/view/1065573352564646"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "청강문화산업대학교",
+      "type": "전문대학",
+      "region": "경기",
+      "dept": "애니메이션학과",
+      "address": "경기도 이천시 마장면 서이천로 389",
+      "url": "https://www.ck.ac.kr",
+      "admission": {
+        "admissionUrl": "https://ipsi.ck.ac.kr",
+        "seasons": [],
+        "track": [],
+        "schedule": "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
+        "process": "[참고: 2026학년도 전공심화(1년 과정) 애니메이션학과] 포트폴리오 심사(모집인원의 1.5배수 선발) → 면접",
+        "practical": "",
+        "note": "참고 일정(2026학년도 전공심화): 원서접수 2025.12.15~12.26, 면접 2026.1.7, 합격자 발표 2026.1.16",
+        "sources": [
+          [
+            "청강대 입학처",
+            "https://ipsi.ck.ac.kr"
+          ],
+          [
+            "전공심화 전형안내(PDF)",
+            "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "서울예술대학교",
+      "type": "예술대학",
+      "region": "경기",
+      "dept": "애니메이션 관련 전공",
+      "address": "경기도 안산시 단원구 예술대학로 171",
+      "url": "https://www.seoularts.ac.kr",
+      "admission": {
+        "admissionUrl": "https://www.seoularts.ac.kr",
+        "seasons": [],
+        "track": [],
+        "schedule": "",
+        "process": "",
+        "practical": "",
+        "note": "",
+        "sources": [
+          [
+            "서울예대 홈페이지",
+            "https://www.seoularts.ac.kr"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "동서대학교",
+      "type": "대학교",
+      "region": "부산",
+      "dept": "영상애니메이션학과",
+      "address": "부산광역시 사상구 주례로 47",
+      "url": "https://www.dongseo.ac.kr",
+      "admission": {
+        "admissionUrl": "https://uni.dongseo.ac.kr/ani/",
+        "seasons": [],
+        "track": [
+          "실기",
+          "비실기"
+        ],
+        "schedule": "",
+        "process": "실기고사로 선발하는 전형과, 학생부종합 등 실기 없이 선발하는 전형이 모두 마련돼 있어요.",
+        "practical": "실기 전형 지원 시 미술 실기 능력이 평가 요소가 돼요.",
+        "note": "",
+        "sources": [
+          [
+            "영상애니메이션학과 입학 FAQ",
+            "https://uni.dongseo.ac.kr/ani/index.php?pCode=faq"
+          ]
+        ]
+      }
+    }
+  ]
+}
