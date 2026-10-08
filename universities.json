@@ -3,10 +3,10 @@
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
-    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별(1차·2차 …) 전형 배열, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio 단계 구분 없이 하나의 비율일 때 쓰는 공통 반영 비율 {grade 내신, practical 실기, interview 면접}, note.",
-    "stages 항목: {label: \"1차\", method: 전형 방법, date: 전형(시험)일, endDate: 기간일 때 종료일(선택), announce: 그 차수의 합격자 발표일, kind: 실기/면접/발표/기타, ratio: {grade 내신, practical 실기, interview 면접}} — 차수마다 전형일·합격자 발표일·반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
+    "admission.susi(수시): quota 모집인원, apply 원서 접수 {start, end, note}, stages 단계별(1차·2차 …) 전형 배열, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio 단계 구분 없이 하나의 비율일 때 쓰는 공통 반영 비율 {document 서류, grade 내신, practical 실기, interview 면접}, note.",
+    "stages 항목: {label: \"1차\", method: 전형 방법, date: 전형(시험)일, endDate: 기간일 때 종료일(선택), announce: 그 차수의 합격자 발표일, kind: 서류/실기/면접/발표/기타, ratio: {document 서류, grade 내신, practical 실기, interview 면접}} — 차수마다 전형일·합격자 발표일·반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
     "admission.jeongsi(정시): 수시와 같은 항목(finalAnnounce 포함) + gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), 공통 ratio {suneung 수능, grade 내신, practical 실기}.",
-    "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(색상)는 실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
+    "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
   ],
@@ -20,7 +20,7 @@
       "address": "서울특별시 성북구 화랑로32길 146-37",
       "url": "https://www.karts.ac.kr",
       "admission": {
-        "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
+        "admissionUrl": "https://www.karts.ac.kr",
         "track": [],
         "process": "",
         "practical": "",
@@ -30,7 +30,7 @@
           "quota": "15명",
           "apply": {
             "start": "2026-09-14",
-            "end": "2026-09-17",
+            "end": "026-09-17",
             "note": ""
           },
           "stages": [
@@ -42,6 +42,7 @@
               "announce": "2026-12-10",
               "kind": "실기",
               "ratio": {
+                "document": "",
                 "grade": "20%",
                 "practical": "80%",
                 "interview": ""
@@ -55,6 +56,7 @@
               "announce": "2026-12-24",
               "kind": "실기",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "50%",
                 "interview": "50%"
@@ -64,6 +66,7 @@
           "finalAnnounce": "2026-12-24",
           "process": "",
           "ratio": {
+            "document": "",
             "grade": "",
             "practical": "",
             "interview": ""
@@ -108,7 +111,7 @@
       "url": "https://www.sejong.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.sejong.ac.kr",
-        "track": ["비실기"],
+        "track": [],
         "process": "",
         "practical": "",
         "note": "학과가 아니라 창의소프트학부 안의 ‘만화애니메이션텍 전공’이에요. 정시 일정은 입학처 공지를 확인하세요.",
@@ -123,13 +126,14 @@
           "stages": [
             {
               "label": "1차",
-              "method": "학생부종합전형[학업역량(30), 창의융햡역량(50), 공동체역량(20)",
+              "method": "학생부종합전형[학업역량(30), 창의융햡역량(50), 공동체역량(20)]",
               "date": "",
               "endDate": "",
               "announce": "2026-11-13",
-              "kind": "",
+              "kind": "서류",
               "ratio": {
-                "grade": "100%",
+                "document": "100%",
+                "grade": "",
                 "practical": "",
                 "interview": ""
               }
@@ -142,6 +146,7 @@
               "announce": "2026-12-18",
               "kind": "면접",
               "ratio": {
+                "document": "",
                 "grade": "60%",
                 "practical": "",
                 "interview": "40%"
@@ -151,6 +156,7 @@
           "finalAnnounce": "2026-12-18",
           "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
           "ratio": {
+            "document": "",
             "grade": "",
             "practical": "",
             "interview": ""
@@ -170,7 +176,7 @@
           "finalAnnounce": "2027-02-05",
           "process": "",
           "ratio": {
-            "suneung": "100%",
+            "suneung": "",
             "grade": "",
             "practical": ""
           },
@@ -218,8 +224,9 @@
               "date": "",
               "endDate": "",
               "announce": "",
-              "kind": "기타",
+              "kind": "서류",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -233,6 +240,7 @@
               "announce": "",
               "kind": "기타",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -242,6 +250,7 @@
           "finalAnnounce": "",
           "process": "",
           "ratio": {
+            "document": "",
             "grade": "",
             "practical": "",
             "interview": ""
@@ -341,8 +350,9 @@
               "date": "",
               "endDate": "",
               "announce": "",
-              "kind": "기타",
+              "kind": "서류",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -356,6 +366,7 @@
               "announce": "",
               "kind": "기타",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -365,6 +376,7 @@
           "finalAnnounce": "",
           "process": "",
           "ratio": {
+            "document": "",
             "grade": "",
             "practical": "",
             "interview": ""
@@ -431,8 +443,9 @@
               "date": "",
               "endDate": "",
               "announce": "",
-              "kind": "기타",
+              "kind": "서류",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -446,6 +459,7 @@
               "announce": "",
               "kind": "기타",
               "ratio": {
+                "document": "",
                 "grade": "",
                 "practical": "",
                 "interview": ""
@@ -455,6 +469,7 @@
           "finalAnnounce": "",
           "process": "",
           "ratio": {
+            "document": "",
             "grade": "",
             "practical": "",
             "interview": ""

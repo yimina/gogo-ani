@@ -78,6 +78,15 @@
   .gh { margin: 6px 0 6px; }
   .gt { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #fff; }
   .gt.s1 { background: var(--blue); } .gt.s2 { background: #1f9d6b; } .gt.s3 { background: #6b7280; }
+  .rkl { line-height: 1.7; }
+  .rk { display: inline-flex; align-items: center; gap: 5px; margin-right: 12px; white-space: nowrap; }
+  .rk i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; }
+  .ann { display: flex; width: fit-content; align-items: center; gap: 8px; margin: 5px 0 3px; padding: 3px 12px 3px 4px; border-radius: 999px; background: #e8f7f0; border: 1px solid #bfe8d4; font-size: 12.5px; }
+  .ann i { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: #1f9d6b; color: #fff; }
+  .ann b { font-weight: 700; }
+  .ann em { font-style: normal; font-size: 11px; font-weight: 700; color: var(--pink); }
+  .ann.final { background: #fff6dc; border-color: #f1d58a; }
+  .ann.final i { background: var(--ink); }
   .rbar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 5px; background: var(--line); max-width: 260px; }
   .rbar i { display: block; min-width: 2px; }
   .detail .srcl { color: var(--blue); }
@@ -331,29 +340,40 @@ function admGroups(a) {
 function ratioHtml(items) {
   const on = items.filter(it => it[1] && String(it[1]).trim());
   if (!on.length) return "";
-  const text = on.map(it => `${it[0]} ${it[1]}`).join(" · ");
+  const text = on.map(it => `<span class="rk"><i style="background:${it[2]}"></i>${it[0]} ${it[1]}</span>`).join("");
   const allNum = on.every(it => /^\d+(\.\d+)?\s*%?$/.test(String(it[1]).trim()));
   const bar = allNum
     ? `<div class="rbar" aria-hidden="true">${on.map(it => `<i style="flex:${parseFloat(it[1])};background:${it[2]}"></i>`).join("")}</div>`
     : "";
-  return `${text}${bar}`;
+  return `<div class="rkl">${text}</div>${bar}`;
 }
 
 function ratioOf(r, jeong) {
   r = r || {};
   return jeong
     ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"]])
-    : ratioHtml([["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#8a4fff"]]);
+    : ratioHtml([["서류", r.document, "#334155"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
+}
+
+function ddayTxt(str) {
+  const d = pd(str); if (!d) return "";
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  const n = Math.round((d - t) / 86400000);
+  return n > 0 ? "D-" + n : n === 0 ? "D-DAY" : "발표 완료";
+}
+function annHtml(str, label, final, ref) {
+  const d = pd(str); if (!d) return "";
+  const dd = ref ? "" : ddayTxt(str);
+  return `<div class="ann${final ? " final" : ""}"><i>${label}</i><b>${fd(d, true)}</b>${dd ? `<em>${dd}</em>` : ""}</div>`;
 }
 
 function groupRows(g, jeong) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
   const stageRows = (g.stages || []).map(st => {
-    const ann = pd(st.announce) ? "합격자 발표 " + fmtRange(st.announce) : "";
-    const head = [st.method, fmtRange(st.date, st.endDate), ann].filter(Boolean).join("\n");
-    const rt = ratioOf(st.ratio, jeong);
-    return [st.label || "단계", head + (head && rt ? "\n" : "") + rt];
+    const head = [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("<br>");
+    const ann = annHtml(st.announce, "발표", false, g.reference);
+    return [st.label || "단계", head + ann + ratioOf(st.ratio, jeong)];
   });
   const hasDates = !!applyTxt || !!pd(g.finalAnnounce) || (g.stages || []).some(st => pd(st.date) || pd(st.announce));
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
@@ -361,7 +381,7 @@ function groupRows(g, jeong) {
     jeong ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
     ...stageRows,
-    ["최종 합격자 발표", fmtRange(g.finalAnnounce)],
+    ["최종 합격자 발표", annHtml(g.finalAnnounce, "최종", true, g.reference)],
     ["참고 표시", g.reference && hasDates ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
     ["모집인원", g.quota], ["전형 방법", g.process],
     [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)], ["참고", g.note]
@@ -413,7 +433,8 @@ function renderList() {
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
       <div class="dept">${s.dept}</div>
       <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
-    li.querySelector("button").onclick = () => select(s.id, true);
+    li.dataset.id = s.id;
+    li.querySelector("button").onclick = () => toggleSchool(s.id);
     ul.appendChild(li);
   });
 }
@@ -441,6 +462,17 @@ function fitToVisible(items) {
 /* ---------- 선택 ---------- */
 function pinIcon(on) {
   return { content: `<div class="pin ${on ? "on" : ""}"></div>`, anchor: new naver.maps.Point(15, 30) };
+}
+function toggleSchool(id) {
+  if (id === activeId) {
+    activeId = null;      // 이미 펼쳐진 학교를 다시 누르면 접기
+    renderList();
+    closeInfo();
+  } else {
+    select(id, true);
+  }
+  const b = document.querySelector(`#list li[data-id="${id}"] button`);
+  if (b) b.focus({ preventScroll: true });
 }
 function closeInfo() {
   if (infoWindow) infoWindow.close();
@@ -475,7 +507,7 @@ function scrollActive() {
 }
 
 /* ---------- 달력 ---------- */
-const KINDS = { "접수": "#2f6fed", "실기": "#e8336d", "면접": "#8a4fff", "발표": "#1f9d6b", "기타": "#6b7280" };
+const KINDS = { "접수": "#2f6fed", "서류": "#334155", "실기": "#e8336d", "면접": "#f59e0b", "발표": "#1f9d6b", "기타": "#9ca3af" };
 let view = "cal";
 let calY = new Date().getFullYear(), calM = new Date().getMonth();
 
