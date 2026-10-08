@@ -118,16 +118,16 @@
           "apply": {
             "start": "2026-09-08",
             "end": "2026-09-11",
-            "note": "수시"
+            "note": ""
           },
           "stages": [
             {
               "label": "1차",
-              "method": "학생부종합전형",
+              "method": "학생부종합전형[학업역량(30), 창의융햡역량(50), 공동체역량(20)",
               "date": "",
               "endDate": "",
               "announce": "2026-11-13",
-              "kind": "기타",
+              "kind": "",
               "ratio": {
                 "grade": "100%",
                 "practical": "",
@@ -140,7 +140,7 @@
               "date": "2026-11-21",
               "endDate": "",
               "announce": "2026-12-18",
-              "kind": "기타",
+              "kind": "면접",
               "ratio": {
                 "grade": "60%",
                 "practical": "",
