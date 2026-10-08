@@ -1,5 +1,13 @@
 {
-  "_안내": "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동으로 부여돼요. 필수: name, address. 나머지는 비워도 돼요(빈 항목은 화면에서 숨겨집니다). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. admission.quota는 모집인원(예: \"10명\", \"수시 12명 / 정시 8명\")을 자유롭게 문자열로 적으면 돼요. 몇 학년도 기준인지도 함께 적어두세요. 일정은 apply(원서 접수), exam(실기 일정), schedule(면접·합격자 발표 등 기타 일정)로 나눠 적어요. 반영 비율은 gradeRatio(고교 내신·학생부 반영)와 practicalRatio(실기 반영)에 \"40%\", \"1단계 실기 100% / 2단계 실기 60%\"처럼 자유롭게 적으세요. 전형별로 다르면 전형 이름도 함께 적어두세요.",
+  "_안내": [
+    "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
+    "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요.",
+    "short: 달력에 표시할 짧은 학교 이름 (예: 세종대).",
+    "admission.apply: 원서 접수 기간 {start, end, note}. end가 없으면 하루짜리로 봐요.",
+    "admission.stages: 1차·2차 등 단계별 전형 [{label, method, date, endDate(선택), kind}]. kind는 실기 / 면접 / 발표 / 기타 중 하나이고 달력 색상을 결정해요. 합격자 발표도 단계로 추가하면 달력에 표시돼요.",
+    "admission.reference: true 이면 이전 학년도 일정을 참고용으로 표시한 것이라는 뜻이에요 (달력에서 점선으로 표시).",
+    "admission.quota 모집인원, gradeRatio 내신 반영, practicalRatio 실기 반영, process 전형 방법 요약(단계 구분이 어려울 때), schedule 기타 일정 메모 — 모두 자유 문자열이에요."
+  ],
   "checkedAt": "2026-10-08",
   "schools": [
     {
@@ -10,25 +18,31 @@
       "address": "서울특별시 성북구 화랑로32길 146-37",
       "url": "https://www.karts.ac.kr",
       "admission": {
-        "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-        "seasons": ["수시"],
-        "track": ["실기"],
-        "apply": "2026.9.14(월)~17(목)",
-        "exam": "[1차:2026.11.28(토)~29(일)], [2차:2026.12.15(화)~22(화)]",
-        "schedule": "[1차:2026.12.10(목)], [최종:2026.12.24(목)]",
-        "quota": "15명",
-        "process": "[1차:스토리구성과 연출력 중심평가(180분)], [2차:내러티브, 드로잉, 연출력 중심평가(360분), 구슬]",
-        "gradeRatio": "[1차 : 20], [2차: x]",
-        "practicalRatio": "[1차 : 80], [2차 : 실기(50), 구슬(50)]",
-        "practical": "재료 및 색상 : 자유선택, 8절 스케치북, 4절 켄트지 :학교제공",
-        "note": "인체 드로잉과 기본기, 내러티브(Narrative) 드로잉과 연출력, 에세이",
+        "admissionUrl": "https://www.karts.ac.kr",
+        "seasons": [],
+        "track": [],
+        "reference": false,
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "stages": [],
+        "schedule": "",
+        "quota": "",
+        "process": "",
+        "gradeRatio": "",
+        "practicalRatio": "",
+        "practical": "",
+        "note": "",
         "sources": [
           [
             "한예종 홈페이지",
             "https://www.karts.ac.kr"
           ]
         ]
-      }
+      },
+      "short": "한예종"
     },
     {
       "name": "세종대학교",
@@ -43,8 +57,13 @@
           "수시"
         ],
         "track": [],
-        "apply": "2027학년도 수시: 2026.9.8(화) ~ 9.11(금)",
-        "exam": "",
+        "reference": false,
+        "apply": {
+          "start": "2026-09-08",
+          "end": "2026-09-11",
+          "note": "2027학년도 수시"
+        },
+        "stages": [],
         "schedule": "",
         "quota": "",
         "process": "학생부종합(세종인재) 전형 가이드북에 만화애니메이션텍 전공 면접 기출이 안내돼 있어요. 전공별 모집 전형·인원은 모집요강에서 확인하세요.",
@@ -62,7 +81,8 @@
             "https://dhnews.co.kr/news/view/1065573352564646"
           ]
         ]
-      }
+      },
+      "short": "세종대"
     },
     {
       "name": "청강문화산업대학교",
@@ -75,15 +95,42 @@
         "admissionUrl": "https://ipsi.ck.ac.kr",
         "seasons": [],
         "track": [],
-        "apply": "[참고: 2026학년도 전공심화] 2025.12.15(월) ~ 12.26(금)",
-        "exam": "",
+        "reference": true,
+        "apply": {
+          "start": "2025-12-15",
+          "end": "2025-12-26",
+          "note": "2026학년도 전공심화(1년 과정)"
+        },
+        "stages": [
+          {
+            "label": "1차",
+            "method": "포트폴리오 심사 (모집인원의 1.5배수 선발)",
+            "date": "",
+            "endDate": "",
+            "kind": "기타"
+          },
+          {
+            "label": "2차",
+            "method": "면접",
+            "date": "2026-01-07",
+            "endDate": "",
+            "kind": "면접"
+          },
+          {
+            "label": "합격자 발표",
+            "method": "",
+            "date": "2026-01-16",
+            "endDate": "",
+            "kind": "발표"
+          }
+        ],
         "schedule": "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
         "quota": "[참고: 2026학년도 전공심화(1년 과정)] 57명",
-        "process": "[참고: 2026학년도 전공심화(1년 과정) 애니메이션학과] 포트폴리오 심사(모집인원의 1.5배수 선발) → 면접",
+        "process": "",
         "gradeRatio": "",
         "practicalRatio": "",
         "practical": "",
-        "note": "참고 일정(2026학년도 전공심화): 면접 2026.1.7, 합격자 발표 2026.1.16",
+        "note": "",
         "sources": [
           [
             "청강대 입학처",
@@ -94,7 +141,8 @@
             "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
           ]
         ]
-      }
+      },
+      "short": "청강대"
     },
     {
       "name": "서울예술대학교",
@@ -107,8 +155,13 @@
         "admissionUrl": "https://www.seoularts.ac.kr",
         "seasons": [],
         "track": [],
-        "apply": "",
-        "exam": "",
+        "reference": false,
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "stages": [],
         "schedule": "",
         "quota": "",
         "process": "",
@@ -122,7 +175,8 @@
             "https://www.seoularts.ac.kr"
           ]
         ]
-      }
+      },
+      "short": "서울예대"
     },
     {
       "name": "동서대학교",
@@ -138,8 +192,13 @@
           "실기",
           "비실기"
         ],
-        "apply": "",
-        "exam": "",
+        "reference": false,
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "stages": [],
         "schedule": "",
         "quota": "",
         "process": "실기고사로 선발하는 전형과, 학생부종합 등 실기 없이 선발하는 전형이 모두 마련돼 있어요.",
@@ -153,7 +212,8 @@
             "https://uni.dongseo.ac.kr/ani/index.php?pCode=faq"
           ]
         ]
-      }
+      },
+      "short": "동서대"
     }
   ]
 }

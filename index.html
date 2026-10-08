@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>만화, 애니메이션 대학 지도</title>
+<title>애니메이션 대학 지도</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -121,6 +121,45 @@
   }
   .pin.on { background: var(--blue); }
 
+  /* 보기 전환 탭 */
+  .viewtabs { position: absolute; top: 10px; left: 10px; z-index: 6; display: flex; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(20,33,61,.25); overflow: hidden; }
+  .vt { font: inherit; font-size: 13.5px; font-weight: 500; padding: 8px 16px; border: 0; background: #fff; color: var(--sub); cursor: pointer; }
+  .vt.on { background: var(--ink); color: #fff; }
+  .vt:focus-visible { outline: 3px solid rgba(47,111,237,.5); outline-offset: -3px; }
+
+  /* 달력 */
+  .cal { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); padding: 58px 18px 24px; }
+  .cal[hidden] { display: none; }
+  body.cal-mode #map, body.cal-mode .map-msg { display: none !important; }
+  .cal-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .cal-title { font-family: "Do Hyeon", sans-serif; font-size: 26px; margin: 0 8px 0 0; font-weight: 400; }
+  .cal-btn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
+  .cal-btn:hover { border-color: var(--ink); }
+  .cal-btn:focus-visible { outline: 3px solid rgba(47,111,237,.35); }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--sub); margin: 0 0 10px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
+  .dow { padding: 6px 0; text-align: center; font-size: 12px; color: var(--sub); background: #f5f7fb; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .dow:first-child { color: #d0345f; } .dow:nth-child(7) { color: var(--blue); }
+  .day { min-height: 92px; padding: 4px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .day.out { background: #fafbfd; } .day.out .dn { color: #aab3c2; }
+  .dn { font-size: 12px; font-weight: 500; color: var(--ink); padding: 1px 3px; align-self: flex-start; }
+  .day.today .dn { background: var(--ink); color: #fff; border-radius: 10px; padding: 1px 7px; }
+  .ev { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; font-size: 11px; line-height: 1.35; padding: 2px 5px; border-radius: 4px; border-left: 3px solid var(--kc); background: color-mix(in srgb, var(--kc) 14%, #fff); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ev:hover { background: color-mix(in srgb, var(--kc) 28%, #fff); }
+  .ev:focus-visible { outline: 3px solid rgba(47,111,237,.45); outline-offset: 1px; }
+  .ev.ref { border-left-style: dashed; background: #fff; border: 1px dashed var(--kc); border-left-width: 3px; }
+  .more { font-size: 11px; color: var(--sub); padding-left: 4px; }
+  .mlist { margin-top: 16px; }
+  .mlist h3 { font-size: 14px; margin: 0 0 8px; }
+  .mitem { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 12px 120px 1fr; gap: 10px; align-items: baseline; width: 100%; cursor: pointer; padding: 9px 10px; margin-bottom: 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; }
+  .mitem:hover { border-color: var(--ink); }
+  .mitem:focus-visible { outline: 3px solid rgba(47,111,237,.45); }
+  .mdot { width: 10px; height: 10px; border-radius: 3px; background: var(--kc); align-self: center; }
+  .mdate { color: var(--sub); font-size: 12.5px; }
+  .mref { font-size: 11px; color: var(--sub); border: 1px dashed var(--line); border-radius: 4px; padding: 0 5px; margin-left: 6px; }
+  .mnone { font-size: 13px; color: var(--sub); line-height: 1.7; padding: 14px; background: #fff; border: 1px dashed var(--line); border-radius: 8px; }
+
   .ftoggle { display: none; }
   @media (max-width: 820px) {
     html, body { height: auto; }
@@ -135,6 +174,14 @@
     }
     #filterBox { display: none; }
     #filterBox.open { display: block; }
+    body.cal-mode main { position: static; height: auto; min-height: 0; }
+    body.cal-mode .cal { position: static; overflow: visible; padding: 58px 12px 20px; }
+    body.cal-mode li { scroll-margin-top: 8px; }
+    .day { min-height: 64px; padding: 2px; }
+    .ev { font-size: 10px; padding: 1px 3px; }
+    .mitem { grid-template-columns: 12px 1fr; }
+    .mitem .mtxt { grid-column: 2; }
+    .cal-title { font-size: 22px; }
   }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -162,7 +209,12 @@
     <div class="note">※ 학과명·입시 정보는 변경될 수 있으니 학교 공식 사이트에서 꼭 확인하세요.</div>
   </aside>
   <main>
+    <div class="viewtabs" role="group" aria-label="보기 전환">
+      <button type="button" class="vt on" id="tabMap" aria-pressed="true">지도</button>
+      <button type="button" class="vt" id="tabCal" aria-pressed="false">달력</button>
+    </div>
     <div id="map"></div>
+    <div id="cal" class="cal" hidden></div>
     <div class="map-msg" id="mapMsg"></div>
   </main>
 </div>
@@ -232,12 +284,41 @@ function filtered() {
 }
 
 /* ---------- 목록 + 마커 렌더 ---------- */
+const WD = ["일", "월", "화", "수", "목", "금", "토"];
+function pd(str) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(str || "")) return null;
+  const [y, m, d] = str.split("-").map(Number);
+  const dt = new Date(y, m - 1, d);
+  return dt.getMonth() === m - 1 ? dt : null;
+}
+function fd(dt, withYear) {
+  return (withYear ? dt.getFullYear() + "." : "") + (dt.getMonth() + 1) + "." + dt.getDate() + "(" + WD[dt.getDay()] + ")";
+}
+function fmtRange(a, b) {
+  const s = pd(a); if (!s) return "";
+  const e = pd(b);
+  if (!e || +e === +s) return fd(s, true);
+  return fd(s, true) + " ~ " + fd(e, e.getFullYear() !== s.getFullYear());
+}
+
 function admissionHtml(s) {
   const a = ADMISSION[s.id] || {};
+  const ap = a.apply || {};
+  const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
+  const stageRows = (a.stages || []).map(st => {
+    const when = fmtRange(st.date, st.endDate);
+    return [st.label || "단계", [st.method, when].filter(Boolean).join("\n")];
+  });
+  const hasDates = !!applyTxt || (a.stages || []).some(st => pd(st.date));
   const rows = [
     ["전형 시기", (a.seasons || []).join(" · ")],
-    ["실기 여부", (a.track || []).length ? (a.track.join(" · ") + " 전형" ) : ""],
-    ["원서 접수", a.apply], ["실기 일정", a.exam], ["합격자 발표", a.schedule], ["모집인원", a.quota], ["전형 방법", a.process], ["내신 반영", a.gradeRatio], ["실기 반영", a.practicalRatio], ["실기·준비물", a.practical], ["참고", a.note]
+    ["실기 여부", (a.track || []).length ? (a.track.join(" · ") + " 전형") : ""],
+    ["원서 접수", applyTxt],
+    ...stageRows,
+    ["참고 표시", a.reference && hasDates ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
+    ["기타 일정", a.schedule], ["모집인원", a.quota], ["전형 방법", a.process],
+    ["내신 반영", a.gradeRatio], ["실기 반영", a.practicalRatio],
+    ["실기·준비물", a.practical], ["참고", a.note]
   ].filter(r => r[1]);
   const body = rows.length
     ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`
@@ -277,6 +358,7 @@ function renderList() {
 
 function render() {
   renderList();
+  if (view === "cal") renderCal();
   if (mapReady) {
     const items = filtered();
     const visible = new Set(items.map(s => s.id));
@@ -329,6 +411,121 @@ function scrollActive() {
   const on = document.querySelector("#list li.active");
   if (on) on.scrollIntoView({ block: "nearest" });
 }
+
+/* ---------- 달력 ---------- */
+const KINDS = { "접수": "#2f6fed", "실기": "#e8336d", "면접": "#8a4fff", "발표": "#1f9d6b", "기타": "#6b7280" };
+let view = "map";
+let calY = new Date().getFullYear(), calM = new Date().getMonth();
+
+function shortName(s) { return s.short || s.name.replace(/대학교$/, "대"); }
+function dkey(dt) { return dt.getFullYear() + "-" + dt.getMonth() + "-" + dt.getDate(); }
+
+function buildEvents(schools) {
+  const ev = [];
+  schools.forEach(s => {
+    const a = ADMISSION[s.id] || {};
+    const ref = !!a.reference;
+    const ap = a.apply || {};
+    const as = pd(ap.start);
+    if (as) ev.push({ sid: s.id, school: shortName(s), title: "원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+    (a.stages || []).forEach(st => {
+      const ds = pd(st.date);
+      if (!ds) return;
+      const kind = KINDS[st.kind] ? st.kind : "기타";
+      ev.push({ sid: s.id, school: shortName(s), title: st.label || "전형", method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
+    });
+  });
+  ev.forEach(e => { if (e.end < e.start) e.end = e.start; });
+  return ev.sort((x, y) => x.start - y.start || x.school.localeCompare(y.school));
+}
+
+function initCalMonth() {
+  // 오늘 이후 가장 가까운 일정이 있는 달, 없으면 가장 마지막 일정이 있는 달, 그것도 없으면 이번 달
+  const ev = buildEvents(SCHOOLS);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const upcoming = ev.find(e => e.end >= today);
+  const pick = upcoming ? upcoming.start < today ? today : upcoming.start : ev.length ? ev[ev.length - 1].start : today;
+  calY = pick.getFullYear(); calM = pick.getMonth();
+}
+
+function renderCal() {
+  const box = document.getElementById("cal");
+  const events = buildEvents(filtered());
+  const first = new Date(calY, calM, 1);
+  const daysIn = new Date(calY, calM + 1, 0).getDate();
+  const rows = Math.ceil((first.getDay() + daysIn) / 7);
+  const gridStart = new Date(calY, calM, 1 - first.getDay());
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  // 날짜별 이벤트
+  const byDay = {};
+  events.forEach(e => {
+    const d = new Date(e.start);
+    for (let i = 0; i < 62 && d <= e.end; i++) {
+      (byDay[dkey(d)] = byDay[dkey(d)] || []).push(e);
+      d.setDate(d.getDate() + 1);
+    }
+  });
+
+  const evBtn = e => `<button type="button" class="ev${e.ref ? " ref" : ""}" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}" title="${e.school} ${e.title}${e.method ? " · " + e.method : ""}${e.ref ? " (참고)" : ""}">${e.school} ${e.title}</button>`;
+
+  let cells = "";
+  for (let i = 0; i < rows * 7; i++) {
+    const d = new Date(gridStart); d.setDate(gridStart.getDate() + i);
+    const list = byDay[dkey(d)] || [];
+    const cls = ["day", d.getMonth() !== calM ? "out" : "", +d === +today ? "today" : ""].join(" ");
+    cells += `<div class="${cls}"><span class="dn">${d.getDate()}</span>${list.slice(0, 3).map(evBtn).join("")}${list.length > 3 ? `<span class="more">+${list.length - 3}개 더</span>` : ""}</div>`;
+  }
+
+  // 이번 달 일정 목록
+  const mStart = new Date(calY, calM, 1), mEnd = new Date(calY, calM, daysIn);
+  const inMonth = events.filter(e => e.end >= mStart && e.start <= mEnd);
+  const mlist = inMonth.length
+    ? inMonth.map(e => `<button type="button" class="mitem" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}">
+        <span class="mdot"></span><span class="mdate">${fmtRange(toStr(e.start), toStr(e.end))}</span>
+        <span class="mtxt"><b>${e.school}</b> ${e.title}${e.method ? " · " + e.method : ""}${e.ref ? '<span class="mref">참고</span>' : ""}</span></button>`).join("")
+    : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
+
+  box.innerHTML = `
+    <div class="cal-head">
+      <h2 class="cal-title">${calY}년 ${calM + 1}월</h2>
+      <button type="button" class="cal-btn" data-nav="-1" aria-label="이전 달">‹ 이전</button>
+      <button type="button" class="cal-btn" data-nav="0">오늘</button>
+      <button type="button" class="cal-btn" data-nav="1" aria-label="다음 달">다음 ›</button>
+    </div>
+    <div class="legend">${Object.entries(KINDS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")}<span>점선 = 이전 학년도 참고 일정</span></div>
+    <div class="grid">${WD.map(w => `<div class="dow">${w}</div>`).join("")}${cells}</div>
+    <div class="mlist"><h3>${calM + 1}월 전형 일정 (${inMonth.length}건)</h3>${mlist}</div>`;
+}
+function toStr(dt) {
+  return dt.getFullYear() + "-" + String(dt.getMonth() + 1).padStart(2, "0") + "-" + String(dt.getDate()).padStart(2, "0");
+}
+
+document.getElementById("cal").addEventListener("click", e => {
+  const nav = e.target.closest("[data-nav]");
+  if (nav) {
+    const n = +nav.dataset.nav;
+    if (n === 0) { const t = new Date(); calY = t.getFullYear(); calM = t.getMonth(); }
+    else { const d = new Date(calY, calM + n, 1); calY = d.getFullYear(); calM = d.getMonth(); }
+    renderCal(); return;
+  }
+  const ev = e.target.closest("[data-sid]");
+  if (ev) select(+ev.dataset.sid, true);
+});
+
+function setView(v) {
+  view = v;
+  document.body.classList.toggle("cal-mode", v === "cal");
+  document.getElementById("cal").hidden = v !== "cal";
+  document.getElementById("tabMap").classList.toggle("on", v === "map");
+  document.getElementById("tabCal").classList.toggle("on", v === "cal");
+  document.getElementById("tabMap").setAttribute("aria-pressed", v === "map");
+  document.getElementById("tabCal").setAttribute("aria-pressed", v === "cal");
+  if (v === "cal") renderCal();
+  else if (mapReady) setTimeout(() => naver.maps.Event.trigger(map, "resize"), 0);
+}
+document.getElementById("tabMap").onclick = () => setView("map");
+document.getElementById("tabCal").onclick = () => setView("cal");
 
 /* ---------- 네이버 지도 초기화 ---------- */
 function showMapMessage(html) {
@@ -393,7 +590,7 @@ document.getElementById("ftoggle").onclick = function () {
 };
 
 loadData()
-  .then(() => { buildAllChips(); render(); loadNaver(); })
+  .then(() => { buildAllChips(); initCalMonth(); render(); loadNaver(); })
   .catch(err => {
     console.error(err);
     document.getElementById("list").innerHTML =
