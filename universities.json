@@ -38,9 +38,9 @@
           "note": "",
           "types": [
             {
-              "name": "학생부종합",
-              "short": "학종",
-              "quota": "12명",
+              "name": "일반전형",
+              "short": "",
+              "quota": "15명",
               "apply": {
                 "start": "",
                 "end": "",
@@ -87,9 +87,9 @@
               "note": ""
             },
              {
-              "name": "면접",
-              "short": "면접",
-              "quota": "22명",
+              "name": "",
+              "short": "",
+              "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
