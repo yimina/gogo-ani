@@ -178,7 +178,7 @@
         "track": ["비실기"],
         "process": "",
         "practical": "",
-        "note": "창의소프트학부 [만화애니메이션텍 전공]",
+        "note": "창의소프트학부-[만화애니메이션텍 전공]",
         "susi": {
           "reference": false,
           "quota": "48명",
@@ -629,140 +629,36 @@
       "short": "청강대"
     },
     {
-      "name": "서울예술대학교",
-      "type": "예술대학",
-      "region": "경기",
-      "dept": "애니메이션 관련 전공",
-      "address": "경기도 안산시 단원구 예술대학로 171",
-      "url": "https://www.seoularts.ac.kr",
-      "admission": {
-        "admissionUrl": "https://www.seoularts.ac.kr",
-        "track": [],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "finalAnnounce": "",
-          "note": "",
-          "types": [
-            {
-              "name": "",
-              "short": "",
-              "quota": "",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "1차",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "서류",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "2차",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "기타",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "",
-          "quota": "",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "",
-          "process": "",
-          "ratio": {
-            "suneung": "",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "서울예대 홈페이지",
-            "https://www.seoularts.ac.kr"
-          ]
-        ]
-      },
-      "short": "서울예대"
-    },
-    {
-      "name": "동서대학교",
+      "name": "한성대학교",
       "type": "대학교",
-      "region": "부산",
+      "region": "서울",
       "dept": "영상애니메이션학과",
-      "address": "부산광역시 사상구 주례로 47",
-      "url": "https://www.dongseo.ac.kr",
+      "address": "서울특별시 성북구 삼선교로 16길 116",
+      "url": "https://enter.hansung.ac.kr/",
       "admission": {
-        "admissionUrl": "https://uni.dongseo.ac.kr/ani/",
+        "admissionUrl": "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25",
         "track": [
           "실기",
           "비실기"
         ],
-        "process": "실기고사로 선발하는 전형과, 학생부종합 등 실기 없이 선발하는 전형이 모두 마련돼 있어요.",
-        "practical": "실기 전형 지원 시 미술 실기 능력이 평가 요소가 돼요.",
+        "process": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
+        "practical": "",
         "note": "",
         "susi": {
           "reference": false,
-          "quota": "",
+          "quota": "86명",
           "apply": {
-            "start": "",
-            "end": "",
+            "start": "2026-09-07",
+            "end": "2026-09-11",
             "note": ""
           },
-          "finalAnnounce": "",
+          "finalAnnounce": "2026-11-06",
           "note": "",
           "types": [
             {
-              "name": "",
+              "name": "실기우수자전형",
               "short": "",
-              "quota": "",
+              "quota": "86명",
               "apply": {
                 "start": "",
                 "end": "",
@@ -770,26 +666,26 @@
               },
               "stages": [
                 {
-                  "label": "1차",
-                  "method": "",
-                  "date": "",
+                  "label": "",
+                  "method": "주어진 소재의 조형적 특징을 이요하여 화면을 구성",
+                  "date": "2026-10-18",
                   "endDate": "",
                   "announce": "",
-                  "kind": "서류",
+                  "kind": "실기",
                   "ratio": {
                     "document": "",
-                    "grade": "",
-                    "practical": "",
+                    "grade": "20",
+                    "practical": "80",
                     "interview": ""
                   }
                 },
                 {
-                  "label": "2차",
+                  "label": "",
                   "method": "",
                   "date": "",
                   "endDate": "",
                   "announce": "",
-                  "kind": "기타",
+                  "kind": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
@@ -812,18 +708,18 @@
         },
         "jeongsi": {
           "reference": false,
-          "gun": "",
-          "quota": "",
+          "gun": "가군",
+          "quota": "4명",
           "apply": {
-            "start": "",
-            "end": "",
+            "start": "2027-01-04",
+            "end": "2027-01-07",
             "note": ""
           },
           "stages": [],
-          "finalAnnounce": "",
+          "finalAnnounce": "2027-02-05",
           "process": "",
           "ratio": {
-            "suneung": "",
+            "suneung": "100",
             "grade": "",
             "practical": ""
           },
@@ -832,12 +728,12 @@
         "etc": [],
         "sources": [
           [
-            "영상애니메이션학과 입학 FAQ",
-            "https://uni.dongseo.ac.kr/ani/index.php?pCode=faq"
+            "한성대학교 입학처",
+            "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25"
           ]
         ]
       },
-      "short": "동서대"
+      "short": "한성대"
     }
   ]
 }
