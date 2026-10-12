@@ -17,7 +17,7 @@
       "name": "한국예술종합학교",
       "type": "예술대학",
       "region": "서울",
-      "dept": "애니메이션과 (영상원)",
+      "dept": "영상원-[애니메이션과]",
       "address": "서울특별시 성북구 화랑로32길 146-37",
       "url": "https://www.karts.ac.kr",
       "admission": {
@@ -1161,6 +1161,126 @@
         ]
       },
       "short": "대진대"
+    },
+    {
+      "name": "건국대학교",
+      "type": "대학교",
+      "region": "서울",
+      "dept": "예술디자인대학-[영상디자인학과]",
+      "address": "서울시 광진구 능동로 120",
+      "url": "https://www.konkuk.ac.kr/konkuk/2595/subview.do",
+      "admission": {
+        "admissionUrl": "https://admission.konkuk.ac.kr/admission/index.do",
+        "track": [
+          "실기"
+        ],
+        "process": "",
+        "practical": "",
+        "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "명",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "finalAnnounce": "",
+          "note": "",
+          "types": [
+            {
+              "name": "",
+              "short": "",
+              "quota": "",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            }
+          ]
+        },
+        "jeongsi": {
+          "reference": true,
+          "gun": "다군",
+          "quota": "35명",
+          "apply": {
+            "start": "2027-01-05",
+            "end": "2027-01-07",
+            "note": ""
+          },
+          "stages": [ {
+                  "label": "실기",
+                  "method": "[기초디자인]기초 조형능력을 평가할 수 있는 주제해석과 표현",
+                  "date": "2027-01-25",
+                  "endDate": "",
+                  "announce": "2027-02-05",
+                  "kind": "실기",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "suneung": "60",
+                    "practical": "40",
+                    "interview": ""
+                  }}],
+          "finalAnnounce": "",
+          "process": "수능반응비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)",
+          "date" : "2027-01-25",
+          "ratio": {
+            "suneung": "20",
+            "grade": "",
+            "practical": "80"
+          },
+          "note": ""
+        },
+        "etc": [],
+        "sources": [
+          [
+            "건국대 입학처",
+            "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
+          ]
+        ]
+      },
+      "short": "건국대"
     }
   ]
 }
