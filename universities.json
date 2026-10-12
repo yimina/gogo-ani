@@ -216,7 +216,7 @@
                 },
                 {
                   "label": "2차",
-                  "method": "다수의 면접위원이 지원자 1인에 대한 면접 진행(9분내외)",
+                  "method": "다수 면접위원 vs 지원자 1인 (9분내외)",
                   "date": "2026-11-21",
                   "endDate": "",
                   "announce": "",
@@ -328,29 +328,29 @@
       "type": "전문대학",
       "region": "경기",
       "dept": "애니메이션학과",
-      "address": "경기도 이천시 마장면 서이천로 389",
+      "address": "경기 이천시 마장면 청강가창로 389-94",
       "url": "https://www.ck.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.ck.ac.kr",
-        "track": [],
+        "track": ["실기"],
         "process": "",
         "practical": "",
-        "note": "2027학년도 3월 신입학 모집이 진행 중이에요. 일반 전형 일정은 입학처 공지를 확인하세요.",
+        "note": "애니메이션스쿨-[애니메이션]",
         "susi": {
           "reference": false,
-          "quota": "",
+          "quota": "238명",
           "apply": {
-            "start": "",
-            "end": "",
+            "start": "2026-09-07",
+            "end": "2026-09-30",
             "note": ""
           },
-          "finalAnnounce": "",
+          "finalAnnounce": "2026-12-18",
           "note": "",
           "types": [
             {
-              "name": "",
+              "name": "학생부교과",
               "short": "",
-              "quota": "",
+              "quota": "16명",
               "apply": {
                 "start": "",
                 "end": "",
@@ -358,7 +358,7 @@
               },
               "stages": [
                 {
-                  "label": "1차",
+                  "label": "",
                   "method": "",
                   "date": "",
                   "endDate": "",
@@ -366,18 +366,67 @@
                   "kind": "서류",
                   "ratio": {
                     "document": "",
-                    "grade": "",
+                    "grade": "100",
                     "practical": "",
                     "interview": ""
                   }
                 },
                 {
-                  "label": "2차",
+                  "label": "",
                   "method": "",
                   "date": "",
                   "endDate": "",
                   "announce": "",
-                  "kind": "기타",
+                  "kind": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            }
+            {
+              "name": "실기",
+              "short": "",
+              "quota": "90명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "",
+                  "method": "A형:스토리ㅣ, B형:상황표현, C형:제스처 드로잉",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "서류",
+                  "ratio": {
+                    "document": "",
+                    "grade": "40",
+                    "practical": "60",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
