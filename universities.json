@@ -11,10 +11,10 @@
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
   ],
-  "checkedAt": "2026-10-08",
+  "checkedAt": "2026-10-12",
   "schools": [
     {
-      "name": "한국예술종합학교 영상원",
+      "name": "한국예술종합학교",
       "type": "예술대학",
       "region": "서울",
       "dept": "애니메이션과 (영상원)",
@@ -841,7 +841,7 @@
       },
       "short": "명지대"
     },
-        {
+    {
       "name": "경기대학교",
       "type": "대학교",
       "region": "경기",
@@ -941,12 +941,119 @@
         "etc": [],
         "sources": [
           [
-            "명지대학교 입학처",
-            "https://iphak.mju.ac.kr/pages/?p=10&mj=01"
+            "경기대학교 입학처",
+            "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120"
           ]
         ]
       },
-      "short": "명지대"
+      "short": "경기대"
+    },
+    {
+      "name": "예원예술대학교(경기드림캠퍼스)",
+      "type": "대학교",
+      "region": "경기",
+      "dept": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
+      "address": "경기 양주시 은현면 예원대학로 56",
+      "url": "https://enter.kyonggi.ac.kr/",
+      "admission": {
+        "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
+        "track": [
+          "실기"
+        ],
+        "process": "",
+        "practical": "",
+        "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "25명",
+          "apply": {
+            "start": "2026-09-07",
+            "end": "2026-09-11",
+            "note": ""
+          },
+          "finalAnnounce": "2026-11-09",
+          "note": "",
+          "types": [
+            {
+              "name": "실기",
+              "short": "",
+              "quota": "25명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "실기",
+                  "method": "칸만화, 상황표현, 기초디자인(택1)",
+                  "date": "2026-10-17",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "실기",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "100",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            }
+          ]
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "",
+          "quota": "",
+          "apply": {
+            "start": "",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "finalAnnounce": "",
+          "process": "",
+          "date" : "",
+          "ratio": {
+            "suneung": "",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
+        "sources": [
+          [
+            "예원예술대 입학처",
+            "https://admission.yewon.ac.kr/main/"
+          ]
+        ]
+      },
+      "short": "예원예술대"
     }
   ]
 }
