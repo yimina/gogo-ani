@@ -736,7 +736,7 @@
       "short": "한성대"
     }, 
     {
-      "name": "명지대학교",
+      "name": "명지대학교(용인캠퍼스)",
       "type": "대학교",
       "region": "경기",
       "dept": "디자인학부-[영상,애니메이션디자인디자인전공]",
@@ -842,7 +842,7 @@
       "short": "명지대"
     },
     {
-      "name": "경기대학교",
+      "name": "경기대학교(수원캠퍼스)",
       "type": "대학교",
       "region": "경기",
       "dept": "관광문화대학-[애니메이션학과]",
@@ -949,7 +949,7 @@
       "short": "경기대"
     },
     {
-      "name": "예원예술대학교(경기드림캠퍼스)",
+      "name": "예원예술대학교(양주캠퍼스)",
       "type": "대학교",
       "region": "경기",
       "dept": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
@@ -1054,6 +1054,113 @@
         ]
       },
       "short": "예원예술대"
+    },
+     {
+      "name": "대진대학교",
+      "type": "대학교",
+      "region": "경기",
+      "dept": "인문예술대학-[미술만화게임학부]",
+      "address": "경기도 포천시 호국로 1007",
+      "url": "https://admission.daejin.ac.kr/",
+      "admission": {
+        "admissionUrl": "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&",
+        "track": [
+          "실기"
+        ],
+        "process": "",
+        "practical": "",
+        "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "30명",
+          "apply": {
+            "start": "2026-09-07",
+            "end": "2026-09-11",
+            "note": ""
+          },
+          "finalAnnounce": "2026-11-13",
+          "note": "",
+          "types": [
+            {
+              "name": "실기우수자전형",
+              "short": "",
+              "quota": "30명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "실기우수자전형",
+                  "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
+                  "date": "2026-10-24",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "실기",
+                  "ratio": {
+                    "document": "",
+                    "grade": "20",
+                    "practical": "80",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "",
+                  "method": "",
+                  "date": "",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            }
+          ]
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "다군",
+          "quota": "15명",
+          "apply": {
+            "start": "2027-12-29",
+            "end": "",
+            "note": ""
+          },
+          "stages": [],
+          "finalAnnounce": "",
+          "process": "",
+          "date" : "2027-01-23",
+          "ratio": {
+            "suneung": "20",
+            "grade": "",
+            "practical": "80"
+          },
+          "note": ""
+        },
+        "etc": [],
+        "sources": [
+          [
+            "대진대 입학처",
+            "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&"
+          ]
+        ]
+      },
+      "short": "대진대"
     }
   ]
 }
