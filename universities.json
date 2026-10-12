@@ -758,7 +758,7 @@
             "end": "2026-09-11",
             "note": ""
           },
-          "finalAnnounce": "2026-11-06",
+          "finalAnnounce": "2026-12-09",
           "note": "",
           "types": [
             {
@@ -814,18 +814,18 @@
         },
         "jeongsi": {
           "reference": false,
-          "gun": "가군",
-          "quota": "4명",
+          "gun": "",
+          "quota": "",
           "apply": {
-            "start": "2027-01-04",
-            "end": "2027-01-07",
+            "start": "",
+            "end": "",
             "note": ""
           },
           "stages": [],
-          "finalAnnounce": "2027-02-05",
+          "finalAnnounce": "",
           "process": "",
           "ratio": {
-            "suneung": "100",
+            "suneung": "",
             "grade": "",
             "practical": ""
           },
