@@ -734,6 +734,112 @@
         ]
       },
       "short": "한성대"
+    }, 
+    {
+      "name": "명지대",
+      "type": "대학교",
+      "region": "경기",
+      "dept": "디자인학부-[영상,애니메이션디자인디자인전공]",
+      "address": "경기도 용인시 처인구 명지로 116(자연캠퍼스)",
+      "url": "https://enter.hansung.ac.kr/",
+      "admission": {
+        "admissionUrl": "https://iphak.mju.ac.kr/pages/?p=10&mj=01",
+        "track": [
+          "실기"
+        ],
+        "process": "",
+        "practical": "",
+        "note": "",
+        "susi": {
+          "reference": false,
+          "quota": "21명",
+          "apply": {
+            "start": "2026-09-07",
+            "end": "2026-09-11",
+            "note": ""
+          },
+          "finalAnnounce": "2026-11-06",
+          "note": "",
+          "types": [
+            {
+              "name": "실기우수자전형",
+              "short": "",
+              "quota": "21명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "상황표현",
+                  "method": "",
+                  "date": "2026-10-11",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "실기",
+                  "ratio": {
+                    "document": "",
+                    "grade": "30",
+                    "practical": "70",
+                    "interview": ""
+                  }
+                },
+                {
+                  "label": "기초디자인",
+                  "method": "",
+                  "date": "2026-10-12",
+                  "endDate": "",
+                  "announce": "",
+                  "kind": "실기",
+                  "ratio": {
+                    "document": "",
+                    "grade": "30",
+                    "practical": "70",
+                    "interview": ""
+                  }
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "ratio": {
+                "document": "",
+                "grade": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": ""
+            }
+          ]
+        },
+        "jeongsi": {
+          "reference": false,
+          "gun": "가군",
+          "quota": "4명",
+          "apply": {
+            "start": "2027-01-04",
+            "end": "2027-01-07",
+            "note": ""
+          },
+          "stages": [],
+          "finalAnnounce": "2027-02-05",
+          "process": "",
+          "ratio": {
+            "suneung": "100",
+            "grade": "",
+            "practical": ""
+          },
+          "note": ""
+        },
+        "etc": [],
+        "sources": [
+          [
+            "명지대학교 입학처",
+            "https://iphak.mju.ac.kr/pages/?p=10&mj=01"
+          ]
+        ]
+      },
+      "short": "명지대"
     }
   ]
 }
