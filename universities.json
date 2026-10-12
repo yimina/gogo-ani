@@ -332,7 +332,7 @@
       "url": "https://www.ck.ac.kr",
       "admission": {
         "admissionUrl": "https://ipsi.ck.ac.kr",
-        "track": ["실기"],
+        "track": ["실기", "비실기"],
         "process": "",
         "practical": "",
         "note": "애니메이션스쿨-[애니메이션]",
@@ -596,56 +596,25 @@
         },
         "jeongsi": {
           "reference": false,
-          "gun": "",
-          "quota": "",
+          "gun": "실기",
+          "quota": "65명",
           "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
+            "start": "2027-01-04",
+            "end": "2027-01-20",
+            "note": "2027-02-09"
           },
           "stages": [],
           "finalAnnounce": "",
-          "process": "",
+          "process": "학생부+실기(3유형중 택1)",
+           "date": "2027-01-28",
           "ratio": {
             "suneung": "",
-            "grade": "",
-            "practical": ""
+            "grade": "30",
+            "practical": "70"
           },
           "note": ""
         },
-        "etc": [
-          {
-            "label": "전공심화(1년 과정)",
-            "reference": true,
-            "quota": "57명",
-            "apply": {
-              "start": "2025-12-15",
-              "end": "2025-12-26",
-              "note": "2026학년도 전공심화(1년 과정)"
-            },
-            "stages": [
-              {
-                "label": "1차",
-                "method": "포트폴리오 심사 (모집인원의 1.5배수 선발)",
-                "date": "",
-                "endDate": "",
-                "announce": "",
-                "kind": "기타"
-              },
-              {
-                "label": "2차",
-                "method": "면접",
-                "date": "2026-01-07",
-                "endDate": "",
-                "announce": "",
-                "kind": "면접"
-              }
-            ],
-            "finalAnnounce": "2026-01-16",
-            "process": "",
-            "note": "2026학년도 기준 참고 자료예요."
-          }
-        ],
+        "etc": [],
         "sources": [
           [
             "청강대 입학처",
