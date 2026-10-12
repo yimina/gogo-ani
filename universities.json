@@ -601,10 +601,10 @@
           "apply": {
             "start": "2027-01-04",
             "end": "2027-01-20",
-            "note": "2027-02-09"
+            "note": ""
           },
           "stages": [],
-          "finalAnnounce": "",
+          "finalAnnounce": "2027-02-09",
           "process": "학생부+실기(3유형중 택1)",
            "date": "2027-01-28",
           "ratio": {
