@@ -170,7 +170,7 @@
       "name": "세종대학교",
       "type": "대학교",
       "region": "서울",
-      "dept": "창의소프트학부 만화애니메이션텍 전공",
+      "dept": "창의소프트학부-[만화애니메이션텍 전공]",
       "address": "서울특별시 광진구 능동로 209",
       "url": "https://www.sejong.ac.kr",
       "admission": {
@@ -178,7 +178,7 @@
         "track": ["비실기"],
         "process": "",
         "practical": "",
-        "note": "창의소프트학부-[만화애니메이션텍 전공]",
+        "note": "",
         "susi": {
           "reference": false,
           "quota": "48명",
@@ -327,7 +327,7 @@
       "name": "청강문화산업대학교",
       "type": "전문대학",
       "region": "경기",
-      "dept": "애니메이션학과",
+      "dept": "애니메이션스쿨-[애니메이션]",
       "address": "경기 이천시 마장면 청강가창로 389-94",
       "url": "https://www.ck.ac.kr",
       "admission": {
@@ -335,7 +335,7 @@
         "track": ["실기", "비실기"],
         "process": "",
         "practical": "",
-        "note": "애니메이션스쿨-[애니메이션]",
+        "note": "",
         "susi": {
           "reference": false,
           "quota": "238명",
@@ -632,7 +632,7 @@
       "name": "한성대학교",
       "type": "대학교",
       "region": "서울",
-      "dept": "영상애니메이션학과",
+      "dept": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
       "address": "서울특별시 성북구 삼선교로 16길 116",
       "url": "https://enter.hansung.ac.kr/",
       "admission": {
@@ -641,7 +641,7 @@
           "실기",
           "비실기"
         ],
-        "process": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
+        "process": "",
         "practical": "",
         "note": "",
         "susi": {
