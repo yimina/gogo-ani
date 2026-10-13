@@ -75,8 +75,8 @@
   .detail dd { margin: 0; white-space: pre-line; }
   .detail .muted { font-size: 12.5px; color: var(--sub); margin: 0 0 8px; line-height: 1.55; }
   .detail .none { display: inline-block; padding: 4px 12px; border-radius: 8px; background: #fff; border: 1px dashed var(--line); color: var(--ink); font-weight: 500; }
-  .exm { display: flex; width: fit-content; max-width: 100%; flex-wrap: wrap; align-items: center; gap: 8px; margin: 3px 0; padding: 3px 12px 3px 4px; border-radius: 999px; background: #ffeef3; border: 1px solid #f6c5d4; font-size: 12.5px; }
-  .exm i { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--pink); color: #fff; }
+  .exm { display: flex; width: fit-content; max-width: 100%; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 0 3px; padding: 3px 12px 3px 4px; border-radius: 999px; background: color-mix(in srgb, var(--kc, #e8336d) 10%, #fff); border: 1px solid color-mix(in srgb, var(--kc, #e8336d) 35%, #fff); font-size: 12.5px; }
+  .exm i { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--kc, var(--pink)); color: #fff; }
   .exm b { font-weight: 700; }
   .exm span { color: var(--sub); }
   .dtabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 4px; }
@@ -100,7 +100,6 @@
   .ann { display: flex; width: fit-content; align-items: center; gap: 8px; margin: 5px 0 3px; padding: 3px 12px 3px 4px; border-radius: 999px; background: #e8f7f0; border: 1px solid #bfe8d4; font-size: 12.5px; }
   .ann i { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: #1f9d6b; color: #fff; }
   .ann b { font-weight: 700; }
-  .ann em { font-style: normal; font-size: 11px; font-weight: 700; color: var(--pink); }
   .ann.final { background: #fff6dc; border-color: #f1d58a; }
   .ann.final i { background: var(--ink); }
   .rbar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 5px; background: var(--line); max-width: 260px; }
@@ -175,20 +174,32 @@
   .dow:first-child { color: #d0345f; } .dow:nth-child(7) { color: var(--blue); }
   .week { position: relative; min-height: 98px; }
   .wbg { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  .day { padding: 4px; min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .day { display: block; font: inherit; color: inherit; text-align: left; cursor: pointer; background: transparent; padding: 4px; min-width: 0; border: 0; border-radius: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .day:hover { background: #f5f7fb; }
+  .day:focus-visible { outline: 3px solid rgba(47,111,237,.45); outline-offset: -3px; }
   .day.out { background: #fafbfd; } .day.out .dn { color: #aab3c2; }
   .dn { display: inline-block; font-size: 12px; font-weight: 500; color: var(--ink); padding: 1px 3px; }
+  .day.sel { background: #fff6f9; box-shadow: inset 0 0 0 2px var(--pink); }
   .day.today .dn { background: var(--ink); color: #fff; border-radius: 10px; padding: 1px 7px; }
-  .wev { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-auto-rows: 20px; row-gap: 3px; padding: 29px 0 6px; }
+  .wev { pointer-events: none; position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-auto-rows: 20px; row-gap: 3px; padding: 29px 0 6px; }
   .ev { all: unset; box-sizing: border-box; display: block; min-width: 0; margin: 0 3px; cursor: pointer; font-size: 11px; line-height: 20px; height: 20px; padding: 0 6px; border-radius: 4px; border-left: 3px solid var(--kc); background: color-mix(in srgb, var(--kc) 14%, #fff); color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ev:hover { background: color-mix(in srgb, var(--kc) 28%, #fff); }
   .ev:focus-visible { outline: 3px solid rgba(47,111,237,.45); outline-offset: 1px; }
   .ev.ref { background: #fff; border: 1px dashed var(--kc); border-left-width: 3px; line-height: 18px; }
   .ev.cs { margin-left: 0; border-left-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; padding-left: 8px; }
   .ev.ce { margin-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; }
-  .more { font-size: 11px; color: var(--sub); padding-left: 6px; line-height: 20px; white-space: nowrap; }
+  .ev, .more { pointer-events: auto; }
+  .more { cursor: pointer; font-size: 11px; color: var(--sub); padding-left: 6px; line-height: 20px; white-space: nowrap; }
   .mlist { margin-top: 16px; }
-  .mlist h3 { font-size: 14px; margin: 0 0 8px; }
+  .mlist h3 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14px; margin: 0 0 8px; }
+  .mstrip { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; }
+  .mchip { font: inherit; font-size: 12.5px; display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; }
+  .mchip:hover { border-color: var(--ink); color: var(--ink); }
+  .mchip em { font-style: normal; font-size: 10.5px; font-weight: 700; min-width: 16px; text-align: center; padding: 0 5px; border-radius: 999px; background: var(--pink); color: #fff; }
+  .mchip.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .mchip:focus-visible, .cal-tbtn:focus-visible { outline: 3px solid rgba(47,111,237,.35); outline-offset: 2px; }
+  .cal-tbtn { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-bottom: 2px dotted var(--line); }
+  .cal-tbtn:hover { border-bottom-color: var(--ink); }
   .mitem { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 12px 120px 1fr; gap: 10px; align-items: baseline; width: 100%; cursor: pointer; padding: 9px 10px; margin-bottom: 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; }
   .mitem:hover { border-color: var(--ink); }
   .mitem:focus-visible { outline: 3px solid rgba(47,111,237,.45); }
@@ -404,23 +415,16 @@ function ratioOf(r, jeong) {
     : ratioHtml([["서류", r.document, "#334155"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
 }
 
-function ddayTxt(str) {
+function annHtml(str, label, final) {
   const d = pd(str); if (!d) return "";
-  const t = new Date(); t.setHours(0, 0, 0, 0);
-  const n = Math.round((d - t) / 86400000);
-  return n > 0 ? "D-" + n : n === 0 ? "D-DAY" : "발표 완료";
-}
-function annHtml(str, label, final, ref) {
-  const d = pd(str); if (!d) return "";
-  const dd = ref ? "" : ddayTxt(str);
-  return `<div class="ann${final ? " final" : ""}"><i>${label}</i><b>${fd(d, true)}</b>${dd ? `<em>${dd}</em>` : ""}</div>`;
+  return `<div class="ann${final ? " final" : ""}"><i>${label}</i><b>${fd(d, true)}</b></div>`;
 }
 
 function anyDates(o) {
   if (!o) return false;
   const ap = o.apply || {};
   return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
-    (o.stages || []).some(st => pd(st.date) || pd(st.announce)) ||
+    (o.stages || []).some(st => pd(st.examDate || st.date) || pd(st.announce)) ||
     (o.exams || []).some(x => x && pd(x.date)) ||
     (o.types || []).some(anyDates);
 }
@@ -428,10 +432,13 @@ function anyDates(o) {
 function groupRows(g, jeong, ref, isType) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
+  const PILL = { "서류": "#334155", "실기": "#e8336d", "면접": "#c77700" };
   const stageRows = (g.stages || []).map(st => {
-    const head = [st.method, fmtRange(st.date, st.endDate)].filter(Boolean).join("<br>");
-    const ann = annHtml(st.announce, "발표", false, ref);
-    return [st.label || "단계", head + ann + ratioOf(st.ratio, jeong)];
+    const ed = st.examDate || st.date, ee = st.examEnd || st.endDate;     // (예전 키 date·endDate 도 지원)
+    const kc = PILL[st.kind] || "#475569";
+    const exam = pd(ed) ? `<div class="exm" style="--kc:${kc}"><i>${PILL[st.kind] ? st.kind : "시험"}</i><b>${fmtRange(ed, ee)}</b></div>` : "";
+    const ann = annHtml(st.announce, "발표", false);
+    return [st.label || "단계", (st.method || "") + exam + ann + ratioOf(st.ratio, jeong)];
   });
   const exams = (g.exams || []).filter(x => x && pd(x.date)).map(x =>
     `<div class="exm"><i>실기</i><b>${fmtRange(x.date, x.endDate)}</b>${x.label ? `<span>${x.label}</span>` : ""}${x.note ? `<span>${x.note}</span>` : ""}</div>`
@@ -440,7 +447,7 @@ function groupRows(g, jeong, ref, isType) {
   const hasTypes = (g.types || []).some(groupHas);
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
-    ["원서 접수", applyTxt],
+    isType ? null : ["원서 접수", applyTxt],
     ...stageRows,
     ["실기 시험 일정", exams],
     ["최종 합격자 발표", annHtml(g.finalAnnounce, "최종", true, ref)],
@@ -615,15 +622,15 @@ function buildEvents(schools) {
     // 학과가 2개 이상이면 달력에 '학교·학과' 로 표시
     const sn = shortName(s) + (s.depts.length > 1 ? "·" + (dp.short || dp.name) : "");
     const base = { sid: s.id, did, school: sn };
-    const push = (obj, label, ref) => {
+    const push = (obj, label, ref, isType) => {
       const ap = obj.apply || {};
       const as = pd(ap.start);
-      if (as) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+      if (as && !isType) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
       (obj.stages || []).forEach(st => {
-        const ds = pd(st.date);
+        const ds = pd(st.examDate || st.date);
         if (ds) {
           const kind = KINDS[st.kind] ? st.kind : "기타";
-          ev.push({ ...base, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
+          ev.push({ ...base, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.examEnd || st.endDate) || ds, ref });
         }
         const da = pd(st.announce);
         if (da) ev.push({ ...base, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
@@ -639,7 +646,7 @@ function buildEvents(schools) {
       const g = gr.g || {};
       const gref = !!g.reference;
       push(g, gr.name, gref);
-      (g.types || []).forEach(t => push(t, gr.name + " " + (t.short || t.name || "전형"), gref || !!t.reference));
+      (g.types || []).forEach(t => push(t, gr.name + " " + (t.short || t.name || "전형"), gref || !!t.reference, true));
     });
   }));
   ev.forEach(e => { if (e.end < e.start) e.end = e.start; });
@@ -654,6 +661,8 @@ function initCalMonth() {
   const pick = upcoming ? upcoming.start < today ? today : upcoming.start : ev.length ? ev[ev.length - 1].start : today;
   calY = pick.getFullYear(); calM = pick.getMonth();
 }
+
+let calSel = null;   // 선택한 날짜(YYYY-MM-DD). 없으면 그 달 전체 일정을 보여줘요.
 
 function renderCal() {
   const box = document.getElementById("cal");
@@ -694,53 +703,92 @@ function renderCal() {
       const e = sg.e;
       bars += `<button type="button" class="ev${e.ref ? " ref" : ""}${sg.cs ? " cs" : ""}${sg.ce ? " ce" : ""}" style="--kc:${KINDS[e.kind]};grid-column:${sg.c1 + 1} / ${sg.c2 + 2};grid-row:${sg.row + 1}" data-sid="${e.sid}" data-did="${e.did}" title="${barTitle(e)}">${e.school} ${e.title}</button>`;
     });
-    hidden.forEach((n, c) => { if (n) bars += `<span class="more" style="grid-column:${c + 1};grid-row:${MAXROWS + 1}">+${n}개 더</span>`; });
+    hidden.forEach((n, c) => {
+      if (!n) return;
+      const dd = new Date(wStart); dd.setDate(wStart.getDate() + c);
+      bars += `<span class="more" data-date="${toStr(dd)}" style="grid-column:${c + 1};grid-row:${MAXROWS + 1}">+${n}개 더</span>`;
+    });
 
     let days = "";
     for (let i = 0; i < 7; i++) {
       const d = new Date(wStart); d.setDate(wStart.getDate() + i);
-      const cls = ["day", d.getMonth() !== calM ? "out" : "", +d === +today ? "today" : ""].join(" ");
-      days += `<div class="${cls}"><span class="dn">${d.getDate()}</span></div>`;
+      const key = toStr(d);
+      const n = events.filter(e => e.start <= d && e.end >= d).length;
+      const cls = ["day", d.getMonth() !== calM ? "out" : "", +d === +today ? "today" : "", key === calSel ? "sel" : ""].join(" ");
+      days += `<button type="button" class="${cls}" data-date="${key}" aria-pressed="${key === calSel}" aria-label="${d.getMonth() + 1}월 ${d.getDate()}일${n ? ", 일정 " + n + "건" : ""}"><span class="dn">${d.getDate()}</span></button>`;
     }
     weeksHtml += `<div class="week"><div class="wbg">${days}</div><div class="wev">${bars}</div></div>`;
   }
 
-  // 이번 달 일정 목록
+  // 월 바로가기 (월별 일정 건수 표시)
+  const strip = Array.from({ length: 12 }, (_, m) => {
+    const a = new Date(calY, m, 1), b = new Date(calY, m + 1, 0);
+    const n = events.filter(e => e.end >= a && e.start <= b).length;
+    return `<button type="button" class="mchip${m === calM ? " on" : ""}" data-mon="${m}" aria-pressed="${m === calM}">${m + 1}월${n ? `<em>${n}</em>` : ""}</button>`;
+  }).join("");
+
+  // 아래 일정 목록: 날짜를 눌렀으면 그날, 아니면 그 달 전체
   const mStart = new Date(calY, calM, 1), mEnd = new Date(calY, calM, daysIn);
   const inMonth = events.filter(e => e.end >= mStart && e.start <= mEnd);
-  const mlist = inMonth.length
-    ? inMonth.map(e => `<button type="button" class="mitem" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}" data-did="${e.did}">
+  const selDate = calSel ? pd(calSel) : null;
+  const shown = selDate ? events.filter(e => e.start <= selDate && e.end >= selDate) : inMonth;
+  const item = e => `<button type="button" class="mitem" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}" data-did="${e.did}">
         <span class="mdot"></span><span class="mdate">${fmtRange(toStr(e.start), toStr(e.end))}</span>
-        <span class="mtxt"><b>${e.school}</b> ${e.title}${e.method ? " · " + e.method : ""}${e.ref ? '<span class="mref">참고</span>' : ""}</span></button>`).join("")
-    : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
+        <span class="mtxt"><b>${e.school}</b> ${e.title}${e.method ? " · " + e.method : ""}${e.ref ? '<span class="mref">참고</span>' : ""}</span></button>`;
+  const listHtml = shown.length
+    ? shown.map(item).join("")
+    : selDate
+      ? `<div class="mnone">이 날은 표시할 전형 일정이 없어요.</div>`
+      : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
+  const heading = selDate
+    ? `<h3>${selDate.getMonth() + 1}월 ${selDate.getDate()}일(${WD[selDate.getDay()]}) 일정 (${shown.length}건)<button type="button" class="cal-btn" data-clear="1">${calM + 1}월 전체 보기</button></h3>`
+    : `<h3>${calM + 1}월 전형 일정 (${inMonth.length}건)</h3>`;
 
   box.innerHTML = `
     <div class="cal-head">
-      <h2 class="cal-title">${calY}년 ${calM + 1}월</h2>
+      <h2 class="cal-title"><button type="button" class="cal-tbtn" data-mon="${calM}" title="이 달의 전체 일정 보기">${calY}년 ${calM + 1}월</button></h2>
       <button type="button" class="cal-btn" data-nav="-1" aria-label="이전 달">‹ 이전</button>
       <button type="button" class="cal-btn" data-nav="0">오늘</button>
       <button type="button" class="cal-btn" data-nav="1" aria-label="다음 달">다음 ›</button>
     </div>
-    <div class="legend">${Object.entries(KINDS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")}<span>점선 = 이전 학년도 참고 일정</span></div>
+    <div class="mstrip" role="group" aria-label="월 선택">${strip}</div>
+    <div class="legend">${Object.entries(KINDS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")}<span>점선 = 이전 학년도 참고 일정</span><span>날짜를 누르면 그날 일정만 볼 수 있어요</span></div>
     <div class="grid"><div class="dowrow">${WD.map(w => `<div class="dow">${w}</div>`).join("")}</div>${weeksHtml}</div>
-    <div class="mlist"><h3>${calM + 1}월 전형 일정 (${inMonth.length}건)</h3>${mlist}</div>`;
+    <div class="mlist">${heading}${listHtml}</div>`;
 }
 function toStr(dt) {
   return dt.getFullYear() + "-" + String(dt.getMonth() + 1).padStart(2, "0") + "-" + String(dt.getDate()).padStart(2, "0");
 }
 
 document.getElementById("cal").addEventListener("click", e => {
+  const box = document.getElementById("cal");
   const nav = e.target.closest("[data-nav]");
   if (nav) {
     const n = +nav.dataset.nav;
     if (n === 0) { const t = new Date(); calY = t.getFullYear(); calM = t.getMonth(); }
     else { const d = new Date(calY, calM + n, 1); calY = d.getFullYear(); calM = d.getMonth(); }
-    renderCal(); return;
+    calSel = null; renderCal(); return;
   }
-  const ev = e.target.closest("[data-sid]");
+  const mon = e.target.closest("[data-mon]");               // 월 버튼/제목: 그 달 전체 일정
+  if (mon) { calM = +mon.dataset.mon; calSel = null; renderCal(); return; }
+  if (e.target.closest("[data-clear]")) { calSel = null; renderCal(); return; }
+  const ev = e.target.closest("[data-sid]");                // 일정 막대/목록: 학교 상세 열기
   if (ev) {
     if (ev.dataset.did !== undefined) deptSel[+ev.dataset.sid] = +ev.dataset.did;
     select(+ev.dataset.sid, true);
+    return;
+  }
+  const dayEl = e.target.closest("[data-date]");            // 날짜 칸 / '+N개 더': 그날 일정
+  if (dayEl) {
+    const key = dayEl.dataset.date;
+    calSel = calSel === key ? null : key;                   // 같은 날짜를 다시 누르면 월 전체로
+    const d = pd(key);
+    if (d && (d.getMonth() !== calM || d.getFullYear() !== calY)) { calY = d.getFullYear(); calM = d.getMonth(); }
+    renderCal();
+    const sel = box.querySelector(".day.sel");
+    if (sel) sel.focus({ preventScroll: true });
+    const ml = box.querySelector(".mlist");
+    if (ml) ml.scrollIntoView({ block: "nearest" });
   }
 });
 

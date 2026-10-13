@@ -6,13 +6,13 @@
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
     "admission.susi(수시): reference 참고 표시, quota 수시 전체 모집인원(선택), apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 공통 최종 발표일(선택), note, types 수시 전형 종류 배열.",
-    "susi.types: 학교에 있는 수시 전형(학생부교과, 학생부종합, 실기우수자, 논술 등)마다 한 덩어리씩 추가하세요. {name 전형 이름, short 달력용 짧은 이름(선택), quota 그 전형의 모집인원(예: \"10명\"), apply 전형별로 접수 기간이 다를 때만, stages 단계별(1차·2차 …) 전형, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio {document 서류, grade 내신, practical 실기, interview 면접}, note}. 전형 이름을 비워 둔 덩어리는 화면에 나오지 않아요.",
-    "stages 항목: {label: \"1차\", method: 전형 방법, date: 전형(시험)일, endDate: 기간일 때 종료일(선택), announce: 그 차수의 합격자 발표일, kind: 서류/실기/면접/발표/기타, ratio: {document 서류, grade 내신, practical 실기, interview 면접}} — 차수마다 전형일·합격자 발표일·반영 비율을 따로 입력해요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요.",
+    "susi.types: 학교에 있는 수시 전형(학생부교과, 학생부종합, 실기우수자, 논술 등)마다 한 덩어리씩 추가하세요. {name 전형 이름, short 달력용 짧은 이름(선택), quota 그 전형의 모집인원(예: \"10명\"), stages 단계별(1차·2차 …) 전형, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio {document 서류, grade 내신, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 전형 이름을 비워 둔 덩어리는 화면에 나오지 않아요.",
+    "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 내신, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요. (예전 키 date·endDate도 계속 읽혀요.)",
     "admission.jeongsi(정시): reference, gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), quota, apply, stages, finalAnnounce, process, ratio {suneung 수능, grade 내신, practical 실기}, note. 필요하면 types 배열도 수시와 같은 형식으로 쓸 수 있어요.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요.",
-    "exams(실기 시험 일정): [{label 조·계열 이름(선택), date 시험일, endDate 기간일 때 종료일(선택), note 메모(선택)}] — 수시 전형(types)과 정시에서 실기 시험 날짜를 여러 개 입력할 수 있고, 달력에 '실기' 색으로 표시돼요.",
+    "exams(실기 시험 일정): 정시처럼 단계 구분 없이 실기 시험 날짜를 여러 개 적을 때 쓰는 배열 [{label, date, endDate, note}]이에요. 수시 전형은 단계(stages)의 examDate를 쓰세요.",
     "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요."
   ],
   "checkedAt": "2026-10-12",
@@ -33,16 +33,16 @@
             "track": [
               "실기"
             ],
-            "process": "프로세스",
-            "practical": "프라티컬",
+            "process": "",
+            "practical": "",
             "note": "",
             "susi": {
               "reference": false,
               "quota": "15명",
               "apply": {
                 "start": "2026-09-14",
-                "end": "2026-09-17",
-                "note": "지원"
+                "end": "026-09-17",
+                "note": ""
               },
               "finalAnnounce": "2026-12-24",
               "note": "",
@@ -51,17 +51,12 @@
                   "name": "일반전형",
                   "short": "",
                   "quota": "15명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "1차",
                       "method": "스토리 구성과 연출력 중심 평가",
-                      "date": "2026-11-28",
-                      "endDate": "2026-11-29",
+                      "examDate": "2026-11-28",
+                      "examEnd": "2026-11-29",
                       "announce": "2026-12-10",
                       "kind": "실기",
                       "ratio": {
@@ -74,8 +69,8 @@
                     {
                       "label": "2차",
                       "method": "내러티브, 드로잉, 연출력 중심 평가",
-                      "date": "2026-12-15",
-                      "endDate": "2026-12-22",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
                       "announce": "2026-12-24",
                       "kind": "실기",
                       "ratio": {
@@ -86,15 +81,7 @@
                       }
                     }
                   ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "2026-11-28",
-                      "endDate": "2026-11-29",
-                      "note": ""
-                    }
-                  ],
-                  "finalAnnounce": "2026-12-29",
+                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -108,17 +95,12 @@
                   "name": "",
                   "short": "",
                   "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -131,8 +113,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -141,14 +123,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -235,17 +209,12 @@
                   "name": "학생부종합(세종인재 면접형)",
                   "short": "",
                   "quota": "48명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "1차",
                       "method": "학교부(교과+비교과), 학업역량(30)+창의융합역량(50)+공동체역량(20)",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "서류",
                       "ratio": {
@@ -258,8 +227,8 @@
                     {
                       "label": "2차",
                       "method": "다수 면접위원 vs 지원자 1인 (9분내외)",
-                      "date": "2026-11-21",
-                      "endDate": "",
+                      "examDate": "2026-11-21",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "면접",
                       "ratio": {
@@ -268,14 +237,6 @@
                         "practical": "",
                         "interview": "40"
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -292,17 +253,12 @@
                   "name": "",
                   "short": "",
                   "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -315,8 +271,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -325,14 +281,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -424,17 +372,12 @@
                   "name": "학생부교과",
                   "short": "",
                   "quota": "16명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "학생부총점 1,000점",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "서류",
                       "ratio": {
@@ -447,8 +390,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -457,14 +400,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -481,17 +416,12 @@
                   "name": "특별",
                   "short": "학생부 점수(기본점수 625점)+가산점(대회)",
                   "quota": "4명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -504,8 +434,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "서류",
                       "ratio": {
@@ -514,14 +444,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -538,17 +460,12 @@
                   "name": "실기",
                   "short": "",
                   "quota": "90명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -561,8 +478,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -571,14 +488,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -595,17 +504,12 @@
                   "name": "면접",
                   "short": "",
                   "quota": "63명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "학생부(비교과) + 포트폴리오",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "면접",
                       "ratio": {
@@ -618,8 +522,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -628,14 +532,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -652,17 +548,12 @@
                   "name": "정원외",
                   "short": "",
                   "quota": "14명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "서류",
                       "ratio": {
@@ -675,8 +566,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -685,14 +576,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -785,17 +668,12 @@
                   "name": "실기우수자전형",
                   "short": "",
                   "quota": "86명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "주어진 소재의 조형적 특징을 이하여 화면을 구성",
-                      "date": "2026-10-18",
-                      "endDate": "",
+                      "examDate": "2026-10-18",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -808,8 +686,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -818,14 +696,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -912,17 +782,12 @@
                   "name": "실기우수자전형",
                   "short": "",
                   "quota": "21명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "상황표현",
                       "method": "",
-                      "date": "2026-10-11",
-                      "endDate": "",
+                      "examDate": "2026-10-11",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -935,8 +800,8 @@
                     {
                       "label": "기초디자인",
                       "method": "",
-                      "date": "2026-10-12",
-                      "endDate": "",
+                      "examDate": "2026-10-12",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -945,14 +810,6 @@
                         "practical": "70",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -1039,17 +896,12 @@
                   "name": "예능실기우수자전형",
                   "short": "",
                   "quota": "상상표현(11명), 웹툰(5명)",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "상황표현",
                       "method": "상상으로 4컷 표현하기",
-                      "date": "2026-10-11",
-                      "endDate": "",
+                      "examDate": "2026-10-11",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -1062,8 +914,8 @@
                     {
                       "label": "웹툰",
                       "method": "4컷 웹툰",
-                      "date": "2026-10-12",
-                      "endDate": "",
+                      "examDate": "2026-10-12",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -1072,14 +924,6 @@
                         "practical": "60",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -1167,17 +1011,12 @@
                   "name": "실기",
                   "short": "",
                   "quota": "25명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "실기",
                       "method": "칸만화, 상황표현, 기초디자인(택1)",
-                      "date": "2026-10-17",
-                      "endDate": "",
+                      "examDate": "2026-10-17",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -1190,8 +1029,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -1200,14 +1039,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -1295,17 +1126,12 @@
                   "name": "실기우수자전형",
                   "short": "",
                   "quota": "30명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "실기우수자전형",
                       "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
-                      "date": "2026-10-24",
-                      "endDate": "",
+                      "examDate": "2026-10-24",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -1318,8 +1144,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -1328,14 +1154,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -1410,7 +1228,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "",
+              "quota": "명",
               "apply": {
                 "start": "",
                 "end": "",
@@ -1423,17 +1241,12 @@
                   "name": "",
                   "short": "",
                   "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
                   "stages": [
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -1446,8 +1259,8 @@
                     {
                       "label": "",
                       "method": "",
-                      "date": "",
-                      "endDate": "",
+                      "examDate": "",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
@@ -1456,14 +1269,6 @@
                         "practical": "",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "exams": [
-                    {
-                      "label": "",
-                      "date": "",
-                      "endDate": "",
-                      "note": ""
                     }
                   ],
                   "finalAnnounce": "",
@@ -1491,8 +1296,8 @@
                 {
                   "label": "실기",
                   "method": "[기초디자인]기초 조형능력을 평가할 수 있는 주제해석과 표현",
-                  "date": "2027-01-25",
-                  "endDate": "",
+                  "examDate": "2027-01-25",
+                  "examEnd": "",
                   "announce": "2027-02-05",
                   "kind": "실기",
                   "ratio": {
@@ -1558,17 +1363,12 @@
             "name": "",
             "short": "",
             "quota": "",
-            "apply": {
-              "start": "",
-              "end": "",
-              "note": ""
-            },
             "stages": [
               {
                 "label": "1차",
                 "method": "",
-                "date": "",
-                "endDate": "",
+                "examDate": "",
+                "examEnd": "",
                 "announce": "",
                 "kind": "서류",
                 "ratio": {
@@ -1581,8 +1381,8 @@
               {
                 "label": "2차",
                 "method": "",
-                "date": "",
-                "endDate": "",
+                "examDate": "",
+                "examEnd": "",
                 "announce": "",
                 "kind": "기타",
                 "ratio": {
@@ -1591,14 +1391,6 @@
                   "practical": "",
                   "interview": ""
                 }
-              }
-            ],
-            "exams": [
-              {
-                "label": "",
-                "date": "",
-                "endDate": "",
-                "note": ""
               }
             ],
             "finalAnnounce": "",
