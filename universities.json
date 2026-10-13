@@ -48,12 +48,12 @@
               "note": "",
               "types": [
                 {
-                  "name": "일반전형",
+                  "name": "1차",
                   "short": "",
                   "quota": "15명",
                   "stages": [
                     {
-                      "label": "1차",
+                      "label": "",
                       "method": "스토리 구성과 연출력 중심 평가",
                       "examDate": "2026-11-28",
                       "examEnd": "2026-11-29",
@@ -67,17 +67,17 @@
                       }
                     },
                     {
-                      "label": "2차",
-                      "method": "내러티브, 드로잉, 연출력 중심 평가",
-                      "examDate": "2026-12-15",
-                      "examEnd": "2026-12-22",
-                      "announce": "2026-12-24",
-                      "kind": "실기",
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
                       "ratio": {
                         "document": "",
                         "grade": "",
-                        "practical": "50",
-                        "interview": "50"
+                        "practical": "",
+                        "interview": ""
                       }
                     }
                   ],
@@ -92,22 +92,22 @@
                   "note": ""
                 },
                 {
-                  "name": "",
+                  "name": "2차",
                   "short": "",
                   "quota": "",
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "50",
+                        "interview": "50"
                       }
                     },
                     {
