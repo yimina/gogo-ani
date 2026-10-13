@@ -75,6 +75,16 @@
   .detail dd { margin: 0; white-space: pre-line; }
   .detail .muted { font-size: 12.5px; color: var(--sub); margin: 0 0 8px; line-height: 1.55; }
   .detail .none { display: inline-block; padding: 4px 12px; border-radius: 8px; background: #fff; border: 1px dashed var(--line); color: var(--ink); font-weight: 500; }
+  .exm { display: flex; width: fit-content; max-width: 100%; flex-wrap: wrap; align-items: center; gap: 8px; margin: 3px 0; padding: 3px 12px 3px 4px; border-radius: 999px; background: #ffeef3; border: 1px solid #f6c5d4; font-size: 12.5px; }
+  .exm i { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--pink); color: #fff; }
+  .exm b { font-weight: 700; }
+  .exm span { color: var(--sub); }
+  .dtabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 4px; }
+  .dtab { font: inherit; font-size: 12.5px; padding: 5px 12px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; }
+  .dtab:hover { border-color: var(--ink); color: var(--ink); }
+  .dtab[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .dtab:focus-visible { outline: 3px solid rgba(47,111,237,.35); outline-offset: 2px; }
+  .dept + .dept { margin-top: 2px; }
   .grp { margin-top: 10px; padding-top: 4px; border-top: 1px dashed var(--line); }
   .gh { margin: 6px 0 6px; }
   .gt { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #fff; }
@@ -253,7 +263,7 @@
    ※ 파일을 더블클릭(file://)으로 열면 브라우저가 JSON 로딩을 막아요. localhost(예: VS Code Live Server)로 여세요. */
 const DATA_URL = "universities.json";
 let SCHOOLS = [];
-let ADMISSION = {};
+let deptSel = {};   // 학교별로 선택된 학과 탭 (학교 id → 학과 번호)
 let CHECKED_AT = "";
 
 async function loadData() {
@@ -267,11 +277,21 @@ async function loadData() {
       if (!ok) console.warn("name/address 가 없어 건너뜀:", x);
       return ok;
     })
-    .map((x, i) => ({ type: "", region: "", dept: "", url: "#", ...x, id: i + 1 }));
-  SCHOOLS.forEach(x => {
-    const adm = x.admission || {};
-    ADMISSION[x.id] = { ...adm, seasons: [groupHas(adm.susi) && "수시", groupHas(adm.jeongsi) && "정시"].filter(Boolean) };
-  });
+    .map((x, i) => {
+      // departments 가 없는 옛 형식(학교 하나에 학과 하나: dept + admission)도 그대로 지원
+      const src = Array.isArray(x.departments) && x.departments.length
+        ? x.departments
+        : [{ name: x.dept || "", admission: x.admission || {} }];
+      const depts = src
+        .filter(d => d && (d.name || hasData(d.admission)))          // 이름도 정보도 없는 학과(빈 틀)는 무시
+        .map(d => {
+          const adm = d.admission || {};
+          const seasons = [groupHas(adm.susi) && "수시", groupHas(adm.jeongsi) && "정시"].filter(Boolean);
+          return { name: d.name || "", short: d.short || "", adm: { ...adm, seasons } };
+        });
+      return { type: "", region: "", url: "#", ...x, id: i + 1,
+               depts: depts.length ? depts : [{ name: "", short: "", adm: { seasons: [] } }] };
+    });
 }
 
 /* ---------- 상태 ---------- */
@@ -321,12 +341,11 @@ function filtered() {
   const q = filter.q.toLowerCase();
   const any = (set, v) => set.size === 0 || set.has(v);                 // 지역·유형: 선택한 것 중 하나
   const every = (set, arr) => [...set].every(x => arr.includes(x));      // 시기·실기: 선택한 것 모두
-  return SCHOOLS.filter(s => {
-    const adm = ADMISSION[s.id] || {};
-    return any(filter.region, s.region) && any(filter.type, s.type) &&
-      every(filter.season, adm.seasons || []) && every(filter.track, adm.track || []) &&
-      (!q || [s.name, s.dept, s.region, s.address].join(" ").toLowerCase().includes(q));
-  });
+  return SCHOOLS.filter(s =>
+    any(filter.region, s.region) && any(filter.type, s.type) &&
+    s.depts.some(d => every(filter.season, d.adm.seasons || []) && every(filter.track, d.adm.track || [])) &&
+    (!q || [s.name, ...s.depts.map(d => d.name), s.region, s.address].join(" ").toLowerCase().includes(q))
+  );
 }
 
 /* ---------- 목록 + 마커 렌더 ---------- */
@@ -349,7 +368,7 @@ function fmtRange(a, b) {
 
 function hasData(o) {
   if (o == null) return false;
-  if (typeof o === "string") return o.trim() !== "";
+  if (typeof o === "string") return o.trim() !== "" && o.trim() !== "명";   // 숫자 없이 "명"만 남은 값은 빈 값으로 취급
   if (Array.isArray(o)) return o.some(hasData);
   if (typeof o === "object") return Object.entries(o).some(([k, v]) => !["reference", "offered", "label", "kind"].includes(k) && hasData(v));
   return false;
@@ -376,6 +395,8 @@ function ratioHtml(items) {
   return `<div class="rkl">${text}</div>${bar}`;
 }
 
+function cleanQ(q) { return q && q.trim() !== "명" ? q : ""; }
+
 function ratioOf(r, jeong) {
   r = r || {};
   return jeong
@@ -400,6 +421,7 @@ function anyDates(o) {
   const ap = o.apply || {};
   return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
     (o.stages || []).some(st => pd(st.date) || pd(st.announce)) ||
+    (o.exams || []).some(x => x && pd(x.date)) ||
     (o.types || []).some(anyDates);
 }
 
@@ -411,15 +433,19 @@ function groupRows(g, jeong, ref, isType) {
     const ann = annHtml(st.announce, "발표", false, ref);
     return [st.label || "단계", head + ann + ratioOf(st.ratio, jeong)];
   });
+  const exams = (g.exams || []).filter(x => x && pd(x.date)).map(x =>
+    `<div class="exm"><i>실기</i><b>${fmtRange(x.date, x.endDate)}</b>${x.label ? `<span>${x.label}</span>` : ""}${x.note ? `<span>${x.note}</span>` : ""}</div>`
+  ).join("");
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   const hasTypes = (g.types || []).some(groupHas);
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
     ...stageRows,
+    ["실기 시험 일정", exams],
     ["최종 합격자 발표", annHtml(g.finalAnnounce, "최종", true, ref)],
     isType ? null : ["참고 표시", ref && anyDates(g) ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
-    isType ? null : [hasTypes ? "전체 모집인원" : "모집인원", g.quota],
+    isType ? null : [hasTypes ? "전체 모집인원" : "모집인원", cleanQ(g.quota)],
     ["전형 방법", g.process],
     [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)],
     ["참고", g.note]
@@ -428,14 +454,22 @@ function groupRows(g, jeong, ref, isType) {
 
 function typeHtml(t, jeong, ref) {
   const rows = groupRows(t, jeong, ref, true);
-  const q = t.quota ? `<span class="qb">모집 ${t.quota}</span>` : "";
+  const q = cleanQ(t.quota) ? `<span class="qb">모집 ${t.quota}</span>` : "";
   return `<div class="typ"><div class="th"><b>${t.name || "전형"}</b>${q}</div>${rows.length ? dl(rows) : '<p class="muted">전형 세부 정보가 아직 없어요.</p>'}</div>`;
 }
 
 function dl(rows) { return `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("")}</dl>`; }
 
 function admissionHtml(s) {
-  const a = ADMISSION[s.id] || {};
+  const multi = s.depts.length > 1;
+  const sel = Math.min(deptSel[s.id] || 0, s.depts.length - 1);
+  const dp = s.depts[sel];
+  const a = dp.adm || {};
+  const tabs = multi
+    ? `<div class="dtabs" role="group" aria-label="학과 선택">${s.depts.map((d, i) =>
+        `<button type="button" class="dtab" data-did="${i}" aria-pressed="${i === sel}">${d.short || d.name || "학과 " + (i + 1)}</button>`).join("")}</div>`
+    : "";
+
   const common = [
     ["실기 여부", (a.track || []).length ? (a.track.join(" · ") + " 전형") : ""],
     ["전형 방법 요약", a.process], ["실기·준비물", a.practical], ["참고", a.note]
@@ -448,14 +482,17 @@ function admissionHtml(s) {
     const rows = has ? groupRows(gr.g, gr.jeong, ref, false) : [];
     const types = (gr.g.types || []).filter(groupHas).map(t => typeHtml(t, gr.jeong, ref || !!t.reference)).join("");
     const cls = gr.key === "susi" ? "s1" : gr.key === "jeongsi" ? "s2" : "s3";
+    const none = gr.key === "susi" ? '<p class="muted none">수시 모집이 없어요.</p>'
+               : gr.key === "jeongsi" ? '<p class="muted none">정시 모집이 없어요.</p>'
+               : '<p class="muted">아직 입력된 정보가 없어요.</p>';
     const inner = (rows.length ? dl(rows) : "") + types;
-    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span></div>${inner || (gr.key === "jeongsi" ? '<p class="muted none">정시 모집이 없어요.</p>' : '<p class="muted">아직 입력된 정보가 없어요.</p>')}</div>`;
+    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span></div>${inner || none}</div>`;
   }).join("");
 
   const adm = a.admissionUrl || s.url;
   const q = encodeURIComponent(s.name + " 신입생 모집요강");
   const src = (a.sources || []).map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
-  return `<div class="detail"><h3>입시 전형</h3>${common.length ? dl(common) : ""}${sections}
+  return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${common.length ? dl(common) : ""}${sections}
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
@@ -478,10 +515,20 @@ function renderList() {
     if (on) li.className = "active";
     li.innerHTML = `<button type="button" aria-expanded="${on}">
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
-      <div class="dept">${s.dept}</div>
+      ${s.depts.map(d => d.name ? `<div class="dept">${d.name}</div>` : "").join("")}
       <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
     li.dataset.id = s.id;
     li.querySelector("button").onclick = () => toggleSchool(s.id);
+    li.querySelectorAll(".dtab").forEach(btn => {
+      btn.onclick = () => {
+        deptSel[s.id] = +btn.dataset.did;
+        const top = ul.scrollTop;
+        renderList();
+        ul.scrollTop = top;
+        const nb = ul.querySelector(`li[data-id="${s.id}"] .dtab[data-did="${btn.dataset.did}"]`);
+        if (nb) nb.focus({ preventScroll: true });
+      };
+    });
     ul.appendChild(li);
   });
 }
@@ -540,7 +587,7 @@ function select(id, fromList) {
   infoWindow.setContent(`<div class="iw">
     <button type="button" class="iw-x" aria-label="팝업 닫기" onclick="closeInfo()">&times;</button>
     <b>${s.name}</b>
-    <div>${s.dept}</div>
+    <div>${s.depts.map(d => d.name).filter(Boolean).join(" / ")}</div>
     <div>${s.address}</div>
     <div class="links">
       <a href="${s.url}" target="_blank" rel="noopener">홈페이지</a>
@@ -563,24 +610,30 @@ function dkey(dt) { return dt.getFullYear() + "-" + dt.getMonth() + "-" + dt.get
 
 function buildEvents(schools) {
   const ev = [];
-  schools.forEach(s => {
-    const a = ADMISSION[s.id] || {};
-    const sn = shortName(s);
+  schools.forEach(s => s.depts.forEach((dp, did) => {
+    const a = dp.adm || {};
+    // 학과가 2개 이상이면 달력에 '학교·학과' 로 표시
+    const sn = shortName(s) + (s.depts.length > 1 ? "·" + (dp.short || dp.name) : "");
+    const base = { sid: s.id, did, school: sn };
     const push = (obj, label, ref) => {
       const ap = obj.apply || {};
       const as = pd(ap.start);
-      if (as) ev.push({ sid: s.id, school: sn, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+      if (as) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
       (obj.stages || []).forEach(st => {
         const ds = pd(st.date);
         if (ds) {
           const kind = KINDS[st.kind] ? st.kind : "기타";
-          ev.push({ sid: s.id, school: sn, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
+          ev.push({ ...base, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.endDate) || ds, ref });
         }
         const da = pd(st.announce);
-        if (da) ev.push({ sid: s.id, school: sn, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+        if (da) ev.push({ ...base, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+      });
+      (obj.exams || []).forEach(x => {
+        const dx = pd(x && x.date);
+        if (dx) ev.push({ ...base, title: label + " 실기" + (x.label ? "(" + x.label + ")" : ""), method: x.note || "", kind: "실기", start: dx, end: pd(x.endDate) || dx, ref });
       });
       const fa = pd(obj.finalAnnounce);
-      if (fa) ev.push({ sid: s.id, school: sn, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+      if (fa) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
     admGroups(a).forEach(gr => {
       const g = gr.g || {};
@@ -588,7 +641,7 @@ function buildEvents(schools) {
       push(g, gr.name, gref);
       (g.types || []).forEach(t => push(t, gr.name + " " + (t.short || t.name || "전형"), gref || !!t.reference));
     });
-  });
+  }));
   ev.forEach(e => { if (e.end < e.start) e.end = e.start; });
   return ev.sort((x, y) => x.start - y.start || x.school.localeCompare(y.school));
 }
@@ -639,7 +692,7 @@ function renderCal() {
     segs.forEach(sg => {
       if (sg.row >= MAXROWS) { for (let c = sg.c1; c <= sg.c2; c++) hidden[c]++; return; }
       const e = sg.e;
-      bars += `<button type="button" class="ev${e.ref ? " ref" : ""}${sg.cs ? " cs" : ""}${sg.ce ? " ce" : ""}" style="--kc:${KINDS[e.kind]};grid-column:${sg.c1 + 1} / ${sg.c2 + 2};grid-row:${sg.row + 1}" data-sid="${e.sid}" title="${barTitle(e)}">${e.school} ${e.title}</button>`;
+      bars += `<button type="button" class="ev${e.ref ? " ref" : ""}${sg.cs ? " cs" : ""}${sg.ce ? " ce" : ""}" style="--kc:${KINDS[e.kind]};grid-column:${sg.c1 + 1} / ${sg.c2 + 2};grid-row:${sg.row + 1}" data-sid="${e.sid}" data-did="${e.did}" title="${barTitle(e)}">${e.school} ${e.title}</button>`;
     });
     hidden.forEach((n, c) => { if (n) bars += `<span class="more" style="grid-column:${c + 1};grid-row:${MAXROWS + 1}">+${n}개 더</span>`; });
 
@@ -656,7 +709,7 @@ function renderCal() {
   const mStart = new Date(calY, calM, 1), mEnd = new Date(calY, calM, daysIn);
   const inMonth = events.filter(e => e.end >= mStart && e.start <= mEnd);
   const mlist = inMonth.length
-    ? inMonth.map(e => `<button type="button" class="mitem" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}">
+    ? inMonth.map(e => `<button type="button" class="mitem" style="--kc:${KINDS[e.kind]}" data-sid="${e.sid}" data-did="${e.did}">
         <span class="mdot"></span><span class="mdate">${fmtRange(toStr(e.start), toStr(e.end))}</span>
         <span class="mtxt"><b>${e.school}</b> ${e.title}${e.method ? " · " + e.method : ""}${e.ref ? '<span class="mref">참고</span>' : ""}</span></button>`).join("")
     : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
@@ -685,7 +738,10 @@ document.getElementById("cal").addEventListener("click", e => {
     renderCal(); return;
   }
   const ev = e.target.closest("[data-sid]");
-  if (ev) select(+ev.dataset.sid, true);
+  if (ev) {
+    if (ev.dataset.did !== undefined) deptSel[+ev.dataset.sid] = +ev.dataset.did;
+    select(+ev.dataset.sid, true);
+  }
 });
 
 function setView(v) {

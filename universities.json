@@ -1,6 +1,8 @@
 {
   "_안내": [
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
+    "학교 안에 학과가 여러 개면 departments 배열에 학과를 한 덩어리씩 추가하세요: {name 학과명, short 탭·달력용 짧은 이름(학과가 2개 이상일 때 권장), admission {…}}. 학과마다 입시 정보(수시·정시·기타 전형, 출처 등)를 따로 입력해요. 이름도 입력 정보도 없는 학과는 무시돼요. 복사해서 쓸 빈 틀은 맨 아래의 _학과템플릿에 있어요.",
+    "아래 admission 항목 설명은 모두 학과 단위(departments[].admission 안)에 적용돼요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
     "admission.susi(수시): reference 참고 표시, quota 수시 전체 모집인원(선택), apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 공통 최종 발표일(선택), note, types 수시 전형 종류 배열.",
@@ -9,7 +11,9 @@
     "admission.jeongsi(정시): reference, gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), quota, apply, stages, finalAnnounce, process, ratio {suneung 수능, grade 내신, practical 실기}, note. 필요하면 types 배열도 수시와 같은 형식으로 쓸 수 있어요.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
-    "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요."
+    "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요.",
+    "exams(실기 시험 일정): [{label 조·계열 이름(선택), date 시험일, endDate 기간일 때 종료일(선택), note 메모(선택)}] — 수시 전형(types)과 정시에서 실기 시험 날짜를 여러 개 입력할 수 있고, 달력에 '실기' 색으로 표시돼요.",
+    "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요."
   ],
   "checkedAt": "2026-10-12",
   "schools": [
@@ -17,1238 +21,1474 @@
       "name": "한국예술종합학교",
       "type": "예술대학",
       "region": "서울",
-      "dept": "영상원-[애니메이션과]",
       "address": "서울특별시 성북구 화랑로32길 146-37",
       "url": "https://www.karts.ac.kr",
-      "admission": {
-        "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-        "track": ["실기"],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "15명",
-          "apply": {
-            "start": "2026-09-14",
-            "end": "026-09-17",
-            "note": ""
-          },
-          "finalAnnounce": "2026-12-24",
-          "note": "",
-          "types": [
-            {
-              "name": "일반전형",
-              "short": "",
+      "short": "한예종",
+      "departments": [
+        {
+          "name": "영상원-[애니메이션과]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
               "quota": "15명",
               "apply": {
-                "start": "",
-                "end": "",
+                "start": "2026-09-14",
+                "end": "026-09-17",
                 "note": ""
               },
-              "stages": [
+              "finalAnnounce": "2026-12-24",
+              "note": "",
+              "types": [
                 {
-                  "label": "1차",
-                  "method": "스토리 구성과 연출력 중심 평가",
-                  "date": "2026-11-28",
-                  "endDate": "2026-11-29",
-                  "announce": "2026-12-10",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "20",
-                    "practical": "80",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "2차",
-                  "method": "내러티브, 드로잉, 연출력 중심 평가",
-                  "date": "2026-12-15",
-                  "endDate": "2026-12-22",
-                  "announce": "2026-12-24",
-                  "kind": "실기",
+                  "name": "일반전형",
+                  "short": "",
+                  "quota": "15명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "스토리 구성과 연출력 중심 평가",
+                      "date": "2026-11-28",
+                      "endDate": "2026-11-29",
+                      "announce": "2026-12-10",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "practical": "80",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "2차",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "date": "2026-12-15",
+                      "endDate": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "50",
+                        "interview": "50"
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
-                    "practical": "50",
-                    "interview": "50"
-                  }
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "",
+                  "short": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
                 }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
+              ]
             },
-             {
-              "name": "",
-              "short": "",
+            "jeongsi": {
+              "reference": false,
+              "gun": "",
               "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
                 "note": ""
               },
-              "stages": [
+              "stages": [],
+              "exams": [
                 {
                   "label": "",
-                  "method": "",
                   "date": "",
                   "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
+                  "note": ""
                 }
               ],
               "finalAnnounce": "",
               "process": "",
               "ratio": {
-                "document": "",
+                "suneung": "",
                 "grade": "",
-                "practical": "",
-                "interview": ""
+                "practical": ""
               },
               "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "",
-          "quota": "",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "",
-          "process": "",
-          "ratio": {
-            "suneung": "",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "한예종 홈페이지",
-            "https://www.karts.ac.kr"
-          ]
-        ]
-      },
-      "short": "한예종"
+            },
+            "etc": [],
+            "sources": [
+              [
+                "한예종 홈페이지",
+                "https://www.karts.ac.kr"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "세종대학교",
       "type": "대학교",
       "region": "서울",
-      "dept": "창의소프트학부-[만화애니메이션텍 전공]",
       "address": "서울특별시 광진구 능동로 209",
       "url": "https://www.sejong.ac.kr",
-      "admission": {
-        "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/recruitment-guidelines.do",
-        "track": ["비실기"],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "48명",
-          "apply": {
-            "start": "2026-09-14",
-            "end": "2026-09-18",
-            "note": ""
-          },
-          "finalAnnounce": "2026-12-18",
-          "note": "",
-          "types": [
-            {
-              "name": "학생부종합(세종인재 면접형)",
-              "short": "",
+      "short": "세종대",
+      "departments": [
+        {
+          "name": "창의소프트학부-[만화애니메이션텍 전공]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/recruitment-guidelines.do",
+            "track": [
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
               "quota": "48명",
               "apply": {
-                "start": "",
-                "end": "",
+                "start": "2026-09-14",
+                "end": "2026-09-18",
                 "note": ""
               },
-              "stages": [
+              "finalAnnounce": "2026-12-18",
+              "note": "",
+              "types": [
                 {
-                  "label": "1차",
-                  "method": "학교부(교과+비교과), 학업역량(30)+창의융합역량(50)+공동체역량(20)",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "서류",
+                  "name": "학생부종합(세종인재 면접형)",
+                  "short": "",
+                  "quota": "48명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학교부(교과+비교과), 학업역량(30)+창의융합역량(50)+공동체역량(20)",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "2차",
+                      "method": "다수 면접위원 vs 지원자 1인 (9분내외)",
+                      "date": "2026-11-21",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "60",
+                        "grade": "",
+                        "practical": "",
+                        "interview": "40"
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
-                    "document": "100",
+                    "document": "",
                     "grade": "",
                     "practical": "",
                     "interview": ""
-                  }
+                  },
+                  "note": ""
                 },
                 {
-                  "label": "2차",
-                  "method": "다수 면접위원 vs 지원자 1인 (9분내외)",
-                  "date": "2026-11-21",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "면접",
+                  "name": "",
+                  "short": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
-                    "document": "60",
+                    "document": "",
                     "grade": "",
                     "practical": "",
-                    "interview": "40"
-                  }
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "quota": "2명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
                 }
               ],
-              "finalAnnounce": "",
-              "process": "",
+              "finalAnnounce": "2027-02-05",
+              "process": "국어(35%)+수학(35%)+영어(20%)+탐구(10%)",
               "ratio": {
-                "document": "",
+                "suneung": "100",
                 "grade": "",
-                "practical": "",
-                "interview": ""
+                "practical": ""
               },
               "note": ""
             },
-            {
-              "name": "",
-              "short": "",
-              "quota": "",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
+            "etc": [],
+            "sources": [
+              [
+                "세종대 입학처",
+                "https://ipsi.sejong.ac.kr"
               ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "다군",
-          "quota": "2명",
-          "apply": {
-            "start": "2027-01-04",
-            "end": "2027-01-07",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "2027-02-05",
-          "process": "국어(35%)+수학(35%)+영어(20%)+탐구(10%)",
-          "ratio": {
-            "suneung": "100",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "세종대 입학처",
-            "https://ipsi.sejong.ac.kr"
-          ],
-          [
-            "2027 수시 기사(대학저널)",
-            "https://dhnews.co.kr/news/view/1065573352564646"
-          ]
-        ]
-      },
-      "short": "세종대"
+              [
+                "2027 수시 기사(대학저널)",
+                "https://dhnews.co.kr/news/view/1065573352564646"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "청강문화산업대학교",
       "type": "전문대학",
       "region": "경기",
-      "dept": "애니메이션스쿨-[애니메이션]",
       "address": "경기 이천시 마장면 청강가창로 389-94",
       "url": "https://www.ck.ac.kr",
-      "admission": {
-        "admissionUrl": "https://ipsi.ck.ac.kr",
-        "track": ["실기", "비실기"],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "238명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-30",
-            "note": ""
-          },
-          "finalAnnounce": "2026-12-18",
-          "note": "",
-          "types": [
-            {
-              "name": "학생부교과",
-              "short": "",
-              "quota": "16명",
+      "short": "청강대",
+      "departments": [
+        {
+          "name": "애니메이션스쿨-[애니메이션]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "238명",
               "apply": {
-                "start": "",
-                "end": "",
+                "start": "2026-09-07",
+                "end": "2026-09-30",
                 "note": ""
               },
-              "stages": [
+              "finalAnnounce": "2026-12-18",
+              "note": "",
+              "types": [
                 {
-                  "label": "",
-                  "method": "학생부총점 1,000점",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "서류",
-                  "ratio": {
-                    "document": "",
-                    "grade": "100",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
+                  "name": "학생부교과",
+                  "short": "",
+                  "quota": "16명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부총점 1,000점",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
                     "practical": "",
                     "interview": ""
-                  }
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "특별",
+                  "short": "학생부 점수(기본점수 625점)+가산점(대회)",
+                  "quota": "4명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "실기",
+                  "short": "",
+                  "quota": "90명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "면접",
+                  "short": "",
+                  "quota": "63명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부(비교과) + 포트폴리오",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "정원외",
+                  "short": "",
+                  "quota": "14명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "실기",
+              "quota": "65명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
                 }
               ],
-              "finalAnnounce": "",
-              "process": "",
+              "finalAnnounce": "2027-02-09",
+              "process": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
+              "date": "2027-01-28",
               "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
+                "suneung": "",
+                "grade": "30",
+                "practical": "70"
               },
               "note": ""
             },
-              {
-              "name": "특별",
-              "short": "학생부 점수(기본점수 625점)+가산점(대회)",
-              "quota": "4명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "서류",
-                  "ratio": {
-                    "document": "100",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
+            "etc": [],
+            "sources": [
+              [
+                "청강대 입학처",
+                "https://ipsi.ck.ac.kr"
               ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            },
-            {
-              "name": "실기",
-              "short": "",
-              "quota": "90명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "40",
-                    "practical": "60",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            },
-              {
-              "name": "면접",
-              "short": "",
-              "quota": "63명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "학생부(비교과) + 포트폴리오",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "면접",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": "100"
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            },
-              {
-              "name": "정원외",
-              "short": "",
-              "quota": "14명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "서류",
-                  "ratio": {
-                    "document": "",
-                    "grade": "100",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "실기",
-          "quota": "65명",
-          "apply": {
-            "start": "2027-01-04",
-            "end": "2027-01-20",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "2027-02-09",
-          "process": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
-           "date": "2027-01-28",
-          "ratio": {
-            "suneung": "",
-            "grade": "30",
-            "practical": "70"
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "청강대 입학처",
-            "https://ipsi.ck.ac.kr"
-          ],
-          [
-            "전공심화 전형안내(PDF)",
-            "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
-          ]
-        ]
-      },
-      "short": "청강대"
+              [
+                "전공심화 전형안내(PDF)",
+                "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
+              ]
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "한성대학교",
       "type": "대학교",
       "region": "서울",
-      "dept": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
       "address": "서울특별시 성북구 삼선교로 16길 116",
       "url": "https://enter.hansung.ac.kr/",
-      "admission": {
-        "admissionUrl": "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25",
-        "track": [
-          "실기",
-          "비실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "86명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-11",
-            "note": ""
-          },
-          "finalAnnounce": "2026-11-06",
-          "note": "",
-          "types": [
-            {
-              "name": "실기우수자전형",
-              "short": "",
+      "short": "한성대",
+      "departments": [
+        {
+          "name": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
               "quota": "86명",
               "apply": {
-                "start": "",
-                "end": "",
+                "start": "2026-09-07",
+                "end": "2026-09-11",
                 "note": ""
               },
-              "stages": [
+              "finalAnnounce": "2026-11-06",
+              "note": "",
+              "types": [
                 {
-                  "label": "",
-                  "method": "주어진 소재의 조형적 특징을 이하여 화면을 구성",
-                  "date": "2026-10-18",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "20",
-                    "practical": "80",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
+                  "name": "실기우수자전형",
+                  "short": "",
+                  "quota": "86명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "주어진 소재의 조형적 특징을 이하여 화면을 구성",
+                      "date": "2026-10-18",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "practical": "80",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
                     "practical": "",
                     "interview": ""
-                  }
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "가군",
+              "quota": "4명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
                 }
               ],
-              "finalAnnounce": "",
+              "finalAnnounce": "2027-02-05",
               "process": "",
               "ratio": {
-                "document": "",
+                "suneung": "100",
                 "grade": "",
-                "practical": "",
-                "interview": ""
+                "practical": ""
               },
               "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "가군",
-          "quota": "4명",
-          "apply": {
-            "start": "2027-01-04",
-            "end": "2027-01-07",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "2027-02-05",
-          "process": "",
-          "ratio": {
-            "suneung": "100",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "한성대학교 입학처",
-            "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25"
-          ]
-        ]
-      },
-      "short": "한성대"
-    }, 
+            },
+            "etc": [],
+            "sources": [
+              [
+                "한성대학교 입학처",
+                "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25"
+              ]
+            ]
+          }
+        }
+      ]
+    },
     {
       "name": "명지대학교(용인캠퍼스)",
       "type": "대학교",
       "region": "경기",
-      "dept": "디자인학부-[영상,애니메이션디자인디자인전공]",
       "address": "경기도 용인시 처인구 명지로 116(자연캠퍼스)",
       "url": "https://enter.hansung.ac.kr/",
-      "admission": {
-        "admissionUrl": "https://iphak.mju.ac.kr/pages/?p=10&mj=01",
-        "track": [
-          "실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "21명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-11",
-            "note": ""
-          },
-          "finalAnnounce": "2026-12-09",
-          "note": "",
-          "types": [
-            {
-              "name": "실기우수자전형",
-              "short": "",
+      "short": "명지대",
+      "departments": [
+        {
+          "name": "디자인학부-[영상,애니메이션디자인디자인전공]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://iphak.mju.ac.kr/pages/?p=10&mj=01",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
               "quota": "21명",
               "apply": {
-                "start": "",
-                "end": "",
+                "start": "2026-09-07",
+                "end": "2026-09-11",
                 "note": ""
               },
-              "stages": [
+              "finalAnnounce": "2026-12-09",
+              "note": "",
+              "types": [
                 {
-                  "label": "상황표현",
-                  "method": "",
-                  "date": "2026-10-11",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "30",
-                    "practical": "70",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "기초디자인",
-                  "method": "",
-                  "date": "2026-10-12",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "30",
-                    "practical": "70",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "",
-          "quota": "",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "",
-          "process": "",
-          "ratio": {
-            "suneung": "",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "명지대학교 입학처",
-            "https://iphak.mju.ac.kr/pages/?p=10&mj=01"
-          ]
-        ]
-      },
-      "short": "명지대"
-    },
-    {
-      "name": "경기대학교(수원캠퍼스)",
-      "type": "대학교",
-      "region": "경기",
-      "dept": "관광문화대학-[애니메이션학과]",
-      "address": "경기도 수원시 영통구 광교산로 154-42",
-      "url": "https://enter.kyonggi.ac.kr/",
-      "admission": {
-        "admissionUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120",
-        "track": [
-          "실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "16명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-11",
-            "note": "학생부교과(국어,수학,영어,사회,과학,한국사,사회)"
-          },
-          "finalAnnounce": "2026-11-20",
-          "note": "",
-          "types": [
-            {
-              "name": "예능실기우수자전형",
-              "short": "",
-              "quota": "상상표현(11명), 웹툰(5명)",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "상황표현",
-                  "method": "상상으로 4컷 표현하기",
-                  "date": "2026-10-11",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "40",
-                    "practical": "60",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "웹툰",
-                  "method": "4컷 웹툰",
-                  "date": "2026-10-12",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "40",
-                    "practical": "60",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "가군",
-          "quota": "10명(상상표현:7명, 웹툰:3명)",
-          "apply": {
-            "start": "2027-01-04",
-            "end": "2027-01-07",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "2027-02-05",
-          "process": "",
-          "date" : "2027-01-16",
-          "ratio": {
-            "suneung": "40",
-            "grade": "",
-            "practical": "60"
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "경기대학교 입학처",
-            "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120"
-          ]
-        ]
-      },
-      "short": "경기대"
-    },
-    {
-      "name": "예원예술대학교(양주캠퍼스)",
-      "type": "대학교",
-      "region": "경기",
-      "dept": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
-      "address": "경기 양주시 은현면 예원대학로 56",
-      "url": "https://enter.kyonggi.ac.kr/",
-      "admission": {
-        "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
-        "track": [
-          "실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "25명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-11",
-            "note": ""
-          },
-          "finalAnnounce": "2026-11-09",
-          "note": "",
-          "types": [
-            {
-              "name": "실기",
-              "short": "",
-              "quota": "25명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "실기",
-                  "method": "칸만화, 상황표현, 기초디자인(택1)",
-                  "date": "2026-10-17",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "100",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
+                  "name": "실기우수자전형",
+                  "short": "",
+                  "quota": "21명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "상황표현",
+                      "method": "",
+                      "date": "2026-10-11",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "30",
+                        "practical": "70",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "기초디자인",
+                      "method": "",
+                      "date": "2026-10-12",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "30",
+                        "practical": "70",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
                   "ratio": {
                     "document": "",
                     "grade": "",
                     "practical": "",
                     "interview": ""
-                  }
+                  },
+                  "note": ""
                 }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "",
-          "quota": "",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "",
-          "process": "",
-          "date" : "",
-          "ratio": {
-            "suneung": "",
-            "grade": "",
-            "practical": ""
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "예원예술대 입학처",
-            "https://admission.yewon.ac.kr/main/"
-          ]
-        ]
-      },
-      "short": "예원예술대"
-    },
-     {
-      "name": "대진대학교",
-      "type": "대학교",
-      "region": "경기",
-      "dept": "인문예술대학-[미술만화게임학부]",
-      "address": "경기도 포천시 호국로 1007",
-      "url": "https://admission.daejin.ac.kr/",
-      "admission": {
-        "admissionUrl": "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&",
-        "track": [
-          "실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "30명",
-          "apply": {
-            "start": "2026-09-07",
-            "end": "2026-09-11",
-            "note": ""
-          },
-          "finalAnnounce": "2026-11-13",
-          "note": "",
-          "types": [
-            {
-              "name": "실기우수자전형",
-              "short": "",
-              "quota": "30명",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "실기우수자전형",
-                  "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
-                  "date": "2026-10-24",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "document": "",
-                    "grade": "20",
-                    "practical": "80",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "document": "",
-                "grade": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "다군",
-          "quota": "15명",
-          "apply": {
-            "start": "2027-12-29",
-            "end": "",
-            "note": ""
-          },
-          "stages": [],
-          "finalAnnounce": "",
-          "process": "",
-          "date" : "2027-01-23",
-          "ratio": {
-            "suneung": "20",
-            "grade": "",
-            "practical": "80"
-          },
-          "note": ""
-        },
-        "etc": [],
-        "sources": [
-          [
-            "대진대 입학처",
-            "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&"
-          ]
-        ]
-      },
-      "short": "대진대"
-    },
-    {
-      "name": "건국대학교",
-      "type": "대학교",
-      "region": "서울",
-      "dept": "예술디자인대학-[영상디자인학과]",
-      "address": "서울시 광진구 능동로 120",
-      "url": "https://www.konkuk.ac.kr/konkuk/2595/subview.do",
-      "admission": {
-        "admissionUrl": "https://admission.konkuk.ac.kr/admission/index.do",
-        "track": [
-          "실기"
-        ],
-        "process": "",
-        "practical": "",
-        "note": "",
-        "susi": {
-          "reference": false,
-          "quota": "명",
-          "apply": {
-            "start": "",
-            "end": "",
-            "note": ""
-          },
-          "finalAnnounce": "",
-          "note": "",
-          "types": [
-            {
-              "name": "",
-              "short": "",
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "",
               "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
                 "note": ""
               },
-              "stages": [
+              "stages": [],
+              "exams": [
                 {
                   "label": "",
-                  "method": "",
                   "date": "",
                   "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
-                },
-                {
-                  "label": "",
-                  "method": "",
-                  "date": "",
-                  "endDate": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  }
+                  "note": ""
                 }
               ],
               "finalAnnounce": "",
               "process": "",
               "ratio": {
-                "document": "",
+                "suneung": "",
                 "grade": "",
-                "practical": "",
-                "interview": ""
+                "practical": ""
               },
               "note": ""
-            }
-          ]
-        },
-        "jeongsi": {
-          "reference": false,
-          "gun": "다군",
-          "quota": "35명",
-          "apply": {
-            "start": "2027-01-05",
-            "end": "2027-01-07",
-            "note": ""
-          },
-          "stages": [ {
+            },
+            "etc": [],
+            "sources": [
+              [
+                "명지대학교 입학처",
+                "https://iphak.mju.ac.kr/pages/?p=10&mj=01"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "경기대학교(수원캠퍼스)",
+      "type": "대학교",
+      "region": "경기",
+      "address": "경기도 수원시 영통구 광교산로 154-42",
+      "url": "https://enter.kyonggi.ac.kr/",
+      "short": "경기대",
+      "departments": [
+        {
+          "name": "관광문화대학-[애니메이션학과]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "16명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": "학생부교과(국어,수학,영어,사회,과학,한국사,사회)"
+              },
+              "finalAnnounce": "2026-11-20",
+              "note": "",
+              "types": [
+                {
+                  "name": "예능실기우수자전형",
+                  "short": "",
+                  "quota": "상상표현(11명), 웹툰(5명)",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "상황표현",
+                      "method": "상상으로 4컷 표현하기",
+                      "date": "2026-10-11",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "웹툰",
+                      "method": "4컷 웹툰",
+                      "date": "2026-10-12",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "가군",
+              "quota": "10명(상상표현:7명, 웹툰:3명)",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "2027-01-16",
+              "ratio": {
+                "suneung": "40",
+                "grade": "",
+                "practical": "60"
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "경기대학교 입학처",
+                "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "예원예술대학교(양주캠퍼스)",
+      "type": "대학교",
+      "region": "경기",
+      "address": "경기 양주시 은현면 예원대학로 56",
+      "url": "https://enter.kyonggi.ac.kr/",
+      "short": "예원예술대",
+      "departments": [
+        {
+          "name": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "25명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": ""
+              },
+              "finalAnnounce": "2026-11-09",
+              "note": "",
+              "types": [
+                {
+                  "name": "실기",
+                  "short": "",
+                  "quota": "25명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "실기",
+                      "method": "칸만화, 상황표현, 기초디자인(택1)",
+                      "date": "2026-10-17",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "100",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "",
+              "quota": "",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "date": "",
+              "ratio": {
+                "suneung": "",
+                "grade": "",
+                "practical": ""
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "예원예술대 입학처",
+                "https://admission.yewon.ac.kr/main/"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "대진대학교",
+      "type": "대학교",
+      "region": "경기",
+      "address": "경기도 포천시 호국로 1007",
+      "url": "https://admission.daejin.ac.kr/",
+      "short": "대진대",
+      "departments": [
+        {
+          "name": "인문예술대학-[미술만화게임학부]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "30명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": ""
+              },
+              "finalAnnounce": "2026-11-13",
+              "note": "",
+              "types": [
+                {
+                  "name": "실기우수자전형",
+                  "short": "",
+                  "quota": "30명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "실기우수자전형",
+                      "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
+                      "date": "2026-10-24",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "practical": "80",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "quota": "15명",
+              "apply": {
+                "start": "2027-12-29",
+                "end": "",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "",
+              "date": "2027-01-23",
+              "ratio": {
+                "suneung": "20",
+                "grade": "",
+                "practical": "80"
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "대진대 입학처",
+                "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "건국대학교",
+      "type": "대학교",
+      "region": "서울",
+      "address": "서울시 광진구 능동로 120",
+      "url": "https://www.konkuk.ac.kr/konkuk/2595/subview.do",
+      "short": "건국대",
+      "departments": [
+        {
+          "name": "예술디자인대학-[영상디자인학과]",
+          "short": "",
+          "admission": {
+            "admissionUrl": "https://admission.konkuk.ac.kr/admission/index.do",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "finalAnnounce": "",
+              "note": "",
+              "types": [
+                {
+                  "name": "",
+                  "short": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "exams": [
+                    {
+                      "label": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "finalAnnounce": "",
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "quota": "35명",
+              "apply": {
+                "start": "2027-01-05",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [
+                {
                   "label": "실기",
                   "method": "[기초디자인]기초 조형능력을 평가할 수 있는 주제해석과 표현",
                   "date": "2027-01-25",
@@ -1261,26 +1501,147 @@
                     "suneung": "",
                     "practical": "",
                     "interview": ""
-                  }}],
-          "finalAnnounce": "",
-          "process": "수능반응비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)",
-          "date" : "2027-01-25",
-          "ratio": {
-            "suneung": "20",
-            "grade": "",
-            "practical": "80"
-          },
+                  }
+                }
+              ],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "",
+              "process": "수능반응비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)",
+              "date": "2027-01-25",
+              "ratio": {
+                "suneung": "20",
+                "grade": "",
+                "practical": "80"
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "건국대 입학처",
+                "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "_학과템플릿": {
+    "name": "",
+    "short": "",
+    "admission": {
+      "admissionUrl": "",
+      "track": [],
+      "process": "",
+      "practical": "",
+      "note": "",
+      "susi": {
+        "reference": false,
+        "quota": "",
+        "apply": {
+          "start": "",
+          "end": "",
           "note": ""
         },
-        "etc": [],
-        "sources": [
-          [
-            "건국대 입학처",
-            "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
-          ]
+        "finalAnnounce": "",
+        "note": "",
+        "types": [
+          {
+            "name": "",
+            "short": "",
+            "quota": "",
+            "apply": {
+              "start": "",
+              "end": "",
+              "note": ""
+            },
+            "stages": [
+              {
+                "label": "1차",
+                "method": "",
+                "date": "",
+                "endDate": "",
+                "announce": "",
+                "kind": "서류",
+                "ratio": {
+                  "document": "",
+                  "grade": "",
+                  "practical": "",
+                  "interview": ""
+                }
+              },
+              {
+                "label": "2차",
+                "method": "",
+                "date": "",
+                "endDate": "",
+                "announce": "",
+                "kind": "기타",
+                "ratio": {
+                  "document": "",
+                  "grade": "",
+                  "practical": "",
+                  "interview": ""
+                }
+              }
+            ],
+            "exams": [
+              {
+                "label": "",
+                "date": "",
+                "endDate": "",
+                "note": ""
+              }
+            ],
+            "finalAnnounce": "",
+            "process": "",
+            "ratio": {
+              "document": "",
+              "grade": "",
+              "practical": "",
+              "interview": ""
+            },
+            "note": ""
+          }
         ]
       },
-      "short": "건국대"
+      "jeongsi": {
+        "reference": false,
+        "gun": "",
+        "quota": "",
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "stages": [],
+        "exams": [
+          {
+            "label": "",
+            "date": "",
+            "endDate": "",
+            "note": ""
+          }
+        ],
+        "finalAnnounce": "",
+        "process": "",
+        "ratio": {
+          "suneung": "",
+          "grade": "",
+          "practical": ""
+        },
+        "note": ""
+      },
+      "etc": [],
+      "sources": []
     }
-  ]
+  }
 }
