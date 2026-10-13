@@ -645,7 +645,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "238명",
+              "quota": "190명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
@@ -654,50 +654,6 @@
               "finalAnnounce": "2026-12-18",
               "note": "",
               "types": [
-                {
-                  "name": "학생부교과",
-                  "short": "",
-                  "quota": "16명",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "학생부총점 1,000점",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    }
-                  ],
-                  "finalAnnounce": "",
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
                 {
                   "name": "특별",
                   "short": "학생부 점수(기본점수 625점)+가산점(대회)",
