@@ -1240,7 +1240,7 @@
           ]
         },
         "jeongsi": {
-          "reference": true,
+          "reference": false,
           "gun": "다군",
           "quota": "35명",
           "apply": {
@@ -1258,8 +1258,8 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
-                    "suneung": "60",
-                    "practical": "40",
+                    "suneung": "",
+                    "practical": "",
                     "interview": ""
                   }}],
           "finalAnnounce": "",
