@@ -280,7 +280,7 @@
       <div class="filters" id="seasonFilters" role="group" aria-label="전형 시기 필터"></div>
       <div class="flabel">실기 여부</div>
       <div class="filters" id="trackFilters" role="group" aria-label="실기 여부 필터"></div>
-      <div class="fhint">※ 여러 개를 함께 선택할 수 있어요. 지역·유형은 선택한 것 중 하나라도 해당하면, 시기·실기는 선택한 것에 모두 해당하는 학교만 보여요. 전형 정보가 확인되지 않은 학교는 시기·실기 필터를 켜면 숨겨져요.</div>
+      <div class="fhint">※ 여러 개를 함께 선택하면 그중 하나라도 해당하는 학교가 보여요. "수시+정시", "실기+비실기"는 둘 다 있는 학교만 보여요. 전형 정보가 확인되지 않은 학교는 시기·실기 필터를 켜면 숨겨져요.</div>
       </div>
     </header>
     <div class="count" id="count"></div>
@@ -372,15 +372,16 @@ function buildChips(containerId, values, key) {
 function buildAllChips() {
   buildChips("regionFilters", [...new Set(SCHOOLS.map(s => s.region).filter(Boolean))], "region");
   buildChips("typeFilters", [...new Set(SCHOOLS.map(s => s.type).filter(Boolean))], "type");
-  buildChips("seasonFilters", ["수시", "정시"], "season");
-  buildChips("trackFilters", ["실기", "비실기"], "track");
+  buildChips("seasonFilters", ["수시", "정시", "수시+정시"], "season");
+  buildChips("trackFilters", ["실기", "비실기", "실기+비실기"], "track");
 }
 document.getElementById("q").addEventListener("input", e => { filter.q = e.target.value.trim(); render(); });
 
 function filtered() {
   const q = filter.q.toLowerCase();
   const any = (set, v) => set.size === 0 || set.has(v);                 // 지역·유형: 선택한 것 중 하나
-  const every = (set, arr) => [...set].every(x => arr.includes(x));      // 시기·실기: 선택한 것 모두
+  // 시기·실기: 선택한 항목 중 하나라도 맞으면 통과. "수시+정시"·"실기+비실기"는 둘 다 있어야 맞아요.
+  const every = (set, arr) => set.size === 0 || [...set].some(opt => opt.split("+").every(x => arr.includes(x)));
   return SCHOOLS.filter(s =>
     any(filter.region, s.region) && any(filter.type, s.type) &&
     s.depts.some(d => every(filter.season, d.adm.seasons || []) && every(filter.track, d.adm.track || [])) &&
