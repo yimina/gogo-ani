@@ -86,6 +86,8 @@
   .dtab[aria-pressed="true"] .dm { color: #fff; }
   .dtab:focus-visible { outline: 3px solid rgba(47,111,237,.4); outline-offset: 1px; }
   .dept + .dept { margin-top: 2px; }
+  .dept { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+  .dq { font-size: 11.5px; font-weight: 700; color: #1d4fb8; background: #e6edff; border-radius: 999px; padding: 0 9px; white-space: nowrap; }
   /* 시험 · 발표 일정: 라벨(색 점) + 날짜가 줄 맞춰 정렬 */
   .sched { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 12px; margin: 6px 0 4px; padding: 7px 12px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
   .si { display: contents; }
@@ -112,12 +114,13 @@
   /* 전체 모집인원 */
   .qt { display: flex; align-items: baseline; gap: 10px; margin: 10px 0 8px; padding: 7px 14px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; }
   .ql { font-size: 12.5px; color: var(--sub); }
+  .qn { margin-left: auto; font-size: 11px; color: var(--sub); }
   .qv { font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--ink); }
   .qv small { font-size: 12px; font-weight: 500; margin-left: 2px; color: var(--sub); }
   /* 단계 라벨 (입력했을 때만 표시) */
   .stl { display: inline-block; font-size: 11.5px; font-weight: 700; color: #fff; background: var(--ink); border-radius: 999px; padding: 1px 11px; margin-bottom: 8px; }
   .grp { margin-top: 10px; padding-top: 4px; border-top: 1px dashed var(--line); }
-  .gh { margin: 6px 0 6px; }
+  .gh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 6px; }
   .gt { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #fff; }
   .gt.s1 { background: var(--blue); } .gt.s2 { background: #1f9d6b; } .gt.s3 { background: #6b7280; }
   .typ { margin: 8px 0 10px; padding: 8px 12px 4px; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; }
@@ -324,7 +327,7 @@ async function loadData() {
         .map(d => {
           const adm = d.admission || {};
           const seasons = [groupHas(adm.susi) && "수시", groupHas(adm.jeongsi) && "정시"].filter(Boolean);
-          return { name: d.name || "", short: d.short || "", adm: { ...adm, seasons } };
+          return { name: d.name || "", short: d.short || "", quota: d.quota || "", adm: { ...adm, seasons } };
         });
       return { type: "", region: "", url: "#", ...x, id: i + 1,
                depts: depts.length ? depts : [{ name: "", short: "", adm: { seasons: [] } }] };
@@ -441,10 +444,24 @@ function ratioOf(r, jeong) {
     : ratioHtml([["서류", r.document, "#334155"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
 }
 
-function quotaHtml(label, q) {            // 숫자는 크게, 단위(명)는 작게
+function qNum(q) {
+  const m = String(q || "").match(/^\s*(\d[\d,]*)/);
+  return m ? parseInt(m[1].replace(/,/g, ""), 10) : null;
+}
+function deptQuota(d) {                   // {text, derived} 또는 null
+  const own = cleanQ(d.quota);
+  if (own) return { text: own, derived: false };
+  const parts = [d.adm.susi && d.adm.susi.quota, d.adm.jeongsi && d.adm.jeongsi.quota].map(cleanQ).filter(Boolean);
+  if (!parts.length) return null;
+  const nums = parts.map(qNum);
+  if (nums.some(n => n === null)) return null;
+  return { text: nums.reduce((a, b) => a + b, 0) + "명", derived: true };
+}
+
+function quotaHtml(label, q, note) {            // 숫자는 크게, 단위(명)는 작게
   const m = String(q).match(/^\s*(\d[\d,]*)\s*(\D.*)?$/);
   const val = m ? `${m[1]}<small>${m[2] || ""}</small>` : q;
-  return `<div class="qt"><span class="ql">${label}</span><b class="qv">${val}</b></div>`;
+  return `<div class="qt"><span class="ql">${label}</span><b class="qv">${val}</b>${note ? `<span class="qn">${note}</span>` : ""}</div>`;
 }
 
 function deptSub(d) {                    // 대괄호 앞의 소속(단과대·학부) 이름
@@ -501,7 +518,6 @@ function groupRows(g, jeong, ref, isType, gname) {
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
     isType ? null : ["원서 접수", applyTxt],
-    !isType && cleanQ(g.quota) ? { block: quotaHtml(hasTypes ? "전체 모집인원" : "모집인원", cleanQ(g.quota)) } : null,
     stageBlock,
     ["실기 시험 일정", exams],
     finRow,
@@ -552,13 +568,15 @@ function admissionHtml(s) {
                : gr.key === "jeongsi" ? '<p class="muted none">정시 모집이 없어요.</p>'
                : '<p class="muted">아직 입력된 정보가 없어요.</p>';
     const inner = (rows.length ? dl(rows) : "") + types;
-    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span></div>${inner || none}</div>`;
+    return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span>${cleanQ(gr.g.quota) ? `<span class="qb">모집 ${cleanQ(gr.g.quota)}</span>` : ""}</div>${inner || none}</div>`;
   }).join("");
 
+  const dq = deptQuota(dp);
+  const dqHtml = dq ? quotaHtml("학과 전체 모집인원", dq.text, dq.derived ? "수시+정시 합계" : "") : "";
   const adm = a.admissionUrl || s.url;
   const q = encodeURIComponent(s.name + " 신입생 모집요강");
   const src = (a.sources || []).map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
-  return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${common.length ? dl(common) : ""}${sections}
+  return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${dqHtml}${common.length ? dl(common) : ""}${sections}
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
@@ -581,7 +599,7 @@ function renderList() {
     if (on) li.className = "active";
     li.innerHTML = `<button type="button" aria-expanded="${on}">
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
-      ${s.depts.map(d => d.name ? `<div class="dept">${d.name}</div>` : "").join("")}
+      ${s.depts.map(d => { const q = deptQuota(d); return d.name ? `<div class="dept"><span>${d.name}</span>${q ? `<span class="dq"${q.derived ? ' title="수시+정시 모집인원 합계"' : ""}>모집 ${q.text}</span>` : ""}</div>` : ""; }).join("")}
       <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
     li.dataset.id = s.id;
     li.querySelector("button").onclick = () => toggleSchool(s.id);
