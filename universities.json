@@ -154,10 +154,10 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "48명",
+              "quota": "50명",
               "apply": {
-                "start": "2026-09-14",
-                "end": "2026-09-18",
+                "start": "2026-09-08",
+                "end": "2026-09-11",
                 "note": ""
               },
               "finalAnnounce": "2026-12-18",
@@ -173,7 +173,7 @@
                       "method": "학교부(교과+비교과), 학업역량(30)+창의융합역량(50)+공동체역량(20)",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
+                      "announce": "2026-11-13",
                       "kind": "서류",
                       "ratio": {
                         "document": "100",
@@ -184,7 +184,7 @@
                     },
                     {
                       "label": "2차",
-                      "method": "다수 면접위원 vs 지원자 1인 (9분내외)",
+                      "method": "다수 면접위원 vs 지원자 1인(9분내외)",
                       "examDate": "2026-11-21",
                       "examEnd": "",
                       "announce": "",
@@ -194,49 +194,6 @@
                         "grade": "",
                         "practical": "",
                         "interview": "40"
-                      }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "",
-                  "short": "",
-                  "quota": "",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
                       }
                     }
                   ],
@@ -270,7 +227,7 @@
                 }
               ],
               "finalAnnounce": "2027-02-05",
-              "process": "국어(35%)+수학(35%)+영어(20%)+탐구(10%)",
+              "process": "국어(35)+수학(35)+영어(20)+탐구(10)",
               "ratio": {
                 "suneung": "100",
                 "grade": "",
