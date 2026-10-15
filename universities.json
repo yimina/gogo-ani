@@ -888,12 +888,12 @@
               "note": "",
               "types": [
                 {
-                  "name": "실기우수자전형",
+                  "name": "상황표현",
                   "short": "",
-                  "quota": "21명",
+                  "quota": "11명",
                   "stages": [
                     {
-                      "label": "상황표현(11명)",
+                      "label": "",
                       "method": "주어진 상황주제에 대한 창의적 표현능력 평가(240분)",
                       "examDate": "2026-10-11",
                       "examEnd": "",
@@ -905,9 +905,24 @@
                         "practical": "70",
                         "interview": ""
                       }
-                    },
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "기초디자인",
+                  "short": "",
+                  "quota": "10명",
+                  "stages": [
                     {
-                      "label": "기초디자인(10명)",
+                      "label": "",
                       "method": "기초 조형능력 평가를 위한 문제 주제의 해석과 그 표현(240분)",
                       "examDate": "2026-10-12",
                       "examEnd": "",
