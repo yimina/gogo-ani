@@ -119,6 +119,8 @@
   .qv small { font-size: 12px; font-weight: 500; margin-left: 2px; color: var(--sub); }
   /* 단계 라벨 (입력했을 때만 표시) */
   .stl { display: inline-block; font-size: 11.5px; font-weight: 700; color: #fff; background: var(--ink); border-radius: 999px; padding: 1px 11px; margin-bottom: 8px; }
+  .tn { font-size: 12px; color: var(--sub); }
+  .gb { font-size: 11.5px; font-weight: 700; color: #0f7a53; background: #e3f6ec; border-radius: 999px; padding: 1px 9px; }
   .grp { margin-top: 10px; padding-top: 4px; border-top: 1px dashed var(--line); }
   .gh { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 6px; }
   .gt { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 999px; color: #fff; }
@@ -438,11 +440,19 @@ function ratioHtml(items) {
 
 function cleanQ(q) { return q && q.trim() !== "명" ? q : ""; }
 
+function inferKind(g) {                  // 시험 종류가 비어 있으면 반영 비율로 판단: 실기만 → 실기, 면접만 → 면접
+  const r = (g && g.ratio) || {};
+  const iv = !!(r.interview && String(r.interview).trim()), pr = !!(r.practical && String(r.practical).trim());
+  return iv && !pr ? "면접" : pr && !iv ? "실기" : "";
+}
+
+function gradeLabel(r) { return "학생부" + (r && r.gradeType ? `(${r.gradeType})` : ""); }
+
 function ratioOf(r, jeong) {
   r = r || {};
   return jeong
-    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"]])
-    : ratioHtml([["서류", r.document, "#334155"], ["내신", r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
+    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], [gradeLabel(r), r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]])
+    : ratioHtml([["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
 }
 
 function qNum(q) {
@@ -494,7 +504,7 @@ function groupRows(g, jeong, ref, isType, gname) {
   const ap = g.apply || {};
   const applyTxt = [fmtRange(ap.start, ap.end), ap.note ? "(" + ap.note + ")" : ""].filter(Boolean).join(" ");
   const PILL = { "서류": "#334155", "실기": "#e8336d", "면접": "#c77700" };
-  const LBL = { "서류": "서류 평가", "실기": "실기 시험", "면접": "면접 시험" };
+  const LBL = { "서류": "서류 평가", "실기": "실기 시험일", "면접": "면접" };
   // 단계(1차·2차 …): 라벨 없이 내용을 큼직하게, 단계 사이는 ▼ 로 연결
   const blocks = (g.stages || []).map(st => {
     const ed = st.examDate || st.date, ee = st.examEnd || st.endDate;     // (예전 키 date·endDate 도 지원)
@@ -510,17 +520,23 @@ function groupRows(g, jeong, ref, isType, gname) {
   }).filter(Boolean);
   const stageBlock = blocks.length ? { block: `<div class="stgs">${blocks.join('<div class="stc" aria-hidden="true">▼</div>')}</div>` } : null;
   const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, (gname ? gname + " " : "") + "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
-  const examCards = (g.exams || []).filter(x => x && pd(x.date)).map(x =>
-    `<div class="si" style="--kc:#e8336d"><span class="sl">${x.label || "실기 시험"}</span><div class="sv"><b>${fmtRange(x.date, x.endDate)}</b>${x.note ? `<span class="sn">${x.note}</span>` : ""}</div></div>`
-  ).join("");
+  const examCards = (g.exams || []).filter(x => x && (pd(x.date) || (x.method || "").trim())).map(x => {
+    const kind = x.kind || inferKind(g);                                  // 면접 → "면접", 실기 → "실기 시험일"
+    const when = pd(x.date) ? fmtRange(x.date, x.endDate) : "";
+    const method = (x.method || "").trim();
+    const label = when ? (LBL[kind] || "시험일") : (kind === "면접" ? "면접" : "실기") + " 방법";
+    const main = when || method;
+    const sub = [when ? method : "", x.label, x.note].filter(Boolean).join(" · ");
+    return `<div class="si" style="--kc:${PILL[kind] || "#475569"}"><span class="sl">${label}</span><div class="sv"><b>${main}</b>${sub ? `<span class="sn">${sub}</span>` : ""}</div></div>`;
+  }).join("");
   const exams = examCards ? `<div class="sched">${examCards}</div>` : "";
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   const hasTypes = (g.types || []).some(groupHas);
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
-    isType ? null : ["원서 접수", applyTxt],
+    isType && !jeong ? null : ["원서 접수", applyTxt],
     stageBlock,
-    ["실기 시험 일정", exams],
+    ["시험 일정", exams],
     finRow,
     isType ? null : ["참고 표시", ref && anyDates(g) ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
     ["전형 방법", g.process],
@@ -532,7 +548,10 @@ function groupRows(g, jeong, ref, isType, gname) {
 function typeHtml(t, jeong, ref) {
   const rows = groupRows(t, jeong, ref, true);
   const q = cleanQ(t.quota) ? `<span class="qb">모집 ${t.quota}</span>` : "";
-  return `<div class="typ"><div class="th"><b>${t.name || "전형"}</b>${q}</div>${rows.length ? dl(rows) : '<p class="muted">전형 세부 정보가 아직 없어요.</p>'}</div>`;
+  const gun = jeong && gunText(t) ? `<span class="gb">${gunText(t)}</span>` : "";
+  const main = t.title || t.name || "전형";
+  const sub = t.title && t.name ? `<span class="tn">${t.name}</span>` : "";
+  return `<div class="typ"><div class="th"><b>${main}</b>${sub}${gun}${q}</div>${rows.length ? dl(rows) : '<p class="muted">전형 세부 정보가 아직 없어요.</p>'}</div>`;
 }
 
 function dl(rows) {
@@ -654,20 +673,15 @@ function toggleSchool(id) {
   if (b) b.focus({ preventScroll: true });
 }
 function closeInfo() {
+  wantInfo = null;
   if (infoWindow) infoWindow.close();
   Object.values(markers).forEach(m => m.setIcon(pinIcon(false)));
 }
-function select(id, fromList) {
-  activeId = id;
+let wantInfo = null;   // 팝업을 열어야 하는 학교 (달력 화면에서 고른 경우 지도로 돌아올 때 연다)
+
+function openInfo(id) {
   const s = SCHOOLS.find(x => x.id === id);
-  renderList();
-  scrollActive();
-  if (!mapReady || !coords[id]) return;
-
-  Object.entries(markers).forEach(([mid, m]) => m.setIcon(pinIcon(+mid === id)));
-  map.panTo(coords[id]);
-  if (map.getZoom() < 13) map.setZoom(14);
-
+  if (!s || !mapReady || !markers[id]) return;
   const q = encodeURIComponent(s.name);
   infoWindow.setContent(`<div class="iw">
     <button type="button" class="iw-x" aria-label="팝업 닫기" onclick="closeInfo()">&times;</button>
@@ -679,6 +693,20 @@ function select(id, fromList) {
       <a class="alt" href="https://map.naver.com/p/search/${q}" target="_blank" rel="noopener">길찾기</a>
     </div></div>`);
   infoWindow.open(map, markers[id]);
+}
+
+function select(id, fromList) {
+  activeId = id;
+  wantInfo = id;
+  renderList();
+  scrollActive();
+  if (!mapReady || !coords[id]) return;
+
+  Object.entries(markers).forEach(([mid, m]) => m.setIcon(pinIcon(+mid === id)));
+  if (view !== "map") return;            // 달력 화면에서는 지도가 숨겨져 있어서 지금 팝업을 열면 투명하게 깨져요
+  map.panTo(coords[id]);
+  if (map.getZoom() < 13) map.setZoom(14);
+  openInfo(id);
 }
 function scrollActive() {
   const on = document.querySelector("#list li.active");
@@ -700,10 +728,10 @@ function buildEvents(schools) {
     // 학과가 2개 이상이면 달력에 '학교·학과' 로 표시
     const sn = shortName(s) + (s.depts.length > 1 ? "·" + deptLabel(dp) : "");
     const base = { sid: s.id, did, school: sn };
-    const push = (obj, label, ref, isType) => {
+    const push = (obj, label, ref, isType, applyOK) => {
       const ap = obj.apply || {};
       const as = pd(ap.start);
-      if (as && !isType) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+      if (as && applyOK) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
       (obj.stages || []).forEach(st => {
         const ds = pd(st.examDate || st.date);
         if (ds) {
@@ -715,7 +743,9 @@ function buildEvents(schools) {
       });
       (obj.exams || []).forEach(x => {
         const dx = pd(x && x.date);
-        if (dx) ev.push({ ...base, title: label + " 실기" + (x.label ? "(" + x.label + ")" : ""), method: x.note || "", kind: "실기", start: dx, end: pd(x.endDate) || dx, ref });
+        if (!dx) return;
+        const kind = x.kind && KINDS[x.kind] ? x.kind : (inferKind(obj) || "실기");
+        ev.push({ ...base, title: label + " " + (kind === "면접" ? "면접" : kind === "서류" ? "서류" : "실기") + (x.label ? "(" + x.label + ")" : ""), method: [x.method, x.note].filter(Boolean).join(" · "), kind, start: dx, end: pd(x.endDate) || dx, ref });
       });
       const fa = pd(obj.finalAnnounce);
       if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
@@ -723,8 +753,11 @@ function buildEvents(schools) {
     admGroups(a).forEach(gr => {
       const g = gr.g || {};
       const gref = !!g.reference;
-      push(g, gr.name, gref);
-      (g.types || []).forEach(t => push(t, gr.name + " " + (t.short || t.name || "전형"), gref || !!t.reference, true));
+      push(g, gr.name, gref, false, true);
+      (g.types || []).forEach(t => {
+        const gsuf = gr.key === "jeongsi" && gunText(t) ? "(" + gunText(t) + ")" : "";
+        push(t, gr.name + " " + (t.short || t.title || t.name || "전형") + gsuf, gref || !!t.reference, true, gr.key === "jeongsi");
+      });
     });
   }));
   ev.forEach(e => { if (e.end < e.start) e.end = e.start; });
@@ -881,8 +914,11 @@ function setView(v) {
   if (v === "cal") renderCal();
   else if (mapReady) setTimeout(() => {
     naver.maps.Event.trigger(map, "resize");
-    if (activeId && coords[activeId]) map.setCenter(coords[activeId]);
-    else fitToVisible(filtered());
+    if (activeId && coords[activeId]) {
+      map.setCenter(coords[activeId]);
+      if (map.getZoom() < 13) map.setZoom(14);
+      if (wantInfo === activeId) openInfo(activeId);      // 지도가 보이는 지금 팝업을 다시 연다
+    } else fitToVisible(filtered());
   }, 0);
 }
 document.getElementById("tabMap").onclick = () => setView("map");
@@ -900,7 +936,7 @@ function initMap() {
     zoomControl: true, zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT }
   });
   infoWindow = new naver.maps.InfoWindow({ borderWidth: 0, backgroundColor: "#fff", anchorSize: new naver.maps.Size(12, 10), pixelOffset: new naver.maps.Point(0, -8) });
-  naver.maps.Event.addListener(map, "click", () => infoWindow.close());
+  naver.maps.Event.addListener(map, "click", () => closeInfo());
   mapReady = true;
 
   // 주소 → 좌표 (Geocoder). 학교마다 한 번씩 요청.

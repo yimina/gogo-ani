@@ -7,13 +7,14 @@
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
     "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
-    "susi.types: 학교에 있는 수시 전형(학생부교과, 학생부종합, 실기우수자, 논술 등)마다 한 덩어리씩 추가하세요. {name 전형 이름, short 달력용 짧은 이름(선택), quota 그 전형의 모집인원(예: \"10명\"), stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 내신, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 전형 이름을 비워 둔 덩어리는 화면에 나오지 않아요.",
-    "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 내신, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요. (예전 키 date·endDate도 계속 읽혀요.)",
-    "admission.jeongsi(정시): reference, gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), quota 정시 모집인원, apply, stages, finalAnnounce, process, ratio {suneung 수능, grade 내신, practical 실기}, note. 필요하면 types 배열도 수시와 같은 형식으로 쓸 수 있어요.",
+    "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
+    "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·grade·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.)",
+    "admission.jeongsi(정시): reference, gun(정시 전체에 공통인 군), quota 정시 모집인원, apply, stages, finalAnnounce 정시 최종 합격자 발표일, process, ratio {suneung 수능, grade 학생부, gradeType 교과/종합, practical 실기, interview 면접}, note, types 정시 전형 배열(아래).",
+    "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 따로 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages, exams 시험(면접·실기) 날짜와 방법, process, ratio {suneung, grade, gradeType, practical, interview}, note}.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요.",
-    "exams(실기 시험 일정): 정시처럼 단계 구분 없이 실기 시험 날짜를 여러 개 적을 때 쓰는 배열 [{label, date, endDate, note}]이에요. 수시 전형은 단계(stages)의 examDate를 쓰세요.",
+    "exams(시험 일정): 시험 날짜·방법을 여러 개 적는 배열 [{label 조·계열 이름(선택), kind 실기/면접, method 시험 방법(예: \"기초디자인\" — 실기 방법이 2가지 이상이면 항목을 여러 개 추가), date 시험일(비워 두면 방법만 표시), endDate, note}]이에요. kind가 실기이면 '실기 시험일', 면접이면 '면접'으로 표시되고, 비워 두면 반영 비율(실기만/면접만)을 보고 판단해요. 수시 전형은 단계(stages)의 examDate·method를 쓰세요.",
     "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요."
   ],
   "checkedAt": "2026-10-12",
@@ -50,6 +51,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "일반전형",
                   "short": "",
                   "quota": "15명",
@@ -64,6 +66,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "20",
+                        "gradeType": "",
                         "practical": "80",
                         "interview": ""
                       }
@@ -78,6 +81,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "50",
                         "interview": "50"
                       }
@@ -87,6 +91,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -107,6 +112,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -117,9 +124,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
-                "practical": ""
+                "gradeType": "",
+                "practical": "",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -164,6 +207,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "학생부종합(세종인재 면접형)",
                   "short": "",
                   "quota": "48명",
@@ -178,6 +222,7 @@
                       "ratio": {
                         "document": "100",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -192,6 +237,7 @@
                       "ratio": {
                         "document": "60",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": "40"
                       }
@@ -201,6 +247,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -221,6 +268,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -231,9 +280,45 @@
               "ratio": {
                 "suneung": "100",
                 "grade": "",
-                "practical": ""
+                "gradeType": "",
+                "practical": "",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -283,6 +368,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "특별",
                   "short": "",
                   "quota": "3명",
@@ -297,6 +383,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -306,12 +393,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "실기",
                   "short": "",
                   "quota": "117명",
@@ -326,6 +415,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
+                        "gradeType": "",
                         "practical": "60",
                         "interview": ""
                       }
@@ -335,12 +425,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "면접",
                   "short": "",
                   "quota": "40명",
@@ -355,6 +447,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": "100"
                       }
@@ -364,6 +457,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -384,6 +478,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "면접",
+                  "method": "",
                   "date": "2027-01-27",
                   "endDate": "",
                   "note": ""
@@ -395,10 +491,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
+                "gradeType": "",
                 "practical": "",
-                "interview" : "100"
+                "interview": "100"
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -438,6 +569,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "특별",
                   "short": "",
                   "quota": "1명",
@@ -452,6 +584,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -461,12 +594,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "실기",
                   "short": "",
                   "quota": "10명",
@@ -481,6 +616,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
+                        "gradeType": "",
                         "practical": "60",
                         "interview": ""
                       }
@@ -490,12 +626,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "면접",
                   "short": "",
                   "quota": "4명",
@@ -510,6 +648,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": "100"
                       }
@@ -519,6 +658,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -539,6 +679,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "실기",
+                  "method": "",
                   "date": "2027-01-28",
                   "endDate": "2027-01-29",
                   "note": ""
@@ -550,10 +692,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
+                "gradeType": "",
                 "practical": "100",
-                "interview" : ""
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -567,8 +744,7 @@
               ]
             ]
           }
-        }
-        ,
+        },
         {
           "name": "애니메이션스쿨-[에니메이션]",
           "short": "",
@@ -593,7 +769,8 @@
               "finalAnnounce": "2026-11-06",
               "note": "",
               "types": [
-                  {
+                {
+                  "title": "",
                   "name": "학생부교과",
                   "short": "",
                   "quota": "16명",
@@ -608,6 +785,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
+                        "gradeType": "교과",
                         "practical": "",
                         "interview": ""
                       }
@@ -617,12 +795,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "특별",
                   "short": "",
                   "quota": "4명",
@@ -637,6 +817,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -646,12 +827,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "실기",
                   "short": "",
                   "quota": "90명",
@@ -666,6 +849,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
+                        "gradeType": "",
                         "practical": "60",
                         "interview": ""
                       }
@@ -675,12 +859,14 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 },
                 {
+                  "title": "",
                   "name": "면접",
                   "short": "",
                   "quota": "63명",
@@ -695,6 +881,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": "100"
                       }
@@ -704,6 +891,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -724,6 +912,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "실기",
+                  "method": "",
                   "date": "2027-01-28",
                   "endDate": "2027-01-29",
                   "note": ""
@@ -735,10 +925,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
+                "gradeType": "",
                 "practical": "100",
-                "interview" : ""
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -760,11 +985,11 @@
       "type": "대학교",
       "region": "서울",
       "address": "서울특별시 성북구 삼선교로 16길 116",
-      "url": "https://www.hansung.ac.kr/hansung/index.do",
+      "url": "https://enter.hansung.ac.kr/",
       "short": "한성대",
       "departments": [
         {
-          "name": "AI융합디자인학부-[영상,애니메이션디자인트랙]",
+          "name": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
           "short": "",
           "quota": "",
           "admission": {
@@ -788,6 +1013,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "실기우수자전형",
                   "short": "",
                   "quota": "86명",
@@ -802,7 +1028,23 @@
                       "ratio": {
                         "document": "",
                         "grade": "20",
+                        "gradeType": "",
                         "practical": "80",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "practical": "",
                         "interview": ""
                       }
                     }
@@ -811,6 +1053,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -831,6 +1074,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -841,9 +1086,45 @@
               "ratio": {
                 "suneung": "100",
                 "grade": "",
-                "practical": ""
+                "gradeType": "",
+                "practical": "",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -861,7 +1142,7 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기도 용인시 처인구 명지로 116(자연캠퍼스)",
-      "url": "https://www.mju.ac.kr/sites/mjukr/intro/intro.html",
+      "url": "https://enter.hansung.ac.kr/",
       "short": "명지대",
       "departments": [
         {
@@ -888,13 +1169,14 @@
               "note": "",
               "types": [
                 {
-                  "name": "상황표현",
+                  "title": "",
+                  "name": "실기우수자전형",
                   "short": "",
-                  "quota": "11명",
+                  "quota": "21명",
                   "stages": [
                     {
-                      "label": "",
-                      "method": "주어진 상황주제에 대한 창의적 표현능력 평가(240분)",
+                      "label": "상황표현",
+                      "method": "",
                       "examDate": "2026-10-11",
                       "examEnd": "",
                       "announce": "",
@@ -902,28 +1184,14 @@
                       "ratio": {
                         "document": "",
                         "grade": "30",
+                        "gradeType": "",
                         "practical": "70",
                         "interview": ""
                       }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "기초디자인",
-                  "short": "",
-                  "quota": "10명",
-                  "stages": [
+                    },
                     {
-                      "label": "",
-                      "method": "기초 조형능력 평가를 위한 문제 주제의 해석과 그 표현(240분)",
+                      "label": "기초디자인",
+                      "method": "",
                       "examDate": "2026-10-12",
                       "examEnd": "",
                       "announce": "",
@@ -931,6 +1199,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "30",
+                        "gradeType": "",
                         "practical": "70",
                         "interview": ""
                       }
@@ -940,6 +1209,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -960,6 +1230,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -970,9 +1242,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
-                "practical": ""
+                "gradeType": "",
+                "practical": "",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -986,11 +1294,11 @@
       ]
     },
     {
-      "name": "경기대학교",
+      "name": "경기대학교(수원캠퍼스)",
       "type": "대학교",
-      "region": "서울",
-      "address": "서울특별시 서대문구 경기대로9길 24",
-      "url": "https://www.kyonggi.ac.kr/www/index.do",
+      "region": "경기",
+      "address": "경기도 수원시 영통구 광교산로 154-42",
+      "url": "https://enter.kyonggi.ac.kr/",
       "short": "경기대",
       "departments": [
         {
@@ -1011,26 +1319,43 @@
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-11",
-                "note": ""
+                "note": "학생부교과(국어,수학,영어,사회,과학,한국사,사회)"
               },
               "finalAnnounce": "2026-11-20",
               "note": "",
               "types": [
                 {
-                  "name": "상황표현",
+                  "title": "",
+                  "name": "예능실기우수자전형",
                   "short": "",
-                  "quota": "11명",
+                  "quota": "상상표현(11명), 웹툰(5명)",
                   "stages": [
                     {
-                      "label": "",
-                      "method": "상상으로 4컷 표현하기(4시간)",
-                      "examDate": "2026-10-18",
+                      "label": "상황표현",
+                      "method": "상상으로 4컷 표현하기",
+                      "examDate": "2026-10-11",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "40",
+                        "gradeType": "",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "웹툰",
+                      "method": "4컷 웹툰",
+                      "examDate": "2026-10-12",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "",
                         "practical": "60",
                         "interview": ""
                       }
@@ -1040,36 +1365,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                 {
-                  "name": "웹툰",
-                  "short": "",
-                  "quota": "5명",
-                  "stages": [
-                    
-                    {
-                      "label": "",
-                      "method": "4컷 웹툰(4시간)",
-                      "examDate": "2026-10-18",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "practical": "60",
-                        "interview": ""
-                      }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1080,59 +1376,68 @@
             "jeongsi": {
               "reference": false,
               "gun": "가군",
-              "quota": "10명",
+              "quota": "10명(상상표현:7명, 웹툰:3명)",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                     "label": "상황표현(7명)",
-                      "method": "상상으로 4컷 표현하기(4시간)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "practical": "60",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "웹툰(3명)",
-                      "method": "4컷 웹툰(4시간)",
-                      "examDate": "2026-10-18",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "practical": "60",
-                        "interview": ""
-                      }
-                    }
-              ],
+              "stages": [],
               "exams": [
                 {
                   "label": "",
-                  "date": "2027-01-16",
+                  "kind": "",
+                  "method": "",
+                  "date": "",
                   "endDate": "",
                   "note": ""
                 }
               ],
               "finalAnnounce": "2027-02-05",
-              "process": "수능:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35)",
+              "process": "",
               "date": "2027-01-16",
               "ratio": {
                 "suneung": "40",
                 "grade": "",
-                "practical": "60"
+                "gradeType": "",
+                "practical": "60",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -1150,7 +1455,7 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기 양주시 은현면 예원대학로 56",
-      "url": "https://www.yewon.ac.kr/",
+      "url": "https://enter.kyonggi.ac.kr/",
       "short": "예원예술대",
       "departments": [
         {
@@ -1177,6 +1482,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "실기",
                   "short": "",
                   "quota": "25명",
@@ -1185,12 +1491,13 @@
                       "label": "실기",
                       "method": "칸만화, 상황표현, 기초디자인(택1)",
                       "examDate": "2026-10-17",
-                      "examEnd": "2026-10-18",
+                      "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "100",
                         "interview": ""
                       }
@@ -1205,6 +1512,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -1214,6 +1522,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1234,6 +1543,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -1245,114 +1556,45 @@
               "ratio": {
                 "suneung": "",
                 "grade": "",
-                "practical": ""
+                "gradeType": "",
+                "practical": "",
+                "interview": ""
               },
-              "note": ""
-            },
-            "etc": [],
-            "sources": [
-              [
-                "예원예술대 입학처",
-                "https://admission.yewon.ac.kr/main/"
-              ]
-            ]
-          }
-        },
-        {
-          "name": "디지털콘텐츠학부-[만화게임영상전공]",
-          "short": "",
-          "quota": "",
-          "admission": {
-            "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
-            "track": [
-              "실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
-            "susi": {
-              "reference": false,
-              "quota": "20명",
-              "apply": {
-                "start": "2026-09-07",
-                "end": "2026-09-11",
-                "note": ""
-              },
-              "finalAnnounce": "2026-11-09",
               "note": "",
               "types": [
                 {
-                  "name": "실기",
+                  "title": "",
+                  "name": "",
                   "short": "",
-                  "quota": "20명",
-                  "stages": [
-                    {
-                      "label": "실기",
-                      "method": "칸만화, 상황표현, 발상과표현(택1)",
-                      "examDate": "2026-10-17",
-                      "examEnd": "2026-10-18",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "20",
-                        "practical": "80",
-                        "interview": ""
-                      }
-                    },
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
                       "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
                     }
                   ],
                   "process": "",
                   "ratio": {
-                    "document": "",
+                    "suneung": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
                   "note": ""
                 }
               ]
-            },
-            "jeongsi": {
-              "reference": false,
-              "gun": "가군",
-              "quota": "5명",
-              "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-07",
-                "note": ""
-              },
-              "stages": [],
-              "exams": [
-                {
-                  "label": "",
-                  "date": "",
-                  "endDate": "",
-                  "note": ""
-                }
-              ],
-              "finalAnnounce": "2027-01-28",
-              "process": "수능:국어(40)+탐구(40)+한국사(20)",
-              "date": "",
-              "ratio": {
-                "suneung": "20",
-                "grade": "",
-                "practical": "80"
-              },
-              "note": ""
             },
             "etc": [],
             "sources": [
@@ -1374,7 +1616,7 @@
       "short": "대진대",
       "departments": [
         {
-          "name": "예술대학-[만화게임그래픽학과]",
+          "name": "인문예술대학-[미술만화게임학부]",
           "short": "",
           "quota": "",
           "admission": {
@@ -1397,12 +1639,13 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "실기우수자전형",
                   "short": "",
                   "quota": "30명",
                   "stages": [
                     {
-                      "label": "",
+                      "label": "실기우수자전형",
                       "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
                       "examDate": "2026-10-24",
                       "examEnd": "",
@@ -1411,6 +1654,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "20",
+                        "gradeType": "",
                         "practical": "80",
                         "interview": ""
                       }
@@ -1425,6 +1669,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -1434,6 +1679,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1444,30 +1690,68 @@
             "jeongsi": {
               "reference": false,
               "gun": "다군",
-              "quota": "10명",
+              "quota": "15명",
               "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-07",
+                "start": "2027-12-29",
+                "end": "",
                 "note": ""
               },
               "stages": [],
               "exams": [
                 {
-                  "label": "실기",
-                  "date": "2027-01-29",
+                  "label": "",
+                  "kind": "",
+                  "method": "",
+                  "date": "",
                   "endDate": "",
                   "note": ""
                 }
               ],
               "finalAnnounce": "",
               "process": "",
-              "date": "2027-02-05",
+              "date": "2027-01-23",
               "ratio": {
                 "suneung": "20",
                 "grade": "",
-                "practical": "80"
+                "gradeType": "",
+                "practical": "80",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -1512,6 +1796,7 @@
               "note": "",
               "types": [
                 {
+                  "title": "",
                   "name": "",
                   "short": "",
                   "quota": "",
@@ -1526,6 +1811,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -1540,6 +1826,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "",
+                        "gradeType": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -1549,6 +1836,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1576,6 +1864,7 @@
                   "ratio": {
                     "document": "",
                     "grade": "",
+                    "gradeType": "",
                     "suneung": "",
                     "practical": "",
                     "interview": ""
@@ -1585,6 +1874,8 @@
               "exams": [
                 {
                   "label": "",
+                  "kind": "",
+                  "method": "",
                   "date": "",
                   "endDate": "",
                   "note": ""
@@ -1596,9 +1887,45 @@
               "ratio": {
                 "suneung": "20",
                 "grade": "",
-                "practical": "80"
+                "gradeType": "",
+                "practical": "80",
+                "interview": ""
               },
-              "note": ""
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "exams": [
+                    {
+                      "label": "",
+                      "kind": "",
+                      "method": "",
+                      "date": "",
+                      "endDate": "",
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
             },
             "etc": [],
             "sources": [
@@ -1634,6 +1961,7 @@
         "note": "",
         "types": [
           {
+            "title": "",
             "name": "",
             "short": "",
             "quota": "",
@@ -1648,6 +1976,7 @@
                 "ratio": {
                   "document": "",
                   "grade": "",
+                  "gradeType": "",
                   "practical": "",
                   "interview": ""
                 }
@@ -1662,6 +1991,7 @@
                 "ratio": {
                   "document": "",
                   "grade": "",
+                  "gradeType": "",
                   "practical": "",
                   "interview": ""
                 }
@@ -1671,6 +2001,7 @@
             "ratio": {
               "document": "",
               "grade": "",
+              "gradeType": "",
               "practical": "",
               "interview": ""
             },
@@ -1691,6 +2022,8 @@
         "exams": [
           {
             "label": "",
+            "kind": "",
+            "method": "",
             "date": "",
             "endDate": "",
             "note": ""
@@ -1701,9 +2034,45 @@
         "ratio": {
           "suneung": "",
           "grade": "",
-          "practical": ""
+          "gradeType": "",
+          "practical": "",
+          "interview": ""
         },
-        "note": ""
+        "note": "",
+        "types": [
+          {
+            "title": "",
+            "name": "",
+            "short": "",
+            "gun": "",
+            "quota": "",
+            "apply": {
+              "start": "",
+              "end": "",
+              "note": ""
+            },
+            "stages": [],
+            "exams": [
+              {
+                "label": "",
+                "kind": "",
+                "method": "",
+                "date": "",
+                "endDate": "",
+                "note": ""
+              }
+            ],
+            "process": "",
+            "ratio": {
+              "suneung": "",
+              "grade": "",
+              "gradeType": "",
+              "practical": "",
+              "interview": ""
+            },
+            "note": ""
+          }
+        ]
       },
       "etc": [],
       "sources": []
