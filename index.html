@@ -509,7 +509,7 @@ function groupRows(g, jeong, ref, isType, gname) {
     return `<div class="stg">${lab ? `<div class="stl">${lab}</div>` : ""}${method ? `<div class="stm">${method}</div>` : ""}${sched}${ratio}</div>`;
   }).filter(Boolean);
   const stageBlock = blocks.length ? { block: `<div class="stgs">${blocks.join('<div class="stc" aria-hidden="true">▼</div>')}</div>` } : null;
-  const finRow = pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, (!isType && gname ? gname + " " : "") + "최종 합격자 발표") } : null;
+  const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, (gname ? gname + " " : "") + "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
   const examCards = (g.exams || []).filter(x => x && pd(x.date)).map(x =>
     `<div class="si" style="--kc:#e8336d"><span class="sl">${x.label || "실기 시험"}</span><div class="sv"><b>${fmtRange(x.date, x.endDate)}</b>${x.note ? `<span class="sn">${x.note}</span>` : ""}</div></div>`
   ).join("");
@@ -718,7 +718,7 @@ function buildEvents(schools) {
         if (dx) ev.push({ ...base, title: label + " 실기" + (x.label ? "(" + x.label + ")" : ""), method: x.note || "", kind: "실기", start: dx, end: pd(x.endDate) || dx, ref });
       });
       const fa = pd(obj.finalAnnounce);
-      if (fa) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+      if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
     admGroups(a).forEach(gr => {
       const g = gr.g || {};

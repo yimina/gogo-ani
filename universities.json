@@ -6,8 +6,8 @@
     "모집인원: 학과 전체는 departments[].quota, 수시·정시는 각각 susi.quota·jeongsi.quota, 수시 전형별은 susi.types[].quota에 따로 적어요. 학과 quota를 비워 두면 수시+정시 모집인원이 모두 숫자로 시작할 때 자동으로 합산해서(합계 표시) 보여줘요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고, sources 출처 [[이름, 주소], ...].",
-    "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 공통 최종 발표일(선택), note, types 수시 전형 종류 배열.",
-    "susi.types: 학교에 있는 수시 전형(학생부교과, 학생부종합, 실기우수자, 논술 등)마다 한 덩어리씩 추가하세요. {name 전형 이름, short 달력용 짧은 이름(선택), quota 그 전형의 모집인원(예: \"10명\"), stages 단계별(1차·2차 …) 전형, finalAnnounce 최종 합격자 발표일, process 전형 방법, ratio {document 서류, grade 내신, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 전형 이름을 비워 둔 덩어리는 화면에 나오지 않아요.",
+    "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
+    "susi.types: 학교에 있는 수시 전형(학생부교과, 학생부종합, 실기우수자, 논술 등)마다 한 덩어리씩 추가하세요. {name 전형 이름, short 달력용 짧은 이름(선택), quota 그 전형의 모집인원(예: \"10명\"), stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 내신, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 전형 이름을 비워 둔 덩어리는 화면에 나오지 않아요.",
     "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 내신, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·grade·practical을 써요. (예전 키 date·endDate도 계속 읽혀요.)",
     "admission.jeongsi(정시): reference, gun(원서 접수 군: \"가군\" / \"나군\" / \"다군\" 또는 \"가군, 나군\"), quota 정시 모집인원, apply, stages, finalAnnounce, process, ratio {suneung 수능, grade 내신, practical 실기}, note. 필요하면 types 배열도 수시와 같은 형식으로 쓸 수 있어요.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
@@ -83,7 +83,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -198,7 +197,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -242,7 +240,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -362,7 +359,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -406,7 +402,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -450,7 +445,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -494,7 +488,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -538,7 +531,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -649,7 +641,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -693,7 +684,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -737,7 +727,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -781,7 +770,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -902,7 +890,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1017,7 +1004,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1132,7 +1118,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1248,7 +1233,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1364,7 +1348,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1480,7 +1463,6 @@
                       }
                     }
                   ],
-                  "finalAnnounce": "",
                   "process": "",
                   "ratio": {
                     "document": "",
@@ -1603,7 +1585,6 @@
                 }
               }
             ],
-            "finalAnnounce": "",
             "process": "",
             "ratio": {
               "document": "",
