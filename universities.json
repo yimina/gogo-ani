@@ -1374,7 +1374,7 @@
       "short": "대진대",
       "departments": [
         {
-          "name": "인문예술대학-[미술만화게임학부]",
+          "name": "예술대학-[만화게임그래픽학과]",
           "short": "",
           "quota": "",
           "admission": {
@@ -1402,7 +1402,7 @@
                   "quota": "30명",
                   "stages": [
                     {
-                      "label": "실기우수자전형",
+                      "label": "",
                       "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
                       "examDate": "2026-10-24",
                       "examEnd": "",
@@ -1444,24 +1444,24 @@
             "jeongsi": {
               "reference": false,
               "gun": "다군",
-              "quota": "15명",
+              "quota": "10명",
               "apply": {
-                "start": "2027-12-29",
-                "end": "",
+                "start": "2027-01-04",
+                "end": "2027-01-07",
                 "note": ""
               },
               "stages": [],
               "exams": [
                 {
-                  "label": "",
-                  "date": "",
+                  "label": "실기",
+                  "date": "2027-01-29",
                   "endDate": "",
                   "note": ""
                 }
               ],
               "finalAnnounce": "",
               "process": "",
-              "date": "2027-01-23",
+              "date": "2027-02-05",
               "ratio": {
                 "suneung": "20",
                 "grade": "",
