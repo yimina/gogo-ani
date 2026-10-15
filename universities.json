@@ -43,7 +43,7 @@
               "quota": "15명",
               "apply": {
                 "start": "2026-09-14",
-                "end": "026-09-17",
+                "end": "2026-09-17",
                 "note": ""
               },
               "finalAnnounce": "2026-12-24",
@@ -80,50 +80,6 @@
                         "grade": "",
                         "practical": "50",
                         "interview": "50"
-                      }
-                    }
-                  ],
-                  "finalAnnounce": "",
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "",
-                  "short": "",
-                  "quota": "",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
                       }
                     }
                   ],
