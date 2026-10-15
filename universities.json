@@ -760,11 +760,11 @@
       "type": "대학교",
       "region": "서울",
       "address": "서울특별시 성북구 삼선교로 16길 116",
-      "url": "https://enter.hansung.ac.kr/",
+      "url": "https://www.hansung.ac.kr/hansung/index.do",
       "short": "한성대",
       "departments": [
         {
-          "name": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
+          "name": "AI융합디자인학부-[영상,애니메이션디자인트랙]",
           "short": "",
           "quota": "",
           "admission": {
@@ -803,20 +803,6 @@
                         "document": "",
                         "grade": "20",
                         "practical": "80",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
                         "interview": ""
                       }
                     }
