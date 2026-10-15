@@ -51,8 +51,8 @@
               "note": "",
               "types": [
                 {
-                  "title": "",
-                  "name": "일반전형",
+                  "title": "일반전형",
+                  "name": "",
                   "short": "",
                   "quota": "15명",
                   "stages": [
