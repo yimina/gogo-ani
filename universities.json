@@ -1150,7 +1150,7 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기 양주시 은현면 예원대학로 56",
-      "url": "https://enter.kyonggi.ac.kr/",
+      "url": "https://www.yewon.ac.kr/",
       "short": "예원예술대",
       "departments": [
         {
@@ -1185,7 +1185,7 @@
                       "label": "실기",
                       "method": "칸만화, 상황표현, 기초디자인(택1)",
                       "examDate": "2026-10-17",
-                      "examEnd": "",
+                      "examEnd": "2026-10-18",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
@@ -1246,6 +1246,111 @@
                 "suneung": "",
                 "grade": "",
                 "practical": ""
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "예원예술대 입학처",
+                "https://admission.yewon.ac.kr/main/"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "디지털콘텐츠학부-[만화게임영상전공]",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "20명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": ""
+              },
+              "finalAnnounce": "2026-11-09",
+              "note": "",
+              "types": [
+                {
+                  "name": "실기",
+                  "short": "",
+                  "quota": "20명",
+                  "stages": [
+                    {
+                      "label": "실기",
+                      "method": "칸만화, 상황표현, 발상과표현(택1)",
+                      "examDate": "2026-10-17",
+                      "examEnd": "2026-10-18",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "practical": "80",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "가군",
+              "quota": "5명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "",
+                  "endDate": "",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "2027-01-28",
+              "process": "수능:국어(40)+탐구(40)+한국사(20)",
+              "date": "",
+              "ratio": {
+                "suneung": "20",
+                "grade": "",
+                "practical": "80"
               },
               "note": ""
             },
