@@ -428,7 +428,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "25명",
+              "quota": "15명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
@@ -584,7 +584,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "238명",
+              "quota": "173명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
@@ -714,7 +714,7 @@
             "jeongsi": {
               "reference": false,
               "gun": "실기",
-              "quota": "10명",
+              "quota": "65명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
