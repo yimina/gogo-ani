@@ -861,7 +861,7 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기도 용인시 처인구 명지로 116(자연캠퍼스)",
-      "url": "https://enter.hansung.ac.kr/",
+      "url": "https://www.mju.ac.kr/sites/mjukr/intro/intro.html",
       "short": "명지대",
       "departments": [
         {
@@ -893,8 +893,8 @@
                   "quota": "21명",
                   "stages": [
                     {
-                      "label": "상황표현",
-                      "method": "",
+                      "label": "상황표현(11명)",
+                      "method": "주어진 상황주제에 대한 창의적 표현능력 평가(240분)",
                       "examDate": "2026-10-11",
                       "examEnd": "",
                       "announce": "",
@@ -907,8 +907,8 @@
                       }
                     },
                     {
-                      "label": "기초디자인",
-                      "method": "",
+                      "label": "기초디자인(10명)",
+                      "method": "기초 조형능력 평가를 위한 문제 주제의 해석과 그 표현(240분)",
                       "examDate": "2026-10-12",
                       "examEnd": "",
                       "announce": "",
@@ -971,11 +971,11 @@
       ]
     },
     {
-      "name": "경기대학교(수원캠퍼스)",
+      "name": "경기대학교",
       "type": "대학교",
-      "region": "경기",
-      "address": "경기도 수원시 영통구 광교산로 154-42",
-      "url": "https://enter.kyonggi.ac.kr/",
+      "region": "서울",
+      "address": "서울특별시 서대문구 경기대로9길 24",
+      "url": "https://www.kyonggi.ac.kr/www/index.do",
       "short": "경기대",
       "departments": [
         {
@@ -1004,12 +1004,12 @@
                 {
                   "name": "예능실기우수자전형",
                   "short": "",
-                  "quota": "상상표현(11명), 웹툰(5명)",
+                  "quota": "16명",
                   "stages": [
                     {
-                      "label": "상황표현",
-                      "method": "상상으로 4컷 표현하기",
-                      "examDate": "2026-10-11",
+                      "label": "상황표현(11명)",
+                      "method": "상상으로 4컷 표현하기(4시간)",
+                      "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
@@ -1021,9 +1021,9 @@
                       }
                     },
                     {
-                      "label": "웹툰",
-                      "method": "4컷 웹툰",
-                      "examDate": "2026-10-12",
+                      "label": "웹툰(5명)",
+                      "method": "4컷 웹툰(4시간)",
+                      "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
@@ -1049,23 +1049,52 @@
             "jeongsi": {
               "reference": false,
               "gun": "가군",
-              "quota": "10명(상상표현:7명, 웹툰:3명)",
+              "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [],
+              "stages": [
+                {
+                     "label": "상황표현(7명)",
+                      "method": "상상으로 4컷 표현하기(4시간)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    },
+                    {
+                      "label": "웹툰(3명)",
+                      "method": "4컷 웹툰(4시간)",
+                      "examDate": "2026-10-18",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+              ],
               "exams": [
                 {
                   "label": "",
-                  "date": "",
+                  "date": "2027-01-16",
                   "endDate": "",
                   "note": ""
                 }
               ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
+              "process": "수능:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35)",
               "date": "2027-01-16",
               "ratio": {
                 "suneung": "40",
