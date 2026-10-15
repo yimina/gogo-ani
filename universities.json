@@ -1002,12 +1002,12 @@
               "note": "",
               "types": [
                 {
-                  "name": "예능실기우수자전형",
+                  "name": "상황표현",
                   "short": "",
-                  "quota": "16명",
+                  "quota": "11명",
                   "stages": [
                     {
-                      "label": "상황표현(11명)",
+                      "label": "",
                       "method": "상상으로 4컷 표현하기(4시간)",
                       "examDate": "2026-10-18",
                       "examEnd": "",
@@ -1022,6 +1022,36 @@
                     },
                     {
                       "label": "웹툰(5명)",
+                      "method": "4컷 웹툰(4시간)",
+                      "examDate": "2026-10-18",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                                {
+                  "name": "웹툰",
+                  "short": "",
+                  "quota": "5명",
+                  "stages": [
+                    
+                    {
+                      "label": "",
                       "method": "4컷 웹툰(4시간)",
                       "examDate": "2026-10-18",
                       "examEnd": "",
