@@ -273,23 +273,23 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "238명",
+              "quota": "160명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
                 "note": ""
               },
-              "finalAnnounce": "2026-12-18",
+              "finalAnnounce": "2026-11-06",
               "note": "",
               "types": [
                 {
-                  "name": "학생부교과",
+                  "name": "특별",
                   "short": "",
-                  "quota": "16명",
+                  "quota": "3명",
                   "stages": [
                     {
                       "label": "",
-                      "method": "학생부총점 1,000점",
+                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
@@ -297,63 +297,6 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "특별",
-                  "short": "학생부 점수(기본점수 625점)+가산점(대회)",
-                  "quota": "4명",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "100",
-                        "grade": "",
                         "practical": "",
                         "interview": ""
                       }
@@ -371,33 +314,19 @@
                 {
                   "name": "실기",
                   "short": "",
-                  "quota": "90명",
+                  "quota": "117명",
                   "stages": [
                     {
                       "label": "",
-                      "method": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "practical": "60",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
+                      "method": "A형:흑백 2페이지 만화, B형:컬러 스크롤 웹툰",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
                       "announce": "",
                       "kind": "",
                       "ratio": {
                         "document": "",
-                        "grade": "",
-                        "practical": "",
+                        "grade": "40",
+                        "practical": "60",
                         "interview": ""
                       }
                     }
@@ -414,77 +343,20 @@
                 {
                   "name": "면접",
                   "short": "",
-                  "quota": "63명",
+                  "quota": "40명",
                   "stages": [
                     {
                       "label": "",
-                      "method": "학생부(비교과) + 포트폴리오",
+                      "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "면접",
+                      "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "",
                         "practical": "",
                         "interview": "100"
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "정원외",
-                  "short": "",
-                  "quota": "14명",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
                       }
                     }
                   ],
@@ -501,8 +373,8 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "실기",
-              "quota": "65명",
+              "gun": "면접",
+              "quota": "30명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
@@ -512,18 +384,19 @@
               "exams": [
                 {
                   "label": "",
-                  "date": "",
+                  "date": "2027-01-27",
                   "endDate": "",
                   "note": ""
                 }
               ],
               "finalAnnounce": "2027-02-09",
-              "process": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
+              "process": "학생부(비교과)+포트폴리오",
               "date": "2027-01-28",
               "ratio": {
                 "suneung": "",
-                "grade": "30",
-                "practical": "70"
+                "grade": "",
+                "practical": "",
+                "interview" : "100"
               },
               "note": ""
             },
@@ -541,7 +414,7 @@
           }
         },
         {
-          "name": "애니메이션스쿨-[애니메이션]",
+          "name": "만화콘텐츠스쿨-[만화캐릭터 일러스트레이션]",
           "short": "",
           "quota": "",
           "admission": {
@@ -555,44 +428,215 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "190명",
+              "quota": "25명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
                 "note": ""
               },
-              "finalAnnounce": "2026-12-18",
+              "finalAnnounce": "2026-11-06",
               "note": "",
               "types": [
                 {
                   "name": "특별",
-                  "short": "학생부 점수(기본점수 625점)+가산점(대회)",
-                  "quota": "4명",
+                  "short": "",
+                  "quota": "1명",
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
+                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
                       "kind": "서류",
                       "ratio": {
-                        "document": "100",
+                        "document": "",
+                        "grade": "100",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "실기",
+                  "short": "",
+                  "quota": "10명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "면접",
+                  "short": "",
+                  "quota": "4명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부(비교과)+이미지포트폴리오",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
                         "grade": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "실기",
+              "quota": "10명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20",
+                "note": ""
+              },
+              "stages": [],
+              "exams": [
+                {
+                  "label": "",
+                  "date": "2027-01-28",
+                  "endDate": "2027-01-29",
+                  "note": ""
+                }
+              ],
+              "finalAnnounce": "2027-02-09",
+              "process": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
+              "date": "2027-01-28",
+              "ratio": {
+                "suneung": "",
+                "grade": "",
+                "practical": "100",
+                "interview" : ""
+              },
+              "note": ""
+            },
+            "etc": [],
+            "sources": [
+              [
+                "청강대 입학처",
+                "https://ipsi.ck.ac.kr"
+              ],
+              [
+                "전공심화 전형안내(PDF)",
+                "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
+              ]
+            ]
+          }
+        }
+        ,
+        {
+          "name": "애니메이션스쿨-[에니메이션]",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "238명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-30",
+                "note": ""
+              },
+              "finalAnnounce": "2026-11-06",
+              "note": "",
+              "types": [
+                  {
+                  "name": "학생부교과",
+                  "short": "",
+                  "quota": "16명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "name": "특별",
+                  "short": "",
+                  "quota": "4명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
                         "practical": "",
                         "interview": ""
                       }
@@ -614,29 +658,15 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
-                      "examDate": "",
-                      "examEnd": "",
+                      "method": "A형:스트리에 따른 이미지 ㅂ드,\n B형:애니메이션 상황표현\n, C형:제스처드로잉",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "40",
                         "practical": "60",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
                         "interview": ""
                       }
                     }
@@ -657,73 +687,16 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "학생부(비교과) + 포트폴리오",
+                      "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "면접",
+                      "kind": "비실기",
                       "ratio": {
                         "document": "",
                         "grade": "",
                         "practical": "",
                         "interview": "100"
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "name": "정원외",
-                  "short": "",
-                  "quota": "14명",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "practical": "",
-                        "interview": ""
-                      }
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "practical": "",
-                        "interview": ""
                       }
                     }
                   ],
@@ -741,7 +714,7 @@
             "jeongsi": {
               "reference": false,
               "gun": "실기",
-              "quota": "65명",
+              "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
@@ -751,18 +724,19 @@
               "exams": [
                 {
                   "label": "",
-                  "date": "",
-                  "endDate": "",
+                  "date": "2027-01-28",
+                  "endDate": "2027-01-29",
                   "note": ""
                 }
               ],
               "finalAnnounce": "2027-02-09",
-              "process": "A형:스토리에 따른 이미지보드\nB형:애니메이션 상황표현\nC형:제스처 드로잉 (택1 : 4시간)",
+              "process": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
               "date": "2027-01-28",
               "ratio": {
                 "suneung": "",
-                "grade": "30",
-                "practical": "70"
+                "grade": "",
+                "practical": "100",
+                "interview" : ""
               },
               "note": ""
             },
