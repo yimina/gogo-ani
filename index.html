@@ -105,6 +105,7 @@
   .stg .si b { font-size: 12.5px; font-weight: 400; }
   .stg .rkl { font-size: 14px; }
   .stg .rbar { height: 10px; max-width: none; margin-top: 7px; }
+  .stn { margin-top: 8px; font-size: 11.5px; line-height: 1.55; color: var(--sub); white-space: pre-line; }
   .stc { text-align: center; color: #aab3c2; font-size: 12px; line-height: 1; margin: 6px 0; }
   /* 최종 합격자 발표 (간결하게) */
   .fin { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin: 8px 0; font-size: 12.5px; }
@@ -514,12 +515,13 @@ function groupRows(g, jeong, ref, isType, gname) {
     const sched = items.length ? `<div class="sched">${items.join("")}</div>` : "";
     const method = (st.method || "").trim();
     const ratio = ratioOf(st.ratio, jeong);
-    if (!method && !sched && !ratio) return "";
+    const note = (st.note || "").trim();
+    if (!method && !sched && !ratio && !note) return "";
     const lab = (st.label || "").trim();
-    return `<div class="stg">${lab ? `<div class="stl">${lab}</div>` : ""}${method ? `<div class="stm">${method}</div>` : ""}${sched}${ratio}</div>`;
+    return `<div class="stg">${lab ? `<div class="stl">${lab}</div>` : ""}${method ? `<div class="stm">${method}</div>` : ""}${sched}${ratio}${note ? `<div class="stn">${note}</div>` : ""}</div>`;
   }).filter(Boolean);
   const stageBlock = blocks.length ? { block: `<div class="stgs">${blocks.join('<div class="stc" aria-hidden="true">▼</div>')}</div>` } : null;
-  const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, (gname ? gname + " " : "") + "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
+  const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
   const examCards = (g.exams || []).filter(x => x && (pd(x.date) || (x.method || "").trim())).map(x => {
     const kind = x.kind || inferKind(g);                                  // 면접 → "면접", 실기 → "실기 시험일"
     const when = pd(x.date) ? fmtRange(x.date, x.endDate) : "";
