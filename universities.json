@@ -1139,7 +1139,7 @@
       "short": "한성대",
       "departments": [
         {
-          "name": "AI디자인대학-AI융합디자인학부-[영상,애니메이션디자인트랙]",
+          "name": "AI융합디자인학부-[영상,애니메이션디자인트랙]",
           "short": "",
           "quota": "",
           "admission": {
@@ -1170,7 +1170,7 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "주어진 소재의 조형적 특징을 이하여 화면을 구성",
+                      "method": "주어진 소재의 조형적 특징을 이용하여 화면구성",
                       "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
@@ -1178,11 +1178,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "20",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "80",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※국어, 영어, 수학, 사회 계열 전과목 반영"
                     },
                     {
                       "label": "",
@@ -1231,7 +1231,7 @@
                   "announce": "",
                   "kind": "",
                   "ratio": {
-                    "suneung": "",
+                    "suneung": "100",
                     "document": "",
                     "grade": "",
                     "gradeType": "",
@@ -1244,7 +1244,7 @@
               "finalAnnounce": "2027-02-05",
               "process": "",
               "ratio": {
-                "suneung": "100",
+                "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
