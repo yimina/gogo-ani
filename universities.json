@@ -1999,11 +1999,11 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기도 포천시 호국로 1007",
-      "url": "https://admission.daejin.ac.kr/",
+      "url": "https://www.daejin.ac.kr/daejin/index.do",
       "short": "대진대",
       "departments": [
         {
-          "name": "인문예술대학-[미술만화게임학부]",
+          "name": "예술대학-[만화게임그래픽학부]",
           "short": "",
           "quota": "",
           "admission": {
@@ -2016,7 +2016,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "30명",
+              "quota": "40명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-11",
@@ -2032,7 +2032,7 @@
                   "quota": "30명",
                   "stages": [
                     {
-                      "label": "실기우수자전형",
+                      "label": "",
                       "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
                       "examDate": "2026-10-24",
                       "examEnd": "",
@@ -2041,7 +2041,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "20",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "attendance": "",
                         "practical": "80",
                         "interview": ""
