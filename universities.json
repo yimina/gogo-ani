@@ -2183,7 +2183,7 @@
       "type": "대학교",
       "region": "서울",
       "address": "서울시 광진구 능동로 120",
-      "url": "https://www.konkuk.ac.kr/konkuk/2595/subview.do",
+      "url": "https://www.konkuk.ac.kr/konkuk/index.do",
       "short": "건국대",
       "departments": [
         {
@@ -2191,7 +2191,7 @@
           "short": "",
           "quota": "",
           "admission": {
-            "admissionUrl": "https://admission.konkuk.ac.kr/admission/index.do",
+            "admissionUrl": "https://www.konkuk.ac.kr/admission/37869/subview.do#none",
             "track": [
               "실기"
             ],
@@ -2200,7 +2200,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "명",
+              "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
@@ -2275,33 +2275,33 @@
               "stages": [
                 {
                   "label": "실기",
-                  "method": "[기초디자인]기초 조형능력을 평가할 수 있는 주제해석과 표현",
+                  "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
                   "examDate": "2027-01-25",
                   "examEnd": "",
-                  "announce": "2027-02-05",
+                  "announce": "",
                   "kind": "실기",
                   "ratio": {
-                    "suneung": "",
+                    "suneung": "60",
                     "document": "",
                     "grade": "",
                     "gradeType": "",
                     "attendance": "",
-                    "practical": "",
+                    "practical": "40",
                     "interview": ""
                   },
-                  "note": ""
+                  "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
                 }
               ],
-              "finalAnnounce": "",
-              "process": "수능반응비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)",
-              "date": "2027-01-25",
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "",
               "ratio": {
-                "suneung": "20",
+                "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
                 "attendance": "",
-                "practical": "80",
+                "practical": "",
                 "interview": ""
               },
               "note": "",
