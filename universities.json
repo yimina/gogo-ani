@@ -1416,7 +1416,7 @@
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": "※ 반영교과 : 국어, 영어"
+                      "note": "※반영교과 : 국어, 영어"
                     }
                   ],
                   "process": "",
@@ -1451,7 +1451,7 @@
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※반영교과 : 국어, 영어"
                     }
                   ],
                   "process": "",
@@ -1566,10 +1566,10 @@
       ]
     },
     {
-      "name": "경기대학교(수원캠퍼스)",
+      "name": "경기대학교",
       "type": "대학교",
-      "region": "경기",
-      "address": "경기도 수원시 영통구 광교산로 154-42",
+      "region": "서울",
+      "address": "서울특별시 서대문구 경기대로9길 24",
       "url": "https://enter.kyonggi.ac.kr/",
       "short": "경기대",
       "departments": [
@@ -1597,44 +1597,62 @@
               "note": "",
               "types": [
                 {
-                  "title": "",
+                  "title": "상황표현",
                   "name": "예능실기우수자전형",
                   "short": "",
-                  "quota": "상상표현(11명), 웹툰(5명)",
+                  "quota": "11명",
                   "stages": [
                     {
-                      "label": "상황표현",
+                      "label": "",
                       "method": "상상으로 4컷 표현하기",
-                      "examDate": "2026-10-11",
+                      "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "40",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
-                      "note": ""
-                    },
+                      "note": "※반영교과:국어,수학,영어,통합사회,통합과학,한국사,사회"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },  
+                {
+                  "title": "웹툰",
+                  "name": "예능실기우수자전형",
+                  "short": "",
+                  "quota": "5명",
+                  "stages": [
                     {
-                      "label": "웹툰",
+                      "label": "",
                       "method": "4컷 웹툰",
-                      "examDate": "2026-10-12",
+                      "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
                         "grade": "40",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※반영교과:국어,수학,영어,통합사회,통합과학,한국사,사회"
                     }
                   ],
                   "process": "",
