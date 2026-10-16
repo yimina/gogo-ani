@@ -1815,7 +1815,7 @@
       "type": "대학교",
       "region": "경기",
       "address": "경기 양주시 은현면 예원대학로 56",
-      "url": "https://enter.kyonggi.ac.kr/",
+      "url": "https://www.yewon.ac.kr/",
       "short": "예원예술대",
       "departments": [
         {
@@ -1851,7 +1851,7 @@
                       "label": "실기",
                       "method": "칸만화, 상황표현, 기초디자인(택1)",
                       "examDate": "2026-10-17",
-                      "examEnd": "",
+                      "examEnd": "2026-10-18",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
