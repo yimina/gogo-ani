@@ -2016,7 +2016,7 @@
             "note": "",
             "susi": {
               "reference": false,
-              "quota": "",
+              "quota": "30명",
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-11",
