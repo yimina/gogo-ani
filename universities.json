@@ -497,7 +497,8 @@
                 "end": "2027-01-20",
                 "note": ""
               },
-              "stages": [                    {
+              "stages": [                    
+                {
                       "label": "1차",
                       "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
@@ -516,7 +517,7 @@
                     {
                       "label": "2차",
                       "method": "면접",
-                      "examDate": "",
+                      "examDate": "2027-01-27",
                       "examEnd": "",
                       "announce": "",
                       "kind": "면접",
