@@ -462,8 +462,8 @@
                     {
                       "label": "2차",
                       "method": "면접",
-                      "examDate": "",
-                      "examEnd": "",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
                       "announce": "",
                       "kind": "면접",
                       "ratio": {
