@@ -497,7 +497,38 @@
                 "end": "2027-01-20",
                 "note": ""
               },
-              "stages": [],
+              "stages": [                    {
+                      "label": "1차",
+                      "method": "학생부(비교과)+이미지포트폴리오",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "면접",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "practical": "",
+                        "interview": "100"
+                      },
+                      "note": "※모집인원 2배수 면접 진행"
+                    }],
               "exams": [
                 {
                   "label": "",
