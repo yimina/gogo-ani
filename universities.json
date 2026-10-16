@@ -387,11 +387,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※최우수 1개 학기 자동반영"
                     }
                   ],
                   "process": "",
@@ -420,11 +420,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "60",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※2가지 유형중 택1"
                     }
                   ],
                   "process": "",
@@ -449,7 +449,7 @@
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "실기",
+                      "kind": "면접",
                       "ratio": {
                         "document": "",
                         "grade": "",
