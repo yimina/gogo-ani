@@ -8,10 +8,10 @@
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고.",
     "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
-    "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
-    "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·document(서류)·grade(학생부)·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.) 각 단계에는 note(이 단계의 참고 사항)도 적을 수 있고, 비율 막대 아래에 작은 글씨로 그대로 표시돼요.",
-    "admission.jeongsi(정시): reference, gun(정시 전체에 공통인 군), quota 정시 모집인원, apply, stages, finalAnnounce 정시 최종 합격자 발표일, process, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, practical 실기, interview 면접}, note, types 정시 전형 배열(아래).",
-    "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 따로 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process, ratio {suneung, document, grade, gradeType, practical, interview}, note}.",
+    "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, attendance 출결, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
+    "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, attendance 출결, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·document(서류)·grade(학생부)·attendance(출결)·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.) 각 단계에는 note(이 단계의 참고 사항)도 적을 수 있고, 비율 막대 아래에 작은 글씨로 그대로 표시돼요.",
+    "admission.jeongsi(정시): reference, gun(정시 전체에 공통인 군), quota 정시 모집인원, apply, stages, finalAnnounce 정시 최종 합격자 발표일, process, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, attendance 출결, practical 실기, interview 면접}, note, types 정시 전형 배열(아래).",
+    "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 따로 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process, ratio {suneung, document, grade, gradeType, attendance, practical, interview}, note}.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요.",
@@ -68,6 +68,7 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "80",
                         "interview": ""
                       },
@@ -84,6 +85,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "50",
                         "interview": "50"
                       },
@@ -95,6 +97,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -124,6 +127,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -137,6 +141,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -166,6 +171,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -178,6 +184,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -244,6 +251,7 @@
                         "document": "",
                         "grade": "100",
                         "gradeType": "종합",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -260,6 +268,7 @@
                         "document": "",
                         "grade": "60",
                         "gradeType": "종합",
+                        "attendance": "",
                         "practical": "",
                         "interview": "40"
                       },
@@ -271,6 +280,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -300,6 +310,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -313,6 +324,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -342,6 +354,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -354,6 +367,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -425,6 +439,7 @@
                         "document": "",
                         "grade": "100",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -436,6 +451,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -458,6 +474,7 @@
                         "document": "",
                         "grade": "40",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
@@ -469,6 +486,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -491,6 +509,7 @@
                         "document": "100",
                         "grade": "",
                         "gradeType": "비교과",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -507,6 +526,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": "100"
                       },
@@ -518,6 +538,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -547,6 +568,7 @@
                     "document": "100",
                     "grade": "",
                     "gradeType": "비교과",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -564,6 +586,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": "100"
                   },
@@ -578,6 +601,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -607,6 +631,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -619,6 +644,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -670,6 +696,7 @@
                         "document": "",
                         "grade": "100",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -681,6 +708,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -703,6 +731,7 @@
                         "document": "",
                         "grade": "40",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
@@ -714,6 +743,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -736,6 +766,7 @@
                         "document": "100",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": "100"
                       },
@@ -752,6 +783,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": "100"
                       },
@@ -763,6 +795,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -792,6 +825,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "100",
                     "interview": ""
                   },
@@ -806,6 +840,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -835,6 +870,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -847,6 +883,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -898,6 +935,7 @@
                         "document": "",
                         "grade": "100",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -909,6 +947,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -931,6 +970,7 @@
                         "document": "",
                         "grade": "100",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -942,6 +982,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -964,6 +1005,7 @@
                         "document": "",
                         "grade": "40",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
@@ -975,6 +1017,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -997,6 +1040,7 @@
                         "document": "100",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1013,6 +1057,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": "100"
                       },
@@ -1024,6 +1069,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1053,6 +1099,7 @@
                     "document": "",
                     "grade": "30",
                     "gradeType": "교과",
+                    "attendance": "",
                     "practical": "70",
                     "interview": ""
                   },
@@ -1067,6 +1114,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -1096,6 +1144,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1108,6 +1157,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1179,6 +1229,7 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "80",
                         "interview": ""
                       },
@@ -1195,6 +1246,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1206,6 +1258,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1235,6 +1288,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1248,6 +1302,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -1277,6 +1332,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1289,6 +1345,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1355,6 +1412,7 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "교과",
+                        "attendance": "",
                         "practical": "70",
                         "interview": ""
                       },
@@ -1366,6 +1424,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1388,6 +1447,7 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "70",
                         "interview": ""
                       },
@@ -1399,6 +1459,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1428,6 +1489,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1441,6 +1503,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -1470,6 +1533,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1482,6 +1546,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1548,6 +1613,7 @@
                         "document": "",
                         "grade": "40",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
@@ -1564,6 +1630,7 @@
                         "document": "",
                         "grade": "40",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "60",
                         "interview": ""
                       },
@@ -1575,6 +1642,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1604,6 +1672,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1618,6 +1687,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "60",
                 "interview": ""
               },
@@ -1647,6 +1717,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1659,6 +1730,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1725,6 +1797,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "100",
                         "interview": ""
                       },
@@ -1741,6 +1814,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1752,6 +1826,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1781,6 +1856,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1795,6 +1871,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "",
                 "interview": ""
               },
@@ -1824,6 +1901,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1836,6 +1914,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1902,6 +1981,7 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "80",
                         "interview": ""
                       },
@@ -1918,6 +1998,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -1929,6 +2010,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1958,6 +2040,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -1972,6 +2055,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "80",
                 "interview": ""
               },
@@ -2001,6 +2085,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -2013,6 +2098,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -2079,6 +2165,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -2095,6 +2182,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -2106,6 +2194,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -2135,6 +2224,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -2149,6 +2239,7 @@
                 "document": "",
                 "grade": "",
                 "gradeType": "",
+                "attendance": "",
                 "practical": "80",
                 "interview": ""
               },
@@ -2178,6 +2269,7 @@
                         "document": "",
                         "grade": "",
                         "gradeType": "",
+                        "attendance": "",
                         "practical": "",
                         "interview": ""
                       },
@@ -2190,6 +2282,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
+                    "attendance": "",
                     "practical": "",
                     "interview": ""
                   },
@@ -2247,6 +2340,7 @@
                   "document": "",
                   "grade": "",
                   "gradeType": "",
+                  "attendance": "",
                   "practical": "",
                   "interview": ""
                 },
@@ -2263,6 +2357,7 @@
                   "document": "",
                   "grade": "",
                   "gradeType": "",
+                  "attendance": "",
                   "practical": "",
                   "interview": ""
                 },
@@ -2274,6 +2369,7 @@
               "document": "",
               "grade": "",
               "gradeType": "",
+              "attendance": "",
               "practical": "",
               "interview": ""
             },
@@ -2303,6 +2399,7 @@
               "document": "",
               "grade": "",
               "gradeType": "",
+              "attendance": "",
               "practical": "",
               "interview": ""
             },
@@ -2316,6 +2413,7 @@
           "document": "",
           "grade": "",
           "gradeType": "",
+          "attendance": "",
           "practical": "",
           "interview": ""
         },
@@ -2345,6 +2443,7 @@
                   "document": "",
                   "grade": "",
                   "gradeType": "",
+                  "attendance": "",
                   "practical": "",
                   "interview": ""
                 },
@@ -2357,6 +2456,7 @@
               "document": "",
               "grade": "",
               "gradeType": "",
+              "attendance": "",
               "practical": "",
               "interview": ""
             },
