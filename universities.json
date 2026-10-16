@@ -2082,42 +2082,42 @@
             "jeongsi": {
               "reference": false,
               "gun": "다군",
-              "quota": "15명",
+              "quota": "10명",
               "apply": {
-                "start": "2027-12-29",
-                "end": "",
+                "start": "2027-01-04",
+                "end": "2027-01-07",
                 "note": ""
               },
               "stages": [
                 {
                   "label": "",
                   "method": "",
-                  "examDate": "",
+                  "examDate": "2027-01-29",
                   "examEnd": "",
                   "announce": "",
                   "kind": "",
                   "ratio": {
-                    "suneung": "",
+                    "suneung": "20",
                     "document": "",
                     "grade": "",
                     "gradeType": "",
                     "attendance": "",
-                    "practical": "",
+                    "practical": "80",
                     "interview": ""
                   },
-                  "note": ""
+                  "note": "※국어,수학,영어中 상위 1개 영역(60)+선택된거 빼고, 탐구, 한국사 中 1개 영역택(40)"
                 }
               ],
-              "finalAnnounce": "",
+              "finalAnnounce": "2027-02-05",
               "process": "",
-              "date": "2027-01-23",
+              "date": "",
               "ratio": {
-                "suneung": "20",
+                "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
                 "attendance": "",
-                "practical": "80",
+                "practical": "",
                 "interview": ""
               },
               "note": "",
