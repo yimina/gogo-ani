@@ -782,7 +782,7 @@
               "stages": [
                 {
                   "label": "",
-                  "method": "A형 : 문해력 기반 1페이지 만화,\n B형 : 문해력 기반 2페이지 일러스트레이션",
+                  "method": "A형 : 문해력 기반 1페이지 만화\n B형 : 문해력 기반 2페이지 일러스트레이션",
                   "examDate": "2027-01-28",
                   "examEnd": "2027-01-29",
                   "announce": "",
@@ -795,7 +795,7 @@
                     "practical": "100",
                     "interview": ""
                   },
-                  "note": ""
+                  "note": "※2가지 유형중 택1"
                 }
               ],
               "finalAnnounce": "2027-02-09",
@@ -889,7 +889,7 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
+                      "method": "학생부교과",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "",
@@ -901,7 +901,7 @@
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※최우수 1개 학기 자동반영"
                     }
                   ],
                   "process": "",
@@ -930,11 +930,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※최우수 1개 학기 자동반영"
                     }
                   ],
                   "process": "",
@@ -955,7 +955,7 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "A형:스트리에 따른 이미지 보드\n B형:애니메이션 상황표현\nC형:제스처드로잉",
+                      "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
                       "examDate": "2026-10-24",
                       "examEnd": "2026-10-25",
                       "announce": "",
@@ -963,11 +963,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "60",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※3가지 유형중 택1"
                     }
                   ],
                   "process": "",
@@ -987,12 +987,28 @@
                   "quota": "63명",
                   "stages": [
                     {
-                      "label": "",
+                      "label": "1차",
                       "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
                       "examEnd": "",
+                      "announce": "2026-10-15",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100",
+                        "grade": "",
+                        "gradeType": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
                       "announce": "",
-                      "kind": "비실기",
+                      "kind": "면접",
                       "ratio": {
                         "document": "",
                         "grade": "",
@@ -1000,7 +1016,7 @@
                         "practical": "",
                         "interview": "100"
                       },
-                      "note": ""
+                      "note": "※모집인원 2배수 면접 진행"
                     }
                   ],
                   "process": "",
@@ -1027,7 +1043,7 @@
               "stages": [
                 {
                   "label": "",
-                  "method": "",
+                  "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
                   "examDate": "2027-01-28",
                   "examEnd": "2027-01-29",
                   "announce": "",
@@ -1035,23 +1051,23 @@
                   "ratio": {
                     "suneung": "",
                     "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "practical": "",
+                    "grade": "30",
+                    "gradeType": "교과",
+                    "practical": "70",
                     "interview": ""
                   },
-                  "note": ""
+                  "note": "※3가지 유형중 택1"
                 }
               ],
               "finalAnnounce": "2027-02-09",
-              "process": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
-              "date": "2027-01-28",
+              "process": "",
+              "date": "",
               "ratio": {
                 "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
-                "practical": "100",
+                "practical": "",
                 "interview": ""
               },
               "note": "",
