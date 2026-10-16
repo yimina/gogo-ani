@@ -222,7 +222,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
-                        "gradeType": "학생부종합",
+                        "gradeType": "종합",
                         "practical": "",
                         "interview": ""
                       }
@@ -237,7 +237,7 @@
                       "ratio": {
                         "document": "",
                         "grade": "60",
-                        "gradeType": "학생부종합",
+                        "gradeType": "종합",
                         "practical": "",
                         "interview": "40"
                       }
