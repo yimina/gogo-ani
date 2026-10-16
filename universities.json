@@ -782,7 +782,7 @@
               "stages": [
                 {
                   "label": "",
-                  "method": "",
+                  "method": "A형 : 문해력 기반 1페이지 만화,\n B형 : 문해력 기반 2페이지 일러스트레이션",
                   "examDate": "2027-01-28",
                   "examEnd": "2027-01-29",
                   "announce": "",
@@ -799,7 +799,7 @@
                 }
               ],
               "finalAnnounce": "2027-02-09",
-              "process": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
+              "process": "",
               "date": "",
               "ratio": {
                 "suneung": "",
