@@ -1339,14 +1339,14 @@
               "note": "",
               "types": [
                 {
-                  "title": "실기우수자",
+                  "title": "",
                   "name": "상황표현",
                   "short": "",
                   "quota": "11명",
                   "stages": [
                     {
                       "label": "",
-                      "method": "주어진 상황주에에 대한 창의적 표현능력",
+                      "method": "주어진 상황주제에 대한 창의적 표현능력",
                       "examDate": "2026-10-11",
                       "examEnd": "",
                       "announce": "",
@@ -1372,7 +1372,7 @@
                   "note": ""
                 },
                 {
-                  "title": "실기우수자",
+                  "title": "",
                   "name": "기초디자인",
                   "short": "",
                   "quota": "10명",
