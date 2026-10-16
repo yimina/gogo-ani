@@ -1591,7 +1591,7 @@
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-11",
-                "note": "학생부교과(국어,수학,영어,사회,과학,한국사,사회)"
+                "note": ""
               },
               "finalAnnounce": "2026-11-20",
               "note": "",
@@ -1671,7 +1671,7 @@
             "jeongsi": {
               "reference": false,
               "gun": "가군",
-              "quota": "10명(상상표현:7명, 웹툰:3명)",
+              "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
@@ -1699,24 +1699,24 @@
               ],
               "finalAnnounce": "2027-02-05",
               "process": "",
-              "date": "2027-01-16",
+              "date": "",
               "ratio": {
-                "suneung": "40",
+                "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
                 "attendance": "",
-                "practical": "60",
+                "practical": "",
                 "interview": ""
               },
-              "note": "",
+              "note": "※수능반영비율:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35%)",
               "types": [
                 {
                   "title": "",
-                  "name": "",
+                  "name": "상상표현",
                   "short": "",
                   "gun": "",
-                  "quota": "",
+                  "quota": "7명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -1725,18 +1725,61 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
+                      "method": "상상으로 4컷 표현하기",
+                      "examDate": "2027-01-16",
                       "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "40",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
                         "attendance": "",
-                        "practical": "",
+                        "practical": "60",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "",
+                  "name": "웹툰",
+                  "short": "",
+                  "gun": "",
+                  "quota": "3명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "4컷 웹툰",
+                      "examDate": "2027-01-16",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "40",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "practical": "60",
                         "interview": ""
                       },
                       "note": ""
