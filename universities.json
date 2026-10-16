@@ -209,26 +209,26 @@
               "note": "",
               "types": [
                 {
-                  "title": "",
-                  "name": "학생부종합(세종인재 면접형)",
+                  "title": "학생부종합",
+                  "name": "세종인재 면접형",
                   "short": "",
                   "quota": "48명",
                   "stages": [
                     {
                       "label": "1차",
-                      "method": "학교부(교과+비교과), 학업역량(30)+창의융합역량(50)+공동체역량(20)",
+                      "method": "학업역량(30)+창의융합역량(50)+공동체역량(20)",
                       "examDate": "",
                       "examEnd": "",
                       "announce": "2026-11-13",
                       "kind": "서류",
                       "ratio": {
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "",
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※3배수 선발"
                     },
                     {
                       "label": "2차",
@@ -238,13 +238,13 @@
                       "announce": "",
                       "kind": "면접",
                       "ratio": {
-                        "document": "60",
-                        "grade": "",
-                        "gradeType": "",
+                        "document": "",
+                        "grade": "60",
+                        "gradeType": "종합",
                         "practical": "",
                         "interview": "40"
                       },
-                      "note": ""
+                      "note": "※제시문 기반 면접 진행"
                     }
                   ],
                   "process": "",
@@ -280,7 +280,7 @@
                 }
               ],
               "finalAnnounce": "2027-02-05",
-              "process": "국어(35)+수학(35)+영어(20)+탐구(10)",
+              "process": "",
               "ratio": {
                 "suneung": "100",
                 "grade": "",
@@ -288,7 +288,7 @@
                 "practical": "",
                 "interview": ""
               },
-              "note": "",
+              "note": "※수능반영비율:국어(35)+수학(35)+영어(20)+탐구(10)",
               "types": [
                 {
                   "title": "",
