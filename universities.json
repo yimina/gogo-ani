@@ -220,9 +220,9 @@
                       "announce": "2026-11-13",
                       "kind": "서류",
                       "ratio": {
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "",
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "학생부종합",
                         "practical": "",
                         "interview": ""
                       }
@@ -235,9 +235,9 @@
                       "announce": "",
                       "kind": "면접",
                       "ratio": {
-                        "document": "60",
-                        "grade": "",
-                        "gradeType": "",
+                        "document": "",
+                        "grade": "60",
+                        "gradeType": "학생부종합",
                         "practical": "",
                         "interview": "40"
                       }
