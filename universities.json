@@ -572,14 +572,14 @@
               ],
               "finalAnnounce": "2027-02-09",
               "process": "학생부(비교과)+포트폴리오",
-              "date": "2027-01-28",
+              "date": "",
               "ratio": {
                 "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
                 "practical": "",
-                "interview": "100"
+                "interview": ""
               },
               "note": "",
               "types": [
@@ -669,11 +669,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "100",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※최우수 1개 학기 자동반영"
                     }
                   ],
                   "process": "",
@@ -702,11 +702,11 @@
                       "ratio": {
                         "document": "",
                         "grade": "40",
-                        "gradeType": "",
+                        "gradeType": "교과",
                         "practical": "60",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "2가지 유형중 택1"
                     }
                   ],
                   "process": "",
@@ -726,12 +726,28 @@
                   "quota": "4명",
                   "stages": [
                     {
-                      "label": "",
+                      "label": "1차",
                       "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
                       "examEnd": "",
+                      "announce": "2026-10-15",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100",
+                        "grade": "",
+                        "gradeType": "",
+                        "practical": "",
+                        "interview": "100"
+                      },
+                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
                       "announce": "",
-                      "kind": "실기",
+                      "kind": "서류",
                       "ratio": {
                         "document": "",
                         "grade": "",
@@ -739,7 +755,7 @@
                         "practical": "",
                         "interview": "100"
                       },
-                      "note": ""
+                      "note": "※모집인원 2배수 면접 진행"
                     }
                   ],
                   "process": "",
@@ -776,7 +792,7 @@
                     "document": "",
                     "grade": "",
                     "gradeType": "",
-                    "practical": "",
+                    "practical": "100",
                     "interview": ""
                   },
                   "note": ""
@@ -784,13 +800,13 @@
               ],
               "finalAnnounce": "2027-02-09",
               "process": "A형:문해력 기반 1페이지 만화,\n B형:문해력 기반 2페이지 일러스트레이션",
-              "date": "2027-01-28",
+              "date": "",
               "ratio": {
                 "suneung": "",
                 "document": "",
                 "grade": "",
                 "gradeType": "",
-                "practical": "100",
+                "practical": "",
                 "interview": ""
               },
               "note": "",
