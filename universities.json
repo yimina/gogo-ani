@@ -1412,11 +1412,11 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "교과",
-                        "attendance": "",
+                        "attendance": "10",
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": "※출력(10)"
+                      "note": ""
                     }
                   ],
                   "process": "",
@@ -1447,11 +1447,11 @@
                         "document": "",
                         "grade": "20",
                         "gradeType": "",
-                        "attendance": "",
+                        "attendance": "10",
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": "※출력(10)"
+                      "note": ""
                     }
                   ],
                   "process": "",
