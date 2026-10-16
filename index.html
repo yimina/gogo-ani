@@ -441,18 +441,12 @@ function ratioHtml(items) {
 
 function cleanQ(q) { return q && q.trim() !== "명" ? q : ""; }
 
-function inferKind(g) {                  // 시험 종류가 비어 있으면 반영 비율로 판단: 실기만 → 실기, 면접만 → 면접
-  const r = (g && g.ratio) || {};
-  const iv = !!(r.interview && String(r.interview).trim()), pr = !!(r.practical && String(r.practical).trim());
-  return iv && !pr ? "면접" : pr && !iv ? "실기" : "";
-}
-
 function gradeLabel(r) { return "학생부" + (r && r.gradeType ? `(${r.gradeType})` : ""); }
 
 function ratioOf(r, jeong) {
   r = r || {};
   return jeong
-    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], [gradeLabel(r), r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]])
+    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]])
     : ratioHtml([["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
 }
 
@@ -497,7 +491,6 @@ function anyDates(o) {
   const ap = o.apply || {};
   return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
     (o.stages || []).some(st => pd(st.examDate || st.date) || pd(st.announce)) ||
-    (o.exams || []).some(x => x && pd(x.date)) ||
     (o.types || []).some(anyDates);
 }
 
@@ -522,27 +515,18 @@ function groupRows(g, jeong, ref, isType, gname) {
   }).filter(Boolean);
   const stageBlock = blocks.length ? { block: `<div class="stgs">${blocks.join('<div class="stc" aria-hidden="true">▼</div>')}</div>` } : null;
   const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
-  const examCards = (g.exams || []).filter(x => x && (pd(x.date) || (x.method || "").trim())).map(x => {
-    const kind = x.kind || inferKind(g);                                  // 면접 → "면접", 실기 → "실기 시험일"
-    const when = pd(x.date) ? fmtRange(x.date, x.endDate) : "";
-    const method = (x.method || "").trim();
-    const label = when ? (LBL[kind] || "시험일") : (kind === "면접" ? "면접" : "실기") + " 방법";
-    const main = when || method;
-    const sub = [when ? method : "", x.label, x.note].filter(Boolean).join(" · ");
-    return `<div class="si" style="--kc:${PILL[kind] || "#475569"}"><span class="sl">${label}</span><div class="sv"><b>${main}</b>${sub ? `<span class="sn">${sub}</span>` : ""}</div></div>`;
-  }).join("");
-  const exams = examCards ? `<div class="sched">${examCards}</div>` : "";
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   const hasTypes = (g.types || []).some(groupHas);
+  const finFirst = jeong && !isType;          // 정시는 최종 합격자 발표를 원서 접수 바로 아래에 표시
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
     isType && !jeong ? null : ["원서 접수", applyTxt],
+    finFirst ? finRow : null,
     stageBlock,
-    ["시험 일정", exams],
-    finRow,
+    finFirst ? null : finRow,
     isType ? null : ["참고 표시", ref && anyDates(g) ? "이전 학년도 자료를 참고용으로 표시한 일정이에요." : ""],
     ["전형 방법", g.process],
-    [anyStageRatio ? "공통 반영 비율" : "반영 비율", ratioOf(g.ratio, jeong)],
+    ["반영 비율", anyStageRatio ? "" : ratioOf(g.ratio, jeong)],       // 단계별 비율이 있으면 공통 비율은 표시하지 않아요
     ["참고", g.note]
   ].filter(r => r && (r.block || r[1]));
 }
@@ -597,7 +581,8 @@ function admissionHtml(s) {
   const dqHtml = dq ? quotaHtml("학과 전체 모집인원", dq.text, dq.derived ? "수시+정시 합계" : "") : "";
   const adm = a.admissionUrl || s.url;
   const q = encodeURIComponent(s.name + " 신입생 모집요강");
-  const src = (a.sources || []).map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
+  const srcList = (s.sources && s.sources.length) ? s.sources : (a.sources || []);   // 출처는 학교 단위(없으면 예전처럼 학과 단위)
+  const src = srcList.map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
   return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${dqHtml}${common.length ? dl(common) : ""}${sections}
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
@@ -742,12 +727,6 @@ function buildEvents(schools) {
         }
         const da = pd(st.announce);
         if (da) ev.push({ ...base, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
-      });
-      (obj.exams || []).forEach(x => {
-        const dx = pd(x && x.date);
-        if (!dx) return;
-        const kind = x.kind && KINDS[x.kind] ? x.kind : (inferKind(obj) || "실기");
-        ev.push({ ...base, title: label + " " + (kind === "면접" ? "면접" : kind === "서류" ? "서류" : "실기") + (x.label ? "(" + x.label + ")" : ""), method: [x.method, x.note].filter(Boolean).join(" · "), kind, start: dx, end: pd(x.endDate) || dx, ref });
       });
       const fa = pd(obj.finalAnnounce);
       if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
