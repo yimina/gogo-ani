@@ -2361,6 +2361,313 @@
           "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
         ]
       ]
+    },
+        {
+      "name": "상명대학교",
+      "type": "대학교",
+      "region": "서울",
+      "address": "서울특별시 종로구 홍지문2길 20",
+      "url": "https://www.smu.ac.kr/kor/index.do",
+      "short": "상명대",
+      "departments": [
+        {
+          "name": "SW융합학부-[애니메이션전공]",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "10명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-15",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-03",
+              "note": "",
+              "types": [
+                {
+                  "title": "학생부교과",
+                  "name": "고교추천전형",
+                  "short": "",
+                  "quota": "6명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "학생부종합",
+                  "name": "상명인재전형",
+                  "short": "",
+                  "quota": "2명",
+                  "stages": [
+                    {
+                      "label": "1단계",
+                      "method": "종합적 정성평가 : 학업역량(35)+진로역량(45)+공동체역량(20)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    },
+                    {
+                      "label": "2단계",
+                      "method": "서류기반 개별면접(면접위원 2인, 수험생 1인), 10분내외",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "60",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": "40"
+                      },
+                      "note": "※학업역량(20)+진로역량(50)+공동체역량(30)"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "학생부종합",
+                  "name": "기회균형전형",
+                  "short": "",
+                  "quota": "2명",
+                  "stages": [
+                    {
+                      "label": "1단계",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※국가보훈대상자,농어촌학생,기초생활수급자,서해5도학생 등"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "논술",
+                  "name": "논술전형",
+                  "short": "",
+                  "quota": "1명",
+                  "stages": [
+                    {
+                      "label": "1단계",
+                      "method": "",
+                      "examDate": "2026-10-31",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "10",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※약술형 논술"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "quota": "35명",
+              "apply": {
+                "start": "2027-01-05",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "실기",
+                  "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
+                  "examDate": "2027-01-25",
+                  "examEnd": "",
+                  "announce": "",
+                  "kind": "실기",
+                  "ratio": {
+                    "suneung": "60",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "40",
+                    "interview": ""
+                  },
+                  "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "",
+              "ratio": {
+                "suneung": "",
+                "document": "",
+                "grade": "",
+                "gradeType": "",
+                "attendance": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "건국대 입학처",
+          "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
+        ]
+      ]
     }
   ],
   "_학과템플릿": {
