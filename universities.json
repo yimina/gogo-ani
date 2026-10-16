@@ -1170,7 +1170,7 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "주어진 소재의 조형적 특징을 이용하여 화면구성",
+                      "method": "주어진 소재의 조형적 특징 이용 화면구성",
                       "examDate": "2026-10-18",
                       "examEnd": "",
                       "announce": "",
@@ -1339,42 +1339,59 @@
               "note": "",
               "types": [
                 {
-                  "title": "",
-                  "name": "실기우수자전형",
+                  "title": "실기우수자",
+                  "name": "상황표현",
                   "short": "",
-                  "quota": "21명",
+                  "quota": "11명",
                   "stages": [
                     {
-                      "label": "상황표현",
-                      "method": "",
+                      "label": "",
+                      "method": "주어진 상황주에에 대한 창의적 표현능력",
                       "examDate": "2026-10-11",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
-                        "grade": "30",
-                        "gradeType": "",
+                        "grade": "20",
+                        "gradeType": "교과",
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": ""
-                    },
+                      "note": "※출력(10)"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "실기우수자",
+                  "name": "기초디자인",
+                  "short": "",
+                  "quota": "10명",
+                  "stages": [
                     {
-                      "label": "기초디자인",
-                      "method": "",
+                      "label": "",
+                      "method": "기초 조형능력 평가를 위한 문제 주제의 해석과 그 표현",
                       "examDate": "2026-10-12",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
                       "ratio": {
                         "document": "",
-                        "grade": "30",
+                        "grade": "20",
                         "gradeType": "",
                         "practical": "70",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※출력(10)"
                     }
                   ],
                   "process": "",
