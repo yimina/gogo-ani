@@ -446,8 +446,8 @@ function gradeLabel(r) { return "학생부" + (r && r.gradeType ? `(${r.gradeTyp
 function ratioOf(r, jeong) {
   r = r || {};
   return jeong
-    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["출결", r.attendance, "#8b5e3c"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]])
-    : ratioHtml([["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["출결", r.attendance, "#8b5e3c"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
+    ? ratioHtml([["수능", r.suneung, "#1f9d6b"], ["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["출결", r.attendance, "#8b5e3c"], ["논술", r.essay, "#0e8f9c"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]])
+    : ratioHtml([["서류", r.document, "#334155"], [gradeLabel(r), r.grade, "#2f6fed"], ["출결", r.attendance, "#8b5e3c"], ["논술", r.essay, "#0e8f9c"], ["실기", r.practical, "#e8336d"], ["면접", r.interview, "#f59e0b"]]);
 }
 
 function qNum(q) {
