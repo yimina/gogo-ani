@@ -2655,11 +2655,11 @@
                         "grade": "10",
                         "gradeType": "교과",
                         "attendance": "",
-                        "essay": "",
+                        "essay": "90",
                         "practical": "",
                         "interview": ""
                       },
-                      "note": "※약술형 논술"
+                      "note": "※약술형 논술 : 국어(2문항)+수학(8문항) 60분"
                     }
                   ],
                   "process": "",
