@@ -1430,7 +1430,7 @@
       "short": "명지대",
       "departments": [
         {
-          "name": "디자인학부-[영상,애니메이션디자인디자인전공]",
+          "name": "디자인학부-[영상,애니메이션디자인전공]",
           "short": "",
           "quota": "",
           "admission": {
@@ -2453,7 +2453,8 @@
       ],
       "sources": [
         [
-          
+           "건국대 입학처",
+          "https://www.konkuk.ac.kr/admission/37869/subview.do#none"
         ]
       ]
     },
@@ -2702,6 +2703,163 @@
                     "interview": ""
                   },
                   "note": "※수능반영비율:국어(25)+수학(35)+영어(20)+탐구(20)"
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "",
+              "ratio": {
+                "suneung": "",
+                "document": "",
+                "grade": "",
+                "gradeType": "",
+                "attendance": "",
+                "essay": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
+          }
+        },
+        {
+          "name": "자유전공(예체능계열)",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "track": [
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "12명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-15",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-03",
+              "note": "",
+              "types": [
+                {
+                  "title": "학생부교과",
+                  "name": "고교추천전형",
+                  "short": "",
+                  "quota": "12명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "나군",
+              "quota": "11명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "",
+                  "method": "",
+                  "examDate": "",
+                  "examEnd": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "suneung": "100",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
                 }
               ],
               "finalAnnounce": "2027-02-05",
