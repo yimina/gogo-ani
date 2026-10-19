@@ -2453,8 +2453,7 @@
       ],
       "sources": [
         [
-          "건국대 입학처",
-          "https://admission.konkuk.ac.kr/sites/admission/atchmnfl/enterGthr/temp_1788143660968100.tmp"
+          
         ]
       ]
     },
@@ -2473,7 +2472,6 @@
           "admission": {
             "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
             "track": [
-              "실기",
               "비실기"
             ],
             "process": "",
@@ -2678,32 +2676,32 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "quota": "35명",
+              "gun": "나군",
+              "quota": "9명",
               "apply": {
-                "start": "2027-01-05",
+                "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
               "stages": [
                 {
-                  "label": "실기",
-                  "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
-                  "examDate": "2027-01-25",
+                  "label": "",
+                  "method": "",
+                  "examDate": "",
                   "examEnd": "",
                   "announce": "",
-                  "kind": "실기",
+                  "kind": "",
                   "ratio": {
-                    "suneung": "60",
+                    "suneung": "100",
                     "document": "",
                     "grade": "",
                     "gradeType": "",
                     "attendance": "",
                     "essay": "",
-                    "practical": "40",
+                    "practical": "",
                     "interview": ""
                   },
-                  "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
+                  "note": "※수능반영비율:국어(25)+수학(35)+영어(20)+탐구(20)"
                 }
               ],
               "finalAnnounce": "2027-02-05",
