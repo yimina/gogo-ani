@@ -2771,7 +2771,7 @@
           }
         },
         {
-          "name": "자유전공(예체능계열)",
+          "name": "자유전공[예체능계열]",
           "short": "",
           "quota": "",
           "admission": {
@@ -2836,6 +2836,484 @@
               "reference": false,
               "gun": "나군",
               "quota": "11명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "",
+                  "method": "",
+                  "examDate": "",
+                  "examEnd": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "suneung": "100",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "",
+              "ratio": {
+                "suneung": "",
+                "document": "",
+                "grade": "",
+                "gradeType": "",
+                "attendance": "",
+                "essay": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "상명대 입학처",
+          "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi"
+        ]
+      ]
+    },
+     {
+      "name": "상명대학교(천안캠퍼스)",
+      "type": "대학교",
+      "region": "충남",
+      "address": "충청남도 천안시 동남구 상명대길 31",
+      "url": "https://www.smu.ac.kr/kor/index.do",
+      "short": "상명대",
+      "departments": [
+        {
+          "name": "예술학부-[디지털만화영상전공]",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "29명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-03",
+              "note": "",
+              "types": [
+                {
+                  "title": "학생부교과",
+                  "name": "고교추천전형",
+                  "short": "",
+                  "quota": "6명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    },
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "학생부종합",
+                  "name": "상명인재전형",
+                  "short": "",
+                  "quota": "3명",
+                  "stages": [
+                    {
+                      "label": "1단계",
+                      "method": "종합적 정성평가 : 학업역량(35)+진로역량(45)+공동체역량(20)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2026-10-29",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    },
+                    {
+                      "label": "2단계",
+                      "method": "서류기반 개별면접(면접위원 2인, 수험생 1인), 10분내외",
+                      "examDate": "",
+                      "examEnd": "2026-11-07",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "60",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "40"
+                      },
+                      "note": "※학업역량(20)+진로역량(50)+공동체역량(30)"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "학생부종합",
+                  "name": "기회균형전형",
+                  "short": "",
+                  "quota": "2명",
+                  "stages": [
+                    {
+                      "label": "1단계",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※국가보훈대상자,농어촌학생,기초생활수급자,서해5도학생 등"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                },
+                {
+                  "title": "실기",
+                  "name": "실기전형",
+                  "short": "",
+                  "quota": "24명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "2026-10-31",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "60",
+                        "interview": ""
+                      },
+                      "note": "※만화능력테스트:4칸이상 만화구성"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "나군",
+              "quota": "12명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "stages": [
+                {
+                  "label": "",
+                  "method": "",
+                  "examDate": "",
+                  "examEnd": "",
+                  "announce": "",
+                  "kind": "",
+                  "ratio": {
+                    "suneung": "60",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "40",
+                    "interview": ""
+                  },
+                  "note": "※만화능력테스트:4칸이상 만화구성"
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "",
+              "date": "",
+              "ratio": {
+                "suneung": "",
+                "document": "",
+                "grade": "",
+                "gradeType": "",
+                "attendance": "",
+                "essay": "",
+                "practical": "",
+                "interview": ""
+              },
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
+          }
+        },
+        {
+          "name": "자유전공[디자인/예술계열]",
+          "short": "",
+          "quota": "",
+          "admission": {
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "track": [
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
+            "susi": {
+              "reference": false,
+              "quota": "22명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-11",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-03",
+              "note": "",
+              "types": [
+                {
+                  "title": "학생부교과",
+                  "name": "학생부교과",
+                  "short": "",
+                  "quota": "22명",
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능:국어,수학,영어,탐구 中 2개 등급합 10등급이내",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "나군",
+              "quota": "14명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
