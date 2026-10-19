@@ -2935,7 +2935,7 @@
         ]
       ]
     },
-     {
+    {
       "name": "상명대학교(천안캠퍼스)",
       "type": "대학교",
       "region": "충남",
@@ -2967,61 +2967,7 @@
               "finalAnnounce": "2026-12-03",
               "note": "",
               "types": [
-                {
-                  "title": "학생부교과",
-                  "name": "고교추천전형",
-                  "short": "",
-                  "quota": "6명",
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    },
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
+
                 {
                   "title": "학생부종합",
                   "name": "상명인재전형",
