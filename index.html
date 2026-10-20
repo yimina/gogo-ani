@@ -11,6 +11,12 @@
 <!-- ★ 1. 네이버 클라우드 플랫폼에서 발급한 Client ID(ncpKeyId)로 바꾸세요 -->
 <script>
   const NAVER_CLIENT_ID = "bduf7pv6qj";
+
+  // ★ 정보 오류 신고 접수 설정 (자세한 방법은 신고-접수-설정-가이드.md)
+  //   endpoint : Google Apps Script 웹 앱 주소 → 신고가 구글 시트에 쌓이고 관리자에게 메일이 가요 (권장)
+  //   email    : endpoint 가 비어 있을 때 쓰는 대체 방법. 사용자의 메일 앱이 열려요 (mailto)
+  //   둘 다 비어 있으면 '내용 복사'만 동작해요.
+  const REPORT_CONFIG = { endpoint: "", email: "" };
 </script>
 
 <style>
@@ -265,6 +271,33 @@
     .mitem .mtxt { grid-column: 2; }
     .cal-title { font-size: 22px; }
   }
+  /* 정보 오류 신고 */
+  .detail .links .rp-btn { margin-left: auto; font: inherit; font-size: 12.5px; padding: 6px 11px; border-radius: 6px; border: 1.5px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; }
+  .detail .links .rp-btn:hover { border-color: var(--pink); color: var(--pink); }
+  .detail .links .rp-btn:focus-visible { outline: 3px solid rgba(232,51,109,.3); outline-offset: 2px; }
+  #reportDlg { border: 0; border-radius: 16px; padding: 0; width: min(520px, 92vw); max-height: 92vh; box-shadow: 0 12px 40px rgba(20,33,61,.35); color: var(--ink); font-family: inherit; }
+  #reportDlg::backdrop { background: rgba(20,33,61,.5); }
+  .rp { padding: 18px 20px 16px; }
+  .rp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+  .rp-head h2 { margin: 0; font-family: "Do Hyeon", "Noto Sans KR", sans-serif; font-weight: 400; font-size: 22px; }
+  .rp-x { border: 0; background: none; font-size: 26px; line-height: 1; color: var(--sub); cursor: pointer; padding: 2px 8px; border-radius: 8px; }
+  .rp-x:hover { background: #eef2f7; color: var(--ink); }
+  .rp-target { margin: 0 0 12px; padding: 8px 12px; background: #f5f7fb; border-radius: 8px; font-size: 13px; line-height: 1.5; }
+  .rp-f { display: block; margin-bottom: 11px; font-size: 12.5px; font-weight: 600; color: var(--sub); }
+  .rp-f em { font-style: normal; color: var(--pink); font-weight: 700; margin-left: 4px; }
+  .rp-f select, .rp-f textarea, .rp-f input { display: block; width: 100%; margin-top: 5px; padding: 9px 11px; font: inherit; font-size: 14px; font-weight: 400; color: var(--ink); background: #fff; border: 1.5px solid var(--line); border-radius: 8px; box-sizing: border-box; }
+  .rp-f textarea { resize: vertical; min-height: 84px; }
+  .rp-f select:focus, .rp-f textarea:focus, .rp-f input:focus { outline: 3px solid rgba(47,111,237,.25); border-color: var(--blue); }
+  .rp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .rp-note { margin: 2px 0 12px; font-size: 11.5px; line-height: 1.55; color: var(--sub); }
+  .rp-actions { display: flex; justify-content: flex-end; gap: 8px; }
+  .rp-ghost, .rp-primary { font: inherit; font-size: 14px; font-weight: 600; padding: 9px 18px; border-radius: 8px; cursor: pointer; }
+  .rp-ghost { background: #fff; border: 1.5px solid var(--line); color: var(--ink); }
+  .rp-ghost:hover { border-color: var(--ink); }
+  .rp-primary { background: var(--ink); border: 1.5px solid var(--ink); color: #fff; }
+  .rp-primary:disabled { opacity: .5; cursor: default; }
+  .rp-status { min-height: 18px; margin: 10px 0 0; font-size: 13px; line-height: 1.5; }
+  .rp-status.ok { color: #0f7a53; } .rp-status.err { color: #c0264f; }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
@@ -300,6 +333,47 @@
     <div class="map-msg" id="mapMsg"></div>
   </main>
 </div>
+
+<dialog id="reportDlg" aria-labelledby="rpTitle">
+  <div class="rp">
+    <div class="rp-head">
+      <h2 id="rpTitle">정보 오류 신고</h2>
+      <button type="button" class="rp-x" id="rpClose" aria-label="닫기">&times;</button>
+    </div>
+    <p class="rp-target" id="rpTarget"></p>
+
+    <label class="rp-f">오류가 있는 부분
+      <select id="rpSection">
+        <option>기본 정보 (학교명·주소·홈페이지)</option>
+        <option>학과 정보</option>
+        <option>수시 · 원서 접수 / 일정</option>
+        <option>수시 · 모집인원</option>
+        <option>수시 · 반영 비율</option>
+        <option>정시 · 군 / 일정</option>
+        <option>정시 · 모집인원 / 반영 비율</option>
+        <option>최종 합격자 발표일</option>
+        <option>기타</option>
+      </select>
+    </label>
+    <label class="rp-f">무엇이 잘못되었나요? <em>필수</em>
+      <textarea id="rpMsg" rows="4" maxlength="1000" placeholder="예) 수시 원서 접수 기간이 9.7~9.30이 아니라 9.8~9.30입니다."></textarea>
+    </label>
+    <label class="rp-f">근거 링크 (선택)
+      <input id="rpSrc" type="url" maxlength="300" placeholder="https://… (모집요강 주소 등)">
+    </label>
+    <label class="rp-f">연락받을 이메일 (선택)
+      <input id="rpMail" type="email" maxlength="120" placeholder="처리 결과를 알려드릴 때만 사용해요">
+    </label>
+    <input id="rpHp" class="rp-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <p class="rp-note">신고 내용은 관리자가 확인한 뒤 반영돼요. 이메일은 입력하셨을 때만 처리 결과 안내에 사용해요.</p>
+    <div class="rp-actions">
+      <button type="button" class="rp-ghost" id="rpCopy">내용 복사</button>
+      <button type="button" class="rp-primary" id="rpSend">신고하기</button>
+    </div>
+    <p class="rp-status" id="rpStatus" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
 
 <script>
 /* ★ 학교 데이터는 같은 폴더의 universities.json 에서 불러옵니다. (학교 추가·수정은 그 파일만 고치면 돼요)
@@ -587,6 +661,7 @@ function admissionHtml(s) {
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
+      <button type="button" class="rp-btn" data-report="${s.id}">⚑ 정보 오류 신고</button>
     </div>
     <p class="muted small">${src ? "출처: " + src + " · " : ""}확인일 ${CHECKED_AT}<br>전형은 매년 바뀌어요. 지원 전 반드시 공식 모집요강을 확인하세요.</p></div>`;
 }
@@ -966,6 +1041,91 @@ document.getElementById("ftoggle").onclick = function () {
   this.setAttribute("aria-expanded", open);
   updateFilterCount();
 };
+
+/* ---------- 정보 오류 신고 ---------- */
+let rpCtx = null, rpOpener = null;
+const $rp = id => document.getElementById(id);
+
+function openReport(id, opener) {
+  const s = SCHOOLS.find(x => x.id === id); if (!s) return;
+  const dp = s.depts[Math.min(deptSel[id] || 0, s.depts.length - 1)];
+  rpCtx = { school: s.name, dept: dp && dp.name ? dp.name : "" };
+  rpOpener = opener || null;
+  $rp("rpTarget").textContent = rpCtx.school + (rpCtx.dept ? " · " + rpCtx.dept : "");
+  $rp("rpStatus").textContent = ""; $rp("rpStatus").className = "rp-status";
+  $rp("rpSend").disabled = false;
+  $rp("reportDlg").showModal();
+  $rp("rpMsg").focus();
+}
+function closeReport() { $rp("reportDlg").close(); if (rpOpener) rpOpener.focus({ preventScroll: true }); }
+
+function reportPayload() {
+  return {
+    school: rpCtx.school, dept: rpCtx.dept,
+    section: $rp("rpSection").value,
+    message: $rp("rpMsg").value.trim(),
+    source: $rp("rpSrc").value.trim(),
+    contact: $rp("rpMail").value.trim(),
+    dataCheckedAt: CHECKED_AT,
+    page: location.href,
+    sentAt: new Date().toISOString(),
+    hp: $rp("rpHp").value                                   // 스팸 방지용 숨김 칸 (사람은 비워 둠)
+  };
+}
+function reportText(p) {
+  return ["[정보 오류 신고]", "학교: " + p.school, "학과: " + (p.dept || "-"), "오류 위치: " + p.section,
+          "내용: " + p.message, "근거 링크: " + (p.source || "-"), "연락처: " + (p.contact || "-"),
+          "데이터 확인일: " + (p.dataCheckedAt || "-"), "페이지: " + p.page].join("\n");
+}
+function rpSay(msg, cls) { const el = $rp("rpStatus"); el.textContent = msg; el.className = "rp-status " + (cls || ""); }
+
+async function sendReport() {
+  const p = reportPayload();
+  if (p.message.length < 5) { rpSay("잘못된 내용을 5자 이상 적어 주세요.", "err"); $rp("rpMsg").focus(); return; }
+  if (p.source && !/^https?:\/\//i.test(p.source)) { rpSay("근거 링크는 http:// 또는 https:// 로 시작해야 해요.", "err"); return; }
+  if (p.contact && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.contact)) { rpSay("이메일 형식을 확인해 주세요.", "err"); return; }
+  if (p.hp) { rpSay("신고가 접수됐어요. 감사합니다!", "ok"); return; }                  // 스팸은 조용히 무시
+  try {                                                                                  // 도배 방지: 30초에 1건
+    const last = +localStorage.getItem("reportAt") || 0;
+    if (Date.now() - last < 30000) { rpSay("잠시 후 다시 신고해 주세요. (30초에 1건)", "err"); return; }
+  } catch (e) {}
+
+  const btn = $rp("rpSend"); btn.disabled = true;
+  const done = text => {
+    try { localStorage.setItem("reportAt", String(Date.now())); } catch (e) {}
+    rpSay(text, "ok"); $rp("rpMsg").value = ""; $rp("rpSrc").value = "";
+    setTimeout(() => { btn.disabled = false; }, 2500);                 // 잠시 뒤 다음 신고를 할 수 있어요 (30초 도배 방지는 별도)
+  };
+  if (REPORT_CONFIG.endpoint) {
+    try {
+      await fetch(REPORT_CONFIG.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(p) });
+      done("신고가 접수됐어요. 확인 후 반영할게요. 감사합니다!");
+    } catch (e) {
+      btn.disabled = false;
+      rpSay("전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
+    }
+  } else if (REPORT_CONFIG.email) {
+    const url = "mailto:" + REPORT_CONFIG.email + "?subject=" + encodeURIComponent("[정보 오류 신고] " + p.school + (p.dept ? " · " + p.dept : "")) + "&body=" + encodeURIComponent(reportText(p));
+    window.location.href = url;
+    done("메일 앱이 열렸어요. 메일의 '보내기'를 눌러야 접수돼요.");
+  } else {
+    btn.disabled = false;
+    rpSay("신고 접수 주소가 아직 설정되지 않았어요. '내용 복사'로 내용을 복사해 관리자에게 전달해 주세요.", "err");
+  }
+}
+
+$rp("list").addEventListener("click", e => {
+  const b = e.target.closest("[data-report]");
+  if (b) openReport(+b.dataset.report, b);
+});
+$rp("rpClose").onclick = closeReport;
+$rp("rpSend").onclick = sendReport;
+$rp("rpCopy").onclick = async () => {
+  const p = reportPayload(); p.message = p.message || "(내용을 입력해 주세요)";
+  try { await navigator.clipboard.writeText(reportText(p)); rpSay("신고 내용을 복사했어요. 관리자에게 붙여넣어 전달해 주세요.", "ok"); }
+  catch (e) { rpSay("복사하지 못했어요. 내용을 직접 선택해서 복사해 주세요.", "err"); }
+};
+$rp("reportDlg").addEventListener("click", e => { if (e.target === $rp("reportDlg")) closeReport(); });   // 바깥을 누르면 닫기
 
 loadData()
   .then(() => { buildAllChips(); initCalMonth(); render(); loadNaver(); })
