@@ -3673,7 +3673,7 @@
         {
           "name": "만화웹툰학과",
           "short": "만화웹툰",
-          "quota": "40명",
+          "quota": "",
           "admission": {
             "admissionUrl": "https://www.seoil.ac.kr/ipsi/",
             "track": ["실기"],
