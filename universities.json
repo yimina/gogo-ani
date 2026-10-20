@@ -18,7 +18,7 @@
     "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요.",
     "정시도 수시처럼 시험 날짜·방법은 stages(단계)에 적어요. 정시에는 따로 exams 항목이 없어요. 단계에 ratio가 하나라도 있으면 전형 전체(공통) 반영 비율은 표시되지 않아요."
   ],
-  "checkedAt": "2026-10-12",
+  "checkedAt": "2026-10-20",
   "schools": [
     {
       "name": "한국예술종합학교",
@@ -3715,7 +3715,716 @@
           "https://www.seoil.ac.kr/ipsi/"
         ]
       ]
-    }
+    },
+     {
+      "name": "중앙대학교(다빈치)",
+      "type": "4년제",
+      "region": "경기",
+      "address": "경기도 안성시 대덕면 서동대로 4726",
+      "url": "https://cau.ac.kr",
+      "short": "중앙대(안성)",
+      "departments": [
+        {
+          "name": "글로벌예술학부 게임콘텐츠애니메이션전공",
+          "short": "게임애니",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://cau.ac.kr",
+            "track": ["실기", "비실기"],
+            "process": "수시(실기형/실기80%+학생부20%), 정시(다군/실기형)",
+            "practical": "상황표현, 칸만화 중 택 1",
+            "note": "게임 기획 및 그래픽, 테크니컬 아트 융합 중심 커리큘럼",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-20",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기형",
+                  "ratio": { "grade": "20%", "practical": "80%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "finalAnnounce": "2027-02-05",
+              "process": "수능 반영 비율 및 실기 배점 요강 참조"
+            }
+          }
+        }
+      ],
+      "sources": [["중앙대학교 입학처", "https://cau.ac.kr"]]
+    },
+    {
+      "name": "홍익대학교(세종)",
+      "type": "4년제",
+      "region": "세종",
+      "address": "세종특별자치시 조치원읍 세종로 2639",
+      "url": "https://hongik.ac.kr",
+      "short": "홍익대(세종)",
+      "departments": [
+        {
+          "name": "영상·애니메이션학부",
+          "short": "영상애니",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://hongik.ac.kr",
+            "track": ["비실기"],
+            "process": "수시(미술우수자전형/서류+교과+면접), 정시(가군/비실기 서류전형)",
+            "practical": "실기고사 없음 (미술활동보고서 서류 평가 및 심층 면접 수행)",
+            "note": "전 전형 미술활동보고서(미활보) 입력 필수",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-12-11",
+              "types": [
+                {
+                  "title": "서류/면접위주 전형",
+                  "name": "미술우수자전형",
+                  "stages": [
+                    { "label": "1차", "method": "학생부 교과 100%", "kind": "서류", "ratio": { "grade": "100%" } },
+                    { "label": "2차", "method": "서류(미활보) 100%", "kind": "서류", "ratio": { "document": "100%" } },
+                    { "label": "3차", "method": "2차 성적 40% + 면접 60%", "kind": "면접", "ratio": { "document": "40%", "interview": "60%" } }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "가군",
+              "finalAnnounce": "2027-02-05",
+              "process": "수능 100% 또는 수능+서류 일괄 합산"
+            }
+          }
+        }
+      ],
+      "sources": [["홍익대학교 입학관리본부", "https://hongik.ac.kr"]]
+    },
+    {
+      "name": "국립공주대학교",
+      "type": "4년제",
+      "region": "충남",
+      "address": "충청남도 공주시 공주대학로 56",
+      "url": "https://kongju.ac.kr",
+      "short": "공주대",
+      "departments": [
+        {
+          "name": "만화애니메이션학부",
+          "short": "만화애니",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://kongju.ac.kr",
+            "track": ["실기", "비실기"],
+            "process": "수시(실기실적/실기70%+학생부30%), 정시(나군/실기위주)",
+            "practical": "칸만화, 상황표현 중 택 1",
+            "note": "전통적인 만화·애니메이션 명문 국립대학",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-12-15",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기실적전형",
+                  "ratio": { "grade": "30%", "practical": "70%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "나군",
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [["국립공주대학교 입학안내", "https://kongju.ac.kr"]]
+    },
+    {
+      "name": "목원대학교",
+      "type": "4년제",
+      "region": "대전",
+      "address": "대전광역시 서구 도안북로 88",
+      "url": "https://mokwon.ac.kr",
+      "short": "목원대",
+      "departments": [
+        {
+          "name": "웹툰애니메이션게임대학",
+          "short": "웹툰애니게임",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://mokwon.ac.kr",
+            "track": ["실기"],
+            "process": "수시(실기전형/실기100% 또는 실기비중 우세), 정시(다군)",
+            "practical": "칸만화, 상황표현, 캐릭터디자인 중 택 1",
+            "note": "웹툰·애니메이션·게임 단과대학 단독 개편 학교",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-15",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "일반학생[실기]",
+                  "ratio": { "grade": "0%", "practical": "100%" },
+                  "note": "실기 반영비율 매우 높음"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [["목원대학교 입학처", "https://mokwon.ac.kr"]]
+    },
+    {
+      "name": "호서대학교",
+      "type": "4년제",
+      "region": "충남",
+      "address": "충청남도 아산시 배방읍 호서대길 120",
+      "url": "https://hoseo.ac.kr",
+      "short": "호서대",
+      "departments": [
+        {
+          "name": "애니메이션학과",
+          "short": "애니메이션",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://hoseo.ac.kr",
+            "track": ["실기"],
+            "process": "수시(실기위주 전형/실기80%+내신20%), 정시(다군)",
+            "practical": "상황표현, 칸만화 중 택 1",
+            "note": "3D 애니메이션 및 VFX 특성화 인프라 우수",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-13",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기우수자",
+                  "ratio": { "grade": "20%", "practical": "80%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [["호서대학교 입학처", "https://hoseo.ac.kr"]]
+    },
+    {
+      "name": "순천향대학교",
+      "type": "4년제",
+      "region": "충남",
+      "address": "충청남도 아산시 신창면 순천향로 22",
+      "url": "https://sch.ac.kr",
+      "short": "순천향대",
+      "departments": [
+        {
+          "name": "메타버스융합대학 디지털애니메이션학과",
+          "short": "디지털애니",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://sch.ac.kr",
+            "track": ["실기"],
+            "process": "수시(실기/실기80%+교과20%), 정시(다군)",
+            "practical": "칸만화, 상황표현",
+            "note": "메타버스 및 차세대 디지털 콘텐츠 연계 강화",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-15",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기우수자전형",
+                  "ratio": { "grade": "20%", "practical": "80%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [["순천향대학교 입학처", "https://sch.ac.kr"]]
+    },
+    {
+      "name": "남서울대학교",
+      "type": "4년제",
+      "region": "충남",
+      "address": "충청남도 천안시 서북구 성환읍 대학로 91",
+      "url": "https://nsu.ac.kr",
+      "short": "남서울대",
+      "departments": [
+        {
+          "name": "영상예술디자인학과",
+          "short": "영상예술디자인",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://nsu.ac.kr",
+            "track": ["실기"],
+            "process": "수시(실기위주/실기80%+교과20%), 정시(나군)",
+            "practical": "상황표현, 칸만화, 기초디자인 중 택 1",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-13",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기일반전형",
+                  "ratio": { "grade": "20%", "practical": "80%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "나군",
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [["남서울대학교 입학안내", "https://nsu.ac.kr"]]
+    },
+    {
+      "name": "청주대학교",
+      "type": "4년제",
+      "region": "충북",
+      "address": "충청북도 청주시 청원구 대성로 298",
+      "url": "https://cju.ac.kr",
+      "short": "청주대",
+      "departments": [
+        {
+          "name": "만화애니메이션과",
+          "short": "만화애니",
+          "quota": "모집요강 참조",
+          "admission": {
+            "admissionUrl": "https://cju.ac.kripsi/index.do",
+            "track": ["실기"],
+            "process": "수시(실기전형/실기70%+교과30%), 정시(가군)",
+            "practical": "칸만화, 상황표현",
+            "susi": {
+              "reference": false,
+              "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+              "finalAnnounce": "2026-11-15",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "실기우수자",
+                  "ratio": { "grade": "30%", "practical": "70%" }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+                "gun": "가군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["청주대학교 입학처", "cju.ac.kr"]]
+                },
+                {
+                "name": "중부대학교",
+                "type": "4년제",
+                "region": "충남",
+                "address": "충청남도 금산군 추부면 대학로 201",
+                "url": "joongbu.ac.kr",
+                "short": "중부대",
+                "departments": [
+                {
+                "name": "만화애니메이션학전공",
+                "short": "만화애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "joongbu.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기우수자/실기70%+교과30%), 정시(가/나/다군 요강참조)",
+                "practical": "상황표현, 칸만화 중 택 1",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-13",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자전형",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "가군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["중부대학교 입학정보", "joongbu.ac.kr"]]
+                },
+                {
+                "name": "백석대학교",
+                "type": "4년제",
+                "region": "충남",
+                "address": "충청남도 천안시 동남구 백석대학로 1",
+                "url": "bu.ac.kr",
+                "short": "백석대",
+                "departments": [
+                {
+                "name": "디자인영상학부 웹툰애니메이션전공",
+                "short": "웹툰애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "bu.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기위주/실기80%+교과20%), 정시(나군)",
+                "practical": "상황표현, 칸만화, 기초디자인 중 택 1",
+                "note": "대규모 학부 내 전공 분과 체제 운영",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-20",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "일반전형[실기]",
+                "ratio": { "grade": "20%", "practical": "80%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "나군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["백석대학교 입학홈페이지", "bu.ac.kr"]]
+                },
+                {
+                "name": "한서대학교",
+                "type": "4년제",
+                "region": "충남",
+                "address": "충청남도 서산시 해미면 한서1로 46",
+                "url": "hanseo.ac.kr",
+                "short": "한서대",
+                "departments": [
+                {
+                "name": "애니메이션융합전공",
+                "short": "애니융합",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "hanseo.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기위주/실기70%+교과30%), 정시(다군)",
+                "practical": "상황표현, 칸만화 중 택 1",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-13",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "다군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["한서대학교 입학처", "hanseo.ac.kr"]]
+                },
+                {
+                "name": "상지대학교",
+                "type": "4년제",
+                "region": "강원",
+                "address": "강원특별자치도 원주시 상지대길 83",
+                "url": "sangji.ac.kr",
+                "short": "상지대",
+                "departments": [
+                {
+                "name": "만화애니메이션학과",
+                "short": "만화애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "sangji.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기우수자/실기70%+교과30%), 정시(다군)",
+                "practical": "상황표현, 칸만화 중 택 1",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-15",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기형일반전형",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "다군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["상지대학교 입학안내", "sangji.ac.kr"]]
+                },
+                {
+                "name": "부산대학교",
+                "type": "4년제",
+                "region": "부산",
+                "address": "부산광역시 금정구 부산대학로63번길 2",
+                "url": "pusan.ac.kr",
+                "short": "부산대",
+                "departments": [
+                {
+                "name": "디자인학과 애니메이션전공",
+                "short": "애니전공",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "pusan.ac.kr",
+                "track": ["실기", "비실기"],
+                "process": "수시(실기형 위주 일괄합산), 정시(가군 수능+실기)",
+                "practical": "기초디자인(애니메이션 연출/구성형 변형 문항 출제 가능)",
+                "note": "영남권 거점국립대학교 미술/디자인 최상위 지함",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-12-15",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기전형",
+                "ratio": { "grade": "40%", "practical": "60%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "가군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["부산대학교 입학정보", "pusan.ac.kr"]]
+                },
+                {
+                "name": "경성대학교",
+                "type": "4년제",
+                "region": "부산",
+                "address": "부산광역시 남구 수영로 309",
+                "url": "ks.ac.kr",
+                "short": "경성대",
+                "departments": [
+                {
+                "name": "영상애니메이션학부 애니메이션학전공",
+                "short": "애니학",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "ks.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기특별전형/실기70%+교과30%), 정시(가군)",
+                "practical": "상황표현, 칸만화",
+                "note": "종합 영상예술 및 영화학 인프라 연계 강점",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-13",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "가군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["경성대학교 입학처", "ks.ac.kr"]]
+                },
+                {
+                "name": "동서대학교",
+                "type": "4년제",
+                "region": "부산",
+                "address": "부산광역시 사상구 주례로 47",
+                "url": "dongseo.ac.kr",
+                "short": "동서대",
+                "departments": [
+                {
+                "name": "디지털콘텐츠학부 영상애니메이션학과",
+                "short": "영상애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "dongseo.ac.kr",
+                "track": ["실기", "비실기"],
+                "process": "수시(일반 실기전형), 정시(가/나군 요강참조)",
+                "practical": "상황표현, 칸만화, 기초디자인 중 택 1",
+                "note": "정부 특성화 재정지원 및 실무 제작 장비 대규모 투입 학과",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-15",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자전형",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "가군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["동서대학교 입학홈페이지", "dongseo.ac.kr"]]
+                },
+                {
+                "name": "영산대학교",
+                "type": "4년제",
+                "region": "부산",
+                "address": "부산광역시 해운대구 반송순환로 142",
+                "url": "ysu.ac.kr",
+                "short": "영산대",
+                "departments": [
+                {
+                "name": "만화애니메이션전공",
+                "short": "만화애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "ysu.ac.kr",
+                "track": ["실기"],
+                "process": "수시(실기전형 위주), 정시(다군 실기반영)",
+                "practical": "상황표현, 칸만화, 캐릭터디자인 중 택 1",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-13",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자",
+                "ratio": { "grade": "30%", "practical": "70%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "다군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["영산대학교 입학안내", "ysu.ac.kr"]]
+                },
+                {
+                "name": "계명대학교",
+                "type": "4년제",
+                "region": "대구",
+                "address": "대구광역시 달서구 달구벌대로 1095",
+                "url": "kmu.ac.kr",
+                "short": "계명대",
+                "departments": [
+                {
+                "name": "미술대학 영상애니메이션과",
+                "short": "영상애니",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "gokeemyung.com",
+                "track": ["실기"],
+                "process": "수시(실기위주 전형), 정시(다군)",
+                "practical": "상황표현, 칸만화 중 택 1",
+                "note": "웹툰과와 분리 모집하므로 하위 애니메이팅/3D 특성화 확인 필요",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-20",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자전형",
+                "ratio": { "grade": "20%", "practical": "80%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "다군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                },
+                {
+                "name": "미술대학 웹툰과",
+                "short": "웹툰과",
+                "quota": "모집요강 참조",
+                "admission": {
+                "admissionUrl": "gokeemyung.com",
+                "track": ["실기"],
+                "process": "수시(실기위주 전형), 정시(다군)",
+                "practical": "칸만화, 상황표현 중 택 1",
+                "susi": {
+                "reference": false,
+                "apply": { "start": "2026-09-11", "end": "2026-09-15" },
+                "finalAnnounce": "2026-11-20",
+                "types": [
+                {
+                "title": "실기위주 전형",
+                "name": "실기우수자전형",
+                "ratio": { "grade": "20%", "practical": "80%" }
+                }
+                ]
+                },
+                "jeongsi": {
+                "reference": false,
+                "gun": "다군",
+                "finalAnnounce": "2027-02-05"
+                }
+                }
+                }
+                ],
+                "sources": [["계명대학교 입학처", "gokeemyung.com"]]
+                }
   ],
   "_학과템플릿": {
     "name": "",
