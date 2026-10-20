@@ -3531,7 +3531,7 @@
         {
           "name": "웹툰만화학과",
           "short": "웹툰만화",
-          "quota": "68명",
+          "quota": "",
           "admission": {
             "admissionUrl": "https://ipsi.induk.ac.kr/",
             "track": ["실기"],
@@ -3605,7 +3605,7 @@
         {
           "name": "웹툰과",
           "short": "웹툰",
-          "quota": "60명",
+          "quota": "",
           "admission": {
             "admissionUrl": "https://hywoman.ac.kripsi/",
             "track": ["비실기", "실기"],
