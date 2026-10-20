@@ -16,7 +16,7 @@
   //   endpoint : Google Apps Script 웹 앱 주소 → 신고가 구글 시트에 쌓이고 관리자에게 메일이 가요 (권장)
   //   email    : endpoint 가 비어 있을 때 쓰는 대체 방법. 사용자의 메일 앱이 열려요 (mailto)
   //   둘 다 비어 있으면 '내용 복사'만 동작해요.
-  const REPORT_CONFIG = { endpoint: "https://script.google.com/macros/s/AKfycbyLIUmXqZ17Mu5SB6TN7pwNSTthIE-SBqzzP72taSMZzVND8IFAO9kDOsvNqsv-l6pIKQ/exec", email: "" };
+  const REPORT_CONFIG = { endpoint: "", email: "" };
 </script>
 
 <style>
@@ -60,7 +60,10 @@
   .flabel { font-size: 11.5px; color: var(--sub); margin-top: 10px; }
   .flabel + .filters { margin-top: 4px; }
   .fhint { font-size: 11.5px; color: var(--sub); margin-top: 8px; }
-  .count { padding: 10px 20px; font-size: 12.5px; color: var(--sub); border-bottom: 1px solid var(--line); }
+  .countbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 20px; font-size: 12.5px; color: var(--sub); border-bottom: 1px solid var(--line); }
+  .add-btn { font: inherit; font-size: 12.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1.5px solid var(--blue); background: #fff; color: var(--blue); cursor: pointer; white-space: nowrap; }
+  .add-btn:hover { background: var(--blue); color: #fff; }
+  .add-btn:focus-visible { outline: 3px solid rgba(47,111,237,.35); outline-offset: 2px; }
 
   ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
   li > button {
@@ -275,8 +278,8 @@
   .detail .links .rp-btn { margin-left: auto; font: inherit; font-size: 12.5px; padding: 6px 11px; border-radius: 6px; border: 1.5px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; }
   .detail .links .rp-btn:hover { border-color: var(--pink); color: var(--pink); }
   .detail .links .rp-btn:focus-visible { outline: 3px solid rgba(232,51,109,.3); outline-offset: 2px; }
-  #reportDlg { border: 0; border-radius: 16px; padding: 0; width: min(520px, 92vw); max-height: 92vh; box-shadow: 0 12px 40px rgba(20,33,61,.35); color: var(--ink); font-family: inherit; }
-  #reportDlg::backdrop { background: rgba(20,33,61,.5); }
+  #reportDlg, #addDlg { border: 0; border-radius: 16px; padding: 0; width: min(520px, 92vw); max-height: 92vh; box-shadow: 0 12px 40px rgba(20,33,61,.35); color: var(--ink); font-family: inherit; }
+  #reportDlg::backdrop, #addDlg::backdrop { background: rgba(20,33,61,.5); }
   .rp { padding: 18px 20px 16px; }
   .rp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
   .rp-head h2 { margin: 0; font-family: "Do Hyeon", "Noto Sans KR", sans-serif; font-weight: 400; font-size: 22px; }
@@ -297,6 +300,7 @@
   .rp-primary { background: var(--ink); border: 1.5px solid var(--ink); color: #fff; }
   .rp-primary:disabled { opacity: .5; cursor: default; }
   .rp-status { min-height: 18px; margin: 10px 0 0; font-size: 13px; line-height: 1.5; }
+  .rp-hint { min-height: 0; margin: -4px 0 10px; font-size: 12px; color: #8a6510; line-height: 1.5; }
   .rp-status.ok { color: #0f7a53; } .rp-status.err { color: #c0264f; }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -319,7 +323,7 @@
       <div class="fhint">※ 여러 개를 함께 선택하면 그중 하나라도 해당하는 학교가 보여요. "수시+정시", "실기+비실기"는 둘 다 있는 학교만 보여요. 전형 정보가 확인되지 않은 학교는 시기·실기 필터를 켜면 숨겨져요.</div>
       </div>
     </header>
-    <div class="count" id="count"></div>
+    <div class="countbar"><span id="count"></span><button type="button" class="add-btn" id="addOpen">＋ 대학 추가 요청</button></div>
     <ul id="list"></ul>
     <div class="note">※ 학과명·입시 정보는 변경될 수 있으니 학교 공식 사이트에서 꼭 확인하세요.</div>
   </aside>
@@ -372,6 +376,32 @@
       <button type="button" class="rp-primary" id="rpSend">신고하기</button>
     </div>
     <p class="rp-status" id="rpStatus" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<dialog id="addDlg" aria-labelledby="adTitle">
+  <div class="rp">
+    <div class="rp-head">
+      <h2 id="adTitle">대학 추가 요청</h2>
+      <button type="button" class="rp-x" id="adClose" aria-label="닫기">&times;</button>
+    </div>
+    <p class="rp-note" style="margin-top:0">목록에 없는 대학·학과를 알려 주세요. 관리자가 확인한 뒤 추가해요.</p>
+    <label class="rp-f">대학명 <em>필수</em>
+      <input id="adUniv" type="text" maxlength="100" placeholder="예) 서울예술대학교">
+    </label>
+    <p class="rp-hint" id="adHint"></p>
+    <label class="rp-f">학과명 <em>필수</em>
+      <input id="adDept" type="text" maxlength="200" placeholder="예) 애니메이션전공">
+    </label>
+    <label class="rp-f">의견 (선택)
+      <textarea id="adOpinion" rows="3" maxlength="500" placeholder="추가했으면 하는 이유나 참고할 만한 내용을 적어 주세요."></textarea>
+    </label>
+    <input id="adHp" class="rp-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="rp-actions">
+      <button type="button" class="rp-ghost" id="adCopy">내용 복사</button>
+      <button type="button" class="rp-primary" id="adSend">요청하기</button>
+    </div>
+    <p class="rp-status" id="adStatus" role="status" aria-live="polite"></p>
   </div>
 </dialog>
 
@@ -1061,6 +1091,7 @@ function closeReport() { $rp("reportDlg").close(); if (rpOpener) rpOpener.focus(
 
 function reportPayload() {
   return {
+    type: "report",
     school: rpCtx.school, dept: rpCtx.dept,
     section: $rp("rpSection").value,
     message: $rp("rpMsg").value.trim(),
@@ -1079,40 +1110,92 @@ function reportText(p) {
 }
 function rpSay(msg, cls) { const el = $rp("rpStatus"); el.textContent = msg; el.className = "rp-status " + (cls || ""); }
 
+// 신고·대학 추가 요청이 함께 쓰는 전송: endpoint(구글 시트) → 없으면 mailto → 둘 다 없으면 안내
+async function deliver(o) {
+  try {                                                                                  // 도배 방지: 30초에 1건
+    const last = +localStorage.getItem("reportAt") || 0;
+    if (Date.now() - last < 30000) { o.say(o.coolMsg, "err"); return; }
+  } catch (e) {}
+  const btn = o.btn; btn.disabled = true;
+  const done = text => {
+    try { localStorage.setItem("reportAt", String(Date.now())); } catch (e) {}
+    o.say(text, "ok"); o.onSent();
+    setTimeout(() => { btn.disabled = false; }, 2500);                 // 잠시 뒤 다음 요청을 할 수 있어요 (30초 도배 방지는 별도)
+  };
+  if (REPORT_CONFIG.endpoint) {
+    try {
+      await fetch(REPORT_CONFIG.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(o.payload) });
+      done(o.okMsg);
+    } catch (e) {
+      btn.disabled = false;
+      o.say("전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
+    }
+  } else if (REPORT_CONFIG.email) {
+    window.location.href = "mailto:" + REPORT_CONFIG.email + "?subject=" + encodeURIComponent(o.subject) + "&body=" + encodeURIComponent(o.text);
+    done("메일 앱이 열렸어요. 메일의 '보내기'를 눌러야 접수돼요.");
+  } else {
+    btn.disabled = false;
+    o.say("접수 주소가 아직 설정되지 않았어요. '내용 복사'로 내용을 복사해 관리자에게 전달해 주세요.", "err");
+  }
+}
+
 async function sendReport() {
   const p = reportPayload();
   if (p.message.length < 5) { rpSay("잘못된 내용을 5자 이상 적어 주세요.", "err"); $rp("rpMsg").focus(); return; }
   if (p.source && !/^https?:\/\//i.test(p.source)) { rpSay("근거 링크는 http:// 또는 https:// 로 시작해야 해요.", "err"); return; }
   if (p.contact && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.contact)) { rpSay("이메일 형식을 확인해 주세요.", "err"); return; }
   if (p.hp) { rpSay("신고가 접수됐어요. 감사합니다!", "ok"); return; }                  // 스팸은 조용히 무시
-  try {                                                                                  // 도배 방지: 30초에 1건
-    const last = +localStorage.getItem("reportAt") || 0;
-    if (Date.now() - last < 30000) { rpSay("잠시 후 다시 신고해 주세요. (30초에 1건)", "err"); return; }
-  } catch (e) {}
-
-  const btn = $rp("rpSend"); btn.disabled = true;
-  const done = text => {
-    try { localStorage.setItem("reportAt", String(Date.now())); } catch (e) {}
-    rpSay(text, "ok"); $rp("rpMsg").value = ""; $rp("rpSrc").value = "";
-    setTimeout(() => { btn.disabled = false; }, 2500);                 // 잠시 뒤 다음 신고를 할 수 있어요 (30초 도배 방지는 별도)
-  };
-  if (REPORT_CONFIG.endpoint) {
-    try {
-      await fetch(REPORT_CONFIG.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(p) });
-      done("신고가 접수됐어요. 확인 후 반영할게요. 감사합니다!");
-    } catch (e) {
-      btn.disabled = false;
-      rpSay("전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
-    }
-  } else if (REPORT_CONFIG.email) {
-    const url = "mailto:" + REPORT_CONFIG.email + "?subject=" + encodeURIComponent("[정보 오류 신고] " + p.school + (p.dept ? " · " + p.dept : "")) + "&body=" + encodeURIComponent(reportText(p));
-    window.location.href = url;
-    done("메일 앱이 열렸어요. 메일의 '보내기'를 눌러야 접수돼요.");
-  } else {
-    btn.disabled = false;
-    rpSay("신고 접수 주소가 아직 설정되지 않았어요. '내용 복사'로 내용을 복사해 관리자에게 전달해 주세요.", "err");
-  }
+  await deliver({
+    payload: p, subject: "[정보 오류 신고] " + p.school + (p.dept ? " · " + p.dept : ""), text: reportText(p),
+    btn: $rp("rpSend"), say: rpSay,
+    okMsg: "신고가 접수됐어요. 확인 후 반영할게요. 감사합니다!", coolMsg: "잠시 후 다시 신고해 주세요. (30초에 1건)",
+    onSent: () => { $rp("rpMsg").value = ""; $rp("rpSrc").value = ""; }
+  });
 }
+
+/* ---------- 대학 추가 요청 (대학명 · 학과명 · 의견) ---------- */
+let adOpener = null;
+function adSay(msg, cls) { const el = $rp("adStatus"); el.textContent = msg; el.className = "rp-status " + (cls || ""); }
+function openAdd(opener) {
+  adOpener = opener || null;
+  ["adUniv", "adDept", "adOpinion", "adHp"].forEach(id => { $rp(id).value = ""; });
+  $rp("adHint").textContent = ""; adSay("");
+  $rp("adSend").disabled = false;
+  $rp("addDlg").showModal();
+  $rp("adUniv").focus();
+}
+function closeAdd() { $rp("addDlg").close(); if (adOpener) adOpener.focus({ preventScroll: true }); }
+function addPayload() {
+  return { type: "add", univ: $rp("adUniv").value.trim(), dept: $rp("adDept").value.trim(), opinion: $rp("adOpinion").value.trim(),
+           dataCheckedAt: CHECKED_AT, page: location.href, sentAt: new Date().toISOString(), hp: $rp("adHp").value };
+}
+function addText(p) { return ["[대학 추가 요청]", "대학명: " + p.univ, "학과명: " + p.dept, "의견: " + (p.opinion || "-"), "페이지: " + p.page].join("\n"); }
+async function sendAdd() {
+  const p = addPayload();
+  if (p.univ.length < 2) { adSay("대학명을 입력해 주세요.", "err"); $rp("adUniv").focus(); return; }
+  if (p.dept.length < 2) { adSay("학과명을 입력해 주세요.", "err"); $rp("adDept").focus(); return; }
+  if (p.hp) { adSay("요청이 접수됐어요. 감사합니다!", "ok"); return; }
+  await deliver({
+    payload: p, subject: "[대학 추가 요청] " + p.univ + " · " + p.dept, text: addText(p),
+    btn: $rp("adSend"), say: adSay,
+    okMsg: "요청이 접수됐어요. 확인 후 추가할게요. 감사합니다!", coolMsg: "잠시 후 다시 요청해 주세요. (30초에 1건)",
+    onSent: () => { $rp("adUniv").value = ""; $rp("adDept").value = ""; $rp("adOpinion").value = ""; $rp("adHint").textContent = ""; }
+  });
+}
+$rp("addOpen").onclick = e => openAdd(e.currentTarget);
+$rp("adClose").onclick = closeAdd;
+$rp("adSend").onclick = sendAdd;
+$rp("adCopy").onclick = async () => {
+  const p = addPayload();
+  try { await navigator.clipboard.writeText(addText(p)); adSay("요청 내용을 복사했어요. 관리자에게 붙여넣어 전달해 주세요.", "ok"); }
+  catch (e) { adSay("복사하지 못했어요. 내용을 직접 선택해서 복사해 주세요.", "err"); }
+};
+$rp("addDlg").addEventListener("click", e => { if (e.target === $rp("addDlg")) closeAdd(); });
+$rp("adUniv").addEventListener("input", () => {                       // 이미 있는 학교면 알려 주기 (막지는 않아요)
+  const n = $rp("adUniv").value.replace(/\s/g, "");
+  const hit = n.length >= 2 && SCHOOLS.find(s => { const b = s.name.replace(/\(.*?\)/g, "").replace(/\s/g, ""); return b.includes(n) || n.includes(b); });
+  $rp("adHint").textContent = hit ? "이미 목록에 있는 학교예요(" + hit.name + "). 다른 학과를 추가하고 싶다면 학과명을 적어 주세요." : "";
+});
 
 $rp("list").addEventListener("click", e => {
   const b = e.target.closest("[data-report]");
