@@ -20,8 +20,8 @@
   ],
   "checkedAt": "2026-10-20",
   "schools": [
-    {
-      "name": "한국예술종합학교",
+   { 
+     "name": "한국예술종합학교",
       "type": "대학교",
       "region": "서울",
       "address": "서울특별시 성북구 화랑로32길 146-37",
@@ -95,109 +95,12 @@
                     }
                   ],
                   "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
+                  "ratio": {},
                   "note": ""
                 }
               ]
             },
             "jeongsi": {
-              "reference": false,
-              "gun": "",
-              "quota": "",
-              "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
-              },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
-              "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
-              "note": "",
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ]
             },
             "etc": []
           }
