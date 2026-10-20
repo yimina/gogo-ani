@@ -3286,7 +3286,7 @@
               "apply": {
                 "start": "2026-09-07",
                 "end": "2026-09-30",
-                "note": "수시 1차(9.7~9.3)/2차(11.11~11.25) 따로 접수"
+                "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
               },
               "finalAnnounce": "2026-12-18",
               "types": [
@@ -3459,36 +3459,84 @@
       "type": "전문대학",
       "region": "서울",
       "address": "서울특별시 서초구 방배로9길 23",
-      "url": "https://bau.ac.kr",
+      "url": "https://www.bau.ac.kr/intro/index.html",
       "short": "백석예대",
       "departments": [
         {
-          "name": "만화애니메이션전공",
+          "name": "영상학부-[만화애니메이션전공]",
           "short": "만화애니",
-          "quota": "수시·정시 분할모집",
+          "quota": "",
           "admission": {
-            "admissionUrl": "https://bau.ac.kr",
-            "track": ["실기", "면접"],
+            "admissionUrl": "https://www.bau.ac.kr/admission/index.do",
+            "track": ["실기", "비실기"],
             "process": "수시: 실기 80% + 학생부 20% (또는 면접 반영 유형) / 정시: 실기 80% + 수능(또는 학생부) 20%",
             "practical": "만화애니메이션 실기고사 (상황표현, 칸만화 중 택 1)",
             "note": "학년도별 세부 모집 시기(1차/2차)에 따라 실기 및 면접 반영 배점이 일부 변동될 수 있습니다.",
             "susi": {
               "reference": false,
-              "quota": "일반전형 다수 선발",
+              "quota": "112명",
               "apply": {
                 "start": "2026-09-07",
-                "end": "2026-11-25",
-                "note": "수시 1차(9월) 및 수시 2차(11월)로 나누어 분할 접수 진행"
+                "end": "2026-09-30",
+                "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
               },
               "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "실기위주 전형",
-                  "name": "일반전형 [실기]",
-                  "ratio": {
-                    "grade": "20%",
-                    "practical": "80%"
-                  }
+                  "title": "수시 1차",
+                  "name": "일반전형 실기",
+                  "quota": "70명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학생부 교과 성적 100% 반영",
+                      "announce": "2026-10-30",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "0%",
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "수시 1차",
+                  "name": "면접",
+                  "quota": "36명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "포트폴리오 심사 및 심층 면접 평가",
+                      "examDate": "2026-12-04",
+                      "examEnd": "2026-12-13",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "60%",
+                        "interview": "40%"
+                      },
+                      "note": "학생부 성적 반영 없이 포트폴리오 60%와 면접 40% 합산"
+                    }
+                  ]
+                },
+                {
+                  "title": "수시 1차",
+                  "name": "특별전형 실기",
+                  "quota": "6명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "포트폴리오 심사 및 심층 면접 평가",
+                      "examDate": "2026-12-04",
+                      "examEnd": "2026-12-13",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "60%",
+                        "interview": "40%"
+                      },
+                      "note": "학생부 성적 반영 없이 포트폴리오 60%와 면접 40% 합산"
+                    }
+                  ]
                 }
               ]
             },
