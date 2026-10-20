@@ -4013,7 +4013,7 @@
         {
           "name": "만화애니메이션과",
           "short": "만화애니",
-          "quota": "모집요강 참조",
+          "quota": "",
           "admission": {
             "admissionUrl": "https://cju.ac.kripsi/index.do",
             "track": ["실기"],
@@ -4052,7 +4052,7 @@
                 {
                 "name": "만화애니메이션학전공",
                 "short": "만화애니",
-                "quota": "모집요강 참조",
+                "quota": "",
                 "admission": {
                 "admissionUrl": "joongbu.ac.kr",
                 "track": ["실기"],
