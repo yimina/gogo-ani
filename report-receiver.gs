@@ -13,7 +13,7 @@ const HEADERS = ["접수시각", "상태", "학교", "학과", "오류 위치", 
 
 const ADD_SHEET_NAME = "추가 요청";
 const ADD_STATUS_LIST = ["신규", "검토 중", "추가 완료", "보류"];
-const ADD_HEADERS = ["접수시각", "상태", "대학명", "학과명", "의견", "페이지", "처리 메모"];
+const ADD_HEADERS = ["접수시각", "상태", "대학명", "학과명", "의견", "처리 메모"];
 
 const LIMIT = { school: 100, dept: 200, section: 60, message: 1000, source: 300, contact: 120, checked: 20, page: 300, opinion: 500 };
 const MAX_PER_HOUR = 100;                  // 시간당 최대 접수 건수 (도배 방지)
@@ -31,6 +31,18 @@ function prepareSheet_(sh, headers, statusList) {
   }
   const rule = SpreadsheetApp.newDataValidation().requireValueInList(statusList, true).build();
   sh.getRange(2, 2, 2000, 1).setDataValidation(rule);
+}
+
+/**
+ * (이미 예전 버전으로 "추가 요청" 탭을 만들어 두셨다면 한 번만 실행하세요)
+ * 더 이상 수집하지 않는 '페이지' 열을 "추가 요청" 탭에서 지워요.
+ */
+function migrateAddSheet() {
+  const sh = getSheet_(ADD_SHEET_NAME);
+  if (sh.getLastRow() === 0) return;
+  const headers = sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0];
+  const i = headers.indexOf("페이지");
+  if (i >= 0) sh.deleteColumn(i + 1);
 }
 
 /** 사이트에서 오는 신고(POST)를 받아요. */
@@ -67,7 +79,7 @@ function doPost(e) {
 function handleAdd_(p) {
   const univ = clean_(p.univ, LIMIT.school), dept = clean_(p.dept, LIMIT.dept);
   if (univ.length < 2 || dept.length < 2) return json_({ ok: false, error: "short" });
-  const row = [new Date(), "신규", univ, dept, clean_(p.opinion, LIMIT.opinion, true), clean_(p.page, LIMIT.page), ""]
+  const row = [new Date(), "신규", univ, dept, clean_(p.opinion, LIMIT.opinion, true), ""]
     .map((v, i) => i < 2 ? v : safe_(v));
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);

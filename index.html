@@ -301,6 +301,11 @@
   .rp-primary:disabled { opacity: .5; cursor: default; }
   .rp-status { min-height: 18px; margin: 10px 0 0; font-size: 13px; line-height: 1.5; }
   .rp-hint { min-height: 0; margin: -4px 0 10px; font-size: 12px; color: #8a6510; line-height: 1.5; }
+  #doneDlg { border: 0; border-radius: 16px; padding: 0; width: min(320px, 86vw); box-shadow: 0 12px 40px rgba(20,33,61,.35); color: var(--ink); font-family: inherit; }
+  #doneDlg::backdrop { background: rgba(20,33,61,.45); }
+  .done-in { padding: 24px 20px 18px; text-align: center; }
+  .done-ic { width: 46px; height: 46px; margin: 0 auto 10px; border-radius: 50%; background: #e3f6ec; color: #0f7a53; font-size: 24px; font-weight: 700; line-height: 46px; }
+  #doneMsg { margin: 0 0 14px; font-size: 15px; font-weight: 600; line-height: 1.5; }
   .rp-status.ok { color: #0f7a53; } .rp-status.err { color: #c0264f; }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
@@ -402,6 +407,14 @@
       <button type="button" class="rp-primary" id="adSend">요청하기</button>
     </div>
     <p class="rp-status" id="adStatus" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<dialog id="doneDlg" aria-labelledby="doneMsg">
+  <div class="done-in">
+    <div class="done-ic" aria-hidden="true">✓</div>
+    <p id="doneMsg"></p>
+    <button type="button" class="rp-primary" id="doneOk">확인</button>
   </div>
 </dialog>
 
@@ -1117,15 +1130,16 @@ async function deliver(o) {
     if (Date.now() - last < 30000) { o.say(o.coolMsg, "err"); return; }
   } catch (e) {}
   const btn = o.btn; btn.disabled = true;
-  const done = text => {
+  const done = (text, delivered) => {
     try { localStorage.setItem("reportAt", String(Date.now())); } catch (e) {}
-    o.say(text, "ok"); o.onSent();
+    o.onSent();
+    if (delivered && o.onDelivered) o.onDelivered(); else o.say(text, "ok");
     setTimeout(() => { btn.disabled = false; }, 2500);                 // 잠시 뒤 다음 요청을 할 수 있어요 (30초 도배 방지는 별도)
   };
   if (REPORT_CONFIG.endpoint) {
     try {
       await fetch(REPORT_CONFIG.endpoint, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(o.payload) });
-      done(o.okMsg);
+      done(o.okMsg, true);
     } catch (e) {
       btn.disabled = false;
       o.say("전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
@@ -1167,19 +1181,31 @@ function openAdd(opener) {
 function closeAdd() { $rp("addDlg").close(); if (adOpener) adOpener.focus({ preventScroll: true }); }
 function addPayload() {
   return { type: "add", univ: $rp("adUniv").value.trim(), dept: $rp("adDept").value.trim(), opinion: $rp("adOpinion").value.trim(),
-           dataCheckedAt: CHECKED_AT, page: location.href, sentAt: new Date().toISOString(), hp: $rp("adHp").value };
+           sentAt: new Date().toISOString(), hp: $rp("adHp").value };
 }
-function addText(p) { return ["[대학 추가 요청]", "대학명: " + p.univ, "학과명: " + p.dept, "의견: " + (p.opinion || "-"), "페이지: " + p.page].join("\n"); }
+function addText(p) { return ["[대학 추가 요청]", "대학명: " + p.univ, "학과명: " + p.dept, "의견: " + (p.opinion || "-")].join("\n"); }
+
+let doneTimer = null;
+function showDone(msg) {                                          // 완료 팝업: 3초 뒤 자동으로 닫혀요
+  $rp("doneMsg").textContent = msg;
+  clearTimeout(doneTimer);
+  $rp("doneDlg").showModal();
+  $rp("doneOk").focus();
+  doneTimer = setTimeout(() => { if ($rp("doneDlg").open) $rp("doneDlg").close(); }, 3000);
+}
+$rp("doneOk").onclick = () => $rp("doneDlg").close();
+$rp("doneDlg").addEventListener("close", () => { clearTimeout(doneTimer); const b = $rp("addOpen"); if (b) b.focus({ preventScroll: true }); });
 async function sendAdd() {
   const p = addPayload();
   if (p.univ.length < 2) { adSay("대학명을 입력해 주세요.", "err"); $rp("adUniv").focus(); return; }
   if (p.dept.length < 2) { adSay("학과명을 입력해 주세요.", "err"); $rp("adDept").focus(); return; }
-  if (p.hp) { adSay("요청이 접수됐어요. 감사합니다!", "ok"); return; }
+  if (p.hp) { closeAdd(); showDone("관리자에게 요청되었습니다."); return; }              // 스팸도 성공처럼 보이게 조용히 무시
   await deliver({
     payload: p, subject: "[대학 추가 요청] " + p.univ + " · " + p.dept, text: addText(p),
     btn: $rp("adSend"), say: adSay,
     okMsg: "요청이 접수됐어요. 확인 후 추가할게요. 감사합니다!", coolMsg: "잠시 후 다시 요청해 주세요. (30초에 1건)",
-    onSent: () => { $rp("adUniv").value = ""; $rp("adDept").value = ""; $rp("adOpinion").value = ""; $rp("adHint").textContent = ""; }
+    onSent: () => { $rp("adUniv").value = ""; $rp("adDept").value = ""; $rp("adOpinion").value = ""; $rp("adHint").textContent = ""; },
+    onDelivered: () => { closeAdd(); showDone("관리자에게 요청되었습니다."); }         // 전송에 성공하면 요청 창을 닫고 완료 팝업을 보여줘요
   });
 }
 $rp("addOpen").onclick = e => openAdd(e.currentTarget);
