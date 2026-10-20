@@ -636,7 +636,7 @@ function groupRows(g, jeong, ref, isType, gname) {
   const finFirst = jeong && !isType;          // 정시는 최종 합격자 발표를 원서 접수 바로 아래에 표시
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
-    isType && !jeong ? null : ["원서 접수", applyTxt],
+    ["원서 접수", applyTxt],
     finFirst ? finRow : null,
     stageBlock,
     finFirst ? null : finRow,
@@ -854,7 +854,7 @@ function buildEvents(schools) {
       push(g, gr.name, gref, false, true);
       (g.types || []).forEach(t => {
         const gsuf = gr.key === "jeongsi" && gunText(t) ? "(" + gunText(t) + ")" : "";
-        push(t, gr.name + " " + (t.short || t.title || t.name || "전형") + gsuf, gref || !!t.reference, true, gr.key === "jeongsi");
+        push(t, gr.name + " " + (t.short || t.title || t.name || "전형") + gsuf, gref || !!t.reference, true, true);
       });
     });
   }));
