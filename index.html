@@ -16,7 +16,7 @@
   //   endpoint : Google Apps Script 웹 앱 주소 → 신고가 구글 시트에 쌓이고 관리자에게 메일이 가요 (권장)
   //   email    : endpoint 가 비어 있을 때 쓰는 대체 방법. 사용자의 메일 앱이 열려요 (mailto)
   //   둘 다 비어 있으면 '내용 복사'만 동작해요.
-  const REPORT_CONFIG = { endpoint: "https://script.google.com/macros/s/AKfycbxS1CaYn8x5DAQqdr458_UJBHKvg8Z0EchpTrXv7tHvAGeSDhxBj6eD1vfs6MlIBd7y/exec", email: "" };
+  const REPORT_CONFIG = { endpoint: "https://script.google.com/macros/s/AKfycbzsjIXds5OwkPIkT6emiRmN9j-Qzu_rOspCsizPY1WCXz79KkiFio4cpN-KceUoQkf6sg/exec", email: "" };
 </script>
 
 <style>
@@ -403,7 +403,6 @@
     </label>
     <input id="adHp" class="rp-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="rp-actions">
-      <button type="button" class="rp-ghost" id="adCopy">내용 복사</button>
       <button type="button" class="rp-primary" id="adSend">요청하기</button>
     </div>
     <p class="rp-status" id="adStatus" role="status" aria-live="polite"></p>
@@ -1142,14 +1141,14 @@ async function deliver(o) {
       done(o.okMsg, true);
     } catch (e) {
       btn.disabled = false;
-      o.say("전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
+      o.say(o.failMsg || "전송하지 못했어요. 인터넷 연결을 확인하거나 '내용 복사'로 관리자에게 전달해 주세요.", "err");
     }
   } else if (REPORT_CONFIG.email) {
     window.location.href = "mailto:" + REPORT_CONFIG.email + "?subject=" + encodeURIComponent(o.subject) + "&body=" + encodeURIComponent(o.text);
     done("메일 앱이 열렸어요. 메일의 '보내기'를 눌러야 접수돼요.");
   } else {
     btn.disabled = false;
-    o.say("접수 주소가 아직 설정되지 않았어요. '내용 복사'로 내용을 복사해 관리자에게 전달해 주세요.", "err");
+    o.say(o.noConfigMsg || "접수 주소가 아직 설정되지 않았어요. '내용 복사'로 내용을 복사해 관리자에게 전달해 주세요.", "err");
   }
 }
 
@@ -1204,6 +1203,8 @@ async function sendAdd() {
     payload: p, subject: "[대학 추가 요청] " + p.univ + " · " + p.dept, text: addText(p),
     btn: $rp("adSend"), say: adSay,
     okMsg: "요청이 접수됐어요. 확인 후 추가할게요. 감사합니다!", coolMsg: "잠시 후 다시 요청해 주세요. (30초에 1건)",
+    failMsg: "전송하지 못했어요. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.",
+    noConfigMsg: "요청 접수 주소가 아직 설정되지 않았어요. 관리자에게 문의해 주세요.",
     onSent: () => { $rp("adUniv").value = ""; $rp("adDept").value = ""; $rp("adOpinion").value = ""; $rp("adHint").textContent = ""; },
     onDelivered: () => { closeAdd(); showDone("관리자에게 요청되었습니다."); }         // 전송에 성공하면 요청 창을 닫고 완료 팝업을 보여줘요
   });
@@ -1211,11 +1212,6 @@ async function sendAdd() {
 $rp("addOpen").onclick = e => openAdd(e.currentTarget);
 $rp("adClose").onclick = closeAdd;
 $rp("adSend").onclick = sendAdd;
-$rp("adCopy").onclick = async () => {
-  const p = addPayload();
-  try { await navigator.clipboard.writeText(addText(p)); adSay("요청 내용을 복사했어요. 관리자에게 붙여넣어 전달해 주세요.", "ok"); }
-  catch (e) { adSay("복사하지 못했어요. 내용을 직접 선택해서 복사해 주세요.", "err"); }
-};
 $rp("addDlg").addEventListener("click", e => { if (e.target === $rp("addDlg")) closeAdd(); });
 $rp("adUniv").addEventListener("input", () => {                       // 이미 있는 학교면 알려 주기 (막지는 않아요)
   const n = $rp("adUniv").value.replace(/\s/g, "");
