@@ -3370,7 +3370,7 @@
         {
           "name": "애니메이션과",
           "short": "애니메이션",
-          "quota": "62명",
+          "quota": "",
           "admission": {
             "admissionUrl": "https://kaywon.ac.kr",
             "track": ["비실기", "실기"],
@@ -4091,7 +4091,7 @@
                 {
                 "name": "디자인영상학부 웹툰애니메이션전공",
                 "short": "웹툰애니",
-                "quota": "모집요강 참조",
+                "quota": "",
                 "admission": {
                 "admissionUrl": "bu.ac.kr",
                 "track": ["실기"],
@@ -4131,7 +4131,7 @@
                 {
                 "name": "애니메이션융합전공",
                 "short": "애니융합",
-                "quota": "모집요강 참조",
+                "quota": "",
                 "admission": {
                 "admissionUrl": "hanseo.ac.kr",
                 "track": ["실기"],
