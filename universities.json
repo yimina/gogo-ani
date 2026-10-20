@@ -3267,7 +3267,7 @@
       "type": "전문대학",
       "region": "경기",
       "address": "경기도 의왕시 계원대학로 66 (내손동)",
-      "url": "https://kaywon.ac.kr",
+      "url": "https://www.kaywon.ac.kr/CmsHome/MainDefault.aspx",
       "short": "계원예대",
       "departments": [
         {
@@ -3275,29 +3275,30 @@
           "short": "애니메이션",
           "quota": "",
           "admission": {
-            "admissionUrl": "https://kaywon.ac.kr",
+            "admissionUrl": "https://ipsi.kaywon.ac.kr/CmsHome/MainDefault.aspx",
             "track": ["비실기", "실기"],
             "process": "수시1차(학생부 100%) / 수시2차(포트폴리오 60% + 면접 40% 면접위주) / 정시(실기 100%)",
             "practical": "수시2차: 포트폴리오(그림 파일 10점 또는 동영상 2점) 제출 및 면접 / 정시: 실기고사(발상과 표현 등 세부 유형 선택)",
             "note": "수시 2차 서류/면접 위주 전형은 학생부를 반영하지 않는 비교과 전형입니다.",
             "susi": {
               "reference": false,
-              "quota": "52명",
+              "quota": "43명",
               "apply": {
                 "start": "2026-09-07",
-                "end": "2026-11-25",
-                "note": "수시 1차 접수: 09-07 ~ 09-30 / 수시 2차 접수: 11-11 ~ 11-25"
+                "end": "2026-09-30",
+                "note": "수시 1차(9.7~9.3)/2차(11.11~11.25) 따로 접수"
               },
               "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "학생부위주 전형",
-                  "name": "수시1차 일반전형",
-                  "quota": "12명",
+                  "title": "수시 1차",
+                  "name": "학생부",
+                  "quota": "3명",
                   "stages": [
                     {
                       "label": "1차",
                       "method": "학생부 교과 성적 100% 반영",
+                      "announce": "2026-10-30",
                       "kind": "서류",
                       "ratio": {
                         "document": "0%",
@@ -3308,16 +3309,16 @@
                   ]
                 },
                 {
-                  "title": "서류/면접위주 전형",
-                  "name": "수시2차 비교과 특별전형",
+                  "title": "수시 2차",
+                  "name": "비교과 특별전형",
                   "quota": "40명",
                   "stages": [
                     {
                       "label": "1차",
                       "method": "포트폴리오 심사 및 심층 면접 평가",
-                      "examDate": "2026-12-01",
+                      "examDate": "2026-12-04",
                       "examEnd": "2026-12-13",
-                      "kind": "면접",
+                      "kind": "서류",
                       "ratio": {
                         "document": "60%",
                         "interview": "40%"
@@ -3331,7 +3332,7 @@
             "jeongsi": {
               "reference": false,
               "gun": "",
-              "quota": "10명",
+              "quota": "19명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
@@ -3339,18 +3340,109 @@
               },
               "stages": [
                 {
-                  "label": "1차",
-                  "method": "실기고사 100% 일괄 합산 선발",
-                  "examDate": "2027-01-25",
-                  "examEnd": "2027-01-31",
-                  "kind": "실기",
+                  "label": "",
+                  "method": "",
+                  "examDate": "",
+                  "examEnd": "",
+                  "kind": "",
                   "ratio": {
-                    "practical": "100%"
                   }
                 }
               ],
               "finalAnnounce": "2027-02-05",
-              "process": "정시 일반전형 실기 100% 반영"
+              "process": "",
+              "types": [
+              {
+                "title": "수능위주",
+                "name": "",
+                "short": "",
+                "gun": "",
+                "quota": "3명",
+                "apply": {
+                  "start": "",
+                  "end": "",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "",
+                    "method": "",
+                    "examDate": "",
+                    "examEnd": "",
+                    "announce": "",
+                    "kind": "",
+                    "ratio": {
+                      "suneung": "",
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    },
+                    "note": ""
+                  }
+                ],
+                "process": "",
+                "ratio": {
+                  "suneung": "100",
+                  "document": "",
+                  "grade": "",
+                  "gradeType": "",
+                  "attendance": "",
+                  "essay": "",
+                  "practical": "",
+                  "interview": ""
+                },
+                "note": "국어(33.33)+수학(33.33)+영어(33.33)+탐구(33.33): 최우수 3개영역 반영"
+              },
+              {
+                "title": "실기위주",
+                "name": "",
+                "short": "",
+                "gun": "",
+                "quota": "16명",
+                "apply": {
+                  "start": "2027-01-04",
+                  "end": "2027-01-20",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "실기위주",
+                    "method": "",
+                    "examDate": "2027-01-25",
+                    "examEnd": "2027-01-31",
+                    "announce": "2027-02-05",
+                    "kind": "",
+                    "ratio": {
+                      "suneung": "",
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "100",
+                      "interview": ""
+                    },
+                    "note": "소묘"
+                  }
+                ],
+                "process": "",
+                "ratio": {
+                  "suneung": "",
+                  "document": "",
+                  "grade": "",
+                  "gradeType": "",
+                  "attendance": "",
+                  "essay": "",
+                  "practical": "",
+                  "interview": ""
+                },
+                "note": ""
+              }
+            ]
             }
           }
         }
