@@ -3458,6 +3458,263 @@
           "https://ipsi.kcce.or.kr/file/plan_pds/2027/2026_73017000_1785111500111.pdf"
         ]
       ]
+    },  
+    {
+      "name": "백석예술대학교",
+      "type": "전문대학(전공대학)",
+      "region": "서울",
+      "address": "서울특별시 서초구 방배로9길 23",
+      "url": "https://bau.ac.kr",
+      "short": "백석예대",
+      "departments": [
+        {
+          "name": "만화애니메이션전공",
+          "short": "만화애니",
+          "quota": "수시·정시 분할모집",
+          "admission": {
+            "admissionUrl": "https://bau.ac.kr",
+            "track": ["실기", "면접"],
+            "process": "수시: 실기 80% + 학생부 20% (또는 면접 반영 유형) / 정시: 실기 80% + 수능(또는 학생부) 20%",
+            "practical": "만화애니메이션 실기고사 (상황표현, 칸만화 중 택 1)",
+            "note": "학년도별 세부 모집 시기(1차/2차)에 따라 실기 및 면접 반영 배점이 일부 변동될 수 있습니다.",
+            "susi": {
+              "reference": false,
+              "quota": "일반전형 다수 선발",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-11-25",
+                "note": "수시 1차(9월) 및 수시 2차(11월)로 나누어 분할 접수 진행"
+              },
+              "finalAnnounce": "2026-12-18",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "일반전형 [실기]",
+                  "ratio": {
+                    "grade": "20%",
+                    "practical": "80%"
+                  }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "군외모집",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20"
+              },
+              "finalAnnounce": "2027-02-05",
+              "ratio": {
+                "suneung": "20%",
+                "practical": "80%"
+              }
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "백석예술대학교 신입생 모집요강",
+          "https://bau.ac.kr"
+        ]
+      ]
+    },
+    {
+      "name": "인덕대학교",
+      "type": "전문대학(3년제)",
+      "region": "서울",
+      "address": "서울특별시 노원구 초안산로 12",
+      "url": "https://www.induk.ac.kr/",
+      "short": "인덕대",
+      "departments": [
+        {
+          "name": "웹툰만화학과",
+          "short": "웹툰만화",
+          "quota": "68명",
+          "admission": {
+            "admissionUrl": "https://ipsi.induk.ac.kr/",
+            "track": ["실기"],
+            "process": "수시 1차·2차 및 정시 모두 학생부 20% + 실기 80% 일괄합산 선발",
+            "practical": "페이지만화, 웹툰, 상황표현 중 1종목 선택 (시험시간 4시간)",
+            "note": "정원 내 일반전형 기준 수시 1차 37명, 수시 2차 25명, 정시 6명 선발",
+            "susi": {
+              "reference": false,
+              "quota": "62명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-11-25",
+                "note": "수시 1차: 09.07~09.30 / 수시 2차: 11.11~11.25"
+              },
+              "finalAnnounce": "2026-12-18",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "일반전형 [실기위주]",
+                  "quota": "62명",
+                  "ratio": {
+                    "grade": "20%",
+                    "gradeType": "교과",
+                    "practical": "80%"
+                  }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "비적용 (전문대)",
+              "quota": "6명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20"
+              },
+              "stages": [
+                {
+                  "label": "1차",
+                  "method": "학생부 20% + 실기고사 80% 반영",
+                  "examDate": "2027-01-30",
+                  "examEnd": "2027-01-31",
+                  "kind": "실기",
+                  "ratio": {
+                    "grade": "20%",
+                    "practical": "80%"
+                  }
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "학생부 20% + 실기 80%"
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "인덕대학교 입학처 공식 모집요강",
+          "https://ipsi.induk.ac.kr/"
+        ]
+      ]
+    },
+    {
+      "name": "한양여자대학교",
+      "type": "전문대학(3년제)",
+      "region": "서울",
+      "address": "서울특별시 성동구 살곶이길 200",
+      "url": "https://hywoman.ac.kr",
+      "short": "한양여대",
+      "departments": [
+        {
+          "name": "웹툰과",
+          "short": "웹툰",
+          "quota": "60명",
+          "admission": {
+            "admissionUrl": "https://hywoman.ac.kripsi/",
+            "track": ["비실기", "실기"],
+            "process": "수시 1차(학생부 100% 비실기) / 수시 2차(학생부 40% + 실기 60%) / 정시(학생부 40% + 실기 60%)",
+            "practical": "칸만화, 상황표현 중 택 1 (4절지, 당일 주제 제시)",
+            "note": "학생부 반영 시 1~3학년 1학기 중 최우수 우수 2개 학기의 전과목 교과 성적을 100% 반영합니다.",
+            "susi": {
+              "reference": false,
+              "quota": "60명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-11-25",
+                "note": "수시 1차 특별전형 접수 및 수시 2차 실기전형 접수 분할"
+              },
+              "finalAnnounce": "2026-12-18",
+              "types": [
+                {
+                  "title": "학생부위주 전형",
+                  "name": "수시1차 특별전형(일반고/특성화고)",
+                  "quota": "25명",
+                  "ratio": {
+                    "grade": "100%",
+                    "gradeType": "교과"
+                  }
+                },
+                {
+                  "title": "실기위주 전형",
+                  "name": "수시2차 일반전형 [실기]",
+                  "quota": "35명",
+                  "ratio": {
+                    "grade": "40%",
+                    "practical": "60%"
+                  }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "비적용",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20"
+              },
+              "finalAnnounce": "2027-02-05",
+              "process": "정시 실기전형 양식에 맞추어 학생부 40% + 실기 60% 반영"
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "한양여자대학교 대학 입학전형 계획안",
+          "https://hywoman.ac.kripsi/"
+        ]
+      ]
+    },
+    {
+      "name": "서일대학교",
+      "type": "전문대학(3년제)",
+      "region": "서울",
+      "address": "서울특별시 중랑구 용마산로90길 28",
+      "url": "https://www.seoil.ac.kr/",
+      "short": "서일대",
+      "departments": [
+        {
+          "name": "만화웹툰학과",
+          "short": "만화웹툰",
+          "quota": "40명",
+          "admission": {
+            "admissionUrl": "https://www.seoil.ac.kr/ipsi/",
+            "track": ["실기"],
+            "process": "수시 1차(25명)·수시 2차(15명): 실기 60% + 학생부 40% 합산 반영",
+            "practical": "상황표현 및 칸만화 중심의 만화 실기고사",
+            "note": "실기 반영비율이 60%로 비교적 높으며 내신 합격자 커트라인은 평균 4~5등급선에 형성됩니다.",
+            "susi": {
+              "reference": false,
+              "quota": "40명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-11-25"
+              },
+              "finalAnnounce": "2026-12-18",
+              "types": [
+                {
+                  "title": "실기/면접위주 전형",
+                  "name": "일반전형 [실기]",
+                  "quota": "40명",
+                  "ratio": {
+                    "grade": "40%",
+                    "practical": "60%"
+                  }
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "비적용",
+              "finalAnnounce": "2027-02-05",
+              "process": "정시 일반전형 실기 및 수능 반영 비중 요강 참조"
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "서일대학교 입학처 모집전형 안내서",
+          "https://www.seoil.ac.kr/ipsi/"
+        ]
+      ]
     }
   ],
   "_학과템플릿": {
