@@ -3358,6 +3358,62 @@
           "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi"
         ]
       ]
+    },
+    {
+      "name": "평택대학교",
+      "type": "4년제",
+      "region": "경기",
+      "address": "경기도 평택시 서동대로 3825 (용이동)",
+      "url": "https://www.ptu.ac.kr/",
+      "short": "평택대",
+      "departments": [
+        {
+          "name": "커뮤니케이션디자인학과",
+          "short": "커뮤니케이션디자인",
+          "quota": "32명",
+          "admission": {
+            "admissionUrl": "https://ptu.ac.kr",
+            "track": ["실기"],
+            "process": "수시(PTU실기전형): 실기 100% 선발 / 정시(다군 PTU실기전형): 실기 100% 선발",
+            "practical": "기초디자인, 발상과표현 중 택 1",
+            "note": "수능최저학력기준 없음.",
+            "susi": {
+              "reference": false,
+              "quota": "20명",
+              "apply": {
+                "start": "2026-09-11",
+                "end": "2026-09-15",
+                "note": "인터넷 원서접수"
+              },
+              "finalAnnounce": "2026-11-20",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "PTU실기전형",
+                  "quota": "20명"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "gun": "다군",
+              "quota": "12명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "정시 다군 원서접수"
+              },
+              "finalAnnounce": "2027-02-05"
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "평택대학교 입학처 공식 모집요강",
+          "https://entrance.ptu.ac.kr/entrance/3661/subview.do"
+        ]
+      ]
     }
   ],
   "_학과템플릿": {
