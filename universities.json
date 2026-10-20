@@ -3360,58 +3360,102 @@
       ]
     },
     {
-      "name": "평택대학교",
-      "type": "4년제",
+      "name": "계원예술대학교",
+      "type": "전문대학",
       "region": "경기",
-      "address": "경기도 평택시 서동대로 3825 (용이동)",
-      "url": "https://www.ptu.ac.kr/",
-      "short": "평택대",
+      "address": "경기도 의왕시 계원대학로 66 (내손동)",
+      "url": "https://kaywon.ac.kr",
+      "short": "계원예대",
       "departments": [
         {
-          "name": "커뮤니케이션디자인학과",
-          "short": "커뮤니케이션디자인",
-          "quota": "32명",
+          "name": "애니메이션과",
+          "short": "애니메이션",
+          "quota": "62명",
           "admission": {
-            "admissionUrl": "https://ptu.ac.kr",
-            "track": ["실기"],
-            "process": "수시(PTU실기전형): 실기 100% 선발 / 정시(다군 PTU실기전형): 실기 100% 선발",
-            "practical": "기초디자인, 발상과표현 중 택 1",
-            "note": "수능최저학력기준 없음.",
+            "admissionUrl": "https://kaywon.ac.kr",
+            "track": ["비실기", "실기"],
+            "process": "수시1차(학생부 100%) / 수시2차(포트폴리오 60% + 면접 40% 면접위주) / 정시(실기 100%)",
+            "practical": "수시2차: 포트폴리오(그림 파일 10점 또는 동영상 2점) 제출 및 면접 / 정시: 실기고사(발상과 표현 등 세부 유형 선택)",
+            "note": "수시 2차 서류/면접 위주 전형은 학생부를 반영하지 않는 비교과 전형입니다.",
             "susi": {
               "reference": false,
-              "quota": "20명",
+              "quota": "52명",
               "apply": {
-                "start": "2026-09-11",
-                "end": "2026-09-15",
-                "note": "인터넷 원서접수"
+                "start": "2026-09-07",
+                "end": "2026-11-25",
+                "note": "수시 1차 접수: 09-07 ~ 09-30 / 수시 2차 접수: 11-11 ~ 11-25"
               },
-              "finalAnnounce": "2026-11-20",
+              "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "실기위주 전형",
-                  "name": "PTU실기전형",
-                  "quota": "20명"
+                  "title": "학생부위주 전형",
+                  "name": "수시1차 일반전형",
+                  "quota": "12명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학생부 교과 성적 100% 반영",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "0%",
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "title": "서류/면접위주 전형",
+                  "name": "수시2차 비교과 특별전형",
+                  "quota": "40명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "포트폴리오 심사 및 심층 면접 평가",
+                      "examDate": "2026-12-01",
+                      "examEnd": "2026-12-13",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "60%",
+                        "interview": "40%"
+                      },
+                      "note": "학생부 성적 반영 없이 포트폴리오 60%와 면접 40% 합산"
+                    }
+                  ]
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "quota": "12명",
+              "gun": "",
+              "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
-                "end": "2027-01-07",
-                "note": "정시 다군 원서접수"
+                "end": "2027-01-20",
+                "note": "정시모집 원서접수 기간"
               },
-              "finalAnnounce": "2027-02-05"
+              "stages": [
+                {
+                  "label": "1차",
+                  "method": "실기고사 100% 일괄 합산 선발",
+                  "examDate": "2027-01-25",
+                  "examEnd": "2027-01-31",
+                  "kind": "실기",
+                  "ratio": {
+                    "practical": "100%"
+                  }
+                }
+              ],
+              "finalAnnounce": "2027-02-05",
+              "process": "정시 일반전형 실기 100% 반영"
             }
           }
         }
       ],
       "sources": [
         [
-          "평택대학교 입학처 공식 모집요강",
-          "https://entrance.ptu.ac.kr/entrance/3661/subview.do"
+          "계원예술대학교 입학처 공식 신입생 모집요강",
+          "https://ipsi.kcce.or.kr/file/plan_pds/2027/2026_73017000_1785111500111.pdf"
         ]
       ]
     }
