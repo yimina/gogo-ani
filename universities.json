@@ -22,98 +22,76 @@
   "schools": [
     {
       "name": "한국예술종합학교",
-      "type": "대학교",
+      "type": "4년제(각종학교)",
       "region": "서울",
-      "address": "서울특별시 성북구 화랑로32길 146-37",
-      "url": "https://www.karts.ac.kr",
+      "address": "서울특별시 성북구 화랑로32길 146-24",
+      "url": "https://karts.ac.kr",
       "short": "한예종",
       "departments": [
         {
-          "name": "영상원-[애니메이션과]",
-          "short": "",
-          "quota": "",
+          "name": "영상원 애니메이션과",
+          "short": "애니메이션과",
+          "quota": "15명",
           "admission": {
-            "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-            "track": [
-              "실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://karts.ac.krmain/index.do?menuId=010100000000",
+            "track": ["실기", "서류"],
+            "process": "특별전형(재능우수자) 및 일반전형 분할 선발 (자체 시험 및 심층 면접 수행)",
+            "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
+            "note": "수시·정시 공통 원서접수 기간과 무관하게 7월(특별전형) 및 11월(일반전형)에 별도 입시를 진행합니다.",
             "susi": {
-              "reference": false,
-              "quota": "15명",
-              "apply": {
-                "start": "2026-09-14",
-                "end": "2026-09-17",
-                "note": ""
-              },
-              "finalAnnounce": "2026-12-24",
-              "note": "",
-              "types": [
-                {
-                  "title": "",
-                  "name": "일반전형",
-                  "short": "",
-                  "quota": "15명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "스토리 구성과 연출력 중심 평가",
-                      "examDate": "2026-11-28",
-                      "examEnd": "2026-11-29",
-                      "announce": "2026-12-10",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "20",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "80",
-                        "interview": ""
-                      },
-                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "내러티브, 드로잉, 연출력 중심 평가",
-                      "examDate": "2026-12-15",
-                      "examEnd": "2026-12-22",
-                      "announce": "2026-12-24",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "50",
-                        "interview": "50"
-                      },
-                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
-                }
-              ]
+              "reference": true,
+              "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
             },
-            "jeongsi": {},
-            "etc": []
+            "jeongsi": {
+              "reference": true,
+              "note": "일반 대학교 정시모집 군별(가/나/다군) 제한을 받지 않는 군외 모집 대학입니다."
+            },
+            "etc": [
+              {
+                "label": "일반전형",
+                "reference": false,
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2026-10-12",
+                  "end": "2026-10-15",
+                  "note": "진학사어플라이 인터넷 접수"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "실기시험 및 고교 내신 성적 합산 평가",
+                    "examDate": "2026-11-21",
+                    "announce": "2026-11-27",
+                    "kind": "실기",
+                    "ratio": {
+                      "grade": "20%",
+                      "practical": "80%"
+                    }
+                  },
+                  {
+                    "label": "2차",
+                    "method": "심층 실기고사, 프로필 서류 및 구술 면접 심사",
+                    "examDate": "2026-12-02",
+                    "examEnd": "2026-12-05",
+                    "announce": "2026-12-11",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "20%",
+                      "practical": "50%",
+                      "interview": "30%"
+                    }
+                  }
+                ],
+                "process": "1차 시험 합격자에 한해 2차 심층 면접 및 포트폴리오 프로필 평가 진행"
+              }
+            ]
           }
         }
       ],
       "sources": [
         [
-          "한예종 홈페이지",
-          "https://www.karts.ac.kr"
+          "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
+          "https://karts.ac.kradmission/main.do"
         ]
       ]
     },

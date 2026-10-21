@@ -7,8 +7,8 @@
     "모집인원: 학과 전체는 departments[].quota, 수시·정시는 각각 susi.quota·jeongsi.quota, 수시 전형별은 susi.types[].quota에 따로 적어요. 학과 quota를 비워 두면 수시+정시 모집인원이 모두 숫자로 시작할 때 자동으로 합산해서(합계 표시) 보여줘요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고.",
-    "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}, finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
-    "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 전형마다 적지 않고 susi.apply에 한 번만 적어요. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
+    "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}(전형마다 다르면 types[].apply), finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
+    "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, apply 그 전형의 원서 접수(지원) 기간 {start, end, note}, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 수시 전체에 공통이면 susi.apply에, 전형마다 다르면 각 전형의 apply에 적어요(둘 다 적으면 둘 다 표시돼요). 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
     "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, attendance 출결, essay 논술, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·document(서류)·grade(학생부)·attendance(출결)·essay(논술)·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.) 각 단계에는 note(이 단계의 참고 사항)도 적을 수 있고, 비율 막대 아래에 작은 글씨로 그대로 표시돼요.",
     "admission.jeongsi(정시): reference, gun(정시 전체에 공통인 군), quota 정시 모집인원, apply, stages, finalAnnounce 정시 최종 합격자 발표일, process, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note, types 정시 전형 배열(아래).",
     "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 따로 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process, ratio {suneung, document, grade, gradeType, attendance, essay, practical, interview}, note}.",
@@ -18,7 +18,7 @@
     "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요.",
     "정시도 수시처럼 시험 날짜·방법은 stages(단계)에 적어요. 정시에는 따로 exams 항목이 없어요. 단계에 ratio가 하나라도 있으면 전형 전체(공통) 반영 비율은 표시되지 않아요."
   ],
-  "checkedAt": "2026-10-12",
+  "checkedAt": "2026-10-20",
   "schools": [
     {
       "name": "",
@@ -28,71 +28,63 @@
       "url": "",
       "short": "",
       "departments": [
-      {
-        "name": "",
-        "short": "",
+  {
+    "name": "",
+    "short": "",
+    "quota": "",
+    "admission": {
+      "admissionUrl": "",
+      "track": [],
+      "process": "",
+      "practical": "",
+      "note": "",
+      "susi": {
+        "reference": false,
         "quota": "",
-        "admission": {
-          "admissionUrl": "",
-          "track": [],
-          "process": "",
-          "practical": "",
-          "note": "",
-          "susi": {
-            "reference": false,
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "finalAnnounce": "",
+        "note": "",
+        "types": [
+          {
+            "title": "",
+            "name": "",
+            "short": "",
             "quota": "",
             "apply": {
               "start": "",
               "end": "",
               "note": ""
             },
-            "finalAnnounce": "",
-            "note": "",
-            "types": [
+            "stages": [
               {
-                "title": "",
-                "name": "",
-                "short": "",
-                "quota": "",
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  },
-                  {
-                    "label": "2차",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "기타",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
+                "label": "",
+                "method": "",
+                "examDate": "",
+                "examEnd": "",
+                "announce": "",
+                "kind": "",
+                "ratio": {
+                  "document": "",
+                  "grade": "",
+                  "gradeType": "",
+                  "attendance": "",
+                  "essay": "",
+                  "practical": "",
+                  "interview": ""
+                },
+                "note": ""
+              },
+              {
+                "label": "",
+                "method": "",
+                "examDate": "",
+                "examEnd": "",
+                "announce": "",
+                "kind": "",
                 "ratio": {
                   "document": "",
                   "grade": "",
@@ -104,10 +96,69 @@
                 },
                 "note": ""
               }
-            ]
-          },
-          "jeongsi": {
-            "reference": false,
+            ],
+            "process": "",
+            "ratio": {
+              "document": "",
+              "grade": "",
+              "gradeType": "",
+              "attendance": "",
+              "essay": "",
+              "practical": "",
+              "interview": ""
+            },
+            "note": ""
+          }
+        ]
+      },
+      "jeongsi": {
+        "reference": false,
+        "gun": "",
+        "quota": "",
+        "apply": {
+          "start": "",
+          "end": "",
+          "note": ""
+        },
+        "stages": [
+          {
+            "label": "",
+            "method": "",
+            "examDate": "",
+            "examEnd": "",
+            "announce": "",
+            "kind": "",
+            "ratio": {
+              "suneung": "",
+              "document": "",
+              "grade": "",
+              "gradeType": "",
+              "attendance": "",
+              "essay": "",
+              "practical": "",
+              "interview": ""
+            },
+            "note": ""
+          }
+        ],
+        "finalAnnounce": "",
+        "process": "",
+        "ratio": {
+          "suneung": "",
+          "document": "",
+          "grade": "",
+          "gradeType": "",
+          "attendance": "",
+          "essay": "",
+          "practical": "",
+          "interview": ""
+        },
+        "note": "",
+        "types": [
+          {
+            "title": "",
+            "name": "",
+            "short": "",
             "gun": "",
             "quota": "",
             "apply": {
@@ -136,7 +187,6 @@
                 "note": ""
               }
             ],
-            "finalAnnounce": "",
             "process": "",
             "ratio": {
               "suneung": "",
@@ -148,65 +198,21 @@
               "practical": "",
               "interview": ""
             },
-            "note": "",
-            "types": [
-              {
-                "title": "",
-                "name": "",
-                "short": "",
-                "gun": "",
-                "quota": "",
-                "apply": {
-                  "start": "",
-                  "end": "",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "",
-                    "ratio": {
-                      "suneung": "",
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": ""
-              }
-            ]
-          },
-          "etc": []
-        }
-      }
+            "note": ""
+          }
+        ]
+      },
+      "etc": []
+    }
+  }
       ],
       "sources": [
         [
-         
+          
         ]
       ]
     }
+
   ],
   "_학과템플릿": {
     "name": "",
@@ -234,6 +240,11 @@
             "name": "",
             "short": "",
             "quota": "",
+            "apply": {
+              "start": "",
+              "end": "",
+              "note": ""
+            },
             "stages": [
               {
                 "label": "1차",
