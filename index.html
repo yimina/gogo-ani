@@ -96,6 +96,9 @@
   .dtab:focus-visible { outline: 3px solid rgba(47,111,237,.4); outline-offset: 1px; }
   .dept + .dept { margin-top: 2px; }
   .dept { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+  .ct { display: inline-block; font-size: 11px; font-weight: 700; line-height: 1.6; padding: 0 8px; border-radius: 999px; border: 1px solid currentColor; background: #fff; white-space: nowrap; }
+  .ct.c1 { color: #be185d; } .ct.c2 { color: #3b4ac6; } .ct.c3 { color: #0f766e; }
+  .cts { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 8px; }
   .dq { font-size: 11.5px; font-weight: 700; color: #1d4fb8; background: #e6edff; border-radius: 999px; padding: 0 9px; white-space: nowrap; }
   /* 시험 · 발표 일정: 라벨(색 점) + 날짜가 줄 맞춰 정렬 */
   .sched { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 12px; margin: 6px 0 4px; padding: 7px 12px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
@@ -323,6 +326,8 @@
       <div id="filterBox">
       <div class="filters" id="regionFilters" role="group" aria-label="지역 필터"></div>
       <div class="filters" id="typeFilters" role="group" aria-label="학교 유형 필터"></div>
+      <div class="flabel">분야</div>
+      <div class="filters" id="categoryFilters" role="group" aria-label="분야 필터"></div>
       <div class="flabel">전형 시기</div>
       <div class="filters" id="seasonFilters" role="group" aria-label="전형 시기 필터"></div>
       <div class="flabel">실기 여부</div>
@@ -448,10 +453,10 @@ async function loadData() {
         .map(d => {
           const adm = d.admission || {};
           const seasons = [groupHas(adm.susi) && "수시", groupHas(adm.jeongsi) && "정시"].filter(Boolean);
-          return { name: d.name || "", short: d.short || "", quota: d.quota || "", adm: { ...adm, seasons } };
+          return { name: d.name || "", short: d.short || "", quota: d.quota || "", cats: [].concat(d.category || []).filter(Boolean), adm: { ...adm, seasons } };
         });
       return { type: "", region: "", url: "#", ...x, id: i + 1,
-               depts: depts.length ? depts : [{ name: "", short: "", adm: { seasons: [] } }] };
+               depts: depts.length ? depts : [{ name: "", short: "", cats: [], adm: { seasons: [] } }] };
     });
 }
 
@@ -460,11 +465,11 @@ let map = null, infoWindow = null, mapReady = false;
 const markers = {};              // id -> naver.maps.Marker
 const coords = {};               // id -> naver.maps.LatLng
 let activeId = null;
-const filter = { q: "", region: new Set(), type: new Set(), season: new Set(), track: new Set() };
+const filter = { q: "", region: new Set(), type: new Set(), category: new Set(), season: new Set(), track: new Set() };
 
 /* ---------- 필터 UI ---------- */
 function updateFilterCount() {
-  const n = filter.region.size + filter.type.size + filter.season.size + filter.track.size;
+  const n = filter.region.size + filter.type.size + filter.category.size + filter.season.size + filter.track.size;
   const open = document.getElementById("filterBox").classList.contains("open");
   document.getElementById("ftoggle").textContent = (open ? "필터 닫기 ▴" : "필터 열기 ▾") + (n ? ` (${n})` : "");
 }
@@ -493,6 +498,7 @@ function buildChips(containerId, values, key) {
 function buildAllChips() {
   buildChips("regionFilters", [...new Set(SCHOOLS.map(s => s.region).filter(Boolean))], "region");
   buildChips("typeFilters", [...new Set(SCHOOLS.map(s => s.type).filter(Boolean))], "type");
+  buildChips("categoryFilters", ["만화", "애니메이션", "게임"], "category");
   buildChips("seasonFilters", ["수시", "정시", "수시+정시"], "season");
   buildChips("trackFilters", ["실기", "비실기", "실기+비실기"], "track");
 }
@@ -505,8 +511,9 @@ function filtered() {
   const every = (set, arr) => set.size === 0 || [...set].some(opt => opt.split("+").every(x => arr.includes(x)));
   return SCHOOLS.filter(s =>
     any(filter.region, s.region) && any(filter.type, s.type) &&
-    s.depts.some(d => every(filter.season, d.adm.seasons || []) && every(filter.track, d.adm.track || [])) &&
-    (!q || [s.name, ...s.depts.map(d => d.name), s.region, s.address].join(" ").toLowerCase().includes(q))
+    s.depts.some(d => (filter.category.size === 0 || d.cats.some(c => filter.category.has(c))) &&      // 분야: 선택한 것 중 하나라도
+                      every(filter.season, d.adm.seasons || []) && every(filter.track, d.adm.track || [])) &&
+    (!q || [s.name, ...s.depts.map(d => d.name + " " + d.cats.join(" ")), s.region, s.address].join(" ").toLowerCase().includes(q))
   );
 }
 
@@ -602,6 +609,11 @@ function quotaHtml(label, q, note) {            // 숫자는 크게, 단위(명)
   const m = String(q).match(/^\s*(\d[\d,]*)\s*(\D.*)?$/);
   const val = m ? `${m[1]}<small>${m[2] || ""}</small>` : q;
   return `<div class="qt"><span class="ql">${label}</span><b class="qv">${val}</b>${note ? `<span class="qn">${note}</span>` : ""}</div>`;
+}
+
+const CAT_CLASS = { "만화": "c1", "애니메이션": "c2", "게임": "c3" };
+function catTags(d) {                     // 학과 분류 표시 (만화 · 애니메이션 · 게임)
+  return (d.cats || []).map(c => `<span class="ct ${CAT_CLASS[c] || ""}">${c}</span>`).join("");
 }
 
 function deptSub(d) {                    // 대괄호 앞의 소속(단과대·학부) 이름
@@ -718,7 +730,7 @@ function admissionHtml(s) {
   const q = encodeURIComponent(s.name + " 신입생 모집요강");
   const srcList = (s.sources && s.sources.length) ? s.sources : (a.sources || []);   // 출처는 학교 단위(없으면 예전처럼 학과 단위)
   const src = srcList.map(x => `<a class="srcl" href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a>`).join(" · ");
-  return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${dqHtml}${common.length ? dl(common) : ""}${sections}
+  return `<div class="detail">${tabs}<h3>입시 전형${multi && dp.name ? " · " + dp.name : ""}</h3>${(dp.cats || []).length ? `<div class="cts">${catTags(dp)}</div>` : ""}${dqHtml}${common.length ? dl(common) : ""}${sections}
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
@@ -742,7 +754,7 @@ function renderList() {
     if (on) li.className = "active";
     li.innerHTML = `<button type="button" aria-expanded="${on}">
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
-      ${s.depts.map(d => { const q = deptQuota(d); return d.name ? `<div class="dept"><span>${d.name}</span>${q ? `<span class="dq"${q.derived ? ' title="수시+정시 모집인원 합계"' : ""}>모집 ${q.text}</span>` : ""}</div>` : ""; }).join("")}
+      ${s.depts.map(d => { const q = deptQuota(d); return d.name ? `<div class="dept"><span>${d.name}</span>${catTags(d)}${q ? `<span class="dq"${q.derived ? ' title="수시+정시 모집인원 합계"' : ""}>모집 ${q.text}</span>` : ""}</div>` : ""; }).join("")}
       <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
     li.dataset.id = s.id;
     li.querySelector("button").onclick = () => toggleSchool(s.id);

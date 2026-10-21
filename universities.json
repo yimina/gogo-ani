@@ -3,6 +3,7 @@
     "schools 배열에 학교를 한 덩어리씩 추가하세요. id는 자동 부여됩니다. 필수: name, address. 나머지는 비워도 되고, 빈 항목은 화면에서 숨겨져요.",
     "sources(출처 [[이름, 주소], ...])는 학교 항목의 맨 마지막에 학교당 한 번만 적어요. 학과마다 적지 않아요.",
     "학교 안에 학과가 여러 개면 departments 배열에 학과를 한 덩어리씩 추가하세요: {name 학과명, short 탭·달력용 짧은 이름(학과가 2개 이상일 때 권장), quota 학과 전체 모집인원(예: \"303명\"), admission {…}}. 학과마다 입시 정보(수시·정시·기타 전형, 출처 등)를 따로 입력해요. 이름도 입력 정보도 없는 학과는 무시돼요. 복사해서 쓸 빈 틀은 맨 아래의 _학교템플릿에 있어요. 학교 한 곳(학교 정보 + 학과 1개 + 출처)이 들어 있고, 학과를 더 넣으려면 departments 안의 학과 덩어리를 복사하세요.",
+    "학과 분류: departments[].category에 [\"만화\", \"애니메이션\", \"게임\"] 중 해당하는 것을 모두 적어요(여러 개 가능, 예: [\"만화\", \"애니메이션\"]). 목록·상세 화면에 분류 표시가 붙고 '분야' 필터에 쓰여요. 비워 두면 표시되지 않아요.",
     "아래 admission 항목 설명은 모두 학과 단위(departments[].admission 안)에 적용돼요.",
     "모집인원: 학과 전체는 departments[].quota, 수시·정시는 각각 susi.quota·jeongsi.quota, 수시 전형별은 susi.types[].quota에 따로 적어요. 학과 quota를 비워 두면 수시+정시 모집인원이 모두 숫자로 시작할 때 자동으로 합산해서(합계 표시) 보여줘요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
@@ -22,22 +23,27 @@
   "schools": [
     {
       "name": "한국예술종합학교",
-      "type": "4년제(각종학교)",
+      "type": "대학교",
       "region": "서울",
-      "address": "서울특별시 성북구 화랑로32길 146-24",
-      "url": "https://karts.ac.kr",
+      "address": "서울특별시 성북구 화랑로32길 146-37",
+      "url": "https://www.karts.ac.kr",
       "short": "한예종",
       "departments": [
         {
-          "name": "영상원 애니메이션과",
-          "short": "애니메이션과",
-          "quota": "15명",
+          "name": "영상원-[애니메이션과]",
+          "short": "",
+          "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-            "track": ["실기", "서류"],
-            "process": "특별전형(재능우수자) 및 일반전형 분할 선발 (자체 시험 및 심층 면접 수행)",
-            "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
-            "note": "수시·정시 공통 원서접수 기간과 무관하게 7월(특별전형) 및 11월(일반전형)에 별도 입시를 진행합니다.",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
             "susi": {
               "reference": false,
               "quota": "15명",
@@ -104,110 +110,223 @@
                   ],
                   "process": "",
                   "ratio": {},
-                  "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
+                  "note": ""
                 }
               ]
             },
             "jeongsi": {
-              "reference": true,
-              "note": "일반 대학교 정시모집 군별(가/나/다군) 제한을 받지 않는 군외 모집 대학입니다."
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             },
-            "etc": [
-
-            ]
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
-          "https://karts.ac.kradmission/main.do"
+          "한예종 홈페이지",
+          "https://www.karts.ac.kr"
         ]
       ]
     },
     {
       "name": "세종대학교",
-      "type": "4년제",
+      "type": "대학교",
       "region": "서울",
       "address": "서울특별시 광진구 능동로 209",
-      "url": "https://sejong.ac.kr",
+      "url": "https://www.sejong.ac.kr",
       "short": "세종대",
       "departments": [
         {
-          "name": "창의소프트학부 만화애니메이션텍전공",
-          "short": "만화애니텍",
-          "quota": "48명",
+          "name": "창의소프트학부-[만화애니메이션텍 전공]",
+          "short": "",
+          "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
-            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2641&article.offset=0&articleLimit=10",
-            "track": ["비실기", "실기"],
-            "process": "수시(실기우수자/실기형 또는 세종인재/비실기 서류형), 정시(나군 수능 위주 전형)",
-            "practical": "실기우수자 전형: 칸만화, 상황표현 중 택 1 (4시간 평가)",
-            "note": "웹툰, 애니메이션, VFX, 3D 그래픽을 아우르는 테크놀로지 융합 학과입니다.",
+            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/recruitment-guidelines.do",
+            "track": [
+              "비실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
             "susi": {
               "reference": false,
-              "quota": "38명",
+              "quota": "48명",
               "apply": {
-                "start": "2026-09-11",
-                "end": "2026-09-15",
-                "note": "수시모집 공통 인터넷 원서접수"
+                "start": "2026-09-08",
+                "end": "2026-09-11",
+                "note": ""
               },
-              "finalAnnounce": "2026-11-13",
+              "finalAnnounce": "2026-12-18",
+              "note": "",
               "types": [
                 {
-                  "title": "실기위주 전형",
-                  "name": "실기우수자 전형",
-                  "quota": "25명",
+                  "title": "학생부종합",
+                  "name": "세종인재 면접형",
+                  "short": "",
+                  "quota": "48명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
                   "stages": [
                     {
                       "label": "1차",
-                      "method": "학생부 교과 성적 20% + 실기고사 성적 80% 일괄 합산",
-                      "examDate": "2026-10-17",
-                      "kind": "실기",
-                      "ratio": {
-                        "grade": "20%",
-                        "gradeType": "교과",
-                        "practical": "80%"
-                      }
-                    }
-                  ],
-                  "process": "실기 비중이 매우 높아 내신 성적을 실기로 극복 가능한 전형"
-                },
-                {
-                  "title": "학생부종합전형",
-                  "name": "세종인재 전형(서류형)",
-                  "quota": "13명",
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "학교생활기록부 기반 100% 서류 종합 평가 (비실기)",
+                      "method": "학업역량(30)+창의융합역량(50)+공동체역량(20)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2026-11-13",
                       "kind": "서류",
                       "ratio": {
-                        "document": "100%"
-                      }
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※3배수 선발"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "다수 면접위원 vs 지원자 1인(9분내외)",
+                      "examDate": "2026-11-21",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "",
+                        "grade": "60",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "40"
+                      },
+                      "note": "※제시문 기반 면접 진행"
                     }
                   ],
-                  "process": "실기고사 없이 생기부의 전공적합성 및 예술/소프트웨어 활동만을 평가 수립"
+                  "process": "",
+                  "ratio": {
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
-              "quota": "10명",
+              "quota": "2명",
               "apply": {
                 "start": "2027-01-04",
-                "end": "2027-01-07"
+                "end": "2027-01-07",
+                "note": ""
               },
               "finalAnnounce": "2027-02-05",
-              "process": "정시 나군 수능 전형 양식 적용"
-            }
+              "note": "※수능반영비율:국어(35)+수학(35)+영어(20)+탐구(10)",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": ""
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "100",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "세종대학교 입학처 공식 수시 및 정시 신입생 모집요강",
-          "https://sejong.ac.krsub_page/w_ipsi/guide_susi.asp"
+          "세종대 입학처",
+          "https://ipsi.sejong.ac.kr"
+        ],
+        [
+          "2027 수시 기사(대학저널)",
+          "https://dhnews.co.kr/news/view/1065573352564646"
         ]
       ]
     },
@@ -223,6 +342,9 @@
           "name": "만화콘텐츠스쿨-[웹툰만화콘텐츠]",
           "short": "",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://ipsi.ck.ac.kr",
             "track": [
@@ -494,6 +616,9 @@
           "name": "만화콘텐츠스쿨-[만화캐릭터 일러스트레이션]",
           "short": "",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://ipsi.ck.ac.kr",
             "track": [
@@ -746,6 +871,9 @@
           "name": "애니메이션스쿨-[에니메이션]",
           "short": "",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://ipsi.ck.ac.kr",
             "track": [
@@ -1065,6 +1193,9 @@
           "name": "AI융합디자인학부-[영상,애니메이션디자인트랙]",
           "short": "",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25",
             "track": [
@@ -1238,6 +1369,9 @@
           "name": "디자인학부-[영상,애니메이션디자인전공]",
           "short": "",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://iphak.mju.ac.kr/pages/?p=10&mj=01",
             "track": [
@@ -1439,6 +1573,9 @@
           "name": "관광문화대학-[애니메이션학과]",
           "short": "",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120",
             "track": [
@@ -1691,6 +1828,10 @@
           "name": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
           "short": "",
           "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
             "track": [
@@ -1864,6 +2005,10 @@
           "name": "예술대학-[만화게임그래픽학부]",
           "short": "",
           "quota": "",
+          "category": [
+            "만화",
+            "게임"
+          ],
           "admission": {
             "admissionUrl": "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&",
             "track": [
@@ -2037,6 +2182,7 @@
           "name": "예술디자인대학-[영상디자인학과]",
           "short": "",
           "quota": "",
+          "category": [],
           "admission": {
             "admissionUrl": "https://www.konkuk.ac.kr/admission/37869/subview.do#none",
             "track": [
@@ -2210,6 +2356,9 @@
           "name": "SW융합학부-[애니메이션전공]",
           "short": "",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
             "track": [
@@ -2526,6 +2675,7 @@
           "name": "자유전공[예체능계열]",
           "short": "",
           "quota": "",
+          "category": [],
           "admission": {
             "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
             "track": [
@@ -2681,6 +2831,9 @@
           "name": "예술학부-[디지털만화영상전공]",
           "short": "",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
             "track": [
@@ -2933,6 +3086,7 @@
           "name": "자유전공[디자인/예술계열]",
           "short": "",
           "quota": "",
+          "category": [],
           "admission": {
             "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
             "track": [
@@ -3088,6 +3242,9 @@
           "name": "애니메이션과",
           "short": "애니메이션",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://ipsi.kaywon.ac.kr/CmsHome/MainDefault.aspx",
             "track": [
@@ -3289,6 +3446,10 @@
           "name": "영상학부-[만화애니메이션전공]",
           "short": "만화애니",
           "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://www.bau.ac.kr/admission/index.do",
             "track": [
@@ -3452,6 +3613,9 @@
           "name": "웹툰만화학과",
           "short": "웹툰만화",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://ipsi.induk.ac.kr/",
             "track": [
@@ -3558,6 +3722,9 @@
           "name": "웹툰과",
           "short": "웹툰",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://hywoman.ac.kripsi/",
             "track": [
@@ -3670,6 +3837,9 @@
           "name": "만화웹툰학과",
           "short": "만화웹툰",
           "quota": "",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://www.seoil.ac.kr/ipsi/",
             "track": [
@@ -3757,6 +3927,10 @@
           "name": "글로벌예술학부 게임콘텐츠애니메이션전공",
           "short": "게임애니",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션",
+            "게임"
+          ],
           "admission": {
             "admissionUrl": "https://cau.ac.kr",
             "track": [
@@ -3843,6 +4017,9 @@
           "name": "영상·애니메이션학부",
           "short": "영상애니",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://hongik.ac.kr",
             "track": [
@@ -3951,6 +4128,10 @@
           "name": "만화애니메이션학부",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://kongju.ac.kr",
             "track": [
@@ -4037,6 +4218,11 @@
           "name": "웹툰애니메이션게임대학",
           "short": "웹툰애니게임",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션",
+            "게임"
+          ],
           "admission": {
             "admissionUrl": "https://mokwon.ac.kr",
             "track": [
@@ -4123,6 +4309,9 @@
           "name": "애니메이션학과",
           "short": "애니메이션",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://hoseo.ac.kr",
             "track": [
@@ -4208,6 +4397,9 @@
           "name": "메타버스융합대학 디지털애니메이션학과",
           "short": "디지털애니",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://sch.ac.kr",
             "track": [
@@ -4293,6 +4485,7 @@
           "name": "영상예술디자인학과",
           "short": "영상예술디자인",
           "quota": "모집요강 참조",
+          "category": [],
           "admission": {
             "admissionUrl": "https://nsu.ac.kr",
             "track": [
@@ -4377,6 +4570,10 @@
           "name": "만화애니메이션과",
           "short": "만화애니",
           "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://cju.ac.kripsi/index.do",
             "track": [
@@ -4461,6 +4658,10 @@
           "name": "만화애니메이션학전공",
           "short": "만화애니",
           "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "joongbu.ac.kr",
             "track": [
@@ -4545,6 +4746,10 @@
           "name": "디자인영상학부 웹툰애니메이션전공",
           "short": "웹툰애니",
           "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "bu.ac.kr",
             "track": [
@@ -4630,6 +4835,9 @@
           "name": "애니메이션융합전공",
           "short": "애니융합",
           "quota": "",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "hanseo.ac.kr",
             "track": [
@@ -4714,6 +4922,10 @@
           "name": "만화애니메이션학과",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "sangji.ac.kr",
             "track": [
@@ -4798,6 +5010,9 @@
           "name": "디자인학과 애니메이션전공",
           "short": "애니전공",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "pusan.ac.kr",
             "track": [
@@ -4884,6 +5099,9 @@
           "name": "영상애니메이션학부 애니메이션학전공",
           "short": "애니학",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "ks.ac.kr",
             "track": [
@@ -4969,6 +5187,9 @@
           "name": "디지털콘텐츠학부 영상애니메이션학과",
           "short": "영상애니",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "dongseo.ac.kr",
             "track": [
@@ -5055,6 +5276,10 @@
           "name": "만화애니메이션전공",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "ysu.ac.kr",
             "track": [
@@ -5139,6 +5364,9 @@
           "name": "미술대학 영상애니메이션과",
           "short": "영상애니",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "gokeemyung.com",
             "track": [
@@ -5208,6 +5436,9 @@
           "name": "미술대학 웹툰과",
           "short": "웹툰과",
           "quota": "모집요강 참조",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "gokeemyung.com",
             "track": [
@@ -5292,6 +5523,10 @@
           "name": "만화애니메이션학과",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://kiu.ac.kradmission/",
             "track": [
@@ -5378,6 +5613,10 @@
           "name": "영상만화애니메이션전공",
           "short": "영상만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://dgau.ac.kr",
             "track": [
@@ -5463,6 +5702,10 @@
           "name": "만화애니메이션학과",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://scnu.ac.kr",
             "track": [
@@ -5549,6 +5792,10 @@
           "name": "미술체육대학 만화·애니메이션학과",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://chosun.ac.kradmission/",
             "track": [
@@ -5634,6 +5881,10 @@
           "name": "만화애니메이션학과",
           "short": "만화애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://sehan.ac.kr",
             "track": [
@@ -5718,6 +5969,10 @@
           "name": "애니메이션·웹툰학과",
           "short": "애니웹툰",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://yuhan.ac.kr",
             "track": [
@@ -5822,6 +6077,9 @@
           "name": "웹툰과",
           "short": "웹툰과",
           "quota": "모집요강 참조",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://sewc.ac.kripsi/",
             "track": [
@@ -5907,6 +6165,10 @@
           "name": "웹툰애니메이션전공",
           "short": "웹툰애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://jb.ac.kr",
             "track": [
@@ -5993,6 +6255,9 @@
           "name": "만화웹툰콘텐츠과",
           "short": "만화웹툰",
           "quota": "모집요강 참조",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://pro.ac.kr",
             "track": [
@@ -6063,6 +6328,9 @@
           "name": "애니메이션과",
           "short": "애니과",
           "quota": "모집요강 참조",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://pro.ac.kr",
             "track": [
@@ -6147,6 +6415,10 @@
           "name": "웹툰애니메이션과",
           "short": "웹툰애니",
           "quota": "모집요강 참조",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
           "admission": {
             "admissionUrl": "https://kmcu.ac.kr",
             "track": [
@@ -6232,6 +6504,9 @@
           "name": "웹툰만화콘텐츠과",
           "short": "웹툰만화",
           "quota": "모집요강 참조",
+          "category": [
+            "만화"
+          ],
           "admission": {
             "admissionUrl": "https://pau.ac.kr",
             "track": [
@@ -6319,6 +6594,7 @@
         "name": "",
         "short": "",
         "quota": "",
+        "category": [],
         "admission": {
           "admissionUrl": "",
           "track": [],
