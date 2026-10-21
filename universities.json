@@ -50,38 +50,50 @@
               {
                 "label": "일반전형",
                 "reference": false,
-                "quota": "모집요강 참조",
+                "quota": "15명",
                 "apply": {
-                  "start": "2026-10-12",
-                  "end": "2026-10-15",
+                  "start": "2026-9-14",
+                  "end": "2026-09-17",
                   "note": "진학사어플라이 인터넷 접수"
                 },
                 "stages": [
-                  {
-                    "label": "1차",
-                    "method": "실기시험 및 고교 내신 성적 합산 평가",
-                    "examDate": "2026-11-21",
-                    "announce": "2026-11-27",
-                    "kind": "실기",
-                    "ratio": {
-                      "grade": "20%",
-                      "practical": "80%"
+                    {
+                      "label": "1차",
+                      "method": "스토리 구성과 연출력 중심 평가",
+                      "examDate": "2026-11-28",
+                      "examEnd": "2026-11-29",
+                      "announce": "2026-12-10",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "50",
+                        "interview": "50"
+                      },
+                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
                     }
-                  },
-                  {
-                    "label": "2차",
-                    "method": "심층 실기고사, 프로필 서류 및 구술 면접 심사",
-                    "examDate": "2026-12-02",
-                    "examEnd": "2026-12-05",
-                    "announce": "2026-12-11",
-                    "kind": "면접",
-                    "ratio": {
-                      "document": "20%",
-                      "practical": "50%",
-                      "interview": "30%"
-                    }
-                  }
-                ],
+                  ],
                 "process": "1차 시험 합격자에 한해 2차 심층 면접 및 포트폴리오 프로필 평가 진행"
               }
             ]
