@@ -19,72 +19,89 @@
     "정시도 수시처럼 시험 날짜·방법은 stages(단계)에 적어요. 정시에는 따로 exams 항목이 없어요. 단계에 ratio가 하나라도 있으면 전형 전체(공통) 반영 비율은 표시되지 않아요."
   ],
   "checkedAt": "2026-10-20",
-  "schools": [
-    {
-      "name": "",
-      "type": "",
-      "region": "",
-      "address": "",
-      "url": "",
-      "short": "",
-      "departments": [
-  {
+  "schools": {
     "name": "",
+    "type": "",
+    "region": "",
+    "address": "",
+    "url": "",
     "short": "",
-    "quota": "",
-    "admission": {
-      "admissionUrl": "",
-      "track": [],
-      "process": "",
-      "practical": "",
-      "note": "",
-      "susi": {
-        "reference": false,
+    "departments": [
+      {
+        "name": "",
+        "short": "",
         "quota": "",
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "finalAnnounce": "",
-        "note": "",
-        "types": [
-          {
-            "title": "",
-            "name": "",
-            "short": "",
+        "admission": {
+          "admissionUrl": "",
+          "track": [],
+          "process": "",
+          "practical": "",
+          "note": "",
+          "susi": {
+            "reference": false,
             "quota": "",
             "apply": {
               "start": "",
               "end": "",
               "note": ""
             },
-            "stages": [
+            "finalAnnounce": "",
+            "note": "",
+            "types": [
               {
-                "label": "",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "",
-                "ratio": {
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
+                "title": "",
+                "name": "",
+                "short": "",
+                "quota": "",
+                "apply": {
+                  "start": "",
+                  "end": "",
+                  "note": ""
                 },
-                "note": ""
-              },
-              {
-                "label": "",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "",
+                "competition": {
+                  "year": "",
+                  "rate": "",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "",
+                    "examDate": "",
+                    "examEnd": "",
+                    "announce": "",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    },
+                    "note": ""
+                  },
+                  {
+                    "label": "2차",
+                    "method": "",
+                    "examDate": "",
+                    "examEnd": "",
+                    "announce": "",
+                    "kind": "기타",
+                    "ratio": {
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    },
+                    "note": ""
+                  }
+                ],
+                "process": "",
                 "ratio": {
                   "document": "",
                   "grade": "",
@@ -96,84 +113,57 @@
                 },
                 "note": ""
               }
-            ],
-            "process": "",
-            "ratio": {
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ]
-      },
-      "jeongsi": {
-        "reference": false,
-        "gun": "",
-        "quota": "",
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "stages": [
-          {
-            "label": "",
-            "method": "",
-            "examDate": "",
-            "examEnd": "",
-            "announce": "",
-            "kind": "",
-            "ratio": {
-              "suneung": "",
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ],
-        "finalAnnounce": "",
-        "process": "",
-        "ratio": {
-          "suneung": "",
-          "document": "",
-          "grade": "",
-          "gradeType": "",
-          "attendance": "",
-          "essay": "",
-          "practical": "",
-          "interview": ""
-        },
-        "note": "",
-        "types": [
-          {
-            "title": "",
-            "name": "",
-            "short": "",
-            "gun": "",
+            ]
+          },
+          "jeongsi": {
+            "reference": false,
             "quota": "",
             "apply": {
               "start": "",
               "end": "",
               "note": ""
             },
-            "stages": [
+            "finalAnnounce": "",
+            "note": "",
+            "types": [
               {
-                "label": "",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "",
+                "title": "",
+                "name": "",
+                "short": "",
+                "gun": "",
+                "quota": "",
+                "apply": {
+                  "start": "",
+                  "end": "",
+                  "note": ""
+                },
+                "competition": {
+                  "year": "",
+                  "rate": "",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "",
+                    "method": "",
+                    "examDate": "",
+                    "examEnd": "",
+                    "announce": "",
+                    "kind": "",
+                    "ratio": {
+                      "suneung": "",
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    },
+                    "note": ""
+                  }
+                ],
+                "process": "",
                 "ratio": {
                   "suneung": "",
                   "document": "",
@@ -186,209 +176,12 @@
                 },
                 "note": ""
               }
-            ],
-            "process": "",
-            "ratio": {
-              "suneung": "",
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ]
-      },
-      "etc": []
-    }
-  }
-      ],
-      "sources": [
-        [
-          
-        ]
-      ]
-    }
-
-  ],
-  "_학과템플릿": {
-    "name": "",
-    "short": "",
-    "quota": "",
-    "admission": {
-      "admissionUrl": "",
-      "track": [],
-      "process": "",
-      "practical": "",
-      "note": "",
-      "susi": {
-        "reference": false,
-        "quota": "",
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "finalAnnounce": "",
-        "note": "",
-        "types": [
-          {
-            "title": "",
-            "name": "",
-            "short": "",
-            "quota": "",
-            "apply": {
-              "start": "",
-              "end": "",
-              "note": ""
-            },
-            "stages": [
-              {
-                "label": "1차",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "서류",
-                "ratio": {
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": ""
-              },
-              {
-                "label": "2차",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "기타",
-                "ratio": {
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": ""
-              }
-            ],
-            "process": "",
-            "ratio": {
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ]
-      },
-      "jeongsi": {
-        "reference": false,
-        "gun": "",
-        "quota": "",
-        "apply": {
-          "start": "",
-          "end": "",
-          "note": ""
-        },
-        "stages": [
-          {
-            "label": "",
-            "method": "",
-            "examDate": "",
-            "examEnd": "",
-            "announce": "",
-            "kind": "",
-            "ratio": {
-              "suneung": "",
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ],
-        "finalAnnounce": "",
-        "process": "",
-        "ratio": {
-          "suneung": "",
-          "document": "",
-          "grade": "",
-          "gradeType": "",
-          "attendance": "",
-          "essay": "",
-          "practical": "",
-          "interview": ""
-        },
-        "note": "",
-        "types": [
-          {
-            "title": "",
-            "name": "",
-            "short": "",
-            "gun": "",
-            "quota": "",
-            "apply": {
-              "start": "",
-              "end": "",
-              "note": ""
-            },
-            "stages": [
-              {
-                "label": "",
-                "method": "",
-                "examDate": "",
-                "examEnd": "",
-                "announce": "",
-                "kind": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": ""
-              }
-            ],
-            "process": "",
-            "ratio": {
-              "suneung": "",
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ]
-      },
-      "etc": []
-    }
+            ]
+          },
+          "etc": []
+        }
+      }
+    ],
+    "sources": []
   }
 }
