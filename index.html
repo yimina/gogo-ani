@@ -754,7 +754,7 @@ function renderList() {
     if (on) li.className = "active";
     li.innerHTML = `<button type="button" aria-expanded="${on}">
       <div class="name">${s.name}<span class="tag">${s.type}</span></div>
-      ${s.depts.map(d => { const q = deptQuota(d); return d.name ? `<div class="dept"><span>${d.name}</span>${catTags(d)}${q ? `<span class="dq"${q.derived ? ' title="수시+정시 모집인원 합계"' : ""}>모집 ${q.text}</span>` : ""}</div>` : ""; }).join("")}
+      ${s.depts.map(d => { const q = deptQuota(d); return d.name ? `<div class="dept"><span>${d.name}</span>${q ? `<span class="dq"${q.derived ? ' title="수시+정시 모집인원 합계"' : ""}>모집 ${q.text}</span>` : ""}</div>` : ""; }).join("")}
       <div class="addr">${s.address}</div></button>${on ? admissionHtml(s) : ""}`;
     li.dataset.id = s.id;
     li.querySelector("button").onclick = () => toggleSchool(s.id);
