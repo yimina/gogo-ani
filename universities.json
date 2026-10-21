@@ -39,8 +39,74 @@
             "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
             "note": "수시·정시 공통 원서접수 기간과 무관하게 7월(특별전형) 및 11월(일반전형)에 별도 입시를 진행합니다.",
             "susi": {
-              "reference": true,
-              "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
+              "reference": false,
+              "quota": "15명",
+              "apply": {
+                "start": "2026-09-14",
+                "end": "2026-09-17",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-24",
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "일반전형",
+                  "short": "",
+                  "quota": "15명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "스토리 구성과 연출력 중심 평가",
+                      "examDate": "2026-11-28",
+                      "examEnd": "2026-11-29",
+                      "announce": "2026-12-10",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "50",
+                        "interview": "50"
+                      },
+                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {},
+                  "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
+                }
+              ]
             },
             "jeongsi": {
               "reference": true,
