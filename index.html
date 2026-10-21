@@ -535,12 +535,20 @@ function hasData(o) {
 }
 function groupHas(g) { return !!g && (g.offered === true || hasData(g)); }
 function gunText(g) { return Array.isArray(g.gun) ? g.gun.join(", ") : (g.gun || ""); }
+function jeongGuns(jg) {                 // 정시 제목에 붙일 군: 정시 전체 군 → 없으면 전형들의 군
+  const own = gunText(jg);
+  if (own) return own;
+  const seen = [];
+  (jg.types || []).forEach(t => { const g = gunText(t); if (g && !seen.includes(g)) seen.push(g); });
+  return seen.join("·");
+}
+
 function admGroups(a) {
   const list = [];
   const su = a.susi || {}, jg = a.jeongsi || {};
-  list.push({ key: "susi", name: "수시", g: su, jeong: false });
-  list.push({ key: "jeongsi", name: "정시" + (gunText(jg) ? "(" + gunText(jg) + ")" : ""), g: jg, jeong: true });
-  (a.etc || []).forEach(e => list.push({ key: "etc", name: e.label || "기타 전형", g: e, jeong: false }));
+  list.push({ key: "susi", name: "수시", base: "수시", g: su, jeong: false });
+  list.push({ key: "jeongsi", name: "정시" + (jeongGuns(jg) ? "(" + jeongGuns(jg) + ")" : ""), base: "정시", g: jg, jeong: true });
+  (a.etc || []).forEach(e => list.push({ key: "etc", name: e.label || "기타 전형", base: e.label || "기타 전형", g: e, jeong: false }));
   return list;
 }
 
@@ -651,7 +659,7 @@ function typeHtml(t, jeong, ref) {
   const rows = groupRows(t, jeong, ref, true);
   const q = cleanQ(t.quota) ? `<span class="qb">모집 ${t.quota}</span>` : "";
   const gun = jeong && gunText(t) ? `<span class="gb">${gunText(t)}</span>` : "";
-  const main = t.title || t.name || "전형";
+  const main = t.title || t.name || (jeong ? "정시 전형" : "전형");
   const sub = t.title && t.name ? `<span class="tn">${t.name}</span>` : "";
   return `<div class="typ"><div class="th"><b>${main}</b>${sub}${gun}${q}</div>${rows.length ? dl(rows) : '<p class="muted">전형 세부 정보가 아직 없어요.</p>'}</div>`;
 }
@@ -840,10 +848,10 @@ function buildEvents(schools) {
         const ds = pd(st.examDate || st.date);
         if (ds) {
           const kind = KINDS[st.kind] ? st.kind : "기타";
-          ev.push({ ...base, title: label + " " + (st.label || "전형"), method: st.method || "", kind, start: ds, end: pd(st.examEnd || st.endDate) || ds, ref });
+          ev.push({ ...base, title: [label, st.label].filter(Boolean).join(" "), method: st.method || "", kind, start: ds, end: pd(st.examEnd || st.endDate) || ds, ref });
         }
         const da = pd(st.announce);
-        if (da) ev.push({ ...base, title: label + " " + (st.label || "전형") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+        if (da) ev.push({ ...base, title: [label, st.label].filter(Boolean).join(" ") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
       });
       const fa = pd(obj.finalAnnounce);
       if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
@@ -853,8 +861,9 @@ function buildEvents(schools) {
       const gref = !!g.reference;
       push(g, gr.name, gref, false, true);
       (g.types || []).forEach(t => {
+        const tl = t.short || t.title || t.name || "";
         const gsuf = gr.key === "jeongsi" && gunText(t) ? "(" + gunText(t) + ")" : "";
-        push(t, gr.name + " " + (t.short || t.title || t.name || "전형") + gsuf, gref || !!t.reference, true, true);
+        push(t, gr.base + (tl ? " " + tl : "") + gsuf, gref || !!t.reference, true, true);
       });
     });
   }));

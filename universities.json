@@ -10,88 +10,129 @@
     "admission.susi(수시): reference 참고 표시, quota 수시 모집인원, apply 수시 공통 원서 접수 {start, end, note}(전형마다 다르면 types[].apply), finalAnnounce 수시 최종 합격자 발표일, note, types 수시 전형 종류 배열.",
     "susi.types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, apply 그 전형의 원서 접수(지원) 기간 {start, end, note}, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 수시 전체에 공통이면 susi.apply에, 전형마다 다르면 각 전형의 apply에 적어요(둘 다 적으면 둘 다 표시돼요). 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
     "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, attendance 출결, essay 논술, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·document(서류)·grade(학생부)·attendance(출결)·essay(논술)·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.) 각 단계에는 note(이 단계의 참고 사항)도 적을 수 있고, 비율 막대 아래에 작은 글씨로 그대로 표시돼요.",
-    "admission.jeongsi(정시): reference, gun(정시 전체에 공통인 군), quota 정시 모집인원, apply, stages, finalAnnounce 정시 최종 합격자 발표일, process, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note, types 정시 전형 배열(아래).",
-    "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 따로 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process, ratio {suneung, document, grade, gradeType, attendance, essay, practical, interview}, note}.",
+    "admission.jeongsi(정시): 수시와 같은 구조예요. reference 참고 표시, quota 정시 모집인원, apply 정시 공통 원서 접수 {start, end, note}, finalAnnounce 정시 최종 합격자 발표일, note, types 정시 전형 배열(아래). 군·단계·반영 비율·전형 방법은 전형(types) 안에 적어요.",
+    "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 한 덩어리씩 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process 전형 방법, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
     "reference: true 는 이전 학년도 일정을 참고용으로 적었다는 표시예요 (달력에서 점선). 전형 정보가 있는 쪽(수시/정시)만 필터의 '전형 시기'에 잡혀요.",
     "수시·정시에 입력된 내용이 하나도 없으면 상세 화면에 '수시 모집이 없어요.' / '정시 모집이 없어요.'라고 표시돼요.",
-    "정시도 수시처럼 시험 날짜·방법은 stages(단계)에 적어요. 정시에는 따로 exams 항목이 없어요. 단계에 ratio가 하나라도 있으면 전형 전체(공통) 반영 비율은 표시되지 않아요."
+    "정시도 수시처럼 시험 날짜·방법은 전형(types) 안의 stages(단계)에 적어요. 단계에 ratio가 하나라도 있으면 그 전형 전체(공통) 반영 비율은 표시되지 않아요."
   ],
   "checkedAt": "2026-10-20",
   "schools": [
     {
       "name": "한국예술종합학교",
-      "type": "4년제(각종학교)",
+      "type": "대학교",
       "region": "서울",
-      "address": "서울특별시 성북구 화랑로32길 146-24",
-      "url": "https://karts.ac.kr",
+      "address": "서울특별시 성북구 화랑로32길 146-37",
+      "url": "https://www.karts.ac.kr",
       "short": "한예종",
       "departments": [
         {
-          "name": "영상원 애니메이션과",
-          "short": "애니메이션과",
-          "quota": "15명",
+          "name": "영상원-[애니메이션과]",
+          "short": "",
+          "quota": "",
           "admission": {
-            "admissionUrl": "https://karts.ac.krmain/index.do?menuId=010100000000",
-            "track": ["실기", "서류"],
-            "process": "특별전형(재능우수자) 및 일반전형 분할 선발 (자체 시험 및 심층 면접 수행)",
-            "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
-            "note": "수시·정시 공통 원서접수 기간과 무관하게 7월(특별전형) 및 11월(일반전형)에 별도 입시를 진행합니다.",
+            "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
+            "track": [
+              "실기"
+            ],
+            "process": "",
+            "practical": "",
+            "note": "",
             "susi": {
-              "reference": true,
-              "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
+              "reference": false,
+              "quota": "15명",
+              "apply": {
+                "start": "2026-09-14",
+                "end": "2026-09-17",
+                "note": ""
+              },
+              "finalAnnounce": "2026-12-24",
+              "note": "",
+              "types": [
+                {
+                  "title": "",
+                  "name": "일반전형",
+                  "short": "",
+                  "quota": "15명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "스토리 구성과 연출력 중심 평가",
+                      "examDate": "2026-11-28",
+                      "examEnd": "2026-11-29",
+                      "announce": "2026-12-10",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "50",
+                        "interview": "50"
+                      },
+                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
+                    }
+                  ],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             },
             "jeongsi": {
-              "reference": true,
-              "note": "일반 대학교 정시모집 군별(가/나/다군) 제한을 받지 않는 군외 모집 대학입니다."
-            },
-            "etc": [
-              {
-                "label": "일반전형",
-                "reference": false,
-                "quota": "모집요강 참조",
-                "apply": {
-                  "start": "2026-10-12",
-                  "end": "2026-10-15",
-                  "note": "진학사어플라이 인터넷 접수"
-                },
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "실기시험 및 고교 내신 성적 합산 평가",
-                    "examDate": "2026-11-21",
-                    "announce": "2026-11-27",
-                    "kind": "실기",
-                    "ratio": {
-                      "grade": "20%",
-                      "practical": "80%"
-                    }
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
                   },
-                  {
-                    "label": "2차",
-                    "method": "심층 실기고사, 프로필 서류 및 구술 면접 심사",
-                    "examDate": "2026-12-02",
-                    "examEnd": "2026-12-05",
-                    "announce": "2026-12-11",
-                    "kind": "면접",
-                    "ratio": {
-                      "document": "20%",
-                      "practical": "50%",
-                      "interview": "30%"
-                    }
-                  }
-                ],
-                "process": "1차 시험 합격자에 한해 2차 심층 면접 및 포트폴리오 프로필 평가 진행"
-              }
-            ]
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
-          "https://karts.ac.kradmission/main.do"
+          "한예종 홈페이지",
+          "https://www.karts.ac.kr"
         ]
       ]
     },
@@ -190,53 +231,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
               "quota": "2명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "ratio": {
-                "suneung": "100",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "※수능반영비율:국어(35)+수학(35)+영어(20)+탐구(10)",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "다군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -266,7 +274,7 @@
                   ],
                   "process": "",
                   "ratio": {
-                    "suneung": "",
+                    "suneung": "100",
                     "document": "",
                     "grade": "",
                     "gradeType": "",
@@ -474,70 +482,17 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "면접",
               "quota": "30명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "1차",
-                  "method": "학생부(비교과)+이미지포트폴리오",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "2027-01-25",
-                  "kind": "서류",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "100",
-                    "grade": "",
-                    "gradeType": "비교과",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
-                },
-                {
-                  "label": "2차",
-                  "method": "면접",
-                  "examDate": "2027-01-27",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "면접",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": "100"
-                  },
-                  "note": "※모집인원 2배수 면접 진행"
-                }
-              ],
               "finalAnnounce": "2027-02-09",
-              "process": "학생부(비교과)+포트폴리오",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
-                  "title": "",
+                  "title": "면접전형",
                   "name": "",
                   "short": "",
                   "gun": "",
@@ -549,12 +504,31 @@
                   },
                   "stages": [
                     {
-                      "label": "",
-                      "method": "",
+                      "label": "1차",
+                      "method": "학생부(비교과)+이미지포트폴리오",
                       "examDate": "",
                       "examEnd": "",
+                      "announce": "2027-01-25",
+                      "kind": "서류",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "100",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
+                    },
+                    {
+                      "label": "2차",
+                      "method": "면접",
+                      "examDate": "2027-01-27",
+                      "examEnd": "",
                       "announce": "",
-                      "kind": "",
+                      "kind": "면접",
                       "ratio": {
                         "suneung": "",
                         "document": "",
@@ -563,12 +537,12 @@
                         "attendance": "",
                         "essay": "",
                         "practical": "",
-                        "interview": ""
+                        "interview": "100"
                       },
-                      "note": ""
+                      "note": "※모집인원 2배수 면접 진행"
                     }
                   ],
-                  "process": "",
+                  "process": "학생부(비교과)+포트폴리오",
                   "ratio": {
                     "suneung": "",
                     "document": "",
@@ -581,7 +555,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -758,51 +733,17 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "실기",
               "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "A형 : 문해력 기반 1페이지 만화\n B형 : 문해력 기반 2페이지 일러스트레이션",
-                  "examDate": "2027-01-28",
-                  "examEnd": "2027-01-29",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "100",
-                    "interview": ""
-                  },
-                  "note": "※2가지 유형중 택1"
-                }
-              ],
               "finalAnnounce": "2027-02-09",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
-                  "title": "",
+                  "title": "실기전형",
                   "name": "",
                   "short": "",
                   "gun": "",
@@ -815,11 +756,11 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
+                      "method": "A형 : 문해력 기반 1페이지 만화\n B형 : 문해력 기반 2페이지 일러스트레이션",
+                      "examDate": "2027-01-28",
+                      "examEnd": "2027-01-29",
                       "announce": "",
-                      "kind": "",
+                      "kind": "실기",
                       "ratio": {
                         "suneung": "",
                         "document": "",
@@ -827,10 +768,10 @@
                         "gradeType": "",
                         "attendance": "",
                         "essay": "",
-                        "practical": "",
+                        "practical": "100",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※2가지 유형중 택1"
                     }
                   ],
                   "process": "",
@@ -846,7 +787,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -1065,51 +1007,17 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "실기",
               "quota": "65명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
-                  "examDate": "2027-01-28",
-                  "examEnd": "2027-01-29",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "30",
-                    "gradeType": "교과",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "70",
-                    "interview": ""
-                  },
-                  "note": "※3가지 유형중 택1"
-                }
-              ],
               "finalAnnounce": "2027-02-09",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
-                  "title": "",
+                  "title": "실기전형",
                   "name": "",
                   "short": "",
                   "gun": "",
@@ -1122,22 +1030,22 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
+                      "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
+                      "examDate": "2027-01-28",
+                      "examEnd": "2027-01-29",
                       "announce": "",
-                      "kind": "",
+                      "kind": "실기",
                       "ratio": {
                         "suneung": "",
                         "document": "",
-                        "grade": "",
-                        "gradeType": "",
+                        "grade": "30",
+                        "gradeType": "교과",
                         "attendance": "",
                         "essay": "",
-                        "practical": "",
+                        "practical": "70",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※3가지 유형중 택1"
                     }
                   ],
                   "process": "",
@@ -1153,7 +1061,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -1266,53 +1175,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
               "quota": "4명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "가군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -1328,7 +1204,7 @@
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "100",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
@@ -1485,46 +1361,13 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "",
               "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
               "finalAnnounce": "",
-              "process": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
@@ -1704,54 +1547,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
               "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "※수능반영비율:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35%)",
               "types": [
                 {
                   "title": "",
                   "name": "상상표현",
                   "short": "",
-                  "gun": "",
+                  "gun": "가군",
                   "quota": "7명",
                   "apply": {
                     "start": "",
@@ -1796,7 +1605,7 @@
                   "title": "",
                   "name": "웹툰",
                   "short": "",
-                  "gun": "",
+                  "gun": "가군",
                   "quota": "3명",
                   "apply": {
                     "start": "",
@@ -1837,7 +1646,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -1945,47 +1755,13 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "",
               "quota": "",
               "apply": {
                 "start": "",
                 "end": "",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
               "finalAnnounce": "",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
@@ -2033,7 +1809,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -2141,54 +1918,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
               "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "2027-01-29",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "20",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "80",
-                    "interview": ""
-                  },
-                  "note": "※국어,수학,영어中 상위 1개 영역(60)+선택된거 빼고, 탐구, 한국사 中 1개 영역택(40)"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "다군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -2199,21 +1942,21 @@
                     {
                       "label": "",
                       "method": "",
-                      "examDate": "",
+                      "examDate": "2027-01-29",
                       "examEnd": "",
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "20",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
                         "attendance": "",
                         "essay": "",
-                        "practical": "",
+                        "practical": "80",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※국어,수학,영어中 상위 1개 영역(60)+선택된거 빼고, 탐구, 한국사 中 1개 영역택(40)"
                     }
                   ],
                   "process": "",
@@ -2229,7 +1972,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -2337,54 +2081,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
               "quota": "35명",
               "apply": {
                 "start": "2027-01-05",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "실기",
-                  "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
-                  "examDate": "2027-01-25",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "실기",
-                  "ratio": {
-                    "suneung": "60",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "40",
-                    "interview": ""
-                  },
-                  "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "다군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -2393,23 +2103,23 @@
                   },
                   "stages": [
                     {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
+                      "label": "실기",
+                      "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
+                      "examDate": "2027-01-25",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "",
+                      "kind": "실기",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "60",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
                         "attendance": "",
                         "essay": "",
-                        "practical": "",
+                        "practical": "40",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
                     }
                   ],
                   "process": "",
@@ -2425,7 +2135,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -2677,54 +2388,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
               "quota": "9명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": "※수능반영비율:국어(25)+수학(35)+영어(20)+탐구(20)"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "나군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -2740,7 +2417,7 @@
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "100",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
@@ -2749,7 +2426,7 @@
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※수능반영비율:국어(25)+수학(35)+영어(20)+탐구(20)"
                     }
                   ],
                   "process": "",
@@ -2765,7 +2442,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -2839,54 +2517,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
               "quota": "11명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "나군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -2902,7 +2546,7 @@
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "100",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
@@ -2911,7 +2555,7 @@
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
                     }
                   ],
                   "process": "",
@@ -2927,7 +2571,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -3120,54 +2765,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
               "quota": "12명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "60",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "40",
-                    "interview": ""
-                  },
-                  "note": "※만화능력테스트:4칸이상 만화구성"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "나군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -3183,16 +2794,16 @@
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "60",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
                         "attendance": "",
                         "essay": "",
-                        "practical": "",
+                        "practical": "40",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※만화능력테스트:4칸이상 만화구성"
                     }
                   ],
                   "process": "",
@@ -3208,7 +2819,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -3282,54 +2894,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
               "quota": "14명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
                 "note": ""
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "announce": "",
-                  "kind": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
-              "date": "",
-              "ratio": {
-                "suneung": "",
-                "document": "",
-                "grade": "",
-                "gradeType": "",
-                "attendance": "",
-                "essay": "",
-                "practical": "",
-                "interview": ""
-              },
               "note": "",
               "types": [
                 {
                   "title": "",
                   "name": "",
                   "short": "",
-                  "gun": "",
+                  "gun": "나군",
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -3345,7 +2923,7 @@
                       "announce": "",
                       "kind": "",
                       "ratio": {
-                        "suneung": "",
+                        "suneung": "100",
                         "document": "",
                         "grade": "",
                         "gradeType": "",
@@ -3354,7 +2932,7 @@
                         "practical": "",
                         "interview": ""
                       },
-                      "note": ""
+                      "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
                     }
                   ],
                   "process": "",
@@ -3370,7 +2948,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "date": ""
             },
             "etc": []
           }
@@ -3465,25 +3044,13 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "",
               "quota": "19명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20",
                 "note": "정시모집 원서접수 기간"
               },
-              "stages": [
-                {
-                  "label": "",
-                  "method": "",
-                  "examDate": "",
-                  "examEnd": "",
-                  "kind": "",
-                  "ratio": {}
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "",
               "types": [
                 {
                   "title": "수능위주",
@@ -3502,19 +3069,8 @@
                       "method": "",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
                       "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "ratio": {}
                     }
                   ],
                   "process": "",
@@ -3693,16 +3249,32 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "군외모집",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
               "finalAnnounce": "2027-02-05",
-              "ratio": {
-                "suneung": "20%",
-                "practical": "80%"
-              }
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "군외모집",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -3763,27 +3335,42 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용 (전문대)",
               "quota": "6명",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
-              "stages": [
-                {
-                  "label": "1차",
-                  "method": "학생부 20% + 실기고사 80% 반영",
-                  "examDate": "2027-01-30",
-                  "examEnd": "2027-01-31",
-                  "kind": "실기",
-                  "ratio": {
-                    "grade": "20%",
-                    "practical": "80%"
-                  }
-                }
-              ],
               "finalAnnounce": "2027-02-05",
-              "process": "학생부 20% + 실기 80%"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용 (전문대)",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학생부 20% + 실기고사 80% 반영",
+                      "examDate": "2027-01-30",
+                      "examEnd": "2027-01-31",
+                      "kind": "실기",
+                      "ratio": {
+                        "grade": "20%",
+                        "practical": "80%"
+                      }
+                    }
+                  ],
+                  "process": "학생부 20% + 실기 80%",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -3858,13 +3445,29 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
               "finalAnnounce": "2027-02-05",
-              "process": "정시 실기전형 양식에 맞추어 학생부 40% + 실기 60% 반영"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "정시 실기전형 양식에 맞추어 학생부 40% + 실기 60% 반영",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -3923,9 +3526,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
               "finalAnnounce": "2027-02-05",
-              "process": "정시 일반전형 실기 및 수능 반영 비중 요강 참조"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "정시 일반전형 실기 및 수능 반영 비중 요강 참조",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -3983,9 +3602,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
               "finalAnnounce": "2027-02-05",
-              "process": "수능 반영 비율 및 실기 배점 요강 참조"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "수능 반영 비율 및 실기 배점 요강 참조",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4065,9 +3700,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
               "finalAnnounce": "2027-02-05",
-              "process": "수능 100% 또는 수능+서류 일괄 합산"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "수능 100% 또는 수능+서류 일괄 합산",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4125,8 +3776,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "나군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4184,8 +3852,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4242,8 +3927,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4300,8 +4002,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4357,8 +4076,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "나군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4414,8 +4150,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4471,8 +4224,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4529,8 +4299,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "나군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "나군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4586,8 +4373,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4643,8 +4447,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4702,8 +4523,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4760,8 +4598,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4819,8 +4674,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4876,8 +4748,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -4934,8 +4823,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         },
@@ -4975,8 +4881,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5034,8 +4957,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5092,8 +5032,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5151,8 +5108,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5209,8 +5183,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "가군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "가군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5266,8 +5257,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "다군",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "다군",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5338,8 +5346,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5396,9 +5421,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
               "finalAnnounce": "2027-02-05",
-              "process": "수능 성적 또는 학생부 교과 일괄 합산 요강 참조"
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "수능 성적 또는 학생부 교과 일괄 합산 요강 참조",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5456,8 +5497,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "군외모집",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "군외모집",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5515,8 +5573,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         },
@@ -5556,8 +5631,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5614,8 +5706,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5673,8 +5782,25 @@
             },
             "jeongsi": {
               "reference": false,
-              "gun": "비적용",
-              "finalAnnounce": "2027-02-05"
+              "finalAnnounce": "2027-02-05",
+              "types": [
+                {
+                  "title": "",
+                  "name": "",
+                  "short": "",
+                  "gun": "비적용",
+                  "quota": "",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "stages": [],
+                  "process": "",
+                  "ratio": {},
+                  "note": ""
+                }
+              ]
             }
           }
         }
@@ -5772,46 +5898,13 @@
       },
       "jeongsi": {
         "reference": false,
-        "gun": "",
         "quota": "",
         "apply": {
           "start": "",
           "end": "",
           "note": ""
         },
-        "stages": [
-          {
-            "label": "",
-            "method": "",
-            "examDate": "",
-            "examEnd": "",
-            "announce": "",
-            "kind": "",
-            "ratio": {
-              "suneung": "",
-              "document": "",
-              "grade": "",
-              "gradeType": "",
-              "attendance": "",
-              "essay": "",
-              "practical": "",
-              "interview": ""
-            },
-            "note": ""
-          }
-        ],
         "finalAnnounce": "",
-        "process": "",
-        "ratio": {
-          "suneung": "",
-          "document": "",
-          "grade": "",
-          "gradeType": "",
-          "attendance": "",
-          "essay": "",
-          "practical": "",
-          "interview": ""
-        },
         "note": "",
         "types": [
           {
