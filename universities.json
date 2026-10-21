@@ -138,7 +138,7 @@
           "short": "만화애니텍",
           "quota": "48명",
           "admission": {
-            "admissionUrl": "https://sejong.ac.kr",
+            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2641&article.offset=0&articleLimit=10",
             "track": ["비실기", "실기"],
             "process": "수시(실기우수자/실기형 또는 세종인재/비실기 서류형), 정시(나군 수능 위주 전형)",
             "practical": "실기우수자 전형: 칸만화, 상황표현 중 택 1 (4시간 평가)",
