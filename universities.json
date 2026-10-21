@@ -33,7 +33,7 @@
           "short": "애니메이션과",
           "quota": "15명",
           "admission": {
-            "admissionUrl": "https://karts.ac.krmain/index.do?menuId=010100000000",
+            "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
             "track": ["실기", "서류"],
             "process": "특별전형(재능우수자) 및 일반전형 분할 선발 (자체 시험 및 심층 면접 수행)",
             "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
