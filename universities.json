@@ -20,308 +20,173 @@
   ],
   "checkedAt": "2026-10-20",
   "schools": [
+{
+  "checkedAt": "2026-10-20",
+  "schools": [
     {
       "name": "한국예술종합학교",
-      "type": "대학교",
+      "type": "4년제(각종학교)",
       "region": "서울",
-      "address": "서울특별시 성북구 화랑로32길 146-37",
-      "url": "https://www.karts.ac.kr",
+      "address": "서울특별시 성북구 화랑로32길 146-24",
+      "url": "https://karts.ac.kr",
       "short": "한예종",
       "departments": [
         {
-          "name": "영상원-[애니메이션과]",
-          "short": "",
-          "quota": "",
+          "name": "영상원 애니메이션과",
+          "short": "애니메이션과",
+          "quota": "15명",
           "admission": {
-            "admissionUrl": "https://www.karts.ac.kr/usr/gfa/guideline.do?fileUsage=GUIDELINE_COLLEGE",
-            "track": [
-              "실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://karts.ac.krmain/index.do?menuId=010100000000",
+            "track": ["실기", "서류"],
+            "process": "특별전형(재능우수자) 및 일반전형 분할 선발 (자체 시험 및 심층 면접 수행)",
+            "practical": "1차: 실기시험(드로잉 및 연출), 2차: 스토리보드/워크숍 및 구술면접",
+            "note": "수시·정시 공통 원서접수 기간과 무관하게 7월(특별전형) 및 11월(일반전형)에 별도 입시를 진행합니다.",
             "susi": {
-              "reference": false,
-              "quota": "15명",
-              "apply": {
-                "start": "2026-09-14",
-                "end": "2026-09-17",
-                "note": ""
-              },
-              "finalAnnounce": "2026-12-24",
-              "note": "",
-              "types": [
-                {
-                  "title": "",
-                  "name": "일반전형",
-                  "short": "",
-                  "quota": "15명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "스토리 구성과 연출력 중심 평가",
-                      "examDate": "2026-11-28",
-                      "examEnd": "2026-11-29",
-                      "announce": "2026-12-10",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "20",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "80",
-                        "interview": ""
-                      },
-                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "내러티브, 드로잉, 연출력 중심 평가",
-                      "examDate": "2026-12-15",
-                      "examEnd": "2026-12-22",
-                      "announce": "2026-12-24",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "50",
-                        "interview": "50"
-                      },
-                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
-                }
-              ]
+              "reference": true,
+              "note": "한예종은 일반 대학 수시모집 6회 지원 제한에 포함되지 않는 별도 기관입니다."
             },
             "jeongsi": {
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
-                }
-              ]
+              "reference": true,
+              "note": "일반 대학교 정시모집 군별(가/나/다군) 제한을 받지 않는 군외 모집 대학입니다."
             },
-            "etc": []
+            "etc": [
+              {
+                "label": "일반전형",
+                "reference": false,
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2026-10-12",
+                  "end": "2026-10-15",
+                  "note": "진학사어플라이 인터넷 접수"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "실기시험 및 고교 내신 성적 합산 평가",
+                    "examDate": "2026-11-21",
+                    "announce": "2026-11-27",
+                    "kind": "실기",
+                    "ratio": {
+                      "grade": "20%",
+                      "practical": "80%"
+                    }
+                  },
+                  {
+                    "label": "2차",
+                    "method": "심층 실기고사, 프로필 서류 및 구술 면접 심사",
+                    "examDate": "2026-12-02",
+                    "examEnd": "2026-12-05",
+                    "announce": "2026-12-11",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "20%",
+                      "practical": "50%",
+                      "interview": "30%"
+                    }
+                  }
+                ],
+                "process": "1차 시험 합격자에 한해 2차 심층 면접 및 포트폴리오 프로필 평가 진행"
+              }
+            ]
           }
         }
       ],
       "sources": [
         [
-          "한예종 홈페이지",
-          "https://www.karts.ac.kr"
+          "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
+          "https://karts.ac.kradmission/main.do"
         ]
       ]
     },
     {
       "name": "세종대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "서울",
       "address": "서울특별시 광진구 능동로 209",
-      "url": "https://www.sejong.ac.kr",
+      "url": "https://sejong.ac.kr",
       "short": "세종대",
       "departments": [
         {
-          "name": "창의소프트학부-[만화애니메이션텍 전공]",
-          "short": "",
-          "quota": "",
+          "name": "창의소프트학부 만화애니메이션텍전공",
+          "short": "만화애니텍",
+          "quota": "48명",
           "admission": {
-            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/recruitment-guidelines.do",
-            "track": [
-              "비실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://sejong.ac.kr",
+            "track": ["비실기", "실기"],
+            "process": "수시(실기우수자/실기형 또는 세종인재/비실기 서류형), 정시(나군 수능 위주 전형)",
+            "practical": "실기우수자 전형: 칸만화, 상황표현 중 택 1 (4시간 평가)",
+            "note": "웹툰, 애니메이션, VFX, 3D 그래픽을 아우르는 테크놀로지 융합 학과입니다.",
             "susi": {
               "reference": false,
-              "quota": "48명",
+              "quota": "38명",
               "apply": {
-                "start": "2026-09-08",
-                "end": "2026-09-11",
-                "note": ""
+                "start": "2026-09-11",
+                "end": "2026-09-15",
+                "note": "수시모집 공통 인터넷 원서접수"
               },
-              "finalAnnounce": "2026-12-18",
-              "note": "",
+              "finalAnnounce": "2026-11-13",
               "types": [
                 {
-                  "title": "학생부종합",
-                  "name": "세종인재 면접형",
-                  "short": "",
-                  "quota": "48명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
+                  "title": "실기위주 전형",
+                  "name": "실기우수자 전형",
+                  "quota": "25명",
                   "stages": [
                     {
                       "label": "1차",
-                      "method": "학업역량(30)+창의융합역량(50)+공동체역량(20)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2026-11-13",
-                      "kind": "서류",
+                      "method": "학생부 교과 성적 20% + 실기고사 성적 80% 일괄 합산",
+                      "examDate": "2026-10-17",
+                      "kind": "실기",
                       "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "종합",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※3배수 선발"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "다수 면접위원 vs 지원자 1인(9분내외)",
-                      "examDate": "2026-11-21",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "면접",
-                      "ratio": {
-                        "document": "",
-                        "grade": "60",
-                        "gradeType": "종합",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "40"
-                      },
-                      "note": "※제시문 기반 면접 진행"
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      }
                     }
                   ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                  "process": "실기 비중이 매우 높아 내신 성적을 실기로 극복 가능한 전형"
+                },
+                {
+                  "title": "학생부종합전형",
+                  "name": "세종인재 전형(서류형)",
+                  "quota": "13명",
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학교생활기록부 기반 100% 서류 종합 평가 (비실기)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "100%"
+                      }
+                    }
+                  ],
+                  "process": "실기고사 없이 생기부의 전공적합성 및 예술/소프트웨어 활동만을 평가 수립"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "quota": "2명",
+              "gun": "나군",
+              "quota": "10명",
               "apply": {
                 "start": "2027-01-04",
-                "end": "2027-01-07",
-                "note": ""
+                "end": "2027-01-07"
               },
               "finalAnnounce": "2027-02-05",
-              "note": "※수능반영비율:국어(35)+수학(35)+영어(20)+탐구(10)",
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ]
-            },
-            "etc": []
+              "process": "정시 나군 수능 전형 양식 적용"
+            }
           }
         }
       ],
       "sources": [
         [
-          "세종대 입학처",
-          "https://ipsi.sejong.ac.kr"
-        ],
-        [
-          "2027 수시 기사(대학저널)",
-          "https://dhnews.co.kr/news/view/1065573352564646"
+          "세종대학교 입학처 공식 수시 및 정시 신입생 모집요강",
+          "https://sejong.ac.krsub_page/w_ipsi/guide_susi.asp"
         ]
       ]
-    },
+    }
+  ]
+}
+,
     {
       "name": "청강문화산업대학교",
       "type": "전문대학",
