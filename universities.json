@@ -113,55 +113,7 @@
               "note": "일반 대학교 정시모집 군별(가/나/다군) 제한을 받지 않는 군외 모집 대학입니다."
             },
             "etc": [
-              {
-                "label": "일반전형",
-                "reference": false,
-                "quota": "15명",
-                "apply": {
-                  "start": "2026-9-14",
-                  "end": "2026-09-17",
-                  "note": "진학사어플라이 인터넷 접수"
-                },
-                "stages": [
-                    {
-                      "label": "1차",
-                      "method": "스토리 구성과 연출력 중심 평가",
-                      "examDate": "2026-11-28",
-                      "examEnd": "2026-11-29",
-                      "announce": "2026-12-10",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "20",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "80",
-                        "interview": ""
-                      },
-                      "note": "※학생부:1학년(20)+2학년(40)+3학년(40)"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "내러티브, 드로잉, 연출력 중심 평가",
-                      "examDate": "2026-12-15",
-                      "examEnd": "2026-12-22",
-                      "announce": "2026-12-24",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "50",
-                        "interview": "50"
-                      },
-                      "note": "※면접:실기시험 결과물과 에세지를 바탕으로 질문 답하기"
-                    }
-                  ],
-                "process": "1차 시험 합격자에 한해 2차 심층 면접 및 포트폴리오 프로필 평가 진행"
-              }
+
             ]
           }
         }
