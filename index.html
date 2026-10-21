@@ -254,7 +254,10 @@
   .mref { font-size: 11px; color: var(--sub); border: 1px dashed var(--line); border-radius: 4px; padding: 0 5px; margin-left: 6px; }
   .mnone { font-size: 13px; color: var(--sub); line-height: 1.7; padding: 14px; background: #fff; border: 1px dashed var(--line); border-radius: 8px; }
 
-  .ftoggle { display: none; }
+  .ftoggle { display: inline-flex; align-items: center; margin-top: 10px; font: inherit; font-size: 13px; padding: 7px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
+  .ftoggle:hover { border-color: var(--ink); }
+  #filterBox { display: none; }
+  #filterBox.open { display: block; }
   @media (max-width: 820px) {
     html, body { height: auto; }
     .app { display: flex; flex-direction: column; height: auto; }
@@ -262,12 +265,6 @@
     aside { display: block; flex: none; border-right: 0; overflow: visible; }
     ul { overflow: visible; }
     li { scroll-margin-top: 8px; }
-    .ftoggle {
-      display: inline-block; margin-top: 10px; font: inherit; font-size: 13px; padding: 7px 12px;
-      border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer;
-    }
-    #filterBox { display: none; }
-    #filterBox.open { display: block; }
     body.cal-mode main { height: auto; min-height: 0; }
     body.cal-mode .cal { position: static; overflow: visible; padding: 58px 12px 20px; }
     body.cal-mode li { scroll-margin-top: 8px; }
@@ -471,7 +468,9 @@ const filter = { q: "", region: new Set(), type: new Set(), category: new Set(),
 function updateFilterCount() {
   const n = filter.region.size + filter.type.size + filter.category.size + filter.season.size + filter.track.size;
   const open = document.getElementById("filterBox").classList.contains("open");
-  document.getElementById("ftoggle").textContent = (open ? "필터 닫기 ▴" : "필터 열기 ▾") + (n ? ` (${n})` : "");
+  const t = document.getElementById("ftoggle");
+  t.textContent = (open ? "필터 닫기 ▴" : "필터 열기 ▾") + (n ? ` (${n})` : "");
+  t.setAttribute("aria-expanded", open);
 }
 function buildChips(containerId, values, key) {
   const box = document.getElementById(containerId);
@@ -1109,6 +1108,7 @@ function loadNaver() {
   document.head.appendChild(s);
 }
 
+if (window.matchMedia("(min-width: 821px)").matches) document.getElementById("filterBox").classList.add("open");   // PC는 처음에 열린 채로, 모바일은 닫힌 채로
 document.getElementById("ftoggle").onclick = function () {
   const box = document.getElementById("filterBox");
   const open = box.classList.toggle("open");
