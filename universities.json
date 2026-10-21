@@ -20,7 +20,7 @@
   ],
   "checkedAt": "2026-10-20",
   "schools": [
-{
+    {
       "name": "한국예술종합학교",
       "type": "4년제(각종학교)",
       "region": "서울",
@@ -181,846 +181,168 @@
         ]
       ]
     }
-,
+    ,
     {
       "name": "청강문화산업대학교",
-      "type": "전문대학",
+      "type": "전문대학(3년제)",
       "region": "경기",
-      "address": "경기 이천시 마장면 청강가창로 389-94",
-      "url": "https://www.ck.ac.kr",
+      "address": "경기도 이천시 마장면 청강가창로 389-94",
+      "url": "https://ck.ac.kr",
       "short": "청강대",
       "departments": [
         {
-          "name": "만화콘텐츠스쿨-[웹툰만화콘텐츠]",
-          "short": "",
-          "quota": "",
+          "name": "애니메이션스쿨 애니메이션과",
+          "short": "애니메이션",
+          "quota": "모집요강 참조",
           "admission": {
-            "admissionUrl": "https://ipsi.ck.ac.kr",
-            "track": [
-              "실기",
-              "비실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://ck.ac.kr",
+            "track": ["실기", "면접", "비실기"],
+            "process": "수시 1·2차(실기전형/면접전형/학생부교과전형 분할 선발), 정시(실기형 및 수능형)",
+            "practical": "실기전형: 애니메이션 융합 실기(A형/B형 선택, 스토리보드 또는 상황표현 등) / 면접전형: 포트폴리오(그림 파일 혹은 영상 동영상파일) 제출 및 심층 면접 평가",
+            "note": "국내 만화·애니메이션 산업군에서 가장 독보적인 인프라와 높은 인지도를 자랑하는 핵심 스쿨입니다.",
             "susi": {
               "reference": false,
-              "quota": "160명",
               "apply": {
                 "start": "2026-09-07",
-                "end": "2026-09-30",
-                "note": ""
+                "end": "2026-11-25",
+                "note": "수시 1차 접수: 09-07 ~ 09-30 / 수시 2차 접수: 11-11 ~ 11-25"
               },
-              "finalAnnounce": "2026-11-06",
-              "note": "",
+              "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "",
-                  "name": "특별",
-                  "short": "",
-                  "quota": "3명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※최우수 1개 학기 자동반영"
-                    }
-                  ],
-                  "process": "",
+                  "title": "실기위주 전형",
+                  "name": "수시 실기전형",
                   "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                    "grade": "40%",
+                    "gradeType": "교과",
+                    "practical": "60%"
+                  }
                 },
                 {
-                  "title": "",
-                  "name": "실기",
-                  "short": "",
-                  "quota": "117명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "A형 : 흑백 2페이지 만화\n B형 : 컬러 스크롤 웹툰",
-                      "examDate": "2026-10-24",
-                      "examEnd": "2026-10-25",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "60",
-                        "interview": ""
-                      },
-                      "note": "※2가지 유형중 택1"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "title": "",
-                  "name": "면접",
-                  "short": "",
-                  "quota": "40명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
+                  "title": "서류/면접위주 전형",
+                  "name": "수시 면접전형 (포트폴리오)",
                   "stages": [
                     {
                       "label": "1차",
-                      "method": "학생부(비교과)+이미지포트폴리오",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2026-10-15",
+                      "method": "제출한 포트폴리오 서류 심사 100% 반영 (자체 컷오프 확인)",
                       "kind": "서류",
                       "ratio": {
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "비교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
+                        "document": "100%"
+                      }
                     },
                     {
                       "label": "2차",
-                      "method": "면접",
-                      "examDate": "2026-10-20",
-                      "examEnd": "2026-10-21",
-                      "announce": "",
+                      "method": "심층 면접 평가 100% 반영",
                       "kind": "면접",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "100"
+                        "interview": "100%"
                       },
-                      "note": "※모집인원 2배수 면접 진행"
+                      "note": "학생부 교과 성적을 전혀 반영하지 않고 오직 면접과 작품 완성도로만 선발하는 비교과 전형입니다."
                     }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                  ]
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "quota": "30명",
-              "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-20",
-                "note": ""
-              },
-              "finalAnnounce": "2027-02-09",
-              "note": "",
-              "types": [
-                {
-                  "title": "면접전형",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "학생부(비교과)+이미지포트폴리오",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2027-01-25",
-                      "kind": "서류",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "비교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "면접",
-                      "examDate": "2027-01-27",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "면접",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "100"
-                      },
-                      "note": "※모집인원 2배수 면접 진행"
-                    }
-                  ],
-                  "process": "학생부(비교과)+포트폴리오",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
-              "date": ""
-            },
-            "etc": []
+              "gun": "비적용",
+              "finalAnnounce": "2027-02-05",
+              "process": "정시 일반전형 실기 60% + 수능 성적 40% 일괄 합산"
+            }
           }
         },
         {
-          "name": "만화콘텐츠스쿨-[만화캐릭터 일러스트레이션]",
-          "short": "",
-          "quota": "",
+          "name": "만화콘텐츠스쿨 웹툰만화콘텐츠전공",
+          "short": "웹툰만화",
+          "quota": "모집요강 참조",
           "admission": {
-            "admissionUrl": "https://ipsi.ck.ac.kr",
-            "track": [
-              "실기",
-              "비실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://ck.ac.kr",
+            "track": ["실기", "면접"],
+            "process": "수시(실기형/학생부 40%+실기 60% 또는 면접형/포트폴리오 서류 및 면접), 정시(실기 위주)",
+            "practical": "실기전형: 2페이지 칸만화 제작 (4절지, 4시간 평가) / 면접전형: 웹툰/만화 포트폴리오 제출",
+            "note": "웹툰 작가 데뷔 및 대형 플랫폼, 웹툰 에이전시 직행 취업 연계 트랙이 매우 강력합니다.",
             "susi": {
               "reference": false,
-              "quota": "15명",
               "apply": {
                 "start": "2026-09-07",
-                "end": "2026-09-30",
-                "note": ""
+                "end": "2026-11-25"
               },
-              "finalAnnounce": "2026-11-06",
-              "note": "",
+              "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "",
-                  "name": "특별",
-                  "short": "",
-                  "quota": "1명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※최우수 1개 학기 자동반영"
-                    }
-                  ],
-                  "process": "",
+                  "title": "실기위주 전형",
+                  "name": "일반전형 [실기]",
                   "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                    "grade": "40%",
+                    "practical": "60%"
+                  }
                 },
                 {
-                  "title": "",
-                  "name": "실기",
-                  "short": "",
-                  "quota": "10명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "A형 : 문해력 기반 1페이지 만화\n B형 : 문해력 기반 2페이지 일러스트레이션",
-                      "examDate": "2026-10-24",
-                      "examEnd": "2026-10-25",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "60",
-                        "interview": ""
-                      },
-                      "note": "2가지 유형중 택1"
-                    }
-                  ],
-                  "process": "",
+                  "title": "서류/면접위주 전형",
+                  "name": "특별전형 [면접]",
                   "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "document": "40%",
+                    "interview": "60%"
                   },
-                  "note": ""
-                },
-                {
-                  "title": "",
-                  "name": "면접",
-                  "short": "",
-                  "quota": "4명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "학생부(비교과)+이미지포트폴리오",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2026-10-15",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "100"
-                      },
-                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "면접",
-                      "examDate": "2026-10-20",
-                      "examEnd": "2026-10-21",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "100"
-                      },
-                      "note": "※모집인원 2배수 면접 진행"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                  "note": "포트폴리오 가산점 및 구술 면접 비중 우세"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "quota": "10명",
-              "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-20",
-                "note": ""
-              },
-              "finalAnnounce": "2027-02-09",
-              "note": "",
-              "types": [
-                {
-                  "title": "실기전형",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "A형 : 문해력 기반 1페이지 만화\n B형 : 문해력 기반 2페이지 일러스트레이션",
-                      "examDate": "2027-01-28",
-                      "examEnd": "2027-01-29",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "100",
-                        "interview": ""
-                      },
-                      "note": "※2가지 유형중 택1"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
-              "date": ""
-            },
-            "etc": []
+              "gun": "비적용",
+              "finalAnnounce": "2027-02-05"
+            }
           }
         },
         {
-          "name": "애니메이션스쿨-[에니메이션]",
-          "short": "",
-          "quota": "",
+          "name": "만화콘텐츠스쿨 만화캐릭터일러스트레이션전공",
+          "short": "캐릭터일러",
+          "quota": "모집요강 참조",
           "admission": {
-            "admissionUrl": "https://ipsi.ck.ac.kr",
-            "track": [
-              "실기",
-              "비실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "admissionUrl": "https://ck.ac.kr",
+            "track": ["실기", "면접"],
+            "process": "수시 1·2차 분할 모집 (실기 위주 전형 및 포트폴리오 면접 특별 전형 병행)",
+            "practical": "실기전형: 주제에 따른 만화 캐릭터 및 가상 일러스트레이션 드로잉 연출 평가",
+            "note": "서브컬처 캐릭터 디자인, 게임 원화, 디지털 일러스트레이터 전문 양성 과정입니다.",
             "susi": {
               "reference": false,
-              "quota": "173명",
               "apply": {
                 "start": "2026-09-07",
-                "end": "2026-09-30",
-                "note": ""
+                "end": "2026-11-25"
               },
-              "finalAnnounce": "2026-11-06",
-              "note": "",
+              "finalAnnounce": "2026-12-18",
               "types": [
                 {
-                  "title": "",
-                  "name": "학생부교과",
-                  "short": "",
-                  "quota": "16명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "학생부교과",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※최우수 1개 학기 자동반영"
-                    }
-                  ],
-                  "process": "",
+                  "title": "실기위주 전형",
+                  "name": "일반전형 [실기형]",
                   "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                    "grade": "40%",
+                    "practical": "60%"
+                  }
                 },
                 {
-                  "title": "",
-                  "name": "특별",
-                  "short": "",
-                  "quota": "4명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "학생부(100)+가산점(국가보훈,자격증,관련학과출신,대회입상)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※최우수 1개 학기 자동반영"
-                    }
-                  ],
-                  "process": "",
+                  "title": "서류/면접위주 전형",
+                  "name": "특별전형 [면접형]",
                   "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "title": "",
-                  "name": "실기",
-                  "short": "",
-                  "quota": "90명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
-                      "examDate": "2026-10-24",
-                      "examEnd": "2026-10-25",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "document": "",
-                        "grade": "40",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "60",
-                        "interview": ""
-                      },
-                      "note": "※3가지 유형중 택1"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                },
-                {
-                  "title": "",
-                  "name": "면접",
-                  "short": "",
-                  "quota": "63명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "학생부(비교과)+이미지포트폴리오",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2026-10-15",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "100",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※학생부 진로활동영역, 행동특성 및 종합의견 반영"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "면접",
-                      "examDate": "2026-10-20",
-                      "examEnd": "2026-10-21",
-                      "announce": "",
-                      "kind": "면접",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "100"
-                      },
-                      "note": "※모집인원 2배수 면접 진행"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
+                    "document": "50%",
+                    "interview": "50%"
+                  }
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "quota": "65명",
-              "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-20",
-                "note": ""
-              },
-              "finalAnnounce": "2027-02-09",
-              "note": "",
-              "types": [
-                {
-                  "title": "실기전형",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "A형 : 스트리에 따른 이미지 보드\n B형 : 애니메이션 상황표현\nC형 : 제스처드로잉",
-                      "examDate": "2027-01-28",
-                      "examEnd": "2027-01-29",
-                      "announce": "",
-                      "kind": "실기",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "30",
-                        "gradeType": "교과",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "70",
-                        "interview": ""
-                      },
-                      "note": "※3가지 유형중 택1"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
-              "date": ""
-            },
-            "etc": []
+              "gun": "비적용",
+              "finalAnnounce": "2027-02-05"
+            }
           }
         }
       ],
       "sources": [
         [
-          "청강대 입학처",
-          "https://ipsi.ck.ac.kr"
-        ],
-        [
-          "전공심화 전형안내(PDF)",
-          "https://www.ck.ac.kr/wp-content/uploads/2025/12/20251210_013535.pdf"
+          "청강문화산업대학교 입학처 공식 신입생 모집요강 안내서",
+          "https://ck.ac.kripsi/selectBbsNttList.do?bbsNo=11&key=139"
         ]
       ]
     },
