@@ -36,9 +36,9 @@
         "category": ["애니메이션"],
         "admission": {
           "admissionUrl": "https://www.karts.ac.kr/main/appl.do",
-          "track": ["실기", "서류"],
+          "track": ["실기"],
           "process": "일반전형 중심 선발 (1차 실기 및 성적 평가, 2차 심층 실습 및 구술 면접 평가)",
-          "practical": "1차: 실기시험(드로잉 및 연출)\n 2차: 심층 실기고사(스토리보드/워크숍) 및 구술면접",
+          "practical": "1차: 실기시험(드로잉 및 연출)\n 2차: 심층 실기고사(스토리보드/에세이) 및 구술면접",
           "note": "한예종은 일반 대학교의 수시 6회 지원 제한을 받지 않는 특수 대학교입니다.",
           "susi": {
             "reference": false,
@@ -92,8 +92,8 @@
                       "grade": "",
                       "attendance": "",
                       "essay": "",
-                      "practical": "50%",
-                      "interview": "50%"
+                      "practical": "50",
+                      "interview": "50"
                     },
                     "note": "실기 결과물, 에세이 등 제출물 바탕으로 주어진 질문에 답하기"
                   }
@@ -115,7 +115,7 @@
     "sources": [
       [
         "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
-        "https://karts.ac.kradmission/main.do"
+        "https://www.karts.ac.kr/main/appl.do"
       ]
     ]
   },
