@@ -35,7 +35,7 @@
         "quota": "15명",
         "category": ["애니메이션"],
         "admission": {
-          "admissionUrl": "https://karts.ac.krmain/index.do?menuId=010100000000",
+          "admissionUrl": "https://www.karts.ac.kr/main/appl.do",
           "track": ["실기", "서류"],
           "process": "일반전형 중심 선발 (1차 실기 및 성적 평가, 2차 심층 실습 및 구술 면접 평가)",
           "practical": "1차: 실기시험(드로잉 및 연출), 2차: 심층 실기고사(스토리보드/워크숍) 및 구술면접",
@@ -44,12 +44,12 @@
             "reference": false,
             "quota": "15명",
             "apply": {
-              "start": "2026-10-12",
-              "end": "2026-10-15",
-              "note": "진학사어플라이 창구를 통한 인터넷 원서접수 진행"
+              "start": "2026-09-14",
+              "end": "2026-09-17",
+              "note": ""
             },
-            "finalAnnounce": "2026-12-11",
-            "note": "최종 합격자는 12월 11일 영상원 전체 학과 일괄 발표됩니다.",
+            "finalAnnounce": "2026-12-24",
+            "note": "",
             "types": [
               {
                 "title": "실기위주 전형",
@@ -64,49 +64,49 @@
                 "stages": [
                   {
                     "label": "1차",
-                    "method": "실기시험(드로잉 및 연출) 80% 및 고교 교과 성적 20% 합산 평가",
-                    "examDate": "2026-11-21",
-                    "examEnd": "2026-11-22",
-                    "announce": "2026-11-27",
+                    "method": "스토리 구성과 연출력 중심 평가",
+                    "examDate": "2026-11-28",
+                    "examEnd": "2026-11-29",
+                    "announce": "2026-12-10",
                     "kind": "실기",
                     "ratio": {
                       "document": "",
-                      "grade": "20%",
+                      "grade": "20",
                       "gradeType": "교과",
                       "attendance": "",
                       "essay": "",
-                      "practical": "80%",
+                      "practical": "80",
                       "interview": ""
                     },
-                    "note": "1차 실기고사 배점이 매우 높으므로 드로잉 기본기가 필수적입니다."
+                    "note": "교과:1학년(20)+2학년(40)+3학년(40)"
                   },
                   {
                     "label": "2차",
-                    "method": "심층 실기고사(스토리보드) 50%, 프로필 서류 심사 20% 및 구술면접 30%",
-                    "examDate": "2026-12-02",
-                    "examEnd": "2026-12-05",
-                    "announce": "2026-12-11",
-                    "kind": "면접",
+                    "method": "내러티브, 드로잉, 연출력 중심 평가",
+                    "examDate": "2026-12-15",
+                    "examEnd": "2026-12-22",
+                    "announce": "2026-12-24",
+                    "kind": "실기",
                     "ratio": {
-                      "document": "20%",
+                      "document": "",
                       "grade": "",
                       "attendance": "",
                       "essay": "",
                       "practical": "50%",
-                      "interview": "30%"
+                      "interview": "50%"
                     },
-                    "note": "1차 합격자에 한해 서류를 제출하며 워크숍 및 스토리보드 연출 구술 면접이 진행됩니다."
+                    "note": "실기 결과물, 에세이 등 제출물 바탕으로 주어진 질문에 답하기"
                   }
                 ],
                 "process": "1차 실기·성적 컷오프 통과자 대상 2차 서류/심층실기/면접 최종 평가",
-                "note": "특별전형 탈락자도 일반전형으로 재지원이 가능합니다."
+                "note": ""
               }
             ]
           },
           "jeongsi": {
             "reference": true,
-            "quota": "0명",
-            "note": "표준 대학교 정시모집 군별(가/나/다군) 일정에는 모집을 진행하지 않습니다."
+            "quota": "",
+            "note": ""
           },
           "etc": []
         }
