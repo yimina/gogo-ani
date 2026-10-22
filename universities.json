@@ -21,9 +21,9 @@
   ],
   "checkedAt": "2026-10-20",
   "schools": [
-  {
+    {
     "name": "한국예술종합학교",
-    "type": "4년제(각종학교)",
+    "type": "4년제",
     "region": "서울",
     "address": "서울특별시 성북구 화랑로32길 146-24",
     "url": "https://karts.ac.kr",
@@ -70,13 +70,13 @@
                     "announce": "2026-11-27",
                     "kind": "실기",
                     "ratio": {
-                      "document": "0%",
+                      "document": "",
                       "grade": "20%",
                       "gradeType": "교과",
-                      "attendance": "0%",
-                      "essay": "0%",
+                      "attendance": "",
+                      "essay": "",
                       "practical": "80%",
-                      "interview": "0%"
+                      "interview": ""
                     },
                     "note": "1차 실기고사 배점이 매우 높으므로 드로잉 기본기가 필수적입니다."
                   },
@@ -89,9 +89,9 @@
                     "kind": "면접",
                     "ratio": {
                       "document": "20%",
-                      "grade": "0%",
-                      "attendance": "0%",
-                      "essay": "0%",
+                      "grade": "",
+                      "attendance": "",
+                      "essay": "",
                       "practical": "50%",
                       "interview": "30%"
                     },
@@ -118,7 +118,7 @@
         "https://karts.ac.kradmission/main.do"
       ]
     ]
-    },
+  },
     {
       "name": "세종대학교",
       "type": "대학교",
