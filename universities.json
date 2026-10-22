@@ -236,7 +236,7 @@
       ]
     ]
     },
-    {
+{
     "name": "청강문화산업대학교",
     "type": "전문대학(3년제)",
     "region": "경기",
@@ -251,34 +251,61 @@
         "category": ["애니메이션"],
         "admission": {
           "admissionUrl": "https://ipsi.ck.ac.kr/",
-          "track": ["실기", "면접"],
-          "process": "수시 1·2차(일반 실기전형 실기 70 + 학생부 30 / 면접전형 포트폴리오 100), 정시(일반 실기전형)",
-          "practical": "애니메이션 융합실기(스토리보드, 상황표현, 제스처드로잉과 글쓰기 중 택 1)",
-          "note": "2028학년도 전형계획에 따라 실기 비중이 70으로 대폭 상향되었으며, 애니메이션과 실기 과목의 경우 전통적인 상황표현과 스토리보드 연출 외에 이미지 제스처 드로잉 융합 유형의 세부 작화 선택권이 유지됩니다.",
+          "track": ["실기", "면접", "비실기"],
+          "process": "수시 1·2차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
+          "practical": "실기: 애니메이션 융합실기(스토리보드, 상황표현 등) / 면접: 포트폴리오 및 심층 구술 면접",
+          "note": "2028학년도 시행계획에 따라 실기전형의 실기 반영 비중이 70으로 대폭 강화되었습니다.",
           "susi": {
             "reference": true,
             "quota": "169명",
             "apply": {
               "start": "2027-09-06",
               "end": "2027-10-08",
-              "note": "2028학년도 수시 1차 접수 기간 연장안 반영"
+              "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
             },
             "finalAnnounce": "2027-12-17",
             "types": [
               {
-                "title": "실기위주 전형",
-                "name": "수시 일반 실기전형",
-                "short": "청강 애니실기",
-                "quota": "90명",
-                "competition": {
-                  "year": "2026학년도",
-                  "rate": "16.49 : 1",
-                  "note": "기존 실기 비중 구조에서의 전년도 수시 마감 기록 지표"
+                "title": "학생부위주 전형",
+                "name": "수시1차 학생부교과전형",
+                "short": "청강1차 교과",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-09-06",
+                  "end": "2027-10-08",
+                  "note": "수시 1차에만 개설되는 비실기 전형"
                 },
                 "stages": [
                   {
                     "label": "1차",
-                    "method": "가장 우수한 1개 학기 학생부 교과 성적 30 + 당일 지정 실기고사 성적 70 일괄합산",
+                    "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "",
+                      "grade": "100",
+                      "gradeType": "교과",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    }
+                  }
+                ],
+                "process": "학생부교과 성적 100 일괄 합산"
+              },
+              {
+                "title": "실기위주 전형",
+                "name": "수시1차 일반실기전형",
+                "short": "청강1차 실기",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-09-06",
+                  "end": "2027-10-08"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "우수 1개 학기 내신 성적 30 + 지정 실기고사 성적 70 일괄합산",
                     "kind": "실기",
                     "ratio": {
                       "document": "",
@@ -291,30 +318,125 @@
                     }
                   }
                 ],
-                "process": "교과 30 + 실기 70 일괄 합산 평가"
+                "process": "교과 30 + 실기 70 합산 평가"
+              },
+              {
+                "title": "면접위주 전형",
+                "name": "수시1차 포트폴리오 면접전형",
+                "short": "청강1차 면접",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-09-06",
+                  "end": "2027-10-08"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "제출한 전공 포트폴리오 서류 심사 100 반영 (면접 대상자 선출)",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "100",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    }
+                  },
+                  {
+                    "label": "2차",
+                    "method": "1차 통과자 대상 작품 심층 질의응답 및 면접 평가 100 독자 반영",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "",
+                      "grade": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": "100"
+                    },
+                    "note": "비교과 특별 유형으로 고교 내신 성적은 반영 지표에서 원천 제외됩니다."
+                  }
+                ],
+                "process": "1단계 서류 100 후 2단계 면접 100 최종 선발"
+              },
+              {
+                "title": "실기위주 전형",
+                "name": "수시2차 일반실기전형",
+                "short": "청강2차 실기",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-11-08",
+                  "end": "2027-11-22",
+                  "note": "수시 2차 별도 원서접수 일정 적용"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "학생부 교과 성적 30 + 당일 지정 실기고사 성적 70 합산 평가",
+                    "kind": "실기",
+                    "ratio": {
+                      "document": "",
+                      "grade": "30",
+                      "gradeType": "교과",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "70",
+                      "interview": ""
+                    }
+                  }
+                ],
+                "process": "교과 30 + 실기 70 가중치 일괄 적용"
+              },
+              {
+                "title": "면접위주 전형",
+                "name": "수시2차 특별 면접전형",
+                "short": "청강2차 면접",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-11-08",
+                  "end": "2027-11-22"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "포트폴리오 서류 심사 100 선발",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "100",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    }
+                  },
+                  {
+                    "label": "2차",
+                    "method": "1단계 패스자 대상 다대일 심층 전공 구술 면접 100 수행",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "",
+                      "grade": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": "100"
+                    }
+                  }
+                ],
+                "process": "서류 100 거친 후 면접 100 일괄 선발 체제"
               }
             ]
           },
           "jeongsi": {
             "reference": true,
             "quota": "69명",
-            "finalAnnounce": "2028-02-04",
-            "types": [
-              {
-                "title": "실기위주 전형",
-                "name": "정시 일반전형 실기형",
-                "gun": "비적용",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "30",
-                  "practical": "70",
-                  "interview": ""
-                },
-                "note": "정시 수능 점수 반영을 전면 폐지하고 학생부교과 30 + 실기고사 70 배점으로 최종 선발합니다."
-              }
-            ]
-          }
+            "finalAnnounce": "2028-02-04"
+          },
+          "etc": []
         }
       },
       {
@@ -325,22 +447,77 @@
         "admission": {
           "admissionUrl": "https://ipsi.ck.ac.kr/",
           "track": ["실기", "면접"],
-          "process": "수시 1·2차(일반 실기전형 실기 70 + 학생부 30), 정시(실기고사 미실시, 포트폴리오 100 특별전형)",
-          "practical": "웹툰만화 창작실기(주제에 따른 흑백 2p 만화, 만화적 주제표현, 웹툰 연출 중 택 1)",
-          "note": "2028학년도 수시 실기고사 과목이 디지털 연출 환경 및 트렌드를 반영하여 흑백 2페이지 출판 작화, 만화적 주제표현, 그리고 스크롤 형태의 웹툰 연출 유형으로 세분화되어 출제됩니다.",
+          "process": "수시 1·2차 전형 유형 분할 (실기형 교과30+실기70 / 면접형 서류 및 심층 질의)",
+          "practical": "실기전형: 웹툰만화 창작실기(주제 흑백 2p 만화, 웹툰 연출 등) / 면접전형: 웹툰 포트폴리오",
           "susi": {
             "reference": true,
             "quota": "160명",
             "apply": {
               "start": "2027-09-06",
-              "end": "2027-10-08"
+              "end": "2027-10-08",
+              "note": "수시 1차 접수 기준"
             },
             "finalAnnounce": "2027-12-17",
             "types": [
               {
                 "title": "실기위주 전형",
-                "name": "일반학생 전형 [실기]",
-                "short": "청강 웹툰실기",
+                "name": "수시1차 일반실기전형",
+                "short": "청강1차 웹툰실기",
+                "quota": "모집요강 참조",
+                "ratio": {
+                  "document": "",
+                  "grade": "30",
+                  "gradeType": "교과",
+                  "attendance": "",
+                  "essay": "",
+                  "practical": "70",
+                  "interview": ""
+                }
+              },
+              {
+                "title": "면접위주 전형",
+                "name": "수시1차 포트폴리오 면접전형",
+                "short": "청강1차 웹툰면접",
+                "quota": "모집요강 참조",
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "제출 서류(만화/웹툰 포트폴리오) 정성평가 100",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "100",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    }
+                  },
+                  {
+                    "label": "2차",
+                    "method": "심층 대면 면접 100 반영",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "",
+                      "grade": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": "100"
+                    }
+                  }
+                ]
+              },
+              {
+                "title": "실기위주 전형",
+                "name": "수시2차 일반실기전형",
+                "short": "청강2차 웹툰실기",
+                "quota": "모집요강 참조",
+                "apply": {
+                  "start": "2027-11-08",
+                  "end": "2027-11-22"
+                },
                 "ratio": {
                   "document": "",
                   "grade": "30",
@@ -356,95 +533,76 @@
           "jeongsi": {
             "reference": true,
             "quota": "30명",
-            "finalAnnounce": "2028-02-04",
-            "types": [
-              {
-                "title": "면접위주 전형",
-                "name": "정시 포트폴리오 특별전형",
-                "gun": "비적용",
-                "ratio": {
-                  "suneung": "",
-                  "document": "100",
-                  "grade": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "정시모집에서 실기고사를 전면 폐지하는 대신, 순수 웹툰/만화 창작 포트폴리오 서류 평가 100 지표로 일괄 모집합니다."
-              }
-            ]
+            "finalAnnounce": "2028-02-04"
           }
         }
-      },
-      {
-        "name": "만화콘텐츠스쿨 만화캐릭터일러스트레이션전공",
-        "short": "만화캐릭터일러",
-        "quota": "10명",
-        "category": ["만화", "게임"],
-        "admission": {
-          "admissionUrl": "https://ipsi.ck.ac.kr/",
-          "track": ["실기"],
-          "process": "수시 1·2차(일반 실기전형), 정시(실기고사 100 일괄 선발 체제)",
-          "practical": "문해력 기반 실기고사(문해력 기반 1p 만화 연출, 문해력 기반 2p 캐릭터 일러스트레이션 중 택 1)",
-          "note": "2028학년도 시행계획안에서 명시된 독자적 실기 과목입니다. 텍스트 지문을 해독하는 문해력을 기반으로 한 1페이지 만화 연출 구성 또는 2페이지 분량의 캐릭터 일러스트레이션 작화 능력을 집중적으로 평가합니다.",
-          "susi": {
-            "reference": true,
-            "apply": {
-              "start": "2027-09-06",
-              "end": "2027-10-08"
-            },
-            "finalAnnounce": "2027-12-17",
-            "types": [
-              {
-                "title": "실기위주 전형",
-                "name": "일반전형 [실기형]",
-                "short": "청강 캐릭터실기",
-                "quota": "10명",
-                "competition": {
-                  "year": "2026학년도",
-                  "rate": "12.80 : 1",
-                  "note": "전공 세분화 개편 초기 수시 마감 최종 경쟁률 수치"
-                },
-                "ratio": {
-                  "document": "",
-                  "grade": "30",
-                  "gradeType": "교과",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "70",
-                  "interview": ""
-                }
-              }
-            ]
-          },
-          "jeongsi": {
-            "reference": true,
-            "finalAnnounce": "2028-02-04",
-            "types": [
-              {
-                "title": "실기위주 전형",
-                "name": "정시 일반전형 실기형",
-                "gun": "비적용",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "practical": "100",
-                  "interview": ""
-                },
-                "note": "정시모집 수능 완전 폐지에 발맞추어, 고교 내신이나 수능 성적을 전혀 반영하지 않고 당일 문해력 기반 캐릭터 일러스트레이션 실기고사 성적 100만으로 합격자를 가립니다."
-              }
-            ]
-          }
-        }
-      }
-    ],
-    "sources": [
-      [
-        "청강문화산업대학교 입학처 2028학년도 전문학사과정 입학전형 시행계획(안) 공고문",
-        "https://ipsi.ck.ac.kr/"
-      ]
-    ]
-  },
+},
+{
+"name": "만화콘텐츠스쿨 만화캐릭터일러스트레이션전공",
+"short": "만화캐릭터일러",
+"quota": "정원 내 분할",
+"category": ["만화", "게임"],
+"admission": {
+"admissionUrl": "https://ipsi.ck.ac.kr/",
+"track": ["실기"],
+"process": "수시 1차 및 2차 실기형 중심 모집 수행",
+"practical": "문해력 기반 1p 만화 연출 구성 또는 2p 캐릭터 일러스트레이션 작화 중 선택",
+"susi": {
+"reference": true,
+"apply": {
+"start": "2027-09-06",
+"end": "2027-10-08"
+},
+"finalAnnounce": "2027-12-17",
+"types": [
+{
+"title": "실기위주 전형",
+"name": "수시1차 일반실기전형",
+"short": "청강1차 캐릭터실기",
+"ratio": {
+"document": "",
+"grade": "30",
+"gradeType": "교과",
+"attendance": "",
+"essay": "",
+"practical": "70",
+"interview": ""
+}
+},
+{
+"title": "실기위주 전형",
+"name": "수시2차 일반실기전형",
+"short": "청강2차 캐릭터실기",
+"apply": {
+"start": "2027-11-08",
+"end": "2027-11-22"
+},
+"ratio": {
+"document": "",
+"grade": "30",
+"gradeType": "교과",
+"attendance": "",
+"essay": "",
+"practical": "70",
+"interview": ""
+}
+}
+]
+},
+"jeongsi": {
+"reference": true,
+"finalAnnounce": "2028-02-04"
+}
+}
+}
+],
+"sources": [
+[
+"청강문화산업대학교 입학처 2028 대학입학전형 기본시행계획안",
+"https://ipsi.ck.ac.kr/"
+]
+]
+},
     {
       "name": "한성대학교",
       "type": "대학교",
