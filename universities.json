@@ -118,187 +118,120 @@
         "https://www.karts.ac.kr/main/appl.do"
       ]
     ]
-  },
-    {
-      "name": "세종대학교",
-      "type": "대학교",
-      "region": "서울",
-      "address": "서울특별시 광진구 능동로 209",
-      "url": "https://www.sejong.ac.kr",
-      "short": "세종대",
-      "departments": [
-        {
-          "name": "창의소프트학부-[만화애니메이션텍 전공]",
-          "short": "",
-          "quota": "",
-          "category": [
-            "만화",
-            "애니메이션"
-          ],
-          "admission": {
-            "admissionUrl": "https://ipsi.sejong.ac.kr/ipsi/early/recruitment-guidelines.do",
-            "track": [
-              "비실기"
-            ],
-            "process": "",
-            "practical": "",
-            "note": "",
-            "susi": {
-              "reference": false,
-              "quota": "48명",
-              "apply": {
-                "start": "2026-09-08",
-                "end": "2026-09-11",
-                "note": ""
-              },
-              "finalAnnounce": "2026-12-18",
-              "note": "",
-              "types": [
-                {
-                  "title": "학생부종합",
-                  "name": "세종인재 면접형",
-                  "short": "",
-                  "quota": "48명",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "1차",
-                      "method": "학업역량(30)+창의융합역량(50)+공동체역량(20)",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "2026-11-13",
-                      "kind": "서류",
-                      "ratio": {
-                        "document": "",
-                        "grade": "100",
-                        "gradeType": "종합",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※3배수 선발"
-                    },
-                    {
-                      "label": "2차",
-                      "method": "다수 면접위원 vs 지원자 1인(9분내외)",
-                      "examDate": "2026-11-21",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "면접",
-                      "ratio": {
-                        "document": "",
-                        "grade": "60",
-                        "gradeType": "종합",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": "40"
-                      },
-                      "note": "※제시문 기반 면접 진행"
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ]
-            },
-            "jeongsi": {
-              "reference": false,
-              "quota": "2명",
-              "apply": {
-                "start": "2027-01-04",
-                "end": "2027-01-07",
-                "note": ""
-              },
-              "finalAnnounce": "2027-02-05",
-              "note": "※수능반영비율:국어(35)+수학(35)+영어(20)+탐구(10)",
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "100",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ]
-            },
-            "etc": []
-          }
-        }
-      ],
-      "sources": [
-        [
-          "세종대 입학처",
-          "https://ipsi.sejong.ac.kr"
-        ],
-        [
-          "2027 수시 기사(대학저널)",
-          "https://dhnews.co.kr/news/view/1065573352564646"
-        ]
-      ]
     },
+    {
+    "name": "세종대학교",
+    "type": "4년제",
+    "region": "서울",
+    "address": "서울특별시 광진구 능동로 209",
+    "url": "https://www.sejong.ac.kr/",
+    "short": "세종대",
+    "departments": [
+      {
+        "name": "창의소프트학부 만화애니메이션텍전공",
+        "short": "만화애니텍",
+        "quota": "48명",
+        "category": ["만화", "애니메이션"],
+        "admission": {
+          "admissionUrl": "https://ipsi.sejong.ac.kr/",
+          "track": ["비실기"],
+          "process": "수시 학생부종합(세종인재 전형 면접형) 48명 다수 선발, 정시(나군 수능 위주) 소수 이월 선발",
+          "practical": "실기고사 없음 (제시문 기반 융합형 전공소양 발표평가 및 심층 면접 수행)",
+          "note": "기존 실기우수자 전형이 전면 개편되어 현재는 수시 전 과정이 100% 비실기형 학생부종합 평가 체제로 운영됩니다.",
+          "susi": {
+            "reference": false,
+            "quota": "48명",
+            "apply": {
+              "start": "2026-09-11",
+              "end": "2026-09-15",
+              "note": "대교협 공통 수시모집 인터넷 원서접수 기간"
+            },
+            "finalAnnounce": "2026-12-11",
+            "types": [
+              {
+                "title": "학생부종합전형",
+                "name": "세종인재 전형(면접형)",
+                "short": "세종대 면접",
+                "quota": "48명",
+                "competition": {
+                  "year": "2026학년도",
+                  "rate": "9.98 : 1",
+                  "note": "정원 내 세종인재 면접형 전형 기준 최종 마감 경쟁률"
+                },
+                "stages": [
+                  {
+                    "label": "1차",
+                    "method": "학교생활기록부 교과 및 비교과 기반 100 서류 종합평가 (3배수 선발)",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "100",
+                      "grade": "",
+                      "gradeType": "종합",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    },
+                    "note": "학업역량, 진로역량, 창의융합 능력을 정성 평가하여 면접 대상자를 압축합니다."
+                  },
+                  {
+                    "label": "2차",
+                    "method": "1차 서류 성적 60 성적과 제시문 기반 구술 면접고사 40 합산 평가",
+                    "examDate": "2026-11-14",
+                    "announce": "2026-12-11",
+                    "kind": "면접",
+                    "ratio": {
+                      "document": "60",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": "40"
+                    },
+                    "note": "당일 제시되는 주제 문항에 대해 40분간 발표 자료를 작성한 뒤 9분 내외 면접을 치릅니다."
+                  }
+                ],
+                "process": "1단계 서류 100으로 3배수 선발 후, 2단계 1단계 60 + 면접 40 가중치 적용",
+                "note": "수능최저학력기준은 적용하지 않습니다."
+              }
+            ]
+          },
+          "jeongsi": {
+            "reference": false,
+            "quota": "모집요강 참조",
+            "apply": {
+              "start": "2027-01-04",
+              "end": "2027-01-07"
+            },
+            "finalAnnounce": "2027-02-05",
+            "types": [
+              {
+                "title": "수능전형",
+                "name": "일반학생전형",
+                "gun": "나군",
+                "quota": "이월인원 반영",
+                "ratio": {
+                  "suneung": "100",
+                  "document": "",
+                  "grade": "",
+                  "practical": "",
+                  "interview": ""
+                }
+              }
+            ]
+          },
+          "etc": []
+        }
+      }
+    ],
+    "sources": [
+      [
+        "세종대학교 입학처 수시모집 및 정시 신입생 모집요강",
+        "https://ipsi.sejong.ac.kr/"
+      ]
+    ]
+  },
     {
       "name": "청강문화산업대학교",
       "type": "전문대학",
