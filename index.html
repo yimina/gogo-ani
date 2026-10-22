@@ -37,7 +37,7 @@
     color: var(--ink);
     background: var(--bg);
   }
-  .app { display: grid; grid-template-columns: 400px 1fr; height: 100%; }
+  .app { display: grid; grid-template-columns: min(var(--side-w, clamp(440px, 38vw, 620px)), calc(100vw - 360px)) minmax(0, 1fr); height: 100%; }
 
   /* 왼쪽 패널 */
   aside { background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
@@ -254,12 +254,17 @@
   .mref { font-size: 11px; color: var(--sub); border: 1px dashed var(--line); border-radius: 4px; padding: 0 5px; margin-left: 6px; }
   .mnone { font-size: 13px; color: var(--sub); line-height: 1.7; padding: 14px; background: #fff; border: 1px dashed var(--line); border-radius: 8px; }
 
+  .splitter { position: absolute; top: 0; bottom: 0; left: -4px; width: 8px; cursor: col-resize; z-index: 8; touch-action: none; }
+  .splitter::after { content: ""; position: absolute; left: 3px; top: 0; bottom: 0; width: 2px; background: transparent; transition: background .15s; }
+  .splitter:hover::after, .splitter.drag::after, .splitter:focus-visible::after { background: var(--blue); }
+  .splitter:focus-visible { outline: none; }
   .ftoggle { display: inline-flex; align-items: center; margin-top: 10px; font: inherit; font-size: 13px; padding: 7px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
   .ftoggle:hover { border-color: var(--ink); }
   #filterBox { display: none; }
   #filterBox.open { display: block; }
   @media (max-width: 820px) {
     html, body { height: auto; }
+    .splitter { display: none; }
     .app { display: flex; flex-direction: column; height: auto; }
     main { flex: none; position: relative; height: 70vh; min-height: 420px; border-top: 1px solid var(--line); }
     aside { display: block; flex: none; border-right: 0; overflow: visible; }
@@ -337,6 +342,7 @@
     <div class="note">※ 학과명·입시 정보는 변경될 수 있으니 학교 공식 사이트에서 꼭 확인하세요.</div>
   </aside>
   <main>
+    <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" aria-label="목록 너비 조절 (끌어서 조절, 더블클릭하면 기본 너비)" tabindex="0"></div>
     <div class="viewtabs" role="group" aria-label="보기 전환">
       <button type="button" class="vt" id="tabMap" aria-pressed="false">지도</button>
       <button type="button" class="vt on" id="tabCal" aria-pressed="true">달력</button>
@@ -1108,13 +1114,37 @@ function loadNaver() {
   document.head.appendChild(s);
 }
 
-if (window.matchMedia("(min-width: 821px)").matches) document.getElementById("filterBox").classList.add("open");   // PC는 처음에 열린 채로, 모바일은 닫힌 채로
+const isPC = () => window.matchMedia("(min-width: 821px)").matches;
+try { if (isPC() && localStorage.getItem("filterOpen") === "1") document.getElementById("filterBox").classList.add("open"); } catch (e) {}   // PC: 처음엔 접힌 상태, 그 뒤로는 마지막 상태를 기억 (모바일은 항상 접힌 채로 시작)
 document.getElementById("ftoggle").onclick = function () {
   const box = document.getElementById("filterBox");
   const open = box.classList.toggle("open");
   this.setAttribute("aria-expanded", open);
   updateFilterCount();
+  if (isPC()) { try { localStorage.setItem("filterOpen", open ? "1" : "0"); } catch (e) {} }
 };
+
+/* ---------- 목록 영역 너비 조절 (PC) ---------- */
+(function () {
+  const root = document.documentElement, sp = document.getElementById("splitter"), aside = document.querySelector("aside");
+  const MIN = 360, MAX = 760;
+  const clampW = w => Math.max(MIN, Math.min(MAX, w, window.innerWidth - 360));
+  const apply = w => root.style.setProperty("--side-w", clampW(w) + "px");
+  const save = () => { try { localStorage.setItem("sideW", String(Math.round(aside.getBoundingClientRect().width))); } catch (e) {} };
+  const refreshMap = () => { if (mapReady && view === "map") naver.maps.Event.trigger(map, "resize"); };
+  try { const saved = +localStorage.getItem("sideW"); if (saved && isPC()) apply(saved); } catch (e) {}
+  sp.addEventListener("pointerdown", e => { sp.setPointerCapture(e.pointerId); sp.classList.add("drag"); document.body.style.userSelect = "none"; });
+  sp.addEventListener("pointermove", e => { if (sp.classList.contains("drag")) apply(e.clientX); });
+  const end = () => { if (!sp.classList.contains("drag")) return; sp.classList.remove("drag"); document.body.style.userSelect = ""; save(); refreshMap(); };
+  sp.addEventListener("pointerup", end);
+  sp.addEventListener("pointercancel", end);
+  sp.addEventListener("keydown", e => {                                  // 키보드: ← → 로 24px씩
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    apply(aside.getBoundingClientRect().width + (e.key === "ArrowRight" ? 24 : -24)); save(); refreshMap();
+  });
+  sp.addEventListener("dblclick", () => { root.style.removeProperty("--side-w"); try { localStorage.removeItem("sideW"); } catch (e) {} refreshMap(); });   // 더블클릭: 기본 너비로
+})();
 
 /* ---------- 정보 오류 신고 ---------- */
 let rpCtx = null, rpOpener = null;
