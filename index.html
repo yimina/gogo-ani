@@ -206,7 +206,32 @@
   /* 달력 */
   .cal { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); padding: 58px 18px 24px; }
   .cal[hidden] { display: none; }
-  body.cal-mode #map, body.cal-mode .map-msg { display: none !important; }
+  body.cal-mode #map, body.cal-mode .map-msg, body.dash-mode #map, body.dash-mode .map-msg { display: none !important; }
+  .dash { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); padding: 58px 18px 24px; }
+  .dash[hidden] { display: none; }
+  .dhead { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .dhead h2 { margin: 0; font-family: "Do Hyeon", "Noto Sans KR", sans-serif; font-weight: 400; font-size: 26px; }
+  .dsub { font-size: 12.5px; color: var(--sub); }
+  .dkpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .kpi { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+  .kl { font-size: 12px; color: var(--sub); } .kv { font-size: 26px; font-weight: 700; line-height: 1.25; color: var(--ink); } .ks { font-size: 11px; color: var(--sub); }
+  .dgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; align-items: start; }
+  .dcard { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px 10px; }
+  .dcard h3 { margin: 0 0 2px; font-size: 14px; } .du { font-size: 11.5px; color: var(--sub); margin-bottom: 8px; }
+  .brow { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 84px 1fr 40px; gap: 8px; align-items: center; width: 100%; padding: 4px 4px; border-radius: 6px; cursor: pointer; transition: opacity .15s; }
+  .brow:hover { background: #f5f7fb; }
+  .brow:focus-visible { outline: 3px solid rgba(47,111,237,.4); }
+  .brow.dim { opacity: .45; }
+  .brow .bl { font-size: 12.5px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brow[aria-pressed="true"] .bl { font-weight: 700; }
+  .btr { height: 12px; background: #eef2f7; border-radius: 6px; overflow: hidden; }
+  .bfill { display: block; height: 100%; min-width: 2px; border-radius: 6px; background: var(--bc); }
+  .bfill.z { min-width: 0; }
+  .bn { font-size: 12.5px; font-weight: 700; text-align: right; color: var(--ink); } .bn small { font-weight: 400; color: var(--sub); }
+  .brow[aria-pressed="true"] { background: #eef4ff; }
+  .donut { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .donut svg { width: 130px; height: 130px; flex: none; } .dn1 { font-size: 16px; font-weight: 700; fill: var(--ink); } .dn2 { font-size: 7px; fill: var(--sub); }
+  .dleg { flex: 1; min-width: 150px; } .brow.lg { grid-template-columns: 1fr auto; } .dot { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 6px; vertical-align: 0; }
   .cal-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
   .cal-title { font-family: "Do Hyeon", sans-serif; font-size: 26px; margin: 0 8px 0 0; font-weight: 400; }
   .cal-btn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
@@ -270,9 +295,10 @@
     aside { display: block; flex: none; border-right: 0; overflow: visible; }
     ul { overflow: visible; }
     li { scroll-margin-top: 8px; }
-    body.cal-mode main { height: auto; min-height: 0; }
+    body.cal-mode main, body.dash-mode main { height: auto; min-height: 0; }
+    body.dash-mode .dash { position: static; overflow: visible; padding: 58px 12px 20px; }
     body.cal-mode .cal { position: static; overflow: visible; padding: 58px 12px 20px; }
-    body.cal-mode li { scroll-margin-top: 8px; }
+    body.cal-mode li, body.dash-mode li { scroll-margin-top: 8px; }
     .week { min-height: 72px; }
     .day { padding: 2px; }
     .wev { grid-auto-rows: 18px; padding-top: 24px; }
@@ -346,9 +372,11 @@
     <div class="viewtabs" role="group" aria-label="보기 전환">
       <button type="button" class="vt" id="tabMap" aria-pressed="false">지도</button>
       <button type="button" class="vt on" id="tabCal" aria-pressed="true">달력</button>
+      <button type="button" class="vt" id="tabDash" aria-pressed="false">대시보드</button>
     </div>
     <div id="map"></div>
     <div id="cal" class="cal"></div>
+    <div id="dash" class="dash" hidden></div>
     <div class="map-msg" id="mapMsg"></div>
   </main>
 </div>
@@ -509,18 +537,22 @@ function buildAllChips() {
 }
 document.getElementById("q").addEventListener("input", e => { filter.q = e.target.value.trim(); render(); });
 
-function filtered() {
+/* ---------- 필터 판정 (목록 · 달력 · 대시보드 공통) ---------- */
+const EMPTY = new Set();
+const anyOf = (set, v) => set.size === 0 || set.has(v);                 // 지역·유형·분야: 선택한 것 중 하나
+// 시기·실기: 선택한 항목 중 하나라도 맞으면 통과. "수시+정시"·"실기+비실기"는 둘 다 있어야 맞아요.
+const everyOf = (set, arr) => set.size === 0 || [...set].some(opt => opt.split("+").every(x => arr.includes(x)));
+function schoolPass(s, skip) {                                          // skip: 그 항목의 필터는 무시 (대시보드의 항목별 집계용)
   const q = filter.q.toLowerCase();
-  const any = (set, v) => set.size === 0 || set.has(v);                 // 지역·유형: 선택한 것 중 하나
-  // 시기·실기: 선택한 항목 중 하나라도 맞으면 통과. "수시+정시"·"실기+비실기"는 둘 다 있어야 맞아요.
-  const every = (set, arr) => set.size === 0 || [...set].some(opt => opt.split("+").every(x => arr.includes(x)));
-  return SCHOOLS.filter(s =>
-    any(filter.region, s.region) && any(filter.type, s.type) &&
-    s.depts.some(d => (filter.category.size === 0 || d.cats.some(c => filter.category.has(c))) &&      // 분야: 선택한 것 중 하나라도
-                      every(filter.season, d.adm.seasons || []) && every(filter.track, d.adm.track || [])) &&
-    (!q || [s.name, ...s.depts.map(d => d.name + " " + d.cats.join(" ")), s.region, s.address].join(" ").toLowerCase().includes(q))
-  );
+  return anyOf(skip === "region" ? EMPTY : filter.region, s.region) && anyOf(skip === "type" ? EMPTY : filter.type, s.type) &&
+    (!q || [s.name, ...s.depts.map(d => d.name + " " + d.cats.join(" ")), s.region, s.address].join(" ").toLowerCase().includes(q));
 }
+function deptPass(d, over) {                                            // over: 일부 필터를 다른 값으로 바꿔서 판정
+  const f = { category: filter.category, season: filter.season, track: filter.track, ...(over || {}) };
+  return (f.category.size === 0 || d.cats.some(c => f.category.has(c))) &&
+         everyOf(f.season, d.adm.seasons || []) && everyOf(f.track, d.adm.track || []);
+}
+function filtered() { return SCHOOLS.filter(s => schoolPass(s) && s.depts.some(d => deptPass(d))); }
 
 /* ---------- 목록 + 마커 렌더 ---------- */
 const WD = ["일", "월", "화", "수", "목", "금", "토"];
@@ -780,6 +812,7 @@ function renderList() {
 function render() {
   renderList();
   if (view === "cal") renderCal();
+  if (view === "dash") renderDash();
   if (mapReady) {
     const items = filtered();
     const visible = new Set(items.map(s => s.id));
@@ -1041,12 +1074,15 @@ document.getElementById("cal").addEventListener("click", e => {
 function setView(v) {
   view = v;
   document.body.classList.toggle("cal-mode", v === "cal");
+  document.body.classList.toggle("dash-mode", v === "dash");
   document.getElementById("cal").hidden = v !== "cal";
-  document.getElementById("tabMap").classList.toggle("on", v === "map");
-  document.getElementById("tabCal").classList.toggle("on", v === "cal");
-  document.getElementById("tabMap").setAttribute("aria-pressed", v === "map");
-  document.getElementById("tabCal").setAttribute("aria-pressed", v === "cal");
+  document.getElementById("dash").hidden = v !== "dash";
+  [["tabMap", "map"], ["tabCal", "cal"], ["tabDash", "dash"]].forEach(([id, k]) => {
+    document.getElementById(id).classList.toggle("on", v === k);
+    document.getElementById(id).setAttribute("aria-pressed", v === k);
+  });
   if (v === "cal") renderCal();
+  else if (v === "dash") renderDash();
   else if (mapReady) setTimeout(() => {
     naver.maps.Event.trigger(map, "resize");
     if (activeId && coords[activeId]) {
@@ -1058,6 +1094,110 @@ function setView(v) {
 }
 document.getElementById("tabMap").onclick = () => setView("map");
 document.getElementById("tabCal").onclick = () => setView("cal");
+document.getElementById("tabDash").onclick = () => setView("dash");
+
+/* ---------- 대시보드 ---------- */
+const DASH_PAL = ["#2f6fed", "#e8336d", "#1f9d6b", "#f59e0b", "#8b5e3c", "#334155", "#0e8f9c", "#8b5cf6", "#94a3b8"];
+const CAT_COLOR = { "만화": "#be185d", "애니메이션": "#3b4ac6", "게임": "#0f766e" };
+const SEASON_COLOR = { "수시": "#2f6fed", "정시": "#1f9d6b", "수시+정시": "#14213d" };
+const TRACK_COLOR = { "실기": "#e8336d", "비실기": "#0e8f9c", "실기+비실기": "#14213d" };
+
+function syncAllChips() {                 // 대시보드에서 필터를 바꿨을 때 왼쪽 필터 칩 표시도 맞춰요
+  [["regionFilters", "region"], ["typeFilters", "type"], ["categoryFilters", "category"], ["seasonFilters", "season"], ["trackFilters", "track"]].forEach(([id, key]) => {
+    document.getElementById(id).querySelectorAll(".chip").forEach(c =>
+      c.setAttribute("aria-pressed", c.dataset.v === "" ? filter[key].size === 0 : filter[key].has(c.dataset.v)));
+  });
+  updateFilterCount();
+}
+
+function dashFacets() {                   // 항목마다 '다른 필터는 그대로 두고 이 항목만 고르면 몇 개교인지' 계산
+  const deptOK = s => s.depts.some(d => deptPass(d));
+  const school = (key, bySchool) => {
+    const base = SCHOOLS.filter(s => schoolPass(s, key) && deptOK(s)), m = new Map();
+    [...new Set(SCHOOLS.map(s => s[key]).filter(Boolean))].forEach(k => m.set(k, 0));
+    base.forEach(s => { if (s[key]) m.set(s[key], (m.get(s[key]) || 0) + 1); });
+    return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ko"));
+  };
+  const dept = (dim, opts) => opts.map(o => [o, SCHOOLS.filter(s => schoolPass(s) && s.depts.some(d => deptPass(d, { [dim]: new Set([o]) }))).length]);
+  return {
+    region: school("region"), type: school("type"),
+    category: dept("category", ["만화", "애니메이션", "게임"]),
+    season: dept("season", ["수시", "정시", "수시+정시"]),
+    track: dept("track", ["실기", "비실기", "실기+비실기"])
+  };
+}
+
+function dashBars(title, unit, dim, rows, colors) {
+  const max = Math.max(1, ...rows.map(r => r[1])), active = filter[dim].size > 0;
+  return `<section class="dcard"><h3>${title}</h3><div class="du">${unit}</div>${rows.map(([label, n]) => {
+    const on = filter[dim].has(label);
+    return `<button type="button" class="brow${active && !on ? " dim" : ""}" data-dim="${dim}" data-opt="${label}" aria-pressed="${on}" title="${label} ${n}개교">
+      <span class="bl">${label}</span><span class="btr"><i class="bfill${n ? "" : " z"}" style="width:${n / max * 100}%;--bc:${(colors && colors[label]) || "#2f6fed"}"></i></span><span class="bn">${n}</span></button>`;
+  }).join("")}</section>`;
+}
+
+function dashDonut(title, unit, dim, rows) {
+  const total = rows.reduce((a, r) => a + r[1], 0), R = 40, C = 2 * Math.PI * R, active = filter[dim].size > 0;
+  let off = 0;
+  const segs = total ? rows.map((r, i) => {
+    if (!r[1]) return "";
+    const len = C * r[1] / total;
+    const el = `<circle cx="50" cy="50" r="${R}" fill="none" stroke="${DASH_PAL[i % DASH_PAL.length]}" stroke-width="16" stroke-dasharray="${len} ${C - len}" stroke-dashoffset="${-off}" transform="rotate(-90 50 50)"/>`;
+    off += len; return el;
+  }).join("") : `<circle cx="50" cy="50" r="${R}" fill="none" stroke="#eef2f7" stroke-width="16"/>`;
+  const legend = rows.map(([label, n], i) => {
+    const on = filter[dim].has(label);
+    return `<button type="button" class="brow lg${active && !on ? " dim" : ""}" data-dim="${dim}" data-opt="${label}" aria-pressed="${on}">
+      <span class="bl"><i class="dot" style="background:${DASH_PAL[i % DASH_PAL.length]}"></i>${label}</span><span class="bn">${n}${total ? ` <small>${Math.round(n / total * 100)}%</small>` : ""}</span></button>`;
+  }).join("");
+  return `<section class="dcard"><h3>${title}</h3><div class="du">${unit}</div>
+    <div class="donut"><svg viewBox="0 0 100 100" role="img" aria-label="${title} 도넛 그래프">${segs}<text x="50" y="48" text-anchor="middle" class="dn1">${total}</text><text x="50" y="60" text-anchor="middle" class="dn2">개교</text></svg>
+    <div class="dleg">${legend}</div></div></section>`;
+}
+
+function renderDash() {
+  const box = document.getElementById("dash");
+  const list = filtered(), depts = list.flatMap(s => s.depts.filter(d => deptPass(d)));
+  const f = dashFacets();
+  const anyFilter = filter.q || ["region", "type", "category", "season", "track"].some(k => filter[k].size);
+  const kpi = (l, v, sub) => `<div class="kpi"><div class="kl">${l}</div><div class="kv">${v}</div>${sub ? `<div class="ks">${sub}</div>` : ""}</div>`;
+  box.innerHTML = `
+    <div class="dhead">
+      <h2>대시보드</h2>
+      <span class="dsub">필터와 연동돼요. 그래프를 누르면 필터가 적용돼요.</span>
+      ${anyFilter ? '<button type="button" class="cal-btn" data-reset="1">필터 모두 해제</button>' : ""}
+    </div>
+    <div class="dkpis">
+      ${kpi("학교", list.length, `전체 ${SCHOOLS.length}개교 중`)}
+      ${kpi("학과", depts.length, "조건에 맞는 학과")}
+      ${kpi("수시가 있는 학과", depts.filter(d => (d.adm.seasons || []).includes("수시")).length)}
+      ${kpi("정시가 있는 학과", depts.filter(d => (d.adm.seasons || []).includes("정시")).length)}
+    </div>
+    <div class="dgrid">
+      ${dashBars("지역", "지역별 학교 수", "region", f.region)}
+      ${dashDonut("학교 유형", "유형별 학교 수", "type", f.type)}
+      ${dashBars("분야", "분야별 학교 수 (여러 분야를 가진 학교는 각각 포함)", "category", f.category, CAT_COLOR)}
+      ${dashBars("전형 시기", "학교 수", "season", f.season, SEASON_COLOR)}
+      ${dashBars("실기 여부", "학교 수", "track", f.track, TRACK_COLOR)}
+    </div>`;
+}
+
+document.getElementById("dash").addEventListener("click", e => {
+  const bar = e.target.closest("[data-dim]");
+  if (bar) {
+    const dim = bar.dataset.dim, opt = bar.dataset.opt, set = filter[dim];
+    if (set.has(opt)) set.delete(opt); else set.add(opt);
+    syncAllChips(); render();
+    const again = document.querySelector(`#dash [data-dim="${dim}"][data-opt="${opt}"]`);
+    if (again) again.focus({ preventScroll: true });
+    return;
+  }
+  if (e.target.closest("[data-reset]")) {
+    ["region", "type", "category", "season", "track"].forEach(k => filter[k].clear());
+    filter.q = ""; document.getElementById("q").value = "";
+    syncAllChips(); render();
+  }
+});
 
 /* ---------- 네이버 지도 초기화 ---------- */
 function showMapMessage(html) {
