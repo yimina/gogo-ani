@@ -343,7 +343,7 @@
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
 </head>
-<body class="cal-mode">
+<body class="dash-mode">
 <div class="app">
   <aside>
     <header>
@@ -370,13 +370,13 @@
   <main>
     <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" aria-label="목록 너비 조절 (끌어서 조절, 더블클릭하면 기본 너비)" tabindex="0"></div>
     <div class="viewtabs" role="group" aria-label="보기 전환">
+      <button type="button" class="vt on" id="tabDash" aria-pressed="true">대시보드</button>
       <button type="button" class="vt" id="tabMap" aria-pressed="false">지도</button>
-      <button type="button" class="vt on" id="tabCal" aria-pressed="true">달력</button>
-      <button type="button" class="vt" id="tabDash" aria-pressed="false">대시보드</button>
+      <button type="button" class="vt" id="tabCal" aria-pressed="false">달력</button>
     </div>
     <div id="map"></div>
-    <div id="cal" class="cal"></div>
-    <div id="dash" class="dash" hidden></div>
+    <div id="cal" class="cal" hidden></div>
+    <div id="dash" class="dash"></div>
     <div class="map-msg" id="mapMsg"></div>
   </main>
 </div>
@@ -888,7 +888,7 @@ function scrollActive() {
 
 /* ---------- 달력 ---------- */
 const KINDS = { "접수": "#2f6fed", "서류": "#334155", "실기": "#e8336d", "면접": "#f59e0b", "발표": "#1f9d6b", "기타": "#9ca3af" };
-let view = "cal";
+let view = "dash";          // 처음 화면: 대시보드
 let calY = new Date().getFullYear(), calM = new Date().getMonth();
 
 function shortName(s) { return s.short || s.name.replace(/대학교$/, "대"); }
