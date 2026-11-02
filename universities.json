@@ -185,7 +185,7 @@
                     "end": "2026-09-14",
                     "note": ""
                   },
-                  "announce": "2027-12-10",
+                  "announce": "2026-12-10",
                   "types": [
                     {
                       "title": "학생부종합전형",
@@ -320,7 +320,7 @@
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
-                      "title": "학생부",
+                      "title": "학생부교과",
                       "name": "수시1차",
                       "short": "청강1차 교과",
                       "quota": "16명",                      
@@ -389,7 +389,7 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
+                          "method": "A형 : 스토리에 따른 이미지보드\n B형 : 애니메이션 상황표현\nC형 : 제스처 드로잉",
                           "kind": "실기",
                           "examDate": "2026-10-24",
                           "examEnd": "2026-10-25",
@@ -423,7 +423,8 @@
                           "method": "학생부종합+포트폴리오[A형:이미지,B형:영상]",
                           "kind": "면접",
                           "examDate": "2026-10-20",
-                          "examEnd": "2026-10-21",                          
+                          "examEnd": "2026-10-21",      
+                          "announce": "2026-10-15", 
                           "ratio": {
                             "document": "",
                             "grade": "",
@@ -487,10 +488,10 @@
                 "stages": [
                   {
                     "label": "",
-                    "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
+                    "method": "A형 : 스토리에 따른 이미지보드\n B형 : 애니메이션 상황표현\nC형 : 제스처 드로잉",
                     "examDate": "2027-01-28",
                     "examEnd": "2027-01-29",
-                    "announce": "",
+                    "announce": "2027-02-09",
                     "kind": "실기",
                     "ratio": {
                       "suneung": "",
@@ -506,22 +507,11 @@
                   }
                 ],
                 "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
                 "note": "",
                 "category": "실기",
                 "description": ""
               }
-              ],
-              "announce": "2027-02-09"
+              ]
             },
             "etc": []
           }
