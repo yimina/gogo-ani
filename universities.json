@@ -316,7 +316,7 @@
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-11-06",
+                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
