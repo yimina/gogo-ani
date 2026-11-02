@@ -579,7 +579,12 @@ function hasData(o) {
   if (typeof o === "object") return Object.entries(o).some(([k, v]) => !["reference", "offered", "label", "kind", "year"].includes(k) && hasData(v));
   return false;
 }
-function groupHas(g) { return !!g && (g.offered === true || hasData(g)); }
+function groupHas(g) {
+  if (!g) return false;
+  if (g.offered === true) return true;
+  const { rounds, unassignedTypes, legacySchedule, round, ...content } = g;
+  return hasData(content) || (rounds || []).some(groupHas) || (unassignedTypes || []).some(groupHas);
+}
 function gunText(g) { return Array.isArray(g.gun) ? g.gun.join(", ") : (g.gun || ""); }
 function jeongGuns(jg) {                 // 정시 제목에 붙일 군: 정시 전체 군 → 없으면 전형들의 군
   const own = gunText(jg);
@@ -592,7 +597,22 @@ function jeongGuns(jg) {                 // 정시 제목에 붙일 군: 정시 
 function admGroups(a) {
   const list = [];
   const su = a.susi || {}, jg = a.jeongsi || {};
-  list.push({ key: "susi", name: "수시", base: "수시", g: su, jeong: false });
+  if (Array.isArray(su.rounds) && su.rounds.length) {
+    // 수시 전체 인원과 참고는 한 번만 표시하고, 일정은 모집차수별로 분리합니다.
+    const summary = { quota: su.quota, process: su.process, note: su.note, reference: su.reference };
+    if (hasData(summary)) list.push({ key: "susi", name: "수시 전체", base: "수시", g: summary, jeong: false });
+    su.rounds.forEach((r, i) => {
+      const name = r.label || ("수시 " + (r.round || i + 1) + "차");
+      list.push({ key: "susi", name, base: name, g: { ...r, reference: r.reference ?? su.reference }, jeong: false, round: true });
+    });
+    if ((su.unassignedTypes || []).some(groupHas)) {
+      list.push({ key: "susi", name: "수시 · 모집차수 미확인", base: "수시",
+        g: { types: su.unassignedTypes, note: "모집차수가 확인되지 않은 원본 정보입니다. 확인 후 해당 차수로 옮겨 주세요.", reference: su.reference },
+        jeong: false, calendar: false });
+    }
+  } else {
+    list.push({ key: "susi", name: "수시", base: "수시", g: su, jeong: false });
+  }
   list.push({ key: "jeongsi", name: "정시" + (jeongGuns(jg) ? "(" + jeongGuns(jg) + ")" : ""), base: "정시", g: jg, jeong: true });
   (a.etc || []).forEach(e => list.push({ key: "etc", name: e.label || "기타 전형", base: e.label || "기타 전형", g: e, jeong: false }));
   return list;
@@ -674,7 +694,7 @@ function anyDates(o) {
   const ap = o.apply || {};
   return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
     (o.stages || []).some(st => pd(st.examDate || st.date) || pd(st.announce)) ||
-    (o.types || []).some(anyDates);
+    (o.types || []).some(anyDates) || (o.rounds || []).some(anyDates);
 }
 
 function groupRows(g, jeong, ref, isType, gname) {
@@ -754,7 +774,8 @@ function admissionHtml(s) {
     const rows = has ? groupRows(gr.g, gr.jeong, ref, false, gr.name) : [];
     const types = (gr.g.types || []).filter(groupHas).map(t => typeHtml(t, gr.jeong, ref || !!t.reference)).join("");
     const cls = gr.key === "susi" ? "s1" : gr.key === "jeongsi" ? "s2" : "s3";
-    const none = gr.key === "susi" ? '<p class="muted none">수시 모집이 없어요.</p>'
+    const none = gr.round ? '<p class="muted none">이 모집차수의 정보가 아직 입력되지 않았어요.</p>'
+               : gr.key === "susi" ? '<p class="muted none">수시 모집이 없어요.</p>'
                : gr.key === "jeongsi" ? '<p class="muted none">정시 모집이 없어요.</p>'
                : '<p class="muted">아직 입력된 정보가 없어요.</p>';
     const inner = (rows.length ? dl(rows) : "") + types;
@@ -918,13 +939,17 @@ function buildEvents(schools) {
       if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
     admGroups(a).forEach(gr => {
+      if (gr.calendar === false) return;
       const g = gr.g || {};
       const gref = !!g.reference;
       push(g, gr.name, gref, false, true);
       (g.types || []).forEach(t => {
         const tl = t.short || t.title || t.name || "";
         const gsuf = gr.key === "jeongsi" && gunText(t) ? "(" + gunText(t) + ")" : "";
-        push(t, gr.base + (tl ? " " + tl : "") + gsuf, gref || !!t.reference, true, true);
+        // 같은 차수의 공통 접수기간과 같은 전형별 기간은 달력에 중복 등록하지 않습니다.
+        const ap = t.apply || {}, gap = g.apply || {};
+        const sameApply = gr.round && ap.start && ap.start === gap.start && (ap.end || ap.start) === (gap.end || gap.start);
+        push(t, gr.base + (tl ? " " + tl : "") + gsuf, gref || !!t.reference, true, !sameApply);
       });
     });
   }));
