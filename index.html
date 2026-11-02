@@ -118,7 +118,7 @@
   .stg .rbar { height: 10px; max-width: none; margin-top: 7px; }
   .stn { margin-top: 8px; font-size: 11.5px; line-height: 1.55; color: var(--sub); white-space: pre-line; }
   .stc { text-align: center; color: #aab3c2; font-size: 12px; line-height: 1; margin: 6px 0; }
-  /* 최종 합격자 발표 (간결하게) */
+  /* 합격자 발표 (간결하게) */
   .fin { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin: 8px 0; font-size: 12.5px; }
   .fin::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #e0a100; flex: none; }
   .fl { color: var(--sub); }
@@ -397,7 +397,7 @@
         <option>수시 · 반영 비율</option>
         <option>정시 · 군 / 일정</option>
         <option>정시 · 모집인원 / 반영 비율</option>
-        <option>최종 합격자 발표일</option>
+        <option>합격자 발표일</option>
         <option>기타</option>
       </select>
     </label>
@@ -693,7 +693,7 @@ function deptLabel(d) {                   // 학과 칩·달력에 쓸 짧은 �
   return m ? m[1] : (d.name || "");
 }
 
-function finHtml(str, title) {                       // 최종 합격자 발표: 한 줄로 간결하게
+function finHtml(str, title) {                       // 합격자 발표: 한 줄로 간결하게
   const d = pd(str); if (!d) return "";
   return `<div class="fin"><span class="fl">${title}</span><span class="fd">${fd(d, true)}</span></div>`;
 }
@@ -701,7 +701,7 @@ function finHtml(str, title) {                       // 최종 합격자 발표:
 function anyDates(o) {
   if (!o) return false;
   const ap = o.apply || {};
-  return !!pd(ap.start) || !!pd(o.finalAnnounce) ||
+  return !!pd(ap.start) || !!pd(o.announce) ||
     (o.stages || []).some(st => pd(st.examDate || st.date) || pd(st.announce)) ||
     (o.types || []).some(anyDates) || (o.rounds || []).some(anyDates);
 }
@@ -726,10 +726,10 @@ function groupRows(g, jeong, ref, isType, gname) {
     return `<div class="stg">${lab ? `<div class="stl">${lab}</div>` : ""}${method ? `<div class="stm">${method}</div>` : ""}${sched}${ratio}${note ? `<div class="stn">${note}</div>` : ""}</div>`;
   }).filter(Boolean);
   const stageBlock = blocks.length ? { block: `<div class="stgs">${blocks.join('<div class="stc" aria-hidden="true">▼</div>')}</div>` } : null;
-  const finRow = !isType && pd(g.finalAnnounce) ? { block: finHtml(g.finalAnnounce, "최종 합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
+  const finRow = !isType && pd(g.announce) ? { block: finHtml(g.announce, "합격자 발표") } : null;   // 최종 발표일은 수시·정시 전체 단위로만
   const anyStageRatio = (g.stages || []).some(st => ratioOf(st.ratio, jeong));
   const hasTypes = (g.types || []).some(groupHas);
-  const finFirst = jeong && !isType;          // 정시는 최종 합격자 발표를 원서 접수 바로 아래에 표시
+  const finFirst = jeong && !isType;          // 정시는 합격자 발표를 원서 접수 바로 아래에 표시
   return [
     jeong && !isType ? ["원서 접수 군", gunText(g)] : null,
     ["원서 접수", applyTxt],
@@ -951,8 +951,8 @@ function buildEvents(schools) {
         const da = pd(st.announce);
         if (da) ev.push({ ...base, title: [label, st.label].filter(Boolean).join(" ") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
       });
-      const fa = pd(obj.finalAnnounce);
-      if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+      const fa = pd(obj.announce);
+      if (fa && !isType) ev.push({ ...base, title: label + " 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
     admGroups(a, s.type).forEach(gr => {
       if (gr.calendar === false) return;

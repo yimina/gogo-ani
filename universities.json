@@ -8,10 +8,10 @@
     "모집인원: 학과 전체는 departments[].quota, 수시·정시는 각각 susi.quota·jeongsi.quota, 수시 전형별은 susi.types[].quota에 따로 적어요. 학과 quota를 비워 두면 수시+정시 모집인원이 모두 숫자로 시작할 때 자동으로 합산해서(합계 표시) 보여줘요.",
     "날짜는 항상 YYYY-MM-DD 형식으로 적어요 (예: 2026-11-02). 마지막 항목 뒤에는 쉼표를 붙이지 마세요. short: 달력에 표시할 짧은 학교 이름.",
     "admission 공통: admissionUrl 입학처 주소, track(실기/비실기 전형 여부), process 전형 방법 요약, practical 실기·준비물, note 참고.",
-    "admission.susi(수시): reference 참고 표시, quota 수시 전체 모집인원, note, rounds 모집차수 배열. 접수기간·발표일·전형은 각각 rounds[].apply, rounds[].finalAnnounce, rounds[].types에 입력해요.",
+    "admission.susi(수시): reference 참고 표시, quota 수시 전체 모집인원, note, rounds 모집차수 배열. 접수기간·발표일·전형은 각각 rounds[].apply, rounds[].announce, rounds[].types에 입력해요.",
     "susi.rounds[].types: 학교에 있는 수시 전형마다 한 덩어리씩 추가하세요. {title 전형 대표 이름(예: \"학생부종합전형\" — 카드 제목으로 크게 표시), name 세부 전형 이름(예: \"세종인재\" — title 옆에 작게 표시, title을 비우면 name이 제목), short 달력용 짧은 이름(선택), quota 그 전형의 모집인원, apply 그 전형의 원서 접수(지원) 기간 {start, end, note}, competition 전년도 경쟁률 {year 학년도(예: \"2026학년도\"), rate 경쟁률(예: \"12.3 : 1\" — 숫자만 적으면 \"12.3 : 1\"로 표시), note 참고(지원·모집 인원 등)}, stages 단계별(1차·2차 …) 전형(차수별 합격자 발표일은 각 단계의 announce), process 전형 방법, ratio {document 서류, grade 학생부 반영 비율, gradeType 교과 또는 종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 원서 접수(지원) 기간은 수시 전체에 공통이면 susi.rounds[].apply에, 전형마다 다르면 각 전형의 apply에 적어요(둘 다 적으면 둘 다 표시돼요). 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
     "stages 항목: {label \"1차\", method 전형 방법, examDate 실기 시험(면접 등 전형)일, examEnd 기간일 때 종료일(선택), announce 그 차수의 합격자 발표일, kind 서류/실기/면접/기타, ratio {document 서류, grade 학생부, attendance 출결, essay 논술, practical 실기, interview 면접}} — 차수마다 시험 날짜와 발표 날짜, 반영 비율을 따로 입력해요. 지원(접수) 날짜는 단계에 넣지 않아요. 정시 단계는 ratio에 suneung(수능)·document(서류)·grade(학생부)·attendance(출결)·essay(논술)·practical·interview(면접)를 써요. kind가 실기이면 날짜가 '실기 시험일', 면접이면 '면접'으로 표시돼요. (예전 키 date·endDate도 계속 읽혀요.) 각 단계에는 note(이 단계의 참고 사항)도 적을 수 있고, 비율 막대 아래에 작은 글씨로 그대로 표시돼요.",
-    "admission.jeongsi(정시): 수시와 같은 구조예요. reference 참고 표시, quota 정시 모집인원, apply 정시 공통 원서 접수 {start, end, note}, finalAnnounce 정시 최종 합격자 발표일, note, types 정시 전형 배열(아래). 군·단계·반영 비율·전형 방법은 전형(types) 안에 적어요.",
+    "admission.jeongsi(정시): 수시와 같은 구조예요. reference 참고 표시, quota 정시 모집인원, apply 정시 공통 원서 접수 {start, end, note}, announce 정시 합격자 발표일, note, types 정시 전형 배열(아래). 군·단계·반영 비율·전형 방법은 전형(types) 안에 적어요.",
     "jeongsi.types: 정시 수능전형·면접전형·실기전형 등을 한 덩어리씩 넣어요. {title 전형 대표 이름(예: \"수능전형\"), name 세부 이름, short 달력용 짧은 이름, gun 가군/나군/다군(수능전형은 군을 적어요), quota, apply 그 전형(군)의 원서 접수 기간, competition 전년도 경쟁률 {year, rate, note}, stages(시험 날짜·방법: 실기 방법이 여러 가지면 단계를 여러 개), process 전형 방법, ratio {suneung 수능, document 서류, grade 학생부, gradeType 교과/종합, attendance 출결, essay 논술, practical 실기, interview 면접}, note}. 아무것도 입력하지 않은 덩어리는 화면에 나오지 않아요.",
     "비율은 \"40%\"처럼 숫자+%로 적으면 막대 그래프로도 보여요. kind(달력 색상)는 서류·실기·면접·발표·기타 중 하나예요. 날짜가 없는 단계는 달력에는 표시되지 않고 상세 화면에만 보여요.",
     "admission.etc: 전공심화·편입 등 그 밖의 전형 배열 [{label, reference, quota, apply, stages, process, note}] — 수시/정시와 같은 형식이에요.",
@@ -21,7 +21,7 @@
     "전문대의 원서접수 공통 기간은 rounds[].apply, 전형별로 다른 접수기간은 rounds[].types[].apply에 적어요. 전형 apply의 start/end가 비어 있으면 해당 모집차수의 apply를 사용해요. 시험일·종료일·발표일은 rounds[].types[].stages[].examDate/examEnd/announce에 각각 적어요.",
     "모집차수(rounds: 수시 1차·2차)와 전형 평가단계(stages: 1단계·2단계)는 서로 달라요. 전문대 susi.quota는 수시 전체 인원, rounds[].quota는 해당 차수 전체 인원, rounds[].types[].quota는 해당 차수 전형별 인원이에요. 기존 모집인원은 변경하지 않았으며 차수별 합계는 확인 후 입력해요.",
     "unassignedTypes는 원본에서 모집차수를 판별할 수 없는 전형이에요. 확인 후 해당 rounds[].types로 옮기고 이 배열에서는 제거하세요. 두 차수에 임의로 복제하지 않았어요.",
-    "legacySchedule은 원본 susi.apply/finalAnnounce를 그대로 보존한 참고용 정보이며 실제 접수·발표 일정으로 사용하지 않아요. 모집차수가 불명확한 발표일이나 두 차수를 아우르는 접수기간을 차수별로 임의 배정하지 않았어요.",
+    "legacySchedule은 원본 susi.apply/announce를 그대로 보존한 참고용 정보이며 실제 접수·발표 일정으로 사용하지 않아요. 모집차수가 불명확한 발표일이나 두 차수를 아우르는 접수기간을 차수별로 임의 배정하지 않았어요.",
     "빈 날짜·모집인원 및 빈 types는 미입력 상태이며 미실시·0명을 뜻하지 않아요. 기존 날짜의 학년도 혼재나 발표일 선후관계는 검증·수정하지 않았어요. 새 일정은 YYYY-MM-DD로 입력하세요.",
     "신규 학교 입력은 일반대·전문대 모두 _학교템플릿을 복사하세요. 기존 화면·달력 프로그램도 전문대에서는 susi.rounds를 순회하고, 차수별 apply와 types[].stages를 읽도록 수정해야 해요. unassignedTypes는 차수 미확인 정보로 구분하고 legacySchedule은 일정에 등록하지 않아요.",
     "정시 jeongsi.types에는 수능전형·실기전형·면접전형·논술전형 등 필요한 전형을 개수 제한 없이 추가할 수 있어요. title은 전형 대표 이름, name은 세부 전형명, category는 수능/실기/면접/논술 등 선택 분류, description은 자유로운 전형 설명(줄바꿈 가능), process는 전형 방법, note는 참고사항이에요.",
@@ -29,9 +29,10 @@
     "정시 반영 비율은 ratio의 suneung(수능), practical(실기), interview(면접), essay(논술), grade(학생부), document(서류) 등에 입력해요. 템플릿의 네 전형은 입력용 예시이며 실제 학교의 모집 여부를 뜻하지 않아요. 사용하지 않는 예시 전형은 삭제하고 실제 운영 전형만 넣으세요.",
     "입력 템플릿은 학교 유형과 관계없이 _학교템플릿 하나로 통합했어요. 실제 학교 정보(schools)는 바꾸지 않았어요.",
     "정시는 학교 유형과 관계없이 jeongsi.types에 전형별로 입력하세요. 수능·실기·면접·논술 예시 중 실제 운영 전형만 남기고 설명은 description에 입력해요.",
-    "모든 학교의 수시 입력 구조는 admission.susi.rounds로 통일했어요. 일반대·전문대 모두 rounds[].types 안에 전형을 입력하며, 차수별 접수는 rounds[].apply, 발표일은 rounds[].finalAnnounce에 입력해요. susi.quota는 수시 전체 인원이에요.",
+    "모든 학교의 수시 입력 구조는 admission.susi.rounds로 통일했어요. 일반대·전문대 모두 rounds[].types 안에 전형을 입력하며, 차수별 접수는 rounds[].apply, 발표일은 rounds[].announce에 입력해요. susi.quota는 수시 전체 인원이에요.",
     "학교 type에 전문이 포함되면 화면에서 수시 1차·2차로 나눠 표시해요. 그 외 대학은 rounds[0]에 수시 전형을 입력하고 화면에서는 수시로만 표시해요. 일반대에는 rounds의 두 번째 항목을 삭제하세요. stages의 1차·2차는 전형 평가단계이므로 그대로 유지해요.",
-    "공통 _학교템플릿은 rounds 하나의 구조로 입력해요. 전문대는 1차·2차를 사용하고 일반대는 첫 항목만 사용하세요. 기존 susi.types 데이터도 index에서 계속 읽을 수 있어요."
+    "공통 _학교템플릿은 rounds 하나의 구조로 입력해요. 전문대는 1차·2차를 사용하고 일반대는 첫 항목만 사용하세요. 기존 susi.types 데이터도 index에서 계속 읽을 수 있어요.",
+    "수시 발표일은 각 rounds[].announce에 YYYY-MM-DD로 입력해요. 해당 모집차수의 공통 합격자 발표일이며, 전형 평가단계별 발표일은 기존 types[].stages[].announce에 입력해요. 정시·기타 모집의 발표일도 announce로 통일했어요. 기존 발표일 값은 그대로 옮겼으며, 차수가 불명확한 legacySchedule의 발표일은 차수에 임의 배정하지 않았어요."
   ],
   "checkedAt": "2026-10-20",
   "schools": [
@@ -73,7 +74,6 @@
                     "end": "2026-09-17",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-24",
                   "note": "",
                   "types": [
                     {
@@ -126,7 +126,8 @@
                       "process": "1차 실기·성적 컷오프 통과자 대상 2차 서류/심층실기/면접 최종 평가",
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-24"
                 }
               ]
             },
@@ -184,7 +185,6 @@
                     "end": "2026-09-14",
                     "note": ""
                   },
-                  "finalAnnounce": "2027-12-10",
                   "types": [
                     {
                       "title": "학생부종합전형",
@@ -231,7 +231,8 @@
                       "process": "1단계 서류 100으로 3배수 선발 후, 2단계에서 1단계 60 + 면접 40 합산 최종 합격자 선출",
                       "note": "수능최저학력기준은 전면 미적용합니다."
                     }
-                  ]
+                  ],
+                  "announce": "2027-12-10"
                 }
               ]
             },
@@ -242,7 +243,6 @@
                 "start": "2028-01-03",
                 "end": "2028-01-06"
               },
-              "finalAnnounce": "2028-02-04",
               "types": [
                 {
                   "title": "수능전형",
@@ -263,7 +263,8 @@
                   },
                   "note": "인문계열과 자연계열의 반영비율로 계산된 수능 반영점수중 상위 점수를 반영"
                 }
-              ]
+              ],
+              "announce": "2028-02-04"
             },
             "etc": []
           }
@@ -308,22 +309,25 @@
                 {
                   "round": 1,
                   "label": "수시 1차",
-                  "reference": false,
+                  "reference": true,
                   "quota": "",
-                  "announce": "2026-11-06",
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
-                      "title": "학생부교과",
+                      "title": "학생부",
                       "name": "수시1차",
                       "short": "청강1차 교과",
                       "quota": "16명",
+                      "apply": {
+                        "start": "2026-09-07",
+                        "end": "2026-09-30",
+                        "note": ""
+                      },
                       "competition": {
                         "year": "2026",
                         "rate": "11.8:1",
@@ -352,6 +356,10 @@
                       "name": "수시1차",
                       "short": "청강1차 특별",
                       "quota": "4명",
+                      "apply": {
+                        "start": "2026-09-07",
+                        "end": "2026-09-30"
+                      },
                       "competition": {
                         "year": "2026",
                         "rate": "5.0:1",
@@ -360,7 +368,7 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "학생부교과 + 가산자(대회입상자)",
+                          "method": "학생부 점수 + 가산자(대회입상자)",
                           "kind": "서류",
                           "ratio": {
                             "document": "",
@@ -380,6 +388,10 @@
                       "name": "수시1차",
                       "short": "청강1차 실기",
                       "quota": "90명",
+                      "apply": {
+                        "start": "2026-09-07",
+                        "end": "2026-09-30"
+                      },
                       "competition": {
                         "year": "2026",
                         "rate": "16.5:1",
@@ -387,7 +399,7 @@
                       },
                       "stages": [
                         {
-                          "label": "실기",
+                          "label": "",
                           "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
                           "kind": "실기",
                           "examDate": "2026-10-24",
@@ -411,6 +423,11 @@
                       "name": "수시1차",
                       "short": "청강1차 면접",
                       "quota": "63명",
+                      "apply": {
+                        "start": "2026-09-07",
+                        "end": "2026-09-30",
+                        "note": "학생부종합 + 포트폴리오"
+                      },
                       "competition": {
                         "year": "2026",
                         "rate": "8.5:1",
@@ -418,7 +435,7 @@
                       },
                       "stages": [
                         {
-                          "label": "학생부종합+포트폴리오",
+                          "label": "",
                           "method": "포트폴리오[A형:이미지,B형:영상]",
                           "kind": "면접",
                           "examDate": "2026-10-20",
@@ -437,7 +454,8 @@
                       ],
                       "process": "학생부종합 + 포트폴리오(필수)\nA형:이미지[내용:원화,디지털이미지,사진, 50%이상 인체드로잉]\nB형:영상[데모릴:개인, 공동작 중 본인작업한 부분만 발췌, 1분30초이내, 창작영상(선택)]"
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -449,9 +467,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
-                  "note": "",
-                  "types": []
+                  "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -461,13 +479,12 @@
                   "end": "2026-09-30",
                   "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
                 },
-                "finalAnnounce": "2027-11-06"
+                "announce": "2027-11-06"
               }
             },
             "jeongsi": {
               "reference": true,
               "quota": "65명",
-              "finalAnnounce": "2027-02-09",
               "types": [
                 {
                   "title": "실기전형",
@@ -488,7 +505,8 @@
                   },
                   "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
                 }
-              ]
+              ],
+              "announce": "2027-02-09"
             },
             "etc": []
           }
@@ -522,7 +540,6 @@
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -628,7 +645,8 @@
                       ],
                       "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -640,9 +658,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -652,13 +670,12 @@
                   "end": "2026-09-30",
                   "note": ""
                 },
-                "finalAnnounce": "2026-11-06"
+                "announce": "2026-11-06"
               }
             },
             "jeongsi": {
               "reference": true,
               "quota": "30명",
-              "finalAnnounce": "2027-02-09",
               "types": [
                 {
                   "title": "면접전형",
@@ -679,7 +696,8 @@
                   },
                   "note": "학생부종합+포트폴리오"
                 }
-              ]
+              ],
+              "announce": "2027-02-09"
             }
           }
         },
@@ -711,7 +729,6 @@
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -817,7 +834,8 @@
                       ],
                       "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -829,9 +847,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -840,13 +858,12 @@
                   "start": "2026-09-06",
                   "end": "2026-10-30"
                 },
-                "finalAnnounce": "2026-11-06"
+                "announce": "2026-11-06"
               }
             },
             "jeongsi": {
               "reference": true,
               "quota": "10명",
-              "finalAnnounce": "2027-02-09",
               "types": [
                 {
                   "title": "실기전형",
@@ -867,7 +884,8 @@
                   },
                   "note": "A형:문해력 기반 1페이지 만화\n B형:문해력 기반 2페이지 일러스트레이션"
                 }
-              ]
+              ],
+              "announce": "2027-02-09"
             }
           }
         },
@@ -902,7 +920,6 @@
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -1041,7 +1058,8 @@
                       ],
                       "process": "학생부종합 + 포트폴리오(필수)A,B,C,D형 중 택1\n]"
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -1053,7 +1071,6 @@
                     "end": "2026-11-25",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -1157,7 +1174,8 @@
                       ],
                       "process": "학생부종합 + 포트폴리오(필수)A,B,C,D형 중 택1\n]"
                     }
-                  ]
+                  ],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -1167,13 +1185,12 @@
                   "end": "",
                   "note": ""
                 },
-                "finalAnnounce": "2027-11-06"
+                "announce": "2027-11-06"
               }
             },
             "jeongsi": {
               "reference": true,
               "quota": "3명",
-              "finalAnnounce": "2027-02-09",
               "types": [
                 {
                   "title": "학생부교과전형",
@@ -1194,7 +1211,8 @@
                   },
                   "note": "학생부교과"
                 }
-              ]
+              ],
+              "announce": "2027-02-09"
             },
             "etc": []
           }
@@ -1246,7 +1264,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-11-06",
                   "note": "",
                   "types": [
                     {
@@ -1314,7 +1331,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-06"
                 }
               ]
             },
@@ -1326,7 +1344,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -1379,7 +1396,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -1430,7 +1448,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-09",
                   "note": "",
                   "types": [
                     {
@@ -1527,7 +1544,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-09"
                 }
               ]
             },
@@ -1539,7 +1557,6 @@
                 "end": "",
                 "note": ""
               },
-              "finalAnnounce": "",
               "note": "",
               "types": [
                 {
@@ -1592,7 +1609,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "announce": ""
             },
             "etc": []
           }
@@ -1643,7 +1661,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-11-20",
                   "note": "",
                   "types": [
                     {
@@ -1740,7 +1757,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
@@ -1752,7 +1770,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "※수능반영비율:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35%)",
               "types": [
                 {
@@ -1856,7 +1873,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -1908,7 +1926,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-11-09",
                   "note": "",
                   "types": [
                     {
@@ -1976,7 +1993,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-09"
                 }
               ]
             },
@@ -1988,7 +2006,6 @@
                 "end": "",
                 "note": ""
               },
-              "finalAnnounce": "",
               "note": "",
               "types": [
                 {
@@ -2042,7 +2059,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": ""
             },
             "etc": []
           }
@@ -2094,7 +2112,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-11-13",
                   "note": "",
                   "types": [
                     {
@@ -2162,7 +2179,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
@@ -2174,7 +2192,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -2228,7 +2245,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -2277,7 +2295,6 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "",
                   "types": [
                     {
@@ -2345,7 +2362,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": ""
                 }
               ]
             },
@@ -2357,7 +2375,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -2411,7 +2428,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -2462,7 +2480,6 @@
                     "end": "2026-09-15",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-03",
                   "note": "",
                   "types": [
                     {
@@ -2689,7 +2706,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-03"
                 }
               ]
             },
@@ -2701,7 +2719,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -2755,7 +2772,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -2788,7 +2806,6 @@
                     "end": "2026-09-15",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-03",
                   "note": "",
                   "types": [
                     {
@@ -2838,7 +2855,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-03"
                 }
               ]
             },
@@ -2850,7 +2868,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -2904,7 +2921,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -2956,7 +2974,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-03",
                   "note": "",
                   "types": [
                     {
@@ -3118,7 +3135,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-03"
                 }
               ]
             },
@@ -3130,7 +3148,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -3184,7 +3201,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -3217,7 +3235,6 @@
                     "end": "2026-09-11",
                     "note": ""
                   },
-                  "finalAnnounce": "2026-12-03",
                   "note": "",
                   "types": [
                     {
@@ -3267,7 +3284,8 @@
                       },
                       "note": ""
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-03"
                 }
               ]
             },
@@ -3279,7 +3297,6 @@
                 "end": "2027-01-07",
                 "note": ""
               },
-              "finalAnnounce": "2027-02-05",
               "note": "",
               "types": [
                 {
@@ -3333,7 +3350,8 @@
                   "note": ""
                 }
               ],
-              "date": ""
+              "date": "",
+              "announce": "2027-02-05"
             },
             "etc": []
           }
@@ -3384,7 +3402,6 @@
                     "end": "2026-09-30",
                     "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -3415,7 +3432,8 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -3427,7 +3445,6 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -3459,7 +3476,8 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -3469,7 +3487,7 @@
                   "end": "2026-09-30",
                   "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
@@ -3480,7 +3498,6 @@
                 "end": "2027-01-20",
                 "note": "정시모집 원서접수 기간"
               },
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "수능위주",
@@ -3571,7 +3588,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -3622,7 +3640,6 @@
                     "end": "2026-09-30",
                     "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -3711,7 +3728,8 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -3723,9 +3741,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -3735,7 +3753,7 @@
                   "end": "2026-09-30",
                   "note": "수시 1차(9월)/수시 2차(11월)로 나누어 접수 진행"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
@@ -3744,7 +3762,6 @@
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -3770,7 +3787,8 @@
                   },
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -3819,9 +3837,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -3833,9 +3851,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -3866,7 +3884,7 @@
                   "end": "2026-11-25",
                   "note": "수시 1차: 09.07~09.30 / 수시 2차: 11.11~11.25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
@@ -3876,7 +3894,6 @@
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -3911,7 +3928,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -3961,7 +3979,6 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -3983,7 +4000,8 @@
                         "gradeType": "교과"
                       }
                     }
-                  ]
+                  ],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -3995,7 +4013,6 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
                   "types": [
                     {
@@ -4017,7 +4034,8 @@
                         "practical": "60%"
                       }
                     }
-                  ]
+                  ],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [],
@@ -4027,7 +4045,7 @@
                   "end": "2026-11-25",
                   "note": "수시 1차 특별전형 접수 및 수시 2차 실기전형 접수 분할"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
@@ -4036,7 +4054,6 @@
                 "start": "2027-01-04",
                 "end": "2027-01-20"
               },
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4059,7 +4076,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4108,9 +4126,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -4122,9 +4140,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -4153,12 +4171,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4181,7 +4198,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4229,7 +4247,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-20",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4249,13 +4266,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4278,7 +4295,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4324,7 +4342,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-12-11",
                   "types": [
                     {
                       "title": "서류/면접위주 전형",
@@ -4367,13 +4384,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-11"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4396,7 +4413,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4444,7 +4462,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-12-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4464,13 +4481,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4493,7 +4510,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4541,7 +4559,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4562,13 +4579,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4591,7 +4608,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4637,7 +4655,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4657,13 +4674,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4686,7 +4703,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4732,7 +4750,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4752,13 +4769,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4781,7 +4798,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4824,7 +4842,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4844,13 +4861,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4873,7 +4890,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -4919,7 +4937,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -4939,13 +4956,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -4968,7 +4985,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5014,7 +5032,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5034,13 +5051,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5063,7 +5080,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5110,7 +5128,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-20",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5130,13 +5147,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5159,7 +5176,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5204,7 +5222,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5224,13 +5241,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5253,7 +5270,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5299,7 +5317,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5319,13 +5336,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5348,7 +5365,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5395,7 +5413,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-12-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5415,13 +5432,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5444,7 +5461,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5490,7 +5508,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5510,13 +5527,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5539,7 +5556,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5586,7 +5604,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5606,13 +5623,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5635,7 +5652,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5681,7 +5699,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5701,13 +5718,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5730,7 +5747,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5776,7 +5794,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-20",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5796,13 +5813,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5825,7 +5842,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         },
@@ -5854,7 +5872,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-20",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5874,13 +5891,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -5903,7 +5920,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -5951,7 +5969,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -5971,13 +5988,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6000,7 +6017,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6047,7 +6065,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -6067,13 +6084,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6096,7 +6113,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6144,7 +6162,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-12-15",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -6164,13 +6181,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-12-15"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6193,7 +6210,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6240,7 +6258,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-20",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -6260,13 +6277,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-20"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6289,7 +6306,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6335,7 +6353,6 @@
                     "start": "2026-09-11",
                     "end": "2026-09-15"
                   },
-                  "finalAnnounce": "2026-11-13",
                   "types": [
                     {
                       "title": "실기위주 전형",
@@ -6355,13 +6372,13 @@
                         "note": ""
                       }
                     }
-                  ]
+                  ],
+                  "announce": "2026-11-13"
                 }
               ]
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6384,7 +6401,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6434,9 +6452,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -6448,9 +6466,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -6496,12 +6514,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6524,7 +6541,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6572,9 +6590,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -6586,9 +6604,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -6616,12 +6634,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6644,7 +6661,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6694,9 +6712,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -6708,9 +6726,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -6738,12 +6756,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6766,7 +6783,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -6815,9 +6833,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -6829,9 +6847,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -6859,12 +6877,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6887,7 +6904,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         },
@@ -6918,9 +6936,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -6932,9 +6950,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -6962,12 +6980,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -6990,7 +7007,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -7039,9 +7057,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -7053,9 +7071,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -7083,12 +7101,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-15"
+                "announce": "2026-12-15"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -7111,7 +7128,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -7160,9 +7178,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 },
                 {
                   "round": 2,
@@ -7174,9 +7192,9 @@
                     "end": "",
                     "note": ""
                   },
-                  "finalAnnounce": "",
                   "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
-                  "types": []
+                  "types": [],
+                  "announce": ""
                 }
               ],
               "unassignedTypes": [
@@ -7204,12 +7222,11 @@
                   "start": "2026-09-07",
                   "end": "2026-11-25"
                 },
-                "finalAnnounce": "2026-12-18"
+                "announce": "2026-12-18"
               }
             },
             "jeongsi": {
               "reference": false,
-              "finalAnnounce": "2027-02-05",
               "types": [
                 {
                   "title": "",
@@ -7232,7 +7249,8 @@
                   "ratio": {},
                   "note": ""
                 }
-              ]
+              ],
+              "announce": "2027-02-05"
             }
           }
         }
@@ -7279,7 +7297,6 @@
                   "end": "",
                   "note": ""
                 },
-                "finalAnnounce": "",
                 "note": "",
                 "types": [
                   {
@@ -7347,7 +7364,8 @@
                     },
                     "note": ""
                   }
-                ]
+                ],
+                "announce": ""
               },
               {
                 "round": 2,
@@ -7359,7 +7377,6 @@
                   "end": "",
                   "note": ""
                 },
-                "finalAnnounce": "",
                 "note": "",
                 "types": [
                   {
@@ -7427,7 +7444,8 @@
                     },
                     "note": ""
                   }
-                ]
+                ],
+                "announce": ""
               }
             ]
           },
@@ -7439,7 +7457,6 @@
               "end": "",
               "note": ""
             },
-            "finalAnnounce": "",
             "note": "",
             "types": [
               {
@@ -7650,7 +7667,8 @@
                 "category": "논술",
                 "description": ""
               }
-            ]
+            ],
+            "announce": ""
           },
           "etc": []
         }
