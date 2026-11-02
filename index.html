@@ -792,7 +792,7 @@ function admissionHtml(s) {
                : gr.g.offered === false ? '<p class="muted none">이 모집은 실시하지 않아요.</p>'
                : gr.round ? '<p class="muted none">이 모집차수의 정보가 아직 입력되지 않았어요.</p>'
                : gr.key === "susi" ? '<p class="muted none">수시 세부 정보가 아직 입력되지 않았어요.</p>'
-               : gr.key === "jeongsi" ? '<p class="muted none">정시 세부 정보가 아직 입력되지 않았어요.</p>'
+               : gr.key === "jeongsi" ? '<p class="muted none">정시 모집이 없습니다</p>'
                : '<p class="muted">아직 입력된 정보가 없어요.</p>';
     const inner = (rows.length ? dl(rows) : "") + types;
     return `<div class="grp"><div class="gh"><span class="gt ${cls}">${gr.name}</span>${cleanQ(gr.g.quota) ? `<span class="qb">모집 ${cleanQ(gr.g.quota)}</span>` : ""}</div>${inner || none}</div>`;
