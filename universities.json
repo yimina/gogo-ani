@@ -545,18 +545,14 @@
                     "end": "2026-09-30",
                     "note": ""
                   },
-                  "announce": "",
-                  "note": "모집차수별 모집인원·발표일은 확인 후 입력. 기존 전형별 일정은 types 안에 보존.",
+                  "announce": "2026-11-06",
+                  "note": "",
                   "types": [
                     {
                       "title": "특별전형",
                       "name": "수시1차",
                       "short": "청강1차 특별",
-                      "quota": "3명",
-                      "apply": {
-                        "start": "2026-09-07",
-                        "end": "2026-09-30"
-                      },
+                      "quota": "3명",                      
                       "competition": {
                         "year": "2026",
                         "rate": "7.0:1",
@@ -600,8 +596,7 @@
                           "method": "A형:흑백 2페이지만화\n B형:컬러 스크롤 웹툰",
                           "kind": "실기",
                           "examDate": "2026-10-24",
-                          "examEnd": "2026-10-25",
-                          "announce": "2026-11-06",
+                          "examEnd": "2026-10-25",                          
                           "ratio": {
                             "document": "",
                             "grade": "40",
@@ -613,7 +608,7 @@
                           }
                         }
                       ],
-                      "process": "A,B,C형 중 택일 하여 실기 진행"
+                      "process": "A,B형 중 택일 하여 실기 진행"
                     },
                     {
                       "title": "면접전형",
@@ -633,11 +628,11 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "포트폴리오[이미지]",
+                          "method": "학생부종합+포트폴리오[이미지]",
                           "kind": "면접",
                           "examDate": "2026-10-20",
                           "examEnd": "2026-10-21",
-                          "announce": "2026-11-06",
+                          "announce": "2026-10-15",
                           "ratio": {
                             "document": "",
                             "grade": "",
@@ -646,17 +641,18 @@
                             "essay": "",
                             "practical": "",
                             "interview": "100"
-                          }
+                          },
+                          "note" : "면접 1차 합격자 면접진행"
                         }
                       ],
-                      "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
+                      "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수작업 결과물"
                     }
                   ]
                 },
                 {
                   "round": 2,
                   "label": "수시 2차",
-                  "reference": true,
+                  "reference": false,
                   "quota": "",
                   "apply": {
                     "start": "",
@@ -664,7 +660,7 @@
                     "note": ""
                   },
                   "announce": "",
-                  "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
+                  "note": "",
                   "types": []
                 }
               ],
@@ -679,31 +675,53 @@
               }
             },
             "jeongsi": {
-              "reference": true,
+              "reference": false,
               "quota": "30명",
               "types": [
-                {
-                  "title": "면접전형",
-                  "name": "",
-                  "gun": "",
-                  "quota": "30명",
-                  "competition": {
-                    "year": "2026",
-                    "rate": "7.4:1",
+              {
+                "title": "면접전형",
+                "name": "",
+                "short": "",
+                "gun": "",
+                "quota": "",
+                "apply": {
+                  "start": "2027-01-04",
+                  "end": "2027-01-20",
+                  "note": ""
+                },                
+                "competition": {
+                  "year": "",
+                  "rate": "",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "",
+                    "method": "학생부종합+포트폴리오[이미지]",
+                    "examDate": "2027-01-28",
+                    "examEnd": "2027-01-29",                    
+                    "announce": "2027-02-09",
+                    "kind": "면접",
+                    "ratio": {
+                      "suneung": "",
+                      "document": "",
+                      "grade": "",
+                      "gradeType": "",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": "100"
+                    },
                     "note": ""
-                  },
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "practical": "100",
-                    "interview": ""
-                  },
-                  "note": "학생부종합+포트폴리오"
-                }
-              ],
-              "announce": "2027-02-09"
-            }
+                  }
+                ],
+                "process": "",
+                "note": "",
+                "category": "면접",
+                "description": ""
+              }
+              ]
+            },
           }
         },
         {
