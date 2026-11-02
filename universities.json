@@ -1250,7 +1250,7 @@
     },
     {
       "name": "한성대학교",
-      "type": "4년재",
+      "type": "4년제",
       "region": "서울",
       "address": "서울특별시 성북구 삼선교로 16길 116",
       "url": "https://enter.hansung.ac.kr/",
@@ -1261,13 +1261,12 @@
           "short": "",
           "quota": "",
           "category": [
-            "애니메이션"
+            "애니메이션", "게임"
           ],
           "admission": {
             "admissionUrl": "https://enter.hansung.ac.kr/?m1=menu00%25&m2=sub00%25&board=application%25&application=1%25",
             "track": [
-              "실기",
-              "비실기"
+              "실기"
             ],
             "process": "",
             "practical": "",
