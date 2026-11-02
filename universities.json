@@ -923,32 +923,133 @@
                     }
                   ],
                   "process": "학생부종합 + 포트폴리오(필수)A,B,C,D형 중 택1\n]"
+                },
+                {
+                  "title": "학생부",
+                  "name": "수시2차",
+                  "short": "청강2차 교과",
+                  "quota": "10명",
+                  "apply": {
+                    "start": "2026-11-11",
+                    "end": "2026-11-25",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "11.1:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "학생부교과 성적 100 일괄 합산"
+                },
+                {
+                  "title": "특별전형",
+                  "name": "수시2차",
+                  "short": "청강2차 특별",
+                  "quota": "8명",
+                  "apply": {
+                    "start": "2026-11-11",
+                    "end": "2026-11-25"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "6.4:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부 점수 + 가산자(대회입상자)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "교과 100 + 가산점(대회입상자)"
+                },
+                {
+                  "title": "면접전형",
+                  "name": "수시2차",
+                  "short": "청강2차 면접",
+                  "quota": "50명",
+                  "apply": {
+                    "start": "2026-11-11",
+                    "end": "2026-11-25",
+                    "note": "학생부종합 + 포트폴리오"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "13.8:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "포트폴리오[A형:게임기획,B형:게임그래픽,C형:게임프로그래밍,D형:게임QA&비지니스]",
+                      "kind": "면접",
+                      "examDate": "2026-12-05",
+                      "examEnd": "2026-12-06",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "학생부종합 + 포트폴리오(필수)A,B,C,D형 중 택1\n]"
                 }
               ]
             },
             "jeongsi": {
               "reference": true,
-              "quota": "65명",
+              "quota": "3명",
               "finalAnnounce": "2027-02-09",
               "types": [
                 {
-                  "title": "실기전형",
+                  "title": "학생부교과전형",
                   "name": "",
                   "gun": "",
-                  "quota": "65명",
+                  "quota": "3명",
                   "competition": {
                     "year": "2026",
-                    "rate": "7.9:1",
+                    "rate": "26:1",
                     "note": ""
                   },
                   "ratio": {
                     "suneung": "",
                     "document": "",
-                    "grade": "",
+                    "grade": "100",
                     "practical": "100",
                     "interview": ""
                   },
-                  "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
+                  "note": "학생부교과"
                 }
               ]
             },
