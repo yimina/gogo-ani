@@ -392,8 +392,7 @@
                           "method": "A형 : 스토리에 따른 이미지보드\n B형 : 애니메이션 상황표현\nC형 : 제스처 드로잉",
                           "kind": "실기",
                           "examDate": "2026-10-24",
-                          "examEnd": "2026-10-25",
-                          "announce": "2026-11-06",
+                          "examEnd": "2026-10-25",                          
                           "ratio": {
                             "document": "",
                             "grade": "40",
@@ -424,7 +423,7 @@
                           "kind": "면접",
                           "examDate": "2026-10-20",
                           "examEnd": "2026-10-21",      
-                          "announce": "2026-10-15", 
+                          "announce": "2026-10-15(면접1차합겹자)", 
                           "ratio": {
                             "document": "",
                             "grade": "",
