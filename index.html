@@ -771,10 +771,14 @@ function admissionHtml(s) {
     const has = groupHas(gr.g);
     if (!has && gr.key === "etc") return "";
     const ref = !!gr.g.reference;
-    const rows = has ? groupRows(gr.g, gr.jeong, ref, false, gr.name) : [];
-    const types = (gr.g.types || []).filter(groupHas).map(t => typeHtml(t, gr.jeong, ref || !!t.reference)).join("");
+    // 자동 안내용 note만 있는 빈 수시 2차도 모집 정보가 없는 것으로 표시합니다.
+    const emptySecondRound = gr.round && Number(gr.g.round) === 2 &&
+      !groupHas({ ...gr.g, note: "" });
+    const rows = has && !emptySecondRound ? groupRows(gr.g, gr.jeong, ref, false, gr.name) : [];
+    const types = emptySecondRound ? "" : (gr.g.types || []).filter(groupHas).map(t => typeHtml(t, gr.jeong, ref || !!t.reference)).join("");
     const cls = gr.key === "susi" ? "s1" : gr.key === "jeongsi" ? "s2" : "s3";
-    const none = gr.summary ? ""
+    const none = emptySecondRound ? '<p class="muted none">수시 2차 모집이 없습니다.</p>'
+               : gr.summary ? ""
                : gr.g.offered === false ? '<p class="muted none">이 모집은 실시하지 않아요.</p>'
                : gr.round ? '<p class="muted none">이 모집차수의 정보가 아직 입력되지 않았어요.</p>'
                : gr.key === "susi" ? '<p class="muted none">수시 세부 정보가 아직 입력되지 않았어요.</p>'
