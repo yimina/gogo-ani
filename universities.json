@@ -440,7 +440,7 @@
                 },
                 {
                   "round": 2,
-                  "label": "수시 2차",
+                  "label": "",
                   "reference": true,
                   "quota": "",
                   "apply": {
@@ -449,19 +449,11 @@
                     "note": ""
                   },
                   "finalAnnounce": "",
-                  "note": "원본에 차수가 명시된 전형 정보 없음. 모집 여부와 일정 확인 후 입력.",
+                  "note": "",
                   "types": []
                 }
               ],
-              "unassignedTypes": [],
-              "legacySchedule": {
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30",
-                  "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
-                },
-                "finalAnnounce": "2027-11-06"
-              }
+              "unassignedTypes": []
             },
             "jeongsi": {
               "reference": true,
@@ -699,6 +691,7 @@
             "practical": "문해력 기반 1p 만화 연출 구성 또는 2p 캐릭터 일러스트레이션 작화 중 선택",
             "susi": {
               "reference": true,
+              "quota": "25명",
               "rounds": [
                 {
                   "round": 1,
