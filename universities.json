@@ -24,10 +24,13 @@
     "unassignedTypes는 원본에서 모집차수를 판별할 수 없는 전형이에요. 확인 후 해당 rounds[].types로 옮기고 이 배열에서는 제거하세요. 두 차수에 임의로 복제하지 않았어요.",
     "legacySchedule은 원본 susi.apply/finalAnnounce를 그대로 보존한 참고용 정보이며 실제 접수·발표 일정으로 사용하지 않아요. 모집차수가 불명확한 발표일이나 두 차수를 아우르는 접수기간을 차수별로 임의 배정하지 않았어요.",
     "빈 날짜·모집인원 및 빈 types는 미입력 상태이며 미실시·0명을 뜻하지 않아요. 기존 날짜의 학년도 혼재나 발표일 선후관계는 검증·수정하지 않았어요. 새 일정은 YYYY-MM-DD로 입력하세요.",
-    "전문대 신규 입력은 _전문대학교템플릿을 복사하세요. 기존 화면·달력 프로그램도 전문대에서는 susi.rounds를 순회하고, 차수별 apply와 types[].stages를 읽도록 수정해야 해요. unassignedTypes는 차수 미확인 정보로 구분하고 legacySchedule은 일정에 등록하지 않아요.",
+    "신규 학교 입력은 일반대·전문대 모두 _학교템플릿을 복사하세요. 기존 화면·달력 프로그램도 전문대에서는 susi.rounds를 순회하고, 차수별 apply와 types[].stages를 읽도록 수정해야 해요. unassignedTypes는 차수 미확인 정보로 구분하고 legacySchedule은 일정에 등록하지 않아요.",
     "정시 jeongsi.types에는 수능전형·실기전형·면접전형·논술전형 등 필요한 전형을 개수 제한 없이 추가할 수 있어요. title은 전형 대표 이름, name은 세부 전형명, category는 수능/실기/면접/논술 등 선택 분류, description은 자유로운 전형 설명(줄바꿈 가능), process는 전형 방법, note는 참고사항이에요.",
     "정시 전형별 description은 화면에 전형 설명으로 표시돼요. 군(gun)은 해당하는 경우에만 입력해요. 전형별 접수는 types[].apply, 시험일은 types[].stages[].examDate/examEnd, 발표는 stages[].announce에 적어요. kind에 수능·실기·면접·논술을 넣으면 달력에도 해당 종류로 표시돼요.",
-    "정시 반영 비율은 ratio의 suneung(수능), practical(실기), interview(면접), essay(논술), grade(학생부), document(서류) 등에 입력해요. 템플릿의 네 전형은 입력용 예시이며 실제 학교의 모집 여부를 뜻하지 않아요. 사용하지 않는 예시 전형은 삭제하고 실제 운영 전형만 넣으세요."
+    "정시 반영 비율은 ratio의 suneung(수능), practical(실기), interview(면접), essay(논술), grade(학생부), document(서류) 등에 입력해요. 템플릿의 네 전형은 입력용 예시이며 실제 학교의 모집 여부를 뜻하지 않아요. 사용하지 않는 예시 전형은 삭제하고 실제 운영 전형만 넣으세요.",
+    "입력 템플릿은 학교 유형과 관계없이 _학교템플릿 하나로 통합했어요. 실제 학교 정보(schools)는 바꾸지 않았어요.",
+    "_학교템플릿의 수시에는 types(단일 모집용)와 rounds(수시 1차·2차용)가 함께 있어요. 단일 수시는 rounds를 빈 배열 []로 바꾸고 susi.types에 입력하세요. 수시 1차·2차로 나누는 학교는 susi.types를 빈 배열 []로 바꾸고 susi.rounds[].types에 입력하세요. rounds가 비어 있지 않으면 화면은 rounds를 우선 사용해요.",
+    "정시는 학교 유형과 관계없이 jeongsi.types에 전형별로 입력하세요. 수능·실기·면접·논술 예시 중 실제 운영 전형만 남기고 설명은 description에 입력해요."
   ],
   "checkedAt": "2026-10-20",
   "schools": [
@@ -7085,258 +7088,7 @@
                 },
                 "note": ""
               }
-            ]
-          },
-          "jeongsi": {
-            "reference": false,
-            "quota": "",
-            "apply": {
-              "start": "",
-              "end": "",
-              "note": ""
-            },
-            "finalAnnounce": "",
-            "note": "",
-            "types": [
-              {
-                "title": "수능전형",
-                "name": "",
-                "short": "",
-                "gun": "",
-                "quota": "",
-                "apply": {
-                  "start": "",
-                  "end": "",
-                  "note": ""
-                },
-                "competition": {
-                  "year": "",
-                  "rate": "",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "수능",
-                    "ratio": {
-                      "suneung": "",
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "",
-                "category": "수능",
-                "description": ""
-              },
-              {
-                "title": "실기전형",
-                "name": "",
-                "short": "",
-                "gun": "",
-                "quota": "",
-                "apply": {
-                  "start": "",
-                  "end": "",
-                  "note": ""
-                },
-                "competition": {
-                  "year": "",
-                  "rate": "",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "실기",
-                    "ratio": {
-                      "suneung": "",
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "",
-                "category": "실기",
-                "description": ""
-              },
-              {
-                "title": "면접전형",
-                "name": "",
-                "short": "",
-                "gun": "",
-                "quota": "",
-                "apply": {
-                  "start": "",
-                  "end": "",
-                  "note": ""
-                },
-                "competition": {
-                  "year": "",
-                  "rate": "",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "면접",
-                    "ratio": {
-                      "suneung": "",
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "",
-                "category": "면접",
-                "description": ""
-              },
-              {
-                "title": "논술전형",
-                "name": "",
-                "short": "",
-                "gun": "",
-                "quota": "",
-                "apply": {
-                  "start": "",
-                  "end": "",
-                  "note": ""
-                },
-                "competition": {
-                  "year": "",
-                  "rate": "",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "",
-                    "examDate": "",
-                    "examEnd": "",
-                    "announce": "",
-                    "kind": "논술",
-                    "ratio": {
-                      "suneung": "",
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": ""
-                  }
-                ],
-                "process": "",
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "gradeType": "",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "",
-                "category": "논술",
-                "description": ""
-              }
-            ]
-          },
-          "etc": []
-        }
-      }
-    ],
-    "sources": []
-  },
-  "_전문대학교템플릿": {
-    "name": "",
-    "type": "전문대학",
-    "region": "",
-    "address": "",
-    "url": "",
-    "short": "",
-    "departments": [
-      {
-        "name": "",
-        "short": "",
-        "quota": "",
-        "category": [],
-        "admission": {
-          "admissionUrl": "",
-          "track": [],
-          "process": "",
-          "practical": "",
-          "note": "",
-          "susi": {
-            "reference": false,
-            "quota": "",
-            "note": "",
+            ],
             "rounds": [
               {
                 "round": 1,
@@ -7498,8 +7250,7 @@
                   }
                 ]
               }
-            ],
-            "unassignedTypes": []
+            ]
           },
           "jeongsi": {
             "reference": false,

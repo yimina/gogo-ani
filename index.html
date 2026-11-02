@@ -84,8 +84,7 @@
   .detail dd { margin: 0; white-space: pre-line; }
   .detail .muted { font-size: 12.5px; color: var(--sub); margin: 0 0 8px; line-height: 1.55; }
   .detail .none { display: inline-block; padding: 4px 12px; border-radius: 8px; background: #fff; border: 1px dashed var(--line); color: var(--ink); font-weight: 500; }
-  .dtabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 6px; margin: 8px 0 10px; }
-  .dtab:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .dtabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 8px 0 10px; }
   .dtab { display: flex; flex-direction: column; gap: 1px; min-width: 0; text-align: left; font: inherit; padding: 8px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; transition: background .15s, border-color .15s; }
   .dtab:hover { border-color: var(--ink); }
   .dtab .dp { font-size: 11px; color: var(--sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
