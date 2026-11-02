@@ -487,7 +487,7 @@
                 "stages": [
                   {
                     "label": "",
-                    "method": "",
+                    "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
                     "examDate": "2027-01-28",
                     "examEnd": "2027-01-29",
                     "announce": "",
@@ -499,7 +499,7 @@
                       "gradeType": "",
                       "attendance": "",
                       "essay": "",
-                      "practical": "",
+                      "practical": "100",
                       "interview": ""
                     },
                     "note": ""
