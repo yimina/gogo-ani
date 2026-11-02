@@ -308,7 +308,7 @@
                 {
                   "round": 1,
                   "label": "수시 1차",
-                  "reference": true,
+                  "reference": false,
                   "quota": "",
                   "apply": {
                     "start": "2026-09-07",
