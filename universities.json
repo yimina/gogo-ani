@@ -142,8 +142,8 @@
             "reference": true,
             "quota": "40명",
             "apply": {
-              "start": "2027-09-10",
-              "end": "2027-09-14",
+              "start": "2026-09-10",
+              "end": "2026-09-14",
               "note": ""
             },
             "finalAnnounce": "2027-12-10",
@@ -252,32 +252,37 @@
         "admission": {
           "admissionUrl": "https://ipsi.ck.ac.kr/",
           "track": ["실기", "면접", "비실기"],
-          "process": "수시 1·2차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
+          "process": "수시 1차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
           "practical": "실기: 애니메이션 융합실기(스토리보드, 상황표현 등) / 면접: 포트폴리오 및 심층 구술 면접",
           "note": "2028학년도 시행계획에 따라 실기전형의 실기 반영 비중이 70으로 대폭 강화되었습니다.",
           "susi": {
             "reference": true,
-            "quota": "169명",
+            "quota": "173명",
             "apply": {
-              "start": "2027-09-06",
-              "end": "2027-10-08",
+              "start": "2026-09-07",
+              "end": "2026-09-30",
               "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
             },
-            "finalAnnounce": "2027-12-17",
+            "finalAnnounce": "2027-11-06",
             "types": [
               {
-                "title": "학생부위주 전형",
-                "name": "수시1차 학생부교과전형",
+                "title": "학생부",
+                "name": "학생부교과전형",
                 "short": "청강1차 교과",
-                "quota": "모집요강 참조",
+                "quota": "16명",
                 "apply": {
-                  "start": "2027-09-06",
-                  "end": "2027-10-08",
+                  "start": "2026-09-07",
+                  "end": "2026-09-30",
                   "note": "수시 1차에만 개설되는 비실기 전형"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "11.8:1",
+                  "note": ""
                 },
                 "stages": [
                   {
-                    "label": "1차",
+                    "label": "",
                     "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
                     "kind": "서류",
                     "ratio": {
@@ -294,132 +299,93 @@
                 "process": "학생부교과 성적 100 일괄 합산"
               },
               {
-                "title": "실기위주 전형",
-                "name": "수시1차 일반실기전형",
+                "title": "특별전형",
+                "name": "수시1차",
+                "short": "청강1차 특별",
+                "quota": "4명",
+                "apply": {
+                  "start": "2026-09-07",
+                  "end": "2026-09-30"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "7.0:1",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "",
+                    "method": "학생부 점수 + 가산자(대회입상자)",
+                    "kind": "서류",
+                    "ratio": {
+                      "document": "",
+                      "grade": "100",
+                      "gradeType": "교과",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "",
+                      "interview": ""
+                    }
+                  }
+                ],
+                "process": "교과 100 + 가산점(대회입상자)"
+              },
+              {
+                "title": "실기",
+                "name": "수시1차 실기",
                 "short": "청강1차 실기",
-                "quota": "모집요강 참조",
+                "quota": "90명",
                 "apply": {
-                  "start": "2027-09-06",
-                  "end": "2027-10-08"
+                  "start": "2026-09-07",
+                  "end": "2026-09-30"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "17.3:1",
+                  "note": ""
                 },
                 "stages": [
                   {
-                    "label": "1차",
-                    "method": "우수 1개 학기 내신 성적 30 + 지정 실기고사 성적 70 일괄합산",
+                    "label": "",
+                    "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
                     "kind": "실기",
                     "ratio": {
                       "document": "",
-                      "grade": "30",
+                      "grade": "40",
                       "gradeType": "교과",
                       "attendance": "",
                       "essay": "",
-                      "practical": "70",
+                      "practical": "60",
                       "interview": ""
                     }
                   }
                 ],
-                "process": "교과 30 + 실기 70 합산 평가"
+                "process": "A,B,C형 중 택일 하여 실기 진행"
               },
               {
-                "title": "면접위주 전형",
-                "name": "수시1차 포트폴리오 면접전형",
+                "title": "면접전형",
+                "name": "수시1차 면접전형",
                 "short": "청강1차 면접",
-                "quota": "모집요강 참조",
+                "quota": "63명",
                 "apply": {
-                  "start": "2027-09-06",
-                  "end": "2027-10-08"
+                  "start": "2026-09-07",
+                  "end": "2026-09-30",
+                  "note": "학생부종합 + 포트폴리오"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "11.0:1",
+                  "note": ""
                 },
                 "stages": [
                   {
-                    "label": "1차",
-                    "method": "제출한 전공 포트폴리오 서류 심사 100 반영 (면접 대상자 선출)",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "100",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    }
-                  },
-                  {
-                    "label": "2차",
-                    "method": "1차 통과자 대상 작품 심층 질의응답 및 면접 평가 100 독자 반영",
+                    "label": "",
+                    "method": "포트폴리오[A형:이미지,B형:영상]",
                     "kind": "면접",
                     "ratio": {
                       "document": "",
                       "grade": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": "100"
-                    },
-                    "note": "비교과 특별 유형으로 고교 내신 성적은 반영 지표에서 원천 제외됩니다."
-                  }
-                ],
-                "process": "1단계 서류 100 후 2단계 면접 100 최종 선발"
-              },
-              {
-                "title": "실기위주 전형",
-                "name": "수시2차 일반실기전형",
-                "short": "청강2차 실기",
-                "quota": "모집요강 참조",
-                "apply": {
-                  "start": "2027-11-08",
-                  "end": "2027-11-22",
-                  "note": "수시 2차 별도 원서접수 일정 적용"
-                },
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "학생부 교과 성적 30 + 당일 지정 실기고사 성적 70 합산 평가",
-                    "kind": "실기",
-                    "ratio": {
-                      "document": "",
-                      "grade": "30",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "70",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "교과 30 + 실기 70 가중치 일괄 적용"
-              },
-              {
-                "title": "면접위주 전형",
-                "name": "수시2차 특별 면접전형",
-                "short": "청강2차 면접",
-                "quota": "모집요강 참조",
-                "apply": {
-                  "start": "2027-11-08",
-                  "end": "2027-11-22"
-                },
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "포트폴리오 서류 심사 100 선발",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "100",
-                      "grade": "",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    }
-                  },
-                  {
-                    "label": "2차",
-                    "method": "1단계 패스자 대상 다대일 심층 전공 구술 면접 100 수행",
-                    "kind": "면접",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
+                      "gradeType": "비교과",
                       "attendance": "",
                       "essay": "",
                       "practical": "",
@@ -427,14 +393,35 @@
                     }
                   }
                 ],
-                "process": "서류 100 거친 후 면접 100 일괄 선발 체제"
+                "process": "학생부종합 + 포트폴리오(필수)\nA형:이미지[내용:원화,디지털이미지,사진, 50%이상 인체드로잉]\nB형:영상[데모릴:개인, 공동작 중 본인작업한 부분만 발췌, 1분30초이내, 창작영상(선택)]"
               }
             ]
           },
           "jeongsi": {
             "reference": true,
-            "quota": "69명",
-            "finalAnnounce": "2028-02-04"
+            "quota": "65명",
+            "finalAnnounce": "2027-02-09",
+            "types": [
+              {
+                "title": "실기전형",
+                "name": "",
+                "gun": "",
+                "quota": "65명",
+                "competition": {
+                  "year": "2026",
+                  "rate": "7.9:1",
+                  "note": ""
+                },
+                "ratio": {
+                  "suneung": "",
+                  "document": "",
+                  "grade": "",
+                  "practical": "100",
+                  "interview": ""
+                },
+                "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
+              }
+            ]
           },
           "etc": []
         }
