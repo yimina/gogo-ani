@@ -309,7 +309,7 @@
                 },
                 "competition": {
                   "year": "2026",
-                  "rate": "7.0:1",
+                  "rate": "5.0:1",
                   "note": ""
                 },
                 "stages": [
@@ -341,7 +341,7 @@
                 },
                 "competition": {
                   "year": "2026",
-                  "rate": "17.3:1",
+                  "rate": "16.5:1",
                   "note": ""
                 },
                 "stages": [
@@ -377,7 +377,7 @@
                 },
                 "competition": {
                   "year": "2026",
-                  "rate": "11.0:1",
+                  "rate": "8.5:1",
                   "note": ""
                 },
                 "stages": [
@@ -433,100 +433,156 @@
         }
       },
       {
-        "name": "만화콘텐츠스쿨 웹툰만화콘텐츠전공",
+        "name": "만화콘텐츠스쿨 웹툰만화콘텐츠과",
         "short": "웹툰만화",
         "quota": "190명",
         "category": ["만화"],
         "admission": {
           "admissionUrl": "https://ipsi.ck.ac.kr/",
           "track": ["실기", "면접"],
-          "process": "수시 1·2차 전형 유형 분할 (실기형 교과30+실기70 / 면접형 서류 및 심층 질의)",
+          "process": "수시 1차 전형 유형 분할 (실기형 교과30+실기70 / 면접형 서류 및 심층 질의)",
           "practical": "실기전형: 웹툰만화 창작실기(주제 흑백 2p 만화, 웹툰 연출 등) / 면접전형: 웹툰 포트폴리오",
           "susi": {
             "reference": true,
             "quota": "160명",
             "apply": {
-              "start": "2027-09-06",
-              "end": "2027-10-08",
-              "note": "수시 1차 접수 기준"
+              "start": "2026-09-06",
+              "end": "2026-09-30",
+              "note": ""
             },
-            "finalAnnounce": "2027-12-17",
+            "finalAnnounce": "2026-11-06",
             "types": [
               {
-                "title": "실기위주 전형",
-                "name": "수시1차 일반실기전형",
-                "short": "청강1차 웹툰실기",
-                "quota": "모집요강 참조",
-                "ratio": {
-                  "document": "",
-                  "grade": "30",
-                  "gradeType": "교과",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "70",
-                  "interview": ""
-                }
-              },
-              {
-                "title": "면접위주 전형",
-                "name": "수시1차 포트폴리오 면접전형",
-                "short": "청강1차 웹툰면접",
-                "quota": "모집요강 참조",
+                "title": "특별전형",
+                "name": "수시1차",
+                "short": "청강1차 특별",
+                "quota": "4명",
+                "apply": {
+                  "start": "2026-09-07",
+                  "end": "2026-09-30"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "7.0:1",
+                  "note": ""
+                },
                 "stages": [
                   {
-                    "label": "1차",
-                    "method": "제출 서류(만화/웹툰 포트폴리오) 정성평가 100",
+                    "label": "",
+                    "method": "학생부 점수 + 가산자(대회입상자)",
                     "kind": "서류",
                     "ratio": {
-                      "document": "100",
-                      "grade": "",
-                      "gradeType": "",
+                      "document": "",
+                      "grade": "100",
+                      "gradeType": "교과",
                       "attendance": "",
                       "essay": "",
                       "practical": "",
                       "interview": ""
                     }
-                  },
+                  }
+                ],
+                "process": "교과 100 + 가산점(대회입상자)"
+              },
+              {
+                "title": "실기",
+                "name": "수시1차",
+                "short": "청강1차 실기",
+                "quota": "117명",
+                "apply": {
+                  "start": "2026-09-07",
+                  "end": "2026-09-30"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "17.3:1",
+                  "note": ""
+                },
+                "stages": [
                   {
-                    "label": "2차",
-                    "method": "심층 대면 면접 100 반영",
+                    "label": "",
+                    "method": "A형:흑백 2페이지만화\n B형:컬러 스크롤 웹툰",
+                    "kind": "실기",
+                    "examDate": "2026-10-24",
+                    "examEnd": "2026-10-25",
+                    "announce": "2026-11-06",
+                    "ratio": {
+                      "document": "",
+                      "grade": "40",
+                      "gradeType": "교과",
+                      "attendance": "",
+                      "essay": "",
+                      "practical": "60",
+                      "interview": ""
+                    }
+                  }
+                ],
+                "process": "A,B,C형 중 택일 하여 실기 진행"
+              },
+              {
+                "title": "면접전형",
+                "name": "수시1차",
+                "short": "청강1차 면접",
+                "quota": "63명",
+                "apply": {
+                  "start": "2026-09-07",
+                  "end": "2026-09-30",
+                  "note": "학생부종합 + 포트폴리오"
+                },
+                "competition": {
+                  "year": "2026",
+                  "rate": "11.0:1",
+                  "note": ""
+                },
+                "stages": [
+                  {
+                    "label": "",
+                    "method": "포트폴리오[이미지]",
                     "kind": "면접",
+                    "examDate": "2026-10-20",
+                    "examEnd": "2026-10-21",
+                    "announce": "2026-11-06",
                     "ratio": {
                       "document": "",
                       "grade": "",
+                      "gradeType": "비교과",
                       "attendance": "",
                       "essay": "",
                       "practical": "",
                       "interview": "100"
                     }
                   }
-                ]
-              },
-              {
-                "title": "실기위주 전형",
-                "name": "수시2차 일반실기전형",
-                "short": "청강2차 웹툰실기",
-                "quota": "모집요강 참조",
-                "apply": {
-                  "start": "2027-11-08",
-                  "end": "2027-11-22"
-                },
-                "ratio": {
-                  "document": "",
-                  "grade": "30",
-                  "gradeType": "교과",
-                  "attendance": "",
-                  "essay": "",
-                  "practical": "70",
-                  "interview": ""
-                }
+                ],
+                "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
               }
+              
             ]
           },
           "jeongsi": {
             "reference": true,
             "quota": "30명",
-            "finalAnnounce": "2028-02-04"
+            "finalAnnounce": "2027-02-09",
+            "types": [
+              {
+                "title": "면접전형",
+                "name": "",
+                "gun": "",
+                "quota": "65명",
+                "competition": {
+                  "year": "2026",
+                  "rate": "7.4:1",
+                  "note": ""
+                },
+                "ratio": {
+                  "suneung": "",
+                  "document": "",
+                  "grade": "",
+                  "practical": "100",
+                  "interview": ""
+                },
+                "note": "학생부종합+포트폴리오"
+              }
+            ]
           }
         }
 },
