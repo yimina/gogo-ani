@@ -593,9 +593,19 @@ function jeongGuns(jg) {                 // 정시 제목에 붙일 군: 정시 
   return seen.join("·");
 }
 
-function admGroups(a) {
+function admGroups(a, schoolType = "") {
   const list = [];
-  const su = a.susi || {}, jg = a.jeongsi || {};
+  let su = a.susi || {};
+  const jg = a.jeongsi || {};
+  if (!String(schoolType).includes("전문") && Array.isArray(su.rounds) && su.rounds.length) {
+    const rounds = su.rounds;
+    const first = rounds[0] || {};
+    su = { ...su, ...first, quota: su.quota || first.quota,
+      types: rounds.flatMap((r, i) => (r.types || []).map(t => i === 0 ? t : ({
+        ...t, apply: t.apply && (t.apply.start || t.apply.end) ? t.apply : r.apply
+      }))) };
+    delete su.rounds;
+  }
   if (Array.isArray(su.rounds) && su.rounds.length) {
     // 수시 전체 인원과 참고는 한 번만 표시하고, 일정은 모집차수별로 분리합니다.
     const summary = { quota: su.quota, process: su.process, note: su.note, reference: su.reference };
@@ -767,7 +777,7 @@ function admissionHtml(s) {
     ["전형 방법 요약", a.process], ["실기·준비물", a.practical], ["참고", a.note]
   ].filter(r => r[1]);
 
-  const sections = admGroups(a).map(gr => {
+  const sections = admGroups(a, s.type).map(gr => {
     const has = groupHas(gr.g);
     if (!has && gr.key === "etc") return "";
     const ref = !!gr.g.reference;
@@ -944,7 +954,7 @@ function buildEvents(schools) {
       const fa = pd(obj.finalAnnounce);
       if (fa && !isType) ev.push({ ...base, title: label + " 최종 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
-    admGroups(a).forEach(gr => {
+    admGroups(a, s.type).forEach(gr => {
       if (gr.calendar === false) return;
       const g = gr.g || {};
       const gref = !!g.reference;
