@@ -22,636 +22,947 @@
   "checkedAt": "2026-10-20",
   "schools": [
     {
-    "name": "한국예술종합학교",
-    "type": "4년제",
-    "region": "서울",
-    "address": "서울특별시 성북구 화랑로32길 146-24",
-    "url": "https://karts.ac.kr",
-    "short": "한예종",
-    "departments": [
-      {
-        "name": "영상원 애니메이션과",
-        "short": "애니메이션과",
-        "quota": "15명",
-        "category": ["애니메이션"],
-        "admission": {
-          "admissionUrl": "https://www.karts.ac.kr/main/appl.do",
-          "track": ["실기"],
-          "process": "일반전형 중심 선발 (1차 실기 및 성적 평가, 2차 심층 실습 및 구술 면접 평가)",
-          "practical": "1차: 실기시험(드로잉 및 연출)\n 2차: 심층 실기고사(스토리보드/에세이) 및 구술면접",
-          "note": "한예종은 일반 대학교의 수시 6회 지원 제한을 받지 않는 특수 대학교입니다.",
-          "susi": {
-            "reference": false,
-            "quota": "15명",
-            "apply": {
-              "start": "2026-09-14",
-              "end": "2026-09-17",
-              "note": ""
-            },
-            "finalAnnounce": "2026-12-24",
-            "note": "",
-            "types": [
-              {
-                "title": "실기위주 전형",
-                "name": "일반전형 (영상원 애니메이션)",
-                "short": "한예종 일반",
-                "quota": "15명",
-                "competition": {
-                  "year": "2027학년도",
-                  "rate": "58 : 1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "스토리 구성과 연출력 중심 평가",
-                    "examDate": "2026-11-28",
-                    "examEnd": "2026-11-29",
-                    "announce": "2026-12-10",
-                    "kind": "실기",
-                    "ratio": {
-                      "document": "",
-                      "grade": "20",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "80",
-                      "interview": ""
-                    },
-                    "note": "교과:1학년(20)+2학년(40)+3학년(40)"
-                  },
-                  {
-                    "label": "2차",
-                    "method": "내러티브, 드로잉, 연출력 중심 평가",
-                    "examDate": "2026-12-15",
-                    "examEnd": "2026-12-22",
-                    "announce": "2026-12-24",
-                    "kind": "실기",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "50",
-                      "interview": "50"
-                    },
-                    "note": "실기 결과물, 에세이 등 제출물 바탕으로 주어진 질문에 답하기"
-                  }
-                ],
-                "process": "1차 실기·성적 컷오프 통과자 대상 2차 서류/심층실기/면접 최종 평가",
+      "name": "한국예술종합학교",
+      "type": "4년제",
+      "region": "서울",
+      "address": "서울특별시 성북구 화랑로32길 146-24",
+      "url": "https://karts.ac.kr",
+      "short": "한예종",
+      "departments": [
+        {
+          "name": "영상원 애니메이션과",
+          "short": "애니메이션과",
+          "quota": "15명",
+          "category": [
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://www.karts.ac.kr/main/appl.do",
+            "track": [
+              "실기"
+            ],
+            "process": "일반전형 중심 선발 (1차 실기 및 성적 평가, 2차 심층 실습 및 구술 면접 평가)",
+            "practical": "1차: 실기시험(드로잉 및 연출)\n 2차: 심층 실기고사(스토리보드/에세이) 및 구술면접",
+            "note": "한예종은 일반 대학교의 수시 6회 지원 제한을 받지 않는 특수 대학교입니다.",
+            "susi": {
+              "reference": false,
+              "quota": "15명",
+              "apply": {
+                "start": "2026-09-14",
+                "end": "2026-09-17",
                 "note": ""
-              }
-            ]
-          },
-          "jeongsi": {
-            "reference": true,
-            "quota": "",
-            "note": ""
-          },
-          "etc": []
-        }
-      }
-    ],
-    "sources": [
-      [
-        "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
-        "https://www.karts.ac.kr/main/appl.do"
-      ]
-    ]
-    },
-    {
-    "name": "세종대학교",
-    "type": "4년제",
-    "region": "서울",
-    "address": "서울특별시 광진구 능동로 209",
-    "url": "https://www.sejong.ac.kr/",
-    "short": "세종대",
-    "departments": [
-      {
-        "name": "창의소프트학부 만화애니메이션텍전공",
-        "short": "만화애니텍",
-        "quota": "50명",
-        "category": ["만화", "애니메이션"],
-        "admission": {
-          "admissionUrl": "https://ipsi.sejong.ac.kr/",
-          "track": ["비실기"],
-          "process": "수시 학생부종합(세종인재전형 면접형) 40명 중심 선발, 정시(나군 수능 위주) 10명 및 이월인원 선발",
-          "practical": "실기고사 없음 (제시문 기반 융합형 전공소양 발표평가 및 심층 구술 면접 수행)",
-          "note": "2028학년도 전형계획에 따라 만화애니메이션텍전공의 전체 정원이 50명으로 증원 개편되었습니다. 수시모집은 실기를 전혀 보지 않는 100% 비실기 학종 전형입니다.",
-          "susi": {
-            "reference": true,
-            "quota": "40명",
-            "apply": {
-              "start": "2026-09-10",
-              "end": "2026-09-14",
-              "note": ""
-            },
-            "finalAnnounce": "2027-12-10",
-            "types": [
-              {
-                "title": "학생부종합전형",
-                "name": "세종인재전형(면접형)",
-                "short": "세종대 면접",
-                "quota": "40명",
-                "competition": {
-                  "year": "2027학년도(전년도)",
-                  "rate": "9.46 : 1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "1차",
-                    "method": "학교생활기록부 기반 100 서류 종합 정성 평가 (3배수 선발)",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "",
-                      "grade": "100",
-                      "gradeType": "종합",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    },
-                    "note": "학생부의 학업역량, 창의융합역량 등을 종합 평가하여 면접 평가 대상자를 압축합니다."
+              },
+              "finalAnnounce": "2026-12-24",
+              "note": "",
+              "types": [
+                {
+                  "title": "실기위주 전형",
+                  "name": "일반전형 (영상원 애니메이션)",
+                  "short": "한예종 일반",
+                  "quota": "15명",
+                  "competition": {
+                    "year": "2027학년도",
+                    "rate": "58 : 1",
+                    "note": ""
                   },
-                  {
-                    "label": "2차",
-                    "method": "1단계 서류 성적 60 성적과 제시문 기반 구술 면접고사 40 합산 반영",
-                    "kind": "면접",
-                    "ratio": {
-                      "document": "",
-                      "grade": "60",
-                      "gradeType": "",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": "40"
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "스토리 구성과 연출력 중심 평가",
+                      "examDate": "2026-11-28",
+                      "examEnd": "2026-11-29",
+                      "announce": "2026-12-10",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "교과:1학년(20)+2학년(40)+3학년(40)"
                     },
-                    "note": "당일 출제되는 전공적합성 발표 주제에 대해 40분간 작작 후 9분간 다대일 면접을 진행합니다."
-                  }
-                ],
-                "process": "1단계 서류 100으로 3배수 선발 후, 2단계에서 1단계 60 + 면접 40 합산 최종 합격자 선출",
-                "note": "수능최저학력기준은 전면 미적용합니다."
-              }
-            ]
-          },
-          "jeongsi": {
-            "reference": true,
-            "quota": "10명",
-            "apply": {
-              "start": "2028-01-03",
-              "end": "2028-01-06"
+                    {
+                      "label": "2차",
+                      "method": "내러티브, 드로잉, 연출력 중심 평가",
+                      "examDate": "2026-12-15",
+                      "examEnd": "2026-12-22",
+                      "announce": "2026-12-24",
+                      "kind": "실기",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "50",
+                        "interview": "50"
+                      },
+                      "note": "실기 결과물, 에세이 등 제출물 바탕으로 주어진 질문에 답하기"
+                    }
+                  ],
+                  "process": "1차 실기·성적 컷오프 통과자 대상 2차 서류/심층실기/면접 최종 평가",
+                  "note": ""
+                }
+              ]
             },
-            "finalAnnounce": "2028-02-04",
-            "types": [
-              {
-                "title": "수능전형",
-                "name": "일반학생전형",
-                "gun": "다군",
-                "quota": "10명",
-                "competition": {
-                  "year": "2026",
-                  "rate": "8.5:1",
-                  "note": ""
-                },
-                "ratio": {
-                  "suneung": "100",
-                  "document": "",
-                  "grade": "",
-                  "practical": "",
-                  "interview": ""
-                },
-                "note": "인문계열과 자연계열의 반영비율로 계산된 수능 반영점수중 상위 점수를 반영"
-              }
-            ]
-          },
-          "etc": []
-        }
-      }
-    ],
-    "sources": [
-      [
-        "세종대학교 입학처 2028학년도 대학입학전형 시행계획(안) 공식 공고문",
-        "http://sejong.ac.kr"
-      ]
-    ]
-    },
-{
-    "name": "청강문화산업대학교",
-    "type": "전문대학(3년제)",
-    "region": "경기",
-    "address": "경기도 이천시 마장면 청강가창로 389-94",
-    "url": "https://www.ck.ac.kr/",
-    "short": "청강대",
-    "departments": [
-      {
-        "name": "애니메이션스쿨 애니메이션과",
-        "short": "애니메이션",
-        "quota": "238명",
-        "category": ["애니메이션"],
-        "admission": {
-          "admissionUrl": "https://ipsi.ck.ac.kr/",
-          "track": ["실기", "면접", "비실기"],
-          "process": "수시 1차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
-          "practical": "실기: 애니메이션 융합실기(스토리보드, 상황표현 등) / 면접: 포트폴리오 및 심층 구술 면접",
-          "note": "2028학년도 시행계획에 따라 실기전형의 실기 반영 비중이 70으로 대폭 강화되었습니다.",
-          "susi": {
-            "reference": true,
-            "quota": "173명",
-            "apply": {
-              "start": "2026-09-07",
-              "end": "2026-09-30",
-              "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
-            },
-            "finalAnnounce": "2027-11-06",
-            "types": [
-              {
-                "title": "학생부",
-                "name": "수시1차",
-                "short": "청강1차 교과",
-                "quota": "16명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30",
-                  "note": ""
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "11.8:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "",
-                      "grade": "100",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "학생부교과 성적 100 일괄 합산"
-              },
-              {
-                "title": "특별전형",
-                "name": "수시1차",
-                "short": "청강1차 특별",
-                "quota": "4명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "5.0:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "학생부 점수 + 가산자(대회입상자)",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "",
-                      "grade": "100",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "교과 100 + 가산점(대회입상자)"
-              },
-              {
-                "title": "실기",
-                "name": "수시1차",
-                "short": "청강1차 실기",
-                "quota": "90명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "16.5:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
-                    "kind": "실기",
-                    "examDate": "2026-10-24",
-                    "examEnd": "2026-10-25",
-                    "announce": "2026-11-06",
-                    "ratio": {
-                      "document": "",
-                      "grade": "40",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "60",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "A,B,C형 중 택일 하여 실기 진행"
-              },
-              {
-                "title": "면접전형",
-                "name": "수시1차",
-                "short": "청강1차 면접",
-                "quota": "63명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30",
-                  "note": "학생부종합 + 포트폴리오"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "8.5:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "포트폴리오[A형:이미지,B형:영상]",
-                    "kind": "면접",
-                    "examDate": "2026-10-20",
-                    "examEnd": "2026-10-21",
-                    "announce": "2026-11-06",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "비교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": "100"
-                    }
-                  }
-                ],
-                "process": "학생부종합 + 포트폴리오(필수)\nA형:이미지[내용:원화,디지털이미지,사진, 50%이상 인체드로잉]\nB형:영상[데모릴:개인, 공동작 중 본인작업한 부분만 발췌, 1분30초이내, 창작영상(선택)]"
-              }
-            ]
-          },
-          "jeongsi": {
-            "reference": true,
-            "quota": "65명",
-            "finalAnnounce": "2027-02-09",
-            "types": [
-              {
-                "title": "실기전형",
-                "name": "",
-                "gun": "",
-                "quota": "65명",
-                "competition": {
-                  "year": "2026",
-                  "rate": "7.9:1",
-                  "note": ""
-                },
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "practical": "100",
-                  "interview": ""
-                },
-                "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
-              }
-            ]
-          },
-          "etc": []
-        }
-      },
-      {
-        "name": "만화콘텐츠스쿨 웹툰만화콘텐츠과",
-        "short": "웹툰만화콘텐츠",
-        "quota": "190명",
-        "category": ["만화"],
-        "admission": {
-          "admissionUrl": "https://ipsi.ck.ac.kr/",
-          "track": ["실기", "면접"],
-          "process": "수시 1차 전형 유형 분할 (실기형 교과30+실기70 / 면접형 서류 및 심층 질의)",
-          "practical": "실기전형: 웹툰만화 창작실기(주제 흑백 2p 만화, 웹툰 연출 등) / 면접전형: 웹툰 포트폴리오",
-          "susi": {
-            "reference": true,
-            "quota": "160명",
-            "apply": {
-              "start": "2026-09-06",
-              "end": "2026-09-30",
+            "jeongsi": {
+              "reference": true,
+              "quota": "",
               "note": ""
             },
-            "finalAnnounce": "2026-11-06",
-            "types": [
-              {
-                "title": "특별전형",
-                "name": "수시1차",
-                "short": "청강1차 특별",
-                "quota": "3명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "7.0:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "학생부 점수 + 가산자(대회입상자)",
-                    "kind": "서류",
-                    "ratio": {
-                      "document": "",
-                      "grade": "100",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "교과 100 + 가산점(대회입상자)"
-              },
-              {
-                "title": "실기",
-                "name": "수시1차",
-                "short": "청강1차 실기",
-                "quota": "117명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "17.3:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "A형:흑백 2페이지만화\n B형:컬러 스크롤 웹툰",
-                    "kind": "실기",
-                    "examDate": "2026-10-24",
-                    "examEnd": "2026-10-25",
-                    "announce": "2026-11-06",
-                    "ratio": {
-                      "document": "",
-                      "grade": "40",
-                      "gradeType": "교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "60",
-                      "interview": ""
-                    }
-                  }
-                ],
-                "process": "A,B,C형 중 택일 하여 실기 진행"
-              },
-              {
-                "title": "면접전형",
-                "name": "수시1차",
-                "short": "청강1차 면접",
-                "quota": "40명",
-                "apply": {
-                  "start": "2026-09-07",
-                  "end": "2026-09-30",
-                  "note": "학생부종합 + 포트폴리오"
-                },
-                "competition": {
-                  "year": "2026",
-                  "rate": "11.0:1",
-                  "note": ""
-                },
-                "stages": [
-                  {
-                    "label": "",
-                    "method": "포트폴리오[이미지]",
-                    "kind": "면접",
-                    "examDate": "2026-10-20",
-                    "examEnd": "2026-10-21",
-                    "announce": "2026-11-06",
-                    "ratio": {
-                      "document": "",
-                      "grade": "",
-                      "gradeType": "비교과",
-                      "attendance": "",
-                      "essay": "",
-                      "practical": "",
-                      "interview": "100"
-                    }
-                  }
-                ],
-                "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
-              }
-              
-            ]
-          },
-          "jeongsi": {
-            "reference": true,
-            "quota": "30명",
-            "finalAnnounce": "2027-02-09",
-            "types": [
-              {
-                "title": "면접전형",
-                "name": "",
-                "gun": "",
-                "quota": "30명",
-                "competition": {
-                  "year": "2026",
-                  "rate": "7.4:1",
-                  "note": ""
-                },
-                "ratio": {
-                  "suneung": "",
-                  "document": "",
-                  "grade": "",
-                  "practical": "100",
-                  "interview": ""
-                },
-                "note": "학생부종합+포트폴리오"
-              }
-            ]
+            "etc": []
           }
         }
-},
-{
-"name": "만화콘텐츠스쿨 만화캐릭터일러스트레이션전공",
-"short": "만화캐릭터일러",
-"quota": "정원 내 분할",
-"category": ["만화", "게임"],
-"admission": {
-"admissionUrl": "https://ipsi.ck.ac.kr/",
-"track": ["실기"],
-"process": "수시 1차 및 2차 실기형 중심 모집 수행",
-"practical": "문해력 기반 1p 만화 연출 구성 또는 2p 캐릭터 일러스트레이션 작화 중 선택",
-"susi": {
-"reference": true,
-"apply": {
-"start": "2027-09-06",
-"end": "2027-10-08"
-},
-"finalAnnounce": "2027-12-17",
-"types": [
-{
-"title": "실기위주 전형",
-"name": "수시1차 일반실기전형",
-"short": "청강1차 캐릭터실기",
-"ratio": {
-"document": "",
-"grade": "30",
-"gradeType": "교과",
-"attendance": "",
-"essay": "",
-"practical": "70",
-"interview": ""
-}
-},
-{
-"title": "실기위주 전형",
-"name": "수시2차 일반실기전형",
-"short": "청강2차 캐릭터실기",
-"apply": {
-"start": "2027-11-08",
-"end": "2027-11-22"
-},
-"ratio": {
-"document": "",
-"grade": "30",
-"gradeType": "교과",
-"attendance": "",
-"essay": "",
-"practical": "70",
-"interview": ""
-}
-}
-]
-},
-"jeongsi": {
-"reference": true,
-"finalAnnounce": "2028-02-04"
-}
-}
-}
-],
-"sources": [
-[
-"청강문화산업대학교 입학처 2028 대학입학전형 기본시행계획안",
-"https://ipsi.ck.ac.kr/"
-]
-]
-},
+      ],
+      "sources": [
+        [
+          "한국예술종합학교 영상원 입학관리과 신입생 모집요강",
+          "https://www.karts.ac.kr/main/appl.do"
+        ]
+      ]
+    },
+    {
+      "name": "세종대학교",
+      "type": "4년제",
+      "region": "서울",
+      "address": "서울특별시 광진구 능동로 209",
+      "url": "https://www.sejong.ac.kr/",
+      "short": "세종대",
+      "departments": [
+        {
+          "name": "창의소프트학부 만화애니메이션텍전공",
+          "short": "만화애니텍",
+          "quota": "50명",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.sejong.ac.kr/",
+            "track": [
+              "비실기"
+            ],
+            "process": "수시 학생부종합(세종인재전형 면접형) 40명 중심 선발, 정시(나군 수능 위주) 10명 및 이월인원 선발",
+            "practical": "실기고사 없음 (제시문 기반 융합형 전공소양 발표평가 및 심층 구술 면접 수행)",
+            "note": "2028학년도 전형계획에 따라 만화애니메이션텍전공의 전체 정원이 50명으로 증원 개편되었습니다. 수시모집은 실기를 전혀 보지 않는 100% 비실기 학종 전형입니다.",
+            "susi": {
+              "reference": true,
+              "quota": "40명",
+              "apply": {
+                "start": "2026-09-10",
+                "end": "2026-09-14",
+                "note": ""
+              },
+              "finalAnnounce": "2027-12-10",
+              "types": [
+                {
+                  "title": "학생부종합전형",
+                  "name": "세종인재전형(면접형)",
+                  "short": "세종대 면접",
+                  "quota": "40명",
+                  "competition": {
+                    "year": "2027학년도(전년도)",
+                    "rate": "9.46 : 1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1차",
+                      "method": "학교생활기록부 기반 100 서류 종합 정성 평가 (3배수 선발)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "학생부의 학업역량, 창의융합역량 등을 종합 평가하여 면접 평가 대상자를 압축합니다."
+                    },
+                    {
+                      "label": "2차",
+                      "method": "1단계 서류 성적 60 성적과 제시문 기반 구술 면접고사 40 합산 반영",
+                      "kind": "면접",
+                      "ratio": {
+                        "document": "",
+                        "grade": "60",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "40"
+                      },
+                      "note": "당일 출제되는 전공적합성 발표 주제에 대해 40분간 작작 후 9분간 다대일 면접을 진행합니다."
+                    }
+                  ],
+                  "process": "1단계 서류 100으로 3배수 선발 후, 2단계에서 1단계 60 + 면접 40 합산 최종 합격자 선출",
+                  "note": "수능최저학력기준은 전면 미적용합니다."
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": true,
+              "quota": "10명",
+              "apply": {
+                "start": "2028-01-03",
+                "end": "2028-01-06"
+              },
+              "finalAnnounce": "2028-02-04",
+              "types": [
+                {
+                  "title": "수능전형",
+                  "name": "일반학생전형",
+                  "gun": "다군",
+                  "quota": "10명",
+                  "competition": {
+                    "year": "2026",
+                    "rate": "8.5:1",
+                    "note": ""
+                  },
+                  "ratio": {
+                    "suneung": "100",
+                    "document": "",
+                    "grade": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "인문계열과 자연계열의 반영비율로 계산된 수능 반영점수중 상위 점수를 반영"
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "세종대학교 입학처 2028학년도 대학입학전형 시행계획(안) 공식 공고문",
+          "http://sejong.ac.kr"
+        ]
+      ]
+    },
+    {
+      "name": "청강문화산업대학교",
+      "type": "전문대학(3년제)",
+      "region": "경기",
+      "address": "경기도 이천시 마장면 청강가창로 389-94",
+      "url": "https://www.ck.ac.kr/",
+      "short": "청강대",
+      "departments": [
+        {
+          "name": "애니메이션스쿨 애니메이션",
+          "short": "애니메이션",
+          "quota": "238명",
+          "category": [
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr/",
+            "track": [
+              "실기",
+              "면접",
+              "비실기"
+            ],
+            "process": "수시 1차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
+            "practical": "실기: 애니메이션 융합실기(스토리보드, 상황표현 등) / 면접: 포트폴리오 및 심층 구술 면접",
+            "note": "2028학년도 시행계획에 따라 실기전형의 실기 반영 비중이 70으로 대폭 강화되었습니다.",
+            "susi": {
+              "reference": true,
+              "quota": "173명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-30",
+                "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
+              },
+              "finalAnnounce": "2027-11-06",
+              "types": [
+                {
+                  "title": "학생부",
+                  "name": "수시1차",
+                  "short": "청강1차 교과",
+                  "quota": "16명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "11.8:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "학생부교과 성적 100 일괄 합산"
+                },
+                {
+                  "title": "특별전형",
+                  "name": "수시1차",
+                  "short": "청강1차 특별",
+                  "quota": "4명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "5.0:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부 점수 + 가산자(대회입상자)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "교과 100 + 가산점(대회입상자)"
+                },
+                {
+                  "title": "실기",
+                  "name": "수시1차",
+                  "short": "청강1차 실기",
+                  "quota": "90명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "16.5:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉",
+                      "kind": "실기",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "A,B,C형 중 택일 하여 실기 진행"
+                },
+                {
+                  "title": "면접전형",
+                  "name": "수시1차",
+                  "short": "청강1차 면접",
+                  "quota": "63명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": "학생부종합 + 포트폴리오"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "8.5:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "포트폴리오[A형:이미지,B형:영상]",
+                      "kind": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "학생부종합 + 포트폴리오(필수)\nA형:이미지[내용:원화,디지털이미지,사진, 50%이상 인체드로잉]\nB형:영상[데모릴:개인, 공동작 중 본인작업한 부분만 발췌, 1분30초이내, 창작영상(선택)]"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": true,
+              "quota": "65명",
+              "finalAnnounce": "2027-02-09",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "",
+                  "gun": "",
+                  "quota": "65명",
+                  "competition": {
+                    "year": "2026",
+                    "rate": "7.9:1",
+                    "note": ""
+                  },
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "practical": "100",
+                    "interview": ""
+                  },
+                  "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
+                }
+              ]
+            },
+            "etc": []
+          }
+        },
+        {
+          "name": "만화콘텐츠스쿨 웹툰만화콘텐츠",
+          "short": "웹툰만화콘텐츠",
+          "quota": "190명",
+          "category": [
+            "만화"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr/",
+            "track": [
+              "실기",
+              "면접"
+            ],
+            "process": "수시 1차 전형 유형 분할 (실기형 교과30+실기70 / 면접형 서류 및 심층 질의)",
+            "practical": "실기전형: 웹툰만화 창작실기(주제 흑백 2p 만화, 웹툰 연출 등) / 면접전형: 웹툰 포트폴리오",
+            "susi": {
+              "reference": true,
+              "quota": "160명",
+              "apply": {
+                "start": "2026-09-06",
+                "end": "2026-09-30",
+                "note": ""
+              },
+              "finalAnnounce": "2026-11-06",
+              "types": [
+                {
+                  "title": "특별전형",
+                  "name": "수시1차",
+                  "short": "청강1차 특별",
+                  "quota": "3명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "7.0:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부 점수 + 가산자(대회입상자)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "교과 100 + 가산점(대회입상자)"
+                },
+                {
+                  "title": "실기",
+                  "name": "수시1차",
+                  "short": "청강1차 실기",
+                  "quota": "117명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "17.3:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:흑백 2페이지만화\n B형:컬러 스크롤 웹툰",
+                      "kind": "실기",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "A,B,C형 중 택일 하여 실기 진행"
+                },
+                {
+                  "title": "면접전형",
+                  "name": "수시1차",
+                  "short": "청강1차 면접",
+                  "quota": "40명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": "학생부종합 + 포트폴리오"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "11.0:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "포트폴리오[이미지]",
+                      "kind": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": true,
+              "quota": "30명",
+              "finalAnnounce": "2027-02-09",
+              "types": [
+                {
+                  "title": "면접전형",
+                  "name": "",
+                  "gun": "",
+                  "quota": "30명",
+                  "competition": {
+                    "year": "2026",
+                    "rate": "7.4:1",
+                    "note": ""
+                  },
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "practical": "100",
+                    "interview": ""
+                  },
+                  "note": "학생부종합+포트폴리오"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "만화콘텐츠스쿨 만화캐릭터일러스트레이션",
+          "short": "만화캐릭터일러스트레이션",
+          "quota": "25명",
+          "category": [
+            "만화",
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr/",
+            "track": [
+              "실기"
+            ],
+            "process": "수시 1차 실기형 중심 모집 수행",
+            "practical": "문해력 기반 1p 만화 연출 구성 또는 2p 캐릭터 일러스트레이션 작화 중 선택",
+            "susi": {
+              "reference": true,
+              "apply": {
+                "start": "2026-09-06",
+                "end": "2026-10-30"
+              },
+              "finalAnnounce": "2026-11-06",
+              "types": [
+                {
+                  "title": "특별전형",
+                  "name": "수시1차",
+                  "short": "청강1차 특별",
+                  "quota": "1명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부 점수 + 가산자(대회입상자)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "교과 100 + 가산점(대회입상자)"
+                },
+                {
+                  "title": "실기",
+                  "name": "수시1차",
+                  "short": "청강1차 실기",
+                  "quota": "10명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "9.4:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:문해력 기반 1페이지 만화\n B형:문해력 기반 2페이지 일러스트레이션",
+                      "kind": "실기",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "A,B 형 중 택일 하여 실기 진행"
+                },
+                {
+                  "title": "면접전형",
+                  "name": "수시1차",
+                  "short": "청강1차 면접",
+                  "quota": "10명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": "학생부종합 + 포트폴리오"
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "포트폴리오[이미지]",
+                      "kind": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "학생부종합 + 포트폴리오(필수)\n50%이상은 수잡업 결과물"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": true,
+              "quota": "10명",
+              "finalAnnounce": "2027-02-09",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "",
+                  "gun": "",
+                  "quota": "10명",
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "practical": "100",
+                    "interview": ""
+                  },
+                  "note": "A형:문해력 기반 1페이지 만화\n B형:문해력 기반 2페이지 일러스트레이션"
+                }
+              ]
+            }
+          }
+        },
+      {
+          "name": "게임콘텐츠스쿨",
+          "short": "게임",
+          "quota": "238명",
+          "category": [
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.ck.ac.kr/",
+            "track": [
+              "실기",
+              "면접",
+              "비실기"
+            ],
+            "process": "수시 1차(학생부교과전형 / 특별전형 / 일반실기전형 / 포트폴리오 면접전형) 정밀 분할 선발",
+            "practical": "실기: 애니메이션 융합실기(스토리보드, 상황표현 등) / 면접: 포트폴리오 및 심층 구술 면접",
+            "note": "2028학년도 시행계획에 따라 실기전형의 실기 반영 비중이 70으로 대폭 강화되었습니다.",
+            "susi": {
+              "reference": true,
+              "quota": "167명",
+              "apply": {
+                "start": "2026-09-07",
+                "end": "2026-09-30",
+                "note": "수시 1차 원서접수 일정 기준 (2028학년도 전형계획에 따라 접수 마감일이 10월 8일까지로 연장 조정됨)"
+              },
+              "finalAnnounce": "2027-11-06",
+              "types": [
+                {
+                  "title": "학생부",
+                  "name": "수시1차",
+                  "short": "청강1차 교과",
+                  "quota": "11명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "11.3:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "고교 1-1부터 3-1 학기 중 최우수 1개 학기 전과목 교과 성적 100 반영",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "학생부교과 성적 100 일괄 합산"
+                },
+                {
+                  "title": "특별전형",
+                  "name": "수시1차",
+                  "short": "청강1차 특별",
+                  "quota": "8명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "4.8:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "학생부 점수 + 가산자(대회입상자)",
+                      "kind": "서류",
+                      "ratio": {
+                        "document": "",
+                        "grade": "100",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "교과 100 + 가산점(대회입상자)"
+                },
+                {
+                  "title": "실기",
+                  "name": "수시1차",
+                  "short": "청강1차 실기",
+                  "quota": "60명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "9.6:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "A형:주제에 따른 게임용 포스터 제작\n B형:주제에 따른 상황표현",
+                      "kind": "실기",
+                      "examDate": "2026-10-24",
+                      "examEnd": "2026-10-25",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "40",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "60",
+                        "interview": ""
+                      }
+                    }
+                  ],
+                  "process": "A,B형 중 택일 하여 실기 진행"
+                },
+                {
+                  "title": "면접전형",
+                  "name": "수시1차",
+                  "short": "청강1차 면접",
+                  "quota": "88명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": "학생부종합 + 포트폴리오"
+                  },
+                  "competition": {
+                    "year": "2026",
+                    "rate": "8.5:1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "포트폴리오[A형:게임기획,B형:게임그래픽,C형:게임프로그래밍,D형:게임QA&비지니스]",
+                      "kind": "면접",
+                      "examDate": "2026-10-20",
+                      "examEnd": "2026-10-21",
+                      "announce": "2026-11-06",
+                      "ratio": {
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "비교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "100"
+                      }
+                    }
+                  ],
+                  "process": "학생부종합 + 포트폴리오(필수)A,B,C,D형 중 택1\n]"
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": true,
+              "quota": "65명",
+              "finalAnnounce": "2027-02-09",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "",
+                  "gun": "",
+                  "quota": "65명",
+                  "competition": {
+                    "year": "2026",
+                    "rate": "7.9:1",
+                    "note": ""
+                  },
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "practical": "100",
+                    "interview": ""
+                  },
+                  "note": "A형:스토리에 따른 이미지보드\n B형:애니메이션 상황표현\nC형:제스처 드로잉"
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "청강문화산업대학교 입학처 2028 대학입학전형 기본시행계획안",
+          "https://ipsi.ck.ac.kr/"
+        ]
+      ]
+    },
     {
       "name": "한성대학교",
       "type": "4년재",
