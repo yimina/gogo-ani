@@ -310,6 +310,7 @@
                   "label": "수시 1차",
                   "reference": false,
                   "quota": "",
+                  "announce": "2026-11-06",
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-30",
