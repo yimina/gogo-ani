@@ -2364,232 +2364,166 @@
     },
     {
       "name": "상명대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "서울",
       "address": "서울특별시 종로구 홍지문2길 20",
-      "url": "https://www.smu.ac.kr/kor/index.do",
+      "url": "https://www.smu.ac.kr/",
       "short": "상명대",
       "departments": [
         {
-          "name": "SW융합학부-[애니메이션전공]",
-          "short": "",
-          "quota": "",
+          "name": "SW융합학부 애니메이션전공",
+          "short": "애니메이션",
+          "quota": "21명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/main.html",
             "track": [
               "비실기"
             ],
-            "process": "",
+            "process": "수시 교과·종합·논술, 정시 나군 수능 100%.",
             "practical": "",
-            "note": "",
+            "note": "서울캠퍼스. 실기고사 없음. 입학정원과 전형별 정원내 인원 합계는 원문 표기대로 유지.",
             "susi": {
               "reference": false,
               "quota": "11명",
-              "note": "",
+              "note": "정원내 11명. 정원외 특수교육대상자 1명 및 서해5도 통합선발 별도.",
               "rounds": [
                 {
-                  "round": 1,
                   "label": "수시",
-                  "reference": false,
-                  "quota": "11명",
                   "apply": {
                     "start": "2026-09-07",
-                    "end": "2026-09-15",
-                    "note": ""
+                    "end": "2026-09-11",
+                    "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
                   },
                   "announce": "2026-12-03",
-                  "note": "",
+                  "note": "최초합격 09:00 발표.",
                   "types": [
                     {
                       "title": "학생부교과",
                       "name": "고교추천전형",
-                      "short": "",
+                      "short": "고교추천전형",
                       "quota": "6명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
+                      "process": "학생부교과 100%, 일괄합산.",
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "6.83 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "",
+                          "method": "학생부교과 100%, 일괄합산.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": ""
-                        },
-                        {
-                          "label": "",
-                          "method": "",
-                          "examDate": "",
-                          "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
+                          "announce": "2026-12-03",
+                          "ratio": {},
                           "note": ""
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "2024년 2월 이후 국내 고교 졸업(예정)자, 학교장 추천 및 교과성적 요건 충족 필요. 수능최저 없음."
                     },
                     {
                       "title": "학생부종합",
                       "name": "상명인재전형",
-                      "short": "",
+                      "short": "상명인재전형",
                       "quota": "2명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "document": "100%"
                       },
+                      "process": "서류평가 100%, 일괄합산. 애니메이션전공은 면접 없음.",
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "46.00 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
                       },
                       "stages": [
                         {
-                          "label": "1단계",
-                          "method": "종합적 정성평가 : 학업역량(35)+진로역량(45)+공동체역량(20)",
-                          "examDate": "",
-                          "examEnd": "",
-                          "announce": "",
+                          "label": "",
+                          "method": "서류평가 100%, 일괄합산. 애니메이션전공은 면접 없음.",
                           "kind": "서류",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "종합",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": ""
-                        },
-                        {
-                          "label": "2단계",
-                          "method": "서류기반 개별면접(면접위원 2인, 수험생 1인), 10분내외",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "면접",
-                          "ratio": {
-                            "document": "60",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": "40"
-                          },
-                          "note": "※학업역량(20)+진로역량(50)+공동체역량(30)"
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "수능최저 없음."
                     },
                     {
                       "title": "학생부종합",
                       "name": "기회균형전형",
-                      "short": "",
+                      "short": "기회균형전형",
                       "quota": "2명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "document": "100%"
                       },
+                      "process": "서류평가 100%, 일괄합산.",
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "20.00 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
                       },
                       "stages": [
                         {
-                          "label": "1단계",
-                          "method": "",
+                          "label": "",
+                          "method": "서류평가 100%, 일괄합산.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "서류",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "종합",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": "※국가보훈대상자,농어촌학생,기초생활수급자,서해5도학생 등"
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "기회균형 지원자격 충족 필요. 수능최저 없음."
                     },
                     {
                       "title": "논술",
                       "name": "논술전형",
-                      "short": "",
+                      "short": "논술전형",
                       "quota": "1명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "grade": "10%",
+                        "gradeType": "교과",
+                        "essay": "90%"
                       },
+                      "process": "논술 90% + 학생부교과 10%.",
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "34.00 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "자연계열 약술형 논술: 국어 2문항 + 수학 8문항, 60분.",
+                          "kind": "논술",
+                          "examDate": "2026-10-31",
+                          "examEnd": "",
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "수능최저 없음. 경쟁률은 2026학년도 2명 모집 기준이며 2027학년도는 1명."
+                    },
+                    {
+                      "title": "학생부종합",
+                      "name": "특수교육대상자전형(정원외)",
+                      "short": "특수교육대상자전형(정원외)",
+                      "quota": "1명",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "process": "서류평가 100%, 일괄합산.",
                       "competition": {
                         "year": "",
                         "rate": "",
@@ -2597,35 +2531,46 @@
                       },
                       "stages": [
                         {
-                          "label": "1단계",
-                          "method": "",
-                          "examDate": "2026-10-31",
-                          "examEnd": "",
-                          "announce": "",
+                          "label": "",
+                          "method": "서류평가 100%, 일괄합산.",
                           "kind": "서류",
-                          "ratio": {
-                            "document": "",
-                            "grade": "10",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "90",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": "※약술형 논술 : 국어(2문항)+수학(8문항) 60분"
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "note": "장애인복지법에 따라 등록된 청각장애인. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "서해5도학생전형(정원외)",
+                      "short": "서해5도학생전형(정원외)",
+                      "quota": "최대 1명",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
-                      "note": ""
+                      "process": "학생부교과 100%, 계열 통합선발.",
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 계열 통합선발.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "대학 전체 6명 통합선발 중 해당 모집단위 최대 1명. 학과별 확정 인원이 아님. 서해5도 거주·재학 등 지원자격 충족 필요. 수능최저 없음."
                     }
                   ]
                 }
@@ -2637,21 +2582,49 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "최초합격 10:00 발표. 정원내 수능전형 인원 기준. 정원외 통합선발은 별도이며 수시 이월에 따라 변경될 수 있음.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
+                  "title": "수능",
+                  "name": "수능전형",
+                  "short": "수능전형",
+                  "quota": "9명",
+                  "ratio": {
+                    "suneung": "100%"
                   },
+                  "process": "수능 100%, 실기 없음.",
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "3.44 : 1",
+                    "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%, 실기 없음.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어 25% + 수학 35% + 영어 20% + 탐구 20%(상위 1과목). 애니메이션전공은 자연계열 반영비율 적용.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "농어촌학생전형(정원외)",
+                  "short": "농어촌학생전형(정원외)",
+                  "quota": "최대 2명",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "process": "수능 100%, 계열 통합선발.",
                   "competition": {
                     "year": "",
                     "rate": "",
@@ -2660,85 +2633,119 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
+                      "method": "수능 100%, 계열 통합선발.",
+                      "kind": "서류",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "100",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※수능반영비율:국어(25)+수학(35)+영어(20)+탐구(20)"
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
                     }
                   ],
-                  "process": "",
+                  "note": "국어 25% + 수학 35% + 영어 20% + 탐구 20%(상위 1과목). 애니메이션전공은 자연계열 반영비율 적용. 해당 계열 통합 모집 25명 내에서 모집단위 최대 2명. 학과별 확정 인원이 아니며 지원자격 충족 필요.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "특성화고교졸업자전형(정원외)",
+                  "short": "특성화고교졸업자전형(정원외)",
+                  "quota": "최대 2명",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "suneung": "100%"
                   },
-                  "note": ""
+                  "process": "수능 100%, 계열 통합선발.",
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%, 계열 통합선발.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어 25% + 수학 35% + 영어 20% + 탐구 20%(상위 1과목). 애니메이션전공은 자연계열 반영비율 적용. 해당 계열 통합 모집 11명 내에서 모집단위 최대 2명. 학과별 확정 인원이 아니며 지원자격 충족 필요.",
+                  "gun": "나군"
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
         },
         {
-          "name": "자유전공[예체능계열]",
-          "short": "",
-          "quota": "",
+          "name": "자유전공(예체능계열)",
+          "short": "자유전공 예체능",
+          "quota": "23명",
           "category": [],
           "admission": {
-            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "admissionUrl": "https://admission.smu.ac.kr/_seoul/main.html",
             "track": [
               "비실기"
             ],
-            "process": "",
+            "process": "수시 고교추천 12명, 정시 나군 수능전형 11명.",
             "practical": "",
-            "note": "",
+            "note": "자유전공 I유형. 1학년 1학기부터 계열 관계없이 서울캠퍼스 일반 학과·전공 선택 신청 가능(일부 모집단위 제외). 애니메이션전공은 전공선택 제외 목록에 해당하지 않음. 상세 선택·이수 요건은 학사 규정 확인.",
             "susi": {
               "reference": false,
               "quota": "12명",
-              "note": "",
+              "note": "정원내 기준. 서해5도학생 통합선발 별도.",
               "rounds": [
                 {
-                  "round": 1,
                   "label": "수시",
-                  "reference": false,
-                  "quota": "12명",
                   "apply": {
                     "start": "2026-09-07",
-                    "end": "2026-09-15",
-                    "note": ""
+                    "end": "2026-09-11",
+                    "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
                   },
                   "announce": "2026-12-03",
-                  "note": "",
+                  "note": "최초합격 09:00 발표.",
                   "types": [
                     {
                       "title": "학생부교과",
                       "name": "고교추천전형",
-                      "short": "",
+                      "short": "고교추천전형",
                       "quota": "12명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
+                      "process": "학생부교과 100%, 일괄합산.",
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "16.00 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 일괄합산.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-03",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "학교장 추천 및 졸업연도·교과성적 등 지원자격 확인. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "서해5도학생전형(정원외)",
+                      "short": "서해5도학생전형(정원외)",
+                      "quota": "최대 1명",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "process": "학생부교과 100%, 계열 통합선발.",
                       "competition": {
                         "year": "",
                         "rate": "",
@@ -2747,34 +2754,16 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "",
+                          "method": "학생부교과 100%, 계열 통합선발.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
+                          "announce": "2026-12-03",
+                          "ratio": {},
                           "note": ""
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "대학 전체 6명 통합선발 중 해당 모집단위 최대 1명. 학과별 확정 인원이 아님. 서해5도 거주·재학 등 지원자격 충족 필요. 수능최저 없음."
                     }
                   ]
                 }
@@ -2786,21 +2775,49 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "최초합격 10:00 발표. 정원내 수능전형 인원 기준. 정원외 통합선발은 별도이며 수시 이월에 따라 변경될 수 있음.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
+                  "title": "수능",
+                  "name": "수능전형",
+                  "short": "수능전형",
+                  "quota": "11명",
+                  "ratio": {
+                    "suneung": "100%"
                   },
+                  "process": "수능 100%, 실기 없음.",
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "3.45 : 1",
+                    "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%, 실기 없음.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어 35% + 수학 25% + 영어 20% + 탐구 20%(상위 1과목). 자유전공(예체능계열)은 인문계열 반영비율 적용.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "농어촌학생전형(정원외)",
+                  "short": "농어촌학생전형(정원외)",
+                  "quota": "최대 2명",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "process": "수능 100%, 계열 통합선발.",
                   "competition": {
                     "year": "",
                     "rate": "",
@@ -2809,40 +2826,48 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
+                      "method": "수능 100%, 계열 통합선발.",
+                      "kind": "서류",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "100",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
                     }
                   ],
-                  "process": "",
+                  "note": "국어 35% + 수학 25% + 영어 20% + 탐구 20%(상위 1과목). 자유전공(예체능계열)은 인문계열 반영비율 적용. 해당 계열 통합 모집 27명 내에서 모집단위 최대 2명. 학과별 확정 인원이 아니며 지원자격 충족 필요.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "특성화고교졸업자전형(정원외)",
+                  "short": "특성화고교졸업자전형(정원외)",
+                  "quota": "최대 2명",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "suneung": "100%"
                   },
-                  "note": ""
+                  "process": "수능 100%, 계열 통합선발.",
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%, 계열 통합선발.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어 35% + 수학 25% + 영어 20% + 탐구 20%(상위 1과목). 자유전공(예체능계열)은 인문계열 반영비율 적용. 해당 계열 통합 모집 9명 내에서 모집단위 최대 2명. 학과별 확정 인원이 아니며 지원자격 충족 필요.",
+                  "gun": "나군"
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
@@ -2850,175 +2875,167 @@
       ],
       "sources": [
         [
-          "상명대 입학처",
-          "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi"
+          "2027학년도 수시모집요강",
+          "https://admission.smu.ac.kr/bbs/fileview.php?bbsid=seoul_mojib&file_seq=8579"
+        ],
+        [
+          "2027학년도 정시모집요강",
+          "https://admission.smu.ac.kr/bbs/fileview.php?bbsid=seoul_mojib&file_seq=8604"
+        ],
+        [
+          "입학처",
+          "https://admission.smu.ac.kr/_seoul/main.html"
         ]
       ]
     },
     {
-      "name": "상명대학교(천안캠퍼스)",
-      "type": "대학교",
+      "name": "상명대학교 천안캠퍼스",
+      "type": "4년제",
       "region": "충남",
       "address": "충청남도 천안시 동남구 상명대길 31",
-      "url": "https://www.smu.ac.kr/kor/index.do",
-      "short": "상명대",
+      "url": "https://www.smu.ac.kr/",
+      "short": "상명대 천안",
       "departments": [
         {
-          "name": "예술학부-[디지털만화영상전공]",
-          "short": "",
-          "quota": "",
+          "name": "예술학부 디지털만화영상전공",
+          "short": "디지털만화영상",
+          "quota": "41명",
           "category": [
-            "만화"
+            "만화",
+            "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "admissionUrl": "https://admission.smu.ac.kr/_cheonan/main.html",
             "track": [
               "실기",
               "비실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "수시 상명인재 3명·기회균형 2명·실기 24명. 정시 나군 실기 12명.",
+            "practical": "만화능력테스트: 제시된 주제(스토리)를 4칸 이상의 만화로 구성. 켄트지 4절, 4시간. 재료·화지 방향 제한 없음. 화판, 드라이기, 화기용품, 스프레이(분무기), 미니 선풍기, 스톱워치 등 사용 불가. 아이디어·이야기 구성능력, 연출력, 조형능력 평가.",
+            "note": "천안캠퍼스. 상명인재전형은 면접 실시.",
             "susi": {
               "reference": false,
               "quota": "29명",
-              "note": "",
+              "note": "정원내 29명. 정원외 특수교육대상자 2명 및 농어촌·특성화고 통합선발 별도.",
               "rounds": [
                 {
-                  "round": 1,
                   "label": "수시",
-                  "reference": false,
-                  "quota": "29명",
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
                   },
-                  "announce": "2026-12-03",
-                  "note": "",
+                  "announce": "",
+                  "note": "최초합격: 학생부교과전형 12/17 10:00, 그 외 전형 11/24 10:00.",
                   "types": [
                     {
                       "title": "학생부종합",
                       "name": "상명인재전형",
-                      "short": "",
+                      "short": "상명인재전형",
                       "quota": "3명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
-                      },
+                      "ratio": {},
+                      "process": "1단계 서류 100%(5배수), 2단계 1단계 성적 60% + 면접 40%.",
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "19.67 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
                       },
                       "stages": [
                         {
-                          "label": "1단계",
-                          "method": "종합적 정성평가 : 학업역량(35)+진로역량(45)+공동체역량(20)",
+                          "label": "",
+                          "method": "서류평가 100%, 모집인원 5배수 선발.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
                           "announce": "2026-10-29",
-                          "kind": "서류",
                           "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "종합",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
+                            "document": "100%"
                           },
-                          "note": ""
+                          "note": "1단계 통과자 14:00 발표."
                         },
                         {
-                          "label": "2단계",
-                          "method": "서류기반 개별면접(면접위원 2인, 수험생 1인), 10분내외",
-                          "examDate": "",
-                          "examEnd": "2026-11-07",
-                          "announce": "",
+                          "label": "",
+                          "method": "1단계 성적 60% + 면접 40%.",
                           "kind": "면접",
+                          "examDate": "2026-11-07",
+                          "examEnd": "2026-11-08",
+                          "announce": "2026-11-24",
                           "ratio": {
-                            "document": "60",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": "40"
+                            "document": "60%",
+                            "interview": "40%"
                           },
-                          "note": "※학업역량(20)+진로역량(50)+공동체역량(30)"
+                          "note": "개인별 일시 지정, 기간은 단축될 수 있음."
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "수능최저 없음."
                     },
                     {
                       "title": "학생부종합",
                       "name": "기회균형전형",
-                      "short": "",
+                      "short": "기회균형전형",
                       "quota": "2명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "document": "100%"
                       },
+                      "process": "서류평가 100%, 일괄합산.",
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "13.50 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
                       },
                       "stages": [
                         {
-                          "label": "1단계",
-                          "method": "",
+                          "label": "",
+                          "method": "서류평가 100%, 일괄합산.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "서류",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "종합",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": "※국가보훈대상자,농어촌학생,기초생활수급자,서해5도학생 등"
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
+                      "note": "기회균형 지원자격 충족 필요. 수능최저 없음."
                     },
                     {
-                      "title": "실기",
+                      "title": "실기/실적",
                       "name": "실기전형",
-                      "short": "",
+                      "short": "실기전형",
                       "quota": "24명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "grade": "40%",
+                        "gradeType": "교과",
+                        "practical": "60%"
                       },
+                      "process": "학생부교과 40% + 실기 60%.",
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "30.83 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "만화능력테스트: 제시된 주제(스토리)를 4칸 이상의 만화로 구성. 켄트지 4절, 4시간. 재료·화지 방향 제한 없음. 화판, 드라이기, 화기용품, 스프레이(분무기), 미니 선풍기, 스톱워치 등 사용 불가. 아이디어·이야기 구성능력, 연출력, 조형능력 평가.",
+                          "kind": "실기",
+                          "examDate": "2026-10-31",
+                          "examEnd": "",
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "수능최저 없음. 고사장 안내 2026-10-23 14:00."
+                    },
+                    {
+                      "title": "학생부종합",
+                      "name": "특수교육대상자전형(정원외)",
+                      "short": "특수교육대상자전형(정원외)",
+                      "quota": "2명",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "process": "서류평가 100%, 일괄합산.",
                       "competition": {
                         "year": "",
                         "rate": "",
@@ -3027,34 +3044,74 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "",
-                          "examDate": "2026-10-31",
+                          "method": "서류평가 100%, 일괄합산.",
+                          "kind": "서류",
+                          "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "40",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "60",
-                            "interview": ""
-                          },
-                          "note": "※만화능력테스트:4칸이상 만화구성"
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "note": "장애인복지법에 따라 등록된 청각장애인. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "농어촌학생전형(정원외)",
+                      "short": "농어촌학생전형(정원외)",
+                      "quota": "최대 4명",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
-                      "note": ""
+                      "process": "학생부교과 100%, 예체능계열 통합선발.",
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 예체능계열 통합선발.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "예체능계열 통합 모집 36명 내에서 해당 모집단위 최대 4명. 학과별 확정 인원이 아님. 전형별 지원자격 충족 필요. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "특성화고교졸업자전형(정원외)",
+                      "short": "특성화고교졸업자전형(정원외)",
+                      "quota": "최대 4명",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "process": "학생부교과 100%, 예체능계열 통합선발.",
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 예체능계열 통합선발.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "예체능계열 통합 모집 13명 내에서 해당 모집단위 최대 4명. 학과별 확정 인원이 아님. 전형별 지원자격 충족 필요. 수능최저 없음."
                     }
                   ]
                 }
@@ -3066,21 +3123,50 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "최초합격 10:00 발표. 정원내 기준. 수시 미충원 이월에 따라 변동 가능. 정원외 전형은 수시 이월 발생 시 선발.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
+                  "title": "실기/실적",
+                  "name": "실기전형",
+                  "short": "실기전형",
+                  "quota": "12명",
+                  "ratio": {
+                    "suneung": "40%",
+                    "practical": "60%"
                   },
+                  "process": "수능 40% + 실기 60%.",
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "7.67 : 1",
+                    "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "만화능력테스트: 제시된 주제(스토리)를 4칸 이상의 만화로 구성. 켄트지 4절, 4시간. 재료·화지 방향 제한 없음. 화판, 드라이기, 화기용품, 스프레이(분무기), 미니 선풍기, 스톱워치 등 사용 불가. 아이디어·이야기 구성능력, 연출력, 조형능력 평가.",
+                      "kind": "실기",
+                      "examDate": "2027-01-21",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "농어촌학생전형(정원외)",
+                  "short": "농어촌학생전형(정원외)",
+                  "quota": "수시 미충원 이월인원",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "process": "수능 100%.",
                   "competition": {
                     "year": "",
                     "rate": "",
@@ -3089,85 +3175,119 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
+                      "method": "수능 100%.",
+                      "kind": "서류",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "60",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "40",
-                        "interview": ""
-                      },
-                      "note": "※만화능력테스트:4칸이상 만화구성"
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
                     }
                   ],
-                  "process": "",
+                  "note": "수시 미충원 이월인원이 있는 경우 선발. 최종 모집인원은 원서접수 전 공지 확인. 국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "특성화고교졸업자전형(정원외)",
+                  "short": "특성화고교졸업자전형(정원외)",
+                  "quota": "수시 미충원 이월인원",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "suneung": "100%"
                   },
-                  "note": ""
+                  "process": "수능 100%.",
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "수시 미충원 이월인원이 있는 경우 선발. 최종 모집인원은 원서접수 전 공지 확인. 국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용. 특성화고교졸업자전형은 직업탐구도 선택 가능.",
+                  "gun": "나군"
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
         },
         {
-          "name": "자유전공[디자인/예술계열]",
-          "short": "",
-          "quota": "",
+          "name": "자유전공(디자인/예술계열)",
+          "short": "자유전공 디자인예술",
+          "quota": "36명",
           "category": [],
           "admission": {
-            "admissionUrl": "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi",
+            "admissionUrl": "https://admission.smu.ac.kr/_cheonan/main.html",
             "track": [
               "비실기"
             ],
-            "process": "",
+            "process": "수시 학생부교과 22명, 정시 나군 수능전형 14명.",
             "practical": "",
-            "note": "",
+            "note": "자유전공 I유형. 1학년 1학기부터 계열 관계없이 천안캠퍼스 학과·전공 선택 신청 가능(일부 모집단위 제외). 디지털만화영상전공은 전공선택 제외 목록에 해당하지 않음. 상세 선택·이수 요건은 학사 규정 확인.",
             "susi": {
               "reference": false,
               "quota": "22명",
-              "note": "",
+              "note": "정원내 기준. 정원외 농어촌·특성화고 통합선발 별도.",
               "rounds": [
                 {
-                  "round": 1,
                   "label": "수시",
-                  "reference": false,
-                  "quota": "22명",
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
                   },
-                  "announce": "2026-12-03",
-                  "note": "",
+                  "announce": "",
+                  "note": "최초합격: 학생부교과전형 12/17 10:00, 그 외 전형 11/24 10:00.",
                   "types": [
                     {
                       "title": "학생부교과",
-                      "name": "학생부교과",
-                      "short": "",
+                      "name": "학생부교과전형",
+                      "short": "학생부교과전형",
                       "quota": "22명",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
+                      "process": "학생부교과 100%, 일괄합산.",
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "11.05 : 1",
+                        "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 일괄합산.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-17",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "수능최저: 국어·수학·영어·탐구(사회/과학 상위 1과목) 중 2개 영역 등급 합 10 이내. 2024년 2월 이후 국내 고교 졸업(예정)자, 교과성적 산출 등 요건 충족 필요."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "농어촌학생전형(정원외)",
+                      "short": "농어촌학생전형(정원외)",
+                      "quota": "최대 3명",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "process": "학생부교과 100%, 예체능계열 통합선발.",
                       "competition": {
                         "year": "",
                         "rate": "",
@@ -3176,34 +3296,45 @@
                       "stages": [
                         {
                           "label": "",
-                          "method": "",
+                          "method": "학생부교과 100%, 예체능계열 통합선발.",
+                          "kind": "서류",
                           "examDate": "",
                           "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "100",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
+                          "announce": "2026-11-24",
+                          "ratio": {},
                           "note": ""
                         }
                       ],
-                      "process": "수능:국어,수학,영어,탐구 中 2개 등급합 10등급이내",
+                      "note": "예체능계열 통합 모집 36명 내에서 해당 모집단위 최대 3명. 학과별 확정 인원이 아님. 전형별 지원자격 충족 필요. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "특성화고교졸업자전형(정원외)",
+                      "short": "특성화고교졸업자전형(정원외)",
+                      "quota": "최대 3명",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "grade": "100%",
+                        "gradeType": "교과"
                       },
-                      "note": ""
+                      "process": "학생부교과 100%, 예체능계열 통합선발.",
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "학생부교과 100%, 예체능계열 통합선발.",
+                          "kind": "서류",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-24",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "note": "예체능계열 통합 모집 13명 내에서 해당 모집단위 최대 3명. 학과별 확정 인원이 아님. 전형별 지원자격 충족 필요. 수능최저 없음."
                     }
                   ]
                 }
@@ -3215,21 +3346,49 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "10:00 시작 / 18:00 마감. 인터넷 접수."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "최초합격 10:00 발표. 정원내 기준. 수시 미충원 이월에 따라 변동 가능. 정원외 전형은 수시 이월 발생 시 선발.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
+                  "title": "수능",
+                  "name": "수능전형",
+                  "short": "수능전형",
+                  "quota": "14명",
+                  "ratio": {
+                    "suneung": "100%"
                   },
+                  "process": "수능 100%, 실기 없음.",
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "5.47 : 1",
+                    "note": "2026학년도 공식 모집요강 부록의 전년도 입시결과."
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%, 실기 없음.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용. 경쟁률은 2026학년도 15명 모집 기준.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "농어촌학생전형(정원외)",
+                  "short": "농어촌학생전형(정원외)",
+                  "quota": "수시 미충원 이월인원",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "process": "수능 100%.",
                   "competition": {
                     "year": "",
                     "rate": "",
@@ -3238,40 +3397,48 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
+                      "method": "수능 100%.",
+                      "kind": "서류",
                       "examDate": "",
                       "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "100",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": "※수능반영비율:[국어,수학,영어 中 택2 각 40%]+탐구(20)"
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
                     }
                   ],
-                  "process": "",
+                  "note": "수시 미충원 이월인원이 있는 경우 선발. 최종 모집인원은 원서접수 전 공지 확인. 국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "수능",
+                  "name": "특성화고교졸업자전형(정원외)",
+                  "short": "특성화고교졸업자전형(정원외)",
+                  "quota": "수시 미충원 이월인원",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "suneung": "100%"
                   },
-                  "note": ""
+                  "process": "수능 100%.",
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "",
+                      "method": "수능 100%.",
+                      "kind": "서류",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "note": "수시 미충원 이월인원이 있는 경우 선발. 최종 모집인원은 원서접수 전 공지 확인. 국어·수학·영어 중 우수 2개 영역 각 40% + 탐구(사회/과학 상위 1과목) 20%. 한국사 등급별 가산점 적용. 특성화고교졸업자전형은 직업탐구도 선택 가능.",
+                  "gun": "나군"
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
@@ -3279,8 +3446,16 @@
       ],
       "sources": [
         [
-          "상명대 입학처",
-          "https://admission.smu.ac.kr/_seoul/iphak/mojip.html?bbsid=seoul_mojib&ctg_cd=susi"
+          "2027학년도 수시모집요강",
+          "https://admission.smu.ac.kr/bbs/fileview.php?bbsid=chunan_mojib&file_seq=8578"
+        ],
+        [
+          "2027학년도 정시모집요강",
+          "https://admission.smu.ac.kr/bbs/fileview.php?bbsid=chunan_mojib&file_seq=8603"
+        ],
+        [
+          "입학처",
+          "https://admission.smu.ac.kr/_cheonan/main.html"
         ]
       ]
     },
