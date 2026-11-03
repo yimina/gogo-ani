@@ -1484,7 +1484,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026학년도",
+                        "year": "2026",
                         "rate": "40.73 : 1",
                         "note": "전년도 수시 영상애니메이션디자인전공 11명 모집. 2027학년도 기초디자인 신설 이전 결과."
                       },
@@ -1637,7 +1637,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026학년도",
+                        "year": "2026",
                         "rate": "58.00 : 1",
                         "note": "11명 모집 / 638명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
                       },
@@ -1812,32 +1812,33 @@
     },
     {
       "name": "예원예술대학교(양주캠퍼스)",
-      "type": "대학교",
+      "type": "4년제",
       "region": "경기",
-      "address": "경기 양주시 은현면 예원대학로 56",
+      "address": "경기도 양주시 은현면 예원대학로 56",
       "url": "https://www.yewon.ac.kr/",
       "short": "예원예술대",
       "departments": [
         {
-          "name": "디지털콘텐츠학부-[애니메이션학&웹툰전공]",
-          "short": "",
-          "quota": "",
+          "name": "디지털콘텐츠학부 애니메이션&웹툰전공",
+          "short": "애니메이션&웹툰전공",
+          "quota": "25명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://admission.yewon.ac.kr/main/?menu=292",
+            "admissionUrl": "https://admission.yewon.ac.kr/",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "2027학년도 정원내 일반전형: 수시 25명, 실기 100%. 정원외 특별전형은 별도 선발.",
+            "practical": "칸만화·상황표현·기초디자인 중 택1. 켄트지 4절, 4시간. 고사 당일 주제 제시. 그림 도구 개인 지참.",
+            "note": "사용자가 요청한 애니메이션학은 양주 경기드림캠퍼스의 애니메이션&웹툰전공으로 반영. 전북 게임애니메이션학과와 구분. 모집인원 25명은 정원내 기준. 정원외 특별전형의 대학 공통 총원을 학과별 인원으로 복제하지 않음.",
             "susi": {
               "reference": false,
               "quota": "25명",
-              "note": "",
+              "note": "정원내 일반전형 25명. 정원외 모집인원은 대학 공통 총원 및 학과별 상한에 따라 선발하며 별도 확인.",
               "rounds": [
                 {
                   "round": 1,
@@ -1847,16 +1848,118 @@
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "마감 18:00. 인터넷 또는 우편 접수."
                   },
                   "announce": "2026-11-09",
-                  "note": "",
+                  "note": "일반전형 실기 2026-10-17, 양주 경기드림캠퍼스에서 실시. 학생별 시간·장소는 입학처 공지 확인.",
                   "types": [
                     {
-                      "title": "",
-                      "name": "실기",
-                      "short": "",
+                      "title": "실기/실적(일반전형)",
+                      "name": "",
+                      "short": "실기/실적(일반전형)",
                       "quota": "25명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "18.24 : 1",
+                        "note": "전년도 일반전형 25명 모집 / 456명 지원."
+                      },
+                      "stages": [
+                        {
+                          "label": "",
+                          "method": "칸만화·상황표현·기초디자인 중 택1, 4절, 4시간.",
+                          "examDate": "2026-10-17",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "practical": "100%"
+                      },
+                      "note": "고교 졸업(예정)자 또는 동등 학력 인정자. 수능최저 없음."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "농어촌학생",
+                      "short": "농어촌학생",
+                      "quota": "",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "농어촌 중·고 6년(학생·부모 거주) 또는 초·중·고 12년(학생 거주) 등 자격 충족자. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "특성화고교졸업자",
+                      "short": "특성화고교졸업자",
+                      "quota": "",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "동일계열 특성화고 전 교육과정 이수자. 마이스터고 및 일반고 직업위탁과정 제외. 교과성적 방식 또는 자격증 반영 방식 중 선택 가능하므로 세부 산식은 요강 확인. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "기회균등제",
+                      "short": "기회균등제",
+                      "quota": "",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "기초생활수급자·차상위계층·한부모가족 지원대상자 등 요강상 자격 충족자. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "특수교육대상자",
+                      "short": "특수교육대상자",
+                      "quota": "",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -1869,53 +1972,69 @@
                       },
                       "stages": [
                         {
-                          "label": "실기",
-                          "method": "칸만화, 상황표현, 기초디자인(택1)",
-                          "examDate": "2026-10-17",
-                          "examEnd": "2026-10-18",
-                          "announce": "",
-                          "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "100",
-                            "interview": ""
-                          },
-                          "note": ""
-                        },
-                        {
                           "label": "",
-                          "method": "",
-                          "examDate": "",
+                          "method": "면접",
+                          "examDate": "2026-10-17",
                           "examEnd": "",
                           "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
+                          "kind": "면접",
+                          "ratio": {},
                           "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "grade": "70%",
+                        "gradeType": "교과",
+                        "interview": "30%"
                       },
-                      "note": ""
+                      "note": "대학이 정한 장애 관련 자격 및 심의 기준 충족자. 면접 2026-10-17. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "서해5도",
+                      "short": "서해5도",
+                      "quota": "",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "서해5도 학교 이수 및 거주 자격 등 요강상 기준 충족자. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
+                    },
+                    {
+                      "title": "학생부교과(정원외 특별전형)",
+                      "name": "새터민(북한이탈주민)",
+                      "short": "새터민(북한이탈주민)",
+                      "quota": "",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "일괄합산",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "북한이탈주민 등록자 중 고교 졸업(예정) 또는 동등 학력 인정자. 학과별 확정 배정 인원 미공개. 대학 공통 총원과 학과별 상한 적용. 경쟁률은 해당 학과로 구분된 값 미확인."
                     }
                   ]
                 }
@@ -1923,20 +2042,20 @@
             },
             "jeongsi": {
               "reference": false,
-              "quota": "",
+              "quota": "0명(최초 계획)",
               "apply": {
-                "start": "",
-                "end": "",
-                "note": ""
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00."
               },
-              "note": "",
+              "announce": "2027-01-28",
+              "note": "정원내 최초 계획 0명. 수시 미충원 발생 시 나군으로 이월 선발 가능하므로 최종 모집인원 확인 필요. 아래 전형은 이월 발생 시 적용. 정원외 특별전형도 수시 이월 인원에 한해 모집. 나군 공통 실기 예정일 2027-01-19, 접수 마감 이후 학과별 확정 공지.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
+                  "title": "실기/실적(일반전형)",
+                  "name": "수시 이월 시 선발",
+                  "short": "수시 이월 시 선발",
+                  "quota": "0명(최초 계획)",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -1947,43 +2066,17 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
+                  "stages": [],
+                  "process": "일괄합산",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "practical": "100%"
                   },
-                  "note": ""
+                  "note": "정시 이월 인원 및 학과별 실기 일정 확정 전이므로 examDate는 비워 둠. 나군 공통 예정일 2027-01-19.",
+                  "gun": "나군",
+                  "category": "실기",
+                  "description": "칸만화·상황표현·기초디자인 중 택1, 4절, 4시간."
                 }
-              ],
-              "date": "",
-              "announce": ""
+              ]
             },
             "etc": []
           }
@@ -1991,39 +2084,55 @@
       ],
       "sources": [
         [
-          "예원예술대 입학처",
-          "https://admission.yewon.ac.kr/main/"
+          "2027학년도 수시 모집요강(2026-07-14 최종)",
+          "https://admission.yewon.ac.kr/main/?menu=292"
+        ],
+        [
+          "수시 공식 PDF: 14~21쪽",
+          "https://admission.yewon.ac.kr/data/upload/20260714112636_72383.pdf"
+        ],
+        [
+          "2027 수시 학과별 면접·실기 일정(2026-08-12)",
+          "https://admission.yewon.ac.kr/main/?menu=328&mode=view&no=91"
+        ],
+        [
+          "2026학년도 수시 입시결과",
+          "https://admission.yewon.ac.kr/main/filedown.php?menu=294&no=1615"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://admission.yewon.ac.kr/main/filedown.php?menu=301&no=1687"
         ]
       ]
     },
     {
       "name": "대진대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "경기",
       "address": "경기도 포천시 호국로 1007",
-      "url": "https://www.daejin.ac.kr/daejin/index.do",
+      "url": "https://www.daejin.ac.kr/",
       "short": "대진대",
       "departments": [
         {
-          "name": "예술대학-[만화게임그래픽학부]",
-          "short": "",
-          "quota": "",
+          "name": "예술대학 만화게임그래픽학과",
+          "short": "만화게임그래픽학과",
+          "quota": "40명",
           "category": [
             "만화",
             "게임"
           ],
           "admission": {
-            "admissionUrl": "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&",
+            "admissionUrl": "https://admission.daejin.ac.kr/",
             "track": [
               "실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "2027학년도 수시 실기우수자 30명(실기 80% + 교과 20%), 정시 다군 실기우수자 10명(실기 80% + 수능 20%).",
+            "practical": "칸만화·상황표현·발상과 표현·이미지보드·인물화 중 택1, 4시간. 앞 4종목은 켄트지 4절, 인물화는 3절.",
+            "note": "2027학년도 공식 모집단위는 만화게임그래픽학과. 이전 미술만화게임학부 및 사용자가 말한 만화게임그래픽학부와 구분. 2026-09-07 수정 수시요강의 모집인원 30명 반영. 정원내 40명 기준이며 정시 인원은 이월에 따라 변동 가능.",
             "susi": {
               "reference": false,
               "quota": "30명",
-              "note": "",
+              "note": "국내 고교 졸업(예정)자·검정고시 등 동등 학력 인정자 지원 가능. 수능최저 없음.",
               "rounds": [
                 {
                   "round": 1,
@@ -2033,15 +2142,15 @@
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "마감 18:00. 인터넷 접수. 서류 마감 2026-09-16 17:00(우편 당일 소인 인정)."
                   },
                   "announce": "2026-11-13",
-                  "note": "",
+                  "note": "발표 14:00. 고사장·시간 공지 2026-10-19 14:00.",
                   "types": [
                     {
-                      "title": "",
-                      "name": "실기우수자전형",
-                      "short": "",
+                      "title": "실기/실적위주(실기우수자전형)",
+                      "name": "",
+                      "short": "실기/실적위주(실기우수자전형)",
                       "quota": "30명",
                       "apply": {
                         "start": "",
@@ -2049,59 +2158,29 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "12.00 : 1",
+                        "note": "2026학년도 미술만화게임학부: 30명 모집 / 360명 지원. 모집단위 개편 전 결과."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "칸만화, 상황표현, 발상과 표현, 이미지보드 인물화 (택1)",
+                          "method": "5개 실기 종목 중 택1. 4시간, 인물화 3절·그 외 4절.",
                           "examDate": "2026-10-24",
                           "examEnd": "",
                           "announce": "",
                           "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "20",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "80",
-                            "interview": ""
-                          },
-                          "note": ""
-                        },
-                        {
-                          "label": "",
-                          "method": "",
-                          "examDate": "",
-                          "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
+                          "ratio": {},
                           "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "80%",
+                        "grade": "20%",
+                        "gradeType": "교과"
                       },
-                      "note": ""
+                      "note": "전년도 결과는 개편 전 미술만화게임학부 기준이므로 직접 비교에 주의."
                     }
                   ]
                 }
@@ -2113,16 +2192,16 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "마감 18:00. 서류 마감 2027-01-13 17:00."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "발표 14:00 예정. 고사장·시간 공지 2027-01-25 14:00. 수시 이월 반영 최종 인원은 2027-01-03 공지 예정.",
               "types": [
                 {
-                  "title": "",
+                  "title": "실기/실적위주(실기우수자전형)",
                   "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "short": "실기/실적위주(실기우수자전형)",
+                  "quota": "10명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -2136,40 +2215,26 @@
                   "stages": [
                     {
                       "label": "",
-                      "method": "",
+                      "method": "칸만화·상황표현·발상과 표현·이미지보드·인물화 중 택1, 4시간. 인물화 3절, 그 외 4절.",
                       "examDate": "2027-01-29",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "20",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "80",
-                        "interview": ""
-                      },
-                      "note": "※국어,수학,영어中 상위 1개 영역(60)+선택된거 빼고, 탐구, 한국사 中 1개 영역택(40)"
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
                     }
                   ],
-                  "process": "",
+                  "process": "일괄합산",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "practical": "80%",
+                    "suneung": "20%"
                   },
-                  "note": ""
+                  "note": "2027학년도 수능 응시자(한국사 필수). 전년도 동일 모집단위 정시 경쟁률 미확인. 인물화는 실물 모델, 연필 소묘 또는 수채화 재료 제한 확인.",
+                  "gun": "다군",
+                  "category": "실기",
+                  "description": "칸만화·상황표현·발상과 표현·이미지보드·인물화 중 택1, 4시간. 인물화 3절, 그 외 4절."
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
@@ -2177,8 +2242,16 @@
       ],
       "sources": [
         [
-          "대진대 입학처",
-          "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3d%3d&"
+          "2027 수시 모집요강(2026-09-07 수정): 10~13·32~33·52쪽",
+          "https://admission.daejin.ac.kr/submenu.do?menuurl=cJ2LZrh7LYx7Botxu019rg%3D%3D"
+        ],
+        [
+          "2027 정시 모집요강(2026-09-01): 5~7·18·30쪽",
+          "https://admission.daejin.ac.kr/detail.do?menuurl=kzVEfrpisRbR9lks5Jqg8A%3D%3D&board_seq=10539"
+        ],
+        [
+          "모집요강 자료실",
+          "https://admission.daejin.ac.kr/submenu.do?menuurl=kzVEfrpisRbR9lks5Jqg8A%3D%3D"
         ]
       ]
     },
