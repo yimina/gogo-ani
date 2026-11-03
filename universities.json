@@ -6784,57 +6784,80 @@
     },
     {
       "name": "호서대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충남",
-      "address": "충청남도 아산시 배방읍 호서대길 120",
-      "url": "https://hoseo.ac.kr",
+      "address": "충청남도 아산시 배방읍 호서로79번길 20",
+      "url": "https://www.hoseo.ac.kr",
       "short": "호서대",
       "departments": [
         {
-          "name": "애니메이션학과",
-          "short": "애니메이션",
-          "quota": "모집요강 참조",
+          "name": "애니메이션스쿨",
+          "short": "애니메이션스쿨",
+          "quota": "100명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://hoseo.ac.kr",
+            "admissionUrl": "https://ipsi.hoseo.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "수시(실기위주 전형/실기80%+내신20%), 정시(다군)",
-            "practical": "상황표현, 칸만화 중 택 1",
-            "note": "3D 애니메이션 및 VFX 특성화 인프라 우수",
+            "process": "수시: 교과 20% + 실기 80%; 정시 가군: 수능 20% + 실기 80%",
+            "practical": "상황표현 또는 칸 만화 중 택1. 4절지, 4시간, 가로·세로 구도 자유. 제목(상황) 당일 제시. 실기재료 및 컬러 자유. 수험표·신분증·실기 도구 지참.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경될 수 있음.",
             "susi": {
               "reference": false,
+              "quota": "70명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "70명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09:00~18:00"
                   },
-                  "announce": "2026-11-13",
+                  "announce": "2026-11-24",
+                  "note": "",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "실기/실적",
+                      "name": "실기전형",
+                      "short": "실기전형",
+                      "quota": "70명",
                       "apply": {
                         "start": "",
                         "end": "",
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
-                      }
+                        "year": "2026학년도",
+                        "rate": "17.66 : 1",
+                        "note": "70명 모집, 1,236명 지원"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 교과 20% + 실기 80%",
+                          "examDate": "2026-10-18",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부 교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음",
+                      "gun": ""
                     }
                   ]
                 }
@@ -6842,84 +6865,110 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "30명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "09:00~18:00"
+              },
+              "note": "",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "실기전형",
+                  "short": "실기전형",
+                  "quota": "30명",
                   "apply": {
                     "start": "",
                     "end": "",
                     "note": ""
                   },
                   "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
+                    "year": "2026학년도",
+                    "rate": "7.1 : 1",
+                    "note": "30명 모집, 213명 지원"
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 20% + 실기 80%",
+                      "examDate": "2027-01-16",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "",
+                  "gun": "가군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-02-04"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "호서대학교 입학처",
-          "https://hoseo.ac.kr"
+          "2027학년도 수시·정시 모집요강",
+          "https://ipsi.hoseo.ac.kr/main.do"
         ]
       ]
     },
     {
       "name": "순천향대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충남",
       "address": "충청남도 아산시 신창면 순천향로 22",
-      "url": "https://sch.ac.kr",
+      "url": "https://www.sch.ac.kr",
       "short": "순천향대",
       "departments": [
         {
-          "name": "메타버스융합대학 디지털애니메이션학과",
-          "short": "디지털애니",
-          "quota": "모집요강 참조",
+          "name": "디지털애니메이션학과",
+          "short": "디지털애니메이션학과",
+          "quota": "30명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://sch.ac.kr",
+            "admissionUrl": "https://ipsi.sch.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기/실기80%+교과20%), 정시(다군)",
-            "practical": "칸만화, 상황표현",
-            "note": "메타버스 및 차세대 디지털 콘텐츠 연계 강화",
+            "process": "수시: 학생부종합 일반학생 20명(서류 100%), 실기우수자 10명(교과 40% + 실기 60%). 정시는 수시 미충원 인원만 선발.",
+            "practical": "실기우수자: 칸 만화·상황표현·발상과 표현·사고의 전환·기초디자인 중 택1, 4시간. 사고의 전환은 3절지, 그 외 4절지. 유형별 재료 제한은 모집요강 28쪽 확인.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경될 수 있음.",
             "susi": {
               "reference": false,
+              "quota": "30명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "30명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "10:00~19:00"
                   },
-                  "announce": "2026-11-15",
+                  "announce": "2026-12-18",
+                  "note": "",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "학생부종합전형",
+                      "name": "일반학생전형",
+                      "short": "일반학생전형",
+                      "quota": "20명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -6929,7 +6978,50 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [],
+                      "process": "학교생활기록부 서류평가 100%",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "note": "수능최저학력기준 없음",
+                      "gun": ""
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "실기우수자전형",
+                      "short": "실기우수자전형",
+                      "quota": "10명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 교과 40% + 실기 60%",
+                          "examDate": "2026-10-04",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부 교과 40% + 실기 60%",
+                      "ratio": {
+                        "grade": "40%",
+                        "gradeType": "교과",
+                        "practical": "60%"
+                      },
+                      "note": "수능최저학력기준 없음. 국외고 지원 불가. 학생부 성적 산출 가능자에 한함.",
+                      "gun": ""
                     }
                   ]
                 }
@@ -6937,13 +7029,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "수시 미충원 인원",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "10:00~19:00"
+              },
+              "note": "고정 정시 모집인원 없음. 수시 미충원 발생 시 다군 수능 일반학생전형 선발. 실기고사 미실시.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "수능전형",
+                  "name": "일반학생전형",
+                  "short": "일반학생전형",
+                  "quota": "수시 미충원 인원",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -6955,20 +7053,24 @@
                     "note": ""
                   },
                   "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "process": "수능 100%; 실기고사 미실시",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "note": "",
+                  "gun": "다군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "순천향대학교 입학처",
-          "https://sch.ac.kr"
+          "2027학년도 수시·정시 모집요강",
+          "https://ipsi.sch.ac.kr/submenu.do?menuurl=9i3Q8ftvjoljsz2ty%2Fiqfg%3D%3D"
         ]
       ]
     },
