@@ -7465,57 +7465,81 @@
     },
     {
       "name": "중부대학교",
-      "type": "대학교",
-      "region": "충남",
-      "address": "충청남도 금산군 추부면 대학로 201",
-      "url": "joongbu.ac.kr",
+      "type": "4년제",
+      "region": "경기",
+      "address": "경기도 고양시 덕양구 동헌로 305 (고양창의캠퍼스)",
+      "url": "https://www.joongbu.ac.kr",
       "short": "중부대",
       "departments": [
         {
           "name": "만화애니메이션학전공",
-          "short": "만화애니",
-          "quota": "",
+          "short": "만화애니메이션학전공",
+          "quota": "60명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "joongbu.ac.kr",
+            "admissionUrl": "https://www.joongbu.ac.kr/ipsi/",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기우수자/실기70%+교과30%), 정시(가/나/다군 요강참조)",
-            "practical": "상황표현, 칸만화 중 택 1",
+            "process": "수시 실기우수자 58명: 교과 20% + 실기 80%. 정시 가군 수능우수자 2명: 수능 100%.",
+            "practical": "상황표현·스토리만화 중 택1, 4절지, 4시간. 주제 당일 제시, 표현방법 및 재료 자유. 켄트지 대학 제공. 수험표·신분증 지참.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능.",
             "susi": {
               "reference": false,
+              "quota": "58명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "58명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": ""
                   },
-                  "announce": "2026-11-13",
+                  "announce": "2026-11-10",
+                  "note": "합격자 발표: 2026-11-10 이내. 고양창의캠퍼스 모집단위.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
+                      "title": "실기/실적위주",
                       "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "short": "실기우수자전형",
+                      "quota": "58명",
                       "apply": {
                         "start": "",
                         "end": "",
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
-                      }
+                        "year": "2026학년도",
+                        "rate": "19.40 : 1",
+                        "note": "53명 모집, 1,028명 지원"
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·스토리만화 중 택1",
+                          "examDate": "2026-10-14",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저 없음. 명목 반영비율 교과 20%·실기 80%, 실질 반영비율 교과 16.3%·실기 83.7%."
                     }
                   ]
                 }
@@ -7523,85 +7547,102 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "2명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": ""
+              },
+              "note": "합격자 발표: 2027-02-05 이내. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "가군",
-                  "quota": "",
+                  "title": "수능전형",
+                  "name": "수능우수자전형",
+                  "short": "수능우수자전형",
+                  "quota": "2명",
                   "apply": {
                     "start": "",
                     "end": "",
                     "note": ""
                   },
                   "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
+                    "year": "2026학년도",
+                    "rate": "14.00 : 1",
+                    "note": "2명 모집, 28명 지원"
                   },
                   "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "process": "수능 100%; 실기고사 없음",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "note": "2027학년도 수능 응시자",
+                  "gun": "가군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "중부대학교 입학정보",
-          "joongbu.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.joongbu.ac.kr/boardDownload.es?bid=0232&list_no=335376&seq=1"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.joongbu.ac.kr/boardDownload.es?bid=0232&list_no=346204&seq=1"
         ]
       ]
     },
     {
       "name": "백석대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충남",
       "address": "충청남도 천안시 동남구 백석대학로 1",
-      "url": "bu.ac.kr",
+      "url": "https://www.bu.ac.kr",
       "short": "백석대",
       "departments": [
         {
-          "name": "디자인영상학부 웹툰애니메이션전공",
-          "short": "웹툰애니",
-          "quota": "",
+          "name": "디자인영상학부 영상애니메이션",
+          "short": "디자인영상학부 영상애니메이션",
+          "quota": "학부 통합 280명 (전공별 인원 미공개)",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "bu.ac.kr",
+            "admissionUrl": "https://ipsi.bu.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "수시(실기위주/실기80%+교과20%), 정시(나군)",
-            "practical": "상황표현, 칸만화, 기초디자인 중 택 1",
-            "note": "대규모 학부 내 전공 분과 체제 운영",
+            "process": "디자인영상학부 통합모집. 수시 일반실기 195명·지역인재(일반) 실기 20명: 교과 20% + 실기 80%. 정시 나군 일반실기 65명: 수능 20% + 실기 80%.",
+            "practical": "기초디자인·상황표현·컷만화·발상과 표현 중 택1. 4절지, 4시간. 수시: 기초디자인 10/19, 상황표현·컷만화 10/20, 발상과 표현 10/21. 정시: 상황표현·컷만화 1/18, 기초디자인·발상과 표현 1/19. 선택 유형에 해당하는 날만 응시.",
+            "note": "요청 명칭: 웹툰 애니메이션전공. 2027학년도 공식 모집요강 표기: 디자인영상학부 영상애니메이션. 학부에는 시각디자인·산업디자인·인테리어디자인도 포함됨. 정원 내 전형만 수록.",
             "susi": {
               "reference": false,
+              "quota": "학부 통합 215명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "학부 통합 215명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09:00~18:00"
                   },
-                  "announce": "2026-11-20",
+                  "announce": "2026-11-27",
+                  "note": "합격자 발표 17:00 이후. 모든 모집인원은 디자인영상학부 전체 인원이며 영상애니메이션 전공 단독 인원이 아님.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "일반전형[실기]",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "실기위주",
+                      "name": "일반실기",
+                      "short": "일반실기",
+                      "quota": "학부 통합 195명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -7611,7 +7652,101 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "기초디자인 선택 시",
+                          "method": "기초디자인",
+                          "examDate": "2026-10-19",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        },
+                        {
+                          "label": "상황표현·컷만화 선택 시",
+                          "method": "상황표현 또는 컷만화",
+                          "examDate": "2026-10-20",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        },
+                        {
+                          "label": "발상과 표현 선택 시",
+                          "method": "발상과 표현",
+                          "examDate": "2026-10-21",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저 없음. 학부 통합 인원. 반영비율은 명목비율이며 실질비율은 교과 6.98%·실기 93.02%."
+                    },
+                    {
+                      "title": "실기위주",
+                      "name": "지역인재(일반)",
+                      "short": "지역인재(일반)",
+                      "quota": "학부 통합 20명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "기초디자인 선택 시",
+                          "method": "기초디자인",
+                          "examDate": "2026-10-19",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        },
+                        {
+                          "label": "상황표현·컷만화 선택 시",
+                          "method": "상황표현 또는 컷만화",
+                          "examDate": "2026-10-20",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        },
+                        {
+                          "label": "발상과 표현 선택 시",
+                          "method": "발상과 표현",
+                          "examDate": "2026-10-21",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저 없음. 학부 통합 인원. 반영비율은 명목비율이며 실질비율은 교과 6.98%·실기 93.02%. 충청권(대전·세종·충남·충북) 고교 전 과정 이수(예정)자, 검정고시·방송통신고 지원 불가."
                     }
                   ]
                 }
@@ -7619,13 +7754,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "학부 통합 65명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "09:00~18:00"
+              },
+              "note": "합격자 발표 17:00 이후. 학부 통합 인원이며 수시 이월에 따라 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "일반실기",
+                  "short": "일반실기",
+                  "quota": "학부 통합 65명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -7636,21 +7777,51 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "상황표현·컷만화 선택 시",
+                      "method": "상황표현 또는 컷만화",
+                      "examDate": "2027-01-18",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    },
+                    {
+                      "label": "기초디자인·발상과 표현 선택 시",
+                      "method": "기초디자인 또는 발상과 표현",
+                      "examDate": "2027-01-19",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "2027학년도 수능 응시자. 디자인영상학부 통합 모집인원.",
+                  "gun": "나군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "백석대학교 입학홈페이지",
-          "bu.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://ipsi.bu.ac.kr/files/ipsi/content/202606/43de97b68b19e771a457ac79b17242ae.pdf"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://ipsi.bu.ac.kr/files/ipsi/content/202608/4f9035b8c3ead7db57d11663c119c856.pdf"
         ]
       ]
     },
