@@ -8140,48 +8140,50 @@
     },
     {
       "name": "부산대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "부산",
       "address": "부산광역시 금정구 부산대학로63번길 2",
-      "url": "pusan.ac.kr",
+      "url": "https://www.pusan.ac.kr",
       "short": "부산대",
       "departments": [
         {
           "name": "디자인학과 애니메이션전공",
-          "short": "애니전공",
-          "quota": "모집요강 참조",
+          "short": "디자인학과 애니메이션전공",
+          "quota": "11명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "pusan.ac.kr",
+            "admissionUrl": "https://go.pusan.ac.kr",
             "track": [
-              "실기",
-              "비실기"
+              "실기"
             ],
-            "process": "수시(실기형 위주 일괄합산), 정시(가군 수능+실기)",
-            "practical": "기초디자인(애니메이션 연출/구성형 변형 문항 출제 가능)",
-            "note": "영남권 거점국립대학교 미술/디자인 최상위 지함",
+            "process": "수시 실기전형 6명: 1단계 교과 100%(5배수), 2단계 1단계 성적 40% + 실기 60%. 정시 가군 수능전형 5명: 수능 60% + 실기 40%.",
+            "practical": "상황표현·칸 만화 중 택1. 4절 켄트지, 4시간(10:00~14:00). 주어진 상황을 창의적으로 표현. 파스텔·콘테·입체 재료·분무 정착액·전자제품 등 사용 제한은 모집요강 확인. 실기 총점의 40% 미만 과락.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능.",
             "susi": {
               "reference": false,
+              "quota": "6명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "6명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-08",
+                    "end": "2026-09-11",
+                    "note": "시작 10:00, 마감 17:00"
                   },
-                  "announce": "2026-12-15",
+                  "announce": "2026-12-18",
+                  "note": "합격자 발표 16:00. 1단계 합격자 및 실기 안내 2026-10-16 16:00.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
+                      "title": "실기/실적",
                       "name": "실기전형",
-                      "ratio": {
-                        "grade": "40%",
-                        "practical": "60%"
-                      },
+                      "short": "실기전형",
+                      "quota": "6명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -8191,7 +8193,39 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "1단계",
+                          "method": "교과 성적순 5배수 선발(동점자 모두 선발)",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-10-16",
+                          "kind": "서류",
+                          "ratio": {
+                            "grade": "100%",
+                            "gradeType": "교과"
+                          },
+                          "note": "발표 16:00"
+                        },
+                        {
+                          "label": "2단계",
+                          "method": "1단계 성적 40% + 실기 60%",
+                          "examDate": "2026-10-21",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {
+                            "grade": "40%",
+                            "gradeType": "교과",
+                            "practical": "60%"
+                          },
+                          "note": ""
+                        }
+                      ],
+                      "process": "1단계 교과 100%(5배수) → 2단계 1단계 40% + 실기 60%",
+                      "ratio": {},
+                      "note": "수능최저: 국어·수학·영어·사회/과학탐구 중 3개 영역 이상 응시, 상위 2개 영역 등급 합 10 이내, 한국사 4등급 이내. 탐구는 2과목 응시하고 상위 1과목 반영."
                     }
                   ]
                 }
@@ -8199,13 +8233,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "5명",
+              "apply": {
+                "start": "2027-01-05",
+                "end": "2027-01-07",
+                "note": "시작 10:00, 마감 18:00"
+              },
+              "note": "합격자 발표 16:00. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "가군",
-                  "quota": "",
+                  "title": "수능전형",
+                  "name": "수능전형",
+                  "short": "수능전형",
+                  "quota": "5명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -8216,67 +8256,91 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·칸 만화 중 택1",
+                      "examDate": "2027-01-15",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "10:00~14:00"
+                    }
+                  ],
+                  "process": "수능 60% + 실기 40%",
+                  "ratio": {
+                    "suneung": "60%",
+                    "practical": "40%"
+                  },
+                  "note": "2027학년도 수능 모집단위별 필수영역 응시자. 실기 총점의 40% 미만 과락.",
+                  "gun": "가군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-02-04"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "부산대학교 입학정보",
-          "pusan.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000257099&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000014"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000257100&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000014"
         ]
       ]
     },
     {
       "name": "경성대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "부산",
       "address": "부산광역시 남구 수영로 309",
-      "url": "ks.ac.kr",
+      "url": "https://ks.ac.kr",
       "short": "경성대",
       "departments": [
         {
           "name": "영상애니메이션학부 애니메이션학전공",
-          "short": "애니학",
-          "quota": "모집요강 참조",
+          "short": "영상애니메이션학부 애니메이션학전공",
+          "quota": "학부 통합 60명 (전공별 인원 미공개)",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "ks.ac.kr",
+            "admissionUrl": "https://ipsi.ks.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기특별전형/실기70%+교과30%), 정시(가군)",
-            "practical": "상황표현, 칸만화",
-            "note": "종합 영상예술 및 영화학 인프라 연계 강점",
+            "process": "학부 통합: 수시 일반계고교과 10명·지역인재 8명·학교생활우수자 10명·실기특별 25명. 정시 나군 일반 2명·실기특별 5명.",
+            "practical": "상황표현·기초디자인·칸만화 중 택1. 켄트지 4절, 4시간. 주제 당일 발표.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능. 영상애니메이션학부(영상학전공·애니메이션학전공) 통합모집. 전공별 모집인원은 별도 공개하지 않음.",
             "susi": {
               "reference": false,
+              "quota": "학부 통합 53명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "학부 통합 53명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-13",
+                  "announce": "",
+                  "note": "실기특별 합격 발표 2026-11-05 15:00, 나머지 전형 2026-12-17 15:00. 모집인원은 영상학전공을 포함한 영상애니메이션학부 전체 인원.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "학생부교과전형",
+                      "name": "일반계고교과전형",
+                      "short": "일반계고교과전형",
+                      "quota": "학부 통합 10명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -8286,7 +8350,127 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "교과 100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-17",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": "합격자 발표 15:00 예정"
+                        }
+                      ],
+                      "process": "교과 100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저 없음. 국내 일반고·자율고·특목고(마이스터 제외)·종합고 보통과 등 지원자격 확인. 특성화고 졸업자는 해당 전형 지원대상 아님. 학부 통합 인원."
+                    },
+                    {
+                      "title": "학생부교과전형",
+                      "name": "지역인재전형",
+                      "short": "지역인재전형",
+                      "quota": "학부 통합 8명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "교과 100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-17",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": "합격자 발표 15:00 예정"
+                        }
+                      ],
+                      "process": "교과 100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "부산·울산·경남 소재 정규 고교 입학부터 졸업까지 전 과정 이수자. 수능최저: 국어·수학·영어·사탐/과탐(1과목) 중 1개 영역 5등급 이내. 학부 통합 인원."
+                    },
+                    {
+                      "title": "학생부종합전형",
+                      "name": "학교생활우수자전형",
+                      "short": "학교생활우수자전형",
+                      "quota": "학부 통합 10명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "서류 종합평가 100%; 면접 없음",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-17",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": "합격자 발표 15:00 예정"
+                        }
+                      ],
+                      "process": "서류 종합평가 100%; 면접 없음",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "note": "수능최저 없음. 일반고·자율고·특목고(마이스터 제외)·종합고 보통과 등 지원자격 확인. 특성화고 졸업자는 해당 전형 지원대상 아님. 학부 통합 인원."
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "실기특별전형",
+                      "short": "실기특별전형",
+                      "quota": "학부 통합 25명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·기초디자인·칸만화 중 택1",
+                          "examDate": "2026-10-18",
+                          "examEnd": "",
+                          "announce": "2026-11-05",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "합격자 발표 15:00 예정"
+                        }
+                      ],
+                      "process": "교과 10% + 실기 90%",
+                      "ratio": {
+                        "grade": "10%",
+                        "gradeType": "교과",
+                        "practical": "90%"
+                      },
+                      "note": "수능최저 없음. 학생부 석차등급 산출 불가능자는 지원 불가. 학부 통합 인원."
                     }
                   ]
                 }
@@ -8294,13 +8478,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "학부 통합 7명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "09:00~18:00"
+              },
+              "note": "일반전형 발표 2027-01-15 15:00; 실기특별 발표 2027-02-04 15:00 예정. 학부 통합 인원이며 수시 이월에 따라 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "가군",
-                  "quota": "",
+                  "title": "수능전형",
+                  "name": "일반전형",
+                  "short": "일반전형",
+                  "quota": "학부 통합 2명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -8311,21 +8501,75 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 100%",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-01-15",
+                      "kind": "수능",
+                      "ratio": {},
+                      "note": "발표 15:00 예정"
+                    }
+                  ],
+                  "process": "수능 100%",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "note": "2027학년도 수능 응시자. 영상애니메이션학부 통합 인원.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "실기전형",
+                  "name": "실기특별전형",
+                  "short": "실기특별전형",
+                  "quota": "학부 통합 5명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·기초디자인·칸만화 중 택1",
+                      "examDate": "2027-01-21",
+                      "examEnd": "",
+                      "announce": "2027-02-04",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "합격자 발표 15:00 예정"
+                    }
+                  ],
+                  "process": "수능 30% + 실기 70%",
+                  "ratio": {
+                    "suneung": "30%",
+                    "practical": "70%"
+                  },
+                  "note": "2027학년도 수능 응시자. 영상애니메이션학부 통합 인원.",
+                  "gun": "나군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": ""
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "경성대학교 입학처",
-          "ks.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000257303&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000062"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000257304&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000062"
         ]
       ]
     },
