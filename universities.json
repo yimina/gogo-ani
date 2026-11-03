@@ -1433,32 +1433,32 @@
       ]
     },
     {
-      "name": "명지대학교(용인캠퍼스)",
-      "type": "대학교",
+      "name": "명지대학교",
+      "type": "4년제",
       "region": "경기",
-      "address": "경기도 용인시 처인구 명지로 116(자연캠퍼스)",
-      "url": "https://enter.hansung.ac.kr/",
+      "address": "경기도 용인시 처인구 명지로 116",
+      "url": "https://www.mju.ac.kr",
       "short": "명지대",
       "departments": [
         {
-          "name": "디자인학부-[영상,애니메이션디자인전공]",
-          "short": "",
-          "quota": "",
+          "name": "디자인학부 영상애니메이션디자인전공",
+          "short": "영상애니메이션디자인전공",
+          "quota": "21명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://iphak.mju.ac.kr/pages/?p=10&mj=01",
+            "admissionUrl": "https://iphak.mju.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "2027학년도 수시 실기/실적(실기우수자전형)으로 21명 선발. 실기 70% + 학생부 교과 20% + 출결 10%.",
+            "practical": "상황표현: 4절지, 240분. 기초디자인: 3절지, 240분. 실기고사는 자연캠퍼스(용인)에서 실시.",
+            "note": "2027학년도 기준. 디자인학부 전체가 아닌 영상애니메이션디자인전공의 모집인원임. 수능최저학력기준 없음. 지원자격: 고교 졸업(예정)자 또는 법령상 동등 이상의 학력 인정자. 2027학년도부터 정시 수능(실기전형) 10명을 수시로 이동하여 전원 수시 선발. 경쟁률 필드는 2026학년도 전년도 결과임.",
             "susi": {
               "reference": false,
               "quota": "21명",
-              "note": "",
+              "note": "실기 유형별 모집: 상황표현 11명, 기초디자인 10명. 합격자 발표 2026-12-09 15:00.",
               "rounds": [
                 {
                   "round": 1,
@@ -1468,15 +1468,15 @@
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "시작 10:00 / 마감 17:00. 해당자 서류제출 2026-09-14까지."
                   },
                   "announce": "2026-12-09",
-                  "note": "",
+                  "note": "고사장 발표: 2026-09-29 15:00. 실기고사 시작 09:00부터, 정확한 입실시간은 개별 고사장 안내 확인.",
                   "types": [
                     {
-                      "title": "",
+                      "title": "실기/실적(실기우수자전형)",
                       "name": "상황표현",
-                      "short": "",
+                      "short": "상황표현",
                       "quota": "11명",
                       "apply": {
                         "start": "",
@@ -1484,46 +1484,35 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "40.73 : 1",
+                        "note": "전년도 수시 영상애니메이션디자인전공 11명 모집. 2027학년도 기초디자인 신설 이전 결과."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "주어진 상황주제에 대한 창의적 표현능력",
+                          "method": "주어진 상황을 창의적으로 표현. 4절지, 240분. 연필·색연필·파스텔·수채물감·포스터칼라·마카 등 채색 재료 사용.",
                           "examDate": "2026-10-11",
                           "examEnd": "",
                           "announce": "",
                           "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "20",
-                            "gradeType": "교과",
-                            "attendance": "10",
-                            "essay": "",
-                            "practical": "70",
-                            "interview": ""
-                          },
-                          "note": "※반영교과 : 국어, 영어"
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "70%",
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
                       },
                       "note": ""
                     },
                     {
-                      "title": "",
+                      "title": "실기/실적(실기우수자전형)",
                       "name": "기초디자인",
-                      "short": "",
+                      "short": "기초디자인",
                       "quota": "10명",
                       "apply": {
                         "start": "",
@@ -1533,37 +1522,26 @@
                       "competition": {
                         "year": "",
                         "rate": "",
-                        "note": ""
+                        "note": "2027학년도 수시 신설 유형이므로 2026학년도 수시 동일 유형 경쟁률 없음."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "기초 조형능력 평가를 위한 문제 주제의 해석과 그 표현",
+                          "method": "주제 해석과 표현을 통한 기초 조형능력 평가. 3절지, 240분. 입체적 첨가 형식을 제외한 표현 가능한 재료 허용.",
                           "examDate": "2026-10-12",
                           "examEnd": "",
                           "announce": "",
                           "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "20",
-                            "gradeType": "",
-                            "attendance": "10",
-                            "essay": "",
-                            "practical": "70",
-                            "interview": ""
-                          },
-                          "note": "※반영교과 : 국어, 영어"
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "70%",
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
                       },
                       "note": ""
                     }
@@ -1573,66 +1551,16 @@
             },
             "jeongsi": {
               "reference": false,
-              "quota": "",
+              "offered": false,
+              "quota": "미선발",
               "apply": {
                 "start": "",
                 "end": "",
                 "note": ""
               },
-              "note": "",
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [
-                    {
-                      "label": "",
-                      "method": "",
-                      "examDate": "",
-                      "examEnd": "",
-                      "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ],
-                  "process": "",
-                  "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
-                  },
-                  "note": ""
-                }
-              ],
-              "announce": ""
+              "announce": "",
+              "note": "2027학년도 영상애니메이션디자인전공은 전원 수시 선발로 정시 수능(실기전형) 미선발. 2026학년도 정시 10명 선발 내역을 2027학년도 모집인원으로 사용하지 않음.",
+              "types": []
             },
             "etc": []
           }
@@ -1640,38 +1568,50 @@
       ],
       "sources": [
         [
-          "명지대학교 입학처",
-          "https://iphak.mju.ac.kr/pages/?p=10&mj=01"
+          "2027학년도 명지대학교 수시 모집요강 수정(v2): 책자 84~87쪽, 실기우수자 및 전년도 결과",
+          "https://iphak.mju.ac.kr/pages/?b=B_1_1&bn=30136&cate=수시&m=read&p=9"
+        ],
+        [
+          "2027학년도 명지대학교 수시 모집요강 PDF",
+          "https://iphak.mju.ac.kr/_common/new_download_file.php?file_no=10641&menu=boardfile"
+        ],
+        [
+          "2027학년도 면접 및 실기고사 일정 안내(2026-07-17)",
+          "https://iphak.mju.ac.kr/pages/?b=B_1_1&bn=30205&m=read&p=9"
+        ],
+        [
+          "2027학년도 명지대학교 정시 모집요강(2026-10-30 수정): 전공 정시 미선발 확인",
+          "https://iphak.mju.ac.kr/pages/?b=B_1_1&bn=30405&m=read&p=30"
         ]
       ]
     },
     {
       "name": "경기대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "서울",
       "address": "서울특별시 서대문구 경기대로9길 24",
-      "url": "https://enter.kyonggi.ac.kr/",
+      "url": "https://www.kyonggi.ac.kr",
       "short": "경기대",
       "departments": [
         {
-          "name": "관광문화대학-[애니메이션학과]",
-          "short": "",
-          "quota": "",
+          "name": "관광문화대학 애니메이션학과",
+          "short": "애니메이션학과",
+          "quota": "26명",
           "category": [
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120",
+            "admissionUrl": "https://enter.kyonggi.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "2027학년도 수시 예능실기우수자 16명(실기 60% + 학생부 교과 40%), 정시 가군 실기/실적 일반학생 10명(실기 60% + 수능 40%).",
+            "practical": "상상과표현: 상상으로 4컷 표현하기, 켄트지 30×90cm, 4시간. 웹툰: 4컷 웹툰, 켄트지 4절, 4시간. 주제 당일 제시. 두 시기 모두 실기고사는 수원캠퍼스에서 실시.",
+            "note": "2027학년도 기준. 학과 소속은 서울캠퍼스이며 고사 장소는 수원캠퍼스임. 학과 직접 선발 전형만 수록. 수시 16명 + 정시 10명 = 26명(정시 인원은 수시 미충원 이월 등에 따라 변경 가능). 전년도 2026학년도 실기 반영비율을 2027학년도에 적용하지 않음.",
             "susi": {
               "reference": false,
               "quota": "16명",
-              "note": "",
+              "note": "수능최저학력기준 없음. 고교 졸업(예정)자 또는 법령상 동등 이상의 학력 인정자 지원 가능. 최초합격자 발표는 2026-11-20까지.",
               "rounds": [
                 {
                   "round": 1,
@@ -1681,15 +1621,15 @@
                   "apply": {
                     "start": "2026-09-07",
                     "end": "2026-09-11",
-                    "note": ""
+                    "note": "마감 17:00. 서류제출 해당자: 2026-09-15 17:00까지."
                   },
                   "announce": "2026-11-20",
-                  "note": "",
+                  "note": "최초합격자 발표 기한(까지)임. 실기고사장 조회 2026-09-15. 실기고사는 수원캠퍼스에서 실시.",
                   "types": [
                     {
-                      "title": "상황표현",
-                      "name": "예능실기우수자전형",
-                      "short": "",
+                      "title": "실기/실적(예능실기우수자전형)",
+                      "name": "상상과표현",
+                      "short": "상상과표현",
                       "quota": "11명",
                       "apply": {
                         "start": "",
@@ -1697,46 +1637,34 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "58.00 : 1",
+                        "note": "11명 모집 / 638명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "상상으로 4컷 표현하기",
+                          "method": "상상으로 4컷 표현하기. 주제 당일 제시. 켄트지 30×90cm, 4시간.",
                           "examDate": "2026-10-18",
                           "examEnd": "",
                           "announce": "",
                           "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "40",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "60",
-                            "interview": ""
-                          },
-                          "note": "※반영교과:국어,수학,영어,통합사회,통합과학,한국사,사회"
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "60%",
+                        "grade": "40%",
+                        "gradeType": "교과"
                       },
                       "note": ""
                     },
                     {
-                      "title": "웹툰",
-                      "name": "예능실기우수자전형",
-                      "short": "",
+                      "title": "실기/실적(예능실기우수자전형)",
+                      "name": "웹툰",
+                      "short": "웹툰",
                       "quota": "5명",
                       "apply": {
                         "start": "",
@@ -1744,39 +1672,27 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
+                        "year": "2026학년도",
+                        "rate": "86.40 : 1",
+                        "note": "5명 모집 / 432명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
                       },
                       "stages": [
                         {
                           "label": "",
-                          "method": "4컷 웹툰",
+                          "method": "4컷 웹툰. 주제 당일 제시. 켄트지 4절, 4시간.",
                           "examDate": "2026-10-18",
                           "examEnd": "",
                           "announce": "",
                           "kind": "실기",
-                          "ratio": {
-                            "document": "",
-                            "grade": "40",
-                            "gradeType": "교과",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "60",
-                            "interview": ""
-                          },
-                          "note": "※반영교과:국어,수학,영어,통합사회,통합과학,한국사,사회"
+                          "ratio": {},
+                          "note": ""
                         }
                       ],
-                      "process": "",
+                      "process": "일괄합산",
                       "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
+                        "practical": "60%",
+                        "grade": "40%",
+                        "gradeType": "교과"
                       },
                       "note": ""
                     }
@@ -1790,14 +1706,14 @@
               "apply": {
                 "start": "2027-01-04",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
               },
-              "note": "※수능반영비율:영어(30)+국어,수학,사탐,과탐(상위 2과목 각 35%)",
+              "note": "최초합격자 발표 기한: 2027-02-05까지. 가군. 고사장 확인 2027-01-12, 실기고사 2027-01-16(수원캠퍼스). 지원자격: 고교 졸업(예정)자 또는 동등 학력 인정자로 2027학년도 수능 응시자. 수시 미충원 포함 최종 모집인원은 2026-12-31 13:00 이후 공지 확인.",
               "types": [
                 {
-                  "title": "",
-                  "name": "상상표현",
-                  "short": "",
+                  "title": "실기/실적(일반학생전형)",
+                  "name": "상상과표현",
+                  "short": "상상과표현",
                   "gun": "가군",
                   "quota": "7명",
                   "apply": {
@@ -1806,48 +1722,35 @@
                     "note": ""
                   },
                   "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
+                    "year": "2026학년도",
+                    "rate": "10.00 : 1",
+                    "note": "7명 모집 / 70명 지원."
                   },
                   "stages": [
                     {
                       "label": "",
-                      "method": "상상으로 4컷 표현하기",
+                      "method": "상상으로 4컷 표현하기. 켄트지 30×90cm, 4시간.",
                       "examDate": "2027-01-16",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "40",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "60",
-                        "interview": ""
-                      },
+                      "kind": "실기",
+                      "ratio": {},
                       "note": ""
                     }
                   ],
-                  "process": "",
+                  "process": "일괄합산",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "practical": "60%",
+                    "suneung": "40%"
                   },
-                  "note": ""
+                  "note": "수능: 영어 30% + 국어·수학·탐구 중 상위 2개 영역 각 35%. 탐구는 상위 1과목, 직업탐구 미반영. 한국사 등급별 감점(미응시 불합격).",
+                  "category": "실기",
+                  "description": "상상으로 4컷 표현하기. 켄트지 30×90cm, 4시간."
                 },
                 {
-                  "title": "",
+                  "title": "실기/실적(일반학생전형)",
                   "name": "웹툰",
-                  "short": "",
+                  "short": "웹툰",
                   "gun": "가군",
                   "quota": "3명",
                   "apply": {
@@ -1856,46 +1759,32 @@
                     "note": ""
                   },
                   "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
+                    "year": "2026학년도",
+                    "rate": "10.33 : 1",
+                    "note": "3명 모집 / 31명 지원."
                   },
                   "stages": [
                     {
                       "label": "",
-                      "method": "4컷 웹툰",
+                      "method": "4컷 웹툰. 켄트지 4절, 4시간.",
                       "examDate": "2027-01-16",
                       "examEnd": "",
                       "announce": "",
-                      "kind": "",
-                      "ratio": {
-                        "suneung": "40",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "60",
-                        "interview": ""
-                      },
+                      "kind": "실기",
+                      "ratio": {},
                       "note": ""
                     }
                   ],
-                  "process": "",
+                  "process": "일괄합산",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "practical": "60%",
+                    "suneung": "40%"
                   },
-                  "note": ""
+                  "note": "수능: 영어 30% + 국어·수학·탐구 중 상위 2개 영역 각 35%. 탐구는 상위 1과목, 직업탐구 미반영. 한국사 등급별 감점(미응시 불합격).",
+                  "category": "실기",
+                  "description": "4컷 웹툰. 켄트지 4절, 4시간."
                 }
               ],
-              "date": "",
               "announce": "2027-02-05"
             },
             "etc": []
@@ -1904,8 +1793,20 @@
       ],
       "sources": [
         [
-          "경기대학교 입학처",
+          "2027학년도 경기대학교 수시 모집요강: 책자 14·17·19·31~32·93쪽",
           "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120"
+        ],
+        [
+          "2027학년도 경기대학교 수시 모집요강 PDF",
+          "https://enter.kyonggi.ac.kr/ajaxfile/CMN_SVC/FileView.do?GBN=X12&SITE_NO=2&MENU_NO=120&CONTENTS_NO=1&TYPE_CODE=C0601"
+        ],
+        [
+          "2027학년도 경기대학교 정시 모집요강: 책자 1·4·6~7·15~16·60쪽",
+          "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=140"
+        ],
+        [
+          "2027학년도 경기대학교 정시 모집요강 PDF",
+          "https://enter.kyonggi.ac.kr/ajaxfile/CMN_SVC/FileView.do?GBN=X12&SITE_NO=2&MENU_NO=140&CONTENTS_NO=1&TYPE_CODE=C0601"
         ]
       ]
     },
