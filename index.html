@@ -341,6 +341,16 @@
   #doneMsg { margin: 0 0 14px; font-size: 15px; font-weight: 600; line-height: 1.5; }
   .rp-status.ok { color: #0f7a53; } .rp-status.err { color: #c0264f; }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  .competition-panel { margin-top: 14px; }
+  .competition-controls { display:flex; gap:12px; flex-wrap:wrap; margin:12px 0; }
+  .competition-controls label { font-size:12px; display:flex; align-items:center; gap:6px; }
+  .competition-controls select { font:inherit; padding:7px; border:1px solid var(--line); border-radius:7px; background:#fff; color:var(--ink); }
+  .competition-scroll { overflow:auto; max-height:480px; }
+  .competition-table { border-collapse:collapse; width:100%; font-size:12px; }
+  .competition-table th,.competition-table td { padding:10px; border-bottom:1px solid var(--line); text-align:left; min-width:90px; }
+  .competition-table th { position:sticky; top:0; background:#f5f7fb; z-index:1; white-space:nowrap; }
+  .competition-table td small { display:block; color:var(--sub); }
+  .competition-table .rate { color:var(--blue); font-weight:700; white-space:nowrap; }
 </style>
 </head>
 <body class="dash-mode">
@@ -1195,6 +1205,64 @@ function dashDonut(title, unit, dim, rows) {
     <div class="dleg">${legend}</div></div></section>`;
 }
 
+const competitionFilter = { year: "", season: "", sort: "desc" };
+function competitionEscape(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function competitionRate(value) {
+  const m = String(value ?? "").trim().replace(/,/g, "").match(/^(\d+(?:\.\d+)?)\s*(?:[:：]\s*(\d+(?:\.\d+)?))?$/);
+  if (!m || (m[2] !== undefined && Number(m[2]) <= 0)) return null;
+  const n = Number(m[1]) / (m[2] === undefined ? 1 : Number(m[2]));
+  return Number.isFinite(n) ? n : null;
+}
+function competitionRecords(list) {
+  const rows = [];
+  list.forEach(s => s.depts.filter(d => deptPass(d)).forEach(d => {
+    admGroups(d.adm, s.type).filter(g => !g.summary).forEach(group => {
+      const season = group.key === "susi" ? "수시" : group.key === "jeongsi" ? "정시" : "기타";
+      if (filter.season.size && ![...filter.season].some(v => v.split("+").includes(season))) return;
+      const add = (t, label) => {
+        const c = t.competition || {}, rate = competitionRate(c.rate);
+        rows.push({ school:s.name, dept:d.name, season, round:group.name, title:label,
+          year:String(c.year || "").trim() || "학년도 미입력", rate, note:c.note || "" });
+      };
+      const types = (group.g.types || []).filter(groupHas);
+      if (types.length) types.forEach(t => add(t, [t.title, t.name].filter(Boolean).join(" · ") || "전형명 미입력"));
+      else if (groupHas(group.g)) add(group.g, group.name);
+    });
+  }));
+  return rows;
+}
+function competitionDashboard(list) {
+  const all = competitionRecords(list), esc = competitionEscape;
+  const years = [...new Set(all.filter(r => r.rate !== null).map(r => r.year))].sort((a,b) => b.localeCompare(a, "ko", {numeric:true}));
+  if (!years.includes(competitionFilter.year)) competitionFilter.year = years.find(y => y !== "학년도 미입력") || years[0] || "";
+  const pool = all.filter(r => !competitionFilter.season || r.season === competitionFilter.season);
+  const rows = pool.filter(r => r.rate !== null && r.year === competitionFilter.year);
+  rows.sort((a,b) => (competitionFilter.sort === "asc" ? a.rate-b.rate : b.rate-a.rate) || a.school.localeCompare(b.school,"ko"));
+  const rates = rows.map(r => r.rate), fmt = n => n.toLocaleString("ko-KR", {maximumFractionDigits:2,minimumFractionDigits:2}) + " : 1";
+  const metric = (label,value) => `<div class="kpi"><div class="kl">${label}</div><div class="kv">${value}</div></div>`;
+  const opts = (values, selected) => values.map(v => `<option value="${esc(v)}" ${v===selected?'selected':''}>${esc(v || "전체")}</option>`).join("");
+  return `<section class="dcard competition-panel"><h3>경쟁률 통계</h3>
+    <div class="du">기존 검색·필터에 맞는 학과의 입력 자료 기준입니다. 학년도를 선택해 비교하세요.</div>
+    <div class="competition-controls">
+      <label>학년도 <select data-competition="year">${years.length ? opts(years,competitionFilter.year) : '<option value="">입력 자료 없음</option>'}</select></label>
+      <label>모집 시기 <select data-competition="season">${opts(["","수시","정시","기타"],competitionFilter.season)}</select></label>
+      <label>정렬 <select data-competition="sort"><option value="desc" ${competitionFilter.sort==='desc'?'selected':''}>경쟁률 높은 순</option><option value="asc" ${competitionFilter.sort==='asc'?'selected':''}>경쟁률 낮은 순</option></select></label>
+    </div>
+    <div class="dkpis">${metric("경쟁률 입력 전형", rows.length + "건")}${metric("전형별 단순 평균", rates.length?fmt(rates.reduce((a,b)=>a+b,0)/rates.length):"—")}${metric("최고 경쟁률",rates.length?fmt(Math.max(...rates)):"—")}${metric("최저 경쟁률",rates.length?fmt(Math.min(...rates)):"—")}</div>
+    <p class="du">평균은 선택 학년도에 입력된 전형별 경쟁률의 단순 평균이며 전체 지원자 수 ÷ 모집인원이 아닙니다. 미입력·숫자로 해석할 수 없는 자료는 제외합니다(현재 조건에서 ${pool.filter(r=>r.rate===null).length}건, 학년도 구분 전). 모집인원은 해당 경쟁률 학년도와 다를 수 있어 가중치로 사용하지 않습니다.</p>
+    ${rows.length ? `<div class="competition-scroll"><table class="competition-table"><caption class="du">${esc(competitionFilter.year)} 전형별 경쟁률 · ${rows.length}건</caption><thead><tr><th scope="col">대학 / 학과</th><th scope="col">모집 시기</th><th scope="col">전형</th><th scope="col">경쟁률</th><th scope="col">참고</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.school)}<small>${esc(r.dept)}</small></td><td>${esc(r.round)}</td><td>${esc(r.title)}</td><td class="rate">${fmt(r.rate)}</td><td>${esc(r.note || "—")}</td></tr>`).join("")}</tbody></table></div>` : '<p class="empty" role="status">선택한 조건에 경쟁률 자료가 없습니다.</p>'}
+    </section>`;
+}
+document.getElementById("dash").addEventListener("change", e => {
+  const key = e.target.dataset.competition;
+  if (!Object.hasOwn(competitionFilter, key)) return;
+  competitionFilter[key] = e.target.value;
+  renderDash();
+  document.querySelector(`[data-competition="${key}"]`).focus({preventScroll:true});
+});
+
 function renderDash() {
   const box = document.getElementById("dash");
   const list = filtered(), depts = list.flatMap(s => s.depts.filter(d => deptPass(d)));
@@ -1219,7 +1287,7 @@ function renderDash() {
       ${dashBars("분야", "분야별 학교 수 (여러 분야를 가진 학교는 각각 포함)", "category", f.category, CAT_COLOR)}
       ${dashBars("전형 시기", "학교 수", "season", f.season, SEASON_COLOR)}
       ${dashBars("실기 여부", "학교 수", "track", f.track, TRACK_COLOR)}
-    </div>`;
+    </div>${competitionDashboard(list)}`;
 }
 
 document.getElementById("dash").addEventListener("click", e => {
