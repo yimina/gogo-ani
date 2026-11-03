@@ -7827,141 +7827,51 @@
     },
     {
       "name": "한서대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충남",
       "address": "충청남도 서산시 해미면 한서1로 46",
-      "url": "hanseo.ac.kr",
+      "url": "https://www.hanseo.ac.kr",
       "short": "한서대",
       "departments": [
         {
-          "name": "애니메이션융합전공",
-          "short": "애니융합",
-          "quota": "",
-          "category": [
-            "애니메이션"
-          ],
-          "admission": {
-            "admissionUrl": "hanseo.ac.kr",
-            "track": [
-              "실기"
-            ],
-            "process": "수시(실기위주/실기70%+교과30%), 정시(다군)",
-            "practical": "상황표현, 칸만화 중 택 1",
-            "susi": {
-              "reference": false,
-              "rounds": [
-                {
-                  "round": 1,
-                  "label": "수시",
-                  "reference": false,
-                  "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
-                  },
-                  "announce": "2026-11-13",
-                  "types": [
-                    {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
-                      },
-                      "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            "jeongsi": {
-              "reference": false,
-              "types": [
-                {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
-                  },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
-                }
-              ],
-              "announce": "2027-02-05"
-            }
-          }
-        }
-      ],
-      "sources": [
-        [
-          "한서대학교 입학처",
-          "hanseo.ac.kr"
-        ]
-      ]
-    },
-    {
-      "name": "상지대학교",
-      "type": "대학년",
-      "region": "강원",
-      "address": "강원특별자치도 원주시 상지대길 83",
-      "url": "sangji.ac.kr",
-      "short": "상지대",
-      "departments": [
-        {
-          "name": "만화애니메이션학과",
-          "short": "만화애니",
-          "quota": "모집요강 참조",
+          "name": "영상애니메이션학과",
+          "short": "영상애니메이션학과",
+          "quota": "35명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "sangji.ac.kr",
+            "admissionUrl": "https://helper.hanseo.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "수시(실기우수자/실기70%+교과30%), 정시(다군)",
-            "practical": "상황표현, 칸만화 중 택 1",
+            "process": "수시 일반전형 30명: 학생부 10%(교과 9%·출결 1%) + 실기 90%. 정시 다군 일반전형 5명: 수능 10% + 실기 90%.",
+            "practical": "컷만화·상황묘사 중 택1, 4절지, 4시간. 컷만화는 제시된 주제를 4칸 이상으로 구성. 수험표·신분증·실기 도구 지참. 실기 시간과 장소는 개인별 수험표 확인.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경 가능. 요청 명칭은 애니메이션융합전공이며 2027학년도 공식 모집요강 명칭인 영상애니메이션학과로 입력.",
             "susi": {
               "reference": false,
+              "quota": "30명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "30명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09:00~18:00"
                   },
-                  "announce": "2026-11-15",
+                  "announce": "2026-11-20",
+                  "note": "합격자 발표 17:00 예정. 실기 개인별 시간·장소는 수험표 확인.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기형일반전형",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "실기위주",
+                      "name": "일반전형",
+                      "short": "일반전형",
+                      "quota": "30명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -7971,7 +7881,27 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "컷만화·상황묘사 중 택1",
+                          "examDate": "2026-10-14",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부 10%(교과 90%·비교과 출결 10%) + 실기 90%",
+                      "ratio": {
+                        "grade": "9%",
+                        "gradeType": "교과",
+                        "attendance": "1%",
+                        "practical": "90%"
+                      },
+                      "note": "수능최저 없음. 학생부 10% 안에서 교과 90%·출결 10%를 반영하므로 전체 기준 교과 9%·출결 1%로 표시."
                     }
                   ]
                 }
@@ -7979,13 +7909,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "5명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "일반전형",
+                  "short": "일반전형",
+                  "quota": "5명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -7996,21 +7932,209 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "컷만화·상황묘사 중 택1",
+                      "examDate": "2027-01-26",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 10% + 실기 90%",
+                  "ratio": {
+                    "suneung": "10%",
+                    "practical": "90%"
+                  },
+                  "note": "2027학년도 수능 응시자. 수능 일부 영역 미응시 시 해당 영역 0점, 전 영역 미응시자 지원 불가.",
+                  "gun": "다군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "상지대학교 입학안내",
-          "sangji.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://helper.hanseo.ac.kr/Upl/kr/hdbook/susi_admission.pdf"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://helper.hanseo.ac.kr/Upl/kr/hdbook/jungsi_admission.pdf"
+        ]
+      ]
+    },
+    {
+      "name": "상지대학교",
+      "type": "4년제",
+      "region": "강원",
+      "address": "강원특별자치도 원주시 상지대길 83",
+      "url": "https://www.sangji.ac.kr",
+      "short": "상지대",
+      "departments": [
+        {
+          "name": "만화애니메이션학과",
+          "short": "만화애니메이션학과",
+          "quota": "50명",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://www.sangji.ac.kr/go/index.do",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "수시 교과일반 15명: 교과 100%; 실기일반 32명: 교과 30% + 실기 70%. 정시 가군 실기일반 3명: 수능 30% + 실기 70%.",
+            "practical": "칸만화·상황표현 중 택1. 4절지, 4시간. 주제 고사 당일 공개. 재료 자율(부착물 사용 불가). 수험표·사진이 부착된 신분증·실기 도구 지참.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경 가능.",
+            "susi": {
+              "reference": false,
+              "quota": "47명",
+              "note": "",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "47명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09:00~22:00"
+                  },
+                  "announce": "2026-11-05",
+                  "note": "최초합격자 발표 오후 중. 수시 정원 내 합계 47명.",
+                  "types": [
+                    {
+                      "title": "학생부교과전형",
+                      "name": "교과일반",
+                      "short": "교과일반",
+                      "quota": "15명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "학생부 교과 100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "실기위주",
+                      "name": "실기일반",
+                      "short": "실기일반",
+                      "quota": "32명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "칸만화·상황표현 중 택1",
+                          "examDate": "2026-10-24",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과 30% + 실기 70%",
+                      "ratio": {
+                        "grade": "30%",
+                        "gradeType": "교과",
+                        "practical": "70%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "3명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "09:00~22:00"
+              },
+              "note": "최초합격자 발표 오후 중. 모집인원은 3명 + 수시 이월 인원.",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "실기일반",
+                  "short": "실기일반",
+                  "quota": "3명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "칸만화·상황표현 중 택1",
+                      "examDate": "2027-01-17",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 30% + 실기 70%; 한국사 최대 3점 가산",
+                  "ratio": {
+                    "suneung": "30%",
+                    "practical": "70%"
+                  },
+                  "note": "수능 미응시자도 지원 가능. 수시 이월 인원 추가 가능.",
+                  "gun": "가군"
+                }
+              ],
+              "announce": "2027-02-03"
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256680&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000119"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256681&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000119"
         ]
       ]
     },
