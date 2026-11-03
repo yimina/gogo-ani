@@ -353,7 +353,7 @@
                       "short": "청강1차 특별",
                       "quota": "4명",
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "5.0:1",
                         "note": ""
                       },
@@ -382,7 +382,7 @@
                       "quota": "90명",
 
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "16.5:1",
                         "note": ""
                       },
@@ -554,7 +554,7 @@
                       "short": "청강1차 특별",
                       "quota": "3명",                      
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "7.0:1",
                         "note": ""
                       },
@@ -621,7 +621,7 @@
                         "note": "학생부종합 + 포트폴리오"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "11.0:1",
                         "note": ""
                       },
@@ -797,7 +797,7 @@
                         "end": "2026-09-30"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "9.4:1",
                         "note": ""
                       },
@@ -957,7 +957,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "11.3:1",
                         "note": ""
                       },
@@ -1021,7 +1021,7 @@
                         "end": "2026-09-30"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "9.6:1",
                         "note": ""
                       },
@@ -1057,7 +1057,7 @@
                         "note": "학생부종합 + 포트폴리오"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "8.5:1",
                         "note": ""
                       },
@@ -1108,7 +1108,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "11.1:1",
                         "note": ""
                       },
@@ -1140,7 +1140,7 @@
                         "end": "2026-11-25"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "6.4:1",
                         "note": ""
                       },
@@ -1173,7 +1173,7 @@
                         "note": "학생부종합 + 포트폴리오"
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "13.8:1",
                         "note": ""
                       },
@@ -1221,7 +1221,7 @@
                   "gun": "",
                   "quota": "3명",
                   "competition": {
-                    "year": "2026",
+                    "year": "2026학년도",
                     "rate": "26:1",
                     "note": ""
                   },
@@ -1300,7 +1300,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "35.22:1",
                         "note": ""
                       },
@@ -1484,7 +1484,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "40.73 : 1",
                         "note": "전년도 수시 영상애니메이션디자인전공 11명 모집. 2027학년도 기초디자인 신설 이전 결과."
                       },
@@ -1637,7 +1637,7 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026",
+                        "year": "2026학년도",
                         "rate": "58.00 : 1",
                         "note": "11명 모집 / 638명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
                       },
@@ -2257,111 +2257,33 @@
     },
     {
       "name": "건국대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "서울",
-      "address": "서울시 광진구 능동로 120",
-      "url": "https://www.konkuk.ac.kr/konkuk/index.do",
+      "address": "서울특별시 광진구 능동로 120",
+      "url": "https://www.konkuk.ac.kr/",
       "short": "건국대",
       "departments": [
         {
-          "name": "예술디자인대학-[영상디자인학과]",
-          "short": "",
-          "quota": "",
-          "category": [],
+          "name": "예술디자인대학 영상디자인학과",
+          "short": "영상디자인학과",
+          "quota": "35명",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
-            "admissionUrl": "https://www.konkuk.ac.kr/admission/37869/subview.do#none",
+            "admissionUrl": "https://admission.konkuk.ac.kr/",
             "track": [
               "실기"
             ],
-            "process": "",
-            "practical": "",
-            "note": "",
+            "process": "2027학년도 정시 다군 수능(KU일반학생) 35명. 수능 60% + 실기 40%, 일괄합산.",
+            "practical": "기초디자인. 주제 해석과 표현을 평가. 화용지 크기는 출제 시 제시. 입체적으로 재료를 첨가하는 방식(유화 포함)은 불허.",
+            "note": "서울캠퍼스 예술디자인대학. 2027학년도 영상학과 → 영상디자인학과로 명칭 변경, 정시 가군 → 다군 이동. 해당 학과 수시 직접 모집 및 정시 농어촌·기초생활및차상위 배정 없음. 본 파일은 일반 신입학 직접 선발 기준이며 재외국민·외국인·편입은 포함하지 않음.",
             "susi": {
               "reference": false,
+              "offered": false,
               "quota": "",
               "note": "",
-              "rounds": [
-                {
-                  "round": 1,
-                  "label": "수시",
-                  "reference": false,
-                  "quota": "",
-                  "apply": {
-                    "start": "",
-                    "end": "",
-                    "note": ""
-                  },
-                  "announce": "",
-                  "note": "",
-                  "types": [
-                    {
-                      "title": "",
-                      "name": "",
-                      "short": "",
-                      "quota": "",
-                      "apply": {
-                        "start": "",
-                        "end": "",
-                        "note": ""
-                      },
-                      "competition": {
-                        "year": "",
-                        "rate": "",
-                        "note": ""
-                      },
-                      "stages": [
-                        {
-                          "label": "",
-                          "method": "",
-                          "examDate": "",
-                          "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": ""
-                        },
-                        {
-                          "label": "",
-                          "method": "",
-                          "examDate": "",
-                          "examEnd": "",
-                          "announce": "",
-                          "kind": "",
-                          "ratio": {
-                            "document": "",
-                            "grade": "",
-                            "gradeType": "",
-                            "attendance": "",
-                            "essay": "",
-                            "practical": "",
-                            "interview": ""
-                          },
-                          "note": ""
-                        }
-                      ],
-                      "process": "",
-                      "ratio": {
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "",
-                        "interview": ""
-                      },
-                      "note": ""
-                    }
-                  ]
-                }
-              ]
+              "rounds": []
             },
             "jeongsi": {
               "reference": false,
@@ -2369,63 +2291,49 @@
               "apply": {
                 "start": "2027-01-05",
                 "end": "2027-01-07",
-                "note": ""
+                "note": "시작 10:00 / 마감 17:00. 인터넷 접수. 해당자 서류 PDF 업로드: 2027-01-08 17:00까지."
               },
-              "note": "",
+              "announce": "2027-02-05",
+              "note": "최초합격 발표 14:00 예정. 고사장·입실 완료 시간은 실기 3~4일 전 공지. 모집인원은 최종 공지 확인.",
               "types": [
                 {
-                  "title": "",
+                  "title": "수능(KU일반학생)",
                   "name": "",
-                  "short": "",
+                  "short": "KU일반학생",
+                  "category": "수능·실기",
+                  "description": "정시 다군 수능과 실기를 합산하여 선발.",
                   "gun": "다군",
-                  "quota": "",
+                  "quota": "35명",
                   "apply": {
                     "start": "",
                     "end": "",
                     "note": ""
                   },
                   "competition": {
-                    "year": "",
-                    "rate": "",
-                    "note": ""
+                    "year": "2026학년도",
+                    "rate": "10.43 : 1",
+                    "note": "개편 전 영상학과·가군 결과: 35명 모집 / 365명 지원. 2027학년도는 영상디자인학과·다군이므로 단순 비교에 주의."
                   },
                   "stages": [
                     {
-                      "label": "실기",
-                      "method": "기초 조형능력을 평가할 수 있는 주제해석과 표현",
+                      "label": "",
+                      "method": "기초디자인",
                       "examDate": "2027-01-25",
                       "examEnd": "",
                       "announce": "",
                       "kind": "실기",
-                      "ratio": {
-                        "suneung": "60",
-                        "document": "",
-                        "grade": "",
-                        "gradeType": "",
-                        "attendance": "",
-                        "essay": "",
-                        "practical": "40",
-                        "interview": ""
-                      },
-                      "note": "※수능반영비율:국어(45) +[수학(30)+탐구(30)택1]+영어(25)+한국사(감점)"
+                      "ratio": {},
+                      "note": "화용지 크기는 당일 제시. 고사시간은 확인한 모집요강에 명시되지 않아 입력하지 않음."
                     }
                   ],
-                  "process": "",
+                  "process": "일괄합산: 수능 600점 + 실기 400점 = 1,000점",
                   "ratio": {
-                    "suneung": "",
-                    "document": "",
-                    "grade": "",
-                    "gradeType": "",
-                    "attendance": "",
-                    "essay": "",
-                    "practical": "",
-                    "interview": ""
+                    "suneung": "60%",
+                    "practical": "40%"
                   },
-                  "note": ""
+                  "note": "지원자격: 국내외 고교 졸업(예정)자 또는 동등 학력 인정자로서 2027학년도 수능 반영영역 응시자. 수능 반영: 국어 45%, 영어 25%, 수학·사회/과학탐구 중 유리한 영역 30%. 탐구는 2과목 반영, 한국사는 등급별 감점. 직업탐구는 본 전형에 반영하지 않음."
                 }
-              ],
-              "date": "",
-              "announce": "2027-02-05"
+              ]
             },
             "etc": []
           }
@@ -2433,8 +2341,24 @@
       ],
       "sources": [
         [
-          "건국대 입학처",
-          "https://www.konkuk.ac.kr/admission/37869/subview.do#none"
+          "건국대학교 2027학년도 정시모집요강 원문 사본: PDF 9~13·21쪽",
+          "https://cdn013.negagea.net/dgsmidc/omr/seoul/web/univ_info2026/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90_2027%ED%95%99%EB%85%84%EB%8F%84_%EC%A0%95%EC%8B%9C%EB%AA%A8%EC%A7%91%EC%9A%94%EA%B0%95.pdf"
+        ],
+        [
+          "건국대학교 입학처 정시모집요강 원문(조회 시 웹방화벽으로 직접 열람 제한)",
+          "https://admission.konkuk.ac.kr/bbs/admission/6282/1224860/download.do"
+        ],
+        [
+          "건국대학교 2027학년도 수시모집요강 원문 사본: 전형별 모집인원표",
+          "https://cdn013.negagea.net/dgsmidc/omr/seoul/web/univ_info2026/건국대학교/건국대학교_2027학년도_수시모집요강.pdf"
+        ],
+        [
+          "대입정보포털 어디가: 2027학년도 모집단위·모집군 변경",
+          "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000052"
+        ],
+        [
+          "건국대학교 서울캠퍼스 2026 정시 최종 경쟁률",
+          "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10080331.html"
         ]
       ]
     },
