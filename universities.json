@@ -7076,44 +7076,51 @@
     },
     {
       "name": "남서울대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충남",
       "address": "충청남도 천안시 서북구 성환읍 대학로 91",
-      "url": "https://nsu.ac.kr",
+      "url": "https://www.nsu.ac.kr",
       "short": "남서울대",
       "departments": [
         {
           "name": "영상예술디자인학과",
-          "short": "영상예술디자인",
-          "quota": "모집요강 참조",
-          "category": [],
+          "short": "영상예술디자인학과",
+          "quota": "90명",
+          "category": [
+            "애니메이션"
+          ],
           "admission": {
-            "admissionUrl": "https://nsu.ac.kr",
+            "admissionUrl": "https://www.namseoul.net",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기위주/실기80%+교과20%), 정시(나군)",
-            "practical": "상황표현, 칸만화, 기초디자인 중 택 1",
+            "process": "수시 실기 일반 51명·지역인재 7명: 교과 20% + 실기 80%. 학생부종합 면접형 6명: 1단계 서류 100%(6배수), 2단계 1단계 성적 70% + 면접 30%. 정시 가군 일반 26명: 수능 20% + 실기 80%.",
+            "practical": "기초디자인·상황표현·칸만화 중 택1. 4절 켄트지, 4시간. 문제은행식 당일 추첨. 수시 기초디자인 2026-10-16, 상황표현·칸만화 2026-10-17. 정시 2027-01-14 10:00~14:00. 채색 도구 본인 준비.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경될 수 있음.",
             "susi": {
               "reference": false,
+              "quota": "64명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "64명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-13",
+                  "announce": "2026-11-17",
+                  "note": "최초합격자 발표 11:00. 실기 날짜는 선택한 실기과목에 따라 달라지며 두 날짜 모두 응시하는 전형이 아님.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기일반전형",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "실기위주",
+                      "name": "일반전형",
+                      "short": "일반전형",
+                      "quota": "51명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -7123,7 +7130,127 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "기초디자인 선택 시",
+                          "method": "기초디자인(택1 중 선택한 과목만 응시)",
+                          "examDate": "2026-10-16",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "10:00~14:00, 09:20까지 입실"
+                        },
+                        {
+                          "label": "상황표현·칸만화 선택 시",
+                          "method": "상황표현 또는 칸만화(택1 중 선택한 과목만 응시)",
+                          "examDate": "2026-10-17",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "10:00~14:00, 09:20까지 입실"
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "실기위주",
+                      "name": "지역인재전형",
+                      "short": "지역인재전형",
+                      "quota": "7명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "기초디자인 선택 시",
+                          "method": "기초디자인(택1 중 선택한 과목만 응시)",
+                          "examDate": "2026-10-16",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "10:00~14:00, 09:20까지 입실"
+                        },
+                        {
+                          "label": "상황표현·칸만화 선택 시",
+                          "method": "상황표현 또는 칸만화(택1 중 선택한 과목만 응시)",
+                          "examDate": "2026-10-17",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "10:00~14:00, 09:20까지 입실"
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음. 충청권(대전·세종·충남·충북) 소재 고교 입학부터 졸업까지 전 과정 이수자."
+                    },
+                    {
+                      "title": "학생부종합전형",
+                      "name": "면접형",
+                      "short": "면접형",
+                      "quota": "6명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "1단계",
+                          "method": "서류평가 100%, 모집인원 6배수 선발",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-10-22",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "100%"
+                          },
+                          "note": "발표 11:00"
+                        },
+                        {
+                          "label": "2단계",
+                          "method": "1단계 성적 70% + 면접 30%",
+                          "examDate": "2026-11-07",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "면접",
+                          "ratio": {
+                            "document": "70%",
+                            "interview": "30%"
+                          },
+                          "note": "서류 비율은 1단계 성적 반영비율. 대면면접"
+                        }
+                      ],
+                      "process": "1단계 서류 100%(6배수) → 2단계 1단계 성적 70% + 면접 30%",
+                      "ratio": {},
+                      "note": "수능최저학력기준 없음"
                     }
                   ]
                 }
@@ -7131,13 +7258,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "26명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "합격자 발표 11:00. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "나군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "일반전형",
+                  "short": "일반전형",
+                  "quota": "26명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -7148,67 +7281,91 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "기초디자인·상황표현·칸만화 중 택1",
+                      "examDate": "2027-01-14",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "10:00~14:00"
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "2027학년도 수능 응시자",
+                  "gun": "가군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "남서울대학교 입학안내",
-          "https://nsu.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000257687&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000245"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.namseoul.net/submenu.do?menuurl=pNIJTWxI%2B8B8m%2BUBBAchHA%3D%3D"
         ]
       ]
     },
     {
       "name": "청주대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "충북",
       "address": "충청북도 청주시 청원구 대성로 298",
-      "url": "https://cju.ac.kr",
+      "url": "https://www.cju.ac.kr",
       "short": "청주대",
       "departments": [
         {
-          "name": "만화애니메이션과",
-          "short": "만화애니",
-          "quota": "",
+          "name": "만화애니메이션학과",
+          "short": "만화애니메이션학과",
+          "quota": "50명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://cju.ac.kripsi/index.do",
+            "admissionUrl": "https://www.cju.ac.kr/ipsi/index.do",
             "track": [
               "실기"
             ],
-            "process": "수시(실기전형/실기70%+교과30%), 정시(가군)",
-            "practical": "칸만화, 상황표현",
+            "process": "수시 예체능전형 44명: 교과 20% + 실기 80%. 정시 가군 예체능전형 6명: 수능 20% + 실기 80%.",
+            "practical": "칸만화·상황표현 중 택1. 4절 켄트지, 4시간 이내. 문제은행 없음. 유화를 제외한 모든 채색 도구 사용 가능.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 모집인원은 수시 이월에 따라 변경될 수 있음.",
             "susi": {
               "reference": false,
+              "quota": "44명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "44명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09:00~21:00"
                   },
-                  "announce": "2026-11-15",
+                  "announce": "2026-11-17",
+                  "note": "최초합격자 발표 14:00.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "실기/실적위주",
+                      "name": "예체능전형",
+                      "short": "예체능전형",
+                      "quota": "44명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -7218,7 +7375,26 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "칸만화·상황표현 중 택1",
+                          "examDate": "2026-10-26",
+                          "examEnd": "2026-10-27",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "기간 중 개인별 지정일 응시. 고사장·시간은 대학 공지 확인"
+                        }
+                      ],
+                      "process": "교과 20% + 실기 80%",
+                      "ratio": {
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음"
                     }
                   ]
                 }
@@ -7226,13 +7402,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "6명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "09:00~21:00"
+              },
+              "note": "최초합격자 발표 14:00. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "가군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "예체능전형",
+                  "short": "예체능전형",
+                  "quota": "6명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -7243,21 +7425,41 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "칸만화·상황표현 중 택1",
+                      "examDate": "2027-01-15",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "2027학년도 수능 응시자",
+                  "gun": "가군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-02-02"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "청주대학교 입학처",
-          "cju.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256989&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000179"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256990&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000179"
         ]
       ]
     },
