@@ -17463,7 +17463,383 @@
         "https://iphak.jangan.ac.kr/kor/index.asp"
       ]
     ]
-  }
+    },
+    {
+      "name": "안양대학교",
+      "type": "4년제",
+      "region": "인천",
+      "address": "인천광역시 강화군 불은면 중앙로 602-14",
+      "url": "https://www.anyang.ac.kr",
+      "short": "안양대",
+      "departments": [
+        {
+          "name": "게임콘텐츠학과",
+          "short": "게임콘텐츠",
+          "quota": "25명",
+          "category": [
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://enter.anyang.ac.kr",
+            "track": [
+              "비실기"
+            ],
+            "process": "수시 아리학생부교과 14명·아리학생부면접 7명, 정시 다군 수능 4명.",
+            "practical": "실기고사 없음. 아리학생부면접전형은 면접 실시.",
+            "note": "2027학년도 정원 내 모집만 수록. 게임콘텐츠학과는 강화캠퍼스 소속. 학교 주소는 해당 학과 캠퍼스 기준이며 고사장은 개별 공지 확인. 모집인원은 수시 이월 등으로 변경될 수 있음.",
+            "susi": {
+              "reference": false,
+              "quota": "21명",
+              "note": "수능최저 없음. 문서등록 2026-12-21~12-23, 충원합격 발표 12-24~12-29. 등록금 납부 2027-02-10~02-12.",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "21명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09-07 09:00부터 09-11 18:00까지 유웨이어플라이 인터넷 접수. 서류 09-18 17:00까지 방문 또는 등기 제출."
+                  },
+                  "announce": "2026-11-13",
+                  "note": "합격자 발표 시각 및 면접고사 장소는 입학처 공지 확인.",
+                  "types": [
+                    {
+                      "title": "아리학생부교과",
+                      "name": "",
+                      "short": "아리학생부교과",
+                      "quota": "14명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "10.75 : 1",
+                        "note": "공식 모집요강 수록 전년도 경쟁률."
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 교과 100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "100%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국어·수학·영어·과학 교과 중 상위 12과목 반영. 3학년 1학기까지 석차등급이 있는 과목을 반영하며 진로선택 성취도 과목은 제외. 학년별 가중치 없이 이수단위를 반영하여 환산."
+                        }
+                      ],
+                      "process": "학생부 교과 100%",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "100%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "국내 정규 고등학교 졸업(예정)자로 3개 학년별 1과목 이상의 반영교과 성적이 있어야 함. 학력인정고·대안학교·평생교육시설·외국고·검정고시 출신 지원 불가. 수능최저 없음."
+                    },
+                    {
+                      "title": "아리학생부면접",
+                      "name": "",
+                      "short": "아리학생부면접",
+                      "quota": "7명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "",
+                        "note": "동일 명칭 전형의 공식 경쟁률 미확인. 전년도 다른 전형 수치를 대입하지 않음."
+                      },
+                      "stages": [
+                        {
+                          "label": "1단계",
+                          "method": "학생부 교과 100%(6배수)",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-10-02",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "100%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국어·수학·영어·과학 교과 중 상위 12과목 반영. 3학년 1학기까지 석차등급이 있는 과목을 반영하며 진로선택 성취도 과목은 제외. 학년별 가중치 없이 이수단위를 반영하여 환산."
+                        },
+                        {
+                          "label": "2단계",
+                          "method": "학생부 교과 60% + 면접 40%",
+                          "examDate": "2026-10-10",
+                          "examEnd": "2026-10-11",
+                          "announce": "2026-11-13",
+                          "kind": "면접",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "60%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": "40%"
+                          },
+                          "note": "개인별 지정 일시·장소는 입학처 고사 안내 확인. 전공소양 및 일반소양 평가."
+                        }
+                      ],
+                      "process": "1단계 학생부 교과 100%(6배수), 2단계 학생부 교과 60%+면접 40%",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "60%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "40%"
+                      },
+                      "note": "고등학교 졸업(예정)자 또는 법령상 동등 학력자(검정고시 포함). 수능최저 없음. 검정고시는 대학 기준 비교내신 적용."
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "4명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감일 18:00까지. 서류 제출 2027-01-13 17:00까지."
+              },
+              "announce": "2027-02-05",
+              "note": "다군. 수시 미충원 인원 이월에 따라 모집인원 변동 가능. 등록 2027-02-10~02-12.",
+              "types": [
+                {
+                  "title": "수능위주전형",
+                  "name": "",
+                  "short": "수능위주전형",
+                  "quota": "4명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "6.00 : 1",
+                    "note": "공식 모집요강 수록 전년도 경쟁률."
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 100%",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "100%",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "수능 수학 40%+영어 30%+탐구 30%(사회·과학·직업탐구 중 최고점 1과목). 백분위 활용, 영어 등급 환산. 한국사 필수 응시. 수학 미적분·기하 선택 시 10% 가산."
+                    }
+                  ],
+                  "process": "수능 100%",
+                  "ratio": {
+                    "suneung": "100%",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "고등학교 졸업(예정)자 또는 동등 학력자로 2027학년도 수능 응시자. 면접·실기 없음. 전년도 정시 모집 8명 기준 경쟁률.",
+                  "gun": "다군",
+                  "category": "수능",
+                  "description": "수능 수학 40%+영어 30%+탐구 30%(사회·과학·직업탐구 중 최고점 1과목). 백분위 활용, 영어 등급 환산. 한국사 필수 응시. 수학 미적분·기하 선택 시 10% 가산."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "2027학년도 수시 모집요강",
+          "https://enter.anyang.ac.kr/files/enter/menu/202606/85880f17bf736c1c3af0fa5306a5f5ad.pdf"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://enter.anyang.ac.kr/files/enter/menu/202609/4557fb813cdb375bea25605714c4109c.pdf"
+        ],
+        [
+          "안양대학교 입학처",
+          "https://enter.anyang.ac.kr"
+        ]
+      ]
+    },
+    {
+      "name": "대전대학교",
+      "type": "4년제",
+      "region": "대전",
+      "address": "대전광역시 동구 대학로 62",
+      "url": "https://www.dju.ac.kr",
+      "short": "대전대",
+      "departments": [
+        {
+          "name": "웹툰애니메이션학과",
+          "short": "웹툰애니",
+          "quota": "60명",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.dju.ac.kr",
+            "track": [
+              "실기"
+            ],
+            "process": "수시 실기위주전형 60명: 실기 100%. 정시는 수시 미충원 인원 발생 시 다군으로 이월 모집.",
+            "practical": "상황표현(켄트지 4절) 또는 칸만화(켄트지 4절) 중 1종목 선택, 실기 4시간. 신분증·수험표·디자인 도구 지참. 용지는 대학 제공. 전자기기 사용 불가.",
+            "note": "2027학년도 정원 내 모집만 수록. 정시 최초 계획인원은 0명이며 수시 이월 인원은 중복 합산하지 않음.",
+            "susi": {
+              "reference": false,
+              "quota": "60명",
+              "note": "실기 100%, 수능최저 없음. 문서등록 2026-12-21~12-23, 충원합격 발표 12-24~12-29. 등록금 납부 2027-02-10~02-12.",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "60명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "09-07 09:00부터 09-11 20:00까지 진학어플라이 인터넷 접수. 서류 제출 09-23 17:00까지 도착."
+                  },
+                  "announce": "2026-11-16",
+                  "note": "합격자 발표 15:00. 실기 지정 고사장은 대학 공식 고사 안내 확인.",
+                  "types": [
+                    {
+                      "title": "실기위주전형",
+                      "name": "",
+                      "short": "실기위주전형",
+                      "quota": "60명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2026학년도",
+                        "rate": "14 : 1",
+                        "note": "공식 모집요강 수록 전년도 경쟁률."
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "실기 100%",
+                          "examDate": "2026-10-03",
+                          "examEnd": "",
+                          "announce": "2026-11-16",
+                          "kind": "실기",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "",
+                            "gradeType": "",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "100%",
+                            "interview": ""
+                          },
+                          "note": "상황표현(켄트지 4절) 또는 칸만화(켄트지 4절) 중 1종목 선택, 실기 4시간. 신분증·수험표·디자인 도구 지참. 용지는 대학 제공. 전자기기 사용 불가. 고사 13:00~17:00, 12:40까지 지정 고사장 입실 완료. 결시·중도포기는 불합격."
+                        }
+                      ],
+                      "process": "실기 100%",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "100%",
+                        "interview": ""
+                      },
+                      "note": "고등학교 졸업(예정)자 또는 법령상 동등 학력자. 수능최저 없음. 2026학년도 모집 60명 기준 경쟁률. 학생부 교과·출결의 정률 반영 없음."
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "0명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": ""
+              },
+              "announce": "",
+              "note": "다군 수시 미충원 인원 이월 시에만 모집. 확정 인원은 원서접수 전 입학처 공지 확인. 이월 시 실기 100%: 상황표현 또는 칸만화(4절, 4시간). 원서접수 2027-01-04~01-07 20:00, 서류 01-15 17:00까지, 실기 01-28(시각 별도 공지), 합격자 발표 02-05 15:00. 실기 응시인원이 모집인원 이내이면 실기고사를 실시하지 않을 수 있음. 모집 여부 미확정으로 전형 배열과 확정 일정 필드는 비워 둠.",
+              "types": []
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "2027학년도 수시 모집요강(2026-09-18 수정)",
+          "https://ipsi.dju.ac.kr/upload/GUIDES/20260918110640001.pdf"
+        ],
+        [
+          "2027학년도 정시 모집요강(2026-11-02 수정)",
+          "https://ipsi.dju.ac.kr/upload/GUIDES/20261102112710002.pdf"
+        ],
+        [
+          "2027학년도 수시 웹툰애니메이션학과 실기고사 안내",
+          "https://ipsi.dju.ac.kr/upload/BBS0004/20260928164238001.pdf"
+        ],
+        [
+          "대전대학교 입학처",
+          "https://ipsi.dju.ac.kr"
+        ]
+      ]
+    }
   ],
   "_학교템플릿": {
     "name": "",
