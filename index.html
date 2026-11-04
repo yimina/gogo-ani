@@ -1263,6 +1263,53 @@ document.getElementById("dash").addEventListener("change", e => {
   document.querySelector(`[data-competition="${key}"]`).focus({preventScroll:true});
 });
 
+
+/* ---------- 정원 통계: 모집단위 기준, 통합모집은 중복 합산하지 않음 ---------- */
+function quotaNumber(value) {
+  const text = String(value ?? '').trim();
+  if (/전공\s*입학정원/.test(text)) {
+    const m = text.match(/전공\s*입학정원\s*([\d,]+)\s*명/);
+    return m ? Number(m[1].replace(/,/g,'')) : null;
+  }
+  const m = text.match(/^(?:(?:학부|계열|분야)\s*(?:통합|공동)\s*|공동\s*)?([\d,]+)\s*명(?:\s*\([^)]*\))?$/);
+  return m ? Number(m[1].replace(/,/g,'')) : null;
+}
+function quotaRecords(list) {
+  return list.flatMap(s => s.depts.filter(d => deptPass(d)).map(d => {
+    const raw = String(d.quota || '').trim(), value = quotaNumber(raw);
+    const shared = !/전공\s*입학정원/.test(raw) && /(?:통합|공동)/.test(raw);
+    return { school:s.name, dept:d.name, cats:d.cats || [], raw, value, shared,
+      // 같은 대학에서 동일 공동정원이 여러 전공에 반복 기재된 경우 한 번만 합산.
+      key: shared ? s.name + '|공동|' + (d.quotaGroup || (d.name.match(/^.*?(?:학부|스쿨|계열|분야)/) || [d.name])[0]) + '|' + value : s.name + '|' + d.name };
+  }));
+}
+function quotaSummary(rows) {
+  const seen = new Set(); let total=0, individual=0, shared=0;
+  rows.forEach(r => {
+    if (r.value === null || seen.has(r.key)) return;
+    seen.add(r.key); total+=r.value;
+    if(r.shared) shared+=r.value; else individual+=r.value;
+  });
+  return {total,individual,shared,unknown:rows.filter(r=>r.value===null).length};
+}
+function quotaDashboard(list) {
+  const rows=quotaRecords(list), sums=quotaSummary(rows), esc=competitionEscape;
+  const fmt=n=>n.toLocaleString('ko-KR')+'명';
+  const metric=(label,value,sub)=>`<div class="kpi"><div class="kl">${label}</div><div class="kv">${value}</div><div class="ks">${sub}</div></div>`;
+  const categories=['만화','애니메이션','게임'].map(cat=>{
+    const selected=rows.filter(r=>r.cats.includes(cat)&&!r.shared), n=quotaSummary(selected).individual;
+    return `<div class="kpi"><div class="kl">${cat}</div><div class="kv">${fmt(n)}</div><div class="ks">개별 정원 ${selected.filter(r=>r.value!==null).length}개 모집단위</div></div>`;
+  }).join('');
+  const ordered=[...rows].sort((a,b)=>(b.value??-1)-(a.value??-1)||a.school.localeCompare(b.school,'ko'));
+  return `<section class="dcard competition-panel"><h3>전체 정원 · 전공별 정원 통계</h3>
+    <p class="du">현재 검색·필터에 포함된 모집단위의 입력 정원 기준입니다. 대학 전체 입학정원이 아닌 이 자료에 수록된 학과·학부의 정원입니다.</p>
+    <div class="dkpis">${metric('전체 정원(확인분)',fmt(sums.total),'개별 정원 + 통합·공동모집 정원')}${metric('개별 모집단위 정원',fmt(sums.individual),'학과·학부에 직접 기재된 정원')}${metric('통합·공동모집 정원',fmt(sums.shared),'개별 전공에 배분하지 않음')}${metric('정원 미확인',sums.unknown+'개','합계에서 제외')}</div>
+    <h3>전공 분야별 정원</h3><div class="dkpis">${categories}</div>
+    <p class="du">분야가 여러 개인 모집단위는 각 분야에 포함되므로 분야별 수치는 서로 더하지 마세요. 통합·공동모집은 분야별 합계에서 제외합니다. 전체 정원에는 다른 전공도 함께 선발하는 통합·공동모집 정원이 포함됩니다. 미입력·이월 예정·조건부 숫자는 추정하지 않으며, 수시·정시 합계를 입학정원으로 대신 사용하지 않습니다.</p>
+    ${ordered.length?`<div class="competition-scroll"><table class="competition-table"><caption class="du">전공별 정원 · ${ordered.length}개 모집단위 · 정원 높은 순</caption><thead><tr><th scope="col">대학</th><th scope="col">전공 / 모집단위</th><th scope="col">분야</th><th scope="col">정원</th><th scope="col">집계 구분 / 입력값</th></tr></thead><tbody>${ordered.map(r=>`<tr><td>${esc(r.school)}</td><td>${esc(r.dept)}</td><td>${esc(r.cats.join(' · ')||'미분류')}</td><td class="rate">${r.value===null?'미확인':fmt(r.value)}</td><td>${r.value===null?'합계 제외':r.shared?'통합·공동모집 (같은 공동 모집단위는 1회 합산)':'개별 모집단위'}<small>${esc(r.raw||'정원 미입력')}</small></td></tr>`).join('')}</tbody></table></div>`:'<p class="empty">조건에 맞는 모집단위가 없습니다.</p>'}
+  </section>`;
+}
+
 function renderDash() {
   const box = document.getElementById("dash");
   const list = filtered(), depts = list.flatMap(s => s.depts.filter(d => deptPass(d)));
@@ -1287,7 +1334,7 @@ function renderDash() {
       ${dashBars("분야", "분야별 학교 수 (여러 분야를 가진 학교는 각각 포함)", "category", f.category, CAT_COLOR)}
       ${dashBars("전형 시기", "학교 수", "season", f.season, SEASON_COLOR)}
       ${dashBars("실기 여부", "학교 수", "track", f.track, TRACK_COLOR)}
-    </div>${competitionDashboard(list)}`;
+    </div>${quotaDashboard(list)}${competitionDashboard(list)}`;
 }
 
 document.getElementById("dash").addEventListener("click", e => {
