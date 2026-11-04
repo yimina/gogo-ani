@@ -9140,47 +9140,52 @@
     },
     {
       "name": "계명대학교",
-      "type": "대학교",
+      "type": "4년제",
       "region": "대구",
-      "address": "대구광역시 달서구 달구벌대로 1095",
-      "url": "kmu.ac.kr",
+      "address": "대구광역시 남구 명덕로 104 (대명캠퍼스)",
+      "url": "https://www.kmu.ac.kr",
       "short": "계명대",
       "departments": [
         {
-          "name": "미술대학 영상애니메이션과",
-          "short": "영상애니",
-          "quota": "모집요강 참조",
+          "name": "영상애니메이션과",
+          "short": "영상애니메이션과",
+          "quota": "45명",
           "category": [
+            "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "gokeemyung.com",
+            "admissionUrl": "https://www.gokmu.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기위주 전형), 정시(다군)",
-            "practical": "상황표현, 칸만화 중 택 1",
-            "note": "웹툰과와 분리 모집하므로 하위 애니메이팅/3D 특성화 확인 필요",
+            "process": "수시 학생부종합 일반 4명: 서류 100%; 예체능 36명: 학생부 20%(교과 16%·출결 4%) + 실기 80%. 정시 다군 예체능 5명: 수능 20% + 실기 80%.",
+            "practical": "상황표현·칸만화 중 택1. 켄트지 4절, 4시간. 칸만화는 4칸 이상 구성. 주제 당일 제시. 개인 화판 사용 금지, 실기 도구 일체 준비.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능.",
             "susi": {
               "reference": false,
+              "quota": "40명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "40명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-20",
+                  "announce": "2026-11-14",
+                  "note": "합격자 발표 예정일. 미술대학 실기는 대명캠퍼스에서 실시.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "학생부종합전형",
+                      "name": "일반전형",
+                      "short": "일반전형",
+                      "quota": "4명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -9190,7 +9195,49 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [],
+                      "process": "서류 종합평가 100%; 면접 없음",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "예체능전형",
+                      "short": "예체능전형",
+                      "quota": "36명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·칸만화 중 택1",
+                          "examDate": "2026-11-05",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부 20%(교과 80%·출결 20%) + 실기 80%",
+                      "ratio": {
+                        "grade": "16%",
+                        "gradeType": "교과",
+                        "attendance": "4%",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저 없음. 학생부 20% 안에서 교과80%·출결20% 반영, 전체 기준 교과16%·출결4%로 표시."
                     }
                   ]
                 }
@@ -9198,13 +9245,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "5명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "합격자 발표 2027-02-02 이전 예정. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "예체능전형",
+                  "short": "예체능전형",
+                  "quota": "5명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -9215,50 +9268,71 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·칸만화 중 택1",
+                      "examDate": "2027-01-26",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "2027학년도 수능 응시자. 국어/수학 중 택1 40%·영어30%·탐구30%, 탐구 2과목 평균, 한국사 가산점.",
+                  "gun": "다군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-02-02"
+            },
+            "etc": []
           }
         },
         {
-          "name": "미술대학 웹툰과",
+          "name": "웹툰과",
           "short": "웹툰과",
-          "quota": "모집요강 참조",
+          "quota": "40명",
           "category": [
             "만화"
           ],
           "admission": {
-            "admissionUrl": "gokeemyung.com",
+            "admissionUrl": "https://www.gokmu.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기위주 전형), 정시(다군)",
-            "practical": "칸만화, 상황표현 중 택 1",
+            "process": "수시 학생부종합 일반 4명: 서류 100%; 예체능 32명: 학생부 20%(교과 16%·출결 4%) + 실기 80%. 정시 다군 예체능 4명: 수능 20% + 실기 80%.",
+            "practical": "상황표현·칸만화 중 택1. 켄트지 4절, 4시간. 칸만화는 4칸 이상 구성. 주제 당일 제시. 개인 화판 사용 금지, 실기 도구 일체 준비.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능.",
             "susi": {
               "reference": false,
+              "quota": "36명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "36명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-20",
+                  "announce": "2026-11-14",
+                  "note": "합격자 발표 예정일. 미술대학 실기는 대명캠퍼스에서 실시.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "20%",
-                        "practical": "80%"
-                      },
+                      "title": "학생부종합전형",
+                      "name": "일반전형",
+                      "short": "일반전형",
+                      "quota": "4명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -9268,7 +9342,49 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [],
+                      "process": "서류 종합평가 100%; 면접 없음",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "예체능전형",
+                      "short": "예체능전형",
+                      "quota": "32명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·칸만화 중 택1",
+                          "examDate": "2026-11-05",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부 20%(교과 80%·출결 20%) + 실기 80%",
+                      "ratio": {
+                        "grade": "16%",
+                        "gradeType": "교과",
+                        "attendance": "4%",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저 없음. 학생부 20% 안에서 교과80%·출결20% 반영, 전체 기준 교과16%·출결4%로 표시."
                     }
                   ]
                 }
@@ -9276,13 +9392,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "4명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "합격자 발표 2027-02-02 이전 예정. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "예체능전형",
+                  "short": "예체능전형",
+                  "quota": "4명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -9293,21 +9415,41 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·칸만화 중 택1",
+                      "examDate": "2027-01-26",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "2027학년도 수능 응시자. 국어/수학 중 택1 40%·영어30%·탐구30%, 탐구 2과목 평균, 한국사 가산점.",
+                  "gun": "다군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-02-02"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "계명대학교 입학처",
-          "gokeemyung.com"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000243040&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000068"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000243041&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000068"
         ]
       ]
     },
@@ -9315,47 +9457,50 @@
       "name": "경일대학교",
       "type": "4년제",
       "region": "경북",
-      "address": "경상북도 경산시 하양읍 대학로 50",
-      "url": "https://kiu.ac.kr",
+      "address": "경상북도 경산시 하양읍 가마실길 50",
+      "url": "https://www.kiu.ac.kr",
       "short": "경일대",
       "departments": [
         {
-          "name": "만화애니메이션학과",
-          "short": "만화애니",
-          "quota": "모집요강 참조",
+          "name": "만화애니메이션학부",
+          "short": "만화애니메이션학부",
+          "quota": "150명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://kiu.ac.kradmission/",
+            "admissionUrl": "https://ibsi.kiu.ac.kr",
             "track": [
               "실기",
               "비실기"
             ],
-            "process": "수시(실기위주/실기70%+학생부30%), 정시(가/나/다군 요강참조)",
-            "practical": "상황표현, 칸만화, 캐릭터디자인, 기초디자인 중 택 1",
-            "note": "웹툰 및 스마트콘텐츠 제작 실무 중심 커리큘럼",
+            "process": "수시 일반18명·기회균형선발5명: 교과90%+출결10%; 면접9명: 교과63%+출결7%+면접30%; 실기104명·포트폴리오7명: 교과18%+출결2%+고사80%. 정시 다군 실기7명: 수능20%+실기80%.",
+            "practical": "실기: 상황표현·칸만화(컬러/흑백)·이미지보드·게임포스터 중 택1. 4절지, 4시간, 색채 도구 일체. 문제은행 사전 공지. 포트폴리오: 이미지 20매(출력물) 또는 영상 1분 이상(USB) 중 택1, 당일 지참. 작품평가·질의응답.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능.",
             "susi": {
               "reference": false,
+              "quota": "143명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "143명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
                   "announce": "2026-11-13",
+                  "note": "최초합격자 발표 예정일. 면접·실기·포트폴리오 고사 세부시간·장소는 대학 공지 확인.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "학생부교과전형",
+                      "name": "일반전형",
+                      "short": "일반전형",
+                      "quota": "18명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -9365,7 +9510,147 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [],
+                      "process": "학생부 100%(교과90%·출결10%)",
+                      "ratio": {
+                        "grade": "90%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "학생부교과전형",
+                      "name": "면접전형",
+                      "short": "면접전형",
+                      "quota": "9명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "면접고사",
+                          "method": "면접 평가",
+                          "examDate": "2026-09-19",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "면접",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부70%(교과90%·출결10%) + 면접30%",
+                      "ratio": {
+                        "grade": "63%",
+                        "gradeType": "교과",
+                        "attendance": "7%",
+                        "interview": "30%"
+                      },
+                      "note": "수능최저 없음. 면접고사 성적이 면접 배점의 60% 미만이면 불합격."
+                    },
+                    {
+                      "title": "학생부교과전형",
+                      "name": "기회균형선발전형",
+                      "short": "기회균형선발전형",
+                      "quota": "5명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [],
+                      "process": "학생부 100%(교과90%·출결10%)",
+                      "ratio": {
+                        "grade": "90%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
+                      },
+                      "note": "정원 내 전형. 저소득층·농어촌·특성화 동일계·국가보훈·만30세 등 대학 지정 자격 충족 필요. 수능최저 없음."
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "실기전형",
+                      "short": "실기전형",
+                      "quota": "104명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·칸만화·이미지보드·게임포스터 중 택1",
+                          "examDate": "2026-10-16",
+                          "examEnd": "2026-10-17",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "기간 중 개인별 지정 일정 확인"
+                        }
+                      ],
+                      "process": "학생부20%(교과90%·출결10%) + 실기80%",
+                      "ratio": {
+                        "grade": "18%",
+                        "gradeType": "교과",
+                        "attendance": "2%",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음"
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "포트폴리오전형",
+                      "short": "포트폴리오전형",
+                      "quota": "7명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "포트폴리오 고사",
+                          "method": "이미지20매 또는 영상1분 이상 중 택1, 당일 지참",
+                          "examDate": "2026-10-16",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "학생부20% + 포트폴리오 작품평가·질의응답80%",
+                      "ratio": {
+                        "grade": "18%",
+                        "gradeType": "교과",
+                        "attendance": "2%",
+                        "practical": "80%"
+                      },
+                      "note": "수능최저학력기준 없음"
                     }
                   ]
                 }
@@ -9373,13 +9658,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "7명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "합격자 발표 예정일. 수시 이월에 따라 최종 모집인원 변경 가능.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "실기전형",
+                  "short": "실기전형",
+                  "quota": "7명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -9390,21 +9681,41 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·칸만화·이미지보드·게임포스터 중 택1",
+                      "examDate": "2027-01-27",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": ""
+                    }
+                  ],
+                  "process": "수능20% + 실기80%",
+                  "ratio": {
+                    "suneung": "20%",
+                    "practical": "80%"
+                  },
+                  "note": "수능최저 없음. 수능 미응시자도 지원 가능(수능 성적 최저점 부여).",
+                  "gun": "다군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "경일대학교 입학처",
-          "https://kiu.ac.kradmission/"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000255226&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000064"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000255227&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000064"
         ]
       ]
     },
