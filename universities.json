@@ -9723,46 +9723,50 @@
       "name": "대구예술대학교",
       "type": "4년제",
       "region": "경북",
-      "address": "경상북도 칠곡군 가산면 다부거문길 202",
-      "url": "https://dgau.ac.kr",
-      "short": "대구예대",
+      "address": "경상북도 칠곡군 가산면 다부거문1길 202 (본교); 대구광역시 동구 동부로 193 (대구교육관)",
+      "url": "https://www.dgau.ac.kr",
+      "short": "대구예술대",
       "departments": [
         {
-          "name": "영상만화애니메이션전공",
-          "short": "영상만화애니",
-          "quota": "모집요강 참조",
+          "name": "애니웹툰학부 영상/만화애니메이션전공",
+          "short": "영상/만화애니",
+          "quota": "학부 통합 149명 (전공별 인원 미공개)",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://dgau.ac.kr",
+            "admissionUrl": "https://ipsi.dgau.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "면접"
             ],
-            "process": "수시(실기위주/실기100% 또는 실기비중 우세), 정시(가/다군)",
-            "practical": "칸만화, 상황표현, 정밀묘사, 기초디자인 중 택 1",
-            "note": "예술 특성화 대학으로 전형별 실기 반영 비율이 매우 높음",
+            "process": "수시 실기99명: 실기100%; 포트폴리오30명: 실기90%+면접10%. 정시 나군 실기10명, 가군 포트폴리오10명(모두 학부 통합).",
+            "practical": "실기: 상황표현·칸만화·캐릭터디자인·기초디자인 중 택1, 4절지, 4시간. 문제은행 고사10일 전까지 공지. 포트폴리오: 본인 작품10매(A4), 인체드로잉·캐릭터시트·만화/웹툰/애니메이션 등 수작업/CG 작품, 당일 지참.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능. 애니웹툰학부(영상/만화애니메이션·게임/웹툰·커뮤니케이션디자인) 통합모집. 모든 모집인원은 학부 전체이며 전공 단독 인원이 아님.",
             "susi": {
               "reference": false,
+              "quota": "학부 통합 129명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "학부 통합 129명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-15",
+                  "announce": "2026-10-21",
+                  "note": "합격자 발표 14:00. 고사는 대구교육관 평생교육원에서 실시. 학부 통합 인원.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "일반학생[실기]",
-                      "ratio": {
-                        "grade": "0%",
-                        "practical": "100%"
-                      },
+                      "title": "실기/실적위주",
+                      "name": "실기전형",
+                      "short": "실기전형",
+                      "quota": "학부 통합 99명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -9772,7 +9776,58 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·칸만화·캐릭터디자인·기초디자인 중 택1",
+                          "examDate": "2026-10-15",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "11:00, 대구교육관"
+                        }
+                      ],
+                      "process": "실기 100%",
+                      "ratio": {
+                        "practical": "100%"
+                      },
+                      "note": "수능최저 없음. 학부 통합 인원. 고사 미응시 또는 전형 총점60점 미만 불합격."
+                    },
+                    {
+                      "title": "실기/실적위주",
+                      "name": "포트폴리오전형",
+                      "short": "포트폴리오전형",
+                      "quota": "학부 통합 30명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "포트폴리오·면접",
+                          "method": "본인 작품10매(A4) 당일 지참",
+                          "examDate": "2026-10-15",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "면접",
+                          "ratio": {},
+                          "note": "11:00, 대구교육관"
+                        }
+                      ],
+                      "process": "포트폴리오 실기90% + 면접10%",
+                      "ratio": {
+                        "practical": "90%",
+                        "interview": "10%"
+                      },
+                      "note": "수능최저 없음. 학부 통합 인원. 고사 미응시 또는 전형 총점60점 미만 불합격."
                     }
                   ]
                 }
@@ -9780,13 +9835,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "학부 통합 20명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "가군 포트폴리오 발표 2027-01-18 14:00; 나군 실기 발표 2027-01-25 14:00. 학부 통합 인원.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "실기전형",
+                  "name": "실기전형",
+                  "short": "실기전형",
+                  "quota": "학부 통합 10명",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -9797,21 +9858,75 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "상황표현·칸만화·캐릭터디자인·기초디자인 중 택1",
+                      "examDate": "2027-01-20",
+                      "examEnd": "",
+                      "announce": "2027-01-25",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "고사11:00, 발표14:00"
+                    }
+                  ],
+                  "process": "실기100%; 수능 미반영",
+                  "ratio": {
+                    "practical": "100%"
+                  },
+                  "note": "수능최저 없음. 학부 통합 인원. 고사 미응시 또는 전형 총점60점 미만 불합격.",
+                  "gun": "나군"
+                },
+                {
+                  "title": "포트폴리오전형",
+                  "name": "포트폴리오전형",
+                  "short": "포트폴리오전형",
+                  "quota": "학부 통합 10명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "포트폴리오·면접",
+                      "method": "본인 작품10매(A4) 당일 지참",
+                      "examDate": "2027-01-13",
+                      "examEnd": "",
+                      "announce": "2027-01-18",
+                      "kind": "면접",
+                      "ratio": {},
+                      "note": "고사11:00, 발표14:00"
+                    }
+                  ],
+                  "process": "포트폴리오 실기90% + 면접10%; 수능 미반영",
+                  "ratio": {
+                    "practical": "90%",
+                    "interview": "10%"
+                  },
+                  "note": "수능최저 없음. 학부 통합 인원. 고사 미응시 또는 전형 총점60점 미만 불합격.",
+                  "gun": "가군"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": ""
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "대구예술대학교 입학안내",
-          "https://dgau.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256702&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000087"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000256703&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000087"
         ]
       ]
     },
@@ -9820,46 +9935,49 @@
       "type": "4년제",
       "region": "전남",
       "address": "전라남도 순천시 중앙로 255",
-      "url": "https://scnu.ac.kr",
-      "short": "순천대",
+      "url": "https://www.scnu.ac.kr",
+      "short": "국립순천대",
       "departments": [
         {
-          "name": "만화애니메이션학과",
-          "short": "만화애니",
-          "quota": "모집요강 참조",
+          "name": "애니메이션·문화콘텐츠스쿨 예체능분야 만화애니메이션학전공",
+          "short": "만화애니메이션",
+          "quota": "전공 입학정원 25명 (비실기는 예체능분야 공동모집)",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://scnu.ac.kr",
+            "admissionUrl": "https://www.scnu.ac.kr/iphak/",
             "track": [
               "실기",
               "비실기"
             ],
-            "process": "수시(실기실적/실기70%+학생부30%), 정시(다군/실기위주)",
-            "practical": "칸만화, 상황표현 중 택 1",
-            "note": "호남권 웹툰 및 애니메이션 인재 양성의 중심 국립대학",
+            "process": "수시 전공별 실기12명: 교과25%+실기75%. 예체능분야 공동모집: 지역인재16명·교과일반14명·성인학습자등2명·종합면접50명. 정시 다군 일반학생은 수시 미충원 시 분야 공동선발(수능100%).",
+            "practical": "상황표현·칸만화 중 택1. 4절지, 240분. 주제 당일 제시, 칸 수 제한 없이 주제를 표현하거나 암시. 채색도구·드로잉 도구 준비. 마카 및 흑백만으로 채색한 그림은 평가 제외(원문 기준).",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월에 따라 변경 가능. 만화애니메이션학전공 입학정원25명. 실기는 전공별12명 선발. 비실기는 문예창작·사회체육·음악예술융합·사진미디어·영상디자인·만화애니메이션·패션디자인을 포함한 예체능분야 공동모집. 분야 전체 입학정원137명. 정시도 분야 공동모집으로 전공별 인원 별도 미배정.",
             "susi": {
               "reference": false,
+              "quota": "전공 실기12명 + 예체능분야 공동모집",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "전공 실기12명 + 예체능분야 공동모집",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-12-15",
+                  "announce": "",
+                  "note": "실기전형 발표2026-11-06 18:00, 비실기 전형2026-12-18 18:00 예정. 공동모집 인원을 만화애니메이션학전공 단독 인원으로 합산하면 안 됨.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기전형",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "학생부교과전형",
+                      "name": "지역인재",
+                      "short": "지역인재",
+                      "quota": "분야 공동 16명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -9869,7 +9987,174 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "교과100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저 없음. 예체능분야 공동모집 인원으로 만화애니메이션 전공 단독 인원이 아님. 호남권(전남·전북·광주) 소재 고교 전 과정 이수(예정)자."
+                    },
+                    {
+                      "title": "학생부교과전형",
+                      "name": "교과일반",
+                      "short": "교과일반",
+                      "quota": "분야 공동 14명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "교과100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저 없음. 예체능분야 공동모집 인원으로 만화애니메이션 전공 단독 인원이 아님."
+                    },
+                    {
+                      "title": "학생부교과전형",
+                      "name": "성인학습자등",
+                      "short": "성인학습자등",
+                      "quota": "분야 공동 2명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "교과100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "서류",
+                          "ratio": {},
+                          "note": ""
+                        }
+                      ],
+                      "process": "교과100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저 없음. 예체능분야 공동모집 인원으로 만화애니메이션 전공 단독 인원이 아님. 2027-03-01 기준 만25세 이상 또는 지정 직업교육과정 졸업 후 산업체 재직3년 등 지원자격 충족 필요."
+                    },
+                    {
+                      "title": "학생부종합전형",
+                      "name": "종합면접",
+                      "short": "종합면접",
+                      "quota": "분야 공동 50명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "1단계",
+                          "method": "서류평가100%, 5배수",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-10-30",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "100%"
+                          },
+                          "note": "18:00 예정"
+                        },
+                        {
+                          "label": "2단계",
+                          "method": "1단계 성적70% + 면접30%",
+                          "examDate": "2026-11-25",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "면접",
+                          "ratio": {
+                            "document": "70%",
+                            "interview": "30%"
+                          },
+                          "note": ""
+                        }
+                      ],
+                      "process": "1단계 서류100%(5배수) → 2단계 1단계70%+면접30%",
+                      "ratio": {},
+                      "note": "수능최저 없음. 예체능분야 공동모집 인원으로 만화애니메이션 전공 단독 인원이 아님."
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "실기",
+                      "short": "실기",
+                      "quota": "12명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "상황표현·칸만화 중 택1",
+                          "examDate": "2026-10-16",
+                          "examEnd": "",
+                          "announce": "2026-11-06",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "합격자 발표18:00 예정"
+                        }
+                      ],
+                      "process": "교과25% + 실기75%",
+                      "ratio": {
+                        "grade": "25%",
+                        "gradeType": "교과",
+                        "practical": "75%"
+                      },
+                      "note": "수능최저학력기준 없음"
                     }
                   ]
                 }
@@ -9877,13 +10162,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "수시 미충원 인원 (분야 공동)",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "고정 모집인원 없음. 수시 미충원 시 예체능분야 공동모집. 합격자 발표18:00 예정. 실기고사 없음.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "수능전형",
+                  "name": "일반학생",
+                  "short": "일반학생",
+                  "quota": "수시 미충원 인원 (분야 공동)",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -9895,20 +10186,28 @@
                     "note": ""
                   },
                   "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "process": "수능100%; 실기고사 없음",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "note": "예체능분야 공동모집. 전공 단독 모집인원 아님. 수능 응시 및 영역별 반영은 최종 모집요강 확인.",
+                  "gun": "다군"
                 }
               ],
               "announce": "2027-02-05"
-            }
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "국립순천대학교 입학안내",
-          "https://scnu.ac.kr"
+          "2027학년도 수시 최종 수정 모집요강",
+          "https://scnu.ac.kr/upload/download/iphak/2027susi_0617.pdf"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000243017&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000020"
         ]
       ]
     },
