@@ -10215,46 +10215,49 @@
       "name": "조선대학교",
       "type": "4년제",
       "region": "광주",
-      "address": "광주광역시 동구 필문대로 309",
-      "url": "https://chosun.ac.kr",
+      "address": "광주광역시 동구 조선대길 146",
+      "url": "https://www.chosun.ac.kr",
       "short": "조선대",
       "departments": [
         {
-          "name": "미술체육대학 만화·애니메이션학과",
-          "short": "만화애니",
-          "quota": "모집요강 참조",
+          "name": "만화·애니메이션학과",
+          "short": "만화·애니메이션학과",
+          "quota": "36명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://chosun.ac.kradmission/",
+            "admissionUrl": "https://ibhak.chosun.ac.kr",
             "track": [
               "실기"
             ],
-            "process": "수시(실기전형/실기70%+교과30%), 정시(가군)",
-            "practical": "칸만화, 상황표현 중 택 1",
-            "note": "광주·호남 지역 전통 미술학부 인프라 기반의 학과",
+            "process": "수시 실기전형 36명: 학생부 40% + 실기 60%(실질반영비율). 정시 가군 실기전형: 수시 미충원 시 수능 40% + 실기 60%.",
+            "practical": "칸만화(4칸 이상)·상황표현 중 택1. 켄트지 4절, 4시간. 제시된 주제어를 모두 활용하여 표현. 수채화물감·포스터칼라·아크릴칼라·마카·연필·자·붓·물통 등 준비. 전동기구·스프레이·픽서티브 사용 금지.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월 후 최종 공지 확인.",
             "susi": {
               "reference": false,
+              "quota": "36명",
+              "note": "",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "36명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "시작 09:00, 마감 18:00"
                   },
-                  "announce": "2026-11-20",
+                  "announce": "2026-11-17",
+                  "note": "접수 시작 09:00. 서류제출 2026-09-18 17:00 도착분까지. 실기 안내는 고사 5일 전 공고.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자전형",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "실기/실적",
+                      "name": "실기전형",
+                      "short": "실기전형",
+                      "quota": "36명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -10264,7 +10267,26 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "칸만화(4칸 이상)·상황표현 중 택1",
+                          "examDate": "2026-10-24",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "4절, 4시간. 고사장·입실시간은 별도 공지"
+                        }
+                      ],
+                      "process": "학생부 40% + 실기 60%(실질반영비율)",
+                      "ratio": {
+                        "grade": "40%",
+                        "gradeType": "교과(실질반영비율)",
+                        "practical": "60%"
+                      },
+                      "note": "수능최저 없음. 학생부 실질 40%는 공통·일반선택 32% + 진로선택 8%. 명목배점 학생부 500점(기본 450점) + 실기 500점(기본 425점), 총 1,000점. 학교폭력 8·9호 부적격, 그 외 감점 적용."
                     }
                   ]
                 }
@@ -10272,13 +10294,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "수시 미충원 시 모집",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "시작 09:00, 마감 18:00"
+              },
+              "note": "가군. 수시 미충원 시에만 선발. 접수 시작 09:00. 서류제출 2027-01-11 17:00까지.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "가군",
-                  "quota": "",
+                  "title": "실기/실적",
+                  "name": "실기전형",
+                  "short": "실기전형",
+                  "quota": "수시 이월인원",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -10289,67 +10317,94 @@
                     "rate": "",
                     "note": ""
                   },
-                  "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "칸만화(4칸 이상)·상황표현 중 택1",
+                      "examDate": "2027-01-12",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "4절, 4시간. 고사 5일 전 안내"
+                    }
+                  ],
+                  "process": "수능 40% + 실기 60%",
+                  "ratio": {
+                    "suneung": "40%",
+                    "practical": "60%"
+                  },
+                  "note": "2027 수능 한국사 응시 필수. 수능 내 국어 50%·영어 25%·탐구 우수 1과목 25%; 수학 미반영, 한국사 등급별 가산. 반영영역 미응시 0점.",
+                  "gun": "가군",
+                  "category": "실기",
+                  "description": "수시 미충원 인원 발생 시 모집"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-01-26"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "조선대학교 입학처",
-          "https://chosun.ac.kradmission/"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000258244&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000172"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000258245&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000172"
         ]
       ]
     },
     {
       "name": "세한대학교",
       "type": "4년제",
-      "region": "전남",
-      "address": "전라남도 영암군 삼호읍 녹색로 1113",
-      "url": "https://sehan.ac.kr",
+      "region": "충남",
+      "address": "충청남도 당진시 신평면 세한대길 33",
+      "url": "https://www.sehan.ac.kr",
       "short": "세한대",
       "departments": [
         {
-          "name": "만화애니메이션학과",
-          "short": "만화애니",
-          "quota": "모집요강 참조",
+          "name": "AI융합콘텐츠학부 웹툰애니메이션학과",
+          "short": "AI융합콘텐츠학부 웹툰애니메이션학과",
+          "quota": "학부 통합 115명",
           "category": [
             "만화",
             "애니메이션"
           ],
           "admission": {
-            "admissionUrl": "https://sehan.ac.kr",
+            "admissionUrl": "https://apply.sehan.ac.kr",
             "track": [
-              "실기"
+              "실기",
+              "비실기"
             ],
-            "process": "수시(실기위주/실기70%+교과30%), 정시(가/나/다군 요강참조)",
-            "practical": "상황표현, 칸만화, 캐릭터디자인 중 택 1",
+            "process": "AI융합콘텐츠학부 통합모집. 수시 일반학생: 학생부교과 25명(교과 100%), 실기/실적 70명(실기 100%). 정시 가군 일반학생은 수시 미충원 시 교과 30% + 수능 70% 또는 실기 100%.",
+            "practical": "사고의 전환(발상과 표현)·기초디자인·정밀묘사·상황표현·칸만화 중 택1. 모두 4절, 4시간. 정밀묘사: 초콜렛·에이스크래커·귤 중 택1. 상황표현: 아이디어 구성표현·캐릭터디자인·게임컨셉일러스트. 칸만화: 만화일러스트·칸만화(스토리만화). 상세 과제·준비물 및 고사장은 입학처 안내 확인.",
+            "note": "2027학년도 정원 내 전형만 수록. 정시 인원은 수시 이월 후 최종 공지 확인. 학부 입학생은 2학년 진급 시 학과 선택권 100% 보장. 다만 학부 수시 성인학습자 20명은 원칙적으로 웹툰애니메이션학과 선택이 제한되어 해당 전형을 제외함(직장인 예외 가능 문구는 대학에 확인). 표기한 25명·70명은 학과별 인원이 아닌 학부 공동 인원.",
             "susi": {
               "reference": false,
+              "quota": "학부 공동 95명 (해당 전공 선택 가능 일반학생)",
+              "note": "학부 전체 수시 정원 내 115명 중 일반학생 95명만 수록. 성인학습자 20명은 전공 선택 제한으로 제외.",
               "rounds": [
                 {
                   "round": 1,
                   "label": "수시",
                   "reference": false,
+                  "quota": "학부 공동 95명",
                   "apply": {
-                    "start": "2026-09-11",
-                    "end": "2026-09-15"
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 18:00"
                   },
-                  "announce": "2026-11-13",
+                  "announce": "2026-11-04",
+                  "note": "합격자 발표 14:00. 서류제출 2026-10-01 18:00까지.",
                   "types": [
                     {
-                      "title": "실기위주 전형",
-                      "name": "실기우수자",
-                      "ratio": {
-                        "grade": "30%",
-                        "practical": "70%"
-                      },
+                      "title": "학생부교과",
+                      "name": "일반학생전형",
+                      "short": "일반학생전형",
+                      "quota": "학부 공동 25명",
                       "apply": {
                         "start": "",
                         "end": "",
@@ -10359,7 +10414,47 @@
                         "year": "",
                         "rate": "",
                         "note": ""
-                      }
+                      },
+                      "stages": [],
+                      "process": "교과 100%",
+                      "ratio": {
+                        "grade": "100%",
+                        "gradeType": "교과"
+                      },
+                      "note": "수능최저학력기준 없음; AI융합콘텐츠학부 통합모집, 개별 학과 정원 아님."
+                    },
+                    {
+                      "title": "실기/실적",
+                      "name": "일반학생전형",
+                      "short": "일반학생전형",
+                      "quota": "학부 공동 70명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "실기고사",
+                          "method": "사고의 전환·기초디자인·정밀묘사·상황표현·칸만화 중 택1",
+                          "examDate": "2026-10-01",
+                          "examEnd": "",
+                          "announce": "",
+                          "kind": "실기",
+                          "ratio": {},
+                          "note": "4절, 4시간. 시간·장소는 입학처 공지"
+                        }
+                      ],
+                      "process": "실기 100%",
+                      "ratio": {
+                        "practical": "100%"
+                      },
+                      "note": "수능최저학력기준 없음; AI융합콘텐츠학부 통합모집, 개별 학과 정원 아님."
                     }
                   ]
                 }
@@ -10367,13 +10462,19 @@
             },
             "jeongsi": {
               "reference": false,
+              "quota": "학부 수시 미충원 시 모집",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 18:00"
+              },
+              "note": "발표 14:00. 학부 수시 미충원 인원 이월, 최종 인원 2026-12-30 이후 공지. 서류제출 2027-01-14까지.",
               "types": [
                 {
-                  "title": "",
-                  "name": "",
-                  "short": "",
-                  "gun": "다군",
-                  "quota": "",
+                  "title": "수능위주",
+                  "name": "일반학생전형",
+                  "short": "일반학생전형",
+                  "quota": "학부 수시 이월인원",
                   "apply": {
                     "start": "",
                     "end": "",
@@ -10385,20 +10486,66 @@
                     "note": ""
                   },
                   "stages": [],
-                  "process": "",
-                  "ratio": {},
-                  "note": ""
+                  "process": "교과 30% + 수능 70%",
+                  "ratio": {
+                    "grade": "30%",
+                    "gradeType": "교과",
+                    "suneung": "70%"
+                  },
+                  "note": "AI융합콘텐츠학부 통합모집. 수시 미충원 시 모집하며 전형별 최종 인원 확인 필요.",
+                  "gun": "가군",
+                  "category": "수능"
+                },
+                {
+                  "title": "실기/실적",
+                  "name": "일반학생전형",
+                  "short": "일반학생전형",
+                  "quota": "학부 수시 이월인원",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "실기고사",
+                      "method": "사고의 전환·기초디자인·정밀묘사·상황표현·칸만화 중 택1",
+                      "examDate": "2027-01-14",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {},
+                      "note": "4절, 4시간. 시간·장소 별도 공지"
+                    }
+                  ],
+                  "process": "실기 100%",
+                  "ratio": {
+                    "practical": "100%"
+                  },
+                  "note": "AI융합콘텐츠학부 통합모집. 수시 미충원 시 모집하며 전형별 최종 인원 확인 필요.",
+                  "gun": "가군",
+                  "category": "실기"
                 }
               ],
-              "announce": "2027-02-05"
-            }
+              "announce": "2027-01-27"
+            },
+            "etc": []
           }
         }
       ],
       "sources": [
         [
-          "세한대학교 입학처",
-          "https://sehan.ac.kr"
+          "2027학년도 수시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000242922&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000092"
+        ],
+        [
+          "2027학년도 정시 모집요강",
+          "https://www.adiga.kr/cmm/com/file/fileDown.do?downLogYn=Y&fileId=00000000000000242923&fileSn=1&menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000092"
         ]
       ]
     },
