@@ -10356,6 +10356,431 @@
           "https://ipsi.kcce.or.kr/file/plan_pds/2027/2026_73016000_1783650804149.pdf"
         ]
       ]
+    },
+    {
+      "name": "경남대학교",
+      "type": "4년제",
+      "region": "경남",
+      "address": "경상남도 창원시 마산합포구 경남대학로 7",
+      "url": "https://www.kyungnam.ac.kr",
+      "short": "경남대",
+      "departments": [
+        {
+          "name": "게임학과",
+          "short": "게임",
+          "quota": "30명",
+          "category": [
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.kyungnam.ac.kr",
+            "track": [
+              "비실기"
+            ],
+            "process": "수시 학생부교과(일반 15명, 지역인재 8명 등) 100% 선발, 정시 나군 수능 100% 선발",
+            "practical": "실기고사 없음 (비실기 전형)",
+            "note": "AI·SW융합대학 소속. 신입생 전원 첫 학기 장학금(100만 원) 및 SW마일리지 장학금(최대 100만 원) 지원. 교과성적은 국·수·영·한국사·사회·과학 중 상위 10과목 반영.",
+            "susi": {
+              "reference": false,
+              "quota": "27명",
+              "note": "수능최저학력기준 없음",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "27명",
+                  "apply": {
+                    "start": "2025-09-08",
+                    "end": "2025-09-12",
+                    "note": "인터넷 원서접수"
+                  },
+                  "announce": "2025-11-06",
+                  "note": "수능최저학력기준 미적용",
+                  "types": [
+                    {
+                      "title": "학생부교과",
+                      "name": "일반전형",
+                      "short": "교과일반",
+                      "quota": "15명",
+                      "apply": {
+                        "start": "2025-09-08",
+                        "end": "2025-09-12",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2025학년도",
+                        "rate": "4.00 : 1",
+                        "note": "15명 모집 / 60명 지원"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 100% (교과 90% + 출결 10%)",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2025-11-06",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "",
+                            "grade": "90",
+                            "gradeType": "교과",
+                            "attendance": "10",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국어·수학·영어·한국사·사회(역사/도덕)·과학 교과 중 상위 10개 과목 반영"
+                        }
+                      ],
+                      "process": "학생부 100% (교과 90% + 출결 10%) 일괄합산",
+                      "ratio": {
+                        "document": "",
+                        "grade": "90",
+                        "gradeType": "교과",
+                        "attendance": "10",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "수능최저학력기준 미적용"
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "지역인재전형",
+                      "short": "지역인재",
+                      "quota": "8명",
+                      "apply": {
+                        "start": "2025-09-08",
+                        "end": "2025-09-12",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2025학년도",
+                        "rate": "3.25 : 1",
+                        "note": "부산·울산·경남 지역 고교 졸업(예정)자"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 100% (교과 90% + 출결 10%)",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2025-11-06",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "",
+                            "grade": "90",
+                            "gradeType": "교과",
+                            "attendance": "10",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국어·수학·영어·한국사·사회(역사/도덕)·과학 교과 중 상위 10개 과목 반영"
+                        }
+                      ],
+                      "process": "학생부 100% (교과 90% + 출결 10%) 일괄합산",
+                      "ratio": {
+                        "document": "",
+                        "grade": "90",
+                        "gradeType": "교과",
+                        "attendance": "10",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "부산·울산·경남 소재 고교 전 교육과정 이수(예정)자 지원 가능"
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "3명",
+              "apply": {
+                "start": "2025-12-29",
+                "end": "2025-12-31",
+                "note": "정시 나군 인터넷 접수"
+              },
+              "note": "수시 이월 인원에 따라 최종 모집인원이 변동될 수 있습니다.",
+              "types": [
+                {
+                  "title": "수능전형",
+                  "name": "일반학생전형",
+                  "short": "수능일반",
+                  "gun": "나군",
+                  "quota": "3명",
+                  "apply": {
+                    "start": "2025-12-29",
+                    "end": "2025-12-31",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2025학년도",
+                    "rate": "3.50 : 1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 100%",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2026-02-06",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "100",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "수능 백분위 반영"
+                    }
+                  ],
+                  "process": "수능 100% 일괄합산 선발",
+                  "ratio": {
+                    "suneung": "100",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "수학 선택과목 가산점 폐지(2026학년도)",
+                  "category": "수능",
+                  "description": "정시 나군 수능 100% 일괄합산 선발"
+                }
+              ],
+              "announce": "2026-02-06"
+            },
+            "etc": []
+          }
+        },
+        {
+          "name": "웹툰·디자인학과",
+          "short": "웹툰디자인",
+          "quota": "20명",
+          "category": [
+            "만화",
+            "애니메이션",
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.kyungnam.ac.kr",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "수시 실기/실적(예체능전형 15명) 실기 80% + 학생부 20%, 학생부교과(일반전형 2명) 선발 / 정시 나군 실기 80% + 수능 20% 선발",
+            "practical": "실기과목: 기초디자인, 사고의 전환, 상황표현, 칸만화 중 택 1 (화지 4절, 4시간). 준비물: 개인 실기도구 및 필기구(도료 및 표현도구 자유).",
+            "note": "기존 디자인학과에서 웹툰·애니메이션·디자인 융합 학과로 확대 개편. 실기 비중이 80%로 실기 성적이 합격에 결정적 영향.",
+            "susi": {
+              "reference": false,
+              "quota": "17명",
+              "note": "수시 실기위주 및 교과 선발",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "17명",
+                  "apply": {
+                    "start": "2025-09-08",
+                    "end": "2025-09-12",
+                    "note": "인터넷 접수"
+                  },
+                  "announce": "2025-11-06",
+                  "note": "실기고사일: 2025-10-25(토)",
+                  "types": [
+                    {
+                      "title": "실기전형",
+                      "name": "예체능전형",
+                      "short": "실기예체능",
+                      "quota": "15명",
+                      "apply": {
+                        "start": "2025-09-08",
+                        "end": "2025-09-12",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2025학년도",
+                        "rate": "2.86 : 1",
+                        "note": "14명 모집 / 40명 지원"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "실기 80% + 학생부 20% (교과 18% + 출결 2%)",
+                          "examDate": "2025-10-25",
+                          "examEnd": "",
+                          "announce": "2025-11-06",
+                          "kind": "실기",
+                          "ratio": {
+                            "document": "",
+                            "grade": "18",
+                            "gradeType": "교과",
+                            "attendance": "2",
+                            "essay": "",
+                            "practical": "80",
+                            "interview": ""
+                          },
+                          "note": "실기종목: 기초디자인, 사고의 전환, 상황표현, 칸만화 중 택1 (4절지 / 4시간)"
+                        }
+                      ],
+                      "process": "실기 80% + 학생부 20% (교과 18% + 출결 2%) 일괄합산",
+                      "ratio": {
+                        "document": "",
+                        "grade": "18",
+                        "gradeType": "교과",
+                        "attendance": "2",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "수능최저학력기준 미적용"
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "일반전형",
+                      "short": "교과일반",
+                      "quota": "2명",
+                      "apply": {
+                        "start": "2025-09-08",
+                        "end": "2025-09-12",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "2025학년도",
+                        "rate": "3.50 : 1",
+                        "note": "비실기 전형"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부 100% (교과 90% + 출결 10%)",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2025-11-06",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "",
+                            "grade": "90",
+                            "gradeType": "교과",
+                            "attendance": "10",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국·수·영·한국사·사회·과학 중 상위 10개 과목 반영"
+                        }
+                      ],
+                      "process": "학생부 100% (교과 90% + 출결 10%) 일괄합산 선발 (비실기)",
+                      "ratio": {
+                        "document": "",
+                        "grade": "90",
+                        "gradeType": "교과",
+                        "attendance": "10",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "비실기 선발"
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "3명",
+              "apply": {
+                "start": "2025-12-29",
+                "end": "2025-12-31",
+                "note": "정시 나군 인터넷 접수"
+              },
+              "note": "수시 이월 인원에 따라 최종 모집인원 변동 가능",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "일반학생전형",
+                  "short": "정시실기",
+                  "gun": "나군",
+                  "quota": "3명",
+                  "apply": {
+                    "start": "2025-12-29",
+                    "end": "2025-12-31",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "2025학년도",
+                    "rate": "2.50 : 1",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "실기 80% + 수능 20%",
+                      "examDate": "2026-01-16",
+                      "examEnd": "",
+                      "announce": "2026-02-06",
+                      "kind": "실기",
+                      "ratio": {
+                        "suneung": "20",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "기초디자인, 사고의 전환, 상황표현, 칸만화 중 택1 (4절지 / 4시간)"
+                    }
+                  ],
+                  "process": "실기 80% + 수능 20% 일괄합산 선발",
+                  "ratio": {
+                    "suneung": "20",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "80",
+                    "interview": ""
+                  },
+                  "note": "",
+                  "category": "실기",
+                  "description": "정시 나군 실기 80% + 수능 20% 선발"
+                }
+              ],
+              "announce": "2026-02-06"
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "경남대학교 입학처",
+          "https://ipsi.kyungnam.ac.kr"
+        ],
+        [
+          "경남대학교 수시모집요강",
+          "https://ipsi.kyungnam.ac.kr"
+        ],
+        [
+          "진학어플라이 경쟁률 안내",
+          "https://www.jinhakapply.com"
+        ]
+      ]
     }
   ],
   "_학교템플릿": {

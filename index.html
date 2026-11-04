@@ -307,7 +307,10 @@
     .mitem .mtxt { grid-column: 2; }
     .cal-title { font-size: 22px; }
   }
-  /* 정보 오류 신고 */
+  /* 정보 오류 신고 및 JSON 다운로드 */
+  .detail .links .dl-btn { font: inherit; font-size: 12.5px; padding: 6px 11px; border-radius: 6px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .detail .links .dl-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .detail .links .dl-btn:focus-visible { outline: 3px solid rgba(47,111,237,.35); outline-offset: 2px; }
   .detail .links .rp-btn { margin-left: auto; font: inherit; font-size: 12.5px; padding: 6px 11px; border-radius: 6px; border: 1.5px solid var(--line); background: #fff; color: var(--sub); cursor: pointer; }
   .detail .links .rp-btn:hover { border-color: var(--pink); color: var(--pink); }
   .detail .links .rp-btn:focus-visible { outline: 3px solid rgba(232,51,109,.3); outline-offset: 2px; }
@@ -502,11 +505,14 @@ const DATA_URL = "universities.json";
 let SCHOOLS = [];
 let deptSel = {};   // 학교별로 선택된 학과 탭 (학교 id → 학과 번호)
 let CHECKED_AT = "";
+let RAW_JSON = null;
+const RAW_SCHOOL_MAP = {};
 
 async function loadData() {
   const res = await fetch(DATA_URL, { cache: "no-cache" });
   if (!res.ok) throw new Error("HTTP " + res.status);
   const json = await res.json();
+  RAW_JSON = json;
   CHECKED_AT = json.checkedAt || "";
   SCHOOLS = (json.schools || [])
     .filter(x => {
@@ -515,6 +521,8 @@ async function loadData() {
       return ok;
     })
     .map((x, i) => {
+      const id = i + 1;
+      RAW_SCHOOL_MAP[id] = x;
       // departments 가 없는 옛 형식(학교 하나에 학과 하나: dept + admission)도 그대로 지원
       const src = Array.isArray(x.departments) && x.departments.length
         ? x.departments
@@ -526,7 +534,7 @@ async function loadData() {
           const seasons = [groupHas(adm.susi) && "수시", groupHas(adm.jeongsi) && "정시"].filter(Boolean);
           return { name: d.name || "", short: d.short || "", quota: d.quota || "", cats: [].concat(d.category || []).filter(Boolean), adm: { ...adm, seasons } };
         });
-      return { type: "", region: "", url: "#", ...x, id: i + 1,
+      return { type: "", region: "", url: "#", ...x, id,
                depts: depts.length ? depts : [{ name: "", short: "", cats: [], adm: { seasons: [] } }] };
     });
 }
@@ -847,9 +855,42 @@ function admissionHtml(s) {
     <div class="links">
       <a href="${adm}" target="_blank" rel="noopener">입학 안내 바로가기</a>
       <a class="alt" href="https://search.naver.com/search.naver?query=${q}" target="_blank" rel="noopener">모집요강 검색</a>
+      <button type="button" class="dl-btn" data-download-json="${s.id}" title="${s.name} JSON 다운로드">📥 JSON 다운로드</button>
       <button type="button" class="rp-btn" data-report="${s.id}">⚑ 정보 오류 신고</button>
     </div>
     <p class="muted small">${src ? "출처: " + src + " · " : ""}확인일 ${CHECKED_AT}<br>전형은 매년 바뀌어요. 지원 전 반드시 공식 모집요강을 확인하세요.</p></div>`;
+}
+
+function downloadSchoolJson(schoolId) {
+  const s = SCHOOLS.find(x => x.id === schoolId);
+  if (!s) return;
+  const rawSchool = RAW_SCHOOL_MAP[schoolId] || {
+    name: s.name,
+    type: s.type,
+    region: s.region,
+    address: s.address,
+    url: s.url,
+    short: s.short,
+    departments: s.departments || [],
+    sources: s.sources || []
+  };
+
+  const exportData = {
+    "_안내": (RAW_JSON && RAW_JSON["_안내"]) || [],
+    "checkedAt": CHECKED_AT || "",
+    "schools": rawSchool
+  };
+
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  const safeName = (s.name || "school").replace(/[\\/:*?"<>|]/g, "_").trim();
+  a.download = `${safeName}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 function renderList() {
@@ -940,6 +981,7 @@ function openInfo(id) {
     <div class="links">
       <a href="${s.url}" target="_blank" rel="noopener">홈페이지</a>
       <a class="alt" href="https://map.naver.com/p/search/${q}" target="_blank" rel="noopener">길찾기</a>
+      <button type="button" class="dl-btn" onclick="downloadSchoolJson(${s.id})" title="${s.name} JSON 다운로드">📥 JSON</button>
     </div></div>`);
   infoWindow.open(map, markers[id]);
 }
@@ -1633,6 +1675,12 @@ $rp("adUniv").addEventListener("input", () => {                       // 이미 
 });
 
 $rp("list").addEventListener("click", e => {
+  const dl = e.target.closest("[data-download-json]");
+  if (dl) {
+    e.stopPropagation();
+    downloadSchoolJson(+dl.dataset.downloadJson);
+    return;
+  }
   const b = e.target.closest("[data-report]");
   if (b) openReport(+b.dataset.report, b);
 });
