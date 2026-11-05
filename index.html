@@ -237,8 +237,16 @@
   .cal-btn { font: inherit; font-size: 13px; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
   .cal-btn:hover { border-color: var(--ink); }
   .cal-btn:focus-visible { outline: 3px solid rgba(47,111,237,.35); }
-  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--sub); margin: 0 0 10px; }
-  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  /* 달력 일정 종류: 한 번에 한 종류만 선택, 재클릭 시 전체 보기 */
+  .legend { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--sub); margin: 0 0 10px; }
+  .legend-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-right: 3px; }
+  .legend-chip { display: inline-flex; align-items: center; justify-content: center; gap: 5px; font: inherit; font-size: 12px; font-weight: 500; line-height: 1.5; border: 1.5px solid var(--line); padding: 5px 10px; border-radius: 999px; background: #fff; color: var(--sub); cursor: pointer; transition: background .15s, border-color .15s; }
+  .legend-chip i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--kc, var(--ink)); flex: none; }
+  .legend-chip:hover { border-color: var(--blue); color: var(--ink); background: #f3f7ff; }
+  .legend-chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); font-weight: 700; }
+  .legend-chip[aria-pressed="true"] i { outline: 1px solid rgba(255,255,255,.65); }
+  .legend-chip:focus-visible { outline: 3px solid rgba(47,111,237,.4); outline-offset: 2px; }
+  .legend-note { color: var(--sub); margin-left: 5px; font-size: 11.5px; }
   .grid { border-top: 1px solid var(--line); border-left: 1px solid var(--line); background: #fff; }
   .dowrow { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
   .dow { padding: 6px 0; text-align: center; font-size: 12px; color: var(--sub); background: #f5f7fb; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -1064,10 +1072,12 @@ function initCalMonth() {
 }
 
 let calSel = null;   // 선택한 날짜(YYYY-MM-DD). 없으면 그 달 전체 일정을 보여줘요.
+let calKind = null;  // 선택한 일정 유형(접수·서류·실기 등). null이면 전체 표시.
 
 function renderCal() {
   const box = document.getElementById("cal");
-  const events = buildEvents(filtered());
+  // 한 가지 일정 유형만 표시합니다. 월별 건수, 날짜별 건수, 막대 및 아래 목록에 동일 적용.
+  const events = buildEvents(filtered()).filter(e => !calKind || e.kind === calKind);
   const first = new Date(calY, calM, 1);
   const daysIn = new Date(calY, calM + 1, 0).getDate();
   const rows = Math.ceil((first.getDay() + daysIn) / 7);
@@ -1139,8 +1149,10 @@ function renderCal() {
   const listHtml = shown.length
     ? shown.map(item).join("")
     : selDate
-      ? `<div class="mnone">이 날은 표시할 전형 일정이 없어요.</div>`
-      : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
+      ? `<div class="mnone">이 날은 ${calKind ? calKind + " " : ""}일정이 없어요.</div>`
+      : calKind
+        ? `<div class="mnone">이 달에는 ${calKind} 일정이 없어요. 다른 종류를 선택하거나 '전체'를 눌러보세요.</div>`
+        : `<div class="mnone">이 달에는 표시할 전형 일정이 없어요.<br>일정은 universities.json의 <code>apply</code>·<code>stages</code>에 날짜(YYYY-MM-DD)를 입력하면 표시돼요.</div>`;
   const heading = selDate
     ? `<h3>${selDate.getMonth() + 1}월 ${selDate.getDate()}일(${WD[selDate.getDay()]}) 일정 (${shown.length}건)<button type="button" class="cal-btn" data-clear="1">${calM + 1}월 전체 보기</button></h3>`
     : `<h3>${calM + 1}월 전형 일정 (${inMonth.length}건)</h3>`;
@@ -1153,7 +1165,13 @@ function renderCal() {
       <button type="button" class="cal-btn" data-nav="1" aria-label="다음 달">다음 ›</button>
     </div>
     <div class="mstrip" role="group" aria-label="월 선택">${strip}</div>
-    <div class="legend">${Object.entries(KINDS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")}<span>점선 = 이전 학년도 참고 일정</span><span>날짜를 누르면 그날 일정만 볼 수 있어요</span></div>
+    <div class="legend" role="group" aria-label="달력 일정 종류 필터">
+      <span class="legend-title">일정 종류</span>
+      <button type="button" class="legend-chip" data-cal-kind="all" aria-pressed="${calKind === null}" title="모든 일정 보기">전체</button>
+      ${Object.entries(KINDS).map(([k, c]) => `<button type="button" class="legend-chip" style="--kc:${c}" data-cal-kind="${k}" aria-pressed="${calKind === k}" title="${k} 일정만 보기"><i aria-hidden="true"></i>${k}</button>`).join("")}
+      <span class="legend-note">한 종류를 누르면 해당 일정만 표시 · 다시 누르면 전체 보기</span>
+    </div>
+    <div class="legend-note" style="margin: -5px 0 10px">점선 = 이전 학년도 참고 일정 · 날짜를 누르면 그날 일정만 볼 수 있어요.</div>
     <div class="grid"><div class="dowrow">${WD.map(w => `<div class="dow">${w}</div>`).join("")}</div>${weeksHtml}</div>
     <div class="mlist">${heading}${listHtml}</div>`;
 }
@@ -1163,6 +1181,15 @@ function toStr(dt) {
 
 document.getElementById("cal").addEventListener("click", e => {
   const box = document.getElementById("cal");
+  const kindEl = e.target.closest("[data-cal-kind]");  // 일정 유형 필터: 단일 선택/재클릭 해제
+  if (kindEl) {
+    const value = kindEl.dataset.calKind;
+    calKind = (value === "all" || calKind === value) ? null : value;
+    renderCal();
+    const pressed = box.querySelector(`[data-cal-kind="${calKind || "all"}"]`);
+    if (pressed) pressed.focus({ preventScroll: true });
+    return;
+  }
   const nav = e.target.closest("[data-nav]");
   if (nav) {
     const n = +nav.dataset.nav;
