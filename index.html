@@ -392,6 +392,87 @@
   .quota-detail summary { cursor:pointer; font-size:12px; font-weight:600; padding:4px 0 10px; }
   @media(max-width:650px) { .quota-overview { grid-template-columns:1fr; gap:12px; } .quota-block { padding:16px; } .quota-bar-label { font-size:11.5px; } }
 
+  /* 진학지도용 대시보드 2.0 — 기존 달력·지도·목록을 유지하는 추가 스타일 */
+  .dash-hero { background:linear-gradient(115deg,#132540,#244e81); color:#fff; padding:20px 22px; margin:0 0 16px; border-radius:16px; box-shadow:0 6px 20px rgba(20,33,61,.09); }
+  .dash-hero .dhead { margin:0 0 6px; }
+  .dash-hero .dhead h2 { color:#fff; font-size:29px; }
+  .dash-hero .dsub { color:#d2e2fb; line-height:1.55; }
+  .dash-hero .dash-controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px; }
+  .dash-hero .cal-btn { color:#f4f7fe; background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.35); }
+  .dash-check { display:inline-flex; gap:7px; align-items:center; font-size:12px; color:#e8eef8; cursor:pointer; }
+  .dash-check input { accent-color:#7cb8ff; width:15px; height:15px; }
+  .dash-intro { display:flex; align-items:center; gap:8px; margin:22px 0 12px; }
+  .dash-intro h3 { margin:0; font-size:18px; color:#172945; }
+  .dash-intro span { font-size:12px; color:var(--sub); }
+  .dash-feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:start; }
+  .dash-feature-grid > .dcard, .dash-wide { min-width:0; border-radius:13px; padding:16px 17px; }
+  .dash-feature-grid .dcard h3, .dash-wide h3 { font-size:16px; margin:0 0 5px; }
+  .dash-feature-grid .dcard .du, .dash-wide .du { line-height:1.6; margin-bottom:10px; }
+  .dash-inline-chips { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0 12px; }
+  .dash-mini-chip { border:1px solid var(--line); background:#fff; color:var(--sub); border-radius:7px; cursor:pointer; padding:5px 10px; font:inherit; font-size:11.5px; }
+  .dash-mini-chip[aria-pressed="true"] { color:#fff; background:var(--ink); border-color:var(--ink); }
+  .dash-mini-chip:hover { border-color:var(--blue); }
+  .dash-events { max-height:390px; overflow:auto; scrollbar-gutter:stable; }
+  .dash-event { box-sizing:border-box; display:flex; align-items:flex-start; gap:9px; width:100%; padding:10px 6px; border:0; border-top:1px solid #eef1f6; background:transparent; text-align:left; font:inherit; color:var(--ink); cursor:pointer; }
+  .dash-event:hover { background:#f3f7fd; }
+  .dash-event-copy { min-width:0; flex:1; line-height:1.45; }
+  .dash-event-copy b { display:block; font-size:12.5px; line-height:1.5; font-weight:700; }
+  .dash-event-copy small { font-size:11.5px; color:var(--sub); display:block; margin-top:2px; line-height:1.5; overflow-wrap:anywhere; }
+  .dash-event-day { white-space:nowrap; font-weight:700; font-size:11.5px; min-width:49px; color:#24457b; background:#eaf1fc; border-radius:7px; padding:6px 5px; text-align:center; }
+  .dash-kind { white-space:nowrap; font-size:10.5px; color:#fff; border-radius:6px; background:var(--kind,#475569); padding:3px 6px; font-weight:700; }
+  .dash-date { font-variant-numeric:tabular-nums; }
+  .dash-empty { padding:22px 12px; color:var(--sub); font-size:12.5px; line-height:1.75; background:#f8faff; border-radius:8px; }
+  .dash-collision { display:flex; align-items:center; width:100%; gap:10px; text-align:left; padding:11px 8px; border:1px solid #e5ebf6; border-radius:9px; background:#f8faff; margin:0 0 7px; cursor:pointer; font:inherit; color:var(--ink); }
+  .dash-collision:hover { border-color:var(--blue); background:#edf5ff; }
+  .dash-collision-info { flex:1; min-width:0; }
+  .dash-collision-info b { display:block; font-size:12px; }
+  .dash-collision-info small { display:block; color:var(--sub); font-size:11px; margin-top:3px; line-height:1.5; }
+  .dash-count-pill { white-space:nowrap; background:#fff1e7; color:#a34d10; border:1px solid #ffd6ae; font-size:11px; font-weight:700; padding:5px 8px; border-radius:999px; }
+  .dash-submetric { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:7px 0 14px; font-size:12px; color:var(--sub); }
+  .dash-submetric b { color:var(--ink); }
+  .dash-analytic-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
+  .dash-baritem { margin:0 0 12px; }
+  .dash-barhead { display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:12.5px; line-height:1.5; }
+  .dash-barhead b { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .dash-bartrack { height:10px; background:#edf1f8; border-radius:8px; overflow:hidden; margin-top:5px; }
+  .dash-barfill { height:100%; display:block; background:var(--dashbar,#2f6fed); border-radius:8px; }
+  .dash-analytic-note { font-size:11.5px; color:var(--sub); line-height:1.65; margin:12px 0 0; }
+  .dash-interactive-row { width:100%; padding:4px 5px; background:transparent; text-align:left; cursor:pointer; font:inherit; border:1px solid transparent; border-radius:7px; }
+  .dash-interactive-row:hover, .dash-interactive-row[aria-pressed="true"] { background:#eef5ff; border-color:#d6e4ff; }
+  .dash-group-list { margin:7px 0 0; max-height:185px; overflow:auto; border-top:1px solid var(--line); padding-top:7px; }
+  .dash-group-list p { font-size:11.5px; padding:3px 0; margin:0; color:var(--ink); line-height:1.5; }
+  .dash-season-bar { height:19px; display:flex; border-radius:6px; overflow:hidden; background:#e7edf6; margin:15px 0 12px; }
+  .dash-season-bar i { display:block; min-width:0; height:100%; }
+  .dash-season-stats { display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap; }
+  .dash-season-stat { border:1px solid var(--line); background:#fafcff; border-radius:10px; flex:1; min-width:110px; padding:10px 12px; }
+  .dash-season-stat strong { display:block; font-size:20px; }
+  .dash-season-stat small { display:block; margin:3px 0; font-size:11px; color:var(--sub); }
+  .dash-season-stat em { font-style:normal; font-weight:700; font-size:11px; }
+  .dash-compare-tools { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:11px 0; }
+  .dash-compare-tools select { flex:1; min-width:210px; max-width:460px; padding:9px 10px; border:1px solid var(--line); background:#fff; border-radius:8px; font:inherit; color:var(--ink); font-size:12px; }
+  .dash-compare-selection { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 10px; }
+  .dash-selected { display:inline-flex; align-items:center; gap:5px; background:#eef4ff; border:1px solid #cedcf9; border-radius:8px; font-size:11.5px; padding:5px 8px; }
+  .dash-selected button { border:0; background:transparent; color:#1d4fb8; font:inherit; cursor:pointer; padding:0 2px; font-weight:700; }
+  .dash-compare-scroller { overflow:auto; border:1px solid var(--line); border-radius:9px; }
+  .dash-compare-table { width:100%; border-collapse:collapse; font-size:12px; min-width:580px; }
+  .dash-compare-table th, .dash-compare-table td { padding:11px 12px; border-bottom:1px solid #e3e9f2; border-right:1px solid #eef1f6; text-align:left; vertical-align:top; min-width:160px; line-height:1.55; overflow-wrap:anywhere; }
+  .dash-compare-table tr:last-child th, .dash-compare-table tr:last-child td { border-bottom:0; }
+  .dash-compare-table th:first-child { position:sticky; left:0; z-index:1; min-width:106px; width:106px; background:#eef3fa; color:#43526a; }
+  .dash-compare-table thead th { background:#f4f7fc; font-weight:700; }
+  .dash-compare-table thead th:first-child { z-index:2; }
+  .dash-compare-table td a { color:#1d4fb8; text-decoration:underline; }
+  .dash-data-caution { margin:12px 0 0; padding:10px 13px; background:#f8faff; border-left:3px solid #98acc8; border-radius:5px; font-size:11.5px; line-height:1.7; color:#526178; }
+  @media(max-width:1100px) { .dash-feature-grid,.dash-analytic-grid{grid-template-columns:1fr;} }
+  @media(max-width:650px) { .dash-hero{padding:16px;} .dash-season-stats{flex-direction:column;} .dash-feature-grid>.dcard,.dash-wide{padding:12px;} .dash-compare-tools select{min-width:100%;} }
+  @media(max-width:820px) {
+    /* 모바일에서 긴 대학 목록 때문에 대시보드가 화면 아래로 밀리지 않도록 제한 */
+    body.dash-mode aside { display:flex; flex-direction:column; max-height:340px; min-height:0; overflow:hidden; }
+    body.dash-mode aside header { flex:0 1 auto; overflow-y:auto; min-height:0; }
+    body.dash-mode aside .countbar { flex:0 0 auto; }
+    body.dash-mode aside ul { flex:1 1 auto; min-height:85px; overflow-y:auto; }
+    body.dash-mode aside .note { display:none; }
+  }
+
 </style>
 </head>
 <body class="dash-mode">
@@ -1023,38 +1104,39 @@ function dkey(dt) { return dt.getFullYear() + "-" + dt.getMonth() + "-" + dt.get
 function buildEvents(schools) {
   const ev = [];
   schools.forEach(s => s.depts.forEach((dp, did) => {
+    if (!deptPass(dp)) return;
     const a = dp.adm || {};
     // 학과가 2개 이상이면 달력에 '학교·학과' 로 표시
     const sn = shortName(s) + (s.depts.length > 1 ? "·" + deptLabel(dp) : "");
     const base = { sid: s.id, did, school: sn };
-    const push = (obj, label, ref, isType, applyOK) => {
+    const push = (obj, label, ref, isType, applyOK, season) => {
       const ap = obj.apply || {};
       const as = pd(ap.start);
-      if (as && applyOK) ev.push({ ...base, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
+      if (as && applyOK) ev.push({ ...base, season, title: label + " 원서 접수", method: ap.note || "", kind: "접수", start: as, end: pd(ap.end) || as, ref });
       (obj.stages || []).forEach(st => {
         const ds = pd(st.examDate || st.date);
         if (ds) {
           const kind = KINDS[st.kind] ? st.kind : "기타";
-          ev.push({ ...base, title: [label, st.label].filter(Boolean).join(" "), method: st.method || "", kind, start: ds, end: pd(st.examEnd || st.endDate) || ds, ref });
+          ev.push({ ...base, season, title: [label, st.label].filter(Boolean).join(" "), method: st.method || "", kind, start: ds, end: pd(st.examEnd || st.endDate) || ds, ref });
         }
         const da = pd(st.announce);
-        if (da) ev.push({ ...base, title: [label, st.label].filter(Boolean).join(" ") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
+        if (da) ev.push({ ...base, season, title: [label, st.label].filter(Boolean).join(" ") + " 합격자 발표", method: "", kind: "발표", start: da, end: da, ref });
       });
       const fa = pd(obj.announce);
-      if (fa && !isType) ev.push({ ...base, title: label + " 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
+      if (fa && !isType) ev.push({ ...base, season, title: label + " 합격자 발표", method: "", kind: "발표", start: fa, end: fa, ref });
     };
     admGroups(a, s.type).forEach(gr => {
       if (gr.calendar === false) return;
       const g = gr.g || {};
       const gref = !!g.reference;
-      push(g, gr.name, gref, false, true);
+      push(g, gr.name, gref, false, true, gr.key);
       (g.types || []).forEach(t => {
         const tl = t.short || t.title || t.name || "";
         const gsuf = gr.key === "jeongsi" && gunText(t) ? "(" + gunText(t) + ")" : "";
         // 같은 차수의 공통 접수기간과 같은 전형별 기간은 달력에 중복 등록하지 않습니다.
         const ap = t.apply || {}, gap = g.apply || {};
         const sameApply = gr.round && ap.start && ap.start === gap.start && (ap.end || ap.start) === (gap.end || gap.start);
-        push(t, gr.base + (tl ? " " + tl : "") + gsuf, gref || !!t.reference, true, !sameApply);
+        push(t, gr.base + (tl ? " " + tl : "") + gsuf, gref || !!t.reference, true, !sameApply, gr.key);
       });
     });
   }));
@@ -1435,32 +1517,406 @@ function quotaDashboard(list) {
   </section>`;
 }
 
+/* ========= 진학지도 대시보드 2.0 =========
+ * 입력된 universities.json만 사용합니다. 미확인 숫자/날짜는 생성하지 않습니다.
+ */
+const dashState = {
+  includeReference: false, ddayKind: '전체', methodDetail: '', practicalDetail: '',
+  compareKeys: [], compareTouched: false
+};
+const dashNum = n => Number(n || 0).toLocaleString('ko-KR');
+const dashEsc = competitionEscape;
+const dashDayMs = 86400000;
+const dashToday = () => { const d = new Date(); d.setHours(0,0,0,0); return d; };
+const dashDayDiff = (date, today) => Math.round((date - today) / dashDayMs);
+const dashFmtDate = date => date ? `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}` : '미확인';
+const dashWeekDay = d => WD[d.getDay()];
+const dashIsShared = d => /통합|공동|학부 전체|계열 전체/.test(String(d.quota || ''));
+const dashIsRef = (a, b, c) => !!(c && typeof c.reference === 'boolean' ? c.reference : b && typeof b.reference === 'boolean' ? b.reference : a && a.reference);
+const dashNumber = q => quotaNumber(q); // '10명'은 집계, '10명+이월' 등 불확정 문자열은 제외
+const dashPart = (r, field) => {
+  const n = parseFloat(String(r && r[field] || '').replace(/,/g, '').replace(/%/g,''));
+  return Number.isFinite(n) && n > 0 ? n : 0;
+};
+function dashDepartmentRows(list) {
+  return list.flatMap(s => s.depts.map((d, did) => deptPass(d) ? ({ s, d, did, key: `${s.id}:${did}` }) : null).filter(Boolean));
+}
+function dashSusiRounds(a) {
+  const su = a.susi || {};
+  return Array.isArray(su.rounds) && su.rounds.length ? su.rounds : [su];
+}
+function dashTypesFor(s, d) {
+  const a = d.adm || {}, out = [];
+  const su = a.susi || {};
+  dashSusiRounds(a).forEach((r, ri) => {
+    (r.types || []).forEach((t, ti) => out.push({ season:'수시', group:r, parent:su, t, ti, ri, ref:dashIsRef(su,r,t) }));
+  });
+  const je = a.jeongsi || {};
+  (je.types || []).forEach((t, ti) => out.push({ season:'정시', group:je, parent:je, t, ti, ri:0, ref:dashIsRef(je,je,t) }));
+  return out;
+}
+function dashMethod(t) {
+  const r = t.ratio || {};
+  const stages = Array.isArray(t.stages) ? t.stages : [];
+  const hasScores = x => x && ['document','grade','attendance','essay','practical','interview','suneung'].some(k => dashPart(x,k) > 0);
+  const ratios = hasScores(r) ? r : [...stages].reverse().find(st => hasScores(st.ratio))?.ratio || {};
+  const vals = [
+    ['학생부',dashPart(ratios,'grade') + dashPart(ratios,'attendance')],
+    ['실기',dashPart(ratios,'practical')],
+    ['면접',dashPart(ratios,'interview')],
+    ['수능',dashPart(ratios,'suneung')],
+    ['논술',dashPart(ratios,'essay')],
+    ['서류',dashPart(ratios,'document')]
+  ].sort((a,b)=> b[1]-a[1]);
+  if (vals[0][1] > 0) return vals[0][0];
+  const txt = [t.title,t.name,t.category,t.process,t.description].filter(Boolean).join(' ');
+  // 평가비율이 없는 경우 전형명과 단계 유형을 보조 근거로 사용
+  if (/비실기/.test(txt) && !/교과|종합|학생부|서류|면접|수능/.test(txt)) return '기타';
+  if (/실기|포트폴리오\s*평가/.test(txt)) return '실기';
+  if (/면접|적성검사/.test(txt)) return '면접';
+  if (/논술/.test(txt)) return '논술';
+  if (/수능/.test(txt)) return '수능';
+  if (/교과|학생부/.test(txt)) return '학생부';
+  if (/서류|학업계획/.test(txt)) return '서류';
+  const kinds = stages.map(st=>st.kind);
+  for (const [kind, label] of [['실기','실기'],['면접','면접'],['논술','논술'],['수능','수능'],['교과','학생부'],['서류','서류']]) {
+    if (kinds.includes(kind)) return label;
+  }
+  return '기타';
+}
+function dashAllowedSeason(season) {
+  return !filter.season.size || [...filter.season].some(opt=>opt.split('+').includes(season));
+}
+function dashKnownMethods(rows) {
+  const result = [], seen = new Set();
+  rows.forEach(({s,d}) => {
+    dashTypesFor(s,d).forEach(({season,group,t,ref,ri,ti}) => {
+      if ((ref && !dashState.includeReference) || !dashAllowedSeason(season)) return;
+      const quota = dashNumber(t.quota);
+      if (quota === null) return;
+      const method = dashMethod(t);
+      // 학부·공동모집이 여러 학과에 같은 인원으로 반복된 경우 중복 집계 방지
+      const key = dashIsShared(d) ? [s.id,season,ri,t.title||'',t.name||'',quota,method].join('|') : [s.id,d.name,season,ri,ti].join('|');
+      if (seen.has(key)) return;
+      seen.add(key);
+      result.push({method, quota, season, title:[t.title,t.name].filter(Boolean).join(' · ') || '전형명 미입력', school:s.name, dept:d.name, ref});
+    });
+  });
+  return result;
+}
+function dashSeasonQuota(g, season) {
+  const exact = dashNumber(g && g.quota);
+  if (exact !== null) return {n:exact, by:'총인원'};
+  if (!g) return {n:null, by:'미확인'};
+  const rounds = season === '수시' && Array.isArray(g.rounds) && g.rounds.length ? g.rounds : [g];
+  // 상위 정원이 없을 때만 각 차수 인원의 합계를 사용합니다.
+  let sum=0;
+  for (const r of rounds) {
+    const rn = dashNumber(r.quota);
+    if (rn !== null) {sum+=rn;continue;}
+    if (!Array.isArray(r.types) || !r.types.length) return {n:null,by:'미확인'};
+    const nums = r.types.map(t=>dashNumber(t.quota));
+    if (nums.some(x=>x===null)) return {n:null,by:'미확인'};
+    sum += nums.reduce((a,b)=>a+b,0);
+  }
+  return {n:sum,by:'차수·전형 합계'};
+}
+function dashSeasonData(rows) {
+  const totals={'수시':0,'정시':0}, unknown={'수시':0,'정시':0};
+  const counted={'수시':0,'정시':0};
+  const seen = new Set();
+  rows.forEach(({s,d}) => {
+    for (const [season,field] of [['수시','susi'],['정시','jeongsi']]) {
+      const g=d.adm[field] || {};
+      if (g.reference && !dashState.includeReference) continue;
+      if (!groupHas(g)) continue;
+      const v=dashSeasonQuota(g,season);
+      if (v.n===null) {unknown[season]++;continue;}
+      const key = dashIsShared(d) ? [s.id,season,'공동',String(d.quota||'').trim(),String(g.quota||'').trim()].join('|') : [s.id,d.name,season].join('|');
+      if (seen.has(key)) continue;
+      seen.add(key);
+      totals[season] += v.n;
+      counted[season]++;
+    }
+  });
+  return {totals,unknown,counted};
+}
+function dashAvailableEvents(list) {
+  const seen = new Set();
+  return buildEvents(list).filter(e=> {
+    if ((e.ref && !dashState.includeReference) || !dashAllowedSeason(e.season)) return false;
+    // 같은 학과의 같은 날짜·종류 일정이 여러 전형에 반복되는 현상을 제거
+    const key=[e.sid,e.did,e.kind,toStr(e.start),toStr(e.end)].join('|');
+    if (seen.has(key)) return false;
+    seen.add(key);return true;
+  });
+}
+function dashUpcomingPanel(events) {
+  const today = dashToday();
+  const kindOK = e=>dashState.ddayKind==='전체' || e.kind===dashState.ddayKind || dashState.ddayKind==='실기·면접' && (e.kind==='실기'||e.kind==='면접');
+  const upcoming=events.filter(e=>e.end>=today && kindOK(e)).map(e=> {
+    const target=e.kind==='접수'?e.end:(e.start<today?e.end:e.start);
+    return {...e, target, diff:dashDayDiff(target,today), ongoing:e.start<=today&&e.end>=today};
+  }).sort((a,b)=>a.target-b.target || a.kind.localeCompare(b.kind,'ko'));
+  const soon=events.filter(e=>e.kind==='접수' && e.end>=today && dashDayDiff(e.end,today)<=7).length;
+  const dateLabel=e=>e.kind==='접수'?(e.diff===0?'오늘 마감':`마감 D-${e.diff}`):(e.ongoing?(e.diff===0?'오늘 종료':`종료 D-${e.diff}`):(e.diff===0?'D-DAY':`D-${e.diff}`));
+  const kinds=['전체','접수','실기·면접','발표'];
+  const kindsHtml=kinds.map(k=>`<button type="button" class="dash-mini-chip" data-dday-kind="${k}" aria-pressed="${dashState.ddayKind===k}">${k==='접수'?'접수 마감·시작':k==='발표'?'합격 발표':k}</button>`).join('');
+  const lines=upcoming.slice(0,9).map(e=>`<button type="button" class="dash-event" data-dash-date="${toStr(e.target)}" data-dash-kind="${e.kind}" title="달력에서 이 일정 확인하기">
+      <span class="dash-event-day">${dateLabel(e)}</span>
+      <span class="dash-event-copy"><b>${dashEsc(e.school)}</b><small>${dashEsc(e.title)} · <span class="dash-date">${dashFmtDate(e.start)}${+e.end>+e.start?' ~ '+dashFmtDate(e.end):''}</span>${e.ongoing?' · 진행 중':''}</small></span>
+      <span class="dash-kind" style="--kind:${KINDS[e.kind]||'#6b7280'}">${e.kind}</span></button>`).join('');
+  return `<section class="dcard"><h3>다가오는 입시 일정 · D-day</h3><p class="du">접수·시험·발표 일정을 가까운 순서로 표시합니다. 클릭하면 달력에서 확인할 수 있어요.</p>
+    <div class="dash-submetric">7일 이내 마감되는 접수 일정 <b>${dashNum(soon)}건</b> · 앞으로의 ${dashState.ddayKind==='전체'?'전체':dashState.ddayKind} 일정 <b>${dashNum(upcoming.length)}건</b></div>
+    <div class="dash-inline-chips" role="group" aria-label="다가오는 일정 종류 선택">${kindsHtml}</div>
+    ${lines?`<div class="dash-events">${lines}</div>`:'<p class="dash-empty">현재 선택한 조건에서 앞으로 예정된 일정이 없습니다. 이전 학년도 참고 일정 포함 여부도 확인해 보세요.</p>'}</section>`;
+}
+function dashCollisionPanel(events) {
+  const today = dashToday(), perDay = new Map();
+  events.filter(e=>e.kind==='실기'||e.kind==='면접').forEach(e=> {
+    // 복수 날짜 전형은 기간에 포함된 날짜별로 충돌 가능성을 살펴봅니다.
+    const len=Math.max(1,Math.min(31,Math.round((e.end-e.start)/dashDayMs)+1));
+    for(let i=0;i<len;i++) {
+      const dt=new Date(e.start);dt.setDate(dt.getDate()+i);
+      if(dt<today) continue;
+      const key=toStr(dt), entry=perDay.get(key)||{date:dt,schools:new Map()};
+      if(!entry.schools.has(e.sid)) entry.schools.set(e.sid,[]);
+      entry.schools.get(e.sid).push(e);
+      perDay.set(key,entry);
+    }
+  });
+  const collisions=[...perDay.values()].filter(x=>x.schools.size>=2).sort((a,b)=>a.date-b.date);
+  const h=collisions.slice(0,8).map(c=> {
+    const sch=[...c.schools.values()].map(arr=>arr[0].school.split('·')[0]);
+    return `<button type="button" class="dash-collision" data-dash-date="${toStr(c.date)}" data-dash-kind="전체" title="이 날짜의 실기·면접 일정 달력에서 보기">
+      <span class="dash-event-day">${c.date.getMonth()+1}/${c.date.getDate()}<br><small>${dashWeekDay(c.date)}</small></span>
+      <span class="dash-collision-info"><b>${dashFmtDate(c.date)} · 실기/면접 중복</b><small>${dashEsc(sch.slice(0,3).join(' · '))}${sch.length>3?' 외 '+(sch.length-3)+'개교':''}</small></span>
+      <span class="dash-count-pill">${c.schools.size}개교</span></button>`;
+  }).join('');
+  return `<section class="dcard"><h3>실기·면접 일정 중복 확인</h3><p class="du">서로 다른 대학 2곳 이상의 실기·면접 날짜가 겹치는 날을 보여줍니다. 같은 학교의 여러 학과는 1개교로 계산합니다.</p>
+    <div class="dash-submetric">앞으로 겹치는 날짜 <b>${collisions.length}일</b> · 날짜를 누르면 달력 이동</div>
+    ${h||'<p class="dash-empty">현재 조건의 향후 일정에서 서로 다른 대학 간 겹치는 날짜가 확인되지 않았습니다.</p>'}
+    <p class="dash-analytic-note">고사 시간이 확인되지 않아 실제 응시 불가능 여부를 확정한 것은 아닙니다. 최종 장소·시간은 각 대학 모집요강을 확인하세요.</p></section>`;
+}
+function dashBar(label,value,max,color,meta='') {
+  return `<div class="dash-baritem"><div class="dash-barhead"><span>${dashEsc(label)}</span><b>${dashNum(value)}명</b></div>
+    <div class="dash-bartrack" role="img" aria-label="${dashEsc(label)} ${dashNum(value)}명"><span class="dash-barfill" style="--dashbar:${color};width:${Math.max(0,Math.min(100,max?value/max*100:0)).toFixed(2)}%"></span></div>
+    ${meta?`<div class="quota-bar-note">${dashEsc(meta)}</div>`:''}</div>`;
+}
+function dashMethodPanel(rows) {
+  const ms=dashKnownMethods(rows), keys=['학생부','실기','면접','수능','논술','서류','기타'];
+  const colors=['#2f6fed','#e8336d','#f5a623','#1f9d6b','#0e8f9c','#677589','#9ca3af'];
+  const stats=keys.map((k,i)=>({k,color:colors[i], n:ms.filter(r=>r.method===k).reduce((a,b)=>a+b.quota,0),count:ms.filter(r=>r.method===k).length}));
+  const max=Math.max(...stats.map(x=>x.n),1), total=stats.reduce((a,b)=>a+b.n,0);
+  const bars=stats.map(x=>`<button class="dash-interactive-row" type="button" data-dash-method="${x.k}" aria-pressed="${dashState.methodDetail===x.k}">
+    <div class="dash-barhead"><span>${x.k==='기타'?'기타·미분류':x.k} 중심</span><b>${dashNum(x.n)}명</b></div>
+    <div class="dash-bartrack"><span class="dash-barfill" style="--dashbar:${x.color};width:${(x.n/max*100).toFixed(2)}%"></span></div>
+    <div class="quota-bar-note">인원이 확인된 전형 ${x.count}건 · 클릭하여 세부 확인</div></button>`).join('');
+  const detail=ms.filter(x=>x.method===dashState.methodDetail).sort((a,b)=>b.quota-a.quota).slice(0,24);
+  const detailHtml=dashState.methodDetail?`<div class="dash-group-list"><b style="font-size:12px">${dashEsc(dashState.methodDetail)} 중심 전형 예시</b>
+    ${detail.map(r=>`<p>${dashEsc(r.school)} · ${dashEsc(r.dept)} <b>${r.quota}명</b><br><span style="color:var(--sub)">${dashEsc(r.title)} (${r.season})</span></p>`).join('')||'<p>확인된 전형 없음</p>'}</div>`:'';
+  return `<section class="dcard"><h3>전형방법별 모집인원</h3><p class="du">전형별 확인 모집인원을 학생부·실기·면접·수능 등 <b>가장 큰 평가 비중</b> 기준으로 한 번씩 분류합니다.</p>
+    <div class="dash-submetric">전형별 확인 인원 합계 <b>${dashNum(total)}명</b> · ${dashNum(ms.length)}개 전형</div>
+    ${bars}${detailHtml}<p class="dash-analytic-note">모집인원이 없거나 ‘수시 이월’ 등 변동 인원은 제외합니다. 학부 공동모집 중 중복으로 식별되는 전형은 1회만 합산합니다. 전형명만으로 분류한 자료도 포함될 수 있습니다.</p></section>`;
+}
+function dashSeasonPanel(rows) {
+  const {totals,unknown,counted}=dashSeasonData(rows), su=totals['수시'], je=totals['정시'], all=su+je;
+  const pct=all?su/all*100:0;
+  const vals=[['수시',su,'#2f6fed'],['정시',je,'#e8336d']];
+  return `<section class="dcard"><h3>수시·정시 모집인원 비교</h3><p class="du">각 학과의 수시·정시 전체 인원을 기준으로 합산해 같은 모집단위 내 전형별 중복을 줄였습니다.</p>
+    <div class="dash-submetric">모집인원 확인분 합계 <b>${dashNum(all)}명</b></div>
+    <div class="dash-season-bar" role="img" aria-label="수시 ${dashNum(su)}명, 정시 ${dashNum(je)}명">
+      ${su?`<i style="width:${pct}%;background:#2f6fed"></i>`:''}${je?`<i style="width:${100-pct}%;background:#e8336d"></i>`:''}</div>
+    <div class="dash-season-stats">${vals.map(([name,v,color])=>`<div class="dash-season-stat"><small><i class="dot" style="background:${color}"></i>${name}</small>
+      <strong>${dashNum(v)}<span style="font-size:12px;font-weight:400">명</span></strong>
+      <em style="color:${color}">${all?(v/all*100).toFixed(1)+'%':'—'}</em><small>인원 확인 ${counted[name]}개 모집단위</small></div>`).join('')}</div>
+    <p class="dash-analytic-note">수시 ${unknown['수시']}개, 정시 ${unknown['정시']}개 모집단위의 인원은 미확인으로 합계에서 제외했습니다. ‘통합/공동 모집’은 독립 학과 인원이 아닐 수 있으며, 모집인원이 불명확한 값은 계산하지 않았습니다.</p></section>`;
+}
+const dashPracticalPatterns = [
+  ['칸만화',/칸\s*만화|컷\s*만화/i],
+  ['상황표현',/상황\s*표현|상황\s*연출/i],
+  ['기초디자인',/기초\s*디자인/i],
+  ['사고의 전환',/사고의\s*전환/i],
+  ['스토리보드',/스토리\s*보드|이미지\s*보드|콘티/i],
+  ['발상과 표현',/발상과\s*표현/i],
+  ['드로잉·소묘',/드로잉|소묘|정물화|인체\s*묘사|인체\s*소묘/i],
+  ['포트폴리오',/포트폴리오|포폴/i],
+  ['영상·애니메이션',/영상\s*제작|애니메이션\s*제작|영상\s*편집|영상\s*기획|영상\s*표현/i]
+];
+function dashPracticalData(rows) {
+  const counts=new Map(dashPracticalPatterns.map(([name])=>[name,[]]));
+  counts.set('기타·미분류 실기',[]);
+  rows.forEach(({s,d,key})=> {
+    const ts=dashTypesFor(s,d).filter(x=>dashState.includeReference||!x.ref);
+    const relevant=ts.filter(({t})=> dashPart(t.ratio,'practical')>0 || (t.stages||[]).some(st=>st.kind==='실기'||dashPart(st.ratio,'practical')>0) ||
+      /(^|[^비])실기\s*(전형|위주|고사|평가)/.test([t.title,t.name,t.category].join(' ')) );
+    if (!relevant.length && !(d.adm.track||[]).includes('실기')) return;
+    const text=[d.adm.practical || '',...relevant.flatMap(({t})=>[t.title,t.name,t.process,t.description,t.note,...(t.stages||[]).flatMap(st=>[st.method,st.note])])].join(' ');
+    let matched=false;
+    for (const [name,regex] of dashPracticalPatterns) if(regex.test(text)) {
+      counts.get(name).push({school:s.name,dept:d.name,key});matched=true;
+    }
+    if(!matched) counts.get('기타·미분류 실기').push({school:s.name,dept:d.name,key});
+  });
+  return [...counts.entries()].map(([name,depts])=>({name,items:depts,count:depts.length})).sort((a,b)=>b.count-a.count);
+}
+function dashPracticalPanel(rows) {
+  const cats=dashPracticalData(rows), max=Math.max(1,...cats.map(c=>c.count));
+  const palette=['#e8336d','#2f6fed','#7352b1','#0e8f9c','#f59e0b','#17a473','#ce7691','#9164ce','#63778b','#aeb6c2'];
+  const bars=cats.map((c,i)=>`<button type="button" class="dash-interactive-row" data-dash-practical="${dashEsc(c.name)}" aria-pressed="${dashState.practicalDetail===c.name}">
+    <div class="dash-barhead"><span>${dashEsc(c.name)}</span><b>${dashNum(c.count)}개 학과</b></div>
+    <div class="dash-bartrack"><span class="dash-barfill" style="--dashbar:${palette[i%palette.length]};width:${(c.count/max*100).toFixed(2)}%"></span></div></button>`).join('');
+  const selected=cats.find(c=>c.name===dashState.practicalDetail);
+  const details=selected?`<div class="dash-group-list"><b style="font-size:12px">${dashEsc(selected.name)} · ${selected.count}개 학과</b>
+    ${selected.items.slice(0,30).map(x=>`<p>${dashEsc(x.school)} · ${dashEsc(x.dept)}</p>`).join('')||'<p>입력 자료 없음</p>'}</div>`:'';
+  return `<section class="dcard"><h3>실기 유형별 분포</h3><p class="du">모집요강의 실기 내용·방법 설명에서 유형을 추출해 해당 실기를 언급한 학과 수를 집계합니다.</p>
+    ${bars}${details}<p class="dash-analytic-note">한 학과가 여러 실기과목을 제시하면 여러 항목에 포함됩니다. ‘학과 수’로 집계하므로 각 유형의 수치를 합산하면 중복됩니다. 텍스트에서 식별할 수 없는 항목은 기타로 표시합니다.</p></section>`;
+}
+function dashComparePanel(rows) {
+  const available = new Map(rows.map(x=>[x.key,x]));
+  if (!dashState.compareTouched && !dashState.compareKeys.length) dashState.compareKeys = [...available.keys()].slice(0,3);
+  const selected=dashState.compareKeys.map(k=>available.get(k)).filter(Boolean).slice(0,4);
+  const keys=new Set(selected.map(x=>x.key));
+  const optionHtml=rows.filter(x=>!keys.has(x.key)).map(x=>`<option value="${x.key}">${dashEsc(x.s.name)} · ${dashEsc(x.d.name)}</option>`).join('');
+  const opts=`<option value="">대학·학과를 선택해 추가하세요 (${selected.length}/4)</option>` + optionHtml;
+  const row=(label,fn)=>`<tr><th scope="row">${label}</th>${selected.map(x=>`<td>${fn(x)||'—'}</td>`).join('')}</tr>`;
+  const su=x=>x.d.adm.susi || {}, je=x=>x.d.adm.jeongsi || {};
+  const qText=q=>dashEsc(String(q||'').trim() || '미확인');
+  const mainMethod=x=>{
+    const names=[...new Set(dashTypesFor(x.s,x.d).filter(t=>dashState.includeReference||!t.ref).map(({t,season})=>`${season} ${dashMethod(t)} 중심`))];
+    return names.slice(0,5).map(dashEsc).join('<br>')+(names.length>5?'<br>외 '+(names.length-5)+'개 유형':'') || '전형방법 미입력';
+  };
+  const getExam=x=>{
+    const ts=dashAvailableEvents([x.s]).filter(e=>e.did===x.did&&(e.kind==='실기'||e.kind==='면접'));
+    return ts.sort((a,b)=>a.start-b.start).slice(0,5).map(e=>`<span class="dash-kind" style="--kind:${KINDS[e.kind]}">${e.kind}</span> ${dashFmtDate(e.start)}${+e.end>+e.start?' ~ '+dashFmtDate(e.end):''}`).join('<br>')||'일정 미확인';
+  };
+  const header=`<thead><tr><th scope="col">비교 항목</th>${selected.map(x=>`<th scope="col">${dashEsc(x.s.name)}<br><small>${dashEsc(x.d.name)}</small></th>`).join('')}</tr></thead>`;
+  const table=selected.length?`<div class="dash-compare-scroller" role="region" aria-label="선택한 학과 비교표" tabindex="0"><table class="dash-compare-table">${header}<tbody>
+    ${row('지역·유형',x=>dashEsc(x.s.region+' · '+x.s.type))}
+    ${row('전체 정원',x=>qText(x.d.quota))}
+    ${row('수시 모집인원',x=>qText(su(x).quota))}
+    ${row('정시 모집인원',x=>qText(je(x).quota))}
+    ${row('지원 전형',mainMethod)}
+    ${row('실기·면접일',getExam)}
+    ${row('실기·평가 참고',x=>dashEsc(x.d.adm.practical || '자료 미입력').slice(0,330))}
+    ${row('입학처',x=>{const url=x.d.adm.admissionUrl||'';return /^https?:\/\//.test(url)?`<a href="${dashEsc(url)}" target="_blank" rel="noopener noreferrer">공식 입학처</a>`:'주소 미입력';})}
+    </tbody></table></div>`:'<p class="dash-empty">비교할 학과를 선택하세요.</p>';
+  const selectedHtml=selected.map(x=>`<span class="dash-selected">${dashEsc(x.s.name)} · ${dashEsc(x.d.short||x.d.name)} <button type="button" data-dash-compare-remove="${x.key}" aria-label="${dashEsc(x.s.name)} ${dashEsc(x.d.name)} 비교 제외">×</button></span>`).join('');
+  return `<section class="dcard dash-wide" style="margin-top:12px"><h3>대학·학과 비교표</h3><p class="du">현재 학교 검색·필터 결과에서 학과를 최대 4개까지 선택해 모집인원·평가방식·실기·면접일을 나란히 비교합니다.</p>
+    <div class="dash-compare-tools"><select data-dash-compare-add aria-label="비교할 대학·학과 추가" ${selected.length>=4?'disabled':''}>${opts}</select>
+    <button type="button" class="cal-btn" data-dash-compare-clear="1">선택 초기화</button></div>
+    <div class="dash-compare-selection">${selectedHtml}</div>${table}
+    <p class="dash-analytic-note">표는 입력된 원본 정보를 비교합니다. 통합모집 정원은 해당 학과 단독 모집인원이 아니며, 빈 값은 미확인입니다. 공식 모집요강에서 최신 정보를 다시 확인하세요.</p></section>`;
+}
+
+
 function renderDash() {
   const box = document.getElementById("dash");
-  const list = filtered(), depts = list.flatMap(s => s.depts.filter(d => deptPass(d)));
+  const list = filtered(), rows=dashDepartmentRows(list), depts=rows.map(x=>x.d);
   const f = dashFacets();
-  const anyFilter = filter.q || ["region", "type", "category", "season", "track"].some(k => filter[k].size);
-  const kpi = (l, v, sub) => `<div class="kpi"><div class="kl">${l}</div><div class="kv">${v}</div>${sub ? `<div class="ks">${sub}</div>` : ""}</div>`;
+  const events=dashAvailableEvents(list);
+  const anyFilter=filter.q || ["region","type","category","season","track"].some(k=>filter[k].size);
+  const kpi=(l,v,sub)=>`<div class="kpi"><div class="kl">${l}</div><div class="kv">${v}</div>${sub?`<div class="ks">${sub}</div>`:''}</div>`;
   box.innerHTML = `
-    <div class="dhead">
-      <h2>대시보드</h2>
-      <span class="dsub">필터와 연동돼요. 그래프를 누르면 필터가 적용돼요.</span>
-      ${anyFilter ? '<button type="button" class="cal-btn" data-reset="1">필터 모두 해제</button>' : ""}
+    <div class="dash-hero">
+      <div class="dhead"><h2>대학 입시정보 대시보드</h2></div>
+      <div class="dsub">입시 일정부터 전형별 인원과 학과별 비교까지. 아래 수치는 업로드된 대학 자료와 왼쪽 검색·필터에 따라 갱신됩니다.</div>
+      <div class="dash-controls">
+        <label class="dash-check"><input type="checkbox" data-dash-ref="1" ${dashState.includeReference?'checked':''}> 이전 학년도 참고자료도 포함</label>
+        ${anyFilter?'<button type="button" class="cal-btn" data-reset="1">검색·필터 전체 해제</button>':''}
+        <span class="dsub">입력자료 기준일 ${dashEsc(CHECKED_AT||'미입력')}</span>
+      </div>
     </div>
     <div class="dkpis">
-      ${kpi("학교", list.length, `전체 ${SCHOOLS.length}개교 중`)}
-      ${kpi("학과", depts.length, "조건에 맞는 학과")}
-      ${kpi("수시가 있는 학과", depts.filter(d => (d.adm.seasons || []).includes("수시")).length)}
-      ${kpi("정시가 있는 학과", depts.filter(d => (d.adm.seasons || []).includes("정시")).length)}
+      ${kpi('조회 중인 대학',dashNum(list.length)+'개교',`전체 ${SCHOOLS.length}개교`)}
+      ${kpi('조회 중인 학과',dashNum(depts.length)+'개','현재 검색·필터 기준')}
+      ${kpi('수시 정보 학과',depts.filter(d=>(d.adm.seasons||[]).includes('수시')).length+'개')}
+      ${kpi('정시 정보 학과',depts.filter(d=>(d.adm.seasons||[]).includes('정시')).length+'개')}
     </div>
-    <div class="dgrid">
-      ${dashBars("지역", "지역별 학교 수", "region", f.region)}
-      ${dashDonut("학교 유형", "유형별 학교 수", "type", f.type)}
-      ${dashBars("분야", "분야별 학교 수 (여러 분야를 가진 학교는 각각 포함)", "category", f.category, CAT_COLOR)}
-      ${dashBars("전형 시기", "학교 수", "season", f.season, SEASON_COLOR)}
-      ${dashBars("실기 여부", "학교 수", "track", f.track, TRACK_COLOR)}
-    </div>${quotaDashboard(list)}${competitionDashboard(list)}`;
+    <div class="dash-feature-grid">
+      ${dashUpcomingPanel(events)}
+      ${dashCollisionPanel(events)}
+    </div>
+    <div class="dash-intro"><h3>모집 전형 분석</h3><span>확인 가능한 모집인원과 실기 정보를 기준으로 집계</span></div>
+    <div class="dash-analytic-grid">
+      ${dashMethodPanel(rows)}
+      ${dashSeasonPanel(rows)}
+      ${dashPracticalPanel(rows)}
+    </div>
+    ${dashComparePanel(rows)}
+    <div class="dash-data-caution">통계는 현재 JSON의 입력 정보에 대한 요약이며 공식 대학 모집요강 자체가 아닙니다. 참고자료가 포함된 학과·학년도 혼재·통합모집·수시이월·모집인원 미확인 항목에 유의하세요. 2027학년도 최신 정보는 반드시 각 대학 입학처에서 확인하세요.</div>
+    <details class="dash-legacy" ${dashState.legacyOpen?'open':''} style="margin-top:18px">
+      <summary style="padding:12px 15px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer">기존 대시보드 통계 펼쳐 보기 · 지역, 학교 유형, 분야, 경쟁률, 정원</summary>
+      <div class="dgrid" style="margin-top:12px">
+        ${dashBars('지역','지역별 학교 수','region',f.region)}
+        ${dashDonut('학교 유형','유형별 학교 수','type',f.type)}
+        ${dashBars('분야','분야별 학교 수 (여러 분야에 속한 대학은 각각 포함)','category',f.category,CAT_COLOR)}
+        ${dashBars('전형 시기','학교 수','season',f.season,SEASON_COLOR)}
+        ${dashBars('실기 여부','학교 수','track',f.track,TRACK_COLOR)}
+      </div>
+      ${quotaDashboard(list)}${competitionDashboard(list)}
+    </details>`;
 }
+
+
+// 대시보드 내 필터와 이동·학과 비교 상호작용
+const dashNode = document.getElementById('dash');
+dashNode.addEventListener('change', e => {
+  if (e.target.matches('[data-dash-ref]')) {
+    dashState.includeReference = e.target.checked;
+    renderDash(); return;
+  }
+  if (e.target.matches('[data-dash-compare-add]')) {
+    const key=e.target.value;
+    if (!key || dashState.compareKeys.includes(key) || dashState.compareKeys.length>=4) return;
+    dashState.compareTouched=true;
+    dashState.compareKeys.push(key);
+    renderDash(); return;
+  }
+});
+dashNode.addEventListener('toggle', e=>{
+  if (e.target.matches && e.target.matches('.dash-legacy')) dashState.legacyOpen=e.target.open;
+},true);
+dashNode.addEventListener('click',e=>{
+  const btn=e.target.closest('button');
+  if (!btn) return;
+  if (btn.hasAttribute('data-dday-kind')) {
+    const v=btn.dataset.ddayKind;
+    dashState.ddayKind=dashState.ddayKind===v?'전체':v;
+    renderDash(); return;
+  }
+  if (btn.hasAttribute('data-dash-date')) {
+    const date=pd(btn.dataset.dashDate);
+    if(!date) return;
+    calY=date.getFullYear(); calM=date.getMonth();
+    calSel=toStr(date);
+    const kind=btn.dataset.dashKind;
+    calKind=kind==='전체'||kind==='실기·면접'?null:(KINDS[kind]?kind:null);
+    setView('cal');
+    document.getElementById('cal').scrollTop=0;
+    return;
+  }
+  if (btn.hasAttribute('data-dash-method')) {
+    const m=btn.dataset.dashMethod;
+    dashState.methodDetail=dashState.methodDetail===m?'':m;
+    renderDash(); return;
+  }
+  if (btn.hasAttribute('data-dash-practical')) {
+    const m=btn.dataset.dashPractical;
+    dashState.practicalDetail=dashState.practicalDetail===m?'':m;
+    renderDash(); return;
+  }
+  if (btn.hasAttribute('data-dash-compare-remove')) {
+    dashState.compareTouched=true;
+    dashState.compareKeys=dashState.compareKeys.filter(k=>k!==btn.dataset.dashCompareRemove);
+    renderDash(); return;
+  }
+  if (btn.hasAttribute('data-dash-compare-clear')) {
+    dashState.compareTouched=true;
+    dashState.compareKeys=[];
+    renderDash(); return;
+  }
+});
 
 document.getElementById("dash").addEventListener("click", e => {
   const bar = e.target.closest("[data-dim]");
