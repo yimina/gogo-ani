@@ -392,6 +392,36 @@
   .quota-detail summary { cursor:pointer; font-size:12px; font-weight:600; padding:4px 0 10px; }
   @media(max-width:650px) { .quota-overview { grid-template-columns:1fr; gap:12px; } .quota-block { padding:16px; } .quota-bar-label { font-size:11.5px; } }
 
+
+  /* 지역별 학교 수: 지도를 함께 보여주는 대시보드 */
+  .dash-region-card { grid-column:1 / -1; padding:16px 19px; }
+  .dash-region-title { display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:9px; }
+  .dash-region-title h3 { margin:0 0 3px; font-size:15px; }
+  .dash-region-hint { font-size:11px; color:var(--sub); }
+  .dash-region-body { display:grid; grid-template-columns:minmax(0,1fr) 245px; align-items:start; gap:18px; }
+  .dash-region-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:17px; row-gap:1px; }
+  .dash-region-list .brow { grid-template-columns:38px minmax(0,1fr) 28px; min-height:28px; padding:4px 2px; }
+  .dash-region-list .bl { font-size:11.5px; }
+  .dash-region-list .bn { font-size:11.5px; }
+  .dash-region-list .btr { height:10px; }
+  .dash-region-map-wrap { text-align:center; background:linear-gradient(170deg,#f2f7fc,#e9f1fb); border:1px solid #dce7f4; border-radius:11px; padding:4px 8px 9px; }
+  .dash-region-map { width:210px; height:293px; position:relative; margin:auto; }
+  .dash-region-map svg { display:block; width:100%; height:100%; }
+  .dash-region-map .dash-map-point { position:absolute; left:var(--map-x); top:var(--map-y); transform:translate(-50%,-50%); width:var(--map-size); height:var(--map-size); border:2px solid #fff; border-radius:50%; padding:0; background:#2f6fed; box-shadow:0 1px 5px rgba(15,43,82,.4); cursor:pointer; opacity:.88; }
+  .dash-region-map .dash-map-point:hover { z-index:3; transform:translate(-50%,-50%) scale(1.35); opacity:1; }
+  .dash-region-map .dash-map-point[aria-pressed="true"] { z-index:2; background:#e8336d; box-shadow:0 0 0 3px #f9bed2,0 1px 5px rgba(15,43,82,.4); opacity:1; }
+  .dash-region-map .dash-map-point.dim { opacity:.22; background:#8093b1; }
+  .dash-region-map .dash-map-point:focus-visible { outline:3px solid #e8336d; outline-offset:3px; z-index:5; }
+  .dash-region-map-guide { font-size:10.5px; line-height:1.5; color:#52657e; margin-top:-2px; }
+  @media (max-width:1120px) { .dash-region-body { grid-template-columns:minmax(0,1fr) 215px; gap:12px; } .dash-region-map { width:195px; height:272px; } }
+  @media (max-width:650px) {
+    .dash-region-card { padding:13px; }
+    .dash-region-body { grid-template-columns:1fr; }
+    .dash-region-list { max-height:240px; overflow-y:auto; scrollbar-gutter:stable; }
+    .dash-region-map-wrap { width:min(100%,300px); margin:auto; }
+    .dash-region-map { width:195px; height:272px; }
+  }
+
   /* 진학지도용 대시보드 2.0 — 기존 달력·지도·목록을 유지하는 추가 스타일 */
   .dash-hero { background:linear-gradient(115deg,#132540,#244e81); color:#fff; padding:20px 22px; margin:0 0 16px; border-radius:16px; box-shadow:0 6px 20px rgba(20,33,61,.09); }
   .dash-hero .dhead { margin:0 0 6px; }
@@ -1365,6 +1395,42 @@ function dashBars(title, unit, dim, rows, colors) {
   }).join("")}</section>`;
 }
 
+
+// 실제 한반도 남부 윤곽 위에 지역별 학교 위치를 점으로 표시합니다.
+// 위치는 각 시·도의 대표 좌표(대략적 중심)이며 지도는 분포를 이해하기 위한 개략도입니다.
+const DASH_REGION_POSITION = {
+  '서울':[126.978,37.567,-2,-6], '경기':[127.23,37.41,12,7], '인천':[126.705,37.458,-9,5],
+  '강원':[128.17,37.70,0,0], '충북':[127.68,36.77,4,-2], '충남':[126.80,36.52,-3,0],
+  '대전':[127.38,36.35,9,8], '세종':[127.29,36.54,-3,-8], '경북':[128.70,36.43,0,0],
+  '대구':[128.60,35.87,2,0], '울산':[129.30,35.54,5,-2], '부산':[129.07,35.18,7,8],
+  '경남':[128.25,35.43,0,0], '전북':[127.12,35.82,0,0], '광주':[126.85,35.16,8,-2],
+  '전남':[126.92,34.84,-5,10], '제주':[126.53,33.50,0,0]
+};
+function dashRegionCard(rows) {
+  const max=Math.max(1,...rows.map(r=>r[1]));
+  const active=filter.region.size>0;
+  const countMap=new Map(rows);
+  const bars=rows.map(([label,n])=>{
+    const on=filter.region.has(label);
+    return `<button type="button" class="brow${active&&!on?' dim':''}" data-dim="region" data-opt="${dashEsc(label)}" aria-pressed="${on}" title="${dashEsc(label)} ${n}개교">
+      <span class="bl">${dashEsc(label)}</span><span class="btr"><i class="bfill${n?'':' z'}" style="width:${n/max*100}%;--bc:#2f6fed"></i></span><span class="bn">${n}</span></button>`;
+  }).join('');
+  const dots=Object.entries(DASH_REGION_POSITION).filter(([name])=>countMap.has(name)).map(([name,p])=>{
+    const [lon,lat,dx,dy]=p;
+    const x=(lon-125.82)*66.4+dx, y=(38.73-lat)*59.1+dy;
+    const n=countMap.get(name), on=filter.region.has(name), size=8+Math.sqrt(n)*1.65;
+    return `<button type="button" class="dash-map-point${active&&!on?' dim':''}" data-dim="region" data-opt="${dashEsc(name)}" aria-label="${dashEsc(name)} ${n}개교, 지역 필터 선택" aria-pressed="${on}" title="${dashEsc(name)} · ${n}개교" style="--map-x:${(x/250*100).toFixed(2)}%;--map-y:${(y/342*100).toFixed(2)}%;--map-size:${size.toFixed(1)}px"></button>`;
+  }).join('');
+  return `<section class="dcard dash-region-card"><div class="dash-region-title"><div><h3>지역</h3><div class="du">지역별 학교 수</div></div><span class="dash-region-hint">막대 또는 지도 점을 누르면 지역별로 필터링됩니다.</span></div>
+    <div class="dash-region-body"><div class="dash-region-list">${bars}</div><div class="dash-region-map-wrap"><div class="dash-region-map">
+      <svg viewBox="0 0 250 342" role="img" aria-label="대한민국 지역별 학교 분포 개략도" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="dashMapLand" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d0e1f3"/><stop offset="100%" stop-color="#a6c7e6"/></linearGradient></defs>
+        <path d="M168.0,7.0 L225.3,76.7 L241.7,115.0 L242.2,183.1 L217.2,215.6 L157.1,226.9 L104.0,251.4 L44.2,256.5 L36.8,224.3 L49.1,180.0 L19.7,118.5 L69.1,108.5 L23.6,57.9 L27.7,52.6 L57.4,54.7 L83.2,28.0 L130.1,25.1 L158.4,21.3 L168.0,7.0 Z" fill="url(#dashMapLand)" stroke="#658eaf" stroke-width="2.2" stroke-linejoin="round" />
+        <ellipse cx="47.1" cy="309" rx="21" ry="8" transform="rotate(-17 47.1 309)" fill="url(#dashMapLand)" stroke="#658eaf" stroke-width="2.1"/>
+        <circle cx="244" cy="161" r="3" fill="#c3d9ec" stroke="#658eaf" stroke-width="1"/>
+      </svg>${dots}</div><div class="dash-region-map-guide">● 점 크기: 학교 수 · 클릭하여 지역 필터 선택</div></div></div></section>`;
+}
+
 function dashDonut(title, unit, dim, rows) {
   const total = rows.reduce((a, r) => a + r[1], 0), R = 40, C = 2 * Math.PI * R, active = filter[dim].size > 0;
   let off = 0;
@@ -1775,7 +1841,10 @@ function dashComparePanel(rows) {
   if (!dashState.compareTouched && !dashState.compareKeys.length) dashState.compareKeys = [...available.keys()].slice(0,3);
   const selected=dashState.compareKeys.map(k=>available.get(k)).filter(Boolean).slice(0,4);
   const keys=new Set(selected.map(x=>x.key));
-  const optionHtml=rows.filter(x=>!keys.has(x.key)).map(x=>`<option value="${x.key}">${dashEsc(x.s.name)} · ${dashEsc(x.d.name)}</option>`).join('');
+  // 대학명 가나다순, 동일 대학은 학과명 가나다순으로 정렬합니다.
+  const optionHtml=rows.filter(x=>!keys.has(x.key))
+    .sort((a,b)=>a.s.name.localeCompare(b.s.name,'ko-KR') || a.d.name.localeCompare(b.d.name,'ko-KR'))
+    .map(x=>`<option value="${x.key}">${dashEsc(x.s.name)} · ${dashEsc(x.d.name)}</option>`).join('');
   const opts=`<option value="">대학·학과를 선택해 추가하세요 (${selected.length}/4)</option>` + optionHtml;
   const row=(label,fn)=>`<tr><th scope="row">${label}</th>${selected.map(x=>`<td>${fn(x)||'—'}</td>`).join('')}</tr>`;
   const su=x=>x.d.adm.susi || {}, je=x=>x.d.adm.jeongsi || {};
@@ -1830,10 +1899,10 @@ function renderDash() {
       ${kpi('수시 정보 학과',depts.filter(d=>(d.adm.seasons||[]).includes('수시')).length+'개')}
       ${kpi('정시 정보 학과',depts.filter(d=>(d.adm.seasons||[]).includes('정시')).length+'개')}
     </div>
-    <section class="dash-existing-stats" aria-label="기존 대시보드 통계">
-      <div class="dash-intro"><h3>기존 대시보드 통계</h3><span>지역·학교 유형·분야·경쟁률·정원</span></div>
+    <section class="dash-existing-stats" aria-label="통계">
+      <div class="dash-intro"><h3>통계</h3><span>지역·학교 유형·분야·경쟁률·정원</span></div>
       <div class="dgrid">
-        ${dashBars('지역','지역별 학교 수','region',f.region)}
+        ${dashRegionCard(f.region)}
         ${dashDonut('학교 유형','유형별 학교 수','type',f.type)}
         ${dashBars('분야','분야별 학교 수 (여러 분야에 속한 대학은 각각 포함)','category',f.category,CAT_COLOR)}
         ${dashBars('전형 시기','학교 수','season',f.season,SEASON_COLOR)}
