@@ -26062,7 +26062,7 @@
         ]
       ]
     },
-      {
+    {
       "name": "동명대학교",
       "type": "4년제",
       "region": "부산",
@@ -26540,6 +26540,530 @@
         [
           "공식2027정시 모집요강 PDF",
           "https://www.tu.ac.kr/cms/etcResourceDown.do?key=%24cms%24JYBwFghg1g+gTABjgNgQTgIzJgKwKYD2AdgOYDOwAdCACYBmQA&site=%24cms%24JYBwFghg1kA"
+        ]
+      ]
+    },
+      {
+      "name": "동서대학교",
+      "type": "4년제",
+      "region": "부산",
+      "address": "부산광역시 사상구 주례로 47",
+      "url": "https://www.dongseo.ac.kr",
+      "short": "동서대",
+      "departments": [
+        {
+          "name": "계열3(게임·애니메이션·웹툰)",
+          "short": "게임·애니·웹툰",
+          "quota": "234명",
+          "category": [
+            "만화",
+            "애니메이션",
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.dongseo.ac.kr",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "수시 정원내 229명(학생부교과·면접·학생부종합·실기·포트폴리오), 정시 가군 정원내 실기 5명(수능 20%+실기 80%).",
+            "practical": "수시 실기: 기초디자인·상황표현·칸만화 중 1개 선택, 4절지 4시간. 수시 포트폴리오: 개인 창작물 15~20매(A2~A4), 10MB 이하 ZIP 제출 후 질의응답·실기테스트. 정시 실기: 같은 3종목 중 1개 선택, 4절지 4시간.",
+            "note": "2027학년도 웹툰학과·영상애니메이션학과·게임학과는 각각 개별 모집하지 않고 계열3으로 통합 선발. 표시한 수시 229명+정시 5명은 계열3 공동 정원내 최초 모집인원이며 각 전공별 인원이 아님. 특성화고는 수시 일반계교과 전형 지원 불가, 특성화교과 등 다른 전형은 세부 자격 충족 시 지원 가능. 정원외 전형은 모두 제외함.",
+            "susi": {
+              "reference": false,
+              "quota": "229명",
+              "note": "2027학년도 계열3(게임·애니메이션·웹툰) 통합 모집. 정원외 전형 제외. 모든 정원내 전형 수능최저학력기준 없음. 합격자 발표는 전형별로 11월 13일 또는 12월 18일이므로 각 전형 stages[].announce에 입력.",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "229명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "인터넷 원서접수, 2026-09-11 18:00 마감"
+                  },
+                  "announce": "",
+                  "note": "서류제출 2026-09-22 17:00까지. 전형별 합격 발표일 상이(전형 내 stages 확인). 최초 합격자 등록 2026-12-21~12-23.",
+                  "types": [
+                    {
+                      "title": "학생부교과",
+                      "name": "일반계교과",
+                      "short": "일반계교과",
+                      "quota": "36명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 100% 일괄합산",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "100%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "학생부교과 100% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "100%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 일반고·자율고·일부 특목고, 종합고 보통학과, 교육부인가 대안학교, 검정고시·외국고 출신 등. 특성화고·마이스터고·학력인정고·종합고 실업과정은 지원 불가 / 특성화고 지원: 불가"
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "고교생활우수자",
+                      "short": "고교우수",
+                      "quota": "24명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 90% + 출결 10% 일괄합산",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "90%",
+                            "gradeType": "교과",
+                            "attendance": "10%",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "학생부교과 90% + 출결 10% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "90%",
+                        "gradeType": "교과",
+                        "attendance": "10%",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 특성화고 지원: 가능 / 학생부 실질반영비율 88.9%, 출결 실질반영비율 11.1% / 출결 점수 최고 100점, 최저 90점"
+                    },
+                    {
+                      "title": "학생부면접",
+                      "name": "학생부면접",
+                      "short": "학생부면접",
+                      "quota": "14명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 70% + 비대면 면접 30% 일괄합산",
+                          "examDate": "2026-10-20",
+                          "examEnd": "2026-10-27",
+                          "announce": "2026-12-18",
+                          "kind": "면접",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "70%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": "30%"
+                          },
+                          "note": "비대면 면접 동영상 업로드: 2026-10-20~10-27 18:00"
+                        }
+                      ],
+                      "process": "학생부교과 70% + 비대면 면접 30% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "70%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": "30%"
+                      },
+                      "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 특성화고 지원: 가능 / 사전 공개된 질문 4개 이상 중 2개를 선택해 4분 이내로 녹화 / 출신 고교가 드러나는 교복 및 출신 고교 노출 시 면접 0점 처리 / 비대면 면접 동영상 업로드: 2026-10-20~10-27 18:00"
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "특성화교과",
+                      "short": "특성화교과",
+                      "quota": "10명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 100% 일괄합산",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "100%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "학생부교과 100% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "100%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 국내 특성화고·마이스터고·학력인정고 및 종합고 실업과정 졸업(예정)자 / 특성화고 지원: 가능 / 일반고·특목고·종합고 인문과정·검정고시·외국고 지원 불가"
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "사회기여배려자",
+                      "short": "사회배려",
+                      "quota": "3명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 100% 일괄합산",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "100%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "학생부교과 100% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "100%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 고졸(예정) 또는 동등 이상 학력자로서 모집요강의 사회기여·배려 대상자 세부 자격 중 하나를 충족하는 자 / 특성화고 지원: 가능(세부 자격 충족 시) / 국가보훈 교육지원 대상, 자립지원 대상, 기초생활수급자, 차상위계층 등 세부 유형별 증빙서류는 모집요강 확인 / 단순 고졸 자격만으로는 지원 불가"
+                    },
+                    {
+                      "title": "학생부종합",
+                      "name": "학생부종합",
+                      "short": "학종",
+                      "quota": "9명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "서류평가 100% 일괄합산",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "100%",
+                            "grade": "",
+                            "gradeType": "",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "서류평가 100% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "100%",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 특성화고 지원: 가능 / 학생부 서류를 토대로 인성·공동체역량 20%, 학업역량 30%, 진로역량 50%를 정성적·종합적으로 평가 / 수능최저 없음"
+                    },
+                    {
+                      "title": "실기전형",
+                      "name": "실기",
+                      "short": "실기",
+                      "quota": "123명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 20% + 실기 80% 일괄합산",
+                          "examDate": "2026-10-24",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "실기",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "20%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "80%",
+                            "interview": ""
+                          },
+                          "note": "수능최저학력기준 없음"
+                        }
+                      ],
+                      "process": "학생부교과 20% + 실기 80% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80%",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 특성화고 지원: 가능 / 실기종목: 기초디자인 / 상황표현 / 칸만화 중 원서접수 시 1개 선택 / 각 실기종목: 4절지, 4시간, 실기 800점 / 실기 결시자 불합격 / 동서디자인미술실기대회 특선 이상 수상자에게 규정에 따른 실기 가산점 가능"
+                    },
+                    {
+                      "title": "포트폴리오전형",
+                      "name": "포트폴리오",
+                      "short": "포트폴리오",
+                      "quota": "10명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": ""
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 20% + 포트폴리오 평가·질의응답·실기 테스트 80% 일괄합산",
+                          "examDate": "2026-10-31",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "실기",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "",
+                            "grade": "20%",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "80%",
+                            "interview": ""
+                          },
+                          "note": "포트폴리오 제출: 2026-09-22 17:00까지 / 지원자 다수인 경우 현장평가를 2026-11-01에 추가 실시할 수 있음"
+                        }
+                      ],
+                      "process": "학생부교과 20% + 포트폴리오 평가·질의응답·실기 테스트 80% 일괄합산",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "20%",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80%",
+                        "interview": ""
+                      },
+                      "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 특성화고 지원: 가능 / 개인 창작물 15~20매, A2~A4 / 원서접수 사이트에 ZIP 1개 파일(10MB 이내)로 업로드 / 출품 작품: 만화·웹툰·게임원화·일러스트레이션·캐릭터디자인·디지털이미지 등 / 포트폴리오 내용 관련 질의응답 및 실기 테스트 중심의 현장평가 / 현장평가에 제출한 포트폴리오 필수 지참(수작업은 원본 지참) / 포트폴리오(표지 포함) 내부 성명·수험번호 표기 금지 / 기한 내 제출하지 않거나 현장평가 결시 시 불합격 / 포트폴리오 제출: 2026-09-22 17:00까지 / 지원자 다수인 경우 현장평가를 2026-11-01에 추가 실시할 수 있음"
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "5명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "인터넷 접수, 2027-01-07 18:00 마감"
+              },
+              "announce": "2027-02-05",
+              "note": "수시 미충원 이월로 최종 정시 인원 변동 가능. 서류 제출 2027-01-11 17:00까지. 등록금 납부 2027-02-10~02-12.",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "실기",
+                  "short": "정시실기",
+                  "gun": "가군",
+                  "quota": "5명",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": ""
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": "전년도 경쟁률 미입력(원본 자료에 없음)"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 20% + 실기 80% 일괄합산",
+                      "examDate": "2027-01-14",
+                      "examEnd": "",
+                      "announce": "2027-02-05",
+                      "kind": "실기",
+                      "ratio": {
+                        "suneung": "20%",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80%",
+                        "interview": ""
+                      },
+                      "note": "실기고사: 4절지, 4시간. 기초디자인·상황표현·칸만화 중 택 1. 결시자는 불합격."
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80% 일괄합산",
+                  "ratio": {
+                    "suneung": "20%",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "80%",
+                    "interview": ""
+                  },
+                  "note": "지원자격: 고등학교 졸업(예정)자 또는 법령에 따라 동등 이상의 학력이 인정된 자 / 수능 미응시자 지원 가능(성적 산정 관련 대학 확인 권장) / 수시 이월에 따라 인원 변동 가능",
+                  "category": "실기",
+                  "description": "정시 가군 계열3(게임·애니메이션·웹툰) 정원내 실기전형. 수능 20% + 실기 80%."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "동서대학교 2027학년도 수시모집 안내",
+          "https://ipsi.dongseo.ac.kr/_Data/IpsiDataFiles/955dbf508258fae0e264d3ff13432a2f.pdf"
+        ],
+        [
+          "동서대학교 2027학년도 정시모집 안내",
+          "https://ipsi.dongseo.ac.kr/_Data/PDFData/08858517601a4dd3b60f13342d1d7e8e.pdf"
+        ],
+        [
+          "2027학년도 수시 모집요강 안내 공지",
+          "https://ipsi.dongseo.ac.kr/ipsi/?idx=1653&mode=view&pCode=inotice"
         ]
       ]
     }
