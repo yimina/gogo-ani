@@ -8803,7 +8803,7 @@
         "https://mogozip.com/daeip-info/editorial-guide-2027-susi-0003193"
       ]
     ]
-  },
+    },
     {
       "name": "계명대학교",
       "type": "4년제",
@@ -27373,6 +27373,263 @@
         [
           "2027학년도 부산경상대학교 모집계획 소개(국제신문)",
           "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20260823.22004007679"
+        ]
+      ]
+    },
+      {
+      "name": "인제대학교",
+      "type": "4년제",
+      "region": "경남",
+      "address": "경상남도 김해시 인제로 197",
+      "url": "https://www.inje.ac.kr",
+      "short": "인제대",
+      "departments": [
+        {
+          "name": "웹툰영상학과",
+          "short": "웹툰영상",
+          "quota": "15명",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://iphak.inje.ac.kr",
+            "track": [
+              "실기"
+            ],
+            "process": "2027학년도 정원내: 수시 실기전형 13명(학생부교과 20% + 실기 80%), 정시 다군 실기전형 2명(수능 20% + 실기 80%).",
+            "practical": "칸만화·상황표현·기초디자인 중 택1(4절지·4시간)은 2026학년도 공개 실기 종목 기준 참고이며, 2027학년도 세부 종목·지참도구는 반드시 공식 최신 모집요강에서 재확인. 2027학년도 수시 실기고사일은 2026-10-24.",
+            "note": "2027학년도 정원내 실기전형만 포함. 정원외 농어촌·기초생활 등 전형은 제외. 수시 실기 13명과 정시 다군 실기 2명을 합산한 모집계획상 15명. 실기 과목 설명은 전년도 요강 참고로 별도 구분.",
+            "susi": {
+              "reference": false,
+              "quota": "13명",
+              "note": "2027학년도 정원내 실기전형 13명. 수능최저학력기준 없음. 실기고사 장소·시간은 2026-09-22 14:00 안내.",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "13명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "원서접수 마감일 18:00. 대학 입학처 최종 확인"
+                  },
+                  "announce": "2026-11-20",
+                  "note": "최초 합격자 발표 14:00. 대학 공식 공지로 최종 확인",
+                  "types": [
+                    {
+                      "title": "실기/실적",
+                      "name": "실기전형",
+                      "short": "수시실기",
+                      "quota": "13명",
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": "2027 전년도 경쟁률 미입력"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부교과 20% + 실기 80%",
+                          "examDate": "2026-10-24",
+                          "examEnd": "",
+                          "announce": "2026-11-20",
+                          "kind": "실기",
+                          "ratio": {
+                            "document": "",
+                            "grade": "20",
+                            "gradeType": "교과",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "80",
+                            "interview": ""
+                          },
+                          "note": "2026-09-22 14:00 장소·시간 안내. 실기 종목·준비물은 2027 공식 모집요강 확인"
+                        }
+                      ],
+                      "process": "학생부교과 20% + 실기 80% 일괄합산",
+                      "ratio": {
+                        "document": "",
+                        "grade": "20",
+                        "gradeType": "교과",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "특성화고 졸업(예정)자 지원 가능. 정원내 실기전형. 수능최저 없음."
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "2명",
+              "apply": {
+                "start": "",
+                "end": "",
+                "note": "2027학년도 대학 공통 정시 원서접수는 2027-01-04~01-07 사이 3일 이상. 인제대 정확한 접수 시작·종료일은 개별 확인 필요"
+              },
+              "announce": "",
+              "note": "2027학년도 최초 계획상 정시 다군 실기전형 2명. 수시 이월에 따라 변동 가능. 실기고사일과 합격자 발표일은 대학별 2027학년도 정시 최종 공고 미확인.",
+              "types": [
+                {
+                  "title": "실기전형",
+                  "name": "실기",
+                  "short": "정시실기",
+                  "gun": "다군",
+                  "category": "실기",
+                  "quota": "2명",
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "수능 20% + 실기 80%",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "실기",
+                      "ratio": {
+                        "suneung": "20",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "실기 일정 및 실기 종목은 2027 정시 모집요강 확인"
+                    }
+                  ],
+                  "process": "수능 20% + 실기 80% 일괄합산",
+                  "ratio": {
+                    "suneung": "20",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "80",
+                    "interview": ""
+                  },
+                  "description": "웹툰영상학과 정시 다군 실기위주 선발",
+                  "note": "수능 3개 영역 응시자 지원 가능(2027학년도 전형평가기준). 수시 이월에 따라 실제 인원 변동 가능."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "인제대학교 입학처",
+          "https://iphak.inje.ac.kr"
+        ],
+        [
+          "대입정보포털 어디가 - 인제대학교 2027학년도 전형평가기준",
+          "https://www.adiga.kr/ucp/uvt/uni/univDetailSelection.do?menuId=PCUVTINF2000&searchSyr=2027&unvCd=0000164"
+        ],
+        [
+          "2027학년도 수시 실기고사 일정(모집요강 원문 발췌)",
+          "https://ipsi119.com/univ/133"
+        ],
+        [
+          "인제대학교 2027 정시 모집군 참조(전략자료)",
+          "https://www.scribd.com/document/1009582291/2027-%E1%84%83%E1%85%A2%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A3%E1%86%A8-%E1%84%90%E1%85%A1%E1%86%B8%E1%84%8C%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC"
+        ]
+      ]
+    },
+    {
+      "name": "제주관광대학교",
+      "type": "전문대학(2년제)",
+      "region": "제주",
+      "address": "제주특별자치도 제주시 애월읍 평화로 2715",
+      "url": "https://www.jtu.ac.kr",
+      "short": "제주관광대",
+      "departments": [
+        {
+          "name": "게임콘텐츠과",
+          "short": "게임콘텐츠",
+          "quota": "",
+          "category": [
+            "게임"
+          ],
+          "admission": {
+            "admissionUrl": "https://enter.jtu.ac.kr/admission/",
+            "track": [],
+            "process": "2027학년도 제주관광대학교 수시 1차·2차·정시 모집 일정은 확인. 게임콘텐츠과의 2027학년도 정원내 학과별 모집 여부·전형별 모집인원은 최신 공식 정원내 모집표를 직접 대조하지 못해 공란 처리함.",
+            "practical": "2027학년도 게임콘텐츠과 실기·면접 실시 여부는 학과별 모집요강으로 확인 필요. 수시 1차 대학 공통 면접 일정은 2026-10-10이나 이 학과의 면접 실시를 뜻하지 않음.",
+            "note": "주의: 2027학년도 제주관광대학교는 학과 명칭·모집인원 변경 공지(2026-06-02)를 게시함. 2026학년도 게임콘텐츠과 정원 20명 등의 수치를 2027학년도 모집인원으로 전용하지 않음. 2027학년도 모집 여부, 학과명 변경, 학과별 정원내 선발인원은 대학 입학처에 재확인 필요. 정원외 전형은 포함하지 않음.",
+            "susi": {
+              "reference": false,
+              "quota": "",
+              "note": "수시 1·2차 대학 공통 일정만 확인. 게임콘텐츠과 모집 여부·학과별 모집인원·실제 적용 전형은 확인 전이므로 미입력(0명 의미 아님).",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시 1차",
+                  "reference": false,
+                  "quota": "",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-30",
+                    "note": "인터넷 접수 마감일 24:00, 방문접수 마감일 18:00(대학 모집요강 안내)"
+                  },
+                  "announce": "2026-10-30",
+                  "note": "학교 공통 면접일 2026-10-10(해당 학과 적용 여부 미확인). 정원내 학과별 모집인원·전형 확인 전.",
+                  "types": []
+                },
+                {
+                  "round": 2,
+                  "label": "수시 2차",
+                  "reference": false,
+                  "quota": "",
+                  "apply": {
+                    "start": "2026-11-11",
+                    "end": "2026-11-25",
+                    "note": "학교 공통 원서접수 기간"
+                  },
+                  "announce": "2026-12-11",
+                  "note": "수시 2차 면접 미실시로 안내된 자료 있음. 전형별 평가 방법 및 게임콘텐츠과 실제 모집 여부 확인 필요.",
+                  "types": []
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-20",
+                "note": "전문대학 공통 정시 접수 기간(제주관광대학교 2027년 입학정보)"
+              },
+              "announce": "2027-01-29",
+              "note": "정시 학교 공통 일정으로, 게임콘텐츠과 모집 여부·정원내 배정인원은 공식 학과별 표 미확인. 공란은 0명 또는 미실시가 아님.",
+              "types": []
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "제주관광대학교 입학처 - 2027 모집요강",
+          "https://enter.jtu.ac.kr/admission/"
+        ],
+        [
+          "제주관광대학교 - 2027학년도 입학전형시행계획 변경 공지",
+          "https://enter.jtu.ac.kr/admission/sub.htm?mode=view&mv_data=aWR4PTMyMzI2JnN0YXJ0UGFnZT0wJmxpc3RObz01MyZ0YWJsZT1jc19iYnNfZGF0YSZuYXZfY29kZT1pcHMxNzMxOTk2MDgwJmNvZGU9bm90aWNlMDA2JnNlYXJjaF9pdGVtPSZzZWFyY2hfb3JkZXI9Jm9yZGVyX2xpc3Q9Jmxpc3Rfc2NhbGU9JnZpZXdfbGV2ZWw9JnZpZXdfY2F0ZT0mdmlld19jYXRlMj0%3D%7C%7C"
+        ],
+        [
+          "제주관광대학교 2027 모집일정(공식 요강 발췌)",
+          "https://ipsi119.com/univ/306"
+        ],
+        [
+          "제주관광대학교 2027 수시모집 요강 해설",
+          "https://mogozip.com/daeip-info/editorial-college-2027-susi-0000532"
         ]
       ]
     }
