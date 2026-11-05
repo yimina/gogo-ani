@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>만화, 애니메이션 대학 정보</title>
+<title>만애과 입시정보</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@
   .dept + .dept { margin-top: 2px; }
   .dept { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
   .ct { display: inline-block; font-size: 11px; font-weight: 700; line-height: 1.6; padding: 0 8px; border-radius: 999px; border: 1px solid currentColor; background: #fff; white-space: nowrap; }
-  .ct.c1 { color: #be185d; } .ct.c2 { color: #3b4ac6; } .ct.c3 { color: #0f766e; }
+  .ct.c1 { color: #be185d; } .ct.c2 { color: #3b4ac6; } .ct.c3 { color: #0f766e; } .ct.c4 { color: #9a3412; }
   .cts { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 8px; }
   .dq { font-size: 11.5px; font-weight: 700; color: #1d4fb8; background: #e6edff; border-radius: 999px; padding: 0 9px; white-space: nowrap; }
   /* 시험 · 발표 일정: 라벨(색 점) + 날짜가 줄 맞춰 정렬 */
@@ -566,8 +566,8 @@
 <div class="app">
   <aside>
     <header>
-      <h1><span>만화, 애니메이션 대학 정보</span></h1>
-      <p>전국 만화·애니메이션 관련 학과의 입시 일정과 위치를 한눈에 확인하세요</p>
+      <h1><span>만애과 입시정보</span></h1>
+      <p>전국 만화·애니메이션·게임·디자인 관련 학과의 입시 일정과 위치를 한눈에 확인하세요</p>
       <div class="search-actions">
         <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
         <button type="button" class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filterBox">필터 열기 ▾</button>
@@ -761,7 +761,7 @@ function buildChips(containerId, values, key) {
 function buildAllChips() {
   buildChips("regionFilters", [...new Set(SCHOOLS.map(s => s.region).filter(Boolean))], "region");
   buildChips("typeFilters", [...new Set(SCHOOLS.map(s => s.type).filter(Boolean))], "type");
-  buildChips("categoryFilters", ["만화", "애니메이션", "게임"], "category");
+  buildChips("categoryFilters", ["만화", "애니메이션", "게임", "디자인"], "category");
   buildChips("seasonFilters", ["수시", "정시", "수시+정시"], "season");
   buildChips("trackFilters", ["실기", "비실기", "실기+비실기"], "track");
 }
@@ -908,8 +908,8 @@ function quotaHtml(label, q, note) {            // 숫자는 크게, 단위(명)
   return `<div class="qt"><span class="ql">${label}</span><b class="qv">${val}</b>${note ? `<span class="qn">${note}</span>` : ""}</div>`;
 }
 
-const CAT_CLASS = { "만화": "c1", "애니메이션": "c2", "게임": "c3" };
-function catTags(d) {                     // 학과 분류 표시 (만화 · 애니메이션 · 게임)
+const CAT_CLASS = { "만화": "c1", "애니메이션": "c2", "게임": "c3", "디자인": "c4" };
+function catTags(d) {                     // 학과 분류 표시 (만화 · 애니메이션 · 게임 · 디자인)
   return (d.cats || []).map(c => `<span class="ct ${CAT_CLASS[c] || ""}">${c}</span>`).join("");
 }
 
@@ -1445,7 +1445,7 @@ document.getElementById("tabDash").onclick = () => setView("dash");
 
 /* ---------- 대시보드 ---------- */
 const DASH_PAL = ["#2f6fed", "#e8336d", "#1f9d6b", "#f59e0b", "#8b5e3c", "#334155", "#0e8f9c", "#8b5cf6", "#94a3b8"];
-const CAT_COLOR = { "만화": "#be185d", "애니메이션": "#3b4ac6", "게임": "#0f766e" };
+const CAT_COLOR = { "만화": "#be185d", "애니메이션": "#3b4ac6", "게임": "#0f766e", "디자인": "#9a3412" };
 const SEASON_COLOR = { "수시": "#2f6fed", "정시": "#1f9d6b", "수시+정시": "#14213d" };
 const TRACK_COLOR = { "실기": "#e8336d", "비실기": "#0e8f9c", "실기+비실기": "#14213d" };
 
@@ -1468,7 +1468,7 @@ function dashFacets() {                   // 항목마다 '다른 필터는 그�
   const dept = (dim, opts) => opts.map(o => [o, SCHOOLS.filter(s => schoolPass(s) && s.depts.some(d => deptPass(d, { [dim]: new Set([o]) }))).length]);
   return {
     region: school("region"), type: school("type"),
-    category: dept("category", ["만화", "애니메이션", "게임"]),
+    category: dept("category", ["만화", "애니메이션", "게임", "디자인"]),
     season: dept("season", ["수시", "정시", "수시+정시"]),
     track: dept("track", ["실기", "비실기", "실기+비실기"])
   };
@@ -1629,9 +1629,9 @@ function quotaDashboard(list) {
   const rows=quotaRecords(list), sums=quotaSummary(rows), esc=competitionEscape;
   const fmt=n=>n.toLocaleString('ko-KR')+'명';
   const colors={individual:'#247f99',shared:'#dfaa45',empty:'#eef2f6'};
-  const categoryData=['만화','애니메이션','게임'].map((cat,i)=>{
+  const categoryData=['만화','애니메이션','게임','디자인'].map((cat,i)=>{
     const selected=rows.filter(r=>r.cats.includes(cat)&&!r.shared);
-    return {label:cat,value:quotaSummary(selected).individual,count:selected.filter(r=>r.value!==null).length,color:['#247f99','#6e64b8','#43966d'][i]};
+    return {label:cat,value:quotaSummary(selected).individual,count:selected.filter(r=>r.value!==null).length,color:['#247f99','#6e64b8','#43966d','#9a3412'][i]};
   });
   const categoryMax=Math.max(...categoryData.map(r=>r.value),1);
   const bar=(value,max,color)=>`<div class="quota-track" aria-hidden="true"><span class="quota-fill" style="width:${Math.max(0,Math.min(100,value/max*100))}%;background:${color}"></span></div>`;
