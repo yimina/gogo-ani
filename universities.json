@@ -27412,7 +27412,7 @@
           "name": "영상디자인학과",
           "short": "영상디자인",
           "quota": "디자인계열 통합 137명",
-          "category": [],
+          "category": ["애니메이션"],
           "admission": {
             "admissionUrl": "https://goerica.hanyang.ac.kr",
             "track": [
