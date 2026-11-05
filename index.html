@@ -492,13 +492,72 @@
   .dash-data-caution { margin:12px 0 0; padding:10px 13px; background:#f8faff; border-left:3px solid #98acc8; border-radius:5px; font-size:11.5px; line-height:1.7; color:#526178; }
   @media(max-width:1100px) { .dash-feature-grid,.dash-analytic-grid{grid-template-columns:1fr;} }
   @media(max-width:650px) { .dash-hero{padding:16px;} .dash-season-stats{flex-direction:column;} .dash-feature-grid>.dcard,.dash-wide{padding:12px;} .dash-compare-tools select{min-width:100%;} }
-  @media(max-width:820px) {
-    /* 모바일에서 긴 대학 목록 때문에 대시보드가 화면 아래로 밀리지 않도록 제한 */
-    body.dash-mode aside { display:flex; flex-direction:column; max-height:340px; min-height:0; overflow:hidden; }
-    body.dash-mode aside header { flex:0 1 auto; overflow-y:auto; min-height:0; }
-    body.dash-mode aside .countbar { flex:0 0 auto; }
-    body.dash-mode aside ul { flex:1 1 auto; min-height:85px; overflow-y:auto; }
-    body.dash-mode aside .note { display:none; }
+
+
+  /* Responsive search, school list and always-visible list scroll indicator */
+  .search-actions { display:flex; flex-direction:column; align-items:stretch; }
+  .search-actions .ftoggle { align-self:flex-start; }
+  .list-viewport { position:relative; min-height:0; flex:1 1 auto; display:flex; overflow:hidden; }
+  .list-viewport #list { min-width:0; min-height:0; flex:1 1 auto; overflow-y:auto; }
+  .list-guide, .list-scroll-track { display:none; }
+
+  @media (max-width:820px) {
+    html, body { width:100%; max-width:100%; overflow-x:hidden; }
+    .app { width:100%; min-width:0; }
+    aside, body.dash-mode aside, body.cal-mode aside {
+      display:flex; flex-direction:column; flex:none; width:100%; height:auto;
+      max-height:none; min-height:0; overflow:visible; border-right:0;
+    }
+    aside header, body.dash-mode aside header, body.cal-mode aside header {
+      flex:none; overflow:visible; min-height:0; width:100%;
+      padding:15px 16px 13px; background:#fff;
+    }
+    aside h1 { font-size:clamp(23px, 6vw, 28px); line-height:1.25; letter-spacing:0; margin-bottom:6px; word-break:keep-all; }
+    aside header p { font-size:12px; line-height:1.5; margin-bottom:12px; word-break:keep-all; }
+    .search-actions { flex-direction:row; align-items:stretch; gap:8px; }
+    .search-actions .search { width:auto; flex:1 1 auto; min-width:0; height:44px; font-size:16px; padding:9px 11px; }
+    .search-actions .ftoggle { align-self:stretch; flex:0 0 auto; height:44px; margin-top:0; padding:8px 12px; min-width:95px; font-size:12.5px; font-weight:600; }
+    #filterBox.open { display:block; max-height:min(34svh, 290px); overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; margin-top:9px; padding:3px 3px 10px; border-top:1px solid var(--line); }
+    #filterBox .filters { gap:7px; }
+    #filterBox .chip { min-height:34px; padding:6px 11px; }
+    .countbar, body.dash-mode aside .countbar { flex:none; padding:10px 16px 8px; font-weight:700; background:#f8faff; }
+    .countbar .add-btn { padding:6px 11px; font-size:12px; }
+    .list-guide { display:block; padding:5px 16px; color:#586783; background:#f8faff; font-size:11px; border-bottom:1px solid #e4eaf3; }
+    .list-guide.is-empty { display:none; }
+    .list-viewport, body.dash-mode .list-viewport, body.cal-mode .list-viewport {
+      display:block; flex:none; width:100%; height:clamp(210px, 34svh, 340px); min-height:0;
+      background:#fff; border-bottom:1px solid var(--line); overflow:hidden;
+    }
+    .list-viewport #list, body.dash-mode .list-viewport #list, body.cal-mode .list-viewport #list {
+      width:100%; height:100%; max-height:none; min-height:0; padding:0 12px 0 0;
+      overflow-x:hidden; overflow-y:auto; overscroll-behavior-y:contain;
+      -webkit-overflow-scrolling:touch; scrollbar-gutter:stable;
+      scrollbar-width:thin; scrollbar-color:#718dbb #e6edf7;
+    }
+    .list-viewport #list::-webkit-scrollbar { width:9px; }
+    .list-viewport #list::-webkit-scrollbar-track { background:#e6edf7; border-radius:9px; }
+    .list-viewport #list::-webkit-scrollbar-thumb { background:#718dbb; border-radius:9px; border:2px solid #e6edf7; }
+    .list-viewport .list-scroll-track { display:block; position:absolute; z-index:2; top:8px; right:4px; bottom:8px; width:5px; background:#e6edf7; border-radius:6px; pointer-events:none; }
+    .list-viewport .list-scroll-thumb { display:block; position:absolute; top:0; left:0; width:100%; min-height:28px; border-radius:6px; background:#476da9; }
+    .list-viewport .list-scroll-track.is-empty { display:none; }
+    .list-viewport li > button { padding:12px 16px; }
+    .list-viewport .name { font-size:15px; }
+    .list-viewport .dept { font-size:12.5px; }
+    .list-viewport .addr { font-size:11.5px; }
+    aside .note { display:none; }
+    main, body.dash-mode main, body.cal-mode main { width:100%; min-width:0; }
+    .viewtabs { max-width:calc(100% - 20px); }
+    .vt { padding:8px 13px; }
+    .dash, .cal { min-width:0; }
+    .dash-hero .dhead h2 { font-size:21px; }
+    .dash-intro { flex-wrap:wrap; }
+  }
+  @media (max-width:360px) {
+    aside header { padding-left:12px; padding-right:12px; }
+    aside h1 { font-size:22px; }
+    .search-actions .ftoggle { min-width:86px; padding:6px 8px; font-size:12px; }
+    .countbar { padding-left:12px; padding-right:12px; }
+    .countbar .add-btn { font-size:11px; }
   }
 
 </style>
@@ -509,8 +568,10 @@
     <header>
       <h1><span>만화, 애니메이션 대학 정보</span></h1>
       <p>전국 만화·애니메이션 관련 학과의 입시 일정과 위치를 한눈에 확인하세요</p>
-      <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
-      <button type="button" class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filterBox">필터 열기 ▾</button>
+      <div class="search-actions">
+        <input id="q" class="search" type="search" placeholder="학교명, 학과, 지역 검색" aria-label="검색">
+        <button type="button" class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filterBox">필터 열기 ▾</button>
+      </div>
       <div id="filterBox">
       <div class="filters" id="regionFilters" role="group" aria-label="지역 필터"></div>
       <div class="filters" id="typeFilters" role="group" aria-label="학교 유형 필터"></div>
@@ -524,7 +585,11 @@
       </div>
     </header>
     <div class="countbar"><span id="count"></span><button type="button" class="add-btn" id="addOpen">＋ 대학 추가 요청</button></div>
-    <ul id="list"></ul>
+    <div class="list-guide" id="listGuide" aria-hidden="true">대학 목록 · 아래로 스크롤해서 더 보기 ↓</div>
+    <div class="list-viewport" id="listViewport">
+      <ul id="list" aria-label="대학 목록"></ul>
+      <div class="list-scroll-track" id="listScrollTrack" aria-hidden="true"><span class="list-scroll-thumb" id="listScrollThumb"></span></div>
+    </div>
     <div class="note">※ 학과명·입시 정보는 변경될 수 있으니 학교 공식 사이트에서 꼭 확인하세요.</div>
   </aside>
   <main>
@@ -1041,7 +1106,30 @@ function renderList() {
     });
     ul.appendChild(li);
   });
+  requestAnimationFrame(syncListScrollIndicator);
 }
+
+
+/* Mobile list: indicator remains visible even on browsers that hide native scrollbars. */
+function syncListScrollIndicator() {
+  const list = document.getElementById('list');
+  const track = document.getElementById('listScrollTrack');
+  const thumb = document.getElementById('listScrollThumb');
+  const guide = document.getElementById('listGuide');
+  if (!list || !track || !thumb || !guide) return;
+  const excess = Math.max(0, list.scrollHeight - list.clientHeight);
+  const scrolled = excess > 1;
+  track.classList.toggle('is-empty', !scrolled);
+  guide.classList.toggle('is-empty', !scrolled);
+  if (!scrolled) return;
+  const available = track.clientHeight || Math.max(1,list.clientHeight - 16);
+  const height = Math.max(28, Math.min(available, available * list.clientHeight / list.scrollHeight));
+  const top = (available - height) * Math.min(1, Math.max(0, list.scrollTop / excess));
+  thumb.style.height = height + 'px';
+  thumb.style.transform = 'translateY(' + top + 'px)';
+}
+document.getElementById('list').addEventListener('scroll', syncListScrollIndicator, {passive:true});
+window.addEventListener('resize', syncListScrollIndicator, {passive:true});
 
 function render() {
   renderList();
@@ -1890,7 +1978,6 @@ function renderDash() {
       <div class="dsub">업로드된 대학자료에 포함된 이전 학년도 참고자료까지 모두 집계합니다. 왼쪽 검색·필터를 변경하면 통계가 함께 갱신됩니다.</div>
       <div class="dash-controls">
         ${anyFilter?'<button type="button" class="cal-btn" data-reset="1">검색·필터 전체 해제</button>':''}
-        <span class="dsub">입력자료 기준일 ${dashEsc(CHECKED_AT||'미입력')}</span>
       </div>
     </div>
     <div class="dkpis">
