@@ -27399,6 +27399,274 @@
           "https://go.sjcu.ac.kr/go/info/personnel01.do"
         ]
       ]
+    },
+      {
+      "name": "한양대학교 ERICA",
+      "type": "4년제",
+      "region": "경기",
+      "address": "경기도 안산시 상록구 한양대학로 55",
+      "url": "https://www.hanyang.ac.kr",
+      "short": "한양대 ERICA",
+      "departments": [
+        {
+          "name": "영상디자인학과",
+          "short": "영상디자인",
+          "quota": "디자인계열 통합 137명",
+          "category": [],
+          "admission": {
+            "admissionUrl": "https://goerica.hanyang.ac.kr",
+            "track": [
+              "실기",
+              "비실기"
+            ],
+            "process": "2027학년도 디자인계열 통합 선발. 수시: 학생부종합(서류형) 17명·재능우수자(디자인) 40명, 정시 가군 일반(디자인계열) 80명(모두 계열 전체 정원내 인원). 영상디자인학과는 2학년 진입 시 선택.",
+            "practical": "수시 재능우수자(디자인): 기초디자인, 3절지 1장/5시간. 제시 이미지 특성을 활용한 채색화, 연필·물감 등 사용 가능(입체 첨가재료 불가). 정시 가군 디자인계열도 기초디자인 실기이며 상세 공지는 입학처 확인.",
+            "note": "※ 2027학년도 영상디자인학과는 학과별 독립 모집이 아닌 디자인계열 통합 모집. 영상디자인학과 인원으로 단독 합산하면 안 됨. 수시 공식 모집요강(2026.10.27 판), 정시 공식 입학처 페이지 및 2027 신입학 전형계획을 확인하여 작성. 2027학년도 확정 모집단위는 디자인계열이며 주얼리·패션, 산업, 커뮤니케이션, 영상디자인학과는 2학년 진입 시 선택. 정원외 전형 제외. 2027 정시 세부 일자는 별도 일정 자료와 대조했으며 변경 가능.",
+            "susi": {
+              "reference": false,
+              "quota": "디자인계열 통합 57명",
+              "note": "학과별 선발 인원 미배정. 디자인계열 전체 수시 정원내 57명 = 서류형 17명 + 재능우수자(디자인) 40명. 2027학년도 원서접수는 이미 종료됨.",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "통합 57명",
+                  "apply": {
+                    "start": "2026-09-08",
+                    "end": "2026-09-11",
+                    "note": "인터넷 원서접수 9월 8일 10:00 ~ 11일 18:00 / 제출서류 온라인 업로드는 9월 14일 18:00까지"
+                  },
+                  "announce": "",
+                  "note": "전형마다 최종합격 발표일이 달라 공통 발표일은 비워둠(재능우수자 11.13. / 학종 서류형 12.18.).",
+                  "types": [
+                    {
+                      "title": "학생부종합전형",
+                      "name": "서류형 (디자인계열 통합 모집)",
+                      "short": "학종서류",
+                      "quota": "통합 17명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": "수시 공통 원서접수 기간 적용"
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "method": "학생부종합평가 100% / 수능최저 없음",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-12-18",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "100",
+                            "grade": "",
+                            "gradeType": "종합",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "국내 정규 고교 졸업(예정) 또는 동등 학력. 특성화고 지원 가능. 2026.12.18. 18:00 최초합격 발표 예정"
+                        }
+                      ],
+                      "process": "학생부종합평가 100% 일괄합산(실기·면접 없음)",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "100",
+                        "grade": "",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "※ 2027학년도 영상디자인학과는 학과별 독립 모집이 아닌 디자인계열 통합 모집. 영상디자인학과 인원으로 단독 합산하면 안 됨. 디자인계열 전체 17명(영상디자인학과 단독 모집인원 아님). 특성화고 지원 가능."
+                    },
+                    {
+                      "title": "실기/실적전형",
+                      "name": "재능우수자(디자인) (디자인계열 통합 모집)",
+                      "short": "재능디자인",
+                      "quota": "통합 40명",
+                      "apply": {
+                        "start": "",
+                        "end": "",
+                        "note": "수시 공통 원서접수 기간 적용"
+                      },
+                      "competition": {
+                        "year": "",
+                        "rate": "",
+                        "note": ""
+                      },
+                      "stages": [
+                        {
+                          "label": "1단계 (10배수)",
+                          "method": "학생부종합평가 100%",
+                          "examDate": "",
+                          "examEnd": "",
+                          "announce": "2026-10-13",
+                          "kind": "서류",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "100",
+                            "grade": "",
+                            "gradeType": "종합",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "",
+                            "interview": ""
+                          },
+                          "note": "2026.10.13. 18:00 1단계 합격자 발표 예정"
+                        },
+                        {
+                          "label": "2단계",
+                          "method": "실기 80% + 1단계 종합평가 20%",
+                          "examDate": "2026-10-24",
+                          "examEnd": "",
+                          "announce": "2026-11-13",
+                          "kind": "실기",
+                          "ratio": {
+                            "suneung": "",
+                            "document": "20",
+                            "grade": "",
+                            "gradeType": "종합",
+                            "attendance": "",
+                            "essay": "",
+                            "practical": "80",
+                            "interview": ""
+                          },
+                          "note": "기초디자인(3절지 1장, 5시간). 2026.11.13. 18:00 최종 발표 예정"
+                        }
+                      ],
+                      "process": "1단계 학생부종합 100%(10배수) → 2단계 실기 80% + 1단계 성적 20%; 수능최저 없음",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "20",
+                        "grade": "",
+                        "gradeType": "종합",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "※ 2027학년도 영상디자인학과는 학과별 독립 모집이 아닌 디자인계열 통합 모집. 영상디자인학과 인원으로 단독 합산하면 안 됨. 디자인계열 전체 40명. 고교 유형 제한 없이 고교 졸업(예정) 또는 동등 학력 지원 가능."
+                    }
+                  ]
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "디자인계열 통합 80명",
+              "apply": {
+                "start": "2027-01-05",
+                "end": "2027-01-07",
+                "note": "2027.1.5. 10:00 ~ 1.7. 18:00 정시 원서접수 예정(입학처 최종 공지 확인)"
+              },
+              "announce": "2027-02-04",
+              "note": "가군 디자인계열 80명은 디자인계열 전체의 정원내 모집인원이며 영상디자인학과 단독 인원이 아님. 정시 모집요강에 따른 변경 가능.",
+              "types": [
+                {
+                  "title": "실기/실적전형",
+                  "name": "일반전형(디자인계열 통합 모집)",
+                  "short": "정시디자인",
+                  "gun": "가군",
+                  "quota": "통합 80명",
+                  "category": "실기",
+                  "description": "1단계 수능 100%(5배수) 선발 후 2단계 실기 80% + 1단계 수능 성적 20%를 반영하는 디자인계열 통합 모집",
+                  "apply": {
+                    "start": "",
+                    "end": "",
+                    "note": "정시 공통 접수 기간 적용"
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": ""
+                  },
+                  "stages": [
+                    {
+                      "label": "1단계 (5배수)",
+                      "method": "수능 100% (5배수 선발)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2027-01-13",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "100",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "1단계 합격자 2027.1.13. 18:00 발표 예정"
+                    },
+                    {
+                      "label": "2단계",
+                      "method": "실기 80% + 1단계 수능 성적 20%",
+                      "examDate": "2027-01-16",
+                      "examEnd": "",
+                      "announce": "2027-02-04",
+                      "kind": "실기",
+                      "ratio": {
+                        "suneung": "20",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "80",
+                        "interview": ""
+                      },
+                      "note": "기초디자인 실기 예정. 실기·발표 일정은 정시 모집요강 최종 공지 재확인 권장"
+                    }
+                  ],
+                  "process": "1단계(5배수) 수능 100% → 2단계 실기 80% + 수능(1단계 성적) 20%",
+                  "ratio": {
+                    "suneung": "20",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "80",
+                    "interview": ""
+                  },
+                  "note": "※ 2027학년도 영상디자인학과는 학과별 독립 모집이 아닌 디자인계열 통합 모집. 영상디자인학과 인원으로 단독 합산하면 안 됨. 디자인계열 가군 전체 80명. 수시 이월에 따라 최종 인원 변동 가능."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "한양대학교 ERICA 2027학년도 수시 모집요강(공식)",
+          "https://book.hyu.ac/rollingadmission2027"
+        ],
+        [
+          "한양대학교 ERICA 2027학년도 정시 모집요강(공식)",
+          "https://goerica.hanyang.ac.kr/admission/html/regular/guide.asp"
+        ],
+        [
+          "한양대학교 ERICA 2027학년도 신입학 전형계획(공식)",
+          "https://book.hyu.ac/undergraduateadmission2027"
+        ],
+        [
+          "2027학년도 정시 디자인계열 일정 참고(ART:READY)",
+          "https://www.artready.kr/univ/hanyang"
+        ]
+      ]
     }
   ],
   "_학교템플릿": {
