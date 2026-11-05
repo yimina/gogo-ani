@@ -27632,6 +27632,233 @@
           "https://mogozip.com/daeip-info/editorial-college-2027-susi-0000532"
         ]
       ]
+    },
+    {
+      "name": "디지털서울문화예술대학교",
+      "type": "사이버대학교(4년제)",
+      "region": "서울",
+      "address": "서울특별시 서대문구 통일로37길 60",
+      "url": "https://www.scau.ac.kr",
+      "short": "서울문화예술대",
+      "departments": [
+        {
+          "name": "AI시각영상디자인학과",
+          "short": "AI시각영상",
+          "quota": "",
+          "category": [
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://ipsi.scau.ac.kr",
+            "track": [
+              "실기"
+            ],
+            "process": "2027학년도 신입학 정시 1차 일반전형: 학업계획서 30% + 학업소양평가(실기 형식) 70%.",
+            "practical": "학업소양평가는 실기 형식으로 진행. 세부 실기과제와 준비물 및 평가 일시는 학과에서 개별 안내. 학과 문의 02-2287-0327.",
+            "note": "정원내 일반전형만 수록. 미래문화예술계열 전체 모집정원 750명을 학과 개별 정원으로 오인하지 않도록 학과별 quota는 공란. 공식 대학명은 디지털서울문화예술대학교.",
+            "susi": {
+              "reference": false,
+              "quota": "",
+              "note": "2027학년도 해당 학과는 정시 1차(1학기 신입학) 일정으로 공개됨. 일반대학의 수시와 별도로 분류.",
+              "rounds": []
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "",
+              "apply": {
+                "start": "2026-12-01",
+                "end": "2026-12-24",
+                "note": "2027학년도 1학기 정시 1차 모집"
+              },
+              "announce": "2026-12-30",
+              "note": "학과별 별도 정원내 모집인원 미공개. 미래문화예술계열 전체 입학정원 750명이며 특정 학과 정원으로 계산하지 않음. 2차 일정은 미공지.",
+              "types": [
+                {
+                  "title": "일반전형",
+                  "name": "2027학년도 정시 1차(1학기 신입학)",
+                  "short": "정시1차",
+                  "category": "실기",
+                  "description": "사이버대학교 2027학년도 1학기 일반전형. 학업계획서 30점, 실기 형식 학업소양평가 70점.",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "2026-12-01",
+                    "end": "2026-12-24",
+                    "note": "인터넷 원서접수. 학업계획서 작성, 학업소양평가 응시, 구비서류 제출 필수"
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": "2026학년도 학과별 일반전형 경쟁률 확인되지 않아 미입력"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "학업계획서 30점(30%) + 학업소양평가 70점(70%); AI시각영상디자인학과는 실기 형식 학업소양평가",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "2026-12-30",
+                      "kind": "실기",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "30%",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "70%",
+                        "interview": ""
+                      },
+                      "note": "학업소양평가 일정은 학과별 개별 통보. 전형 총점 60점 미만 불합격. 학업소양평가 세부 실기과제·준비물은 학과(02-2287-0327)에 확인."
+                    }
+                  ],
+                  "process": "학업계획서 30% + 실기 형식 학업소양평가 70%로 총점순 선발(60점 이상); 수능 및 학생부 등급 반영 항목 없음",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "30%",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "70%",
+                    "interview": ""
+                  },
+                  "note": "지원자격: 2027년 2월 고등학교 졸업예정자·고졸자·검정고시 합격자 등 동등 이상 학력 인정자. 전형료 60,000원(자격에 따른 감액 가능). 2027.01.01.~01.06. 등록금 납부. 미래문화예술계열 750명은 여러 학과를 묶은 모집단위 수치로 AI시각영상디자인학과만의 모집인원이 아님."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "2027학년도 입학전형시행계획 및 신·편입생 모집 공지",
+          "https://c-vod.scau.ac.kr/Application/09_BBS/BF_View.aspx?BF_ROWID=84928&MRID=157&URID=126"
+        ],
+        [
+          "신입학 일반전형 모집요강(학업소양평가·지원자격·전형방법)",
+          "https://ipsi1.scau.ac.kr/Application/03_EntranceNew/General.aspx?IDX=0&MRID=1559&URID=162"
+        ]
+      ]
+    },
+    {
+      "name": "세종사이버대학교",
+      "type": "사이버대학교(4년제)",
+      "region": "서울",
+      "address": "서울특별시 광진구 군자로 121",
+      "url": "https://home.sjcu.ac.kr",
+      "short": "세종사이버대",
+      "departments": [
+        {
+          "name": "만화애니메이션학과",
+          "short": "만화애니",
+          "quota": "",
+          "category": [
+            "만화",
+            "애니메이션"
+          ],
+          "admission": {
+            "admissionUrl": "https://go.sjcu.ac.kr/go/index.do",
+            "track": [
+              "비실기"
+            ],
+            "process": "2027학년도 봄학기 1차 신입학 일반전형: 나의학업플랜 70% + 적성검사 30%, 실기고사 없음.",
+            "practical": "실기·작품 제출 전형 아님. 나의학업플랜(단답형 5문항+자기소개)과 적성검사(객관식 20문항, 30분, 1회 응시) 실시.",
+            "note": "정원내 일반전형만 수록. 학과별 신입학 모집인원, 원서접수 마감일, 합격자 발표일 미공지/미확인. 특성화고 졸업(예정)자도 일반 학력자격 충족 시 지원 가능; 특성화고 졸업자 대상 특성화인재 장학금 별도 안내(정원외 전형 아님).",
+            "susi": {
+              "reference": false,
+              "quota": "",
+              "note": "일반대학의 수시로 표기된 모집이 아니며 2027학년도 봄학기 1차 신입학을 jeongsi.types에 편의상 입력.",
+              "rounds": []
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "",
+              "apply": {
+                "start": "2026-12-01",
+                "end": "",
+                "note": "2027학년도 봄학기 1차 모집 시작. 접수 마감일 미공지."
+              },
+              "announce": "",
+              "note": "사이버대학은 일반 4년제 수시·정시 군 체계가 아님. 이 JSON의 jeongsi 필드는 2027학년도 봄학기 1차 신입학 모집을 담기 위해 사용함. 학과별 모집인원 별도 공시가 확인되지 않아 미기입.",
+              "types": [
+                {
+                  "title": "일반전형",
+                  "name": "2027학년도 봄학기 1차 신입학",
+                  "short": "봄학기1차",
+                  "category": "비실기",
+                  "description": "나의학업플랜 70% + 적성검사 30%; 별도 실기·면접·수능 성적 반영 없음.",
+                  "gun": "",
+                  "quota": "",
+                  "apply": {
+                    "start": "2026-12-01",
+                    "end": "",
+                    "note": "2027학년도 봄학기 1차 모집. 종료일은 공식 입학처에서 아직 안내되지 않음"
+                  },
+                  "competition": {
+                    "year": "",
+                    "rate": "",
+                    "note": "2026학년도 학과별 일반전형 경쟁률 확인되지 않아 미입력"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "method": "나의학업플랜 70점(70%) + 적성검사 30점(30%)",
+                      "examDate": "",
+                      "examEnd": "",
+                      "announce": "",
+                      "kind": "서류",
+                      "ratio": {
+                        "suneung": "",
+                        "document": "",
+                        "grade": "",
+                        "gradeType": "",
+                        "attendance": "",
+                        "essay": "",
+                        "practical": "",
+                        "interview": ""
+                      },
+                      "note": "나의학업플랜: 단답형 5문항 및 자기소개. 적성검사: 객관식 20문항, 30분, 1회 응시. 학교 제공 JSON ratio 키에 적성검사 전용 항목이 없어 비율 막대는 공란이며 정확한 비율은 method와 process에 명시."
+                    }
+                  ],
+                  "process": "나의학업플랜 70% + 적성검사 30% 합산 선발; 총점 60점 미만 불합격. 수능 및 내신 성적과 무관하게 지원 가능.",
+                  "ratio": {
+                    "suneung": "",
+                    "document": "",
+                    "grade": "",
+                    "gradeType": "",
+                    "attendance": "",
+                    "essay": "",
+                    "practical": "",
+                    "interview": ""
+                  },
+                  "note": "지원자격: 고등학교 졸업(예정)자, 국내 검정고시 합격자, 법령상 동등 학력 인정자(외국 검정고시는 인정하지 않음). 전형료 30,000원. 원서접수 마감·합격자발표 날짜는 공식 공지 전으로 미입력. 정원내 일반전형만 반영."
+                }
+              ]
+            },
+            "etc": []
+          }
+        }
+      ],
+      "sources": [
+        [
+          "세종사이버대학교 신입학 일반전형 모집요강",
+          "https://go.sjcu.ac.kr/go/fresh/guide01.do"
+        ],
+        [
+          "세종사이버대학교 모집일정(2027학년도 봄학기)",
+          "https://go.sjcu.ac.kr/go/info/schedule.do"
+        ],
+        [
+          "세종사이버대학교 입학선발기준",
+          "https://go.sjcu.ac.kr/go/info/standard.do"
+        ],
+        [
+          "세종사이버대학교 신입학 모집인원 안내",
+          "https://go.sjcu.ac.kr/go/info/personnel01.do"
+        ]
+      ]
     }
   ],
   "_학교템플릿": {
