@@ -488,6 +488,7 @@
   .dash-compare-table th:first-child { position:sticky; left:0; z-index:1; min-width:106px; width:106px; background:#eef3fa; color:#43526a; }
   .dash-compare-table thead th { background:#f4f7fc; font-weight:700; }
   .dash-compare-table thead th:first-child { z-index:2; }
+  .dash-compare-rate + .dash-compare-rate { margin-top:8px; }
   .dash-compare-table td a { color:#1d4fb8; text-decoration:underline; }
   .dash-data-caution { margin:12px 0 0; padding:10px 13px; background:#f8faff; border-left:3px solid #98acc8; border-radius:5px; font-size:11.5px; line-height:1.7; color:#526178; }
   @media(max-width:1100px) { .dash-feature-grid,.dash-analytic-grid{grid-template-columns:1fr;} }
@@ -1941,6 +1942,23 @@ function dashComparePanel(rows) {
     const names=[...new Set(dashTypesFor(x.s,x.d).filter(t=>dashState.includeReference||!t.ref).map(({t,season})=>`${season} ${dashMethod(t)} 중심`))];
     return names.slice(0,5).map(dashEsc).join('<br>')+(names.length>5?'<br>외 '+(names.length-5)+'개 유형':'') || '전형방법 미입력';
   };
+  const getCompetition=({s,d})=>{
+    const entries=admGroups(d.adm,s.type).filter(group=>!group.summary).flatMap(({g,name})=>{
+      const types=(g.types||[]).filter(groupHas);
+      return (types.length ? types : [g]).flatMap(t=>{
+        if (!dashState.includeReference && dashIsRef(g,g,t)) return [];
+        const c=t.competition || {};
+        const rate=competitionRate(c.rate);
+        if (rate===null) return [];
+        const title=[t.title,t.name].filter(Boolean).join(' · ');
+        const label=[name,t.gun && !name.includes(t.gun) ? t.gun : '',title].filter(Boolean).join(' · ');
+        const year=String(c.year ?? '').trim() || '학년도 미입력';
+        const displayRate=rate.toLocaleString('ko-KR',{maximumFractionDigits:6});
+        return [`<div class="dash-compare-rate">${dashEsc(label)}<br><b class="cmp">${displayRate} : 1</b><span class="cmp-s">${dashEsc(year)}</span>${c.note ? `<br><small>${dashEsc(c.note)}</small>` : ''}</div>`];
+      });
+    });
+    return entries.join('') || '경쟁률 미입력';
+  };
   const getExam=x=>{
     const ts=dashAvailableEvents([x.s]).filter(e=>e.did===x.did&&(e.kind==='실기'||e.kind==='면접'));
     return ts.sort((a,b)=>a.start-b.start).slice(0,5).map(e=>`<span class="dash-kind" style="--kind:${KINDS[e.kind]}">${e.kind}</span> ${dashFmtDate(e.start)}${+e.end>+e.start?' ~ '+dashFmtDate(e.end):''}`).join('<br>')||'일정 미확인';
@@ -1952,12 +1970,13 @@ function dashComparePanel(rows) {
     ${row('수시 모집인원',x=>qText(su(x).quota))}
     ${row('정시 모집인원',x=>qText(je(x).quota))}
     ${row('지원 전형',mainMethod)}
+    ${row('전형별 경쟁률',getCompetition)}
     ${row('실기·면접일',getExam)}
     ${row('실기·평가 참고',x=>dashEsc(x.d.adm.practical || '자료 미입력').slice(0,330))}
     ${row('입학처',x=>{const url=x.d.adm.admissionUrl||'';return /^https?:\/\//.test(url)?`<a href="${dashEsc(url)}" target="_blank" rel="noopener noreferrer">공식 입학처</a>`:'주소 미입력';})}
     </tbody></table></div>`:'<p class="dash-empty">비교할 학과를 선택하세요.</p>';
   const selectedHtml=selected.map(x=>`<span class="dash-selected">${dashEsc(x.s.name)} · ${dashEsc(x.d.short||x.d.name)} <button type="button" data-dash-compare-remove="${x.key}" aria-label="${dashEsc(x.s.name)} ${dashEsc(x.d.name)} 비교 제외">×</button></span>`).join('');
-  return `<section class="dcard dash-wide" style="margin-top:12px"><h3>대학·학과 비교표</h3><p class="du">현재 학교 검색·필터 결과에서 학과를 최대 4개까지 선택해 모집인원·평가방식·실기·면접일을 나란히 비교합니다.</p>
+  return `<section class="dcard dash-wide" style="margin-top:12px"><h3>대학·학과 비교표</h3><p class="du">현재 학교 검색·필터 결과에서 학과를 최대 4개까지 선택해 모집인원·평가방식·경쟁률·실기·면접일을 나란히 비교합니다.</p>
     <div class="dash-compare-tools"><select data-dash-compare-add aria-label="비교할 대학·학과 추가" ${selected.length>=4?'disabled':''}>${opts}</select>
     <button type="button" class="cal-btn" data-dash-compare-clear="1">선택 초기화</button></div>
     <div class="dash-compare-selection">${selectedHtml}</div>${table}
