@@ -1589,12 +1589,12 @@
       ]
     },
     {
-      "name": "경기대학교",
+      "name": "경기대학교 서울캠퍼스",
       "type": "4년제",
       "region": "서울",
       "address": "서울특별시 서대문구 경기대로9길 24",
       "url": "https://www.kyonggi.ac.kr",
-      "short": "경기대",
+      "short": "경기대 서울",
       "departments": [
         {
           "name": "관광문화대학 애니메이션학과",
@@ -1640,9 +1640,9 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026학년도",
-                        "rate": "58.00 : 1",
-                        "note": "11명 모집 / 638명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
+                        "year": "2027학년도",
+                        "rate": "44.82 : 1",
+                        "note": "수시 원서접수 마감 기준"
                       },
                       "stages": [
                         {
@@ -1675,9 +1675,9 @@
                         "note": ""
                       },
                       "competition": {
-                        "year": "2026학년도",
-                        "rate": "86.40 : 1",
-                        "note": "5명 모집 / 432명 지원. 전년도 전형명: 실기/실적(예체능우수자전형)."
+                        "year": "2027학년도",
+                        "rate": "55.60 : 1",
+                        "note": "수시 원서접수 마감 기준"
                       },
                       "stages": [
                         {
@@ -1735,7 +1735,7 @@
                       "method": "상상으로 4컷 표현하기. 켄트지 30×90cm, 4시간.",
                       "examDate": "2027-01-16",
                       "examEnd": "",
-                      "announce": "",
+                      "announce": "2027-02-05",
                       "kind": "실기",
                       "ratio": {},
                       "note": ""
@@ -1772,7 +1772,7 @@
                       "method": "4컷 웹툰. 켄트지 4절, 4시간.",
                       "examDate": "2027-01-16",
                       "examEnd": "",
-                      "announce": "",
+                      "announce": "2027-02-05",
                       "kind": "실기",
                       "ratio": {},
                       "note": ""
@@ -1792,9 +1792,380 @@
             },
             "etc": []
           }
+        },
+        {
+          "name": "미디어영상학과",
+          "short": "미디어영상학과",
+          "category": [],
+          "quota": "36명",
+          "admission": {
+            "admissionUrl": "https://enter.kyonggi.ac.kr",
+            "track": [
+              "비실기"
+            ],
+            "note": "2027학년도 정원 내 수시 25명 및 정시 최초 11명 기준.",
+            "susi": {
+              "reference": false,
+              "quota": "25명",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "25명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 17:00. 해당자 서류제출 2026-09-15 17:00까지."
+                  },
+                  "types": [
+                    {
+                      "title": "학생부교과",
+                      "name": "교과성적우수자전형",
+                      "short": "교과성적우수자전형",
+                      "quota": "3명",
+                      "ratio": {
+                        "grade": "90%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "학생부",
+                          "ratio": {
+                            "grade": "90%",
+                            "gradeType": "교과",
+                            "attendance": "10%"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "",
+                          "method": "교과 90% + 출결 10%"
+                        }
+                      ],
+                      "process": "교과 90% + 출결 10%",
+                      "note": "수능최저: 국어·수학·영어·탐구(상위 1과목) 중 상위 2개 합 7등급 이내, 한국사 6등급 이내.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "20.00 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    },
+                    {
+                      "title": "학생부교과",
+                      "name": "학교장추천전형",
+                      "short": "학교장추천전형",
+                      "quota": "6명",
+                      "ratio": {
+                        "grade": "90%",
+                        "gradeType": "교과",
+                        "attendance": "10%"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "학생부",
+                          "ratio": {
+                            "grade": "90%",
+                            "gradeType": "교과",
+                            "attendance": "10%"
+                          },
+                          "announce": "2026-11-20",
+                          "examDate": "",
+                          "method": "교과 90% + 출결 10%"
+                        }
+                      ],
+                      "process": "교과 90% + 출결 10%",
+                      "note": "학교장 추천 필요. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "5.67 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    },
+                    {
+                      "title": "학생부종합",
+                      "name": "KGU학생부종합전형",
+                      "short": "KGU학생부종합전형",
+                      "quota": "12명",
+                      "ratio": {},
+                      "stages": [
+                        {
+                          "label": "1단계",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "100%"
+                          },
+                          "announce": "2026-11-20",
+                          "examDate": "",
+                          "method": "서류 100%, 3배수"
+                        },
+                        {
+                          "label": "2단계",
+                          "kind": "면접",
+                          "ratio": {
+                            "document": "70%",
+                            "interview": "30%"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "",
+                          "method": "1단계 성적 70% + 면접 30%",
+                          "note": "면접은 11월 29일~12월 6일 중 단과대학별 지정일. 입학처 고사 공지 확인."
+                        }
+                      ],
+                      "process": "서류평가 후 면접",
+                      "note": "수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "24.67 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    },
+                    {
+                      "title": "학생부종합",
+                      "name": "기회균형선발전형",
+                      "short": "기회균형선발전형",
+                      "quota": "4명",
+                      "ratio": {
+                        "document": "100%"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "서류",
+                          "ratio": {
+                            "document": "100%"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "",
+                          "method": "학생부 서류평가 100%"
+                        }
+                      ],
+                      "process": "학생부 서류평가 100%",
+                      "note": "정원 내. 국가보훈, 농어촌, 기초생활수급자 등 모집요강의 지원 자격 중 하나 충족. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "22.25 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    }
+                  ],
+                  "note": "최초합격자 발표는 전형별 발표 기한 참조."
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "11명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+              },
+              "note": "최초 모집인원 기준. 수시 미충원 이월에 따라 변경 가능.",
+              "types": [
+                {
+                  "title": "수능",
+                  "name": "일반학생Ⅰ전형",
+                  "short": "일반학생Ⅰ전형",
+                  "quota": "11명",
+                  "ratio": {
+                    "suneung": "100%"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "100%"
+                      },
+                      "announce": "2027-02-05",
+                      "examDate": "",
+                      "method": "수능 100%"
+                    }
+                  ],
+                  "process": "수능 100%",
+                  "note": "고교 졸업(예정) 또는 동등 학력 인정자로 2027학년도 수능 응시자. 최초합격자 발표는 2027-02-05까지.",
+                  "gun": "다군",
+                  "category": "수능",
+                  "description": "국어 35%, 수학 30%, 영어 20%, 탐구 15%(상위 1과목). 한국사 등급별 감점.",
+                  "apply": {
+                    "start": "2027-01-04",
+                    "end": "2027-01-07",
+                    "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+                  },
+                  "competition": {
+                    "year": "2026학년도",
+                    "rate": "9.18 : 1",
+                    "note": "전년도 정시 일반학생전형 결과"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "자유전공학부(서울)",
+          "short": "자유전공학부(서울)",
+          "category": [],
+          "quota": "65명",
+          "admission": {
+            "admissionUrl": "https://enter.kyonggi.ac.kr",
+            "track": [
+              "비실기"
+            ],
+            "note": "전공 선택 가능 범위와 제외 학과는 입학처 모집요강 참조. 정시 일반학생Ⅱ전형은 2027학년도 신설.",
+            "susi": {
+              "reference": false,
+              "quota": "54명",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "54명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 17:00. 해당자 서류제출 2026-09-15 17:00까지."
+                  },
+                  "types": [
+                    {
+                      "title": "논술(논술우수자전형)",
+                      "name": "언어·사회논술",
+                      "short": "언어·사회논술",
+                      "quota": "41명",
+                      "ratio": {
+                        "essay": "90%",
+                        "grade": "10%",
+                        "gradeType": "교과"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "논술",
+                          "ratio": {
+                            "essay": "90%",
+                            "grade": "10%",
+                            "gradeType": "교과"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "2026-11-27",
+                          "method": "논술 90% + 학생부 교과 10%"
+                        }
+                      ],
+                      "process": "논술 90% + 학생부 교과 10%",
+                      "note": "국어·사회·한국사 일반과목 범위, 100분. 수원캠퍼스에서 실시. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "47.10 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    },
+                    {
+                      "title": "논술(논술우수자전형)",
+                      "name": "수리논술",
+                      "short": "수리논술",
+                      "quota": "13명",
+                      "ratio": {
+                        "essay": "90%",
+                        "grade": "10%",
+                        "gradeType": "교과"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "논술",
+                          "ratio": {
+                            "essay": "90%",
+                            "grade": "10%",
+                            "gradeType": "교과"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "2026-11-27",
+                          "method": "논술 90% + 학생부 교과 10%"
+                        }
+                      ],
+                      "process": "논술 90% + 학생부 교과 10%",
+                      "note": "수학·수학Ⅰ·수학Ⅱ 범위, 100분. 수원캠퍼스에서 실시. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "27.69 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    }
+                  ],
+                  "note": "최초합격자 발표는 전형별 발표 기한 참조."
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "11명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+              },
+              "note": "최초 모집인원 기준. 수시 미충원 이월에 따라 변경 가능.",
+              "types": [
+                {
+                  "title": "수능",
+                  "name": "일반학생Ⅱ전형",
+                  "short": "일반학생Ⅱ전형",
+                  "quota": "11명",
+                  "ratio": {
+                    "suneung": "95%",
+                    "grade": "5%",
+                    "gradeType": "교과"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "95%",
+                        "grade": "5%",
+                        "gradeType": "교과"
+                      },
+                      "announce": "2027-02-05",
+                      "examDate": "",
+                      "method": "수능 95% + 학생부 교과 5%. 출결 감점."
+                    }
+                  ],
+                  "process": "수능 95% + 학생부 교과 5%. 출결 감점.",
+                  "note": "고교 졸업(예정) 또는 동등 학력 인정자로 2027학년도 수능 응시자. 최초합격자 발표는 2027-02-05까지.",
+                  "gun": "나군",
+                  "category": "수능",
+                  "description": "수능 유형 A(국어 30·수학 35·영어 20·탐구 15)와 유형 B(국어 35·수학 30·영어 20·탐구 15) 중 유리한 점수 적용. 탐구 상위 1과목. 한국사 등급별 감점.",
+                  "apply": {
+                    "start": "2027-01-04",
+                    "end": "2027-01-07",
+                    "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+                  }
+                }
+              ]
+            }
+          }
         }
       ],
       "sources": [
+        [
+          "경기대학교 입학처 2027학년도 수시 모집요강 공지",
+          "https://enter.kyonggi.ac.kr/cms/FR_BBS_CON/BoardView.do?BOARD_SEQ=1&MENU_ID=210&SITE_NO=2&CONTENTS_NO=3&BBS_SEQ=4366"
+        ],
+        [
+          "경기대학교 입학처 2027학년도 정시 모집요강 공지",
+          "https://enter.kyonggi.ac.kr/cms/FR_BBS_CON/BoardView.do?BOARD_SEQ=1&MENU_ID=210&SITE_NO=2&CONTENTS_NO=3&BBS_SEQ=4376"
+        ],
+        [
+          "2027 수시 모집요강 표 및 접수 마감 경쟁률 대조",
+          "https://ipsi.aljal.kr/univ/kyonggi/2027/susi"
+        ],
+        [
+          "2027 정시 최초 모집인원·전형방법 및 2026 입시결과 대조",
+          "https://ipsi.aljal.kr/univ/kyonggi/2027/jeongsi"
+        ],
         [
           "2027학년도 경기대학교 수시 모집요강: 책자 14·17·19·31~32·93쪽",
           "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=120"
@@ -1810,6 +2181,178 @@
         [
           "2027학년도 경기대학교 정시 모집요강 PDF",
           "https://enter.kyonggi.ac.kr/ajaxfile/CMN_SVC/FileView.do?GBN=X12&SITE_NO=2&MENU_NO=140&CONTENTS_NO=1&TYPE_CODE=C0601"
+        ]
+      ]
+    },
+    {
+      "name": "경기대학교 수원캠퍼스",
+      "type": "4년제",
+      "region": "경기",
+      "address": "경기도 수원시 영통구 광교산로 154-42",
+      "url": "https://www.kyonggi.ac.kr",
+      "short": "경기대 수원",
+      "departments": [
+        {
+          "name": "자유전공학부(수원)",
+          "short": "자유전공학부(수원)",
+          "category": [],
+          "quota": "205명",
+          "admission": {
+            "admissionUrl": "https://enter.kyonggi.ac.kr",
+            "track": [
+              "비실기"
+            ],
+            "note": "전공 선택 가능 범위와 제외 학과는 입학처 모집요강 참조. 정시 일반학생Ⅱ전형은 2027학년도 신설.",
+            "susi": {
+              "reference": false,
+              "quota": "185명",
+              "rounds": [
+                {
+                  "round": 1,
+                  "label": "수시",
+                  "reference": false,
+                  "quota": "185명",
+                  "apply": {
+                    "start": "2026-09-07",
+                    "end": "2026-09-11",
+                    "note": "마감 17:00. 해당자 서류제출 2026-09-15 17:00까지."
+                  },
+                  "types": [
+                    {
+                      "title": "논술(논술우수자전형)",
+                      "name": "언어·사회논술",
+                      "short": "언어·사회논술",
+                      "quota": "93명",
+                      "ratio": {
+                        "essay": "90%",
+                        "grade": "10%",
+                        "gradeType": "교과"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "논술",
+                          "ratio": {
+                            "essay": "90%",
+                            "grade": "10%",
+                            "gradeType": "교과"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "2026-11-27",
+                          "method": "논술 90% + 학생부 교과 10%"
+                        }
+                      ],
+                      "process": "논술 90% + 학생부 교과 10%",
+                      "note": "국어·사회·한국사 일반과목 범위, 100분. 수원캠퍼스에서 실시. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "54.85 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    },
+                    {
+                      "title": "논술(논술우수자전형)",
+                      "name": "수리논술",
+                      "short": "수리논술",
+                      "quota": "92명",
+                      "ratio": {
+                        "essay": "90%",
+                        "grade": "10%",
+                        "gradeType": "교과"
+                      },
+                      "stages": [
+                        {
+                          "label": "일괄합산",
+                          "kind": "논술",
+                          "ratio": {
+                            "essay": "90%",
+                            "grade": "10%",
+                            "gradeType": "교과"
+                          },
+                          "announce": "2026-12-18",
+                          "examDate": "2026-11-27",
+                          "method": "논술 90% + 학생부 교과 10%"
+                        }
+                      ],
+                      "process": "논술 90% + 학생부 교과 10%",
+                      "note": "수학·수학Ⅰ·수학Ⅱ 범위, 100분. 수원캠퍼스에서 실시. 수능최저 미적용.",
+                      "competition": {
+                        "year": "2027학년도",
+                        "rate": "35.98 : 1",
+                        "note": "수시 원서접수 마감 기준"
+                      }
+                    }
+                  ],
+                  "note": "최초합격자 발표는 전형별 발표 기한 참조."
+                }
+              ]
+            },
+            "jeongsi": {
+              "reference": false,
+              "quota": "20명",
+              "apply": {
+                "start": "2027-01-04",
+                "end": "2027-01-07",
+                "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+              },
+              "note": "최초 모집인원 기준. 수시 미충원 이월에 따라 변경 가능.",
+              "types": [
+                {
+                  "title": "수능",
+                  "name": "일반학생Ⅱ전형",
+                  "short": "일반학생Ⅱ전형",
+                  "quota": "20명",
+                  "ratio": {
+                    "suneung": "95%",
+                    "grade": "5%",
+                    "gradeType": "교과"
+                  },
+                  "stages": [
+                    {
+                      "label": "일괄합산",
+                      "kind": "수능",
+                      "ratio": {
+                        "suneung": "95%",
+                        "grade": "5%",
+                        "gradeType": "교과"
+                      },
+                      "announce": "2027-02-05",
+                      "examDate": "",
+                      "method": "수능 95% + 학생부 교과 5%. 출결 감점."
+                    }
+                  ],
+                  "process": "수능 95% + 학생부 교과 5%. 출결 감점.",
+                  "note": "고교 졸업(예정) 또는 동등 학력 인정자로 2027학년도 수능 응시자. 최초합격자 발표는 2027-02-05까지.",
+                  "gun": "나군",
+                  "category": "수능",
+                  "description": "수능 유형 A(국어 30·수학 35·영어 20·탐구 15)와 유형 B(국어 35·수학 30·영어 20·탐구 15) 중 유리한 점수 적용. 탐구 상위 1과목. 한국사 등급별 감점.",
+                  "apply": {
+                    "start": "2027-01-04",
+                    "end": "2027-01-07",
+                    "note": "마감 17:00. 해당자 서류제출 2027-01-08 17:00까지."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "sources": [
+        [
+          "경기대학교 입학처 2027학년도 수시 모집요강 공지",
+          "https://enter.kyonggi.ac.kr/cms/FR_BBS_CON/BoardView.do?BOARD_SEQ=1&MENU_ID=210&SITE_NO=2&CONTENTS_NO=3&BBS_SEQ=4366"
+        ],
+        [
+          "경기대학교 입학처 2027학년도 정시 모집요강 공지",
+          "https://enter.kyonggi.ac.kr/cms/FR_BBS_CON/BoardView.do?BOARD_SEQ=1&MENU_ID=210&SITE_NO=2&CONTENTS_NO=3&BBS_SEQ=4376"
+        ],
+        [
+          "2027 수시 모집요강 표 및 접수 마감 경쟁률 대조",
+          "https://ipsi.aljal.kr/univ/kyonggi/2027/susi"
+        ],
+        [
+          "2027 정시 최초 모집인원·전형방법 및 2026 입시결과 대조",
+          "https://ipsi.aljal.kr/univ/kyonggi/2027/jeongsi"
         ]
       ]
     },
